@@ -1,79 +1,71 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-
-interface User {
-  id: string;
-  email: string;
-}
-
-interface AuthError {
-  message: string;
-}
+import { User, Session, AuthError } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 
 interface AuthContextType {
   user: User | null;
+  session: Session | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: AuthError | null }>;
+  signUp: (email: string, password: string) => Promise<{ error: AuthError | null }>;
   signOut: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AUTH_STORAGE_KEY = 'sodomhall_auth_user';
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing session in localStorage
-    const storedUser = localStorage.getItem(AUTH_STORAGE_KEY);
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch {
-        localStorage.removeItem(AUTH_STORAGE_KEY);
-      }
-    }
-    setLoading(false);
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setUser(session?.user ?? null);
+      setLoading(false);
+    });
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      setUser(session?.user ?? null);
+      setLoading(false);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
-  const signIn = async (email: string, password: string): Promise<{ error: AuthError | null }> => {
-    // TODO: Replace with actual authentication API call
-    // This is a placeholder that accepts any credentials
-    if (!email || !password) {
-      return { error: { message: 'Email and password are required' } };
-    }
-
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // For now, accept any valid email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return { error: { message: 'Invalid email format' } };
-    }
-
-    const newUser: User = {
-      id: crypto.randomUUID(),
+  const signIn = async (email: string, password: string) => {
+    const { error } = await supabase.auth.signInWithPassword({
       email,
-    };
+      password,
+    });
+    return { error };
+  };
 
-    setUser(newUser);
-    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newUser));
-    return { error: null };
+  const signUp = async (email: string, password: string) => {
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+    return { error };
   };
 
   const signOut = async () => {
-    setUser(null);
-    localStorage.removeItem(AUTH_STORAGE_KEY);
+    await supabase.auth.signOut();
   };
 
   return (
     <AuthContext.Provider
       value={{
         user,
+        session,
         loading,
         signIn,
+        signUp,
         signOut,
       }}
     >
