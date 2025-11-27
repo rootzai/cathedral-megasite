@@ -14,26 +14,27 @@ import "./index.css";
 function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
   const { user, loading } = useAuth();
 
-  if (loading) {
-    return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: '#0a0a0a',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        <div style={{ color: '#00ff88', fontFamily: 'monospace' }}>Loading...</div>
-      </div>
-    );
-  }
-
+  // Always redirect if no user, regardless of loading state
+  // This ensures unauthenticated users can never see protected content
   if (!user) {
-    return <Redirect to="/login" />;
+    if (loading) {
+      return (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: '#0a0a0a',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div style={{ color: '#00ff88', fontFamily: 'monospace' }}>Loading...</div>
+        </div>
+      );
+    }
+    return <Redirect to="/login" replace />;
   }
 
   return <Component />;
