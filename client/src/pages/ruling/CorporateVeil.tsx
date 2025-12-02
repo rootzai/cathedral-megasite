@@ -5,7 +5,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ExternalLink, Scale, ShieldAlert, Split, Users } from "lucide-react";
+import { ExternalLink, Scale, ShieldAlert, Split, Users, AlertTriangle, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function CorporateVeil() {
@@ -29,11 +29,15 @@ export default function CorporateVeil() {
           
           <div className="mt-12 relative w-full h-64 md:h-96 overflow-hidden rounded-lg border border-border/50 group">
             <img 
-              src="/images/corporate-veil-abstract.png" 
+              src="/images/duality.jpg" 
               alt="Abstract representation of the corporate veil" 
               className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 z-20">
+              <p className="text-destructive font-mono text-xs tracking-widest mb-1">FIGURE 6.1</p>
+              <p className="text-foreground font-bold uppercase tracking-wider">The Legal Fiction</p>
+            </div>
           </div>
         </PageHero>
 
@@ -62,7 +66,7 @@ export default function CorporateVeil() {
               </li>
               <li className="flex items-start gap-4">
                 <div className="p-2 bg-card border border-border rounded shrink-0">
-                  <Users className="w-5 h-5 text-destructive" />
+                  <Gavel className="w-5 h-5 text-destructive" />
                 </div>
                 <div>
                   <h4 className="font-heading text-lg text-foreground">The "Religious" Defense</h4>
@@ -108,6 +112,71 @@ export default function CorporateVeil() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        <SectionDivider />
+
+        {/* Game Theory Section */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-4 mb-8">
+            <AlertTriangle className="w-8 h-8 text-destructive" />
+            <h2 className="font-heading text-3xl text-foreground uppercase tracking-tight">Game Theory: The Damnation of the Lawyers</h2>
+          </div>
+          
+          <p className="font-body text-lg text-muted-foreground mb-8">
+            Nyre's counsel isn't being weak; they are being lethal. Backing down after the ruling was the only smart move. Here is why:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-destructive flex items-center gap-3 font-heading">
+                  <span className="bg-destructive/20 w-8 h-8 flex items-center justify-center rounded text-sm font-mono text-foreground">01</span>
+                  The "Appeal" Trap
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-6 font-body">
+                  Judge Benjamin ruled, but the game isn’t over until the appeal window closes. If Nyre talks today, and Seton Hall gets an emergency stay or wins an appeal tomorrow, Nyre is legally dead. He would have breached a contract that the appeals court might say is still valid.
+                </p>
+                <div className="bg-zinc-900/50 p-4 border-l-2 border-destructive">
+                  <p className="text-destructive font-bold text-sm uppercase mb-1 font-mono">The Move</p>
+                  <p className="text-muted-foreground text-sm font-body">
+                    You don’t walk through the door until the lock is completely removed. Nyre has to wait for the appellate clock to run out so his "breach" is 100% protected by the law.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-destructive flex items-center gap-3 font-heading">
+                  <span className="bg-destructive/20 w-8 h-8 flex items-center justify-center rounded text-sm font-mono text-foreground">02</span>
+                  Let Seton Hall Hang Themselves
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-6 font-body">
+                  By threatening Nyre after a court judge ordered the documents released, Seton Hall is actively defying a Court Order. If Nyre talks, the fight becomes Nyre vs. Seton Hall. If Nyre shuts up, the fight becomes Judge Benjamin vs. Seton Hall.
+                </p>
+                <div className="bg-zinc-900/50 p-4 border-l-2 border-destructive">
+                  <p className="text-destructive font-bold text-sm uppercase mb-1 font-mono">The Strategy</p>
+                  <p className="text-muted-foreground text-sm font-body">
+                    Nyre is handing the Judge a loaded gun. He is effectively saying, "Your Honor, I am trying to obey your ruling, but this defendant is obstructing Justice." This forces the Judge to hold Seton Hall in Contempt of Court.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 p-8 bg-destructive/5 border border-destructive/20 rounded-lg">
+            <h3 className="text-foreground font-bold uppercase tracking-widest mb-4 text-center font-heading">The Bottom Line</h3>
+            <p className="text-xl text-muted-foreground text-center font-light font-body">
+              Nyre didn't blink. He stepped out of the way so the Judge could punch Seton Hall in the face.
+              <br/><br/>
+              <span className="text-destructive font-medium">If he helps now, he takes the hit. If he waits, he watches them burn.</span>
+            </p>
           </div>
         </section>
 
