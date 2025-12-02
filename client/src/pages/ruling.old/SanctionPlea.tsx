@@ -25,16 +25,6 @@ export default function SanctionPlea() {
               A Plea to <br/>
               <span className="text-destructive">Judge Benjamin</span>
             </h1>
-            
-            <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 my-8 group">
-              <img 
-                src="/images/legal-gavel-broken.png" 
-                alt="Broken gavel on redacted documents" 
-                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-            </div>
-
             <p className="font-body text-2xl text-muted-foreground leading-relaxed max-w-3xl">
               Sanction Tom Scrivo. The discovery abuse must be punished.
             </p>

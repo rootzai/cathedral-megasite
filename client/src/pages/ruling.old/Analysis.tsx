@@ -11,7 +11,7 @@ export default function Analysis() {
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000">
         <div className="border-l-2 border-primary pl-6 py-2">
-          <p className="font-mono text-xs text-primary uppercase tracking-widest mb-2">Section 09</p>
+          <p className="font-mono text-xs text-primary uppercase tracking-widest mb-2">Section 04</p>
           <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none mb-4">
             Analysis & Impact
           </h1>
@@ -25,15 +25,6 @@ export default function Analysis() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-8">
             <div className="prose prose-invert max-w-none">
-              <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg border border-border/50 mb-8 group">
-                <img 
-                  src="/images/analysis-network.png" 
-                  alt="Network graph of influence" 
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
-              </div>
-
               <h2 className="font-heading text-3xl text-foreground mb-6">Systemic Failure</h2>
               <p className="font-body text-lg text-foreground/80 leading-relaxed mb-6">
                 The Benjamin Ruling is not just a legal victory; it is an indictment of a decades-long strategy of containment. The "Dirty Dozen" were not rogue actors. They were the operating system of the Archdiocese of Newark and Seton Hall University.

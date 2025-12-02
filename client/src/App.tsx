@@ -24,6 +24,16 @@ import AcademyHome from "./pages/academy/Home";
 
 // Ruling Pages
 import RulingHome from "./pages/ruling/Home";
+import RulingTimeline from "./pages/ruling/Timeline";
+import RulingEvidence from "./pages/ruling/Evidence";
+import RulingAnalysis from "./pages/ruling/Analysis";
+import DirtyDozen from "./pages/ruling/DirtyDozen";
+import TobinHypocrisy from "./pages/ruling/TobinHypocrisy";
+import Reilly from "./pages/ruling/Reilly";
+import BeachHouse from "./pages/ruling/BeachHouse";
+import SheeranMcCarrick from "./pages/ruling/SheeranMcCarrick";
+import SanctionPlea from "./pages/ruling/SanctionPlea";
+import CorporateVeil from "./pages/ruling/CorporateVeil";
 
 import "./index.css";
 
@@ -91,6 +101,36 @@ function Router() {
       {/* Ruling Routes */}
       <Route path={"/ruling"}>
         <ProtectedRoute component={RulingHome} />
+      </Route>
+      <Route path={"/ruling/timeline"}>
+        <ProtectedRoute component={RulingTimeline} />
+      </Route>
+      <Route path={"/ruling/evidence"}>
+        <ProtectedRoute component={RulingEvidence} />
+      </Route>
+      <Route path={"/ruling/analysis"}>
+        <ProtectedRoute component={RulingAnalysis} />
+      </Route>
+      <Route path={"/ruling/dirty-dozen"}>
+        <ProtectedRoute component={DirtyDozen} />
+      </Route>
+      <Route path={"/ruling/tobin-hypocrisy"}>
+        <ProtectedRoute component={TobinHypocrisy} />
+      </Route>
+      <Route path={"/ruling/reilly"}>
+        <ProtectedRoute component={Reilly} />
+      </Route>
+      <Route path={"/ruling/beach-house"}>
+        <ProtectedRoute component={BeachHouse} />
+      </Route>
+      <Route path={"/ruling/sheeran-mccarrick"}>
+        <ProtectedRoute component={SheeranMcCarrick} />
+      </Route>
+      <Route path={"/ruling/sanction-plea"}>
+        <ProtectedRoute component={SanctionPlea} />
+      </Route>
+      <Route path={"/ruling/corporate-veil"}>
+        <ProtectedRoute component={CorporateVeil} />
       </Route>
 
       <Route path={"/404"} component={NotFound} />

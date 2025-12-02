@@ -15,12 +15,13 @@ export default function Layout({ children }: LayoutProps) {
     { href: "/dirty-dozen", label: "02. THE DIRTY DOZEN", id: "02" },
     { href: "/reilly", label: "03. THE FACE OF IMPUNITY", id: "03" },
     { href: "/beach-house", label: "04. THE BEACH HOUSE", id: "04" },
-    { href: "/timeline", label: "05. TIMELINE OF ERASURE", id: "05" },
-    { href: "/evidence", label: "06. EVIDENCE REPOSITORY", id: "06" },
-    { href: "/tobin-hypocrisy", label: "07. TOBIN'S HYPOCRISY", id: "07" },
-    { href: "/analysis", label: "08. ANALYSIS", id: "08" },
-    { href: "/sheeran-mccarrick", label: "09. THE NEXUS", id: "09" },
-    { href: "/sanction-plea", label: "10. SANCTION PLEA", id: "10" },
+    { href: "/tobin-hypocrisy", label: "05. TOBIN'S HYPOCRISY", id: "05" },
+    { href: "/corporate-veil", label: "06. THE CORPORATE VEIL", id: "06" },
+    { href: "/timeline", label: "07. TIMELINE OF ERASURE", id: "07" },
+    { href: "/evidence", label: "08. EVIDENCE REPOSITORY", id: "08" },
+    { href: "/analysis", label: "09. ANALYSIS", id: "09" },
+    { href: "/sheeran-mccarrick", label: "10. THE NEXUS", id: "10" },
+    { href: "/sanction-plea", label: "11. SANCTION PLEA", id: "11" },
   ];
 
   return (

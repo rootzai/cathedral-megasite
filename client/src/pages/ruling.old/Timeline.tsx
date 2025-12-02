@@ -3,7 +3,6 @@ import { JourneyNav } from "@/components/JourneyNav";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, ChevronRight, FileText, Siren, UserMinus, UserPlus } from "lucide-react";
-import { PageHero } from "@/components/PageHero";
 
 const timelineEvents = [
   {
@@ -85,23 +84,22 @@ export default function Timeline() {
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
         
-        <PageHero 
-          sectionNumber="07" 
-          title="Timeline of" 
-          titleHighlight="Erasure"
-        >
-          <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 mb-8 group">
-            <img 
-              src="/images/timeline-clock.png" 
-              alt="Surreal melting clock over ocean" 
-              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Hero Section */}
+        <section className="relative border-b border-border pb-16">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
+              <Calendar className="w-3 h-3" />
+              CHRONOLOGY OF COVER-UP
+            </div>
+            <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
+              The Timeline <br/>
+              <span className="text-destructive">of Erasure</span>
+            </h1>
+            <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
+              Mapping the decades of abuse against the sudden, coordinated "purge" of 2019-2020.
+            </p>
           </div>
-          <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
-            Mapping the decades of abuse against the sudden, coordinated "purge" of 2019-2020.
-          </p>
-        </PageHero>
+        </section>
 
         {/* Timeline Visualization */}
         <section className="relative">

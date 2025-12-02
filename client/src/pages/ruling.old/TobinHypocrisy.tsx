@@ -9,7 +9,7 @@ export default function TobinHypocrisy() {
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000">
         <div className="border-l-2 border-primary pl-6 py-2">
-          <p className="font-mono text-xs text-primary uppercase tracking-widest mb-2">Section 05</p>
+          <p className="font-mono text-xs text-primary uppercase tracking-widest mb-2">Section 03</p>
           <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none mb-4">
             Tobin's Hypocrisy
           </h1>
@@ -22,18 +22,6 @@ export default function TobinHypocrisy() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 space-y-8">
-            <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-border/50 mb-8 group">
-              <img 
-                src="/images/tobin-silence.png" 
-                alt="Cardinal's hat on an empty chair" 
-                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 font-mono text-xs text-white/70 uppercase tracking-widest">
-                The Empty Chair: A Symbol of Non-Compliance
-              </p>
-            </div>
-
             <p className="font-body text-xl leading-relaxed text-foreground/90">
               The Gibbons Report, delivered contemporaneously with the Latham Report in August 2019, contains a revelation that strikes at the very heart of the Archdiocese's credibility. In the report's "priest by priest overview" section, it is explicitly revealed that Cardinal Joseph Tobin himself did not participate with the Latham attorneys.
             </p>
