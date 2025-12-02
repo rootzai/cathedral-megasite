@@ -1,79 +1,51 @@
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Download, Share2, X, Twitter, Linkedin } from "lucide-react";
-import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { ZoomIn } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface ImageModalProps {
   src: string;
   alt: string;
-  title?: string;
+  className?: string;
   caption?: string;
-  children: React.ReactNode;
 }
 
-export default function ImageModal({ src, alt, title, caption, children }: ImageModalProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = src;
-    link.download = src.split('/').pop() || 'image.jpg';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleShare = (platform: 'twitter' | 'linkedin') => {
-    const url = window.location.href;
-    const text = `Check out this image from the Seton Hall Endgame dossier: ${title || alt}`;
-    
-    let shareUrl = '';
-    if (platform === 'twitter') {
-      shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-    } else if (platform === 'linkedin') {
-      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-    }
-    
-    window.open(shareUrl, '_blank', 'width=600,height=400');
-  };
-
+export function ImageModal({ src, alt, className, caption }: ImageModalProps) {
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild className="cursor-zoom-in">
-        {children}
-      </DialogTrigger>
-      <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-black/95 border-none flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute top-4 right-4 z-50 flex gap-2">
-          <Button variant="ghost" size="icon" onClick={handleDownload} className="text-white hover:bg-white/20">
-            <Download className="h-6 w-6" />
-          </Button>
-          <Button variant="ghost" size="icon" onClick={() => handleShare('twitter')} className="text-white hover:bg-white/20">
-            <Twitter className="h-6 w-6" />
-          </Button>
-          <Button variant="ghost" size="icon" onClick={() => handleShare('linkedin')} className="text-white hover:bg-white/20">
-            <Linkedin className="h-6 w-6" />
-          </Button>
-          <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white hover:bg-white/20">
-            <X className="h-6 w-6" />
-          </Button>
-        </div>
-        
-        <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12">
+    <Dialog>
+      <DialogTrigger asChild>
+        <div className={cn("relative group cursor-zoom-in overflow-hidden rounded-lg border border-border/50", className)}>
           <img 
             src={src} 
             alt={alt} 
-            className="max-w-full max-h-full object-contain shadow-2xl"
+            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
-
-        {(title || caption) && (
-          <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-6 backdrop-blur-sm border-t border-white/10">
-            <div className="max-w-4xl mx-auto">
-              {title && <h3 className="text-xl font-display font-bold text-white mb-2">{title}</h3>}
-              {caption && <p className="text-gray-300 font-serif italic">{caption}</p>}
-            </div>
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <ZoomIn className="w-8 h-8 text-white drop-shadow-lg" />
           </div>
-        )}
+          {caption && (
+            <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <p className="text-xs text-white/90 font-mono text-center">{caption}</p>
+            </div>
+          )}
+        </div>
+      </DialogTrigger>
+      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none overflow-hidden flex flex-col items-center justify-center">
+        <VisuallyHidden>
+          <DialogTitle>{alt}</DialogTitle>
+        </VisuallyHidden>
+        <div className="relative w-auto h-auto max-w-full max-h-[90vh]">
+          <img 
+            src={src} 
+            alt={alt} 
+            className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl border border-border/20"
+          />
+          {caption && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+              <p className="text-sm text-white font-medium">{caption}</p>
+            </div>
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );
