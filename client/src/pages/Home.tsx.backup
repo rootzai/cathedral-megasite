@@ -1,0 +1,441 @@
+import { Streamdown } from 'streamdown';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen">
+      {/* Breaking News Banner */}
+      <div className="bg-red-600 text-white py-3 px-4 text-center font-bold sticky top-0 z-50">
+        <div className="container mx-auto">
+          🚨 BREAKING: Judge Orders Release of Latham & Gibbons Reports — Documents Begin Flowing November 2025
+        </div>
+      </div>
+
+      {/* Header Section - White Background */}
+      <header className="bg-white text-gray-900 py-8 border-b-4 border-red-600">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4">
+            <p className="text-sm uppercase tracking-wider text-gray-600 mb-2">SPECIAL INVESTIGATION</p>
+            <p className="text-base italic text-gray-700">
+              How Seton Hall University and New Jersey's Political Elite Protected Sexual Predators for Decades
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content - Black Background */}
+      <main className="bg-black text-white">
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h1 className="text-6xl font-bold mb-8 text-center">SODOM HALL</h1>
+            <h2 className="text-3xl mb-8 text-center text-gray-300">The Cathedral of Documents</h2>
+            
+            <div className="prose prose-invert max-w-none mb-12">
+              <blockquote className="border-l-4 border-red-600 pl-6 italic text-xl mb-8">
+                "It were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones."
+                <footer className="text-gray-400 mt-2">— Luke 17:2</footer>
+              </blockquote>
+
+              <Streamdown>{`
+In the Gospel of Matthew, Christ warns those who would harm children: better to have a millstone tied around your neck and be cast into the sea.
+
+For decades, a different kind of stone has been sinking — not into water, but into the institutional memory of the Roman Catholic Church and New Jersey's political establishment.
+
+This is the story of that stone, and the men who tried to hold it underwater.
+
+**For the victims:**
+
+Kim Capadona
+
+Donna McMonagle
+
+The seminarians from Immaculate Conception and St. Andrew's
+
+The students from Delbarton School
+
+The seminarians McCarrick called his "nephews"
+
+Mark Crawford and the SNAP survivors
+
+The 450 plaintiffs in Judge Benjamin's case
+
+Joe and Kelli Nyre who demanded truth
+
+Those still silenced by fear
+
+Those denied justice
+
+The children betrayed
+
+For truth still emerging
+`}</Streamdown>
+            </div>
+          </div>
+        </section>
+
+        {/* Act VIII - THE VAULT OPENS (NEW - LEADS THE STORY) */}
+        <section id="act-viii" className="py-16 px-4 bg-gray-900">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-5xl font-bold mb-4 text-red-500">Act VIII</h2>
+            <h3 className="text-4xl font-bold mb-8">The Vault Opens</h3>
+            <p className="text-xl text-gray-400 mb-12">November 12, 2025</p>
+
+            <div className="prose prose-invert prose-lg max-w-none">
+              <Streamdown>{`
+On November 12, 2025, Judge Estela M. de la Cruz Benjamin issued an order that ended the six-year cover-up.
+
+**The Latham Report must be produced.** The Gibbons Report must be produced. Twenty thousand five hundred pages of evidence—employment files, emails, policies, the Title IX logbook—must be produced.
+
+The vault is opening.
+
+## The Order
+
+Judge Benjamin's ruling is surgical and devastating. She reviewed 20,500 pages of documents in camera—meaning she personally examined every page that Seton Hall claimed was privileged. Her conclusion: almost none of it is protected.
+
+**Timeline of Exposure:**
+
+- **November 26, 2025**: Search terms finalized
+- **Late November 2025**: Document production begins (Seton Hall will appeal and lose, delaying by ~30 days)
+- **January 2026**: First major revelations as documents become public
+- **February-May 2026**: Depositions under oath (Tobin, Reilly, Lorenzo, Marino)
+- **May 18, 2026**: Discovery deadline—all evidence must be disclosed
+- **Summer 2026**: Criminal referrals, federal investigations, media firestorm
+
+The appeal will fail. The documents will flow. The truth will emerge.
+
+## How the Cover-Up Died
+
+In her Statement of Reasons, Judge Benjamin systematically demolished every privilege claim Seton Hall has hidden behind:
+
+### 1. The Fatal Disclaimer
+
+Latham & Watkins explicitly stated in their report: **"the University has never been a Latham client."**
+
+You cannot claim attorney-client privilege without a client relationship. This alone destroys Seton Hall's primary defense.
+
+### 2. The Kozloz Test
+
+Even if privilege existed, New Jersey law allows it to be pierced when three conditions are met:
+
+1. **The party seeking discovery has a substantial need** → The survivors need this evidence to prove their case
+2. **The materials are material and relevant** → These documents are the core evidence of the cover-up
+3. **No other source exists** → Seton Hall has buried this evidence for six years
+
+All three prongs satisfied. Privilege pierced.
+
+### 3. Pre-Existing Documents Are Never Privileged
+
+Judge Benjamin found **thousands of pages** of documents that existed before the investigation even began:
+
+- Employment files for Reilly, Lorenzo, and the other ten
+- Seminary policies on abuse reporting
+- The Title IX logbook (before and after someone erased entries)
+- Email chains between administrators about complaints
+
+Black-letter law in New Jersey: **you cannot make existing documents privileged by giving them to your lawyer.**
+
+All of these must be produced.
+
+### 4. The Narrow Protection
+
+Only two categories remain protected:
+
+1. **Emails that include BOTH Gibbons AND Seton Hall** on the chain
+2. **Latham's legal conclusions** (but not their factual findings)
+
+Everything else—investigator notes, witness interviews, third-party emails, attachments—**must be produced.**
+
+## What the Documents Will Reveal
+
+### The Dirty Dozen
+
+The Latham Report names **twelve clergymen** who enabled or concealed abuse. For six years, Seton Hall has hidden their identities. When the report is released, we will finally know:
+
+**Who are the twelve?**
+
+We know two names:
+- **Monsignor Joseph Reilly** (Seminary Rector, now SHU President)
+- One other whose identity remains sealed
+
+**Where are they now?**
+
+This is the question that should terrify every diocese in America. When the twelve names are revealed, we will learn which parishes, schools, and dioceses are unknowingly harboring men who enabled predators.
+
+Are they still working with children? Are they in positions of authority? Have they been quietly transferred to new assignments?
+
+The documents will tell us.
+
+### The Thirteenth Name: Cardinal Tobin
+
+The most shocking revelation is not in the Latham Report—it's in the **Gibbons Report.**
+
+**Cardinal Joseph Tobin refused to cooperate with investigators.**
+
+By his own task force's standards, this means automatic termination. The Board of Regents enforced this standard against the "dirty dozen." But when it came to the Cardinal himself?
+
+Silence.
+
+### The Automatic Termination Hypocrisy
+
+Here's the devastating irony at the heart of this scandal:
+
+**The Standard:** Failure to cooperate with investigators = automatic removal
+
+**Reilly's Response:** He received **TWO** task force letters. Between the first and second, he scrambled to fix his non-cooperation because he knew it meant automatic firing.
+
+**Tobin's Response:** Refused to cooperate. Faced zero consequences.
+
+The subordinate understood he was subject to the rules. The Cardinal believed he was above them.
+
+When the Gibbons Report is released, it will show:
+1. Tobin's refusal to appear before investigators
+2. The Board of Regents' decision to exempt him from the automatic termination standard
+3. Seton Hall's decision to appoint Reilly as president despite knowing he was scrambling to avoid termination
+
+This is the scandal within the scandal: **the automatic termination standard was absolute—but only for those without power.**
+
+## 20,500 Pages of Evidence
+
+Judge Benjamin personally reviewed every page. She knows what's in there. And she has ordered almost all of it to be released.
+
+**What's NOT Protected:**
+- The Latham Report (except legal conclusions)
+- Employment files for all twelve clergymen
+- Emails between SHU administrators
+- Emails between Latham investigators and witnesses
+- Pre-existing documents (policies, Title IX records, etc.)
+- Attachments to emails
+- Third-party communications
+
+**What IS Protected (Very Little):**
+- Emails with BOTH Gibbons AND SHU on the chain
+- Latham's legal advice and conclusions
+
+The vault isn't just opening. It's being demolished.
+
+## Why the Appeal Will Fail
+
+Seton Hall's lawyers will appeal. They will lose. Here's why:
+
+1. **The disclaimer is fatal** — Latham said SHU wasn't their client
+2. **The Kozloz test is satisfied** — All three prongs met
+3. **Pre-existing documents are never privileged** — Settled law in New Jersey
+4. **Judge Benjamin reviewed everything** — She knows exactly what she's ordering
+
+The appeal will delay production by approximately 30 days. But it will not stop the truth.
+
+## The Timeline of Exposure
+
+**November 26, 2025**: Parties finalize search terms for document production
+
+**Late November/December 2025**: Production begins
+- The Latham Report (with minimal redactions)
+- The Gibbons Report
+- Employment files
+- Email chains
+- Pre-existing documents
+
+**January 2026**: First major stories break
+- Names of the dirty dozen revealed
+- Where they are now
+- Tobin's refusal to cooperate exposed
+- The automatic termination hypocrisy documented
+
+**February-May 2026**: Depositions under oath
+- Cardinal Tobin
+- Monsignor Reilly
+- Bishop Lorenzo
+- Kevin Marino
+- Tom Scrivo
+- Board of Regents members
+
+**May 18, 2026**: Discovery deadline
+- All evidence must be disclosed
+- Criminal referrals begin
+- Federal investigations launch
+
+**Summer 2026 and Beyond**: The Reckoning
+- Grand jury investigations
+- Criminal charges
+- Civil trials
+- Media coverage
+- Institutional accountability
+
+## The Disinfectant of Sunlight
+
+Justice Louis Brandeis wrote: "Sunlight is said to be the best of disinfectants."
+
+For six years, Seton Hall has operated in darkness. The Board of Regents met in secret. The Latham Report was locked in a vault. The names were hidden. The evidence was buried.
+
+On November 12, 2025, Judge Benjamin turned on the lights.
+
+The documents are coming. The depositions are coming. The truth is coming.
+
+For the survivors who have waited six years for justice: **vindication is coming.**
+
+For those who enabled predators and then hid behind privilege claims: **accountability is coming.**
+
+The vault is opening. The millstone is rising. And nothing can stop it now.
+
+---
+
+*Note: Seton Hall will appeal this order. The appeal will delay document production by approximately 30 days but will not prevent disclosure. All timelines above account for this delay.*
+`}</Streamdown>
+            </div>
+          </div>
+        </section>
+
+        {/* Act I - THE VAULT */}
+        <section id="act-i" className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-5xl font-bold mb-4 text-red-500">Act I</h2>
+            <h3 className="text-4xl font-bold mb-8">The Vault</h3>
+            <p className="text-xl text-gray-400 mb-12">August 27, 2019</p>
+
+            <div className="mb-12">
+              <img src="/assets/vault/archive_storage.jpg" alt="Archive storage" className="w-full rounded-lg shadow-2xl" />
+            </div>
+
+            <div className="prose prose-invert prose-lg max-w-none">
+              <Streamdown>{`
+In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
+
+Among the twelve names: **Monsignor Joseph Reilly**, the powerful seminary rector.
+
+### In the Room: The Architects
+
+**Kevin Marino**
+
+Chair of the Board of Regents. The abusive orchestrator. Center of Chris Christie's Seton Hall Law School legal cabal. Criminal defense attorney who represents New Jersey's most powerful: George Norcross (defended against AG charges), Bill Stepien (Bridgegate scandal). The man who architected the gaslighting of the century—getting the New York Times to rewrite history based on a sham investigation.
+
+**Tom Scrivo**
+
+Seton Hall Law School graduate—"the best in New Jersey," just ask Tony Soprano. Chris Christie's Chief Counsel (2015-2017), Chair of NJ Economic Development Authority. Partner at O'Toole Scrivo. The institutional insider—a corrupted altar boy who designs the communications plan to bury the news. He knows the system, knows the judges, knows how to make evidence disappear.
+
+**Cardinal Joseph Tobin**
+
+Archbishop of Newark. The ultimate decider.
+
+The room waits. The Board of Regents waits. The Archdiocese waits. Everyone waits for one man to speak.
+
+**Cardinal Joseph Tobin**, Archbishop of Newark
+
+He has read the report. He knows what Reilly has done. He knows the task force standard: failure to cooperate means immediate removal.
+
+> "Let him finish the term. Then give him his sabbatical."
+> 
+> — Cardinal Joseph Tobin
+
+The decision is made. Not removal. Not accountability. Protection.
+
+On this day, Cardinal Tobin chooses to protect Monsignor Reilly. The Board of Regents, including Marino and D'Alessandro, remains silent. The vault door closes, and the secrets stay buried. For now.
+
+### Three Things Got Done at the Meeting
+
+**1. Latham attorneys read the verdicts aloud**
+
+The Latham Report attorneys read the verdicts for each of the "dirty dozen" clergymen. One by one, renditions of the crimes each man committed.
+
+**2. Unanimous vote by regents to accept and enforce the Responsive Action Plan**
+
+The Board of Regents unanimously voted to accept and enforce the Responsive Action Plan, which required all the men to be removed from the Board of Regents and let go from their jobs at the University. They could no longer serve in leadership positions due to Title IX violations.
+
+**3. Regents agreed on the communications plan concocted by Tom Scrivo**
+
+"Bury the news." Completely ignore the "dirty dozen" and only announce that McCarrick was guilty. Hope no one is paying attention. The material then went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
+`}</Streamdown>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Sharing Section */}
+        <section id="share" className="py-16 px-4 bg-gray-900">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-4xl font-bold mb-12 text-center">Share the Truth</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <img src="/assets/memes/Unholy.png" alt="The Unholy Trinity" className="w-full rounded-lg shadow-2xl mb-4" />
+                <h3 className="text-xl font-bold mb-2">The Unholy Trinity</h3>
+                <p className="text-gray-400 mb-4">McCarrick, Reilly, Lorenzo - Protectors of Predators</p>
+                <a href="/assets/memes/Unholy.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
+                  Download & Share
+                </a>
+              </div>
+
+              <div className="text-center">
+                <img src="/assets/memes/Blessmefather.png" alt="Bless Me Father" className="w-full rounded-lg shadow-2xl mb-4" />
+                <h3 className="text-xl font-bold mb-2">Bless Me Father For I Protected a Predator</h3>
+                <p className="text-gray-400 mb-4">- Reilly's Legacy</p>
+                <a href="/assets/memes/Blessmefather.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
+                  Download & Share
+                </a>
+              </div>
+
+              <div className="text-center">
+                <img src="/assets/memes/Mostlikely.png" alt="The Rector Who Inherited McCarrick's Throne" className="w-full rounded-lg shadow-2xl mb-4" />
+                <h3 className="text-xl font-bold mb-2">The Rector Who Inherited McCarrick's Throne</h3>
+                <p className="text-gray-400 mb-4">18 years of decline</p>
+                <a href="/assets/memes/Mostlikely.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
+                  Download & Share
+                </a>
+              </div>
+
+              <div className="text-center">
+                <img src="/assets/memes/BetterScrivocall.png" alt="Better Call Scrivo" className="w-full rounded-lg shadow-2xl mb-4" />
+                <h3 className="text-xl font-bold mb-2">Better Call Scrivo</h3>
+                <p className="text-gray-400 mb-4">Where Privilege Logs Go to Die</p>
+                <a href="/assets/memes/BetterScrivocall.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
+                  Download & Share
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-12 px-4 border-t border-gray-800">
+          <div className="container mx-auto max-w-4xl text-center">
+            <div className="prose prose-invert max-w-none mb-8">
+              <Streamdown>{`
+## Epilogue
+
+### The Millstone Rises
+
+> "But whoso shall offend one of these little ones... it were better for him that a millstone were hanged about his neck, and that he were drowned in the depth of the sea."
+> 
+> — Matthew 18:6
+
+The stone that was meant to sink has risen. The vault that was meant to stay closed is opening. The truth that was meant to stay buried is emerging.
+
+For the survivors.
+
+For those who spoke.
+
+For those still silent.
+
+For justice delayed.
+
+For truth emerging.
+
+The cathedral of documents stands open.
+
+The millstone has risen.
+
+The reckoning continues.
+
+---
+
+*This investigation is based on public court documents, news reports, and the Latham Report sent to the Vatican and NJ Attorney General in September 2019. All claims are sourced and verifiable.*
+
+**For survivors seeking support:** RAINN National Sexual Assault Hotline 1-800-656-4673
+
+**sodomhall.com | An investigation into institutional betrayal**
+`}</Streamdown>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
