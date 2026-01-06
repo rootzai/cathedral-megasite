@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Upload, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function TipSubmissionForm() {
+  const tipEndpoint = useMemo(
+    () => import.meta.env.VITE_TIP_FORM_ENDPOINT?.trim() ?? '',
+    []
+  );
+  const submissionEnabled = Boolean(tipEndpoint);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,13 +18,21 @@ export function TipSubmissionForm() {
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [honeypot, setHoneypot] = useState(''); // Anti-spam honeypot
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setErrorMessage(null);
+
     // Check honeypot (bots will fill this hidden field)
     if (honeypot) {
       console.log('Spam detected');
+      return;
+    }
+
+    if (!submissionEnabled) {
+      setStatus('error');
+      setErrorMessage('Secure tip submission is temporarily unavailable. Please use the Signal or ProtonMail options listed below.');
       return;
     }
 
@@ -44,9 +57,7 @@ export function TipSubmissionForm() {
         submitData.append(`file_${index}`, file);
       });
 
-      // For now, use Formspree (free tier: 50 submissions/month)
-      // Replace with your actual Formspree endpoint
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch(tipEndpoint, {
         method: 'POST',
         body: submitData,
         headers: {
@@ -66,10 +77,15 @@ export function TipSubmissionForm() {
         });
         setFiles([]);
       } else {
-        setStatus('error');
+        throw new Error(`Submission failed with status ${response.status}`);
       }
     } catch (error) {
       console.error('Submission error:', error);
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Submission failed. Please try again or use an alternate contact method.'
+      );
       setStatus('error');
     }
   };
@@ -113,6 +129,13 @@ export function TipSubmissionForm() {
           We do not share source information with third parties. Check "Anonymous Submission" below if you prefer not to provide contact details.
         </p>
       </div>
+
+      {!submissionEnabled && (
+        <div className="flex items-center gap-3 p-4 bg-orange-900/30 border border-orange-600 rounded-lg text-sm text-orange-100">
+          <AlertCircle className="w-5 h-5 text-orange-300" />
+          Secure web submissions are temporarily disabled. Please use the Signal or ProtonMail options listed below until this encrypted form is re-enabled.
+        </div>
+      )}
 
       {/* Anonymous Toggle */}
       <div className="flex items-center gap-3 p-4 bg-gray-700/30 rounded-lg">
@@ -255,14 +278,14 @@ export function TipSubmissionForm() {
           <div className="mb-4 p-4 bg-red-900/20 border border-red-600 rounded-lg flex items-center gap-3">
             <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
             <p className="text-red-300">
-              Submission failed. Please try again or use one of the alternative contact methods above.
+              {errorMessage ?? 'Submission failed. Please try again or use one of the alternative contact methods above.'}
             </p>
           </div>
         )}
 
         <Button
           type="submit"
-          disabled={status === 'submitting'}
+          disabled={status === 'submitting' || !submissionEnabled}
           className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
         >
           {status === 'submitting' ? (

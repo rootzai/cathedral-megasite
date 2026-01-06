@@ -12,6 +12,8 @@ interface SearchProps {
   onClose: () => void;
 }
 
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 export function Search({ onClose }: SearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -79,12 +81,23 @@ export function Search({ onClose }: SearchProps) {
 
   const highlightText = (text: string, query: string) => {
     if (!query) return text;
-    const parts = text.split(new RegExp(`(${query})`, 'gi'));
-    return parts.map((part, i) => 
-      part.toLowerCase() === query.toLowerCase() ? 
-        <mark key={i} className="bg-red-500 text-white px-1">{part}</mark> : 
-        part
-    );
+    try {
+      const escapedQuery = escapeRegExp(query);
+      const regex = new RegExp(`(${escapedQuery})`, 'gi');
+      const parts = text.split(regex);
+      return parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <mark key={`${part}-${i}`} className="bg-red-500 text-white px-1">
+            {part}
+          </mark>
+        ) : (
+          part
+        )
+      );
+    } catch (error) {
+      console.error('Failed to highlight search text:', error);
+      return text;
+    }
   };
 
   return (

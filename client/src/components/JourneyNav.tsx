@@ -1,20 +1,20 @@
 import { Link, useLocation } from "wouter";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { ShareButton } from "./ShareButton";
 
+const RULING_BASE_PATH = "/ruling";
 const ROUTES = [
-  { path: "/", label: "The Ruling" },
-  { path: "/dirty-dozen", label: "The Dirty Dozen" },
-  { path: "/reilly", label: "The Face of Impunity" },
-  { path: "/beach-house", label: "The Beach House" },
-  { path: "/tobin-hypocrisy", label: "Tobin's Hypocrisy" },
-  { path: "/corporate-veil", label: "The Corporate Veil" },
-  { path: "/timeline", label: "Timeline of Erasure" },
-  { path: "/evidence", label: "Evidence Repository" },
-  { path: "/analysis", label: "Analysis" },
-  { path: "/sheeran-mccarrick", label: "The Nexus" },
-  { path: "/sanction-plea", label: "Sanction Plea" },
+  { path: RULING_BASE_PATH, label: "The Ruling" },
+  { path: `${RULING_BASE_PATH}/dirty-dozen`, label: "The Dirty Dozen" },
+  { path: `${RULING_BASE_PATH}/reilly`, label: "The Face of Impunity" },
+  { path: `${RULING_BASE_PATH}/beach-house`, label: "The Beach House" },
+  { path: `${RULING_BASE_PATH}/tobin-hypocrisy`, label: "Tobin's Hypocrisy" },
+  { path: `${RULING_BASE_PATH}/corporate-veil`, label: "The Corporate Veil" },
+  { path: `${RULING_BASE_PATH}/timeline`, label: "Timeline of Erasure" },
+  { path: `${RULING_BASE_PATH}/evidence`, label: "Evidence Repository" },
+  { path: `${RULING_BASE_PATH}/analysis`, label: "Analysis" },
+  { path: `${RULING_BASE_PATH}/sheeran-mccarrick`, label: "The Nexus" },
+  { path: `${RULING_BASE_PATH}/sanction-plea`, label: "Sanction Plea" },
 ];
 
 export function JourneyNav() {

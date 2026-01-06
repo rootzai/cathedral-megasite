@@ -76,7 +76,7 @@
 
 /// <reference types="@types/google.maps" />
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePersistFn } from "@/hooks/usePersistFn";
 import { cn } from "@/lib/utils";
 
@@ -92,21 +92,43 @@ const FORGE_BASE_URL =
   "https://forge.butterfly-effect.dev";
 const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
 
+let mapsScriptPromise: Promise<void> | null = null;
+
 function loadMapScript() {
-  return new Promise(resolve => {
-    const script = document.createElement("script");
-    script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.onload = () => {
-      resolve(null);
-      script.remove(); // Clean up immediately
-    };
-    script.onerror = () => {
-      console.error("Failed to load Google Maps script");
-    };
-    document.head.appendChild(script);
-  });
+  if (typeof window === "undefined") {
+    return Promise.reject(new Error("Google Maps requires a browser environment."));
+  }
+
+  if (window.google?.maps) {
+    return Promise.resolve();
+  }
+
+  if (!API_KEY) {
+    return Promise.reject(
+      new Error("Google Maps API key missing. Set VITE_FRONTEND_FORGE_API_KEY to enable maps.")
+    );
+  }
+
+  if (!mapsScriptPromise) {
+    mapsScriptPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.onload = () => {
+        resolve();
+        script.remove();
+      };
+      script.onerror = () => {
+        script.remove();
+        mapsScriptPromise = null;
+        reject(new Error("Failed to load Google Maps script"));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  return mapsScriptPromise;
 }
 
 interface MapViewProps {
@@ -124,24 +146,38 @@ export function MapView({
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const init = usePersistFn(async () => {
-    await loadMapScript();
-    if (!mapContainer.current) {
-      console.error("Map container not found");
-      return;
-    }
-    map.current = new window.google.maps.Map(mapContainer.current, {
-      zoom: initialZoom,
-      center: initialCenter,
-      mapTypeControl: true,
-      fullscreenControl: true,
-      zoomControl: true,
-      streetViewControl: true,
-      mapId: "DEMO_MAP_ID",
-    });
-    if (onMapReady) {
-      onMapReady(map.current);
+    try {
+      await loadMapScript();
+      if (!mapContainer.current) {
+        throw new Error("Map container not found");
+      }
+      if (!window.google?.maps) {
+        throw new Error("Google Maps SDK unavailable after script load.");
+      }
+
+      map.current = new window.google.maps.Map(mapContainer.current, {
+        zoom: initialZoom,
+        center: initialCenter,
+        mapTypeControl: true,
+        fullscreenControl: true,
+        zoomControl: true,
+        streetViewControl: true,
+        mapId: "DEMO_MAP_ID",
+      });
+      if (onMapReady) {
+        onMapReady(map.current);
+      }
+      setLoadError(null);
+    } catch (error) {
+      console.error("Unable to initialize Google Maps:", error);
+      setLoadError(
+        error instanceof Error
+          ? error.message
+          : "Unable to load Google Maps right now. Please try again later."
+      );
     }
   });
 
@@ -150,6 +186,19 @@ export function MapView({
   }, [init]);
 
   return (
-    <div ref={mapContainer} className={cn("w-full h-[500px]", className)} />
+    <div className={cn("relative w-full h-[500px]", className)}>
+      <div
+        ref={mapContainer}
+        className={cn(
+          "w-full h-full",
+          loadError ? "pointer-events-none opacity-0" : "opacity-100"
+        )}
+      />
+      {loadError && (
+        <div className="absolute inset-0 flex items-center justify-center text-center text-sm text-muted-foreground bg-background/80 backdrop-blur-sm px-6">
+          {loadError}
+        </div>
+      )}
+    </div>
   );
 }
