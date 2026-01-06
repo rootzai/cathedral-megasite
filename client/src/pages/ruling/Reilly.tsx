@@ -102,8 +102,8 @@ export default function Reilly() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {memeGallery.map((meme, index) => (
-              <Dialog key={index}>
+            {memeGallery.map((meme) => (
+              <Dialog key={meme.src}>
                 <DialogTrigger asChild>
                   <div className="group relative cursor-pointer overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-destructive/50 hover:shadow-lg hover:shadow-destructive/10">
                     <div className="aspect-square overflow-hidden">

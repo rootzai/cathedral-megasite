@@ -110,7 +110,7 @@ export default function Timeline() {
 
           <div className="space-y-12">
             {timelineEvents.map((event, index) => (
-              <div key={index} className={`relative flex flex-col md:flex-row gap-8 items-center ${
+              <div key={`${event.year}-${event.title}`} className={`relative flex flex-col md:flex-row gap-8 items-center ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}>
                 

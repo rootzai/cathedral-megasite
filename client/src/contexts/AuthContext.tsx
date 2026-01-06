@@ -19,28 +19,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [initialized, setInitialized] = useState(false);
 
+  const authDisabledError = {
+    name: 'AuthConfigurationError',
+    message: 'Supabase authentication is not configured.',
+    status: 500,
+  } as AuthError;
+
   useEffect(() => {
-    // BYPASS: Always set a mock user for demo purposes
-    const mockUser = {
-      id: 'demo-user-id',
-      email: 'demo@example.com',
-      aud: 'authenticated',
-      role: 'authenticated',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-      app_metadata: {},
-      user_metadata: {},
-    } as User;
-    
-    setUser(mockUser);
-    setSession({ user: mockUser, access_token: 'demo-token', token_type: 'bearer', expires_in: 3600, expires_at: Date.now() + 3600000, refresh_token: 'demo-refresh' } as Session);
-    setLoading(false);
-    setInitialized(true);
-    return;
-    
     // If Supabase isn't configured, stay in loading/no-user state
-    if (!isSupabaseConfigured) {
-      console.error('Supabase not configured - authentication disabled');
+    if (!isSupabaseConfigured || !supabase) {
+      console.warn('Supabase not configured - authentication disabled');
       setLoading(false);
       setInitialized(true);
       return;
@@ -68,7 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (mounted && initialized) {
+      if (mounted) {
         setSession(session);
         setUser(session?.user ?? null);
       }
@@ -78,9 +66,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       mounted = false;
       subscription.unsubscribe();
     };
-  }, [initialized]);
+  }, []);
 
   const signIn = async (email: string, password: string) => {
+    if (!supabase) {
+      return { error: authDisabledError };
+    }
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -89,6 +80,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signUp = async (email: string, password: string) => {
+    if (!supabase) {
+      return { error: authDisabledError };
+    }
     const { error } = await supabase.auth.signUp({
       email,
       password,
@@ -97,6 +91,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signOut = async () => {
+    if (!supabase) {
+      return;
+    }
     await supabase.auth.signOut();
   };
 

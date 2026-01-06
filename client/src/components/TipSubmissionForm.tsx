@@ -221,7 +221,7 @@ export function TipSubmissionForm() {
           <div className="mt-4 space-y-2">
             {files.map((file, index) => (
               <div
-                key={index}
+                key={`${file.name}-${file.lastModified}`}
                 className="flex items-center justify-between p-3 bg-gray-700 rounded-lg"
               >
                 <span className="text-sm text-gray-300 truncate">{file.name}</span>

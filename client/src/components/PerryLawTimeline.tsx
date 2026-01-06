@@ -74,7 +74,7 @@ export function PerryLawTimeline() {
       </div>
 
       {events.map((event, index) => (
-        <div key={index} className="flex gap-4">
+        <div key={`${event.date}-${event.title}`} className="flex gap-4">
           <div className="flex flex-col items-center">
             <div className={`w-4 h-4 rounded-full ${event.type === 'resistance' ? 'bg-blue-600' : event.type === 'coverup' ? 'bg-red-600' : 'bg-yellow-600'}`}></div>
             {index < events.length - 1 && (

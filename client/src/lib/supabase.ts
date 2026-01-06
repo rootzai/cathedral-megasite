@@ -1,15 +1,18 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase credentials missing!', {
+let supabaseClient: SupabaseClient | null = null;
+
+if (isSupabaseConfigured) {
+  supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+} else {
+  console.warn('Supabase credentials missing – authentication disabled.', {
     hasUrl: !!supabaseUrl,
     hasKey: !!supabaseAnonKey,
-    url: supabaseUrl ? 'configured' : 'missing'
   });
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
+export const supabase = supabaseClient;

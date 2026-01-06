@@ -119,9 +119,9 @@ export function Search({ onClose }: SearchProps) {
             </div>
           ) : (
             <div className="divide-y divide-zinc-800">
-              {results.map((result, index) => (
+              {results.map((result) => (
                 <button
-                  key={index}
+                  key={`${result.act}-${result.section}-${result.title}`}
                   onClick={() => {
                     // Scroll to section
                     const sectionId = result.section.toLowerCase().replace(/[^a-z0-9]/g, '-');

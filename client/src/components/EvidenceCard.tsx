@@ -35,8 +35,8 @@ export function EvidenceCard({ title, date, source, findings, outcome }: Evidenc
             <div>
               <h5 className="font-bold text-red-500 mb-3">Key Findings:</h5>
               <ol className="list-decimal list-inside space-y-2 text-zinc-300">
-                {findings.map((finding, index) => (
-                  <li key={index} className="pl-2">
+                {findings.map((finding) => (
+                  <li key={finding} className="pl-2">
                     {finding}
                   </li>
                 ))}

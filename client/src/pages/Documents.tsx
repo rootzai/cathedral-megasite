@@ -299,8 +299,8 @@ export default function Documents() {
                     <span className="text-sm font-normal text-gray-400">({categoryDocs.length})</span>
                   </h2>
                   <div className="grid gap-6">
-                    {categoryDocs.map((doc, index) => (
-                      <DocumentCard key={index} {...doc} />
+                    {categoryDocs.map((doc) => (
+                      <DocumentCard key={doc.title} {...doc} />
                     ))}
                   </div>
                 </section>
