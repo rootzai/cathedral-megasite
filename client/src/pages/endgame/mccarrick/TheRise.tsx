@@ -48,14 +48,14 @@ export default function TheRise() {
             {/* Image 1: The Unholy Trinity */}
             <div className="space-y-2">
               <ImageModal
-                src="/assets/memes/TUT.png"
+                src="/assets/TUT.png"
                 alt="The Unholy Trinity"
                 title="The Unholy Trinity"
                 caption="McCarrick, Reilly, and Tobin: A triumvirate of power that shaped the New Jersey church."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                   <img 
-                    src="/assets/memes/TUT.png" 
+                    src="/assets/TUT.png" 
                     alt="The Unholy Trinity" 
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
@@ -70,14 +70,14 @@ export default function TheRise() {
             {/* Image 2: The Cardinalverse */}
             <div className="space-y-2">
               <ImageModal
-                src="/assets/memes/cardinalverse.png"
+                src="/assets/cardinalverse.png"
                 alt="The Cardinalverse"
                 title="The Cardinalverse"
                 caption="A satirical look at the infinite web of scandals and cover-ups."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                   <img 
-                    src="/assets/memes/cardinalverse.png" 
+                    src="/assets/cardinalverse.png" 
                     alt="The Cardinalverse" 
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
@@ -92,14 +92,14 @@ export default function TheRise() {
             {/* Image 3: Stang of Regents */}
             <div className="space-y-2">
               <ImageModal
-                src="/assets/memes/stangofregents.png"
+                src="/assets/stangofregents.png"
                 alt="The Stang of Regents"
                 title="The Stang of Regents"
                 caption="The Board of Regents knew, enabled, and was complicit."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                   <img 
-                    src="/assets/memes/stangofregents.png" 
+                    src="/assets/stangofregents.png" 
                     alt="The Stang of Regents" 
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
@@ -147,12 +147,12 @@ export default function TheRise() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/mccarrick" asChild>
+          <Link href="/assets/mccarrick" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Home
             </Button>
           </Link>
-          <Link href="/mccarrick/regime" asChild>
+          <Link href="/assets/mccarrick/regime" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Act II: The Regime <span className="ml-2">→</span>
             </Button>

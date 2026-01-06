@@ -15,7 +15,7 @@ export default function SetonHall() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
           <img 
-            src="/assets/memes/Seminaryconfidential.png" 
+            src="/assets/Seminaryconfidential.png" 
             alt="Seminary Confidential Movie Poster" 
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
           />
@@ -27,7 +27,7 @@ export default function SetonHall() {
         </div>
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
           <img 
-            src="/assets/memes/facultyclub.png" 
+            src="/assets/facultyclub.png" 
             alt="Seton Hall Faculty Club Satire" 
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             style={{ animationDelay: '3s' }}
@@ -66,7 +66,7 @@ export default function SetonHall() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/Beachhouseonce.png" 
+              src="/assets/Beachhouseonce.png" 
               alt="Reilly Beach House Admission" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
@@ -78,7 +78,7 @@ export default function SetonHall() {
           </div>
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/Reillybeachhousedark.png" 
+              src="/assets/Reillybeachhousedark.png" 
               alt="Reilly Beach House Dark Satire" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               style={{ animationDelay: '2s' }}
@@ -93,7 +93,7 @@ export default function SetonHall() {
 
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 my-8 group">
           <img 
-            src="/assets/memes/thepredators.png" 
+            src="/assets/thepredators.png" 
             alt="Groom Island Satire" 
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             style={{ animationDuration: '20s' }}

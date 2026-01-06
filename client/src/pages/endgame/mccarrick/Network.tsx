@@ -22,7 +22,7 @@ export default function Network() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/TUT.png" 
+              src="/assets/TUT.png" 
               alt="The Unholy Trinity: McCarrick, Reilly, Tobin" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
@@ -34,7 +34,7 @@ export default function Network() {
           </div>
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/cardinalverse.png" 
+              src="/assets/cardinalverse.png" 
               alt="The Cardinalverse: Infinite Scandals" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               style={{ animationDelay: '2s' }}
@@ -49,7 +49,7 @@ export default function Network() {
 
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 mb-12 group">
           <img 
-            src="/assets/memes/stangofregents.png" 
+            src="/assets/stangofregents.png" 
             alt="Stang of Regents Satire" 
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             style={{ animationDuration: '25s' }}

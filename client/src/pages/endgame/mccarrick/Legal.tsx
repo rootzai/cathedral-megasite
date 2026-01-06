@@ -16,7 +16,7 @@ export default function Legal() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/Reillyrides.png" 
+              src="/assets/Reillyrides.png" 
               alt="Reilly Rides a Stang Satire" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
@@ -28,7 +28,7 @@ export default function Legal() {
           </div>
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
             <img 
-              src="/assets/memes/demandaction.png" 
+              src="/assets/demandaction.png" 
               alt="Demand Action Poster" 
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               style={{ animationDelay: '2s' }}
