@@ -82,8 +82,13 @@ function Router() {
     <Switch>
       <Route path={"/login"} component={Login} />
       
-      {/* Cathedral Routes */}
+      {/* Landing Page - Default after login */}
       <Route path={"/"}>
+        <ProtectedRoute component={LandingPage} />
+      </Route>
+
+      {/* Cathedral Routes */}
+      <Route path={"/cathedral"}>
         <ProtectedRoute component={CathedralHome} />
       </Route>
       <Route path={"/about"}>
@@ -91,9 +96,6 @@ function Router() {
       </Route>
       <Route path={"/documents"}>
         <ProtectedRoute component={Documents} />
-      </Route>
-      <Route path={"/hub"}>
-        <ProtectedRoute component={LandingPage} />
       </Route>
 
       {/* Endgame Routes */}

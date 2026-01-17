@@ -76,7 +76,7 @@ export default function LandingPage() {
 
           {/* The Cathedral */}
           <Hotspot
-            to="/"
+            to="/cathedral"
             title="The Cathedral"
             style={{ top: "29%", left: "6%", width: "18%", height: "5%" }}
           />
@@ -90,7 +90,7 @@ export default function LandingPage() {
 
           {/* The Endgame */}
           <Hotspot
-            to="/endgame/mccarrick"
+            to="/endgame"
             title="The Endgame"
             style={{ top: "29%", right: "6%", width: "18%", height: "5%" }}
           />
