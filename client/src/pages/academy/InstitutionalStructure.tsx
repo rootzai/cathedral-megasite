@@ -1,10 +1,10 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function InstitutionalStructure() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="Institutional Structure" 
         subtitle="The administrative backbone of the global Church: Dioceses, Parishes, and Pastoral Centers."
@@ -68,6 +68,6 @@ export default function InstitutionalStructure() {
           </div>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

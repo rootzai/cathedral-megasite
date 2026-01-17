@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -6,7 +6,7 @@ import { Crown, Network, DollarSign, Building2, Users } from "lucide-react";
 
 export default function CardinalateAndMcCarrick() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader
         title="The Cardinalate & The McCarrick Mechanism"
         subtitle="An analysis of the 'Sovereign Sees' power structure and the fundraising dynasty that bought influence in Rome."
@@ -125,6 +125,6 @@ export default function CardinalateAndMcCarrick() {
           </div>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

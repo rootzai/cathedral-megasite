@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function SacramentalData() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="Sacramental Index" 
         subtitle="Tracking the core engagement metrics of the faithful: Baptisms, Communions, and Confirmations."
@@ -108,6 +108,6 @@ export default function SacramentalData() {
           </div>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

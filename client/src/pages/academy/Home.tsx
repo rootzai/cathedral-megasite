@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +8,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <Layout>
+    <AcademyLayout>
       {/* Hero Section */}
       <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
         <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
@@ -138,6 +138,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </AcademyLayout>
   );
 }

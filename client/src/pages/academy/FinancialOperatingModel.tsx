@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -6,7 +6,7 @@ import { ArrowRight, Building2, Scale, Wallet } from "lucide-react";
 
 export default function FinancialOperatingModel() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="US Financial Operating Model" 
         subtitle="An analysis of the 'Corporation Sole' structure, diocesan asset management, and the bifurcation of Canon and Civil law in financial governance."
@@ -122,6 +122,6 @@ export default function FinancialOperatingModel() {
           </Card>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

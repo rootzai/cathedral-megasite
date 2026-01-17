@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout";
+import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Formation() {
   return (
-    <Layout>
+    <EndgameLayout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="02" 
@@ -62,6 +62,6 @@ export default function Formation() {
           </Link>
         </div>
       </div>
-    </Layout>
+    </EndgameLayout>
   );
 }

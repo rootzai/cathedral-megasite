@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout";
+import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Purge() {
   return (
-    <Layout>
+    <EndgameLayout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="05" 
@@ -199,6 +199,6 @@ export default function Purge() {
             </div>
           </div>
       </div>
-    </Layout>
+    </EndgameLayout>
   );
 }

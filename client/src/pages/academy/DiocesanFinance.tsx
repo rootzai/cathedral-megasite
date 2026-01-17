@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,7 +7,7 @@ import { Building, DollarSign, FileText, TrendingUp } from "lucide-react";
 
 export default function DiocesanFinance() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="US Diocesan Financial Intelligence" 
         subtitle="A forensic analysis of the wealth, real estate holdings, and liquidity of major US Archdioceses."
@@ -188,6 +188,6 @@ export default function DiocesanFinance() {
           </div>
         </TabsContent>
       </Tabs>
-    </Layout>
+    </AcademyLayout>
   );
 }

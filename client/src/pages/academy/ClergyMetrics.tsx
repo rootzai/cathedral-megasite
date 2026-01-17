@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +13,7 @@ export default function ClergyMetrics() {
   ];
 
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="Clergy & Vocations" 
         subtitle="Analysis of the priestly pipeline, from major seminary enrollment to ordination, highlighting regional efficiency variances."
@@ -102,6 +102,6 @@ export default function ClergyMetrics() {
           </Table>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

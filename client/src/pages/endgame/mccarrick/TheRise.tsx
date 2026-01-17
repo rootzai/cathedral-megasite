@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -6,7 +6,7 @@ import ImageModal from "@/components/ImageModal";
 
 export default function TheRise() {
   return (
-    <Layout>
+    <EndgameLayout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="ACT I" 
@@ -159,6 +159,6 @@ export default function TheRise() {
           </Link>
         </div>
       </div>
-    </Layout>
+    </EndgameLayout>
   );
 }

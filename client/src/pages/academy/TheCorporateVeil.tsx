@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -6,7 +6,7 @@ import { Shield, Gavel, Scale, AlertTriangle } from "lucide-react";
 
 export default function TheCorporateVeil() {
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="The Corporate Veil: Bankruptcy as Strategy" 
         subtitle="How the 'Corporation Sole' legal structure allows Archbishops to shield billions in assets while claiming poverty in federal court."
@@ -115,6 +115,6 @@ export default function TheCorporateVeil() {
           </div>
         </div>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }

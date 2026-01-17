@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import AcademyLayout from "@/components/AcademyLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -11,7 +11,7 @@ export default function GlobalGrowth() {
   ];
 
   return (
-    <Layout>
+    <AcademyLayout>
       <SectionHeader 
         title="Global Expansion Analysis" 
         subtitle="A 30-year longitudinal study of Catholic population growth relative to global demographic trends (1995–2023)."
@@ -117,6 +117,6 @@ export default function GlobalGrowth() {
           Source: Pontifical Yearbook, Annuarium Statisticum Ecclesiae, UN Worldometer. Figures are end-of-year estimates.
         </p>
       </div>
-    </Layout>
+    </AcademyLayout>
   );
 }
