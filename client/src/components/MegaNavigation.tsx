@@ -29,7 +29,7 @@ export default function MegaNavigation() {
                 THE CATHEDRAL
               </a>
             </Link>
-            <Link href="/endgame/mccarrick">
+            <Link href="/endgame">
               <a className={navLinkClass('/endgame')}>
                 THE ENDGAME
               </a>
@@ -68,7 +68,7 @@ export default function MegaNavigation() {
               <Link href="/">
                 <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE CATHEDRAL</a>
               </Link>
-              <Link href="/endgame/mccarrick">
+              <Link href="/endgame">
                 <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ENDGAME</a>
               </Link>
               <Link href="/academy">
