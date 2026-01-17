@@ -19,8 +19,16 @@ import McCarrickHome from "./pages/endgame/mccarrick/Home";
 // Endgame - Checchio Pages
 import CheckchioHome from "./pages/endgame/checchio/Home";
 
+// Endgame Portal
+import EndgamePortal from "./pages/endgame/Portal";
+
 // Academy Pages
 import AcademyHome from "./pages/academy/Home";
+import CardinalateAndMcCarrick from "./pages/academy/CardinalateAndMcCarrick";
+import GlobalChurchMetrics from "./pages/academy/GlobalChurchMetrics";
+
+// Landing/Hub Page
+import LandingPage from "./pages/LandingPage";
 
 // Ruling Pages
 import RulingHome from "./pages/ruling/Home";
@@ -84,8 +92,14 @@ function Router() {
       <Route path={"/documents"}>
         <ProtectedRoute component={Documents} />
       </Route>
+      <Route path={"/hub"}>
+        <ProtectedRoute component={LandingPage} />
+      </Route>
 
       {/* Endgame Routes */}
+      <Route path={"/endgame"}>
+        <ProtectedRoute component={EndgamePortal} />
+      </Route>
       <Route path={"/endgame/mccarrick"}>
         <ProtectedRoute component={McCarrickHome} />
       </Route>
@@ -96,6 +110,12 @@ function Router() {
       {/* Academy Routes */}
       <Route path={"/academy"}>
         <ProtectedRoute component={AcademyHome} />
+      </Route>
+      <Route path={"/academy/cardinalate-mccarrick"}>
+        <ProtectedRoute component={CardinalateAndMcCarrick} />
+      </Route>
+      <Route path={"/academy/global-metrics"}>
+        <ProtectedRoute component={GlobalChurchMetrics} />
       </Route>
 
       {/* Ruling Routes */}
