@@ -1,19 +1,17 @@
-import { Streamdown } from 'streamdown';
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
-import { SocialShare } from '@/components/SocialShare';
-import { PerryLawTimeline } from '@/components/PerryLawTimeline';
-import { EvidenceCard } from '@/components/EvidenceCard';
-import { Search } from '@/components/Search';
-import Citation from '@/components/Citation';
+import Navigation from '@/components/Navigation';
 import NetworkDiagram from '@/components/NetworkDiagram';
+import { PerryLawTimeline } from '@/components/PerryLawTimeline';
+import { Search } from '@/components/Search';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Streamdown } from 'streamdown';
 
 // Collapsible Section Component
-function CollapsibleSection({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+function CollapsibleSection({ title, children, defaultOpen = false, id }: { title: string; children: React.ReactNode; defaultOpen?: boolean; id?: string }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  
+
   return (
-    <div className="mb-8 border-l-4 border-red-600 pl-6">
+    <div id={id} className="mb-8 border-l-4 border-red-600 pl-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-red-500 transition-colors w-full text-left"
@@ -28,50 +26,64 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
 
 export default function Home() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
+
+  useEffect(() => {
+    const sections = ["top", "act-viii", "story", "reckoning", "triptych", "action"];
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        if (sectionId === "top") {
+          if (window.scrollY < 200) {
+            setActiveSection("top");
+            return;
+          }
+          continue;
+        }
+
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { top, bottom } = element.getBoundingClientRect();
+          const absoluteTop = top + window.pageYOffset;
+          const absoluteBottom = bottom + window.pageYOffset;
+
+          if (scrollPosition >= absoluteTop && scrollPosition < absoluteBottom) {
+            // Check for triptych to set blank state as requested
+            if (sectionId === "triptych") {
+              setActiveSection("");
+            } else {
+              setActiveSection(sectionId);
+            }
+            return;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen">
-      {isSearchOpen && <Search onClose={() => setIsSearchOpen(false)} />}
-      {/* Breaking News Banner */}
-      <div className="bg-red-600 text-white py-3 px-4 text-center font-bold sticky top-0 z-50 shadow-lg">
-        <div className="container mx-auto">
-          🚨 BREAKING: Judge Orders Release of Hidden Seton Hall Reports — The Vault Opens November 2025
-        </div>
-      </div>
-
-      {/* Header Section */}
-      <header className="bg-gradient-to-b from-gray-900 to-black text-white py-12 border-b-4 border-red-600">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-end items-center gap-4 mb-4">
-            <a href="/documents" className="text-gray-300 hover:text-white transition-colors text-sm font-semibold">Documents</a>
-            <a href="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-semibold">About</a>
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
-            >
-              <SearchIcon className="w-4 h-4" />
-              <span className="text-sm font-semibold">Search</span>
-            </button>
-          </div>
-          <div className="text-center mb-6">
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-3">SPECIAL INVESTIGATION</p>
-            <h1 className="text-7xl font-bold mb-4 tracking-tight">SODOM HALL</h1>
-            <h2 className="text-3xl mb-6 text-gray-300 font-light">The Cathedral of Documents</h2>
-            <p className="text-lg italic text-gray-400 max-w-3xl mx-auto mb-8">
-              How Seton Hall University and NJ's Catholic Political Elite Protected Sexual Predators for Decades
-            </p>
-            <div className="flex justify-center">
-              <SocialShare />
-            </div>
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <div className="bg-red-600 text-white py-2 px-4 text-center font-bold text-sm shadow-lg leading-tight">
+          <div className="container mx-auto">
+            🚨 BREAKING: Judge Orders Release of Hidden Seton Hall Reports — The Vault Opens November 2025
           </div>
         </div>
+        <Navigation activeSection={activeSection} isRelative={true} />
       </header>
+      {isSearchOpen && <Search onClose={() => setIsSearchOpen(false)} />}
+
 
       {/* Main Content */}
       <main className="bg-black text-white">
-        
+
         {/* Hero Section with Millstone */}
-        <section 
+        <section
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/70"
           style={{ backgroundImage: 'url(/assets/millstone/vintage_millstone.jpg)' }}
         >
@@ -98,8 +110,8 @@ Kim Capadona • Donna McMonagle • Lara McKeever and her sisters • TM • Th
         </section>
 
         {/* Act VIII - THE VAULT OPENS (BREAKING NEWS) */}
-        <section 
-          id="act-viii" 
+        <section
+          id="act-viii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/vault/archive_storage.jpg)' }}
         >
@@ -117,7 +129,7 @@ On November 12, 2025, Judge Avion Benjamin ordered the release of two sealed inv
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="Breaking News Coverage" defaultOpen={true}>
+              <CollapsibleSection id="breaking" title="Breaking News Coverage" defaultOpen={true}>
                 <Streamdown>{`
 On November 17, Judge Benjamin's ruling made national headlines. The NY Post and Politico both covered the story:
 
@@ -135,7 +147,7 @@ On November 17, Judge Benjamin's ruling made national headlines. The NY Post and
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Order & Timeline">
+              <CollapsibleSection id="order" title="The Order & Timeline">
                 <Streamdown>{`
 Judge Benjamin's ruling is surgical and devastating. She reviewed 20,500 pages of documents in camera—meaning she personally examined every page that Seton Hall claimed was privileged.
 
@@ -152,7 +164,7 @@ The appeal will fail. The documents will flow. The truth will emerge.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="How the Cover-Up Died">
+              <CollapsibleSection id="died" title="How the Cover-Up Died">
                 <Streamdown>{`
 In her Statement of Reasons, Judge Benjamin systematically demolished every privilege claim:
 
@@ -194,7 +206,7 @@ The appeal will delay by ~30 days. But it will not stop the truth.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="What the Documents Will Reveal" defaultOpen={true}>
+              <CollapsibleSection id="reveal" title="What the Documents Will Reveal" defaultOpen={true}>
                 <Streamdown>{`
 ### The Dirty Dozen
 
@@ -291,7 +303,7 @@ The vault isn't just opening. It's being demolished.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Disinfectant of Sunlight">
+              <CollapsibleSection id="sunlight" title="The Disinfectant of Sunlight">
                 <Streamdown>{`
 Justice Louis Brandeis wrote: "Sunlight is said to be the best of disinfectants."
 
@@ -313,7 +325,7 @@ The vault is opening. The millstone is rising. And nothing can stop it now.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="A Plea to Judge Benjamin: Sanction Tom Scrivo">
+              <CollapsibleSection id="scrivo" title="A Plea to Judge Benjamin: Sanction Tom Scrivo">
                 <Streamdown>{`
 ## The Discovery Abuse Must Be Punished
 
@@ -400,8 +412,8 @@ Justice demands it.
         </section>
 
         {/* Act I - THE VAULT */}
-        <section 
-          id="act-i" 
+        <section
+          id="story"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/symbols/scales_justice_dark.jpg)' }}
         >
@@ -419,7 +431,7 @@ Among the twelve names: **Monsignor Joseph Reilly**, the powerful seminary recto
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="In the Room: The Architects">
+              <CollapsibleSection id="room" title="In the Room: The Architects">
                 <Streamdown>{`
 **Kevin Marino**
 
@@ -492,7 +504,7 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
         <section className="py-16 px-4 bg-gray-900">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-4xl font-bold mb-12 text-center">The Complete Investigation</h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <a href="#act-ii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
                 <h3 className="text-2xl font-bold mb-2 text-red-500">Act II</h3>
@@ -541,8 +553,8 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
         </section>
 
         {/* Act II - THE LABYRINTH */}
-        <section 
-          id="act-ii" 
+        <section
+          id="act-ii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/vatican_archives_shelves.jpg)' }}
         >
@@ -562,7 +574,7 @@ They were not just classmates; they were the foundation of a network built to pr
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="1987: The Ordination & Strategic Placement">
+              <CollapsibleSection id="1987" title="1987: The Ordination & Strategic Placement">
                 <Streamdown>{`
 **Monsignor Joseph Reilly**
 
@@ -576,7 +588,7 @@ Sent to the elite Delbarton School, a Benedictine monastery. Here, he would lear
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title='"Uncle Ted": The McCarrick System'>
+              <CollapsibleSection id="sea-girt" title='"Uncle Ted": The McCarrick System'>
                 <Streamdown>{`
 Before there was a Latham Report, before there was a Gibbons investigation, before Tobin arrived in Newark—there was Theodore McCarrick. The architect. The predator. The man whose pattern of abuse created the template for institutional protection that persists today.
 
@@ -626,7 +638,7 @@ When complaints surfaced, the church deployed the "adult" narrative: "These were
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="Decades of Warnings, Decades of Silence">
+              <CollapsibleSection id="2008" title="Decades of Warnings, Decades of Silence">
                 <Streamdown>{`
 **1990s:** Several anonymous letters alluding to minor abuse received by cardinals and the nunciature in Washington. The Vatican Report (2020) admits these existed but claims they were "regrettably considered to be not credible."
 
@@ -646,7 +658,7 @@ When complaints surfaced, the church deployed the "adult" narrative: "These were
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="2006: The Seton Hall Apartment">
+              <CollapsibleSection id="2006" title="2006: The Seton Hall Apartment">
                 <Streamdown>{`
 Even after the settlements, even after the warnings, McCarrick's institutional protection continued. In 2006, he sought an apartment at Seton Hall University.
 
@@ -682,7 +694,7 @@ Myers' memo was never sent to the Nuncio or the Holy See. The warning stayed bur
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="1994: Reilly's First Cover-Up">
+              <CollapsibleSection id="1994" title="1994: Reilly's First Cover-Up">
                 <Streamdown>{`
 In 1994, just seven years after his ordination, Joseph Reilly was serving McCarrick as **his personal secretary**. An archbishop's secretary is always present. Always aware. Always complicit.
 
@@ -742,8 +754,8 @@ Eight days between the final warning and the reward. Eight days that prove the c
         </section>
 
         {/* Act III - THE CONCEALMENT */}
-        <section 
-          id="act-iii" 
+        <section
+          id="act-iii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/symbols/gavel_scales.png)' }}
         >
@@ -804,7 +816,7 @@ The trap was being prepared. But the trigger wouldn't be pulled until February 2
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Scapegoat (October 2019 - February 2020)">
+              <CollapsibleSection id="2012" title="The Scapegoat (October 2019 - February 2020)">
                 <Streamdown>{`
 **September 2019: The Report Arrives**
 
@@ -888,7 +900,7 @@ The trap was set. The scapegoat was chosen. The cover-up would continue.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Lawyers: Architects of Deceit">
+              <CollapsibleSection id="lawyers" title="The Lawyers: Architects of Deceit">
                 <Streamdown>{`
 The cover-up required a network of lawyers willing to destroy evidence, manipulate records, and silence victims.
 
@@ -932,7 +944,7 @@ The third law firm in six months—the others weren't "pliable" enough.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Perry Law Whitewash">
+              <CollapsibleSection id="perry" title="The Perry Law Whitewash">
                 <Streamdown>{`
 In what may be the most audacious manipulation of the press in this entire saga, Kevin Marino orchestrated a masterclass in gaslighting—getting the New York Times itself to rewrite the narrative in his favor.
 
@@ -1103,7 +1115,7 @@ This is how institutional power works: not by hiding the truth, but by rewriting
                 <PerryLawTimeline />
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Christie Connection: Christie's Legal Network">
+              <CollapsibleSection id="christie" title="The Christie Connection: Christie's Legal Network">
                 <Streamdown>{`
 Among the Regents sat Mary Pat Christie, wife of former New Jersey Governor Chris Christie. Her presence symbolized the deep political protection surrounding Seton Hall's leadership.
 
@@ -1116,9 +1128,9 @@ Chris Christie himself is a central figure in what can only be called **Christie
 The same network that ran New Jersey's government became the architects of Seton Hall's concealment.
 `}
                 </Streamdown>
-                
+
                 <NetworkDiagram />
-                
+
                 <Streamdown>{`
 **Mary Pat Christie: Recruited, Resigned, Regretted**
 
@@ -1152,8 +1164,8 @@ Mary Pat walked away. Chris stayed to defend the indefensible. The Christie name
         </section>
 
         {/* Act IV - THE COURTROOM */}
-        <section 
-          id="act-iv" 
+        <section
+          id="act-iv"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/symbols/scales_justice_light.jpg)' }}
         >
@@ -1171,7 +1183,7 @@ Your pain won't disappear, but perhaps you'll find an errant smile or two when y
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="The Survivors">
+              <CollapsibleSection id="flood" title="The Survivors">
                 <Streamdown>{`
 **Dr. Joseph Nyre**
 
@@ -1207,7 +1219,7 @@ Those who cannot yet speak publicly but who witness this moment with hope. Someo
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="February 2025: The Denial">
+              <CollapsibleSection id="nyre" title="February 2025: The Denial">
                 <Streamdown>{`
 As pressure mounted, the Chairman of the Board of Regents, Hank D'Alessandro, sent a university-wide email. In it, he made a stunning and false claim: Monsignor Reilly had "never been subject to formal review."
 
@@ -1219,7 +1231,7 @@ By sending this email, D'Alessandro may have committed **wire fraud**, using ele
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Judges">
+              <CollapsibleSection id="linares" title="The Judges">
                 <Streamdown>{`
 **Judge Avion Benjamin**
 
@@ -1247,8 +1259,8 @@ Blatant corruption. The judge is compromised by the very lawyer orchestrating th
         </section>
 
         {/* Act V - ROME KNEW */}
-        <section 
-          id="act-v" 
+        <section
+          id="act-v"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_1.jpg)' }}
         >
@@ -1268,7 +1280,7 @@ Joe Nyre, President of Seton Hall University, makes a decision that will change 
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="September 2019: The Letter to Rome">
+              <CollapsibleSection id="rome" title="September 2019: The Letter to Rome">
                 <Streamdown>{`
 With those words, the Vatican receives documentation of:
 
@@ -1281,7 +1293,7 @@ From this moment forward, **Rome cannot claim ignorance.**
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="November 2020: The McCarrick Report">
+              <CollapsibleSection id="vatican" title="November 2020: The McCarrick Report">
                 <Streamdown>{`
 Fourteen months after receiving the Latham Report, the Vatican releases its own investigation into Cardinal Theodore McCarrick's decades of abuse and cover-up.
 
@@ -1301,7 +1313,7 @@ But the McCarrick Report is silent on one crucial detail: sources familiar with 
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="Bishop James Checchio: The Reward System">
+              <CollapsibleSection id="reward" title="Bishop James Checchio: The Reward System">
                 <Streamdown>{`
 **Bishop James Checchio**
 
@@ -1341,7 +1353,7 @@ This is not a church. **This is a patronage network.**
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="The Papal Succession of Complicity">
+              <CollapsibleSection id="popes" title="The Papal Succession of Complicity">
                 <Streamdown>{`
 Four popes. Thirty years. One unbroken chain of institutional protection.
 
@@ -1377,8 +1389,8 @@ The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates i
         </section>
 
         {/* Act VI - THE WITCH OF EN-DOR */}
-        <section 
-          id="act-vi" 
+        <section
+          id="act-vi"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/saul/saul_witch_endor_1.jpg)' }}
         >
@@ -1402,7 +1414,7 @@ A king who refused to face the truth. A prophet who spoke it anyway. A sword tha
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="The Modern Seer of Truth">
+              <CollapsibleSection id="lara" title="The Modern Seer of Truth">
                 <Streamdown>{`
 Lara is not a witch. She is a **seer of truth**. A modern prophet who sees through the lies, the cover-ups, the institutional gaslighting. A survivor who refuses to be silenced. And when Cardinal Tobin comes to her — desperate, defensive, seeking absolution — she speaks the truth he cannot escape.
 
@@ -1467,7 +1479,7 @@ But the millstone is rising.
               </CollapsibleSection>
 
               <div className="mt-12 text-center">
-                <img src="/Saulonsword.png" alt="Saul on his sword" className="w-full max-w-xl mx-auto rounded-lg shadow-2xl border-4 border-red-600" />
+                <img src="/assets/memes/Saulonsword.png" alt="Saul on his sword" className="w-full max-w-xl mx-auto rounded-lg shadow-2xl border-4 border-red-600" />
                 <p className="text-sm text-gray-400 mt-4 italic">Saul on His Sword</p>
               </div>
             </div>
@@ -1475,8 +1487,8 @@ But the millstone is rising.
         </section>
 
         {/* Act VII - THE SUCCESSION */}
-        <section 
-          id="act-vii" 
+        <section
+          id="reckoning"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_2.jpg)' }}
         >
@@ -1496,7 +1508,7 @@ The question becomes: who inherits the scandal?
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="Three Possible Futures">
+              <CollapsibleSection id="futures" title="Three Possible Futures">
                 <Streamdown>{`
 **Scenario 1: Resignation Accepted**
 
@@ -1518,7 +1530,7 @@ This is the sword. This is Saul's fate. This is accountability enforced.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="Who Could Succeed Tobin?">
+              <CollapsibleSection id="successor" title="Who Could Succeed Tobin?">
                 <Streamdown>{`
 **Bishop Elias Lorenzo**
 
@@ -1551,7 +1563,7 @@ Would Rome choose reform over continuity?
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="What Hangs in the Balance">
+              <CollapsibleSection id="balance" title="What Hangs in the Balance">
                 <Streamdown>{`
 **For Survivors**
 
@@ -1585,19 +1597,19 @@ The millstone is rising. The answer is coming.
         </section>
 
         {/* Social Sharing Section */}
-        <section id="share" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+        <section id="action" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
           <div className="container mx-auto max-w-7xl">
             <h2 className="text-5xl font-bold mb-4 text-center">Share the Truth</h2>
             <p className="text-xl text-gray-400 text-center mb-12">Download and share these images. The truth deserves to go viral.</p>
-            
+
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* The Unholy Trinity */}
-              <div className="text-center group">
+              <div id="triptych" className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Unholy.png" alt="The Unholy Trinity" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Unholy.png" alt="The Unholy Trinity" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">The Unholy Trinity</h3>
-                <a href="/Unholy.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Unholy.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1605,10 +1617,10 @@ The millstone is rising. The answer is coming.
               {/* Bless Me Father */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Blessmefather.png" alt="Bless Me Father" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Blessmefather.png" alt="Bless Me Father" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Bless Me Father</h3>
-                <a href="/Blessmefather.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Blessmefather.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1616,10 +1628,10 @@ The millstone is rising. The answer is coming.
               {/* Better Call Scrivo */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/BetterScrivocall.png" alt="Better Call Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/BetterScrivocall.png" alt="Better Call Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Better Call Scrivo</h3>
-                <a href="/BetterScrivocall.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/BetterScrivocall.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1627,19 +1639,19 @@ The millstone is rising. The answer is coming.
               {/* Most Likely */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Mostlikely.png" alt="Most Likely" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Mostlikely.png" alt="Most Likely" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Most Likely</h3>
-                <a href="/Mostlikely.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Mostlikely.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>            {/* Hall of Shame */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/HallofShame.png" alt="Hall of Shame" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/HallofShame.png" alt="Hall of Shame" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Hall of Shame</h3>
-                <a href="/HallofShame.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/HallofShame.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1647,10 +1659,10 @@ The millstone is rising. The answer is coming.
               {/* Pyramid Scheme */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/pyramidscheme.png" alt="Pyramid Scheme" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/pyramidscheme.png" alt="Pyramid Scheme" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Pyramid Scheme</h3>
-                <a href="/pyramidscheme.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/pyramidscheme.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1658,10 +1670,10 @@ The millstone is rising. The answer is coming.
               {/* Goddamn Right */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/goddamnright.png" alt="Goddamn Right" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/goddamnright.png" alt="Goddamn Right" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Goddamn Right</h3>
-                <a href="/goddamnright.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/goddamnright.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1669,10 +1681,10 @@ The millstone is rising. The answer is coming.
               {/* Devil Likes Your Work */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Devillikesyourwork.png" alt="Devil Likes Your Work" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Devillikesyourwork.png" alt="Devil Likes Your Work" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Devil Likes Your Work</h3>
-                <a href="/Devillikesyourwork.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Devillikesyourwork.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1680,10 +1692,10 @@ The millstone is rising. The answer is coming.
               {/* Let Us Pray */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/letuspray.png" alt="Let Us Pray" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/letuspray.png" alt="Let Us Pray" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Let Us Pray</h3>
-                <a href="/letuspray.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/letuspray.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1691,10 +1703,10 @@ The millstone is rising. The answer is coming.
               {/* Who Speaks Scrivo */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/who_speaks_scrivo.png" alt="Who Speaks for Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/who_speaks_scrivo.png" alt="Who Speaks for Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Who Speaks for Scrivo</h3>
-                <a href="/who_speaks_scrivo.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/who_speaks_scrivo.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1702,10 +1714,10 @@ The millstone is rising. The answer is coming.
               {/* In Practice */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/inpractice.png" alt="In Practice" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/inpractice.png" alt="In Practice" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">In Practice</h3>
-                <a href="/inpractice.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/inpractice.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1713,10 +1725,10 @@ The millstone is rising. The answer is coming.
               {/* Canon Law 404 */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/canonlaw404.png" alt="Canon Law 404" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/canonlaw404.png" alt="Canon Law 404" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Canon Law 404</h3>
-                <a href="/canonlaw404.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/canonlaw404.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1724,10 +1736,10 @@ The millstone is rising. The answer is coming.
               {/* Beach House Once */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Beachhouseonce.png" alt="Beach House Once" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Beachhouseonce.png" alt="Beach House Once" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Beach House Once</h3>
-                <a href="/Beachhouseonce.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Beachhouseonce.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1735,10 +1747,10 @@ The millstone is rising. The answer is coming.
               {/* Bridge Closing */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Bridgeclosing.png" alt="Bridge Closing" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Bridgeclosing.png" alt="Bridge Closing" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Bridge Closing</h3>
-                <a href="/Bridgeclosing.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Bridgeclosing.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1746,10 +1758,10 @@ The millstone is rising. The answer is coming.
               {/* Degree in Denial */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/degreeindenial.png" alt="Degree in Denial" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/degreeindenial.png" alt="Degree in Denial" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Degree in Denial</h3>
-                <a href="/degreeindenial.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/degreeindenial.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1757,10 +1769,10 @@ The millstone is rising. The answer is coming.
               {/* Incense and Holy Water */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Incenseandholywater.png" alt="Incense and Holy Water" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Incenseandholywater.png" alt="Incense and Holy Water" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Incense & Holy Water</h3>
-                <a href="/Incenseandholywater.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Incenseandholywater.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1768,10 +1780,10 @@ The millstone is rising. The answer is coming.
               {/* Truth Latham Report */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/truth_latham_report.png" alt="Truth Latham Report" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/truth_latham_report.png" alt="Truth Latham Report" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Truth: Latham Report</h3>
-                <a href="/truth_latham_report.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/truth_latham_report.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1779,21 +1791,20 @@ The millstone is rising. The answer is coming.
               {/* Smoking Gun */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/smoking-gun-clean.png" alt="Smoking Gun" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/smoking-gun-clean.png" alt="Smoking Gun" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Smoking Gun</h3>
-                <a href="/smoking-gun-clean.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/smoking-gun-clean.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
 
-              {/* Saul on Sword */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/Saulonsword.png" alt="Saul on Sword" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/Saulonsword.png" alt="Saul on Sword" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Saul on Sword</h3>
-                <a href="/Saulonsword.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/Saulonsword.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1801,10 +1812,10 @@ The millstone is rising. The answer is coming.
               {/* McCarrick with JPII */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/mccarrick_with_jpii.png" alt="McCarrick with Pope John Paul II" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/mccarrick_with_jpii.png" alt="McCarrick with Pope John Paul II" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">McCarrick with JPII</h3>
-                <a href="/mccarrick_with_jpii.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/mccarrick_with_jpii.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1812,10 +1823,10 @@ The millstone is rising. The answer is coming.
               {/* JPII with Cardinals */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/jpii_with_cardinals.png" alt="Pope John Paul II with Cardinals" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/jpii_with_cardinals.png" alt="Pope John Paul II with Cardinals" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">JPII with Cardinals</h3>
-                <a href="/jpii_with_cardinals.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/jpii_with_cardinals.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1823,10 +1834,10 @@ The millstone is rising. The answer is coming.
               {/* Pope Francis with Religious Leaders */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/pope_francis_religious_leaders.png" alt="Pope Francis with Religious Leaders" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/pope_francis_religious_leaders.png" alt="Pope Francis with Religious Leaders" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Pope Francis</h3>
-                <a href="/pope_francis_religious_leaders.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/pope_francis_religious_leaders.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1834,10 +1845,10 @@ The millstone is rising. The answer is coming.
               {/* Pope JPII at Giants Stadium */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/pope_jpii_giants_stadium.png" alt="Pope John Paul II at Giants Stadium" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <img src="/assets/memes/pope_jpii_giants_stadium.png" alt="Pope John Paul II at Giants Stadium" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">JPII at Giants Stadium</h3>
-                <a href="/pope_jpii_giants_stadium.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/memes/pope_jpii_giants_stadium.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>
@@ -1872,7 +1883,7 @@ The millstone is rising. The answer is coming.
         </section>
 
         {/* Epilogue */}
-        <section 
+        <section
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/millstone/ancient_millstone.jpg)' }}
         >

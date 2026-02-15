@@ -1,32 +1,12 @@
-import { Link } from "wouter";
-import { APP_TITLE } from "@/const";
-import { Shield, Lock, Mail, AlertCircle } from "lucide-react";
+import Navigation from "@/components/Navigation";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
+import { AlertCircle, Lock, Mail, Shield } from "lucide-react";
+import { Link } from "wouter";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/">
-            <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
-              {APP_TITLE}
-            </a>
-          </Link>
-          <nav className="flex gap-6">
-            <Link href="/">
-              <a className="text-gray-300 hover:text-white transition-colors">Home</a>
-            </Link>
-            <Link href="/documents">
-              <a className="text-gray-300 hover:text-white transition-colors">Documents</a>
-            </Link>
-            <Link href="/about">
-              <a className="text-white font-bold">About</a>
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Content */}
       <main className="container mx-auto px-4 py-16 max-w-4xl">
@@ -98,9 +78,9 @@ export default function About() {
             <p className="mb-6">
               We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct. Your submission can be anonymous.
             </p>
-            
+
             <TipSubmissionForm />
-            
+
             <div className="mt-8 p-6 bg-gray-800/50 border border-gray-700 rounded-lg">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-green-500" />

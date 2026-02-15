@@ -1,7 +1,7 @@
+import Navigation from "@/components/Navigation";
+import { Download, ExternalLink, FileText, Search as SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
-import { APP_TITLE } from "@/const";
-import { ExternalLink, FileText, Download, Search as SearchIcon } from "lucide-react";
 
 interface DocumentProps {
   title: string;
@@ -181,43 +181,22 @@ export default function Documents() {
 
   // Filter documents based on search and category
   const filteredDocuments = documents.filter(doc => {
-    const matchesSearch = searchQuery === '' || 
+    const matchesSearch = searchQuery === '' ||
       doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.source.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
-    
+
     return matchesSearch && matchesCategory;
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/">
-            <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
-              {APP_TITLE}
-            </a>
-          </Link>
-          <nav className="flex gap-6">
-            <Link href="/">
-              <a className="text-gray-300 hover:text-white transition-colors">Home</a>
-            </Link>
-            <Link href="/documents">
-              <a className="text-white font-bold">Documents</a>
-            </Link>
-            <Link href="/about">
-              <a className="text-gray-300 hover:text-white transition-colors">About</a>
-            </Link>
-          </nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-black text-white">
+      <Navigation />
 
-      {/* Content */}
       <main className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto pt-8">
           <div className="mb-12">
             <h1 className="text-5xl font-bold mb-4 text-red-600">Source Documents</h1>
             <p className="text-xl text-gray-300">
@@ -227,7 +206,6 @@ export default function Documents() {
 
           {/* Search and Filter */}
           <div className="mb-12">
-            {/* Search Bar */}
             <div className="relative mb-6">
               <SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
@@ -239,15 +217,13 @@ export default function Documents() {
               />
             </div>
 
-            {/* Category Filter Buttons */}
             <div className="flex flex-wrap gap-3 mb-4">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  activeCategory === 'all'
-                    ? 'bg-red-600 text-white'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                }`}
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === 'all'
+                  ? 'bg-red-600 text-white'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
               >
                 All Documents ({documents.length})
               </button>
@@ -257,11 +233,10 @@ export default function Documents() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                      activeCategory === cat
-                        ? 'bg-red-600 text-white'
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                    }`}
+                    className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === cat
+                      ? 'bg-red-600 text-white'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      }`}
                   >
                     {cat} ({count})
                   </button>
@@ -269,7 +244,6 @@ export default function Documents() {
               })}
             </div>
 
-            {/* Results Count */}
             <div className="text-gray-400">
               Showing {filteredDocuments.length} of {documents.length} documents
             </div>
