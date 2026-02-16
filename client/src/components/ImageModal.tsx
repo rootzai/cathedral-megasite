@@ -1,7 +1,6 @@
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
-import { ZoomIn } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { ZoomIn } from "lucide-react";
 
 interface ImageModalProps {
   src: string;
@@ -15,9 +14,9 @@ export function ImageModal({ src, alt, className, caption }: ImageModalProps) {
     <Dialog>
       <DialogTrigger asChild>
         <div className={cn("relative group cursor-zoom-in overflow-hidden rounded-lg border border-border/50", className)}>
-          <img 
-            src={src} 
-            alt={alt} 
+          <img
+            src={src}
+            alt={alt}
             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -31,13 +30,11 @@ export function ImageModal({ src, alt, className, caption }: ImageModalProps) {
         </div>
       </DialogTrigger>
       <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none overflow-hidden flex flex-col items-center justify-center">
-        <VisuallyHidden>
-          <DialogTitle>{alt}</DialogTitle>
-        </VisuallyHidden>
+        <DialogTitle className="sr-only">{alt}</DialogTitle>
         <div className="relative w-auto h-auto max-w-full max-h-[90vh]">
-          <img 
-            src={src} 
-            alt={alt} 
+          <img
+            src={src}
+            alt={alt}
             className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl border border-border/20"
           />
           {caption && (
