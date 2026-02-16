@@ -47,3 +47,5 @@ export function ImageModal({ src, alt, className, caption }: ImageModalProps) {
     </Dialog>
   );
 }
+
+export default ImageModal;
