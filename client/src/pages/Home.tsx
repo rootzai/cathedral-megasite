@@ -1,143 +1,94 @@
 import Layout from "@/components/Layout";
-import SectionHeader from "@/components/SectionHeader";
-import KeyMetricCard from "@/components/KeyMetricCard";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
-        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
-        <img 
-          src="/images/hero-vatican-finance.png" 
-          alt="Vatican Finance" 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute bottom-0 left-0 z-30 p-8 md:p-12 max-w-3xl">
-          <div className="inline-block px-3 py-1 mb-4 bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest">
-            Executive Report 2025
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
-            The Cathedral Capital Report
-          </h1>
-          <p className="text-lg text-white/90 font-light max-w-xl leading-relaxed">
-            A comprehensive analysis of the Catholic Church's institutional growth, demographic shifts, and 30-year strategic outlook.
-          </p>
-        </div>
-      </div>
-
-      {/* Executive Summary */}
-      <section className="mb-16">
-        <SectionHeader 
-          title="Executive Summary" 
-          subtitle="Despite secularization narratives in the West, the Catholic Church demonstrates robust global expansion driven by the Global South, outpacing world population growth over the last 30 years."
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <KeyMetricCard 
-            title="Global Catholics" 
-            value="1.405B" 
-            change="+36.8%" 
-            trend="up" 
-            description="Steady growth outpacing world population since 1995. Africa and Asia are primary drivers."
-            highlight={true}
-          />
-          <KeyMetricCard 
-            title="World Share" 
-            value="17.8%" 
-            change="-0.1 pts" 
-            trend="neutral" 
-            description="Remarkably stable market share of global population over three decades (17-18%)."
-          />
-          <KeyMetricCard 
-            title="Bishops" 
-            value="5,430" 
-            change="+20.7%" 
-            trend="up" 
-            description="Institutional leadership has expanded significantly, particularly in emerging markets."
-          />
-          <KeyMetricCard 
-            title="Seminarian Retention" 
-            value="~75%" 
-            change="High" 
-            trend="up" 
-            description="Global ordination conversion rate remains strong at 70-75%, with US hitting 50-year highs."
-          />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h3 className="text-xl font-serif font-bold text-primary mb-4 flex items-center">
-                <span className="w-8 h-[1px] bg-accent mr-3"></span>
-                Strategic Outlook: The 30-Year View
-              </h3>
-              <div className="prose prose-slate max-w-none text-muted-foreground">
-                <p className="mb-4">
-                  The data reveals a decisive shift in the center of gravity for the Catholic Church. While European metrics show stagnation or decline, the "Global South" strategy has yielded substantial dividends. The 36.8% growth in the total Catholic population from 1995 to 2023 closely tracks the 37.8% growth in world population, indicating a resilient brand retention despite external pressures.
-                </p>
-                <p>
-                  Key operational metrics such as the number of Bishops (+20.7%) suggest a strengthening of the administrative backbone, essential for managing a decentralized global institution of 1.4 billion members.
-                </p>
-              </div>
-            </div>
-
-            <Card className="bg-muted/30 border-none">
-              <CardContent className="p-6">
-                <h4 className="font-bold text-primary mb-2 uppercase tracking-wider text-sm">Analyst Note</h4>
-                <p className="text-sm text-muted-foreground italic">
-                  "Of every 100 men currently listed as 'major seminarians' worldwide, roughly 72–75 will be ordained priests; in the U.S. that number is now 83–85 — the highest in half a century." — <span className="not-italic font-medium">Vatican Central Office of Church Statistics</span>
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
+      <div className="max-w-4xl mx-auto space-y-24 animate-in fade-in duration-1000">
+        {/* Hero Section */}
+        <section className="text-center space-y-12 pt-12 pb-24 border-b border-zinc-800/30">
           <div className="space-y-6">
-            <div className="bg-primary text-primary-foreground p-6 rounded-sm">
-              <h3 className="font-serif font-bold text-xl mb-4 text-accent">Key Drivers</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">01</span>
-                  <span className="text-sm opacity-90">Demographic dividend in Sub-Saharan Africa driving baptismal numbers.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">02</span>
-                  <span className="text-sm opacity-90">Stabilization of clergy numbers through efficient redistribution.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">03</span>
-                  <span className="text-sm opacity-90">High retention rates in priestly formation programs (Seminaries).</span>
-                </li>
-              </ul>
+            <div className="inline-flex items-center gap-4">
+              <span className="h-px w-8 bg-destructive/50"></span>
+              <p className="text-destructive font-mono text-[10px] uppercase tracking-[0.4em] font-bold">Special Investigation 2025</p>
+              <span className="h-px w-8 bg-destructive/50"></span>
             </div>
-            
-            <div className="border border-border p-6 rounded-sm">
-              <h3 className="font-serif font-bold text-lg mb-4">Report Sections</h3>
-              <nav className="space-y-3">
-                <Link href="/global-growth" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Global Expansion Data
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
-                </Link>
-                <Separator />
-                <Link href="/clergy-metrics" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Clergy & Vocations Analysis
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
-                </Link>
-                <Separator />
-                <Link href="/sacramental-data" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Sacramental Index
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
-                </Link>
-              </nav>
+            <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-white leading-none">SODOM HALL</h1>
+            <h2 className="text-xl md:text-2xl font-serif italic text-zinc-500 tracking-wide">The Cathedral of Documents</h2>
+          </div>
+
+          <div className="max-w-xl mx-auto">
+            <blockquote className="border-l-2 border-destructive/30 pl-8 py-4 italic text-2xl text-zinc-400 text-left leading-relaxed relative">
+              <span className="absolute -left-2 top-0 text-6xl text-destructive/10 font-serif">"</span>
+              It were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones.
+              <footer className="text-zinc-600 text-[10px] mt-6 font-mono uppercase tracking-[0.2em]">— Luke 17:2</footer>
+            </blockquote>
+          </div>
+
+          <div className="pt-12">
+            <Link href="/ruling">
+              <Button size="lg" className="bg-destructive hover:bg-white hover:text-black text-white font-mono text-[10px] uppercase tracking-[0.3em] px-16 py-8 rounded-none border border-white/5 transition-all duration-500 group relative overflow-hidden">
+                <span className="relative z-10 transition-colors duration-500">The Vault Opens</span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              </Button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Narrative Section */}
+        <section className="max-w-2xl mx-auto space-y-12 text-zinc-400 font-serif text-lg leading-loose text-justify">
+          <p className="first-letter:text-7xl first-letter:font-black first-letter:text-white first-letter:mr-4 first-letter:float-left first-letter:font-serif">
+            In the Gospel of Matthew, Christ warns those who would harm children: better to have a millstone tied around your neck and be cast into the sea.
+          </p>
+          <p>
+            For decades, a different kind of stone has been sinking — not into water, but into the institutional memory of the Roman Catholic Church and New Jersey's political establishment.
+          </p>
+          <p>
+            This is the story of that stone, and the men who tried to hold it underwater.
+          </p>
+
+          <div className="pt-12 space-y-6">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600 border-b border-zinc-900 pb-4">Dedicated to the victims</p>
+            <div className="grid grid-cols-2 gap-4 font-mono text-[11px] uppercase tracking-widest text-zinc-500">
+              <div className="hover:text-destructive transition-colors cursor-default">Kim Capadona</div>
+              <div className="hover:text-destructive transition-colors cursor-default">Donna McMonagle</div>
+              <div className="hover:text-destructive transition-colors cursor-default">The SHU Seminarians</div>
+              <div className="hover:text-destructive transition-colors cursor-default">Delbarton Students</div>
+              <div className="hover:text-destructive transition-colors cursor-default">The 450 Plaintiffs</div>
+              <div className="hover:text-destructive transition-colors cursor-default">The Truth</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Action Grid */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-900 border border-zinc-900">
+          <Link href="/ruling">
+            <a className="bg-black p-16 space-y-6 group hover:bg-zinc-950 transition-all duration-700 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-destructive scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-destructive font-bold">Document Archive</p>
+              <h3 className="text-4xl font-bold text-white tracking-tighter transition-transform duration-700 group-hover:translate-x-2">The Ruling →</h3>
+              <p className="text-zinc-500 text-sm font-serif leading-relaxed">
+                Judge Benjamin has ordered the release of 20,500 pages. Explore the legal victory that broke the silence.
+              </p>
+            </a>
+          </Link>
+          <Link href="/endgame/mccarrick">
+            <a className="bg-black p-16 space-y-6 group hover:bg-zinc-950 transition-all duration-700 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-destructive scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-destructive font-bold">Institutional Map</p>
+              <h3 className="text-4xl font-bold text-white tracking-tighter transition-transform duration-700 group-hover:translate-x-2">The Network →</h3>
+              <p className="text-zinc-500 text-sm font-serif leading-relaxed">
+                From the Beach House to the Vatican. Trace the connections that protected Theodore McCarrick for decades.
+              </p>
+            </a>
+          </Link>
+        </section>
+
+        <section className="text-center pt-12 pb-24">
+          <p className="font-mono text-[9px] uppercase tracking-[0.5em] text-zinc-700">Truth Still Emerging</p>
+        </section>
+      </div>
     </Layout>
   );
 }

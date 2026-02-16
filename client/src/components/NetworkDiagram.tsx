@@ -37,7 +37,7 @@ export default function NetworkDiagram() {
     { id: "lasala", name: "Joe Lasala", role: "Regent", group: "board", dualRole: "Regent during scandal, complicit in electing Reilly" },
     { id: "murray", name: "Don Murray", role: "Regent", group: "board", dualRole: "Regent during scandal, complicit in electing Reilly" },
     { id: "mccarrick", name: "Theodore McCarrick", role: "Archbishop (deceased, defrocked)", group: "board", dualRole: "Former RCAN" },
-    
+
     // Law Firms (standardized format: attorney name, firm name, represented SHU)
     { id: "porrino", name: "Chris Porrino", firm: "Lowenstein Sandler", role: "Marino's personal counsel", group: "law", christieConnection: true, representedSHU: false },
     { id: "scrivo", name: "Tom Scrivo", firm: "O'Toole Scrivo", role: "Represented SHU", group: "law", christieConnection: true, representedSHU: true },
@@ -51,7 +51,7 @@ export default function NetworkDiagram() {
     { id: "archer", name: "Patrick Papalia", firm: "Archer & Greiner", role: "Represented SHU", group: "law", representedSHU: true },
     { id: "mcomber", name: "Armen McOmber", firm: "McOmber & McOmber", role: "Represents Victims", group: "law", representedSHU: false, representsVictims: true },
     { id: "baldante", name: "John Baldante", firm: "Baldante Rubinstein", role: "Represents Victims", group: "law", representedSHU: false, representsVictims: true },
-    
+
     // Victims
     { id: "capadona", name: "Kim Capadona", role: "General Counsel (victim)", group: "victims" },
     { id: "mcmonagle", name: "Donna McMonagle", role: "CFO (victim)", group: "victims" },
@@ -69,7 +69,7 @@ export default function NetworkDiagram() {
     { from: "marino", to: "scrivo", label: "hired O'Toole Scrivo for SHU defense" },
     { from: "porrino", to: "scrivo", label: "Christie administration colleagues" },
     { from: "pat-christie", to: "marino", label: "Board colleagues" },
-    
+
     // Board-Law Firm Connections
     { from: "marino", to: "nyre", label: "harassed/bullied" },
     { from: "marino", to: "linares", label: "leaked report to Judge Linares" },
@@ -79,20 +79,20 @@ export default function NetworkDiagram() {
     { from: "marino", to: "archer", label: "hired Archer & Greiner for defense" },
     { from: "marino", to: "carella", label: "hired Carella Byrne for defense" },
     { from: "marino", to: "mcomber", label: "hired McOmber & McOmber for defense" },
-    
+
     // Law Firm Network
     { from: "scrivo", to: "linares", label: "document concealment coordination" },
     { from: "stio", to: "masherelli", label: "logbook erasure coordination" },
     { from: "masherelli", to: "flood", label: "erasure → resignation" },
     { from: "agnifilo", to: "porrino", label: "Perry Law coordination" },
     { from: "gibbons", to: "tobin", label: "investigated Tobin's cooperation" },
-    
+
     // RCAN Network (dual roles)
     { from: "tobin", to: "reilly", label: "protected from consequences" },
     { from: "tobin", to: "lorenzo", label: "recommended to Pope for elevation" },
     { from: "reilly", to: "lorenzo", label: "seminary colleagues since 1987" },
     { from: "reilly", to: "nyre", label: "replaced as President" },
-    
+
     // Harassment Victims
     { from: "marino", to: "capadona", label: "sexually harassed" },
     { from: "marino", to: "mcmonagle", label: "sexually harassed" },
@@ -107,7 +107,6 @@ export default function NetworkDiagram() {
 
   const groupLabels = {
     board: "Seton Hall Board & RCAN",
-    law: "Law Firms",
     victims: "Harassment Victims",
   };
 
@@ -125,7 +124,7 @@ export default function NetworkDiagram() {
   return (
     <div className="my-12 p-8 bg-gray-900/50 border-2 border-gray-700 rounded-lg">
       <h3 className="text-2xl font-bold mb-6 text-center">The Network: Key Players & Connections</h3>
-      
+
       {/* Legend */}
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {(Object.keys(groupLabels) as Array<keyof typeof groupLabels>).map((group) => (
@@ -141,99 +140,99 @@ export default function NetworkDiagram() {
       </div>
 
       {/* Network Visualization */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {(Object.keys(groupLabels) as Array<keyof typeof groupLabels>).map((group) => {
-          const groupNodes = nodes.filter((n) => n.group === group);
-          return (
-            <div key={group} className="space-y-3">
-              <h4 className={`text-sm font-bold text-center ${groupColors[group].text}`}>
-                {groupLabels[group]}
-              </h4>
-              {groupNodes.map((node) => {
-                const isHovered = hoveredNode === node.id;
-                const isConnected = hoveredNode && connections.some(
-                  (c) => (c.from === hoveredNode && c.to === node.id) || (c.to === hoveredNode && c.from === node.id)
-                );
-                
-                const nodeConnections = connections.filter(
-                  (c) => c.from === node.id || c.to === node.id
-                );
-                
-                return (
-                  <div
-                    key={node.id}
-                    className={`
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {(Object.keys(groupLabels) as Array<keyof typeof groupLabels>)
+          .filter(group => group !== 'law')
+          .map((group) => {
+            const groupNodes = nodes.filter((n) => n.group === group);
+            return (
+              <div key={group} className="space-y-4">
+                <h4 className={`text-lg font-bold text-center uppercase tracking-widest ${groupColors[group].text}`}>
+                  {groupLabels[group]}
+                </h4>
+                {groupNodes.map((node) => {
+                  const isHovered = hoveredNode === node.id;
+                  const isConnected = hoveredNode && connections.some(
+                    (c) => (c.from === hoveredNode && c.to === node.id) || (c.to === hoveredNode && c.from === node.id)
+                  );
+
+                  const nodeConnections = connections.filter(
+                    (c) => c.from === node.id || c.to === node.id
+                  );
+
+                  return (
+                    <div
+                      key={node.id}
+                      className={`
                       ${groupColors[group].bg} ${groupColors[group].border}
                       border-2 rounded-lg p-3 transition-all cursor-pointer relative
                       ${isHovered ? "ring-4 ring-white scale-105 shadow-xl" : ""}
                       ${isConnected ? "ring-2 ring-gray-400" : ""}
                       ${node.section ? "hover:scale-105 hover:shadow-lg" : ""}
                     `}
-                    onMouseEnter={() => setHoveredNode(node.id)}
-                    onMouseLeave={() => setHoveredNode(null)}
-                    onClick={() => handleNodeClick(node)}
-                  >
-                    {node.christieConnection && (
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold" title="Christie Connection">
-                        C
-                      </div>
-                    )}
-                    
-                    {/* Lawyer tiles: show firm name prominently, then attorney name */}
-                    {node.firm ? (
-                      <>
-                        <div className={`font-bold text-sm ${
-                          node.representsVictims ? "text-green-300" : "text-yellow-200"
-                        }`}>{node.firm}</div>
-                        <div className="text-xs text-gray-300 mt-1">{node.name}</div>
-                        <div className="text-xs text-gray-400 mt-1">{node.role}</div>
-                        {node.representedSHU === false && !node.representsVictims && (
-                          <div className="text-xs text-orange-400 mt-1 italic">Personal counsel (not SHU)</div>
-                        )}
-                      </>
-                    ) : (
-                      <>
-                        <div className="font-bold text-sm">{node.name}</div>
-                        <div className="text-xs text-gray-400 mt-1">{node.role}</div>
-                        {node.dualRole && (
-                          <div className="text-xs text-purple-400 mt-1 italic">{node.dualRole}</div>
-                        )}
-                      </>
-                    )}
-                    
-                    {node.section && (
-                      <div className="text-xs text-blue-400 mt-1">→ View Profile</div>
-                    )}
-                    
-                    {/* Inline tooltip showing connections on hover */}
-                    {isHovered && nodeConnections.length > 0 && (
-                      <div className={`absolute top-0 z-50 w-64 bg-gray-900 border-2 border-gray-600 rounded-lg p-3 shadow-2xl ${
-                        group === "victims" ? "right-full mr-4" : "left-full ml-4"
-                      }`}>
-                        <div className="font-bold text-sm mb-2 text-white">Connections:</div>
-                        <div className="space-y-1 max-h-48 overflow-y-auto">
-                          {nodeConnections.map((conn) => {
-                            const otherNodeId = conn.from === node.id ? conn.to : conn.from;
-                            const otherNode = nodes.find((n) => n.id === otherNodeId);
-                            const direction = conn.from === node.id ? "→" : "←";
-                            
-                            return (
-                              <div key={getConnectionKey(conn)} className="text-xs">
-                                <span className="text-gray-400">{direction}</span>{" "}
-                                <span className="font-bold text-gray-200">{otherNode?.name}</span>
-                                <div className="text-gray-400 ml-3">{conn.label}</div>
-                              </div>
-                            );
-                          })}
+                      onMouseEnter={() => setHoveredNode(node.id)}
+                      onMouseLeave={() => setHoveredNode(null)}
+                      onClick={() => handleNodeClick(node)}
+                    >
+                      {node.christieConnection && (
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold" title="Christie Connection">
+                          C
                         </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+                      )}
+
+                      {/* Lawyer tiles: show firm name prominently, then attorney name */}
+                      {node.firm ? (
+                        <>
+                          <div className={`font-bold text-sm ${node.representsVictims ? "text-green-300" : "text-yellow-200"
+                            }`}>{node.firm}</div>
+                          <div className="text-xs text-gray-300 mt-1">{node.name}</div>
+                          <div className="text-xs text-gray-400 mt-1">{node.role}</div>
+                          {node.representedSHU === false && !node.representsVictims && (
+                            <div className="text-xs text-orange-400 mt-1 italic">Personal counsel (not SHU)</div>
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          <div className="font-bold text-sm">{node.name}</div>
+                          <div className="text-xs text-gray-400 mt-1">{node.role}</div>
+                          {node.dualRole && (
+                            <div className="text-xs text-purple-400 mt-1 italic">{node.dualRole}</div>
+                          )}
+                        </>
+                      )}
+
+                      {node.section && (
+                        <div className="text-xs text-blue-400 mt-1">→ View Profile</div>
+                      )}
+
+                      {/* Inline tooltip showing connections on hover */}
+                      {isHovered && nodeConnections.length > 0 && (
+                        <div className={`absolute top-0 z-50 w-64 bg-gray-900 border-2 border-gray-600 rounded-lg p-3 shadow-2xl ${group === "victims" ? "right-full mr-4" : "left-full ml-4"
+                          }`}>
+                          <div className="font-bold text-sm mb-2 text-white">Connections:</div>
+                          <div className="space-y-1 max-h-48 overflow-y-auto">
+                            {nodeConnections.map((conn) => {
+                              const otherNodeId = conn.from === node.id ? conn.to : conn.from;
+                              const otherNode = nodes.find((n) => n.id === otherNodeId);
+                              const direction = conn.from === node.id ? "→" : "←";
+
+                              return (
+                                <div key={getConnectionKey(conn)} className="text-xs">
+                                  <span className="text-gray-400">{direction}</span>{" "}
+                                  <span className="font-bold text-gray-200">{otherNode?.name}</span>
+                                  <div className="text-gray-400 ml-3">{conn.label}</div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
       </div>
 
 
