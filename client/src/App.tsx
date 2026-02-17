@@ -41,7 +41,17 @@ import ChecchioPurge from "./pages/endgame/checchio/Purge";
 import ChecchioStatus from "./pages/endgame/checchio/Status";
 
 // Academy Pages
+import ClergyMetrics from "./pages/academy/ClergyMetrics";
+import DiocesanFinance from "./pages/academy/DiocesanFinance";
+import FinancialOperatingModel from "./pages/academy/FinancialOperatingModel";
+import GlobalGrowth from "./pages/academy/GlobalGrowth";
 import AcademyHome from "./pages/academy/Home";
+import InstitutionalStructure from "./pages/academy/InstitutionalStructure";
+import McCarrickMechanism from "./pages/academy/McCarrickMechanism";
+import SacramentalData from "./pages/academy/SacramentalData";
+import StakeholderAnalysis from "./pages/academy/StakeholderAnalysis";
+import TheCardinalate from "./pages/academy/TheCardinalate";
+import TheCorporateVeilAcademy from "./pages/academy/TheCorporateVeil";
 
 // Ruling Pages
 import RulingAnalysis from "./pages/ruling/Analysis";
@@ -195,6 +205,36 @@ function Router() {
       {/* Academy Routes */}
       <Route path={"/academy"}>
         <ProtectedRoute component={AcademyHome} />
+      </Route>
+      <Route path={"/academy/global-growth"}>
+        <ProtectedRoute component={GlobalGrowth} />
+      </Route>
+      <Route path={"/academy/clergy-metrics"}>
+        <ProtectedRoute component={ClergyMetrics} />
+      </Route>
+      <Route path={"/academy/sacramental-data"}>
+        <ProtectedRoute component={SacramentalData} />
+      </Route>
+      <Route path={"/academy/financial-operating-model"}>
+        <ProtectedRoute component={FinancialOperatingModel} />
+      </Route>
+      <Route path={"/academy/diocesan-finance"}>
+        <ProtectedRoute component={DiocesanFinance} />
+      </Route>
+      <Route path={"/academy/institutional-structure"}>
+        <ProtectedRoute component={InstitutionalStructure} />
+      </Route>
+      <Route path={"/academy/cardinalate-mccarrick"}>
+        <ProtectedRoute component={TheCardinalate} />
+      </Route>
+      <Route path={"/academy/the-corporate-veil"}>
+        <ProtectedRoute component={TheCorporateVeilAcademy} />
+      </Route>
+      <Route path={"/academy/stakeholder-analysis"}>
+        <ProtectedRoute component={StakeholderAnalysis} />
+      </Route>
+      <Route path={"/academy/mccarrick-mechanism"}>
+        <ProtectedRoute component={McCarrickMechanism} />
       </Route>
 
       {/* Ruling Routes */}

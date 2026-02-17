@@ -41,13 +41,13 @@ export default function MegaNavigation() {
   );
 
   const academyItems = [
-    { href: "/financial-operating-model", label: "Financial Model", icon: Wallet },
-    { href: "/diocesan-finance", label: "Diocesan Intel", icon: DollarSign },
-    { href: "/institutional-structure", label: "Structure", icon: Landmark },
-    { href: "/cardinalate-mccarrick", label: "The Cardinalate", icon: Crown },
-    { href: "/the-corporate-veil", label: "Corporate Veil", icon: Shield },
-    { href: "/stakeholder-analysis", label: "Stakeholders", icon: Scale },
-    { href: "/global-church-metrics", label: "Global Metrics", icon: Globe },
+    { href: "/academy/financial-operating-model", label: "Financial Model", icon: Wallet },
+    { href: "/academy/diocesan-finance", label: "Diocesan Intel", icon: DollarSign },
+    { href: "/academy/institutional-structure", label: "Structure", icon: Landmark },
+    { href: "/academy/cardinalate-mccarrick", label: "The Cardinalate", icon: Crown },
+    { href: "/academy/the-corporate-veil", label: "Corporate Veil", icon: Shield },
+    { href: "/academy/stakeholder-analysis", label: "Stakeholders", icon: Scale },
+    { href: "/academy/global-church-metrics", label: "Global Metrics", icon: Globe },
   ];
 
   return (

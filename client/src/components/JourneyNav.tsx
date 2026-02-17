@@ -1,20 +1,19 @@
-import { Link, useLocation } from "wouter";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Link, useLocation } from "wouter";
 import { ShareButton } from "./ShareButton";
 
 const ROUTES = [
-  { path: "/", label: "The Ruling" },
-  { path: "/dirty-dozen", label: "The Dirty Dozen" },
-  { path: "/reilly", label: "The Face of Impunity" },
-  { path: "/beach-house", label: "The Beach House" },
-  { path: "/tobin-hypocrisy", label: "Tobin's Hypocrisy" },
-  { path: "/corporate-veil", label: "The Corporate Veil" },
-  { path: "/timeline", label: "Timeline of Erasure" },
-  { path: "/evidence", label: "Evidence Repository" },
-  { path: "/analysis", label: "Analysis" },
-  { path: "/sheeran-mccarrick", label: "The Nexus" },
-  { path: "/sanction-plea", label: "Sanction Plea" },
+  { path: "/ruling", label: "The Ruling" },
+  { path: "/ruling/dirty-dozen", label: "The Dirty Dozen" },
+  { path: "/ruling/reilly", label: "The Face of Impunity" },
+  { path: "/ruling/beach-house", label: "The Beach House" },
+  { path: "/ruling/tobin-hypocrisy", label: "Tobin's Hypocrisy" },
+  { path: "/ruling/corporate-veil", label: "The Corporate Veil" },
+  { path: "/ruling/timeline", label: "Timeline of Erasure" },
+  { path: "/ruling/evidence", label: "Evidence Repository" },
+  { path: "/ruling/analysis", label: "Analysis" },
+  { path: "/ruling/sheeran-mccarrick", label: "The Nexus" },
+  { path: "/ruling/sanction-plea", label: "Sanction Plea" },
 ];
 
 export function JourneyNav() {
@@ -29,7 +28,7 @@ export function JourneyNav() {
   return (
     <div className="border-t border-border mt-16 py-8">
       <div className="flex justify-center mb-8">
-        <ShareButton 
+        <ShareButton
           title={`The Benjamin Ruling: ${ROUTES[currentIndex].label}`}
           text={`Read about ${ROUTES[currentIndex].label} in the Benjamin Ruling investigation.`}
         />
