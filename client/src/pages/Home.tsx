@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -12,51 +11,6 @@ export default function Home() {
             className="w-full h-full object-contain pointer-events-none"
           />
 
-          {/* Hotspots */}
-
-          {/* The Cathedral - Top Left */}
-          <Link href="/about">
-            <a
-              className="absolute hotspot bg-white/0 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20"
-              style={{ top: '29%', left: '6%', width: '18%', height: '5%' }}
-              title="The Cathedral"
-            />
-          </Link>
-
-          {/* The Ruling - Bottom Left */}
-          <Link href="/ruling">
-            <a
-              className="absolute hotspot bg-white/0 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20"
-              style={{ top: '35%', left: '9%', width: '15%', height: '5%' }}
-              title="The Ruling"
-            />
-          </Link>
-
-          {/* The Endgame - Top Right */}
-          <Link href="/endgame/mccarrick">
-            <a
-              className="absolute hotspot bg-white/0 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20"
-              style={{ top: '30%', right: '6%', width: '18%', height: '5%' }}
-              title="The Endgame"
-            />
-          </Link>
-
-          {/* The Academy - Bottom Right */}
-          <Link href="/academy">
-            <a
-              className="absolute hotspot bg-white/0 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20"
-              style={{ top: '36%', right: '9%', width: '15%', height: '5%' }}
-              title="The Academy"
-            />
-          </Link>
-
-          {/* Branding Overlay */}
-          <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none">
-            <div className="space-y-1">
-              <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white/90 drop-shadow-2xl">SODOM HALL</h1>
-              <h2 className="text-sm md:text-base font-mono uppercase tracking-[0.5em] text-zinc-400">The Cathedral of Documents</h2>
-            </div>
-          </div>
         </div>
       </div>
 

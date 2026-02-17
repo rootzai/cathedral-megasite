@@ -26,7 +26,7 @@ export default function MegaNavigation() {
   }, []);
 
   const isActive = (path: string) => {
-    if (path === '/' && location === '/') return true;
+    if (path === '/' && location === '/') return false; // Don't light up the cathedral on home/landing page
     if (path !== '/' && location.startsWith(path)) return true;
     return false;
   };
