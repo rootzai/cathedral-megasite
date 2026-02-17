@@ -1,16 +1,32 @@
 import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
-  ChevronDown,
-  Crown,
-  DollarSign,
-  Globe,
-  Landmark,
-  Scale,
-  Shield,
-  Wallet
+  Menu,
+  X
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'wouter';
+
+const NAV_ITEMS = [
+  { path: "/", label: "The Cathedral" },
+  { path: "/academy", label: "The Academy" },
+  { path: "/endgame/mccarrick", label: "The Endgame" },
+  { path: "/ruling", label: "The Ruling" },
+];
+
+const ACADEMY_ROUTES = [
+  { path: "/academy", label: "Overview" },
+  { path: "/academy/global-growth", label: "Global Growth" },
+  { path: "/academy/clergy-metrics", label: "Clergy Metrics" },
+  { path: "/academy/sacramental-data", label: "Sacramental Data" },
+  { path: "/academy/financial-operating-model", label: "Financial Model" },
+  { path: "/academy/diocesan-finance", label: "Diocesan Finance" },
+  { path: "/academy/institutional-structure", label: "Structure" },
+  { path: "/academy/stakeholder-analysis", label: "Stakeholders" },
+  { path: "/academy/mccarrick-mechanism", label: "The Mechanism" },
+  { path: "/academy/cardinalate-mccarrick", label: "The Cardinalate" },
+  { path: "/academy/the-corporate-veil", label: "Corporate Veil" },
+];
 
 export default function MegaNavigation() {
   const [location] = useLocation();
@@ -26,9 +42,13 @@ export default function MegaNavigation() {
   }, []);
 
   const isActive = (path: string) => {
-    if (path === '/' && location === '/') return false; // Don't light up the cathedral on home/landing page
+    if (path === '/' && location === '/') return false;
     if (path !== '/' && location.startsWith(path)) return true;
     return false;
+  };
+
+  const isSubActive = (path: string) => {
+    return location === path;
   };
 
   const isHome = location === '/';
@@ -40,24 +60,28 @@ export default function MegaNavigation() {
       : "text-zinc-400 hover:text-white hover:bg-zinc-800/30"
   );
 
-  const academyItems = [
-    { href: "/academy/financial-operating-model", label: "Financial Model", icon: Wallet },
-    { href: "/academy/diocesan-finance", label: "Diocesan Intel", icon: DollarSign },
-    { href: "/academy/institutional-structure", label: "Structure", icon: Landmark },
-    { href: "/academy/cardinalate-mccarrick", label: "The Cardinalate", icon: Crown },
-    { href: "/academy/the-corporate-veil", label: "Corporate Veil", icon: Shield },
-    { href: "/academy/stakeholder-analysis", label: "Stakeholders", icon: Scale },
-    { href: "/academy/global-church-metrics", label: "Global Metrics", icon: Globe },
-  ];
+  const mobileLinkClass = (path: string) => cn(
+    "block px-6 py-4 text-xs font-bold uppercase tracking-widest transition-colors",
+    isActive(path)
+      ? "text-white bg-zinc-800"
+      : "text-zinc-400 hover:text-white hover:bg-zinc-800"
+  );
+
+  const mobileSubLinkClass = (path: string) => cn(
+    "flex items-center gap-3 py-3 text-[10px] uppercase font-bold tracking-widest transition-colors",
+    isSubActive(path)
+      ? "text-white"
+      : "text-zinc-500 hover:text-zinc-300"
+  );
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-      isScrolled || !isHome ? "bg-black/90 backdrop-blur-md border-b border-zinc-800" : "bg-transparent"
+      "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
+      isScrolled ? "bg-black/90 backdrop-blur-md border-b border-zinc-800/50 py-3" : "bg-transparent py-6"
     )}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between">
+          {/* Logo / Home Link */}
           <Link href="/">
             <a className="flex items-center gap-3 group">
               <div className={cn(
@@ -80,93 +104,84 @@ export default function MegaNavigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            <Link href="/">
-              <a className={navLinkClass('/')}>The Cathedral</a>
-            </Link>
+          <div className="hidden lg:flex items-center gap-2">
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.path} href={item.path}>
+                <a className={navLinkClass(item.path)}>
+                  {item.label}
+                </a>
+              </Link>
+            ))}
+          </div>
 
-            <div className="group relative">
-              <button className={cn(navLinkClass('/academy'), "flex items-center gap-1")}>
-                The Academy <ChevronDown className="w-3 h-3 opacity-50 group-hover:rotate-180 transition-transform" />
-              </button>
-              <div className="absolute top-full right-0 w-64 bg-zinc-950 border border-zinc-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 pt-2">
-                <div className="grid grid-cols-1 p-2">
-                  {academyItems.map((item) => (
-                    <Link key={item.href} href={item.href}>
-                      <a className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-900 transition-colors text-zinc-400 hover:text-white text-[10px] uppercase font-bold tracking-widest">
-                        <item.icon className="w-4 h-4 text-zinc-600" />
-                        {item.label}
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-white p-2 hover:bg-zinc-800 transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 right-0 bg-black border-b border-zinc-800 overflow-hidden lg:hidden"
+          >
+            <div className="flex flex-col divide-y divide-zinc-900/50">
+              <Link href="/">
+                <a className={mobileLinkClass('/')} onClick={() => setMobileMenuOpen(false)}>The Cathedral</a>
+              </Link>
+
+              {/* Academy with Sub-routes */}
+              <div className="bg-zinc-900/20">
+                <Link href="/academy">
+                  <a className={mobileLinkClass('/academy')} onClick={() => setMobileMenuOpen(false)}>The Academy</a>
+                </Link>
+                <div className="pl-6 pb-4 space-y-1">
+                  {ACADEMY_ROUTES.slice(1).map((route) => (
+                    <Link key={route.path} href={route.path}>
+                      <a className={mobileSubLinkClass(route.path)} onClick={() => setMobileMenuOpen(false)}>
+                        <div className={cn(
+                          "w-1 h-1 rounded-full transition-colors",
+                          isSubActive(route.path) ? "bg-white" : "bg-zinc-800"
+                        )} />
+                        {route.label}
                       </a>
                     </Link>
                   ))}
                 </div>
               </div>
-            </div>
 
-            <Link href="/endgame/mccarrick">
-              <a className={navLinkClass('/endgame')}>The Endgame</a>
-            </Link>
-            <Link href="/ruling">
-              <a className={navLinkClass('/ruling')}>The Ruling</a>
-            </Link>
-          </div>
+              <Link href="/endgame/mccarrick">
+                <a className={mobileLinkClass('/endgame/mccarrick')} onClick={() => setMobileMenuOpen(false)}>The Endgame</a>
+              </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-white p-2 hover:bg-zinc-800 transition-colors"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
+              <Link href="/ruling">
+                <a className={mobileLinkClass('/ruling')} onClick={() => setMobileMenuOpen(false)}>The Ruling</a>
+              </Link>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden pb-10 space-y-2 animate-in slide-in-from-top-4 duration-300">
-            <Link href="/">
-              <a className="block px-6 py-4 text-white hover:bg-zinc-800 text-xs font-bold uppercase tracking-widest" onClick={() => setMobileMenuOpen(false)}>The Cathedral</a>
-            </Link>
-            <Separator className="bg-zinc-800 mx-6 opacity-50" />
-            <div className="px-6 py-2">
-              <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-4 font-bold">The Academy Report</p>
-              <div className="grid grid-cols-1 gap-1">
-                {academyItems.map((item) => (
-                  <Link key={item.href} href={item.href}>
-                    <a className="flex items-center gap-3 py-3 text-zinc-400 hover:text-white text-[10px] uppercase font-bold tracking-widest" onClick={() => setMobileMenuOpen(false)}>
-                      <item.icon className="w-4 h-4" />
-                      {item.label}
-                    </a>
-                  </Link>
-                ))}
+              <div className="p-6 bg-zinc-900/40">
+                <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-[0.3em] mb-4">Current Investigation</p>
+                <div className="flex items-center gap-4 text-white">
+                  <div className="w-8 h-8 rounded-full bg-red-900/20 flex items-center justify-center border border-red-500/20">
+                    <span className="text-red-500 font-bold text-xs">12</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest">The Dirty Dozen</p>
+                    <p className="text-[10px] text-zinc-500 uppercase tracking-tighter">Judge Avion Benjamin Ruling</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <Separator className="bg-zinc-800 mx-6 opacity-50" />
-            <Link href="/endgame/mccarrick">
-              <a className="block px-6 py-4 text-white hover:bg-zinc-800 text-xs font-bold uppercase tracking-widest" onClick={() => setMobileMenuOpen(false)}>The Endgame</a>
-            </Link>
-            <Link href="/ruling">
-              <a className="block px-6 py-4 text-white hover:bg-zinc-800 text-xs font-bold uppercase tracking-widest" onClick={() => setMobileMenuOpen(false)}>The Ruling</a>
-            </Link>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </nav>
-  );
-}
-
-function Separator({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      className={cn("shrink-0 bg-border h-[1px] w-full", className)}
-      {...props}
-    />
   );
 }
