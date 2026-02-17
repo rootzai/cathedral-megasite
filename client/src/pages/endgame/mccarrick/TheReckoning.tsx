@@ -1,16 +1,16 @@
+import ImageModal from "@/components/ImageModal";
 import Layout from "@/components/Layout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
 
 export default function TheReckoning() {
   return (
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="ACT III" 
-          title="The Reckoning" 
+        <SectionHeader
+          number="ACT III"
+          title="The Reckoning"
           subtitle="Exposure, Downfall, and the Path Forward"
         />
 
@@ -69,9 +69,9 @@ export default function TheReckoning() {
                 caption="Survivors and advocates demanding justice in Baltimore, MD."
               >
                 <div className="w-full h-full relative overflow-hidden group cursor-zoom-in">
-                  <img 
-                    src="/assets/images/survivors_protest.jpg" 
-                    alt="Survivors Protest" 
+                  <img
+                    src="/assets/images/survivors_protest.jpg"
+                    alt="Survivors Protest"
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
@@ -97,23 +97,23 @@ export default function TheReckoning() {
             </div>
             <div className="bg-card border border-border p-6">
               <div className="aspect-[3/2] bg-muted relative overflow-hidden mb-4 border border-border">
-                 <ImageModal
-                    src="/assets/images/vatican_exterior.jpg"
-                    alt="The Vatican"
-                    title="The Vatican"
-                    caption="St. Peter's Basilica, Vatican City."
-                  >
-                    <div className="w-full h-full relative overflow-hidden group cursor-zoom-in">
-                      <img 
-                        src="/assets/images/vatican_exterior.jpg" 
-                        alt="The Vatican" 
-                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                        <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
-                      </div>
+                <ImageModal
+                  src="/assets/images/vatican_exterior.jpg"
+                  alt="The Vatican"
+                  title="The Vatican"
+                  caption="St. Peter's Basilica, Vatican City."
+                >
+                  <div className="w-full h-full relative overflow-hidden group cursor-zoom-in">
+                    <img
+                      src="/assets/images/vatican_exterior.jpg"
+                      alt="The Vatican"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                      <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
                     </div>
-                  </ImageModal>
+                  </div>
+                </ImageModal>
               </div>
               <div className="font-mono text-xs text-center text-muted-foreground">
                 VATICAN CITY
@@ -131,7 +131,7 @@ export default function TheReckoning() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/mccarrick/regime" asChild>
+          <Link href="/endgame/mccarrick/regime" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Act II: The Regime
             </Button>

@@ -7,9 +7,9 @@ export default function Profile() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="03" 
-          title="Profile: McCarrick" 
+        <SectionHeader
+          number="03"
+          title="Profile: McCarrick"
           subtitle="Rise in the Church: From Priesthood to Cardinalate"
         />
 
@@ -75,7 +75,7 @@ export default function Profile() {
                 As a Cardinal, McCarrick traveled extensively, often acting as an unofficial diplomat for the Vatican in sensitive regions like China and the Middle East. His ability to raise vast sums of money for the Church and his apparent orthodoxy made him a favorite of the Vatican hierarchy, shielding him from scrutiny despite swirling rumors.
               </p>
             </section>
-            
+
             <div className="bg-muted p-8 border border-border mt-8">
               <h4 className="font-display font-bold text-xl mb-4">The "Uncle Ted" Persona</h4>
               <p className="italic text-muted-foreground">
@@ -86,12 +86,12 @@ export default function Profile() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/background" asChild>
+          <Link href="/endgame/mccarrick/background" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/network" asChild>
+          <Link href="/endgame/mccarrick/network" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 04 <span className="ml-2">→</span>
             </Button>

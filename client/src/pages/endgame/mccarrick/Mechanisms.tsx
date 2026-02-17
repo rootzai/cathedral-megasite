@@ -7,9 +7,9 @@ export default function Mechanisms() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="06" 
-          title="Mechanisms of Abuse" 
+        <SectionHeader
+          number="06"
+          title="Mechanisms of Abuse"
           subtitle="Enabling Abuse and Institutional Protection"
         />
 
@@ -50,12 +50,12 @@ export default function Mechanisms() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/warnings" asChild>
+          <Link href="/endgame/mccarrick/warnings" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/downfall" asChild>
+          <Link href="/endgame/mccarrick/downfall" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 07 <span className="ml-2">→</span>
             </Button>

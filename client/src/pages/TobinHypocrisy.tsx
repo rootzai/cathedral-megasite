@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
+import { ImageModal } from "@/components/ImageModal";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Quote, AlertCircle } from "lucide-react";
-import { ImageModal } from "@/components/ImageModal";
+import { AlertCircle, Quote } from "lucide-react";
 
 export default function TobinHypocrisy() {
   return (
@@ -23,9 +23,9 @@ export default function TobinHypocrisy() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 space-y-8">
-            <ImageModal 
-              src="/images/tobin-silence.png" 
-              alt="Cardinal's hat on an empty chair" 
+            <ImageModal
+              src="/images/tobin-silence.png"
+              alt="Cardinal's hat on an empty chair"
               className="aspect-video mb-8 grayscale hover:grayscale-0"
               caption="The Empty Chair: A Symbol of Non-Compliance"
             />
@@ -33,15 +33,15 @@ export default function TobinHypocrisy() {
             <p className="font-body text-xl leading-relaxed text-foreground/90">
               The Gibbons Report, delivered contemporaneously with the Latham Report in August 2019, contains a revelation that strikes at the very heart of the Archdiocese's credibility. In the report's "priest by priest overview" section, it is explicitly revealed that Cardinal Joseph Tobin himself did not participate with the Latham attorneys.
             </p>
-            
+
             <p className="font-body text-lg leading-relaxed text-foreground/80">
               This fact is devastating not just for its irony, but for its blatant hypocrisy. It was Cardinal Tobin who commissioned the investigation. It was Cardinal Tobin who mandated cooperation. And it was Cardinal Tobin who threatened "automatic and summary removal" for any cleric who refused to appear before the investigators.
             </p>
 
             <div className="my-8">
-              <ImageModal 
-                src="/images/x-men-dichotomy.png" 
-                alt="Cardinal Tobin vs Board of Regents" 
+              <ImageModal
+                src="/images/tobin-memory-wipe.png"
+                alt="Cardinal Tobin vs Board of Regents"
                 className="aspect-video w-full shadow-xl border-destructive/20"
                 caption="The Dichotomy: 'You will not remember any investigations...'"
               />
@@ -68,7 +68,7 @@ export default function TobinHypocrisy() {
                     <AlertCircle className="w-3 h-3" /> Analysis
                   </h3>
                 </div>
-                
+
                 <div className="p-6 space-y-8">
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-3">The Double Standard</h3>

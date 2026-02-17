@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
-import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
+import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
@@ -8,9 +8,9 @@ export default function Warnings() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="05" 
-          title="Warnings & Cover-ups" 
+        <SectionHeader
+          number="05"
+          title="Warnings & Cover-ups"
           subtitle="Early Warnings, Allegations, and Patterns of Concealment"
         />
 
@@ -71,12 +71,12 @@ export default function Warnings() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/network" asChild>
+          <Link href="/endgame/mccarrick/network" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/mechanisms" asChild>
+          <Link href="/endgame/mccarrick/mechanisms" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 06 <span className="ml-2">→</span>
             </Button>

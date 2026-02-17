@@ -7,9 +7,9 @@ export default function Conclusion() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="12" 
-          title="Conclusion" 
+        <SectionHeader
+          number="12"
+          title="Conclusion"
           subtitle="Toward Transparency and Accountability"
         />
 
@@ -51,12 +51,12 @@ export default function Conclusion() {
         </div>
 
         <div className="flex justify-start mt-12 pt-8 border-t border-border">
-          <Link href="/analysis" asChild>
+          <Link href="/endgame/mccarrick/analysis" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/" asChild>
+          <Link href="/endgame/mccarrick" asChild>
             <Button variant="ghost" className="ml-auto font-mono uppercase tracking-widest hover:bg-transparent hover:text-destructive transition-colors">
               Return to Start
             </Button>

@@ -1,16 +1,16 @@
+import ImageModal from "@/components/ImageModal";
 import Layout from "@/components/Layout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
 
 export default function TheRise() {
   return (
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="ACT I" 
-          title="The Rise" 
+        <SectionHeader
+          number="ACT I"
+          title="The Rise"
           subtitle="From Priesthood to Power: The Making of a Predator"
         />
 
@@ -44,7 +44,7 @@ export default function TheRise() {
         <div className="border-t border-border pt-12">
           <h3 className="font-display font-bold text-3xl mb-8 uppercase">The Network of Influence</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
+
             {/* Image 1: The Unholy Trinity */}
             <div className="space-y-2">
               <ImageModal
@@ -54,9 +54,9 @@ export default function TheRise() {
                 caption="McCarrick, Reilly, and Tobin: A triumvirate of power that shaped the New Jersey church."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
-                  <img 
-                    src="/assets/memes/TUT.png" 
-                    alt="The Unholy Trinity" 
+                  <img
+                    src="/assets/memes/TUT.png"
+                    alt="The Unholy Trinity"
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -76,9 +76,9 @@ export default function TheRise() {
                 caption="A satirical look at the infinite web of scandals and cover-ups."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
-                  <img 
-                    src="/assets/memes/cardinalverse.png" 
-                    alt="The Cardinalverse" 
+                  <img
+                    src="/assets/memes/cardinalverse.png"
+                    alt="The Cardinalverse"
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -98,9 +98,9 @@ export default function TheRise() {
                 caption="The Board of Regents knew, enabled, and was complicit."
               >
                 <div className="aspect-video bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
-                  <img 
-                    src="/assets/memes/stangofregents.png" 
-                    alt="The Stang of Regents" 
+                  <img
+                    src="/assets/memes/stangofregents.png"
+                    alt="The Stang of Regents"
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -126,33 +126,33 @@ export default function TheRise() {
             </p>
           </div>
           <div className="relative h-full min-h-[300px] bg-muted border border-border p-1">
-             <ImageModal
-                src="/assets/images/grooming_legacy.png"
-                alt="Grooming Legacy"
-                title="The Method: Power & Predation"
-                caption="A visual representation of the grooming tactics used to exploit power dynamics."
-              >
-                <div className="w-full h-full relative overflow-hidden group cursor-zoom-in">
-                  <img 
-                    src="/assets/images/grooming_legacy.png" 
-                    alt="Grooming Legacy" 
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 opacity-80 hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                    <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
-                  </div>
+            <ImageModal
+              src="/assets/images/grooming_legacy.png"
+              alt="Grooming Legacy"
+              title="The Method: Power & Predation"
+              caption="A visual representation of the grooming tactics used to exploit power dynamics."
+            >
+              <div className="w-full h-full relative overflow-hidden group cursor-zoom-in">
+                <img
+                  src="/assets/images/grooming_legacy.png"
+                  alt="Grooming Legacy"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 opacity-80 hover:opacity-100"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                  <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
                 </div>
-              </ImageModal>
+              </div>
+            </ImageModal>
           </div>
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/mccarrick" asChild>
+          <Link href="/endgame/mccarrick" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Home
             </Button>
           </Link>
-          <Link href="/mccarrick/regime" asChild>
+          <Link href="/endgame/mccarrick/regime" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Act II: The Regime <span className="ml-2">→</span>
             </Button>

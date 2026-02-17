@@ -7,9 +7,9 @@ export default function Responses() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="10" 
-          title="Institutional Response" 
+        <SectionHeader
+          number="10"
+          title="Institutional Response"
           subtitle="Reforms, Reports, and the Path Forward"
         />
 
@@ -55,9 +55,9 @@ export default function Responses() {
 
             <div className="border border-border p-4 bg-card">
               <div className="aspect-[3/2] bg-muted relative overflow-hidden mb-4 grayscale contrast-125">
-                <img 
-                  src="/assets/images/vatican_exterior.jpg" 
-                  alt="Vatican" 
+                <img
+                  src="/assets/images/vatican_exterior.jpg"
+                  alt="Vatican"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -69,12 +69,12 @@ export default function Responses() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/survivors" asChild>
+          <Link href="/endgame/mccarrick/survivors" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/analysis" asChild>
+          <Link href="/endgame/mccarrick/analysis" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 11 <span className="ml-2">→</span>
             </Button>

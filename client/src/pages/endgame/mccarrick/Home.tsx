@@ -1,16 +1,16 @@
+import ImageModal from "@/components/ImageModal";
 import Layout from "@/components/Layout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
 
 export default function Home() {
   return (
     <Layout>
       <div className="space-y-8">
-        <SectionHeader 
-          number="01" 
-          title="Introduction" 
+        <SectionHeader
+          number="01"
+          title="Introduction"
           subtitle="Theodore McCarrick and the U.S. Catholic Church Sexual Abuse Crisis"
         />
 
@@ -20,7 +20,7 @@ export default function Home() {
               <span className="font-bold first-letter:text-5xl first-letter:font-display first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">T</span>
               he Catholic Church in the United States has been engulfed in a decades-long sexual abuse crisis, with thousands of victims and systematic cover-ups coming to light since the early 2000s. Among the most startling revelations was the case of former Cardinal Theodore Edgar McCarrick, a highly influential churchman whose misconduct spanned decades.
             </p>
-            
+
             <p>
               McCarrick’s fall from grace – from a globe-trotting power-broker to a defrocked cleric facing multiple allegations – has become a central case study in how abuse was enabled and concealed within the church hierarchy.
             </p>
@@ -39,16 +39,16 @@ export default function Home() {
 
           <div className="lg:col-span-4 space-y-6">
             <div className="border border-border p-4 bg-card">
-              <ImageModal 
-                src="/assets/images/mccarrick_portrait.jpg" 
+              <ImageModal
+                src="/assets/images/mccarrick_portrait.jpg"
                 alt="Theodore McCarrick"
                 title="Theodore McCarrick"
                 caption="Former Cardinal and Archbishop of Washington, D.C., laicized in 2019."
               >
                 <div className="aspect-[3/4] bg-muted relative overflow-hidden mb-4 grayscale contrast-125 cursor-zoom-in group">
-                  <img 
-                    src="/assets/images/mccarrick_portrait.jpg" 
-                    alt="Theodore McCarrick" 
+                  <img
+                    src="/assets/images/mccarrick_portrait.jpg"
+                    alt="Theodore McCarrick"
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-destructive/10 mix-blend-multiply pointer-events-none" />
@@ -94,7 +94,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-end mt-12">
-          <Link href="/background" asChild>
+          <Link href="/endgame/mccarrick/background" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 02 <span className="ml-2">→</span>
             </Button>

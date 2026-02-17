@@ -1,17 +1,17 @@
+import ImageModal from "@/components/ImageModal";
 import Layout from "@/components/Layout";
-import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
+import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
 
 export default function TheRegime() {
   return (
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="ACT II" 
-          title="The Regime" 
+        <SectionHeader
+          number="ACT II"
+          title="The Regime"
           subtitle="Warnings, Cover-ups, and the Mechanisms of Abuse"
         />
 
@@ -63,9 +63,9 @@ export default function TheRegime() {
                     caption="The wild ride of cover-ups and complicity."
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
-                      <img 
-                        src="/assets/memes/Reillyrides.png" 
-                        alt="Reilly Rides a Stang" 
+                      <img
+                        src="/assets/memes/Reillyrides.png"
+                        alt="Reilly Rides a Stang"
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -82,9 +82,9 @@ export default function TheRegime() {
                     caption="Tobin conspired to cover up Reilly's crimes!"
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
-                      <img 
-                        src="/assets/memes/demandaction.png" 
-                        alt="Demand Action" 
+                      <img
+                        src="/assets/memes/demandaction.png"
+                        alt="Demand Action"
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -133,11 +133,11 @@ export default function TheRegime() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card border border-border p-1">
               <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
-                <iframe 
+                <iframe
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/8uPSR4ysAaw" 
+                  src="https://www.youtube.com/embed/8uPSR4ysAaw"
                   title="Cardinal McCarrick's history in DC"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
@@ -148,11 +148,11 @@ export default function TheRegime() {
             </div>
             <div className="bg-card border border-border p-1">
               <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
-                <iframe 
+                <iframe
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p" 
+                  src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p"
                   title="PBS NewsHour - Former Cardinal McCarrick charged"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
@@ -165,12 +165,12 @@ export default function TheRegime() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/mccarrick/rise" asChild>
+          <Link href="/endgame/mccarrick/rise" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Act I: The Rise
             </Button>
           </Link>
-          <Link href="/mccarrick/reckoning" asChild>
+          <Link href="/endgame/mccarrick/reckoning" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Act III: The Reckoning <span className="ml-2">→</span>
             </Button>

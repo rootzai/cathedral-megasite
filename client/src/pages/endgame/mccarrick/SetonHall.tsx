@@ -1,22 +1,22 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
+import SectionHeader from "@/components/SectionHeader";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function SetonHall() {
   return (
     <div className="space-y-12 animate-in fade-in duration-700">
-      <SectionHeader 
-        number="05" 
-        title="The Seton Hall Connection" 
+      <SectionHeader
+        number="05"
+        title="The Seton Hall Connection"
         subtitle="The 'Culture of Fear' and the Beach House"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-          <img 
-            src="/assets/memes/Seminaryconfidential.png" 
-            alt="Seminary Confidential Movie Poster" 
+          <img
+            src="/assets/memes/Seminaryconfidential.png"
+            alt="Seminary Confidential Movie Poster"
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -26,9 +26,9 @@ export default function SetonHall() {
           </div>
         </div>
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-          <img 
-            src="/assets/memes/facultyclub.png" 
-            alt="Seton Hall Faculty Club Satire" 
+          <img
+            src="/assets/memes/facultyclub.png"
+            alt="Seton Hall Faculty Club Satire"
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             style={{ animationDelay: '3s' }}
           />
@@ -62,12 +62,12 @@ export default function SetonHall() {
         </p>
 
         <h3 className="text-destructive font-display uppercase tracking-widest mt-12 border-b border-border pb-2">The Sea Girt Beach House</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-            <img 
-              src="/assets/memes/Beachhouseonce.png" 
-              alt="Reilly Beach House Admission" 
+            <img
+              src="/assets/memes/Beachhouseonce.png"
+              alt="Reilly Beach House Admission"
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -77,9 +77,9 @@ export default function SetonHall() {
             </div>
           </div>
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-            <img 
-              src="/assets/memes/Reillybeachhousedark.png" 
-              alt="Reilly Beach House Dark Satire" 
+            <img
+              src="/assets/memes/Reillybeachhousedark.png"
+              alt="Reilly Beach House Dark Satire"
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               style={{ animationDelay: '2s' }}
             />
@@ -92,9 +92,9 @@ export default function SetonHall() {
         </div>
 
         <div className="relative h-96 w-full overflow-hidden border border-destructive/30 my-8 group">
-          <img 
-            src="/assets/memes/thepredators.png" 
-            alt="Groom Island Satire" 
+          <img
+            src="/assets/memes/thepredators.png"
+            alt="Groom Island Satire"
             className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             style={{ animationDuration: '20s' }}
           />
@@ -124,10 +124,10 @@ export default function SetonHall() {
 
       <div className="flex justify-between pt-12 border-t border-border">
         <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
-          <Link href="/network">← 04. Network</Link>
+          <Link href="/endgame/mccarrick/network">← 04. Network</Link>
         </Button>
         <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
-          <Link href="/warnings">06. Warnings →</Link>
+          <Link href="/endgame/mccarrick/warnings">06. Warnings →</Link>
         </Button>
       </div>
     </div>

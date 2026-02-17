@@ -7,17 +7,17 @@ export default function Legal() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="08" 
-          title="Legal Actions" 
+        <SectionHeader
+          number="08"
+          title="Legal Actions"
           subtitle="Civil Lawsuits, Criminal Charges, and Posthumous Developments"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-            <img 
-              src="/assets/memes/Reillyrides.png" 
-              alt="Reilly Rides a Stang Satire" 
+            <img
+              src="/assets/memes/Reillyrides.png"
+              alt="Reilly Rides a Stang Satire"
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -27,9 +27,9 @@ export default function Legal() {
             </div>
           </div>
           <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
-            <img 
-              src="/assets/memes/demandaction.png" 
-              alt="Demand Action Poster" 
+            <img
+              src="/assets/memes/demandaction.png"
+              alt="Demand Action Poster"
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               style={{ animationDelay: '2s' }}
             />
@@ -67,11 +67,11 @@ export default function Legal() {
           <div className="space-y-6">
             <div className="bg-card border border-border p-1">
               <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
-                <iframe 
+                <iframe
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/8uPSR4ysAaw" 
+                  src="https://www.youtube.com/embed/8uPSR4ysAaw"
                   title="Cardinal McCarrick's history in DC"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
@@ -83,11 +83,11 @@ export default function Legal() {
 
             <div className="bg-card border border-border p-1">
               <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
-                <iframe 
+                <iframe
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p" // Placeholder for PBS video if direct embed fails, using generic playlist or similar
                   title="PBS NewsHour - Former Cardinal McCarrick charged"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
                 {/* Note: PBS video embed might need specific handling, using iframe for now */}
@@ -104,12 +104,12 @@ export default function Legal() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/downfall" asChild>
+          <Link href="/endgame/mccarrick/downfall" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/survivors" asChild>
+          <Link href="/endgame/mccarrick/survivors" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 09 <span className="ml-2">→</span>
             </Button>

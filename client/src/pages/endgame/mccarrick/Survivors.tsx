@@ -7,9 +7,9 @@ export default function Survivors() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="09" 
-          title="Survivor Testimonies" 
+        <SectionHeader
+          number="09"
+          title="Survivor Testimonies"
           subtitle="The Human Toll and Calls for Justice"
         />
 
@@ -41,9 +41,9 @@ export default function Survivors() {
           <div className="lg:col-span-5 space-y-6">
             <div className="border border-border p-4 bg-card">
               <div className="aspect-[4/3] bg-muted relative overflow-hidden mb-4 grayscale contrast-125">
-                <img 
-                  src="/assets/images/survivors_protest.jpg" 
-                  alt="Survivors Protest" 
+                <img
+                  src="/assets/images/survivors_protest.jpg"
+                  alt="Survivors Protest"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-destructive/10 mix-blend-multiply pointer-events-none" />
@@ -76,12 +76,12 @@ export default function Survivors() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/legal" asChild>
+          <Link href="/endgame/mccarrick/legal" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/responses" asChild>
+          <Link href="/endgame/mccarrick/responses" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 10 <span className="ml-2">→</span>
             </Button>

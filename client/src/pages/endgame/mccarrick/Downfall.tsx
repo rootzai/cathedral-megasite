@@ -7,9 +7,9 @@ export default function Downfall() {
   return (
     <Layout>
       <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="07" 
-          title="Exposure & Downfall" 
+        <SectionHeader
+          number="07"
+          title="Exposure & Downfall"
           subtitle="2017–2019: The End of Impunity"
         />
 
@@ -68,12 +68,12 @@ export default function Downfall() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/mechanisms" asChild>
+          <Link href="/endgame/mccarrick/mechanisms" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/legal" asChild>
+          <Link href="/endgame/mccarrick/legal" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 08 <span className="ml-2">→</span>
             </Button>
