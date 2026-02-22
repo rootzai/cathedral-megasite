@@ -6,15 +6,14 @@ export default function MegaNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
-    if (path === '/' && location === '/') return true;
-    if (path !== '/' && location.startsWith(path)) return true;
-    return false;
+    if (path === '/') return false; // Never highlight root in this nav
+    return location.startsWith(path);
   };
 
   const navLinkClass = (path: string) => `
     px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all
-    ${isActive(path) 
-      ? 'bg-red-600 text-white' 
+    ${isActive(path)
+      ? 'bg-red-600 text-white'
       : 'text-gray-300 hover:bg-red-600/20 hover:text-white'}
   `;
 
@@ -24,8 +23,8 @@ export default function MegaNavigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center space-x-1">
-            <Link href="/">
-              <a className={navLinkClass('/')}>
+            <Link href="/cathedral">
+              <a className={navLinkClass('/cathedral')}>
                 THE CATHEDRAL
               </a>
             </Link>
@@ -50,7 +49,7 @@ export default function MegaNavigation() {
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="flex items-center justify-between py-3">
-            <Link href="/">
+            <Link href="/cathedral">
               <a className="text-white font-bold text-lg">THE CATHEDRAL</a>
             </Link>
             <button
@@ -62,10 +61,10 @@ export default function MegaNavigation() {
               </svg>
             </button>
           </div>
-          
+
           {mobileMenuOpen && (
             <div className="pb-3 space-y-1">
-              <Link href="/">
+              <Link href="/cathedral">
                 <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE CATHEDRAL</a>
               </Link>
               <Link href="/endgame">
