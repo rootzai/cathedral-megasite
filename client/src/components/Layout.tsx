@@ -1,7 +1,7 @@
+import { BoschOwl, HollowEye, TwistedBranch } from "@/components/BoschSymbols";
+import { ScreamToggle } from "@/components/ScreamToggle";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
-import { ScreamToggle } from "@/components/ScreamToggle";
-import { TwistedBranch, HollowEye, BoschOwl } from "@/components/BoschSymbols";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex bg-background text-foreground font-body selection:bg-primary/20 selection:text-primary-foreground relative">
       <div className="texture-overlay"></div>
-      
+
       {/* Symbolic Watermarks */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <TwistedBranch className="absolute top-[-5%] right-[-5%] w-[40vw] h-[20vw] text-primary rotate-12" opacity={0.03} />
@@ -37,8 +37,17 @@ export default function Layout({ children }: LayoutProps) {
       </div>
       {/* Sidebar Navigation - Dossier Style */}
       <aside className="w-64 fixed h-full border-r border-border bg-sidebar hidden lg:flex flex-col z-50">
-        <div className="p-6 border-b border-border">
-          <h1 className="font-heading text-2xl text-foreground leading-none mb-2">
+        <div className="p-4 border-b border-border flex flex-col items-center">
+          <Link href="/cathedral">
+            <a className="mb-4 block hover:opacity-80 transition-opacity">
+              <img
+                src="/assets/sodom-hall-logo.png"
+                alt="Sodom Hall Home"
+                className="h-20 w-auto grayscale brightness-200"
+              />
+            </a>
+          </Link>
+          <h1 className="font-heading text-2xl text-foreground leading-none mb-2 text-center w-full">
             THE BENJAMIN RULING
           </h1>
           <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
@@ -54,8 +63,8 @@ export default function Layout({ children }: LayoutProps) {
                 <div
                   className={cn(
                     "font-mono text-xs uppercase tracking-wider p-3 border transition-all duration-300 cursor-pointer flex justify-between items-center group",
-                    isActive 
-                      ? "border-primary text-primary bg-primary/5 shadow-[0_0_10px_rgba(var(--primary),0.2)]" 
+                    isActive
+                      ? "border-primary text-primary bg-primary/5 shadow-[0_0_10px_rgba(var(--primary),0.2)]"
                       : "border-border text-muted-foreground hover:border-foreground/50 hover:text-foreground"
                   )}
                 >
@@ -78,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
             <p className="font-mono text-[10px] text-muted-foreground uppercase">Do Not Distribute</p>
           </div>
           <div className="pt-4 border-t border-border/50">
-             <p className="font-mono text-[10px] text-muted-foreground leading-relaxed italic opacity-70">
+            <p className="font-mono text-[10px] text-muted-foreground leading-relaxed italic opacity-70">
               "We are amateur sleuths who do our homework, but we have not seen any of the documents. We live in the age of AI, where everything is available to the sharpened brain."
             </p>
           </div>

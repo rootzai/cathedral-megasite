@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
-import { useState } from "react";
 
 interface EndgameLayoutProps {
   children: React.ReactNode;
@@ -49,8 +48,17 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
       {/* Sidebar Navigation */}
       <aside className="w-64 fixed h-full border-r border-border bg-sidebar hidden lg:flex flex-col z-50">
-        <div className="p-6 border-b border-border">
-          <h1 className="font-heading text-xl text-foreground leading-none mb-2">
+        <div className="p-4 border-b border-border flex flex-col items-center">
+          <Link href="/cathedral">
+            <a className="mb-4 block hover:opacity-80 transition-opacity">
+              <img
+                src="/assets/sodom-hall-logo.png"
+                alt="Sodom Hall Home"
+                className="h-16 w-auto grayscale brightness-200"
+              />
+            </a>
+          </Link>
+          <h1 className="font-heading text-xl text-foreground leading-none mb-2 text-center w-full">
             {title}
           </h1>
           <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
