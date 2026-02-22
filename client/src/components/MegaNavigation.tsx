@@ -21,8 +21,17 @@ export default function MegaNavigation() {
     <nav className="bg-black border-b-2 border-red-600 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-between">
-          <div className="flex items-center space-x-1">
+        <div className="hidden md:flex items-center justify-between h-14">
+          <div className="flex items-center space-x-1 h-full">
+            <Link href="/">
+              <a className="px-4 h-full flex items-center group transition-all">
+                <img
+                  src="/assets/sodom-hall-logo.png"
+                  alt="Sodom Hall Home"
+                  className="h-10 w-auto grayscale brightness-200 group-hover:brightness-100 group-hover:grayscale-0 transition-all drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
+                />
+              </a>
+            </Link>
             <Link href="/cathedral">
               <a className={navLinkClass('/cathedral')}>
                 THE CATHEDRAL
@@ -49,8 +58,14 @@ export default function MegaNavigation() {
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="flex items-center justify-between py-3">
-            <Link href="/cathedral">
-              <a className="text-white font-bold text-lg">THE CATHEDRAL</a>
+            <Link href="/">
+              <a className="flex items-center">
+                <img
+                  src="/assets/sodom-hall-logo.png"
+                  alt="Sodom Hall Home"
+                  className="h-8 w-auto grayscale brightness-200"
+                />
+              </a>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
