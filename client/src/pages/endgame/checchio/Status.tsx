@@ -7,9 +7,9 @@ export default function Status() {
   return (
     <EndgameLayout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="07" 
-          title="The New Orleans Gamble" 
+        <SectionHeader
+          number="07"
+          title="The New Orleans Gamble"
           subtitle="November 2025: Importing the Newark Problem"
         />
 
@@ -25,18 +25,35 @@ export default function Status() {
               He inherits a diocese with a backlog of over 300 abuse claims, testing his pledges of reform and transparency.
             </p>
           </div>
-          
+
           <div className="relative h-[400px] w-full overflow-hidden border border-destructive/30 group">
-            <img 
-              src="/assets/images/checchio_portrait.jpg" 
-              alt="Bishop Checchio Portrait" 
+            <img
+              src="/assets/images/checchio_portrait.jpg"
+              alt="Bishop Checchio Portrait"
               className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">A Ticking Time Bomb</h2>
+              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Fixer</h2>
               <p className="text-sm text-gray-300 italic">"Can a Newark product clean up New Orleans?"</p>
             </div>
+          </div>
+        </div>
+
+        {/* Article Spotlight */}
+        <div className="bg-destructive/10 border border-destructive/30 p-8 rounded-lg relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-destructive/5 rounded-full blur-3xl -mr-10 -mt-10" />
+          <h3 className="font-heading text-3xl text-destructive mb-2 relative z-10">Exporting the Cover-Up</h3>
+          <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-6 relative z-10">
+            Insights from Senator Joseph Vitale and Eric Spitz
+          </p>
+          <div className="space-y-4 font-body text-lg text-foreground/90 relative z-10">
+            <p>
+              By promoting Checchio to New Orleans, the Vatican is effectively "exporting New Jersey's rot" to a new jurisdiction. Rather than a fresh start for a troubled archdiocese, Checchio is being deployed as the <strong>"New Orleans Fixer."</strong>
+            </p>
+            <p>
+              He brings with him the same methods of institutional protectionism and victim suppression perfected under McCarrick in Metuchen and Newark. The blueprint remains identical: utilize massive political leverage, employ aggressive legal shielding (such as the O'Toole Scrivo firm), and project a facade of reform while fiercely guarding the Franchisor network from legal discovery.
+            </p>
           </div>
         </div>
 

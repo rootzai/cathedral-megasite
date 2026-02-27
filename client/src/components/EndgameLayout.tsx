@@ -8,6 +8,9 @@ interface EndgameLayoutProps {
 export default function EndgameLayout({ children }: EndgameLayoutProps) {
   const [location] = useLocation();
   const isChecchio = location.includes('/checchio');
+  const isMartin = location.includes('/martin');
+  const isLorenzo = location.includes('/lorenzo');
+  const isReilly = location.includes('/reilly');
 
   const mccarrickItems = [
     { href: "/endgame/mccarrick", label: "01. INTRODUCTION", id: "01" },
@@ -38,9 +41,39 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     { href: "/endgame/checchio/status", label: "07. CURRENT STATUS", id: "07" },
   ];
 
-  const navItems = isChecchio ? checchioItems : mccarrickItems;
-  const title = isChecchio ? "THE CHECCHIO DOSSIER" : "THE MCCARRICK DOSSIER";
-  const caseFile = isChecchio ? "#2025-JFC" : "#2018-TEM";
+  const martinItems = [
+    { href: "/endgame/martin", label: "01. THE ENFORCER", id: "01" }
+  ];
+
+  const lorenzoItems = [
+    { href: "/endgame/lorenzo", label: "01. THE REHABILITATED", id: "01" }
+  ];
+
+  const reillyItems = [
+    { href: "/endgame/reilly", label: "01. FACE OF IMPUNITY", id: "01" }
+  ];
+
+  let navItems = mccarrickItems;
+  let title = "THE MCCARRICK DOSSIER";
+  let caseFile = "#2018-TEM";
+
+  if (isChecchio) {
+    navItems = checchioItems;
+    title = "THE CHECCHIO DOSSIER";
+    caseFile = "#2025-JFC";
+  } else if (isMartin) {
+    navItems = martinItems;
+    title = "THE MARTIN DOSSIER";
+    caseFile = "#1989-KM";
+  } else if (isLorenzo) {
+    navItems = lorenzoItems;
+    title = "THE LORENZO DOSSIER";
+    caseFile = "#1980-EL";
+  } else if (isReilly) {
+    navItems = reillyItems;
+    title = "THE REILLY DOSSIER";
+    caseFile = "#2025-SHU";
+  }
 
   return (
     <div className="min-h-screen flex bg-background text-foreground font-body selection:bg-primary/20 selection:text-primary-foreground relative">
@@ -67,11 +100,11 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </div>
 
         {/* Section Toggle */}
-        <div className="flex border-b border-border">
+        <div className="flex flex-wrap border-b border-border">
           <Link href="/endgame/mccarrick">
             <div className={cn(
-              "flex-1 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all",
-              !isChecchio
+              "w-1/2 py-2 px-2 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-b border-border",
+              location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
             )}>
@@ -80,12 +113,42 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/endgame/checchio">
             <div className={cn(
-              "flex-1 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-l border-border",
+              "w-1/2 py-2 px-2 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-b border-border",
               isChecchio
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Checchio
+            </div>
+          </Link>
+          <Link href="/endgame/reilly">
+            <div className={cn(
+              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-border",
+              isReilly
+                ? "bg-destructive text-white"
+                : "text-muted-foreground hover:bg-muted"
+            )}>
+              Reilly
+            </div>
+          </Link>
+          <Link href="/endgame/martin">
+            <div className={cn(
+              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-border",
+              isMartin
+                ? "bg-destructive text-white"
+                : "text-muted-foreground hover:bg-muted"
+            )}>
+              Martin
+            </div>
+          </Link>
+          <Link href="/endgame/lorenzo">
+            <div className={cn(
+              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all",
+              isLorenzo
+                ? "bg-destructive text-white"
+                : "text-muted-foreground hover:bg-muted"
+            )}>
+              Lorenzo
             </div>
           </Link>
         </div>

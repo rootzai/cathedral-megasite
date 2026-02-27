@@ -41,6 +41,11 @@ import CheckchioStatus from "./pages/endgame/checchio/Status";
 // Endgame Portal
 import EndgamePortal from "./pages/endgame/Portal";
 
+// Endgame Case Files
+import Lorenzo from "./pages/endgame/Lorenzo";
+import Martin from "./pages/endgame/Martin";
+import ReillyEndgame from "./pages/endgame/Reilly";
+
 // Academy Pages
 import AcademyCardinalateAndMcCarrick from "./pages/academy/CardinalateAndMcCarrick";
 import AcademyClergyMetrics from "./pages/academy/ClergyMetrics";
@@ -105,6 +110,17 @@ function Router() {
       {/* Endgame Routes */}
       <Route path={"/endgame"}>
         <PageLayout component={EndgamePortal} />
+      </Route>
+
+      {/* Endgame Case Files */}
+      <Route path={"/endgame/martin"}>
+        <PageLayout component={Martin} />
+      </Route>
+      <Route path={"/endgame/lorenzo"}>
+        <PageLayout component={Lorenzo} />
+      </Route>
+      <Route path={"/endgame/reilly"}>
+        <PageLayout component={ReillyEndgame} />
       </Route>
 
       {/* McCarrick Sub-pages */}
