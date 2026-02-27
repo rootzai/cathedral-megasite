@@ -101,13 +101,28 @@ export default function MegaNavigation() {
         <div className="bg-gray-900 border-t border-gray-800">
           <div className="container mx-auto px-4 py-2 flex flex-wrap gap-2">
             <Link href="/endgame/mccarrick">
-              <a className={`px-4 py-2 text-xs uppercase ${location.includes('mccarrick') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+              <a className={`px-4 py-2 text-xs uppercase ${location.includes('mccarrick') && !location.includes('checchio') && !location.includes('reilly') && !location.includes('martin') && !location.includes('lorenzo') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
                 McCarrick
               </a>
             </Link>
             <Link href="/endgame/checchio">
               <a className={`px-4 py-2 text-xs uppercase ${location.includes('checchio') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
                 Checchio
+              </a>
+            </Link>
+            <Link href="/endgame/reilly">
+              <a className={`px-4 py-2 text-xs uppercase ${location.includes('reilly') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+                Reilly
+              </a>
+            </Link>
+            <Link href="/endgame/martin">
+              <a className={`px-4 py-2 text-xs uppercase ${location.includes('martin') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+                Martin
+              </a>
+            </Link>
+            <Link href="/endgame/lorenzo">
+              <a className={`px-4 py-2 text-xs uppercase ${location.includes('lorenzo') ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+                Lorenzo
               </a>
             </Link>
           </div>

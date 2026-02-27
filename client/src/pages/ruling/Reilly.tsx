@@ -1,30 +1,30 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangle, ArrowRight, Eye, Image as ImageIcon, Siren } from "lucide-react";
 
 const memeGallery = [
-  { src: "/Blessmefather.png", alt: "Bless Me Father Meme", title: "The Confession" },
-  { src: "/MsgrJP1.png", alt: "Msgr Joe Paterno Meme 1", title: "The Comparison" },
-  { src: "/MsgrJP2.png", alt: "Msgr Joe Paterno Meme 2", title: "The Legacy" },
-  { src: "/Unholy3.png", alt: "The Unholy Trinity Meme", title: "The Trinity" },
-  { src: "/Beachhouseonce.png", alt: "Beach House Once Meme", title: "The Denial" },
-  { src: "/Devillikesyourwork.png", alt: "Devil Likes Your Work Meme", title: "The Promotion" },
+  { src: "/assets/Blessmefather.png", alt: "Bless Me Father Meme", title: "The Confession" },
+  { src: "/assets/MsgrJP1.png", alt: "Msgr Joe Paterno Meme 1", title: "The Comparison" },
+  { src: "/assets/MsgrJP2.png", alt: "Msgr Joe Paterno Meme 2", title: "The Legacy" },
+  { src: "/assets/Unholy3.png", alt: "The Unholy Trinity Meme", title: "The Trinity" },
+  { src: "/assets/Beachhouseonce.png", alt: "Beach House Once Meme", title: "The Denial" },
+  { src: "/assets/Devillikesyourwork.png", alt: "Devil Likes Your Work Meme", title: "The Promotion" },
 ];
 
 export default function Reilly() {
   return (
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
-        
+
         {/* Hero Section: The Reilly Focus */}
         <section className="relative border-b border-border pb-16">
           <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
             <Siren className="w-96 h-96 text-destructive animate-pulse" />
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
@@ -32,13 +32,13 @@ export default function Reilly() {
                 Primary Target Identified
               </div>
               <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
-                The Face of <br/>
+                The Face of <br />
                 <span className="text-destructive">Impunity</span>
               </h1>
               <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
                 Msgr. Joseph Reilly was named in the Latham Report. Instead of removal, he was rewarded with the presidency of Seton Hall University.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-mono uppercase tracking-widest group" asChild>
                   <a href="https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168" target="_blank" rel="noopener noreferrer">
@@ -55,9 +55,9 @@ export default function Reilly() {
                   <div className="absolute inset-0 bg-destructive/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                   <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
                     <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
-                      <img 
-                        src="/assets/figures/reilly_portrait.jpg" 
-                        alt="Msgr. Joseph Reilly" 
+                      <img
+                        src="/assets/figures/reilly_portrait.jpg"
+                        alt="Msgr. Joseph Reilly"
                         className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
@@ -79,9 +79,9 @@ export default function Reilly() {
                   <DialogTitle className="font-heading text-2xl text-destructive">Msgr. Joseph Reilly</DialogTitle>
                 </DialogHeader>
                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
-                  <img 
-                    src="/assets/figures/reilly_portrait.jpg" 
-                    alt="Msgr. Joseph Reilly" 
+                  <img
+                    src="/assets/figures/reilly_portrait.jpg"
+                    alt="Msgr. Joseph Reilly"
                     className="h-full w-full object-contain"
                   />
                 </div>
@@ -100,16 +100,16 @@ export default function Reilly() {
             </h2>
             <div className="h-px flex-1 bg-border" />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {memeGallery.map((meme) => (
               <Dialog key={meme.src}>
                 <DialogTrigger asChild>
                   <div className="group relative cursor-pointer overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-destructive/50 hover:shadow-lg hover:shadow-destructive/10">
                     <div className="aspect-square overflow-hidden">
-                      <img 
-                        src={meme.src} 
-                        alt={meme.alt} 
+                      <img
+                        src={meme.src}
+                        alt={meme.alt}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -123,9 +123,9 @@ export default function Reilly() {
                     <DialogTitle className="font-heading text-2xl text-destructive">{meme.title}</DialogTitle>
                   </DialogHeader>
                   <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
-                    <img 
-                      src={meme.src} 
-                      alt={meme.alt} 
+                    <img
+                      src={meme.src}
+                      alt={meme.alt}
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -153,7 +153,7 @@ export default function Reilly() {
                   <h3 className="font-heading text-2xl text-destructive">High-Confidence Implication</h3>
                   <Badge variant="outline" className="text-destructive border-destructive/50 bg-destructive/10 font-mono">PROBABILITY: 100%</Badge>
                 </div>
-                
+
                 <div className="space-y-4">
                   <h4 className="font-mono text-sm uppercase tracking-widest text-muted-foreground">Core Role (2019)</h4>
                   <p className="font-body text-lg">Rector/Dean, ICSST (2012–2022); Board of Trustees Member.</p>

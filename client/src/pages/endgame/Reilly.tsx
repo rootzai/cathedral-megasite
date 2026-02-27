@@ -25,7 +25,7 @@ export default function Reilly() {
                                 <span className="text-destructive">Joseph Reilly</span>
                             </h1>
                             <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
-                                Joseph Reilly was intimately tied to the 1995 Papal whitewashing efforts at Seton Hall's Seminary. Despite the devastating findings of the Latham Report, Reilly was shielded by the network's legal fixers and elevated to the Presidency of Seton Hall University.
+                                Joseph Reilly was the administrative architect of the 1995 Papal whitewashing efforts. As a central figure in the archdiocesan hierarchy and later the Rector of the Immaculate Conception Seminary, Reilly oversaw a culture of silence regarding the "open secret" of McCarrick's "nephew" grooming system and beach house trips, binding the inner circle in complicity.
                             </p>
                         </div>
 
@@ -91,13 +91,13 @@ export default function Reilly() {
 
                                 <div className="space-y-4">
                                     <h4 className="font-mono text-sm uppercase tracking-widest text-muted-foreground">The Setup</h4>
-                                    <p className="font-body text-lg">In October 1995, just before Pope John Paul II's visit to the US, McCarrick orchestrates a staged event at Seton Hall’s Immaculate Conception Seminary.</p>
+                                    <p className="font-body text-lg">The year 1995 was a defining moment. As Theodore McCarrick prepared to host Pope John Paul II, the administrative team—led by figures including Monsignor Joseph Reilly—worked to neutralize the growing "open secret" of McCarrick's operations.</p>
                                 </div>
 
                                 <div className="space-y-4">
                                     <h4 className="font-mono text-sm uppercase tracking-widest text-muted-foreground">The Execution</h4>
                                     <p className="font-body text-muted-foreground leading-relaxed">
-                                        This staging is led by Joseph Reilly under the directive to create an illusion of piety and order to mask the deep-rooted corruption. This "papal whitewashing" directly preceded the explosive Latham Report which exposed rampant sexual misconduct at the seminary.
+                                        Between 1992 and 1994, multiple warnings reached the U.S. Nunciature, including a direct report from Mother Mary Quentin Sheridan regarding McCarrick’s behavior with seminarians. These warnings were treated as "defamatory libel" by the Newark administration. Reilly oversaw a culture where seminarians were instructed to be silent about McCarrick's "beach house" visits, where the Archbishop famously shared beds with adult men. This environment ensured that everyone in the inner circle was compromised.
                                     </p>
                                 </div>
                             </div>
@@ -128,11 +128,11 @@ export default function Reilly() {
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-destructive">•</span>
-                                        Suppression of the Latham Report
+                                        Kathryn Ruemmler/Epstein influence at SHU
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-destructive">•</span>
-                                        Elevation to SHU Presidency
+                                        Suppression of the Latham Report
                                     </li>
                                 </ul>
                             </div>

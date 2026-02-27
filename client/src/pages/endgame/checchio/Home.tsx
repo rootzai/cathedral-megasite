@@ -1,16 +1,16 @@
 import EndgameLayout from "@/components/EndgameLayout";
+import ImageModal from "@/components/ImageModal";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
 
 export default function Home() {
   return (
     <EndgameLayout>
       <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
-        <SectionHeader 
-          number="01" 
-          title="The Newark Export" 
+        <SectionHeader
+          number="01"
+          title="The Newark Export"
           subtitle="Not 'Lily White': The Compromised Choice for New Orleans"
         />
 
@@ -26,7 +26,7 @@ export default function Home() {
               Now appointed Coadjutor Archbishop of New Orleans, Checchio embodies the "McCarrick pipeline"—a system that rewards silence and protects the institution at the expense of transparency.
             </p>
           </div>
-          
+
           <ImageModal
             src="/assets/images/checchio_portrait.jpg"
             alt="Bishop James Francis Checchio"
@@ -34,9 +34,9 @@ export default function Home() {
             caption="A Newark product for a New Orleans crisis. Bishop Checchio's career reflects institutional loyalty amid the McCarrick scandal."
           >
             <div className="relative h-[500px] w-full overflow-hidden border border-destructive/30 group cursor-zoom-in">
-              <img 
-                src="/assets/images/checchio_portrait.jpg" 
-                alt="Bishop James Francis Checchio" 
+              <img
+                src="/assets/images/checchio_portrait.jpg"
+                alt="Bishop James Francis Checchio"
                 className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="bg-card border border-border p-6 hover:border-destructive/50 transition-colors">
               <h4 className="font-mono text-destructive uppercase text-sm mb-2">The Pipeline</h4>
               <p className="text-sm text-muted-foreground">
-                Ordained by a McCarrick ally, appointed NAC Rector by Benedict XVI, and consecrated Bishop by McCarrick himself. His career is inextricably linked to the disgraced cardinal.
+                Ordained in 1992 by Bishop James McHugh, appointed NAC Rector by Benedict XVI, and consecrated Bishop by McCarrick himself. His career is inextricably linked to the disgraced network.
               </p>
             </div>
             <div className="bg-card border border-border p-6 hover:border-destructive/50 transition-colors">

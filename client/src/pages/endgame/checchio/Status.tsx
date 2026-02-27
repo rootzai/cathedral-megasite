@@ -16,13 +16,13 @@ export default function Status() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div className="space-y-6 font-serif text-lg leading-relaxed">
             <p>
-              On September 24, 2025, Pope Leo XIV appointed Checchio as Coadjutor Archbishop of New Orleans. He is set to succeed Archbishop Gregory Aymond in mid-2026.
+              Ordained in 1992 by Bishop James McHugh, James Checchio was named Coadjutor Archbishop of New Orleans in September 2025 to handle a $230 million settlement and a complex bankruptcy process. He is set to succeed Archbishop Gregory Aymond in mid-2026.
             </p>
             <p>
               This promotion places him in charge of 1.1 million Catholics and over $500 million in assets, despite the cloud of the McCarrick scandal and his role in the Seton Hall cover-up.
             </p>
             <p>
-              He inherits a diocese with a backlog of over 300 abuse claims, testing his pledges of reform and transparency.
+              His testimony in the 2025 bankruptcy hearings followed the "tight-lipped squad's" established playbook: he expressed a commitment to prevention while stating he saw "no reason" to launch a cover-up investigation into his predecessor, Gregory Aymond.
             </p>
           </div>
 

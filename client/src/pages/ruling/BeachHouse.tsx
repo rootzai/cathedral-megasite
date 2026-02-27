@@ -1,17 +1,16 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertTriangle, Bed, Home, MapPin, Users, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
 import { MapView } from "@/components/Map";
-import { useRef } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertTriangle, Bed, ExternalLink, Home, Users } from "lucide-react";
 
 export default function BeachHouse() {
   return (
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
-        
+
         {/* Hero Section */}
         <section className="relative border-b border-border pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -21,7 +20,7 @@ export default function BeachHouse() {
                 THE EPICENTER OF ABUSE
               </div>
               <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
-                The Beach <br/>
+                The Beach <br />
                 <span className="text-destructive">House</span>
               </h1>
               <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
@@ -29,65 +28,65 @@ export default function BeachHouse() {
               </p>
             </div>
             <div className="relative aspect-video bg-zinc-900 rounded-lg border border-border overflow-hidden group">
-               <MapView 
-                 className="w-full h-full"
-                 initialCenter={{ lat: 40.1337, lng: -74.0335 }} // Sea Girt, NJ
-                 initialZoom={15}
-                 onMapReady={(map) => {
-                    // Define locations
-                    const setonHall = { lat: 40.743, lng: -74.247 }; // Seton Hall University
-                    const beachHouse = { lat: 40.1337, lng: -74.0335 }; // Sea Girt Beach House
+              <MapView
+                className="w-full h-full"
+                initialCenter={{ lat: 40.1337, lng: -74.0335 }} // Sea Girt, NJ
+                initialZoom={15}
+                onMapReady={(map) => {
+                  // Define locations
+                  const setonHall = { lat: 40.743, lng: -74.247 }; // Seton Hall University
+                  const beachHouse = { lat: 40.1337, lng: -74.0335 }; // Sea Girt Beach House
 
-                    // Add markers
-                    new google.maps.marker.AdvancedMarkerElement({
-                      map,
-                      position: setonHall,
-                      title: "Seton Hall University",
-                    });
-                    
-                    new google.maps.marker.AdvancedMarkerElement({
-                      map,
-                      position: beachHouse,
-                      title: "The Beach House",
-                    });
+                  // Add markers
+                  new google.maps.marker.AdvancedMarkerElement({
+                    map,
+                    position: setonHall,
+                    title: "Seton Hall University",
+                  });
 
-                    // Calculate and display route
-                    const directionsService = new google.maps.DirectionsService();
-                    const directionsRenderer = new google.maps.DirectionsRenderer({
-                      map,
-                      suppressMarkers: true, // We're using custom markers
-                      polylineOptions: {
-                        strokeColor: "#ef4444", // Destructive red
-                        strokeWeight: 4,
-                        strokeOpacity: 0.8,
+                  new google.maps.marker.AdvancedMarkerElement({
+                    map,
+                    position: beachHouse,
+                    title: "The Beach House",
+                  });
+
+                  // Calculate and display route
+                  const directionsService = new google.maps.DirectionsService();
+                  const directionsRenderer = new google.maps.DirectionsRenderer({
+                    map,
+                    suppressMarkers: true, // We're using custom markers
+                    polylineOptions: {
+                      strokeColor: "#ef4444", // Destructive red
+                      strokeWeight: 4,
+                      strokeOpacity: 0.8,
+                    }
+                  });
+
+                  directionsService.route(
+                    {
+                      origin: setonHall,
+                      destination: beachHouse,
+                      travelMode: google.maps.TravelMode.DRIVING,
+                    },
+                    (result, status) => {
+                      if (status === "OK" && result) {
+                        directionsRenderer.setDirections(result);
                       }
-                    });
-
-                    directionsService.route(
-                      {
-                        origin: setonHall,
-                        destination: beachHouse,
-                        travelMode: google.maps.TravelMode.DRIVING,
-                      },
-                      (result, status) => {
-                        if (status === "OK" && result) {
-                          directionsRenderer.setDirections(result);
-                        }
-                      }
-                    );
-                 }}
-               />
-               <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                 <Button 
-                   variant="secondary" 
-                   size="sm" 
-                   className="gap-2 font-mono text-xs uppercase tracking-wider shadow-lg"
-                   onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University,+South+Orange+Ave,+South+Orange,+NJ/300+Ocean+Ave,+Sea+Girt,+NJ+08750", "_blank")}
-                 >
-                   <ExternalLink className="w-3 h-3" />
-                   Open in Maps
-                 </Button>
-               </div>
+                    }
+                  );
+                }}
+              />
+              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="gap-2 font-mono text-xs uppercase tracking-wider shadow-lg"
+                  onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University,+South+Orange+Ave,+South+Orange,+NJ/300+Ocean+Ave,+Sea+Girt,+NJ+08750", "_blank")}
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  Open in Maps
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -143,7 +142,7 @@ export default function BeachHouse() {
                       <span className="font-heading text-sm text-foreground">McCarrick</span>
                     </div>
                   </div>
-                  
+
                   {/* Bedroom 2 */}
                   <div className="aspect-square bg-zinc-900/50 border border-border rounded p-4 flex flex-col justify-between">
                     <span className="font-mono text-xs text-muted-foreground uppercase">Bedroom 2</span>
@@ -177,14 +176,14 @@ export default function BeachHouse() {
                       <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
                     </div>
                     <span className="font-mono text-xs text-destructive uppercase tracking-widest">Bedroom 5: "The Trap"</span>
-                    <div className="flex items-center justify-center gap-8">
-                      <div className="text-center">
-                        <div className="w-16 h-24 border-2 border-dashed border-destructive/50 rounded mx-auto mb-2 bg-destructive/10" />
-                        <span className="font-mono text-[10px] text-destructive">Single Bed</span>
+                    <div className="flex items-end justify-center gap-0">
+                      <div className="flex flex-col items-center flex-1">
+                        <div className="w-16 h-24 border-2 border-dashed border-r border-destructive/50 rounded-l mx-auto mb-2 bg-destructive/10" />
+                        <span className="font-mono text-[10px] text-destructive text-center">Single Bed</span>
                       </div>
-                      <div className="text-center">
-                        <div className="w-16 h-24 border-2 border-dashed border-destructive/50 rounded mx-auto mb-2 bg-destructive/10" />
-                        <span className="font-mono text-[10px] text-destructive">Twin Bed</span>
+                      <div className="flex flex-col items-center flex-1">
+                        <div className="w-16 h-24 border-2 border-dashed border-l border-destructive/50 rounded-r mx-auto mb-2 bg-destructive/10" />
+                        <span className="font-mono text-[10px] text-destructive text-center">Twin Bed</span>
                       </div>
                     </div>
                     <p className="text-center font-body text-sm text-destructive mt-4">
@@ -199,14 +198,14 @@ export default function BeachHouse() {
 
         {/* Who Knew Section */}
         <section className="space-y-8">
-           <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <div className="h-px flex-1 bg-border" />
             <h2 className="font-heading text-3xl text-foreground flex items-center gap-2">
               Who Knew?
             </h2>
             <div className="h-px flex-1 bg-border" />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: "Msgr. Joseph Reilly", role: "Seminarian / Secretary", year: "1994", detail: "Personally avoided staying overnight after hearing rumors." },

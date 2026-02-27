@@ -36,8 +36,8 @@ export default function Lorenzo() {
                                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
                                         <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
                                             <img
-                                                src="/assets/Unholy.png"
-                                                alt="Elias Lorenzo Placeholder"
+                                                src="/assets/images/lorenzo_portrait.jpg"
+                                                alt="Elias Lorenzo"
                                                 className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
@@ -60,7 +60,7 @@ export default function Lorenzo() {
                                 </DialogHeader>
                                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
                                     <img
-                                        src="/assets/Unholy.png"
+                                        src="/assets/images/lorenzo_portrait.jpg"
                                         alt="Elias Lorenzo"
                                         className="h-full w-full object-contain"
                                     />
@@ -97,7 +97,7 @@ export default function Lorenzo() {
                                 <div className="space-y-4">
                                     <h4 className="font-mono text-sm uppercase tracking-widest text-muted-foreground">The Benedictine Rehabilitation</h4>
                                     <p className="font-body text-muted-foreground leading-relaxed">
-                                        A key component of the network's strategy is the "rehabilitation" of compromised individuals. Instead of being completely removed from the priesthood, Lorenzo was taken in by the Benedictines, renamed "Elias," and allowed to continue his rise through the ranks.
+                                        Instead of being dismissed from religious life, "Richard" was rebranded as "Elias" and taken in by the Benedictines at St. Mary's Abbey in Morristown. This "Benedictine rehabilitation" allowed Lorenzo to ascend through the hierarchy. This transition was part of a larger network of Benedictine silence that includes figures like Patric Wall, a former Benedictine who later became a whistleblower. The system's ability to take a man expelled for "deviant conduct" and transform him into a "Prince of the Church" highlights the absolute moral bankruptcy of the New Jersey ecclesiastical leadership.
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ export default function Lorenzo() {
                                     <div className="relative pl-8">
                                         <div className="absolute left-0 top-2 w-4 h-4 rounded-full bg-border border-4 border-background" />
                                         <h4 className="font-mono text-sm text-destructive mb-1">Pre-1980s</h4>
-                                        <p className="font-body text-muted-foreground">Active as Richard Lorenzo in the Salesian order; later expelled for deviant conduct.</p>
+                                        <p className="font-body text-muted-foreground">Expelled from the Salesians for deviant conduct. At the time of his eviction, he was a seminarian alongside Mark Crawford.</p>
                                     </div>
                                     <div className="relative pl-8">
                                         <div className="absolute left-0 top-2 w-4 h-4 rounded-full bg-border border-4 border-background" />

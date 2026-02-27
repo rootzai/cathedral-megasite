@@ -22,10 +22,10 @@ export default function Martin() {
                             </div>
                             <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
                                 The Enforcer: <br />
-                                <span className="text-destructive">Ken Martin</span>
+                                <span className="text-destructive">Father Kenneth Martin</span>
                             </h1>
                             <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
-                                Ordained in 1989. Ken Martin began his predatory path at St. Andrew's Parish in Bayonne, New Jersey. Despite direct reports of abuse in 1983, the system did not remove him; instead, he was promoted to personal secretary for Theodore McCarrick.
+                                The ecclesiastical system in New Jersey and Wilmington, Delaware, functioned not as a sanctuary, but as a laundering operation. Ordained in 1989, Kenneth Martin began his predatory path at St. Andrew's Parish in Bayonne, New Jersey. Despite direct reports of abuse in 1983, the system did not remove him; instead, he was promoted to personal secretary for Theodore McCarrick.
                             </p>
                         </div>
 
@@ -43,7 +43,7 @@ export default function Martin() {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
                                             <div className="absolute bottom-0 left-0 right-0 p-8">
                                                 <div className="font-mono text-xs text-destructive mb-2">STATUS: BARRED (2008)</div>
-                                                <h2 className="font-heading text-3xl text-white">Ken Martin</h2>
+                                                <h2 className="font-heading text-3xl text-white">Father Kenneth Martin</h2>
                                                 <p className="font-mono text-sm text-gray-400 mt-2">Personal Secretary to McCarrick</p>
                                                 <div className="mt-4 flex items-center text-xs font-mono text-destructive opacity-0 group-hover:opacity-100 transition-opacity">
                                                     <Eye className="w-4 h-4 mr-2" />
@@ -56,7 +56,7 @@ export default function Martin() {
                             </DialogTrigger>
                             <DialogContent className="max-w-4xl bg-black border-destructive/20">
                                 <DialogHeader>
-                                    <DialogTitle className="font-heading text-2xl text-destructive">Ken Martin</DialogTitle>
+                                    <DialogTitle className="font-heading text-2xl text-destructive">Father Kenneth Martin</DialogTitle>
                                 </DialogHeader>
                                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
                                     <img
@@ -133,7 +133,7 @@ export default function Martin() {
                             <div className="bg-destructive/5 border border-destructive/20 p-6 rounded-lg">
                                 <h3 className="font-heading text-xl text-destructive mb-4">The Matrix</h3>
                                 <p className="font-body text-muted-foreground text-sm mb-4">
-                                    This cycle of protection was facilitated by a network of "protectors" like the legal team at O'Toole Scrivo, who served as the ultimate legal shield for the Chancery, utilizing their political leverage to block the release of personnel files.
+                                    This cycle of protection was facilitated by a network of "protectors" like the legal team at O'Toole Scrivo, whose partners like Kevin O'Toole and Thomas Scrivo have served as the ultimate legal shield for the Chancery, utilizing their political leverage to block the release of personnel files.
                                 </p>
                                 <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                                     <li className="flex items-start gap-2">
