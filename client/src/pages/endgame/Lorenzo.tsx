@@ -36,7 +36,7 @@ export default function Lorenzo() {
                                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
                                         <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
                                             <img
-                                                src="/assets/images/lorenzo_portrait.jpg"
+                                                src="/assets/images/lorenzo_portrait.png"
                                                 alt="Elias Lorenzo"
                                                 className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700"
                                             />
@@ -60,7 +60,7 @@ export default function Lorenzo() {
                                 </DialogHeader>
                                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
                                     <img
-                                        src="/assets/images/lorenzo_portrait.jpg"
+                                        src="/assets/images/lorenzo_portrait.png"
                                         alt="Elias Lorenzo"
                                         className="h-full w-full object-contain"
                                     />
@@ -144,6 +144,33 @@ export default function Lorenzo() {
                                         Newark Archdiocese promotion
                                     </li>
                                 </ul>
+                            </div>
+
+                            <div className="bg-card border border-border p-6 rounded-lg mt-8">
+                                <h3 className="font-heading text-xl text-foreground mb-4">The Cardinal Tobin Era</h3>
+                                <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                                    Lorenzo's appointment to Auxiliary Bishop did not happen in a vacuum. It occurred under the tenure of Cardinal Joseph Tobin, demonstrating continuity of the Franchise's methodologies. Instead of cleansing the archdiocese, the current regime inherited and elevated figures with documented problematic pasts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* New Mechanism Section */}
+                    <div className="mt-16 bg-zinc-900 border border-border p-8 rounded-lg relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-destructive/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                        <h2 className="font-heading text-3xl mb-6 relative z-10">The Mechanism of Rebranding</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                            <div>
+                                <h4 className="font-mono text-xs text-destructive mb-2 uppercase tracking-widest">The Wall Precedent</h4>
+                                <p className="font-body text-muted-foreground">
+                                    Patric Wall, a former Benedictine monk and now a whistleblower, directly exposed the complicity of St. Mary's Abbey in protecting abusers. The Benedictine network's decision to "rehabilitate" Lorenzo is perfectly consistent with their broader strategy of housing and hiding disgraced clerics. This creates an environment of mutual blackmail, ensuring institutional loyalty over victim protection.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-mono text-xs text-destructive mb-2 uppercase tracking-widest">Failure of the Dallas Charter</h4>
+                                <p className="font-body text-muted-foreground">
+                                    Lorenzo's elevation to bishop in 2020 makes a mockery of the 2002 Dallas Charter promises of "zero tolerance." By ignoring pre-ordination history, the ecclesiastical system actively circumvents its own public reforms. A man expelled for deviances as a seminarian now oversees parishes and schools for the Archdiocese of Newark.
+                                </p>
                             </div>
                         </div>
                     </div>

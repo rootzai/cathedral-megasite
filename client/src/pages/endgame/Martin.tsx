@@ -36,8 +36,8 @@ export default function Martin() {
                                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
                                         <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
                                             <img
-                                                src="/assets/Unholy.png"
-                                                alt="Ken Martin Placeholder"
+                                                src="/assets/images/martin_portrait.png"
+                                                alt="Father Kenneth Martin"
                                                 className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
@@ -60,9 +60,9 @@ export default function Martin() {
                                 </DialogHeader>
                                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
                                     <img
-                                        src="/assets/Unholy.png"
-                                        alt="Ken Martin"
-                                        className="h-full w-full object-contain"
+                                        src="/assets/images/martin_portrait.png"
+                                        alt="Father Kenneth Martin"
+                                        className="h-full w-full object-contain object-top"
                                     />
                                 </div>
                             </DialogContent>
@@ -153,6 +153,33 @@ export default function Martin() {
                                         Chicago Archdiocese
                                     </li>
                                 </ul>
+                            </div>
+
+                            <div className="bg-card border border-border p-6 rounded-lg">
+                                <h3 className="font-heading text-xl text-foreground mb-4">The Extortion Parallel</h3>
+                                <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                                    Martin's ability to maintain a flow of cash from the ecclesiastical network long after he was technically barred from ministry mirrors the leverage held by other insiders. Like others who knew too much about the "Franchise" operations, Martin's silence was purchased. His deployment to the Chicago Archdiocese demonstrates that the rot isn't confined to New Jersey; it is a national franchise of protection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* New Extrapolation Section */}
+                    <div className="mt-16 bg-zinc-900 border border-border p-8 rounded-lg relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-destructive/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                        <h2 className="font-heading text-3xl mb-6 relative z-10">The Mechanism of Complicity</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                            <div>
+                                <h4 className="font-mono text-xs text-destructive mb-2 uppercase tracking-widest">The "Open Secret"</h4>
+                                <p className="font-body text-muted-foreground">
+                                    Martin's presence as McCarrick's secretary wasn't an accident. A compromised subordinate is a loyal subordinate. By promoting a known predator, the hierarchy ensured unswerving loyalty. Martin could not blow the whistle on the beach house trips or the "nephew" grooming system because his own position relied entirely on the suppression of the 1983 Crawford reports.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-mono text-xs text-destructive mb-2 uppercase tracking-widest">The Chicago Connection</h4>
+                                <p className="font-body text-muted-foreground">
+                                    The Franchise protects its own across state lines. The fact that a barred priest who admitted to abuse could find employment in Chicago entities highlights the failure of the Dallas Charter. The same network of canon lawyers, PR firms, and political fixers that protected him in Newark ensured his soft landing in the Midwest.
+                                </p>
                             </div>
                         </div>
                     </div>
