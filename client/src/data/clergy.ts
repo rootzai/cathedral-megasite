@@ -26,7 +26,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Promoted to President of Seton Hall University in 2024, despite the findings of the Latham Report.",
     probability: "100%",
     evidenceKeys: ["Leaks/990s", "Politico Exposé", "Admitted Knowledge"],
-    image: "/images/dirty-dozen/reilly.png"
+    image: "/assets/images/dirty-dozen/reilly.png"
   },
   {
     id: "ziccardi",
@@ -40,7 +40,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Demoted; stripped of Cabinet/governance roles but retained faculty status. Removed as VP in Sept 2020.",
     probability: "100%",
     evidenceKeys: ["IRS filings", "Action Plan Alignment"],
-    image: "/images/dirty-dozen/ziccardi.png"
+    image: "/assets/images/dirty-dozen/ziccardi.png"
   },
   {
     id: "nydegger",
@@ -54,7 +54,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Demoted to Pastor, St. Helen’s Church, Westfield (July 2020). Removed from chancery; no promotions.",
     probability: "100%",
     evidenceKeys: ["rcan.org announcement", "Timing post-Latham"],
-    image: "/images/dirty-dozen/nydegger.png"
+    image: "/assets/images/dirty-dozen/nydegger.png"
   },
   {
     id: "harahan",
@@ -68,7 +68,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Abrupt removal from Prep/ICSST roles (Sept 2019). Fired from education; reassigned to parish.",
     probability: "95%",
     evidenceKeys: ["Sudden exit", "Vatican Report"],
-    image: "/images/dirty-dozen/harahan.png"
+    image: "/assets/images/dirty-dozen/harahan.png"
   },
   {
     id: "bermudez",
@@ -82,7 +82,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Removed from formation; lateral to parish (Sept 2021). Full leadership decapitation of St. Andrew’s.",
     probability: "95%",
     evidenceKeys: ["Appointments", "Leadership Decapitation"],
-    image: "/images/dirty-dozen/bermudez.png"
+    image: "/assets/images/dirty-dozen/bermudez.png"
   },
   {
     id: "doran",
@@ -96,7 +96,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Removed as Vice Rector (July 2020); reassigned to parish. Barred from seminary.",
     probability: "90%",
     evidenceKeys: ["Leaks", "2013 History", "Operational Liability"],
-    image: "/images/dirty-dozen/doran.png"
+    image: "/assets/images/dirty-dozen/doran.png"
   },
   {
     id: "mccarren",
@@ -110,7 +110,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Temporarily sidelined (2020-2022); rehabilitated/promoted to Rector (2022).",
     probability: "85%",
     evidenceKeys: ["SHU announcements", "Rehabilitation Arc"],
-    image: "/images/dirty-dozen/mccarren.png"
+    image: "/assets/images/dirty-dozen/mccarren.png"
   },
   {
     id: "serratelli",
@@ -124,7 +124,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Resignation accepted (April 2020); quiet exit from governance. SHU boards omitted in 2020 990s.",
     probability: "90%",
     evidenceKeys: ["Board omission", "Timing"],
-    image: "/images/dirty-dozen/serratelli.png"
+    image: "/assets/images/dirty-dozen/serratelli.png"
   },
   {
     id: "ciccarino",
@@ -138,7 +138,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Removed from Vice Rector (2020); full seminary exit. Demoted to adjunct/low-formation.",
     probability: "80%",
     evidenceKeys: ["Roster changes", "Leaks"],
-    image: "/images/dirty-dozen/ciccarino.png"
+    image: "/assets/images/dirty-dozen/ciccarino.png"
   },
   {
     id: "chadwick",
@@ -152,7 +152,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Promoted to Vicar General (Aug 2020), replacing Nydegger. Elevated as 'solution' figure.",
     probability: "60%",
     evidenceKeys: ["Vicar General Promotion", "Cleared Status"],
-    image: "/images/dirty-dozen/chadwick.png"
+    image: "/assets/images/dirty-dozen/chadwick.png"
   },
   {
     id: "ivany",
@@ -166,7 +166,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Quiet reassignment from any advisory (2020). Sidelined via attrition.",
     probability: "85%",
     evidenceKeys: ["Vocations leaks", "Old Guard Purge"],
-    image: "/images/dirty-dozen/ivany.png"
+    image: "/assets/images/dirty-dozen/ivany.png"
   },
   {
     id: "suszko",
@@ -180,7 +180,7 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Retained as Business Manager (Vice Rector stripped). Partial demotion; operational continuity.",
     probability: "50%",
     evidenceKeys: ["Title strip", "Retention"],
-    image: "/images/dirty-dozen/suszko.png"
+    image: "/assets/images/dirty-dozen/suszko.png"
   },
   {
     id: "miller",
@@ -194,6 +194,6 @@ export const clergyList: ClergyMember[] = [
     outcomeEvidence: "Deceased (Sept 2022). Untouched; honored legacy.",
     probability: "10%",
     evidenceKeys: ["Deceased", "Peripheral"],
-    image: "/images/dirty-dozen/miller.png"
+    image: "/assets/images/dirty-dozen/miller.png"
   }
 ];

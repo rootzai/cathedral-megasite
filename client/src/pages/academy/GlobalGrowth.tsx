@@ -12,8 +12,8 @@ export default function GlobalGrowth() {
 
   return (
     <AcademyLayout>
-      <SectionHeader 
-        title="Global Expansion Analysis" 
+      <SectionHeader
+        title="Global Expansion Analysis"
         subtitle="A 30-year longitudinal study of Catholic population growth relative to global demographic trends (1995–2023)."
       />
 
@@ -24,9 +24,9 @@ export default function GlobalGrowth() {
           </CardHeader>
           <CardContent className="px-0">
             <div className="aspect-video w-full bg-sidebar rounded-sm overflow-hidden relative mb-4 border border-border">
-               <img 
-                src="/images/global-map-data.png" 
-                alt="Global Map Data" 
+              <img
+                src="/assets/images/analysis-network.png"
+                alt="Global Map Data"
                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm p-4 border border-border max-w-xs">

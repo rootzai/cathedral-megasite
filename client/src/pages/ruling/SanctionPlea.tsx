@@ -1,35 +1,35 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { AlertTriangle, Gavel, Scale, ShieldAlert, FileWarning, BookOpen } from "lucide-react";
+import { AlertTriangle, BookOpen, FileWarning, Gavel, Scale, ShieldAlert } from "lucide-react";
 
 export default function SanctionPlea() {
   return (
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
-        
+
         {/* Hero Section */}
         <section className="relative border-b border-border pb-16">
           <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
             <Gavel className="w-96 h-96 text-destructive animate-pulse" />
           </div>
-          
+
           <div className="space-y-6 z-10 relative">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
               <AlertTriangle className="w-3 h-3" />
               Legal Motion
             </div>
             <h1 className="font-heading text-5xl md:text-7xl text-foreground leading-none">
-              A Plea to <br/>
+              A Plea to <br />
               <span className="text-destructive">Judge Benjamin</span>
             </h1>
-            
+
             <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 my-8 group">
-              <img 
-                src="/images/legal-gavel-broken.png" 
-                alt="Broken gavel on redacted documents" 
+              <img
+                src="/assets/images/legal-gavel-broken.png"
+                alt="Broken gavel on redacted documents"
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -172,10 +172,10 @@ export default function SanctionPlea() {
                 Tom Scrivo is not just any lawyer. He knew better.
               </p>
               <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full"/> Former Chief Counsel to Gov. Chris Christie</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full"/> Chair of NJ Economic Development Authority</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full"/> Partner at prominent NJ law firm</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full"/> Seton Hall Law School Graduate</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Former Chief Counsel to Gov. Chris Christie</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Chair of NJ Economic Development Authority</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Partner at prominent NJ law firm</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Seton Hall Law School Graduate</li>
               </ul>
             </div>
           </section>

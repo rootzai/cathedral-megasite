@@ -1,21 +1,21 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { SectionDivider } from "@/components/SectionDivider";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink, Scale, ShieldAlert, Split, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function CorporateVeil() {
   return (
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
-        
-        <PageHero 
-          sectionNumber="06" 
-          title="The Corporate" 
+
+        <PageHero
+          sectionNumber="06"
+          title="The Corporate"
           titleHighlight="Veil"
         >
           <div className="space-y-6 max-w-4xl">
@@ -26,11 +26,11 @@ export default function CorporateVeil() {
               Two Politico exposés, published eight months apart, reveal a coordinated strategy to block investigations by pretending the left hand doesn't know what the right hand is doing—even when Cardinal Tobin controls both.
             </p>
           </div>
-          
+
           <div className="mt-12 relative w-full h-64 md:h-96 overflow-hidden rounded-lg border border-border/50 group">
-            <img 
-              src="/images/corporate-veil-abstract.png" 
-              alt="Abstract representation of the corporate veil" 
+            <img
+              src="/assets/images/corporate-veil-abstract.png"
+              alt="Abstract representation of the corporate veil"
               className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -71,7 +71,7 @@ export default function CorporateVeil() {
               </li>
             </ul>
           </div>
-          
+
           <div className="relative">
             <div className="absolute inset-0 bg-destructive/5 blur-3xl rounded-full" />
             <Card className="bg-card border-border relative z-10">
@@ -116,7 +116,7 @@ export default function CorporateVeil() {
         {/* The Evidence Section */}
         <section className="space-y-8">
           <h2 className="font-heading text-3xl text-foreground text-center">The Pattern of Obstruction</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Article 1 */}
             <Card className="bg-card border-border hover:border-destructive/50 transition-colors group">
@@ -134,8 +134,8 @@ export default function CorporateVeil() {
                   The first sign of the strategy. While publicly calling for transparency, the University's legal team—ultimately answerable to the Board Chair (Tobin)—moved to prevent a key witness from testifying, citing procedural separation.
                 </p>
                 <Separator className="bg-border/50" />
-                <Button 
-                  variant="link" 
+                <Button
+                  variant="link"
                   className="p-0 h-auto font-mono text-xs text-destructive uppercase tracking-wider"
                   onClick={() => window.open("https://www.politico.com/news/2025/05/23/seton-hall-blocks-key-witness-in-clergy-abuse-probe-ordered-by-cardinal-00365732", "_blank")}
                 >
@@ -160,8 +160,8 @@ export default function CorporateVeil() {
                   Eight months later, the exact same tactic. As the investigation turned toward the former president's role in the cover-up, the "corporate veil" was dropped again to shield executive communications from the probe.
                 </p>
                 <Separator className="bg-border/50" />
-                <Button 
-                  variant="link" 
+                <Button
+                  variant="link"
                   className="p-0 h-auto font-mono text-xs text-destructive uppercase tracking-wider"
                   onClick={() => window.open("https://www.politico.com/news/2025/11/29/seton-hall-abuse-investigation-former-president-00668657", "_blank")}
                 >

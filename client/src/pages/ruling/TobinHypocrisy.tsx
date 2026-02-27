@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Quote, AlertCircle } from "lucide-react";
+import { AlertCircle, Quote } from "lucide-react";
 
 export default function TobinHypocrisy() {
   return (
@@ -23,9 +23,9 @@ export default function TobinHypocrisy() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 space-y-8">
             <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-border/50 mb-8 group">
-              <img 
-                src="/images/tobin-silence.png" 
-                alt="Cardinal's hat on an empty chair" 
+              <img
+                src="/assets/images/tobin-silence.png"
+                alt="Cardinal's hat on an empty chair"
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -37,7 +37,7 @@ export default function TobinHypocrisy() {
             <p className="font-body text-xl leading-relaxed text-foreground/90">
               The Gibbons Report, delivered contemporaneously with the Latham Report in August 2019, contains a revelation that strikes at the very heart of the Archdiocese's credibility. In the report's "priest by priest overview" section, it is explicitly revealed that Cardinal Joseph Tobin himself did not participate with the Latham attorneys.
             </p>
-            
+
             <p className="font-body text-lg leading-relaxed text-foreground/80">
               This fact is devastating not just for its irony, but for its blatant hypocrisy. It was Cardinal Tobin who commissioned the investigation. It was Cardinal Tobin who mandated cooperation. And it was Cardinal Tobin who threatened "automatic and summary removal" for any cleric who refused to appear before the investigators.
             </p>
@@ -63,7 +63,7 @@ export default function TobinHypocrisy() {
                     <AlertCircle className="w-3 h-3" /> Analysis
                   </h3>
                 </div>
-                
+
                 <div className="p-6 space-y-8">
                   <div>
                     <h3 className="font-heading text-xl text-foreground mb-3">The Double Standard</h3>

@@ -1,6 +1,6 @@
 import AcademyLayout from "@/components/AcademyLayout";
-import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
+import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
@@ -13,9 +13,9 @@ export default function Home() {
       <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
         <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
-        <img 
-          src="/images/hero-vatican-finance.png" 
-          alt="Vatican Finance" 
+        <img
+          src="/assets/images/vatican_interior.jpg"
+          alt="Vatican Finance"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute bottom-0 left-0 z-30 p-8 md:p-12 max-w-3xl">
@@ -33,39 +33,39 @@ export default function Home() {
 
       {/* Executive Summary */}
       <section className="mb-16">
-        <SectionHeader 
-          title="Executive Summary" 
+        <SectionHeader
+          title="Executive Summary"
           subtitle="Despite secularization narratives in the West, the Catholic Church demonstrates robust global expansion driven by the Global South, outpacing world population growth over the last 30 years."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <KeyMetricCard 
-            title="Global Catholics" 
-            value="1.405B" 
-            change="+36.8%" 
-            trend="up" 
+          <KeyMetricCard
+            title="Global Catholics"
+            value="1.405B"
+            change="+36.8%"
+            trend="up"
             description="Steady growth outpacing world population since 1995. Africa and Asia are primary drivers."
             highlight={true}
           />
-          <KeyMetricCard 
-            title="World Share" 
-            value="17.8%" 
-            change="-0.1 pts" 
-            trend="neutral" 
+          <KeyMetricCard
+            title="World Share"
+            value="17.8%"
+            change="-0.1 pts"
+            trend="neutral"
             description="Remarkably stable market share of global population over three decades (17-18%)."
           />
-          <KeyMetricCard 
-            title="Bishops" 
-            value="5,430" 
-            change="+20.7%" 
-            trend="up" 
+          <KeyMetricCard
+            title="Bishops"
+            value="5,430"
+            change="+20.7%"
+            trend="up"
             description="Institutional leadership has expanded significantly, particularly in emerging markets."
           />
-          <KeyMetricCard 
-            title="Seminarian Retention" 
-            value="~75%" 
-            change="High" 
-            trend="up" 
+          <KeyMetricCard
+            title="Seminarian Retention"
+            value="~75%"
+            change="High"
+            trend="up"
             description="Global ordination conversion rate remains strong at 70-75%, with US hitting 50-year highs."
           />
         </div>
@@ -115,7 +115,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="border border-border p-6 rounded-sm">
               <h3 className="font-serif font-bold text-lg mb-4">Report Sections</h3>
               <nav className="space-y-3">

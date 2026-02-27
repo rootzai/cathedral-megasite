@@ -1,10 +1,10 @@
 import ClergyMap from "@/components/ClergyMap";
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
 import Timeline from "@/components/Timeline";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { AlertTriangle, ArrowRight, FileText } from "lucide-react";
+import { AlertTriangle, FileText } from "lucide-react";
 
 export default function Analysis() {
   return (
@@ -26,9 +26,9 @@ export default function Analysis() {
           <div className="lg:col-span-2 space-y-8">
             <div className="prose prose-invert max-w-none">
               <div className="relative w-full aspect-[21/9] overflow-hidden rounded-lg border border-border/50 mb-8 group">
-                <img 
-                  src="/images/analysis-network.png" 
-                  alt="Network graph of influence" 
+                <img
+                  src="/assets/images/analysis-network.png"
+                  alt="Network graph of influence"
                   className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />

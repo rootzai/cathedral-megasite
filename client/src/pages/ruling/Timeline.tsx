@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
 import { JourneyNav } from "@/components/JourneyNav";
+import Layout from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, ChevronRight, FileText, Siren, UserMinus, UserPlus } from "lucide-react";
-import { PageHero } from "@/components/PageHero";
+import { FileText, Siren, UserMinus, UserPlus } from "lucide-react";
 
 const timelineEvents = [
   {
@@ -84,16 +84,16 @@ export default function Timeline() {
   return (
     <Layout>
       <div className="space-y-16 animate-in fade-in duration-1000">
-        
-        <PageHero 
-          sectionNumber="07" 
-          title="Timeline of" 
+
+        <PageHero
+          sectionNumber="07"
+          title="Timeline of"
           titleHighlight="Erasure"
         >
           <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 mb-8 group">
-            <img 
-              src="/images/timeline-clock.png" 
-              alt="Surreal melting clock over ocean" 
+            <img
+              src="/assets/images/timeline-clock.png"
+              alt="Surreal melting clock over ocean"
               className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -110,22 +110,19 @@ export default function Timeline() {
 
           <div className="space-y-12">
             {timelineEvents.map((event, index) => (
-              <div key={`${event.year}-${event.title}`} className={`relative flex flex-col md:flex-row gap-8 items-center ${
-                index % 2 === 0 ? "md:flex-row-reverse" : ""
-              }`}>
-                
+              <div key={`${event.year}-${event.title}`} className={`relative flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}>
+
                 {/* Date Marker */}
                 <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-destructive z-10" />
 
                 {/* Content Card */}
                 <div className="w-full md:w-[calc(50%-2rem)] pl-20 md:pl-0">
-                  <Card className={`bg-card border-border hover:border-destructive/50 transition-colors duration-300 ${
-                    index % 2 === 0 ? "md:text-left" : "md:text-right"
-                  }`}>
+                  <Card className={`bg-card border-border hover:border-destructive/50 transition-colors duration-300 ${index % 2 === 0 ? "md:text-left" : "md:text-right"
+                    }`}>
                     <CardHeader>
-                      <div className={`flex items-center gap-2 mb-2 ${
-                        index % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                      }`}>
+                      <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                        }`}>
                         <Badge variant="outline" className="font-mono text-xs">{event.year}</Badge>
                         <Badge variant="secondary" className="font-mono text-[10px] uppercase">{event.type}</Badge>
                       </div>
@@ -140,7 +137,7 @@ export default function Timeline() {
                     </CardContent>
                   </Card>
                 </div>
-                
+
                 {/* Empty space for the other side */}
                 <div className="hidden md:block w-[calc(50%-2rem)]" />
               </div>

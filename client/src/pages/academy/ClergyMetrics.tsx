@@ -1,7 +1,6 @@
 import AcademyLayout from "@/components/AcademyLayout";
-import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
-import { Card, CardContent } from "@/components/ui/card";
+import SectionHeader from "@/components/SectionHeader";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function ClergyMetrics() {
@@ -14,31 +13,31 @@ export default function ClergyMetrics() {
 
   return (
     <AcademyLayout>
-      <SectionHeader 
-        title="Clergy & Vocations" 
+      <SectionHeader
+        title="Clergy & Vocations"
         subtitle="Analysis of the priestly pipeline, from major seminary enrollment to ordination, highlighting regional efficiency variances."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <KeyMetricCard 
-          title="Total Priests" 
-          value="406,996" 
-          change="+0.5%" 
-          trend="up" 
+        <KeyMetricCard
+          title="Total Priests"
+          value="406,996"
+          change="+0.5%"
+          trend="up"
           description="Global stagnation; declines in West offset by Global South gains (1995-2023)."
         />
-        <KeyMetricCard 
-          title="Major Seminarians" 
-          value="106,495" 
-          change="-1.4%" 
-          trend="down" 
+        <KeyMetricCard
+          title="Major Seminarians"
+          value="106,495"
+          change="-1.4%"
+          trend="down"
           description="Slight long-term decline, but quality/retention is increasing in key markets."
         />
-        <KeyMetricCard 
-          title="Bishops" 
-          value="5,430" 
-          change="+20.7%" 
-          trend="up" 
+        <KeyMetricCard
+          title="Bishops"
+          value="5,430"
+          change="+20.7%"
+          trend="up"
           description="Robust expansion of the episcopal college, ensuring administrative coverage."
         />
       </div>
@@ -49,7 +48,7 @@ export default function ClergyMetrics() {
           <p className="text-muted-foreground mb-6 leading-relaxed">
             The "conversion rate" of seminarians to ordained priests is a critical KPI for institutional health. While raw enrollment numbers have dipped slightly, the efficiency of formation programs has improved significantly in specific regions.
           </p>
-          
+
           <div className="bg-muted/30 p-6 rounded-sm border border-border">
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-primary">Key Insight: The U.S. Anomaly</h4>
             <p className="text-sm text-muted-foreground mb-4">
@@ -66,9 +65,9 @@ export default function ClergyMetrics() {
         </div>
 
         <div className="relative h-[300px] lg:h-auto rounded-sm overflow-hidden border border-border">
-          <img 
-            src="/images/seminary-library.png" 
-            alt="Seminary Library" 
+          <img
+            src="/assets/images/seminary_shadows.png"
+            alt="Seminary Library"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
