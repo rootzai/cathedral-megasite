@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import React from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import MegaNavigation from "./components/MegaNavigation";
@@ -42,8 +43,14 @@ import CheckchioStatus from "./pages/endgame/checchio/Status";
 import EndgamePortal from "./pages/endgame/Portal";
 
 // Endgame Case Files
-import Lorenzo from "./pages/endgame/Lorenzo";
-import Martin from "./pages/endgame/Martin";
+import LorenzoElevation from "./pages/endgame/lorenzo/Elevation";
+import LorenzoExpulsion from "./pages/endgame/lorenzo/Expulsion";
+import LorenzoHome from "./pages/endgame/lorenzo/Home";
+import LorenzoRehabilitation from "./pages/endgame/lorenzo/Rehabilitation";
+import MartinChicago from "./pages/endgame/martin/ChicagoConnection";
+import MartinCrimes from "./pages/endgame/martin/Crimes";
+import MartinHome from "./pages/endgame/martin/Home";
+import MartinLaunder from "./pages/endgame/martin/TheLaunder";
 import ReillyEndgame from "./pages/endgame/Reilly";
 
 // Academy Pages
@@ -77,6 +84,24 @@ import SheeranMcCarrick from "./pages/ruling/SheeranMcCarrick";
 import RulingTimeline from "./pages/ruling/Timeline";
 import TobinHypocrisy from "./pages/ruling/TobinHypocrisy";
 
+// Expose Pages
+import ExposeLayoutWrapper from "./components/ExposeLayout";
+import AppealGrounds from "./pages/expose/AppealGrounds";
+import CheckchioNewOrleans from "./pages/expose/CheckchioNewOrleans";
+import EpsteinNexus from "./pages/expose/EpsteinNexus";
+import KennethMartinexpose from "./pages/expose/KennethMartin";
+import LegalTrumvirate from "./pages/expose/LegalTrumvirate";
+import McCarrickNetworkexpose from "./pages/expose/McCarrickNetwork";
+import NyreDismissal from "./pages/expose/NyreDismissal";
+import Overview from "./pages/expose/Overview";
+import RabnerExhibits from "./pages/expose/RabnerExhibits";
+import ReillyProtection from "./pages/expose/ReillyProtection";
+import SpitzUnmasking from "./pages/expose/SpitzUnmasking";
+
+// Epstein Pages
+import EpsteinLayout from "./components/EpsteinLayout";
+import EpsteinHome from "./pages/epstein/Home";
+
 import "./index.css";
 
 function PageLayout({ component: Component }: { component: React.ComponentType }) {
@@ -84,6 +109,28 @@ function PageLayout({ component: Component }: { component: React.ComponentType }
     <>
       <MegaNavigation />
       <Component />
+    </>
+  );
+}
+
+function ExposePageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <ExposeLayoutWrapper>
+        <Component />
+      </ExposeLayoutWrapper>
+    </>
+  );
+}
+
+function EpsteinPageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <EpsteinLayout>
+        <Component />
+      </EpsteinLayout>
     </>
   );
 }
@@ -114,10 +161,28 @@ function Router() {
 
       {/* Endgame Case Files */}
       <Route path={"/endgame/martin"}>
-        <PageLayout component={Martin} />
+        <PageLayout component={MartinHome} />
+      </Route>
+      <Route path={"/endgame/martin/crimes"}>
+        <PageLayout component={MartinCrimes} />
+      </Route>
+      <Route path={"/endgame/martin/launder"}>
+        <PageLayout component={MartinLaunder} />
+      </Route>
+      <Route path={"/endgame/martin/chicago"}>
+        <PageLayout component={MartinChicago} />
       </Route>
       <Route path={"/endgame/lorenzo"}>
-        <PageLayout component={Lorenzo} />
+        <PageLayout component={LorenzoHome} />
+      </Route>
+      <Route path={"/endgame/lorenzo/expulsion"}>
+        <PageLayout component={LorenzoExpulsion} />
+      </Route>
+      <Route path={"/endgame/lorenzo/rehabilitation"}>
+        <PageLayout component={LorenzoRehabilitation} />
+      </Route>
+      <Route path={"/endgame/lorenzo/elevation"}>
+        <PageLayout component={LorenzoElevation} />
       </Route>
       <Route path={"/endgame/reilly"}>
         <PageLayout component={ReillyEndgame} />
@@ -271,6 +336,22 @@ function Router() {
       <Route path={"/ruling/corporate-veil"}>
         <PageLayout component={CorporateVeil} />
       </Route>
+
+      {/* Expose Routes */}
+      <Route path={"/expose"}><ExposePageLayout component={Overview} /></Route>
+      <Route path={"/expose/mccarrick-network"}><ExposePageLayout component={McCarrickNetworkexpose} /></Route>
+      <Route path={"/expose/reilly-protection"}><ExposePageLayout component={ReillyProtection} /></Route>
+      <Route path={"/expose/nyre-dismissal"}><ExposePageLayout component={NyreDismissal} /></Route>
+      <Route path={"/expose/legal-triumvirate"}><ExposePageLayout component={LegalTrumvirate} /></Route>
+      <Route path={"/expose/epstein-nexus"}><ExposePageLayout component={EpsteinNexus} /></Route>
+      <Route path={"/expose/kenneth-martin"}><ExposePageLayout component={KennethMartinexpose} /></Route>
+      <Route path={"/expose/checchio-new-orleans"}><ExposePageLayout component={CheckchioNewOrleans} /></Route>
+      <Route path={"/expose/rabner-exhibits"}><ExposePageLayout component={RabnerExhibits} /></Route>
+      <Route path={"/expose/spitz-unmasking"}><ExposePageLayout component={SpitzUnmasking} /></Route>
+      <Route path={"/expose/appeal-grounds"}><ExposePageLayout component={AppealGrounds} /></Route>
+
+      {/* Epstein Routes */}
+      <Route path={"/epstein"}><EpsteinPageLayout component={EpsteinHome} /></Route>
 
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />

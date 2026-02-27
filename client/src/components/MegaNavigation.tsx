@@ -11,7 +11,7 @@ export default function MegaNavigation() {
   };
 
   const navLinkClass = (path: string) => `
-    px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all
+    px-4 py-3 text-xs lg:text-sm font-bold uppercase tracking-wider transition-all text-center
     ${isActive(path)
       ? 'bg-red-600 text-white'
       : 'text-gray-300 hover:bg-red-600/20 hover:text-white'}
@@ -19,12 +19,12 @@ export default function MegaNavigation() {
 
   return (
     <nav className="bg-black border-b-2 border-red-600 sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-2 lg:px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between h-14">
-          <div className="flex items-center space-x-1 h-full">
+          <div className="flex items-center justify-evenly w-full h-full">
             <Link href="/">
-              <a className="px-4 h-full flex items-center group transition-all">
+              <a className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0">
                 <img
                   src="/assets/sodom-hall-logo.png"
                   alt="Sodom Hall Home"
@@ -32,26 +32,12 @@ export default function MegaNavigation() {
                 />
               </a>
             </Link>
-            <Link href="/cathedral">
-              <a className={navLinkClass('/cathedral')}>
-                THE CATHEDRAL
-              </a>
-            </Link>
-            <Link href="/endgame">
-              <a className={navLinkClass('/endgame')}>
-                THE FRANCHISOR
-              </a>
-            </Link>
-            <Link href="/academy">
-              <a className={navLinkClass('/academy')}>
-                THE ACADEMY
-              </a>
-            </Link>
-            <Link href="/ruling">
-              <a className={navLinkClass('/ruling')}>
-                THE RULING
-              </a>
-            </Link>
+            <Link href="/cathedral"><a className={navLinkClass('/cathedral')}>THE CATHEDRAL</a></Link>
+            <Link href="/endgame"><a className={navLinkClass('/endgame')}>THE FRANCHISOR</a></Link>
+            <Link href="/academy"><a className={navLinkClass('/academy')}>THE ACADEMY</a></Link>
+            <Link href="/ruling"><a className={navLinkClass('/ruling')}>THE RULING</a></Link>
+            <Link href="/expose"><a className={navLinkClass('/expose')}>THE EXPOSÉ</a></Link>
+            <Link href="/epstein"><a className={navLinkClass('/epstein')}>THE EPSTEIN NEXUS</a></Link>
           </div>
         </div>
 
@@ -79,18 +65,12 @@ export default function MegaNavigation() {
 
           {mobileMenuOpen && (
             <div className="pb-3 space-y-1">
-              <Link href="/cathedral">
-                <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE CATHEDRAL</a>
-              </Link>
-              <Link href="/endgame">
-                <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE FRANCHISOR</a>
-              </Link>
-              <Link href="/academy">
-                <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ACADEMY</a>
-              </Link>
-              <Link href="/ruling">
-                <a className="block px-4 py-2 text-white hover:bg-red-600/20">THE RULING</a>
-              </Link>
+              <Link href="/cathedral"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE CATHEDRAL</a></Link>
+              <Link href="/endgame"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE FRANCHISOR</a></Link>
+              <Link href="/academy"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ACADEMY</a></Link>
+              <Link href="/ruling"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE RULING</a></Link>
+              <Link href="/expose"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE EXPOSÉ</a></Link>
+              <Link href="/epstein"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE EPSTEIN NEXUS</a></Link>
             </div>
           )}
         </div>

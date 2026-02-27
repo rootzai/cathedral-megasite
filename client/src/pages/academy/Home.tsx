@@ -119,17 +119,17 @@ export default function Home() {
             <div className="border border-border p-6 rounded-sm">
               <h3 className="font-serif font-bold text-lg mb-4">Report Sections</h3>
               <nav className="space-y-3">
-                <Link href="/global-growth" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                <Link href="/academy/global-growth" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
                   Global Expansion Data
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
                 <Separator />
-                <Link href="/clergy-metrics" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                <Link href="/academy/clergy-metrics" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
                   Clergy & Vocations Analysis
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
                 <Separator />
-                <Link href="/sacramental-data" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                <Link href="/academy/sacramental-data" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
                   Sacramental Index
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
