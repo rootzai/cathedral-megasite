@@ -100,10 +100,10 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </div>
 
         {/* Section Toggle */}
-        <div className="flex flex-wrap border-b border-border">
+        <div className="flex border-b border-border w-full">
           <Link href="/endgame/mccarrick">
             <div className={cn(
-              "w-1/2 py-2 px-2 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-b border-border",
+              "flex-1 py-3 px-1 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center",
               location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
@@ -113,7 +113,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/endgame/checchio">
             <div className={cn(
-              "w-1/2 py-2 px-2 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-b border-border",
+              "flex-1 py-3 px-1 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center",
               isChecchio
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
@@ -123,7 +123,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/endgame/reilly">
             <div className={cn(
-              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-border",
+              "flex-1 py-3 px-1 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center",
               isReilly
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
@@ -133,7 +133,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/endgame/martin">
             <div className={cn(
-              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-border",
+              "flex-[0.9] py-3 px-1 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center",
               isMartin
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
@@ -143,7 +143,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/endgame/lorenzo">
             <div className={cn(
-              "w-1/3 py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all",
+              "flex-1 py-3 px-1 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all flex items-center justify-center",
               isLorenzo
                 ? "bg-destructive text-white"
                 : "text-muted-foreground hover:bg-muted"
