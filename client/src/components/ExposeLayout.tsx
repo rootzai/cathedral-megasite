@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import "./expose.css";
+import "../pages/expose/expose.css";
 
 const navItems = [
     { path: "/expose", label: "Overview", subtitle: "The House McCarrick Built", icon: BookOpen, section: "I" },

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./epstein/epstein.css";
+import React, { useEffect, useState } from "react";
+import "../pages/epstein/epstein.css";
 
 export default function EpsteinLayout({ children }: { children: React.ReactNode }) {
     const [activeSection, setActiveSection] = useState('front-page');
@@ -34,7 +34,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
         <div className="epstein-theme flex min-h-screen" style={{ background: "var(--paper, #f4f0e8)" }}>
             <nav className="sidebar-nav" id="sidebar-nav">
                 <div className="sidebar-logo">
-                    <a href="/" style={{display: 'block'}}>
+                    <a href="/" style={{ display: 'block' }}>
                         <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/ohgmPACCpypWjdfQ.png" alt="SodomHall.com" />
                     </a>
                     <div className="sidebar-site-label">Special Investigation</div>
@@ -50,7 +50,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
                 <a href="#payment-channels" className={activeSection === 'payment-channels' ? 'active' : ''} onClick={(e) => handleNavClick(e, '#payment-channels')}><span className="nav-num">07</span> Other Channels?</a>
                 <a href="#open-questions" className={activeSection === 'open-questions' ? 'active' : ''} onClick={(e) => handleNavClick(e, '#open-questions')}><span className="nav-num">08</span> Open Questions</a>
                 <a href="#sources" className={activeSection === 'sources' ? 'active' : ''} onClick={(e) => handleNavClick(e, '#sources')}><span className="nav-num">09</span> Sources</a>
-                <div className="sidebar-footer">SodomHall.com<br/>Special Investigation Series<br/>Vol. III &mdash; Feb. 2026</div>
+                <div className="sidebar-footer">SodomHall.com<br />Special Investigation Series<br />Vol. III &mdash; Feb. 2026</div>
             </nav>
             <div className="flex-1" style={{ paddingLeft: '220px' }}>
                 {children}
