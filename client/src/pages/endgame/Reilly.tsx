@@ -18,7 +18,7 @@ export default function Reilly() {
                         <div className="space-y-6 z-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
                                 <AlertTriangle className="w-3 h-3" />
-                                The Face of Impunity
+                                The Presidency of Joseph Reilly
                             </div>
                             <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
                                 The Setup: <br />

@@ -42,14 +42,14 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   ];
 
   const martinItems = [
-    { href: "/endgame/martin", label: "01. THE ENFORCER", id: "01" },
+    { href: "/endgame/martin", label: "01. THE CASE OF KENNETH MARTIN", id: "01" },
     { href: "/endgame/martin/crimes", label: "02. THE INCIDENT", id: "02" },
     { href: "/endgame/martin/launder", label: "03. THE LAUNDER", id: "03" },
     { href: "/endgame/martin/chicago", label: "04. COMPLICITY", id: "04" }
   ];
 
   const lorenzoItems = [
-    { href: "/endgame/lorenzo", label: "01. THE REHABILITATED", id: "01" },
+    { href: "/endgame/lorenzo", label: "01. THE CASE OF ELIAS LORENZO", id: "01" },
     { href: "/endgame/lorenzo/expulsion", label: "02. THE EXPULSION", id: "02" },
     { href: "/endgame/lorenzo/rehabilitation", label: "03. REHABILITATION", id: "03" },
     { href: "/endgame/lorenzo/elevation", label: "04. THE ELEVATION", id: "04" }

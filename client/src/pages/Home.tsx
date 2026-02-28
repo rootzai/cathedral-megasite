@@ -87,9 +87,7 @@ For decades, a different kind of stone has been sinking — not into water, but 
 
 This is the story of that stone, and the men who tried to hold it underwater.
 
-**For the victims:**
 
-Kim Capadona • Donna McMonagle • Lara McKeever and her sisters • TM • The innocent young boys of Delbarton • The seminarians from Immaculate Conception and St. Andrew's • The seminarians McCarrick called his "nephews" • Mark Crawford and the SNAP survivors • The 450 plaintiffs in Judge Benjamin's case • Joe and Kelli Nyre who demanded truth • Those still silenced by fear • Those denied justice • The children betrayed • For truth still emerging
 `}</Streamdown>
             </div>
           </div>
@@ -206,11 +204,11 @@ We know two names:
 
 **Where are they now?**
 
-This is the question that should terrify every diocese in America. When the twelve names are revealed, we will learn which parishes, schools, and dioceses are unknowingly harboring men who enabled predators.
+The release of these names will have significant implications for dioceses nationwide, as it will reveal where these clergymen are currently assigned. When the twelve names are revealed, we will learn which parishes, schools, and dioceses are unknowingly harboring men who enabled predators.
 
-### The Thirteenth Name: Cardinal Tobin
+### Cardinal Tobin's Role and Cooperation
 
-The most shocking revelation is in the **Gibbons Report:**
+A significant finding is in the **Gibbons Report:**
 
 **According to sources familiar with the investigation, Cardinal Joseph Tobin's level of cooperation with investigators became a point of concern.**
 
@@ -234,7 +232,7 @@ The answer lies in the institutional dynamics and the power of legal counsel. Ma
 
 Silence.
 
-### The Automatic Termination Hypocrisy
+### Disparate Application of University Cooperation Policy
 
 **The Standard:** Failure to cooperate = removal from positions
 
@@ -254,7 +252,7 @@ The subordinate understood she was subject to the rules. The subordinates unders
 
 ### The Irony of Counsel
 
-Here's the devastating irony: **The same RCAN (Roman Catholic Archdiocese of Newark) lawyers who advised Reilly to resist, then comply, were also the lawyers advising Tobin.**
+It is a notable contradiction: **The same RCAN (Roman Catholic Archdiocese of Newark) lawyers who advised Reilly to resist, then comply, were also the lawyers advising Tobin.**
 
 They told Reilly: "You must cooperate or face automatic termination."
 
@@ -285,7 +283,7 @@ Seton Hall's enforcement of cooperation requirements was based on a fundamental 
 - Emails with BOTH Gibbons AND SHU on the chain
 - Latham's legal advice and conclusions
 
-The vault isn't just opening. It's being demolished.
+The court's order mandates the release of a significant volume of previously sealed documents.
 `}</Streamdown>
               </CollapsibleSection>
 
@@ -518,12 +516,6 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
 
               <a href="#act-vi" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
                 <h3 className="text-2xl font-bold mb-2 text-red-500">Act VI</h3>
-                <p className="text-xl mb-2">The Witch of En-Dor</p>
-                <p className="text-gray-400">The prophecy and the sword (2024-2025)</p>
-              </a>
-
-              <a href="#act-vii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act VII</h3>
                 <p className="text-xl mb-2">The Succession</p>
                 <p className="text-gray-400">Who inherits the cathedral? (2027)</p>
               </a>
@@ -757,7 +749,7 @@ After the McCarrick scandal still smoldered, Seton Hall announced its savior: Dr
 
 What they didn't tell him—what they were already hiding—was that the same men who hired him were about to bury a report that would expose sexual harassment and institutional cover-ups at the highest levels.
 
-The perfect president would become their perfect scapegoat.
+The university president was positioned to bear the institutional blame.
 `}</Streamdown>
               </div>
 
@@ -1163,7 +1155,7 @@ Mary Pat walked away. Chris stayed to defend the indefensible. The Christie name
 
               <div className="prose prose-invert prose-xl max-w-none mb-8">
                 <Streamdown>{`
-While institutions chose silence, individuals chose courage. Some spoke publicly. Others remain anonymous, unable to believe their eyes that someone is finally coming for these evil men who cloak themselves in righteousness and loyalty to the order.
+While institutions chose silence, individuals chose courage. Some spoke publicly. Others remain anonymous, unable to believe their eyes that someone is finally holding accountable those who cloak themselves in righteousness and loyalty to the order.
 
 Your pain won't disappear, but perhaps you'll find an errant smile or two when you think of these days.
 `}</Streamdown>
@@ -1201,7 +1193,7 @@ Anonymous survivor whose story matters, whose courage counts.
 
 **All the Anonymous Survivors**
 
-Those who cannot yet speak publicly but who witness this moment with hope. Someone is finally coming for these evil men.
+Those who cannot yet speak publicly but who witness this moment with hope. Someone is finally holding these individuals accountable.
 `}</Streamdown>
               </CollapsibleSection>
 
@@ -1374,113 +1366,15 @@ The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates i
           </div>
         </section>
 
-        {/* Act VI - THE WITCH OF EN-DOR */}
+        {/* Act VI - THE SUCCESSION */}
         <section
           id="act-vi"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/saul/saul_witch_endor_1.jpg)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act VI</h2>
-              <h3 className="text-5xl font-bold mb-4">The Witch of En-Dor</h3>
-              <p className="text-2xl text-gray-400 mb-12">2024-2025 — The Prophecy</p>
-
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
-                <Streamdown>{`
-From 1 Samuel 28: On the eve of battle, King Saul — abandoned by God, desperate for guidance — disguises himself and visits the witch of En-Dor. He asks her to summon the prophet Samuel from the dead.
-
-Samuel's ghost rises. And he speaks the truth Saul cannot escape:
-
-> "The Lord has torn the kingdom out of your hand... Tomorrow you and your sons will be with me."
-
-The next day, Saul falls on his own sword.
-
-A king who refused to face the truth. A prophet who spoke it anyway. A sword that waited.
-`}</Streamdown>
-              </div>
-
-              <CollapsibleSection title="The Modern Seer of Truth">
-                <Streamdown>{`
-Lara is not a witch. She is a **seer of truth**. A modern prophet who sees through the lies, the cover-ups, the institutional gaslighting. A survivor who refuses to be silenced. And when Cardinal Tobin comes to her — desperate, defensive, seeking absolution — she speaks the truth he cannot escape.
-
-**Who is Lara?**
-
-A survivor. An advocate. A voice for those who were silenced. She has seen the documents. She knows the names. She understands the network. And she will not let the institution hide behind protocol.
-
-But more than that: **she can see the lies**. When others were fooled by Tobin's carefully crafted statements, his rehearsed empathy, his institutional double-speak — Lara saw through it all.
-
-**Her Gift: Seeing Through the Lies**
-
-When Tobin would tell a lie — when he would claim ignorance, when he would deflect responsibility, when he would hide behind "canonical processes" and "ongoing investigations" — Lara would respond with a single, devastating phrase:
-
-> **"I'll pray for you."**
-
-Not a blessing. Not forgiveness. A judgment.
-
-**A declaration that she saw the truth, and he knew it.**
-
-It was the most powerful thing she could say. Because Tobin knew — in that moment — that he had been seen. Not by the press, not by the lawyers, not by the Vatican bureaucrats who would rubber-stamp his excuses.
-
-**Seen by someone who knew.**
-
-A modern seer of truth. A prophet in the biblical sense: someone who speaks truth to power, who refuses to be deceived, who calls out the lies even when the entire institution stands behind the liar.
-
-**The Confrontation**
-
-When Tobin finally came to her — desperate, defensive, seeking absolution — she spoke the truth he cannot escape:
-
-> Lara: "You know what you've done."
-
-And when he tried to lie, to deflect, to hide:
-
-> Lara: "I'll pray for you."
-
-**The judgment of a seer. The truth he cannot escape.**
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Sword">
-                <Streamdown>{`
-King Saul fell on his own sword. He chose death over facing the consequences of his failures. He chose the blade over accountability.
-
-Will Cardinal Tobin fall on his sword?
-
-Will he resign before 2027, admitting his failures?
-
-Will he face the grand jury, the courts, the truth?
-
-Or will he cling to power until Rome forces his hand?
-
-**The sword is waiting.**
-
-Unlike Saul, Tobin still has a choice.
-
-He can face the truth. He can resign with dignity. He can cooperate with investigators.
-
-He can choose accountability over the sword.
-
-But the millstone is rising.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <div className="mt-12 text-center">
-                <img src="/assets/Saulonsword.png" alt="Saul on his sword" className="w-full max-w-xl mx-auto rounded-lg shadow-2xl border-4 border-red-600" />
-                <p className="text-sm text-gray-400 mt-4 italic">Saul on His Sword</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Act VII - THE SUCCESSION */}
-        <section
-          id="act-vii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_2.jpg)' }}
         >
           <div className="container mx-auto max-w-5xl relative z-10">
             <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act VII</h2>
+              <h2 className="text-6xl font-bold mb-4 text-red-500">Act VI</h2>
               <h3 className="text-5xl font-bold mb-4">The Succession</h3>
               <p className="text-2xl text-gray-400 mb-12">2027 — Who Inherits the Cathedral?</p>
 
@@ -1585,7 +1479,7 @@ The millstone is rising. The answer is coming.
         {/* Social Sharing Section */}
         <section id="share" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
           <div className="container mx-auto max-w-7xl">
-            <h2 className="text-5xl font-bold mb-4 text-center">Share the Truth</h2>
+            <h2 className="text-5xl font-bold mb-4 text-center">Share This Report</h2>
             <p className="text-xl text-gray-400 text-center mb-12">Download and share these images. The truth deserves to go viral.</p>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -1854,7 +1748,7 @@ The millstone is rising. The answer is coming.
                 <div>
                   <p className="text-4xl mb-2">✉️</p>
                   <p className="font-bold mb-2">Email</p>
-                  <p className="text-gray-400">Send to your diocese, local news, elected officials. Demand accountability.</p>
+                  <p className="text-gray-400">Send to your diocese, local news, elected officials for further information.</p>
                 </div>
                 <div>
                   <p className="text-4xl mb-2">🗣️</p>
@@ -1863,7 +1757,7 @@ The millstone is rising. The answer is coming.
                 </div>
               </div>
               <p className="text-center mt-8 text-gray-400">
-                Use hashtags: <span className="text-red-500">#SodomHall #ChurchAccountability #SurvivorsFirst</span>
+                Contact relevant authorities: <span className="text-red-500">New Jersey Office of the Attorney General</span>
               </p>
             </div>
           </div>
@@ -1905,7 +1799,6 @@ For truth emerging.
 
 **The cathedral of documents stands open.**
 
-**The millstone has risen.**
 
 **The reckoning continues.**
 

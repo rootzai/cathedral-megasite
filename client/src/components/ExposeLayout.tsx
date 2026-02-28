@@ -22,12 +22,12 @@ const navItems = [
     { path: "/expose/mccarrick-network", label: "The McCarrick Network", subtitle: "Church, State & the Mob", icon: Network, section: "II" },
     { path: "/expose/reilly-protection", label: "Reilly's Ascent", subtitle: "Secretary to President", icon: Church, section: "III" },
     { path: "/expose/nyre-dismissal", label: "The Nyre Dismissal", subtitle: "Feb. 19, 2026 Ruling", icon: Gavel, section: "IV" },
-    { path: "/expose/legal-triumvirate", label: "Christie's Legal Mafia", subtitle: "Scrivo, Porrino & Ruemmler", icon: Scale, section: "V" },
+    { path: "/expose/legal-triumvirate", label: "The Christie Administration Legal Network", subtitle: "Scrivo, Porrino & Ruemmler", icon: Scale, section: "V" },
     { path: "/expose/epstein-nexus", label: "The Epstein Nexus", subtitle: "Ruemmler & Financial Ties", icon: Link2, section: "VI" },
     { path: "/expose/kenneth-martin", label: "Father Kenneth Martin", subtitle: "The Founding Template", icon: Skull, section: "VII" },
     { path: "/expose/checchio-new-orleans", label: "Checchio & New Orleans", subtitle: "Musical Chairs", icon: Users, section: "VIII" },
     { path: "/expose/rabner-exhibits", label: "The Rabner Dossier", subtitle: "19 Exhibits of Corruption", icon: FileText, section: "IX" },
-    { path: "/expose/spitz-unmasking", label: "The Spitz Unmasking", subtitle: "Silencing the Press", icon: Eye, section: "X" },
+    { path: "/expose/spitz-unmasking", label: "Subpoena of a Journalist", subtitle: "Use of a Grand Jury Subpoena", icon: Eye, section: "X" },
     { path: "/expose/appeal-grounds", label: "Grounds for Appeal", subtitle: "Seven Reversible Errors", icon: Shield, section: "XI" },
 ];
 

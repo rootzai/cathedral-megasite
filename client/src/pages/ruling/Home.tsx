@@ -5,7 +5,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, FileText, Info } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -17,25 +17,7 @@ export default function Home() {
           title="The Ruling"
           subtitle="Transparency is Coming. The Wait is Over."
         >
-          {/* Authors' Note / Methodology Explanation */}
-          <div className="bg-muted/10 border border-primary/30 p-8 rounded-none relative overflow-hidden mt-8">
-            <div className="absolute top-0 left-0 w-1 h-full bg-primary/50"></div>
-            <div className="flex items-start gap-4">
-              <Info className="w-6 h-6 text-primary mt-1 shrink-0" />
-              <div className="space-y-4">
-                <h3 className="font-heading text-xl text-foreground">A Note on Our Methodology</h3>
-                <p className="font-body text-lg leading-relaxed text-foreground/80">
-                  We are amateur sleuths who do our homework. We have not seen the sealed documents, but we feel like we have because we have our AI team on it. We know who everyone is because we did the research, connected the dots, and followed the paper trail left by sudden removals, unexplained transfers, and quiet resignations.
-                </p>
-                <p className="font-body text-lg leading-relaxed text-foreground/80">
-                  Are we 100% sure? No. But it is worth guessing, now that we know we are only weeks away from confirming our hunches. To think we would be worried about breaking confidentiality is to misunderstand our role. We are not insiders leaking secrets; we are outsiders solving a puzzle.
-                </p>
-                <p className="font-body text-lg leading-relaxed text-foreground/80 italic">
-                  You don't have to listen to us. Except, our hunches are exactly how we got here.
-                </p>
-              </div>
-            </div>
-          </div>
+
         </PageHero>
 
         <SectionDivider />

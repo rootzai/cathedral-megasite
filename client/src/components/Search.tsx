@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import { Search as SearchIcon, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 interface SearchResult {
   section: string;
@@ -38,7 +38,7 @@ export function Search({ onClose }: SearchProps) {
       { act: 'Act I', section: '2000', title: 'The Settlements', snippet: 'Newark Archdiocese paid settlements to McCarrick abuse victims' },
       { act: 'Act I', section: '2006', title: 'The Seton Hall Apartment', snippet: 'Archbishop Myers opposed McCarrick apartment at Seton Hall, Sheeran gave it anyway' },
       { act: 'Act I', section: '2008', title: 'The Sipe Letter', snippet: 'Richard Sipe wrote to Pope Benedict XVI detailing decades of abuse' },
-      
+
       // Act II
       { act: 'Act II', section: '2012', title: 'The First Warning', snippet: 'Reilly aware of sexual harassment summer/fall 2012, did NOT report' },
       { act: 'Act II', section: '2014', title: 'The Harassment Begins', snippet: 'Kevin Marino began sexually harassing Kim Capadona, Donna McMonagle, Kelli Nyre' },
@@ -46,18 +46,18 @@ export function Search({ onClose }: SearchProps) {
       { act: 'Act II', section: '2018', title: 'The Explosion', snippet: 'McCarrick scandal broke publicly, New York Times investigation' },
       { act: 'Act II', section: '2019', title: 'The Letters to Reilly', snippet: 'Task Force sent two letters to Reilly documenting his failures to report' },
       { act: 'Act II', section: 'Sea Girt', title: 'The Sea Girt Lie', snippet: 'Reilly claims he only visited McCarrick at Sea Girt once - absurd given his role as secretary' },
-      
+
       // Act III
       { act: 'Act III', section: 'Room', title: 'The Room', snippet: 'August 2019 meeting: Marino, Nyre, Stio, Masharelli, Scrivo decided to cover up' },
       { act: 'Act III', section: 'Lawyers', title: 'The Lawyers', snippet: 'Angelo Stio, Jim Masharelli, Michael Scrivo - the legal team executing the coverup' },
       { act: 'Act III', section: 'Bridgegate', title: 'The Bridgegate Playbook', snippet: 'Marino defended Bill Stepien in Bridgegate, Supreme Court vindication, same playbook at SHU' },
-      { act: 'Act III', section: 'Christie', title: "Christie's Legal Mafia", snippet: 'Mary Pat Christie, Chris Porrino, Michael Scrivo - Christie administration connections' },
+      { act: 'Act III', section: 'Christie', title: "The Christie Administration Legal Network", snippet: 'Mary Pat Christie, Chris Porrino, Michael Scrivo - Christie administration connections' },
       { act: 'Act III', section: 'Dechert', title: 'The Dechert Sham', snippet: 'First law firm investigation, too pliable, moved to Perry Law' },
       { act: 'Act III', section: 'Perry', title: 'The Perry Law Whitewash', snippet: 'Karen Agnifilo report: no evidence despite admitting Flood corroboration, multiple complaints' },
       { act: 'Act III', section: 'Linares', title: 'Judge Linares', snippet: 'Allowed confidential report to be released to Marino, unprecedented judicial overreach' },
       { act: 'Act III', section: 'Agnifilo', title: 'Karen Friedman Agnifilo', snippet: 'Wrote Perry Law report, now scrubs it from her CV, defends Luigi Mangione' },
       { act: 'Act III', section: 'Flood', title: 'Kevin Flood', snippet: 'Regent who saw Marino\'s hands on Kelli\'s shoulders, resigned citing logbook erasure' },
-      
+
       // Key people
       { act: 'People', section: 'Marino', title: 'Kevin Marino', snippet: 'Board Chair who sexually harassed three women, bullied President Nyre' },
       { act: 'People', section: 'Reilly', title: 'Joseph Reilly', snippet: 'McCarrick\'s secretary, now SHU President despite Task Force findings' },

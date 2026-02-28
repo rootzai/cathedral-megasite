@@ -30,7 +30,7 @@ const sections = [
   {
     path: "/legal-triumvirate",
     section: "V",
-    title: "Christie's Legal Mafia",
+    title: "The Christie Administration Legal Network",
     desc: "Scrivo, Porrino, and Ruemmler — three Seton Hall Law alumni who built New Jersey's judiciary and now deploy it to protect the institution.",
     color: "var(--gold)",
   },
@@ -44,7 +44,7 @@ const sections = [
   {
     path: "/spitz-unmasking",
     section: "X",
-    title: "The Spitz Unmasking",
+    title: "Subpoena of a Journalist",
     desc: "A criminal grand jury subpoena to Google, 18 days after Reilly's installation — weaponizing prosecutorial power to silence a civil whistleblower.",
     color: "var(--blood)",
   },

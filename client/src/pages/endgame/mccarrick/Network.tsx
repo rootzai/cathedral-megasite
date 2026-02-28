@@ -23,12 +23,12 @@ export default function Network() {
             <div className="relative h-96 w-full overflow-hidden border border-destructive/30 group">
               <img
                 src="/assets/Unholy.png"
-                alt="The Unholy Trinity: McCarrick, Reilly, Tobin"
+                alt="The Leadership Trio: McCarrick, Reilly, Tobin"
                 className="absolute inset-0 w-full h-full object-cover opacity-90 animate-ken-burns"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
-                <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Unholy Trinity</h2>
+                <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Leadership Trio</h2>
                 <p className="text-sm text-gray-300 italic">"By the stang of the regents!"</p>
               </div>
             </div>

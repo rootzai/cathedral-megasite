@@ -9,7 +9,7 @@ const memeGallery = [
   { src: "/assets/Blessmefather.png", alt: "Bless Me Father Meme", title: "The Confession" },
   { src: "/assets/MsgrJP1.png", alt: "Msgr Joe Paterno Meme 1", title: "The Comparison" },
   { src: "/assets/MsgrJP2.png", alt: "Msgr Joe Paterno Meme 2", title: "The Legacy" },
-  { src: "/assets/Unholy3.png", alt: "The Unholy Trinity Meme", title: "The Trinity" },
+  { src: "/assets/Unholy3.png", alt: "The Leadership Trio Meme", title: "The Leadership Trio" },
   { src: "/assets/Beachhouseonce.png", alt: "Beach House Once Meme", title: "The Denial" },
   { src: "/assets/Devillikesyourwork.png", alt: "Devil Likes Your Work Meme", title: "The Promotion" },
 ];

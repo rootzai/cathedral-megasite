@@ -72,7 +72,7 @@ export default function Portal() {
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-SHU</span>
                 <h2 className="text-3xl font-display uppercase text-white mb-2 group-hover:text-shadow-blood transition-all">
-                  The Face of Impunity
+                  The Presidency of Joseph Reilly
                 </h2>
                 <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Joseph Reilly: Protected and promoted to President of Seton Hall University.
@@ -93,7 +93,7 @@ export default function Portal() {
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1989-KM</span>
                 <h2 className="text-3xl font-display uppercase text-white mb-2 group-hover:text-shadow-blood transition-all">
-                  The Enforcer
+                  The Case of Kenneth Martin
                 </h2>
                 <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Ken Martin: Serial abuser laundered through the system to serve McCarrick.
@@ -114,7 +114,7 @@ export default function Portal() {
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1980-EL</span>
                 <h2 className="text-3xl font-display uppercase text-white mb-2 group-hover:text-shadow-blood transition-all">
-                  The Rehabilitated
+                  The Case of Elias Lorenzo
                 </h2>
                 <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Elias Lorenzo: Kicked out for deviant conduct, rebranded, and elevated to Bishop.

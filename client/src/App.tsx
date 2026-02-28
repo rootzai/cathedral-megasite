@@ -150,6 +150,9 @@ function Router() {
       <Route path={"/about"}>
         <PageLayout component={About} />
       </Route>
+      <Route path={"/dedication"}>
+        <PageLayout component={Dedication} />
+      </Route>
       <Route path={"/documents"}>
         <PageLayout component={Documents} />
       </Route>

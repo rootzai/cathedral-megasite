@@ -18,10 +18,10 @@ export default function Home() {
                         <div className="space-y-6 z-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
                                 <AlertTriangle className="w-3 h-3" />
-                                The Rehabilitated
+                                The Case of Elias Lorenzo
                             </div>
                             <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
-                                The Rehabilitated: <br />
+                                The Case of Elias Lorenzo: <br />
                                 <span className="text-destructive">Elias Lorenzo</span>
                             </h1>
                             <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">

@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   const navItems = [
     { href: "/ruling", label: "01. THE RULING", id: "01" },
     { href: "/ruling/dirty-dozen", label: "02. THE DIRTY DOZEN", id: "02" },
-    { href: "/ruling/reilly", label: "03. THE FACE OF IMPUNITY", id: "03" },
+    { href: "/ruling/reilly", label: "03. THE PRESIDENCY OF JOSEPH REILLY", id: "03" },
     { href: "/ruling/beach-house", label: "04. THE BEACH HOUSE", id: "04" },
     { href: "/ruling/tobin-hypocrisy", label: "05. TOBIN'S HYPOCRISY", id: "05" },
     { href: "/ruling/corporate-veil", label: "06. THE CORPORATE VEIL", id: "06" },

@@ -1,12 +1,12 @@
-import { Link, useLocation } from "wouter";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import { ShareButton } from "./ShareButton";
 
 const RULING_BASE_PATH = "/ruling";
 const ROUTES = [
   { path: RULING_BASE_PATH, label: "The Ruling" },
   { path: `${RULING_BASE_PATH}/dirty-dozen`, label: "The Dirty Dozen" },
-  { path: `${RULING_BASE_PATH}/reilly`, label: "The Face of Impunity" },
+  { path: `${RULING_BASE_PATH}/reilly`, label: "The Presidency of Joseph Reilly" },
   { path: `${RULING_BASE_PATH}/beach-house`, label: "The Beach House" },
   { path: `${RULING_BASE_PATH}/tobin-hypocrisy`, label: "Tobin's Hypocrisy" },
   { path: `${RULING_BASE_PATH}/corporate-veil`, label: "The Corporate Veil" },
@@ -29,7 +29,7 @@ export function JourneyNav() {
   return (
     <div className="border-t border-border mt-16 py-8">
       <div className="flex justify-center mb-8">
-        <ShareButton 
+        <ShareButton
           title={`The Benjamin Ruling: ${ROUTES[currentIndex].label}`}
           text={`Read about ${ROUTES[currentIndex].label} in the Benjamin Ruling investigation.`}
         />

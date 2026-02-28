@@ -10,7 +10,7 @@ export default function SpitzUnmasking() {
         className="text-4xl font-black mb-2 leading-tight"
         style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
       >
-        The Spitz Unmasking
+        Use of a Grand Jury Subpoena to Identify a Source
       </h1>
       <p className="text-base mb-8" style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
         Weaponizing Criminal Grand Jury Process Against a Civil Whistleblower · November 2024 – January 2026
