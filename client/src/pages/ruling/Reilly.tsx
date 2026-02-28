@@ -41,7 +41,7 @@ export default function Reilly() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-mono uppercase tracking-widest group" asChild>
-                  <a href="https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168" target="_blank" rel="noopener noreferrer">
+                  <a href="https://archive.ph/https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168" target="_blank" rel="noopener noreferrer">
                     Read the Politico Exposé
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>

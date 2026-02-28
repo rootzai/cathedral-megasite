@@ -131,7 +131,7 @@ On November 17, Judge Benjamin's ruling made national headlines. The NY Post and
 
 **Read the full coverage:**
 - [NY Post: "Seton Hall sex abuse report ordered to be released by judge"](https://nypost.com/2025/11/17/us-news/seton-hall-sex-abuse-report-ordered-to-be-released-by-judge/) (Peter Senzamici)
-- [Politico: "Seton Hall must turn over clergy abuse documents, judge says"](https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168) (Dustin Racioppi)
+- [Politico: "Seton Hall must turn over clergy abuse documents, judge says"](https://archive.ph/https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168) (Dustin Racioppi)
 `}</Streamdown>
               </CollapsibleSection>
 
@@ -584,7 +584,7 @@ Before there was a Latham Report, before there was a Gibbons investigation, befo
 
 "He Preyed on Men Who Wanted to Be Priests. Then He Became a Cardinal."
 
-By Laurie Goodstein and Sharon Otterman | [Read the full investigation](https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html?unlocked_article_code=1.1k8.DwkP.W_W9dkmD2eL8&smid=url-share)
+By Laurie Goodstein and Sharon Otterman | [Read the full investigation](https://archive.ph/https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html?unlocked_article_code=1.1k8.DwkP.W_W9dkmD2eL8&smid=url-share)
 
 ### The Beach House at Sea Girt
 
@@ -1069,7 +1069,7 @@ On July 11, 2024, Christopher Maag published in the New York Times:
 
 **"Investigators Find No Evidence of Sexual Harassment in Seton Hall Case"**
 
-<a href="https://www.nytimes.com/2024/07/11/nyregion/seton-hall-sexual-harassment-case.html" target="_blank" className="text-red-500 hover:text-red-400 font-bold">→ Read Maag's NYT Article</a>
+<a href="https://web.archive.org/web/20250723092722/https://www.nytimes.com/2024/07/11/nyregion/seton-hall-sexual-harassment-case.html" target="_blank" className="text-red-500 hover:text-red-400 font-bold">→ Read Maag's NYT Article</a>
 
 The article parrots the Perry Law report. Presents Marino as a victim. Downplays the logbook erasure. Frames Nyre's whistleblowing as a vendetta.
 
@@ -1091,7 +1091,7 @@ The July 11 story came on an urgent tip from Marino's team. Porrino's hotline to
 
 **The Irony**
 
-This is the same New York Times that broke the McCarrick story in 2018. The same paper whose investigative journalism by [Laurie Goodstein](https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html) exposed decades of abuse.
+This is the same New York Times that broke the McCarrick story in 2018. The same paper whose investigative journalism by [Laurie Goodstein](https://archive.ph/https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html) exposed decades of abuse.
 
 But in 2024, the Times became a tool of the cover-up. Because Marino knew the game: attack first (Setonian editorial), hire the right lawyer (Perry Law), produce the right report ("at the University's direction"), leak it illegally (Linares), file it publicly (Porrino), and feed it to the right reporter (Maag).
 

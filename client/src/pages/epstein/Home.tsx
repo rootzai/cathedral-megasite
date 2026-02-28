@@ -103,7 +103,7 @@ export default function EpsteinHome() {
 
 {/* BREAKING NEWS BANNER */}
 <div className="breaking-banner">
-  <strong>BREAKING &mdash; FEB. 20, 2026:</strong>&nbsp;&nbsp;Darren Indyke &amp; Richard Kahn &mdash; the men who signed Seton Hall's Epstein tuition checks and co-executed his estate &mdash; agree to pay up to <strong>$35 million</strong> to settle a class-action accusing them of aiding Epstein's sex trafficking.&nbsp;&nbsp;<a href="https://thehill.com/regulation/court-battles/5747345-epstein-estate-settlement-advisers-sex-trafficking-claims/" target="_blank">Read more &rarr;</a>
+  <strong>BREAKING &mdash; FEB. 20, 2026:</strong>&nbsp;&nbsp;Darren Indyke &amp; Richard Kahn &mdash; the men who signed Seton Hall's Epstein tuition checks and co-executed his estate &mdash; agree to pay up to <strong>$35 million</strong> to settle a class-action accusing them of aiding Epstein's sex trafficking.&nbsp;&nbsp;<a href="https://web.archive.org/web/20260221132624/https://thehill.com/regulation/court-battles/5747345-epstein-estate-settlement-advisers-sex-trafficking-claims/" target="_blank">Read more &rarr;</a>
 </div>
 
 {/* ════════════════════════════════════════════════════════
@@ -1169,14 +1169,14 @@ export default function EpsteinHome() {
       <li>DOJ Epstein Files — Deutsche Bank records, Jmail email archive (justice.gov, released Jan. 30, 2026)</li>
       <li>House Judiciary Committee Democrats — Letters to NYU and Columbia presidents (Jan. 14, 2026)</li>
       <li>Senate Finance Committee — Wyden memorandum on JPMorgan/Epstein (Nov. 19, 2025)</li>
-      <li><a href="https://thehill.com/regulation/court-battles/5747345-epstein-estate-settlement-advisers-sex-trafficking-claims/" target="_blank">The Hill — "Epstein estate settles lawsuit accusing advisers of aiding sex trafficking claims" (Feb. 20, 2026)</a></li>
+      <li><a href="https://web.archive.org/web/20260221132624/https://thehill.com/regulation/court-battles/5747345-epstein-estate-settlement-advisers-sex-trafficking-claims/" target="_blank">The Hill — "Epstein estate settles lawsuit accusing advisers of aiding sex trafficking claims" (Feb. 20, 2026)</a></li>
       <li><a href="https://www.theguardian.com/us-news/2026/feb/20/jeffrey-epstein-estate-settlement" target="_blank">The Guardian — "Jeffrey Epstein's estate agrees to pay up to $35m to settle survivors' lawsuit" (Feb. 20, 2026)</a></li>
       <li><a href="https://www.nbcnews.com/news/us-news/epstein-estate-agrees-35-million-settlement-victim-class-action-rcna259863" target="_blank">NBC News — "Epstein estate agrees to $35 million settlement in victim class action" (Feb. 20, 2026)</a></li>
       <li><a href="https://finance.yahoo.com/news/seton-hall-switches-counsel-sex-090731506.html" target="_blank">Yahoo Finance / AP — "Seton Hall Switches Counsel in Sex Abuse Investigation" (Oct. 2018) — Christine Amalfe appointment</a></li>
       <li><a href="https://www.thesetonian.com/article/2025/01/board-of-regents-chair-and-msgr-reilly-controversy" target="_blank">The Setonian — "Board of Regents chair backs President Msgr. Reilly as allegations stir controversy" (Jan. 2025) — D'Alessandro statement</a></li>
-      <li><a href="https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814" target="_blank">Politico — "He knew of sex abuse allegations on campus. Now he's president." (Dec. 21, 2024)</a></li>
+      <li><a href="https://web.archive.org/web/20250514194547/https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814" target="_blank">Politico — "He knew of sex abuse allegations on campus. Now he's president." (Dec. 21, 2024)</a></li>
       <li><a href="https://www.nj.com/education/2025/02/catholic-church-hires-law-firm-to-review-controversial-report-tied-to-seton-hall-president.html" target="_blank">NJ.com — "Catholic Church hires Ropes &amp; Gray to review controversial report" (Feb. 2025)</a></li>
-      <li><a href="https://www.ropesgray.com/en/people/d/james-p-dowden" target="_blank">Ropes &amp; Gray — James P. Dowden biography</a></li>
+      <li><a href="https://web.archive.org/web/20251110080230/https://www.ropesgray.com/en/people/d/james-p-dowden" target="_blank">Ropes &amp; Gray — James P. Dowden biography</a></li>
       <li><a href="https://www.shu.edu/news/new-chair-of-the-board-of-regents-henry-dalessandro.html" target="_blank">Seton Hall University — "Henry (Hank) F. D'Alessandro ’85, New Chair of the Board of Regents" (Oct. 2023)</a></li>
     </ul>
   </div>
