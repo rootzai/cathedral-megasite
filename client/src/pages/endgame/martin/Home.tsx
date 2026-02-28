@@ -70,6 +70,82 @@ export default function Home() {
                     </div>
                 </section>
 
+                <section className="pt-8 border-b border-border pb-16">
+                    <div className="max-w-4xl space-y-12">
+                        <div className="space-y-6">
+                            <h2 className="font-heading text-4xl text-foreground uppercase">The Indictment: Institutional Protectionism and the McCarrick-Reilly Network</h2>
+                            <p className="font-body text-xl text-muted-foreground leading-relaxed">
+                                The ecclesiastical landscape of New Jersey and its extensions into Delaware and Louisiana represents a systemic failure of leadership and a calculated effort to harbor predators. At the core of this crisis are Father Kenneth Martin and a cadre of enablers who utilized the Catholic Church's hierarchy to groom families, abuse children, and silence whistleblowers. This network—comprising Ken Martin, Joseph Reilly, and James Checchio—is sustained by an outer ring of political and legal protectors like Thomas Scrivo and Kevin O'Toole, who have prioritized institutional stability over the safety of the vulnerable.
+                            </p>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h2 className="font-heading text-3xl text-foreground uppercase border-l-4 border-destructive pl-4">Father Kenneth Martin: The Career of a Protected Predator</h2>
+                            <p className="font-body text-lg text-foreground/80 leading-relaxed">
+                                Kenneth Martin's history as a priest is a study in how the "Newark system" laundered and promoted known abusers. Martin began his career not as a priest, but as a lay teacher at Loyola Blakefield High School in Towson, Maryland, in the 1970s. By the late 1970s, he had moved into the Archdiocese of Newark, where he was assigned to St. Andrew's Parish in Bayonne, New Jersey.
+                            </p>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="font-heading text-2xl text-foreground uppercase text-destructive">The Bayonne Nexus and the Crawford Family</h3>
+                            <p className="font-body text-lg text-foreground/80 leading-relaxed">
+                                It was at St. Andrew's that Martin's predatory behavior became a documented part of the archdiocesan record—decades before he was finally "barred" from ministry.
+                            </p>
+                            <ul className="space-y-4 font-body text-lg text-foreground/80">
+                                <li><strong className="text-foreground">Abuse and Early Warnings:</strong> Between 1977 and 1983, Martin sexually abused Mark Crawford and his younger brother. Mark Crawford, who would later become the New Jersey coordinator for SNAP, first reported the abuse to a priest friend of Martin's, Father Bill Cramer, in 1981. Cramer—who was later removed for abusing two brothers himself—responded by simply avoiding Crawford.</li>
+                                <li><strong className="text-foreground">The 1983 Denunciation:</strong> In 1983, Crawford took the courageous step of reporting Martin directly to Newark Auxiliary Bishop Jerome Pechillo. Instead of investigating the situation, Pechillo chastised Crawford for failing to address him as "His Excellency" and dismissed the trauma as "anger" over his father's recent death.</li>
+                                <li><strong className="text-foreground">Shuffling to Promote:</strong> Despite these credible allegations, the system did not remove Martin. He continued working at St. Andrew's through 1984 before being shuffled between parishes. In 1989, he was officially ordained—a move that validated his protectors' support.</li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="font-heading text-2xl text-foreground uppercase text-destructive">The Secretarial Promotion and "Uncle Ted"</h3>
+                            <p className="font-body text-lg text-foreground/80 leading-relaxed">
+                                The most damning evidence of the system's corruption occurred in 1992. Rather than being laicized for the Bayonne abuse, Martin was promoted to serve as the personal secretary to Archbishop Theodore McCarrick. This role placed him at the nerve center of McCarrick's "nephew" grooming system, where the two shared a personal and professional bond of silence.
+                            </p>
+                        </div>
+
+                        <div className="mt-8 border border-border rounded-lg overflow-hidden bg-black/50">
+                            <table className="w-full text-left font-body">
+                                <thead>
+                                    <tr className="bg-muted/50 border-b border-border">
+                                        <th className="p-4 font-mono text-sm uppercase text-muted-foreground tracking-widest w-1/4">Period</th>
+                                        <th className="p-4 font-mono text-sm uppercase text-muted-foreground tracking-widest w-1/3">Assignment / Role</th>
+                                        <th className="p-4 font-mono text-sm uppercase text-muted-foreground tracking-widest">Institutional Response</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-border text-foreground/80">
+                                    <tr className="hover:bg-muted/20 transition-colors">
+                                        <td className="p-4 font-mono text-xs">1970s</td>
+                                        <td className="p-4">Lay Teacher, Loyola Blakefield (MD)</td>
+                                        <td className="p-4 text-sm">Early career established in the Baltimore-Wilmington axis.</td>
+                                    </tr>
+                                    <tr className="hover:bg-muted/20 transition-colors">
+                                        <td className="p-4 font-mono text-xs">1977–1984</td>
+                                        <td className="p-4 text-destructive">St. Andrew's, Bayonne (NJ)</td>
+                                        <td className="p-4 text-sm">Repeatedly reported for abuse; allegations dismissed by Bishop Pechillo.</td>
+                                    </tr>
+                                    <tr className="hover:bg-muted/20 transition-colors">
+                                        <td className="p-4 font-mono text-xs font-bold text-foreground">1992–1994</td>
+                                        <td className="p-4 font-bold text-foreground hover:text-destructive transition-colors">Personal Secretary to McCarrick</td>
+                                        <td className="p-4 text-sm font-bold">Promoted into the inner circle despite being a known offender.</td>
+                                    </tr>
+                                    <tr className="hover:bg-muted/20 transition-colors">
+                                        <td className="p-4 font-mono text-xs">1994–2001</td>
+                                        <td className="p-4">Diocese of Wilmington (DE/MD)</td>
+                                        <td className="p-4 text-sm">Transferred to Wilmington, Delaware, where his predatory behavior continued.</td>
+                                    </tr>
+                                    <tr className="hover:bg-muted/20 transition-colors bg-destructive/5">
+                                        <td className="p-4 font-mono text-xs text-destructive">2001–2008</td>
+                                        <td className="p-4 text-destructive font-bold">Arrest and "Probation"</td>
+                                        <td className="p-4 text-sm text-destructive">Arrested in Wilmington for child sex abuse; Church fought to hide his files.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
                 <div className="flex justify-end mt-12 pt-8">
                     <Link href="/endgame/martin/crimes" asChild>
                         <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
