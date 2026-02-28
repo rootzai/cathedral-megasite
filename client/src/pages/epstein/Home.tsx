@@ -20,14 +20,14 @@ export default function EpsteinHome() {
         <div className="epstein-theme">
             
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      LEFT SIDEBAR NAVIGATION
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      HEADER
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <header>
   <div className="masthead-top">
     <span className="masthead-top-left">SodomHall.com &mdash; Special Investigation</span>
@@ -39,10 +39,10 @@ export default function EpsteinHome() {
   </div>
 </header>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      HERO
-══════════════════════════════════════════════════════════ -->
-<!-- NEWSPAPER FRONT PAGE -->
+══════════════════════════════════════════════════════════ */}
+{/* NEWSPAPER FRONT PAGE */}
 <div className="front-page" id="front-page">
   <div className="front-page-top-rule"></div>
   <div className="front-page-kicker">Breaking Investigation &mdash; Special Edition</div>
@@ -53,7 +53,7 @@ export default function EpsteinHome() {
   </div>
 
   <div className="front-page-columns">
-    <!-- LEFT: Stats -->
+    {/* LEFT: Stats */}
     <div className="front-col front-col-left">
       <div className="front-col-label">Key Figures</div>
       <div className="front-stat">
@@ -82,7 +82,7 @@ export default function EpsteinHome() {
       </div>
     </div>
 
-    <!-- CENTER: Photo -->
+    {/* CENTER: Photo */}
     <div className="front-col front-col-center">
       <div className="front-photo-wrap">
         <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/faZgOUIitaWUnhtW.jpg"
@@ -91,7 +91,7 @@ export default function EpsteinHome() {
       </div>
     </div>
 
-    <!-- RIGHT: Lede text -->
+    {/* RIGHT: Lede text */}
     <div className="front-col front-col-right">
       <div className="front-dateline">South Orange, N.J. &mdash; Feb. 22, 2026 &mdash; SodomHall.com</div>
       <p className="front-lede">Department of Justice files released in January 2026 contain Deutsche Bank records showing three tuition payments from Epstein-controlled accounts to Seton Hall University between 2017 and 2019 &mdash; signed by Darren Indyke, Epstein's personal attorney and estate co-executor.</p>
@@ -101,14 +101,14 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- BREAKING NEWS BANNER -->
+{/* BREAKING NEWS BANNER */}
 <div className="breaking-banner">
   <strong>BREAKING &mdash; FEB. 20, 2026:</strong>&nbsp;&nbsp;Darren Indyke &amp; Richard Kahn &mdash; the men who signed Seton Hall's Epstein tuition checks and co-executed his estate &mdash; agree to pay up to <strong>$35 million</strong> to settle a class-action accusing them of aiding Epstein's sex trafficking.&nbsp;&nbsp;<a href="https://thehill.com/regulation/court-battles/5747345-epstein-estate-settlement-advisers-sex-trafficking-claims/" target="_blank">Read more &rarr;</a>
 </div>
 
-<!-- ════════════════════════════════════════════════════════
+{/* ════════════════════════════════════════════════════════
      SECTION 01 — TIMELINE
-════════════════════════════════════════════════════════ -->
+════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="timeline">
   <div className="section-wrapper">
@@ -255,9 +255,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 01 — THE MONEY TRAIL
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="money-trail">
   <div className="section-wrapper">
@@ -382,9 +382,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 02 — RUEMMLER
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="ruemmler" style={{"background":"rgba(10,0,0,0.4)"}}>
   <div className="section-wrapper">
@@ -534,9 +534,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 03 — KEY FIGURES
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="key-figures">
   <div className="section-wrapper">
@@ -547,7 +547,7 @@ export default function EpsteinHome() {
 
     <div className="profile-grid">
 
-      <!-- RUEMMLER -->
+      {/* RUEMMLER */}
       <div className="profile-card" onClick={() => openModal('modal-ruemmler')}>
         <div className="profile-card-header">
           <div className="profile-avatar">KR</div>
@@ -567,7 +567,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- KEVIN MARINO -->
+      {/* KEVIN MARINO */}
       <div className="profile-card" onClick={() => openModal('modal-marino')}>
         <div className="profile-card-header">
           <div className="profile-avatar">KM</div>
@@ -587,7 +587,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- KATHLEEN BOOZANG -->
+      {/* KATHLEEN BOOZANG */}
       <div className="profile-card" onClick={() => openModal('modal-boozang')}>
         <div className="profile-card-header">
           <div className="profile-avatar">KB</div>
@@ -607,7 +607,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- TERESINA DEALMEIDA -->
+      {/* TERESINA DEALMEIDA */}
       <div className="profile-card" onClick={() => openModal('modal-dealmeida')}>
         <div className="profile-card-header">
           <div className="profile-avatar">TD</div>
@@ -627,7 +627,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- DARREN INDYKE -->
+      {/* DARREN INDYKE */}
       <div className="profile-card" onClick={() => openModal('modal-indyke')}>
         <div className="profile-card-header">
           <div className="profile-avatar">DI</div>
@@ -647,7 +647,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- HARRY BELLER -->
+      {/* HARRY BELLER */}
       <div className="profile-card" onClick={() => openModal('modal-beller')}>
         <div className="profile-card-header">
           <div className="profile-avatar">HB</div>
@@ -667,7 +667,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- CHRISTINE AMALFE -->
+      {/* CHRISTINE AMALFE */}
       <div className="profile-card" onClick={() => openModal('modal-amalfe')}>
         <div className="profile-card-header">
           <div className="profile-avatar">CA</div>
@@ -687,7 +687,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- DON McMAHON -->
+      {/* DON McMAHON */}
       <div className="profile-card" onClick={() => openModal('modal-mcmahon')}>
         <div className="profile-card-header">
           <div className="profile-avatar">DM</div>
@@ -707,7 +707,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- BISHOP CHECCHIO -->
+      {/* BISHOP CHECCHIO */}
       <div className="profile-card" onClick={() => openModal('modal-checchio')}>
         <div className="profile-card-header">
           <div className="profile-avatar">JC</div>
@@ -727,7 +727,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- HANK D'ALESSANDRO -->
+      {/* HANK D'ALESSANDRO */}
       <div className="profile-card" onClick={() => openModal('modal-dalessandro')}>
         <div className="profile-card-header">
           <div className="profile-avatar">HD</div>
@@ -747,7 +747,7 @@ export default function EpsteinHome() {
         <button className="profile-expand-btn">View Full Dossier →</button>
       </div>
 
-      <!-- JOSEPH NYRE -->
+      {/* JOSEPH NYRE */}
       <div className="profile-card" onClick={() => openModal('modal-nyre')}>
         <div className="profile-card-header">
           <div className="profile-avatar">JN</div>
@@ -771,9 +771,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 04 — THE LAW SCHOOL
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="law-school" style={{"background":"rgba(0,5,15,0.4)"}}>
   <div className="section-wrapper">
@@ -841,9 +841,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
+{/* ════════════════════════════════════════════════════════
      SECTION 05 — ROPES & GRAY
-════════════════════════════════════════════════════════ -->
+════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="ropes-gray" style={{"background":"rgba(0,5,15,0.4)"}}>
   <div className="section-wrapper">
@@ -985,9 +985,9 @@ export default function EpsteinHome() {
 
 
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 07 — ALTERNATIVE PAYMENT CHANNELS
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="payment-channels">
   <div className="section-wrapper">
@@ -1066,9 +1066,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 08 — OPEN QUESTIONS
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="open-questions" style={{"background":"rgba(10,0,0,0.4)"}}>
   <div className="section-wrapper">
@@ -1143,9 +1143,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      SECTION 07 — SOURCES
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <hr className="divider" />
 <section id="sources">
   <div className="section-wrapper">
@@ -1182,9 +1182,9 @@ export default function EpsteinHome() {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      FOOTER
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 <footer>
   <div className="footer-inner">
     <div className="footer-brand">SodomHall.com // Special Investigation Series</div>
@@ -1201,11 +1201,11 @@ export default function EpsteinHome() {
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      MODALS
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 
-<!-- RUEMMLER MODAL -->
+{/* RUEMMLER MODAL */}
 <div className="modal-overlay" id="modal-ruemmler" onClick={(e) => { if (e.target.id === 'modal-ruemmler') closeModal('modal-ruemmler'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1230,7 +1230,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- MARINO MODAL -->
+{/* MARINO MODAL */}
 <div className="modal-overlay" id="modal-marino" onClick={(e) => { if (e.target.id === 'modal-marino') closeModal('modal-marino'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1255,7 +1255,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- BOOZANG MODAL -->
+{/* BOOZANG MODAL */}
 <div className="modal-overlay" id="modal-boozang" onClick={(e) => { if (e.target.id === 'modal-boozang') closeModal('modal-boozang'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1278,7 +1278,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- DEALMEIDA MODAL -->
+{/* DEALMEIDA MODAL */}
 <div className="modal-overlay" id="modal-dealmeida" onClick={(e) => { if (e.target.id === 'modal-dealmeida') closeModal('modal-dealmeida'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1301,7 +1301,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- INDYKE MODAL -->
+{/* INDYKE MODAL */}
 <div className="modal-overlay" id="modal-indyke" onClick={(e) => { if (e.target.id === 'modal-indyke') closeModal('modal-indyke'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1326,7 +1326,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- BELLER MODAL -->
+{/* BELLER MODAL */}
 <div className="modal-overlay" id="modal-beller" onClick={(e) => { if (e.target.id === 'modal-beller') closeModal('modal-beller'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1349,7 +1349,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- LASALA MODAL -->
+{/* LASALA MODAL */}
 <div className="modal-overlay" id="modal-lasala" onClick={(e) => { if (e.target.id === 'modal-lasala') closeModal('modal-lasala'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1372,7 +1372,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- AMALFE MODAL -->
+{/* AMALFE MODAL */}
 <div className="modal-overlay" id="modal-amalfe" onClick={(e) => { if (e.target.id === 'modal-amalfe') closeModal('modal-amalfe'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1395,7 +1395,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- McMAHON MODAL -->
+{/* McMAHON MODAL */}
 <div className="modal-overlay" id="modal-mcmahon" onClick={(e) => { if (e.target.id === 'modal-mcmahon') closeModal('modal-mcmahon'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1416,7 +1416,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- CHECCHIO MODAL -->
+{/* CHECCHIO MODAL */}
 <div className="modal-overlay" id="modal-checchio" onClick={(e) => { if (e.target.id === 'modal-checchio') closeModal('modal-checchio'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1437,7 +1437,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- D'ALESSANDRO MODAL -->
+{/* D'ALESSANDRO MODAL */}
 <div className="modal-overlay" id="modal-dalessandro" onClick={(e) => { if (e.target.id === 'modal-dalessandro') closeModal('modal-dalessandro'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1458,7 +1458,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- McPHEE MODAL -->
+{/* McPHEE MODAL */}
 <div className="modal-overlay" id="modal-mcphee" onClick={(e) => { if (e.target.id === 'modal-mcphee') closeModal('modal-mcphee'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1479,7 +1479,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- DOWDEN MODAL -->
+{/* DOWDEN MODAL */}
 <div className="modal-overlay" id="modal-dowden" onClick={(e) => { if (e.target.id === 'modal-dowden') closeModal('modal-dowden'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1500,7 +1500,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- GUGEL MODAL -->
+{/* GUGEL MODAL */}
 <div className="modal-overlay" id="modal-gugel" onClick={(e) => { if (e.target.id === 'modal-gugel') closeModal('modal-gugel'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1519,7 +1519,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- BISK MODAL -->
+{/* BISK MODAL */}
 <div className="modal-overlay" id="modal-bisk" onClick={(e) => { if (e.target.id === 'modal-bisk') closeModal('modal-bisk'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1538,7 +1538,7 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- NYRE MODAL -->
+{/* NYRE MODAL */}
 <div className="modal-overlay" id="modal-nyre" onClick={(e) => { if (e.target.id === 'modal-nyre') closeModal('modal-nyre'); }}>
   <div className="modal">
     <div className="modal-header">
@@ -1561,12 +1561,12 @@ export default function EpsteinHome() {
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
+{/* ══════════════════════════════════════════════════════════
      JAVASCRIPT
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════════ */}
 
 
-<!-- FOOTER -->
+{/* FOOTER */}
 <footer>
   <div className="footer-inner">
     <div className="footer-brand">SodomHall.com</div>
