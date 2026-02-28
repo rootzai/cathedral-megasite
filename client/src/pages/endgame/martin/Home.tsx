@@ -36,7 +36,7 @@ export default function Home() {
                                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
                                         <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
                                             <img
-                                                src="/assets/images/martin_portrait.jpg"
+                                                src="/assets/images/martin_portrait.png"
                                                 alt="Father Kenneth Martin"
                                                 className="w-full h-full object-cover opacity-80 grayscale group-hover:grayscale-0 transition-all duration-700"
                                             />
@@ -60,7 +60,7 @@ export default function Home() {
                                 </DialogHeader>
                                 <div className="relative aspect-auto max-h-[80vh] w-full overflow-hidden rounded-md">
                                     <img
-                                        src="/assets/images/martin_portrait.jpg"
+                                        src="/assets/images/martin_portrait.png"
                                         alt="Father Kenneth Martin"
                                         className="h-full w-full object-contain object-top"
                                     />
