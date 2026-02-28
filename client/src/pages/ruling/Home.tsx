@@ -1,20 +1,20 @@
+import { JourneyNav } from "@/components/JourneyNav";
 import Layout from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
+import { SectionDivider } from "@/components/SectionDivider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Info, FileText } from "lucide-react";
+import { ArrowRight, FileText, Info } from "lucide-react";
 import { Link } from "wouter";
-import { JourneyNav } from "@/components/JourneyNav";
-import { PageHero } from "@/components/PageHero";
-import { SectionDivider } from "@/components/SectionDivider";
 
 export default function Home() {
   return (
     <Layout>
       <div className="space-y-12 animate-in fade-in duration-1000">
-        <PageHero 
-          sectionNumber="01" 
-          title="The Ruling" 
+        <PageHero
+          sectionNumber="01"
+          title="The Ruling"
           subtitle="Transparency is Coming. The Wait is Over."
         >
           {/* Authors' Note / Methodology Explanation */}
@@ -39,16 +39,16 @@ export default function Home() {
         </PageHero>
 
         <SectionDivider />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main Narrative */}
           <div className="lg:col-span-8 space-y-8">
             <p className="font-body text-xl leading-relaxed text-foreground/90">
               In a landmark decision that shatters decades of institutional silence, Judge Avion Benjamin has ordered Seton Hall University to release the long-suppressed documents identifying the clergy involved in the sexual abuse scandal.
             </p>
-            
+
             <p className="font-body text-lg leading-relaxed text-foreground/80">
-              The ruling, delivered this week, mandates the immediate disclosure of the names of the clergymen—now known as the "Dirty Dozen"—who were identified in the confidential Latham & Watkins report but were quietly removed, transferred, or protected by the archdiocesan hierarchy.
+              The ruling, delivered on November 12, 2025, mandates the immediate disclosure of the names of the clergymen—now known as the "Dirty Dozen"—who were identified in the confidential Latham & Watkins report but were quietly removed, transferred, or protected by the archdiocesan hierarchy.
             </p>
 
             <div className="bg-muted/10 border border-border p-8 my-8 relative overflow-hidden group">
@@ -64,7 +64,7 @@ export default function Home() {
             <p className="font-body text-lg leading-relaxed text-foreground/80">
               This decision marks a turning point in the fight for accountability. For years, the "Dirty Dozen" have remained shadows—some moved to wealthy parishes, others given administrative "sabbaticals," and one even promoted to the presidency of the very university where the cover-up originated.
             </p>
-            
+
             <div className="flex gap-4 pt-8">
               <Link href="/dirty-dozen">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-mono text-xs uppercase tracking-widest rounded-none px-8 py-6 h-auto border border-transparent hover:border-primary/50 transition-all">
@@ -103,9 +103,9 @@ export default function Home() {
                       <li className="font-body text-sm text-foreground/80 border-l border-primary pl-2">Latham Report (Aug 2019)</li>
                       <li className="font-body text-sm text-foreground/80 border-l border-primary pl-2">Gibbons Report (Aug 2019)</li>
                       <li className="font-body text-sm text-foreground/80 border-l border-primary pl-2">
-                        <a 
-                          href="/BenjaminreasonsforreleasingLathamReportdocs.pdf" 
-                          target="_blank" 
+                        <a
+                          href="/BenjaminreasonsforreleasingLathamReportdocs.pdf"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="hover:text-primary transition-colors flex items-center gap-1"
                         >
@@ -115,7 +115,7 @@ export default function Home() {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="pt-4">
                     <Link href="/analysis">
                       <div className="w-full bg-muted/10 border border-border p-3 flex justify-between items-center group cursor-pointer hover:bg-muted/20 transition-colors">

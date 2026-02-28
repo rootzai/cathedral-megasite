@@ -2,8 +2,8 @@
    THE ARCHITECTURE OF SILENCE — Overview / Landing Page
    Bright parchment theme — investigative broadsheet
    ============================================================ */
+import { AlertTriangle, ArrowRight, FileText, Network, Scale } from "lucide-react";
 import { Link } from "wouter";
-import { ArrowRight, AlertTriangle, FileText, Scale, Network } from "lucide-react";
 
 const sections = [
   {
@@ -116,7 +116,7 @@ export default function Overview() {
               <em>Nyre v. Seton Hall University</em>, DOJ document releases, investigative journalism,
               and verified court records. All 19 exhibits cited herein have been submitted to New Jersey
               Chief Justice Stuart Rabner. The Latham Report — sealed for six years — was ordered
-              produced by Judge Avion Benjamin in March 2025.
+              produced by Judge Avion Benjamin in November 2025.
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Overview() {
           <p>
             The following forensic analysis investigates a complex network of
             <strong style={{ color: "var(--ink)" }}> institutional protectionism, procedural corruption, and
-            coordinated retaliation</strong> centered on Seton Hall University, the Archdiocese of Newark,
+              coordinated retaliation</strong> centered on Seton Hall University, the Archdiocese of Newark,
             and the legal apparatus built during the Christie administration. The investigation spans four
             decades — from the first documented protection of an abuser in 1983 to the installation of
             McCarrick's former secretary as university president in 2024.

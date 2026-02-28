@@ -1,17 +1,15 @@
-import { Streamdown } from 'streamdown';
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
-import { SocialShare } from '@/components/SocialShare';
-import { PerryLawTimeline } from '@/components/PerryLawTimeline';
-import { EvidenceCard } from '@/components/EvidenceCard';
-import { Search } from '@/components/Search';
-import Citation from '@/components/Citation';
 import NetworkDiagram from '@/components/NetworkDiagram';
+import { PerryLawTimeline } from '@/components/PerryLawTimeline';
+import { Search } from '@/components/Search';
+import { SocialShare } from '@/components/SocialShare';
+import { ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
+import { useState } from 'react';
+import { Streamdown } from 'streamdown';
 
 // Collapsible Section Component
 function CollapsibleSection({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  
+
   return (
     <div className="mb-8 border-l-4 border-red-600 pl-6">
       <button
@@ -69,9 +67,9 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="bg-black text-white">
-        
+
         {/* Hero Section with Millstone */}
-        <section 
+        <section
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/70"
           style={{ backgroundImage: 'url(/assets/millstone/vintage_millstone.jpg)' }}
         >
@@ -98,8 +96,8 @@ Kim Capadona • Donna McMonagle • Lara McKeever and her sisters • TM • Th
         </section>
 
         {/* Act VIII - THE VAULT OPENS (BREAKING NEWS) */}
-        <section 
-          id="act-viii" 
+        <section
+          id="act-viii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/vault/archive_storage.jpg)' }}
         >
@@ -400,8 +398,8 @@ Justice demands it.
         </section>
 
         {/* Act I - THE VAULT */}
-        <section 
-          id="act-i" 
+        <section
+          id="act-i"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/symbols/scales_justice_dark.jpg)' }}
         >
@@ -492,7 +490,7 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
         <section className="py-16 px-4 bg-gray-900">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-4xl font-bold mb-12 text-center">The Complete Investigation</h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <a href="#act-ii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
                 <h3 className="text-2xl font-bold mb-2 text-red-500">Act II</h3>
@@ -541,8 +539,8 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
         </section>
 
         {/* Act II - THE LABYRINTH */}
-        <section 
-          id="act-ii" 
+        <section
+          id="act-ii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/vatican_archives_shelves.jpg)' }}
         >
@@ -742,8 +740,8 @@ Eight days between the final warning and the reward. Eight days that prove the c
         </section>
 
         {/* Act III - THE CONCEALMENT */}
-        <section 
-          id="act-iii" 
+        <section
+          id="act-iii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/symbols/gavel_scales.png)' }}
         >
@@ -900,7 +898,7 @@ The document destroyer. Made the Latham Report disappear into a secure facility.
 
 **Chris Porrino**
 
-Seton Hall Law School alumnus. Charter member of Christie's mafia. Former New Jersey Attorney General (60th AG). Previously served as Christie's Chief Counsel.
+Seton Hall Law School alumnus. Charter member of Christie's mafia. Former New Jersey Attorney General (60th AG).
 
 Now head of litigation at Lowenstein Sandler. Represents Kevin Marino (not Seton Hall) in matters related to the Nyre lawsuit, even though Marino is not named as a defendant.
 
@@ -1116,9 +1114,9 @@ Chris Christie himself is a central figure in what can only be called **Christie
 The same network that ran New Jersey's government became the architects of Seton Hall's concealment.
 `}
                 </Streamdown>
-                
+
                 <NetworkDiagram />
-                
+
                 <Streamdown>{`
 **Mary Pat Christie: Recruited, Resigned, Regretted**
 
@@ -1152,8 +1150,8 @@ Mary Pat walked away. Chris stayed to defend the indefensible. The Christie name
         </section>
 
         {/* Act IV - THE COURTROOM */}
-        <section 
-          id="act-iv" 
+        <section
+          id="act-iv"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/symbols/scales_justice_light.jpg)' }}
         >
@@ -1223,7 +1221,7 @@ By sending this email, D'Alessandro may have committed **wire fraud**, using ele
                 <Streamdown>{`
 **Judge Avion Benjamin**
 
-In a landmark March 2025 ruling, she ordered Seton Hall to produce the full, unredacted Latham Report for review, piercing the veil of secrecy.
+In a landmark November 2025 ruling, she ordered Seton Hall to produce the full, unredacted Latham Report for review, piercing the veil of secrecy.
 
 On November 12, 2025, she issued the order that ended the six-year cover-up: **The vault must open.**
 
@@ -1247,8 +1245,8 @@ Blatant corruption. The judge is compromised by the very lawyer orchestrating th
         </section>
 
         {/* Act V - ROME KNEW */}
-        <section 
-          id="act-v" 
+        <section
+          id="act-v"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_1.jpg)' }}
         >
@@ -1377,8 +1375,8 @@ The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates i
         </section>
 
         {/* Act VI - THE WITCH OF EN-DOR */}
-        <section 
-          id="act-vi" 
+        <section
+          id="act-vi"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/saul/saul_witch_endor_1.jpg)' }}
         >
@@ -1475,8 +1473,8 @@ But the millstone is rising.
         </section>
 
         {/* Act VII - THE SUCCESSION */}
-        <section 
-          id="act-vii" 
+        <section
+          id="act-vii"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
           style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_2.jpg)' }}
         >
@@ -1589,7 +1587,7 @@ The millstone is rising. The answer is coming.
           <div className="container mx-auto max-w-7xl">
             <h2 className="text-5xl font-bold mb-4 text-center">Share the Truth</h2>
             <p className="text-xl text-gray-400 text-center mb-12">Download and share these images. The truth deserves to go viral.</p>
-            
+
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* The Unholy Trinity */}
               <div className="text-center group">
@@ -1872,7 +1870,7 @@ The millstone is rising. The answer is coming.
         </section>
 
         {/* Epilogue */}
-        <section 
+        <section
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/millstone/ancient_millstone.jpg)' }}
         >

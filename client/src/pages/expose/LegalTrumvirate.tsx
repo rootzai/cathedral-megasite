@@ -188,7 +188,7 @@ export default function LegalTrumvirate() {
             events. When Dr. Joseph Nyre reported Marino's conduct through proper channels, Marino
             <strong style={{ color: "var(--blood)" }}> commissioned the Perry Law Report</strong> — an investigation
             into his own conduct, conducted by a firm he selected, paid for by the university he chaired.
-            That report's conclusions were then used by Judge Spencer to dismiss the Nyres' complaint on
+            That report's conclusions were then used by Hon. L. Grace Spencer, J.S.C. to dismiss the Nyres' complaint on
             February 19, 2026. Marino resigned as Board Chair but was not removed; he was allowed to resign
             on his own terms, with his reputation managed by Christopher Porrino.
           </p>

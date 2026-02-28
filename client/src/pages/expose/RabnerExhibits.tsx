@@ -6,7 +6,7 @@ export default function RabnerExhibits() {
   const exhibits = [
     { num: "1", title: "OAE Declination Letter — Jan 20, 2026", desc: "Office of Attorney Ethics refused to docket Scrivo/Porrino grievances, citing 'pending litigation' — itself manufactured by Scrivo.", category: "Judicial" },
     { num: "2", title: "Latham Report — Summary Findings", desc: "24,000-page investigation by Kathryn Ruemmler of Latham & Watkins. Identified 12 clergymen; documented Reilly's reporting failures at ICS. Sealed 2019–2025.", category: "Church" },
-    { num: "3", title: "Benjamin Sanctions Order — March 2025", desc: "Judge Avion Benjamin sanctioned Scrivo for failing to produce Latham Report documents over multiple years.", category: "Judicial" },
+    { num: "3", title: "Benjamin Sanctions Order — November 2025", desc: "Judge Avion Benjamin sanctioned Scrivo for failing to produce Latham Report documents over multiple years.", category: "Judicial" },
     { num: "4", title: "Venable Letter Opinion — Oct 7, 2024", desc: "Order transferring Nyre litigation to Hudson County. Part of Scrivo's multi-venue delay strategy.", category: "Judicial" },
     { num: "5", title: "Task Force Letters — Nov 2019 & Feb 2020", desc: "Two formal recommendations for Reilly's removal from all boards. Both ignored by the Board of Regents.", category: "Church" },
     { num: "6", title: "Orange County (CA) Subpoena — Nov 20, 2025", desc: "Cross-jurisdictional subpoena for deposition of journalist Eric Spitz. Filed exactly one year after initial Google subpoena.", category: "Retaliation" },
