@@ -114,7 +114,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 01</div>
     <h2 className="section-title">Timeline: The Convergence</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">The following timeline maps the overlap between Epstein's SHU payments, Ruemmler's review, the law school embezzlement, and the institutional collapse that followed.</p>
 
     <div className="timeline">
@@ -263,7 +263,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 02</div>
     <h2 className="section-title">The Money Trail: Three Checks, Two Students, One Fixer</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">Department of Justice files released in January 2026 contain Deutsche Bank records showing three tuition payments from Epstein-controlled accounts to Seton Hall University between 2017 and 2019. The checks were signed by Darren Indyke — Epstein's personal attorney and co-executor of his estate. One student is fully redacted. The other is named.</p>
 
     <div className="warning-banner">
@@ -390,7 +390,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 03</div>
     <h2 className="section-title">The Conflicted Investigator: Kathryn Ruemmler</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">In 2018, Seton Hall's outside counsel Gibbons P.C. retained Latham &amp; Watkins to conduct what it called an "independent, unrestricted review" of Cardinal Theodore McCarrick's conduct at the university. The lead attorney was Kathryn Ruemmler. At the same time, she was exchanging gifts, personal visits, and over 100 emails with Jeffrey Epstein — and was named as a backup executor in his will.</p>
 
     <div className="chapter open" id="ch-ruemmler-bio">
@@ -542,7 +542,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 04</div>
     <h2 className="section-title">Key Figures: Who Knew What, and When</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">The Epstein-SHU connection runs through a network of attorneys, administrators, and board members. Click any profile to expand the full dossier.</p>
 
     <div className="profile-grid">
@@ -779,7 +779,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 04</div>
     <h2 className="section-title">The Law School: Embezzlement, Admissions, and Unanswered Questions</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">While Epstein's money was flowing into SHU and Ruemmler was conducting her compromised review, Seton Hall's law school was simultaneously experiencing a decade-long, $1.3 million embezzlement scheme. The overlap in personnel, timing, and institutional dysfunction raises questions that have not been publicly addressed.</p>
 
     <div className="chapter open" id="ch-embezzlement">
@@ -849,7 +849,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 05</div>
     <h2 className="section-title">The Second Investigation: Ropes &amp; Gray</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">In February 2025, Cardinal Joseph Tobin ordered a new independent review of the Latham &amp; Watkins report and the circumstances surrounding Monsignor Reilly's appointment as SHU president. The firm retained: Ropes &amp; Gray LLP — the same firm that produced the landmark 2018 report on USA Gymnastics and the Larry Nassar scandal. The question is whether this review will be any more independent than the one it is reviewing.</p>
 
     <div className="chapter open" id="ch-ropes-mandate">
@@ -993,7 +993,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 07</div>
     <h2 className="section-title">Other Channels? The Limits of What We Know</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">The three Deutsche Bank checks signed by Darren Indyke are what the DOJ files show. But Epstein's financial architecture was deliberately opaque. The question of whether additional money reached Seton Hall through other means is not paranoia &mdash; it is a legitimate investigative question grounded in how Epstein actually operated.</p>
 
     <div className="chapter open" id="ch-channels-indyke">
@@ -1074,7 +1074,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 08</div>
     <h2 className="section-title">Open Questions: What SHU Has Not Answered</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">Seton Hall University Relations has not responded to requests for comment from The Setonian or other outlets. The following questions remain unanswered and demand public response.</p>
 
     <div className="questions-grid">
@@ -1151,7 +1151,7 @@ export default function EpsteinHome() {
   <div className="section-wrapper">
     <div className="section-label">Section 09</div>
     <h2 className="section-title">Sources &amp; Documentation</h2>
-    <hr className="section-rule">
+    <hr className="section-rule" />
     <p className="section-intro">All factual claims on this page are sourced from primary documents, court filings, or published reporting. The DOJ Epstein files are publicly available at justice.gov.</p>
 
     <ul className="sources-list">
