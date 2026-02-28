@@ -20,7 +20,7 @@ export default function Home() {
                                 <AlertTriangle className="w-3 h-3" />
                                 Serial Predator / Enforcer
                             </div>
-                            <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
+                            <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-tight">
                                 The Case of Kenneth Martin: <br />
                                 <span className="text-destructive">Father Kenneth Martin</span>
                             </h1>
