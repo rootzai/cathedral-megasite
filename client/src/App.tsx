@@ -9,6 +9,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Cathedral (Sodom Hall) Pages
 import About from "./pages/About";
+import Dedication from "./pages/Dedication";
 import Documents from "./pages/Documents";
 import CathedralHome from "./pages/Home";
 
