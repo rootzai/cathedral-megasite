@@ -49,7 +49,7 @@ export default function Portal() {
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2025-JC</span>
+                <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-JC</span>
                 <h2 className="text-3xl font-display uppercase text-white mb-2 group-hover:text-shadow-blood transition-all">
                   The Protégé
                 </h2>
@@ -70,7 +70,7 @@ export default function Portal() {
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2025-SHU</span>
+                <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-SHU</span>
                 <h2 className="text-3xl font-display uppercase text-white mb-2 group-hover:text-shadow-blood transition-all">
                   The Face of Impunity
                 </h2>
@@ -107,7 +107,7 @@ export default function Portal() {
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
               <img
-                src="/assets/images/lorenzo_portrait.png"
+                src="/assets/images/lorenzo_portrait.jpg"
                 alt="Elias Lorenzo"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
               />
@@ -126,7 +126,7 @@ export default function Portal() {
 
         <div className="pt-12 border-t border-gray-900">
           <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
-            Confidential Dossier • Restricted Access • 2025
+            Confidential Dossier • Restricted Access • 2026
           </p>
         </div>
       </div>

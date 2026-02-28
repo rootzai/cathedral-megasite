@@ -51,7 +51,7 @@ export default function Layout({ children }: LayoutProps) {
             THE BENJAMIN RULING
           </h1>
           <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
-            CASE FILE: #2025-SHU
+            CASE FILE: #2026-SHU
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function Layout({ children }: LayoutProps) {
       <header className="lg:hidden fixed top-0 w-full z-50 bg-background border-b border-border p-4 flex justify-between items-center">
         <div>
           <h1 className="font-heading text-lg text-foreground">THE BENJAMIN RULING</h1>
-          <p className="font-mono text-[10px] text-muted-foreground uppercase">CASE FILE: #2025-SHU</p>
+          <p className="font-mono text-[10px] text-muted-foreground uppercase">CASE FILE: #2026-SHU</p>
         </div>
         {/* Mobile menu trigger would go here */}
       </header>

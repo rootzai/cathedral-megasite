@@ -66,7 +66,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   if (isChecchio) {
     navItems = checchioItems;
     title = "THE CHECCHIO DOSSIER";
-    caseFile = "#2025-JFC";
+    caseFile = "#2026-JFC";
   } else if (isMartin) {
     navItems = martinItems;
     title = "THE MARTIN DOSSIER";
@@ -78,7 +78,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   } else if (isReilly) {
     navItems = reillyItems;
     title = "THE REILLY DOSSIER";
-    caseFile = "#2025-SHU";
+    caseFile = "#2026-SHU";
   }
 
   return (
