@@ -1,9 +1,8 @@
-import RootLayout from "@/components/RootLayout";
-import { Streamdown } from "@/components/Streamdown";
+import { Streamdown } from "streamdown";
 
 export default function Dedication() {
     return (
-        <RootLayout>
+        <div>
             <div className="container mx-auto max-w-4xl py-20 px-4 mt-20">
                 <h1 className="text-4xl font-heading mb-12 text-center text-foreground uppercase tracking-widest border-b border-border pb-4">
                     Dedication
@@ -29,6 +28,6 @@ For truth still emerging
 `}</Streamdown>
                 </div>
             </div>
-        </RootLayout>
+        </div>
     );
 }
