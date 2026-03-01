@@ -7,9 +7,9 @@
  *   - Christie Network members
  */
 import { type Badge, getAllBoardMembers, getUniqueMembers } from "@/lib/data";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Church, Crown, Filter, Gavel, Shield, User, X } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 
 type FilterType = "latham" | "reilly" | "tobin" | "christie" | "nyre" | null;
 
@@ -76,9 +76,12 @@ export function FilterPanel() {
               className={`
                 inline-flex items-center gap-2 px-5 py-2.5 rounded-sm font-label text-sm tracking-wider
                 transition-all duration-300 border
+                ${filterStyles[f.key!]}
                 ${activeFilter === f.key
-                  ? `${filterStyles[f.key!]} ring-2 ring-gold/30 scale-105`
-                  : "bg-[oklch(0.12_0.005_285)] text-muted-foreground border-[oklch(0.25_0.02_85/30%)] hover:text-gold hover:border-[oklch(0.75_0.12_85/40%)]"
+                  ? "ring-2 ring-gold/50 scale-105 shadow-md"
+                  : activeFilter === null
+                    ? "opacity-80 hover:opacity-100 hover:scale-[1.02]"
+                    : "opacity-40 grayscale hover:opacity-70 hover:grayscale-0"
                 }
               `}
             >
@@ -131,7 +134,7 @@ export function FilterPanel() {
                         <h4 className="font-heading text-sm tracking-wider text-gold leading-tight">
                           {person.name}
                         </h4>
-                        <p className="font-label text-xs text-gold-dim mt-0.5">{person.role}</p>
+                        <p className="font-label text-sm text-gold-dim mt-0.5">{person.role}</p>
                       </div>
                     </div>
 
@@ -149,12 +152,12 @@ export function FilterPanel() {
                       {person.badges.map(badge => {
                         const style = badge === "latham" ? "badge-latham" :
                           badge === "reilly" ? "badge-reilly" :
-                          badge === "tobin" ? "badge-tobin" :
-                          badge === "christie" ? "badge-christie" :
-                          badge === "resigned" ? "bg-[oklch(0.3_0.01_285)] text-[oklch(0.6_0.02_285)] border border-[oklch(0.4_0.01_285/40%)]" :
-                          badge === "clergy" ? "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]" :
-                          badge === "nyre" ? "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]" :
-                          "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]";
+                            badge === "tobin" ? "badge-tobin" :
+                              badge === "christie" ? "badge-christie" :
+                                badge === "resigned" ? "bg-[oklch(0.3_0.01_285)] text-[oklch(0.6_0.02_285)] border border-[oklch(0.4_0.01_285/40%)]" :
+                                  badge === "clergy" ? "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]" :
+                                    badge === "nyre" ? "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]" :
+                                      "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]";
                         return (
                           <span key={badge} className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm text-[9px] font-label ${style}`}>
                             {badge === "latham" ? "Latham" : badge === "reilly" ? "Voted Reilly" : badge === "tobin" ? "Tobin" : badge === "christie" ? "Christie" : badge === "resigned" ? "Resigned" : badge === "clergy" ? "Clergy" : badge === "nyre" ? "Nyre Case" : "Emeritus"}
@@ -164,7 +167,7 @@ export function FilterPanel() {
                     </div>
 
                     {person.note && (
-                      <p className="text-xs text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 ml-3 mt-2">
+                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 ml-3 mt-2">
                         {person.note}
                       </p>
                     )}

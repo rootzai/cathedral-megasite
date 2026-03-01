@@ -27,16 +27,15 @@ import { motion } from "framer-motion";
 import {
   AlertTriangle,
   BookOpen,
-  Building2,
   Church,
   Crown,
-  ExternalLink,
   Gavel,
   LogOut,
   Scale,
   Shield,
-  User,
+  User
 } from "lucide-react";
+import { Link } from "wouter";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/hero-cathedral-gtrH4ddunz7PPhnoSpqctQ.webp";
 const LAWYERS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/lawyers-section-bg-ifkQhGphyaJc4dbtuowvcN.webp";
@@ -47,10 +46,15 @@ export default function Home() {
       {/* ===== STICKY NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[oklch(0.06_0.005_285/95%)] backdrop-blur-md border-b border-[oklch(0.75_0.12_85/15%)]">
         <div className="container flex items-center justify-between h-14">
-          <a href="https://sodomhall.com" className="font-heading text-sm tracking-[0.2em] text-gold hover:text-[oklch(0.85_0.12_85)] transition-colors flex items-center gap-2">
-            <ExternalLink className="w-3.5 h-3.5" />
-            SodomHall.com
-          </a>
+          <Link href="/cathedral">
+            <a className="hover:opacity-80 transition-opacity flex items-center">
+              <img
+                src="/assets/sodom-hall-logo.png"
+                alt="Sodom Hall Home"
+                className="h-10 w-auto grayscale brightness-200"
+              />
+            </a>
+          </Link>
           <div className="hidden md:flex items-center gap-6">
             <a href="#filter" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Who Knew</a>
             <a href="#trustees" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Trustees</a>
@@ -165,9 +169,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className={`relative flex items-start mb-8 ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`relative flex items-start mb-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 {/* Dot */}
                 <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-[oklch(0.75_0.12_85)] -translate-x-1/2 mt-1.5 z-10 shadow-[0_0_10px_oklch(0.75_0.12_85/40%)]" />

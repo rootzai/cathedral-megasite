@@ -1,4 +1,4 @@
-import { ResponsiveContainer, Treemap, Tooltip } from 'recharts';
+import { ResponsiveContainer, Tooltip, Treemap } from 'recharts';
 
 const data = [
   {
@@ -84,7 +84,7 @@ const CustomContent = (props: any) => {
             fontSize={10}
             fontWeight="bold"
           >
-            {name.split(' ').slice(-1)[0]}
+            {name ? name.split(' ').slice(-1)[0] : ''}
           </text>
           <text
             x={x + width / 2}

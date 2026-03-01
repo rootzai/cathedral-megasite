@@ -49,7 +49,7 @@ export function PersonCard({ person, index = 0 }: { person: Person; index?: numb
           <h4 className={`font-heading text-sm tracking-wider leading-tight ${isFlagged ? "text-gold" : "text-parchment"}`}>
             {person.name}
           </h4>
-          <p className="font-label text-xs text-gold-dim mt-0.5">{person.role}</p>
+          <p className="font-label text-sm text-gold-dim mt-0.5">{person.role}</p>
         </div>
         <span className="text-[10px] font-label text-muted-foreground whitespace-nowrap mt-0.5">
           {person.tenure}
@@ -72,7 +72,7 @@ export function PersonCard({ person, index = 0 }: { person: Person; index?: numb
       )}
 
       {hasNote && (
-        <p className="text-xs text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 mt-2">
+        <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 mt-2">
           {person.note}
         </p>
       )}
