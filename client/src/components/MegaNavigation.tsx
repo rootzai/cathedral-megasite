@@ -33,7 +33,7 @@ export default function MegaNavigation() {
               </a>
             </Link>
             <Link href="/cathedral"><a className={navLinkClass('/cathedral')}>THE CATHEDRAL</a></Link>
-            <Link href="/endgame"><a className={navLinkClass('/endgame')}>THE FRANCHISOR</a></Link>
+            <Link href="/endgame"><a className={navLinkClass('/endgame')}>THE FRANCHISE</a></Link>
             <Link href="/academy"><a className={navLinkClass('/academy')}>THE ACADEMY</a></Link>
             <Link href="/ruling"><a className={navLinkClass('/ruling')}>THE RULING</a></Link>
             <Link href="/expose"><a className={navLinkClass('/expose')}>THE EXPOSÉ</a></Link>
@@ -66,7 +66,7 @@ export default function MegaNavigation() {
           {mobileMenuOpen && (
             <div className="pb-3 space-y-1">
               <Link href="/cathedral"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE CATHEDRAL</a></Link>
-              <Link href="/endgame"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE FRANCHISOR</a></Link>
+              <Link href="/endgame"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE FRANCHISE</a></Link>
               <Link href="/academy"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ACADEMY</a></Link>
               <Link href="/ruling"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE RULING</a></Link>
               <Link href="/expose"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE EXPOSÉ</a></Link>
