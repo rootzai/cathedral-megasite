@@ -1,4 +1,4 @@
-import AcademyLayout from "@/components/AcademyLayout";
+import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -11,9 +11,9 @@ export default function GlobalGrowth() {
   ];
 
   return (
-    <AcademyLayout>
-      <SectionHeader
-        title="Global Expansion Analysis"
+    <Layout>
+      <SectionHeader 
+        title="Global Expansion Analysis" 
         subtitle="A 30-year longitudinal study of Catholic population growth relative to global demographic trends (1995–2023)."
       />
 
@@ -24,9 +24,9 @@ export default function GlobalGrowth() {
           </CardHeader>
           <CardContent className="px-0">
             <div className="aspect-video w-full bg-sidebar rounded-sm overflow-hidden relative mb-4 border border-border">
-              <img
-                src="/assets/images/analysis-network.png"
-                alt="Global Map Data"
+               <img 
+                src="/images/global-map-data.png" 
+                alt="Global Map Data" 
                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm p-4 border border-border max-w-xs">
@@ -117,6 +117,6 @@ export default function GlobalGrowth() {
           Source: Pontifical Yearbook, Annuarium Statisticum Ecclesiae, UN Worldometer. Figures are end-of-year estimates.
         </p>
       </div>
-    </AcademyLayout>
+    </Layout>
   );
 }

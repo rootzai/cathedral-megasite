@@ -1,11 +1,11 @@
-import AcademyLayout from "@/components/AcademyLayout";
+import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function StakeholderAnalysis() {
   return (
-    <AcademyLayout>
+    <Layout>
       <SectionHeader 
         title="Stakeholder Analysis" 
         subtitle="Mapping the influential para-church organizations and donor networks that shape US Catholic strategy and funding."
@@ -97,6 +97,6 @@ export default function StakeholderAnalysis() {
           </div>
         </div>
       </div>
-    </AcademyLayout>
+    </Layout>
   );
 }

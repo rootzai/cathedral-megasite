@@ -13,6 +13,13 @@ import Dedication from "./pages/Dedication";
 import Documents from "./pages/Documents";
 import CathedralHome from "./pages/Home";
 
+// They Knew Pages
+import BoardOfRegents from "./pages/they-knew/BoardOfRegents";
+import BoardOfTrustees from "./pages/they-knew/BoardOfTrustees";
+import BoardOfVisitors from "./pages/they-knew/BoardOfVisitors";
+import TheyKnewHome from "./pages/they-knew/Home";
+import TheLawyers from "./pages/they-knew/TheLawyers";
+
 // Endgame - McCarrick Pages
 import McCarrickAnalysis from "./pages/endgame/mccarrick/Analysis";
 import McCarrickBackground from "./pages/endgame/mccarrick/Background";
@@ -54,20 +61,18 @@ import MartinHome from "./pages/endgame/martin/Home";
 import MartinLaunder from "./pages/endgame/martin/TheLaunder";
 import ReillyEndgame from "./pages/endgame/Reilly";
 
-// Academy Pages
-import AcademyCardinalateAndMcCarrick from "./pages/academy/CardinalateAndMcCarrick";
-import AcademyClergyMetrics from "./pages/academy/ClergyMetrics";
-import AcademyDiocesanFinance from "./pages/academy/DiocesanFinance";
-import AcademyFinancialModel from "./pages/academy/FinancialOperatingModel";
-import AcademyGlobalChurchMetrics from "./pages/academy/GlobalChurchMetrics";
-import AcademyGlobalGrowth from "./pages/academy/GlobalGrowth";
-import AcademyHome from "./pages/academy/Home";
-import AcademyInstitutionalStructure from "./pages/academy/InstitutionalStructure";
-import AcademyMcCarrickMechanism from "./pages/academy/McCarrickMechanism";
-import AcademySacramentalData from "./pages/academy/SacramentalData";
-import AcademyStakeholderAnalysis from "./pages/academy/StakeholderAnalysis";
-import AcademyTheCardinalate from "./pages/academy/TheCardinalate";
-import AcademyTheCorporateVeil from "./pages/academy/TheCorporateVeil";
+// Church BK Pages
+import ChurchBKClergyMetrics from "./pages/church-bk/ClergyMetrics";
+import ChurchBKDiocesanFinance from "./pages/church-bk/DiocesanFinance";
+import ChurchBKFinancialModel from "./pages/church-bk/FinancialOperatingModel";
+import ChurchBKGlobalGrowth from "./pages/church-bk/GlobalGrowth";
+import ChurchBKHome from "./pages/church-bk/Home";
+import ChurchBKInstitutionalStructure from "./pages/church-bk/InstitutionalStructure";
+import ChurchBKMcCarrickMechanism from "./pages/church-bk/McCarrickMechanism";
+import ChurchBKSacramentalData from "./pages/church-bk/SacramentalData";
+import ChurchBKStakeholderAnalysis from "./pages/church-bk/StakeholderAnalysis";
+import ChurchBKTheCardinalate from "./pages/church-bk/TheCardinalate";
+import ChurchBKTheCorporateVeil from "./pages/church-bk/TheCorporateVeil";
 
 // Landing/Hub Page
 import LandingPage from "./pages/LandingPage";
@@ -103,6 +108,9 @@ import SpitzUnmasking from "./pages/expose/SpitzUnmasking";
 import EpsteinLayout from "./components/EpsteinLayout";
 import EpsteinHome from "./pages/epstein/Home";
 
+// They Knew Layout
+import TheyKnewLayoutWrapper from "./components/TheyKnewLayout";
+
 import "./index.css";
 
 function PageLayout({ component: Component }: { component: React.ComponentType }) {
@@ -136,6 +144,17 @@ function EpsteinPageLayout({ component: Component }: { component: React.Componen
   );
 }
 
+function TheyKnewPageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <TheyKnewLayoutWrapper>
+        <Component />
+      </TheyKnewLayoutWrapper>
+    </>
+  );
+}
+
 function Router() {
   return (
     <Switch>
@@ -156,6 +175,23 @@ function Router() {
       </Route>
       <Route path={"/documents"}>
         <PageLayout component={Documents} />
+      </Route>
+
+      {/* They Knew Routes */}
+      <Route path={"/they-knew"}>
+        <TheyKnewPageLayout component={TheyKnewHome} />
+      </Route>
+      <Route path={"/they-knew/board-of-trustees"}>
+        <TheyKnewPageLayout component={BoardOfTrustees} />
+      </Route>
+      <Route path={"/they-knew/board-of-regents"}>
+        <TheyKnewPageLayout component={BoardOfRegents} />
+      </Route>
+      <Route path={"/they-knew/board-of-visitors"}>
+        <TheyKnewPageLayout component={BoardOfVisitors} />
+      </Route>
+      <Route path={"/they-knew/the-lawyers"}>
+        <TheyKnewPageLayout component={TheLawyers} />
       </Route>
 
       {/* Endgame Routes */}
@@ -265,45 +301,39 @@ function Router() {
         <PageLayout component={CheckchioStatus} />
       </Route>
 
-      {/* Academy Routes */}
-      <Route path={"/academy"}>
-        <PageLayout component={AcademyHome} />
+      {/* Church BK Routes */}
+      <Route path={"/church-bk"}>
+        <PageLayout component={ChurchBKHome} />
       </Route>
-      <Route path={"/academy/global-growth"}>
-        <PageLayout component={AcademyGlobalGrowth} />
+      <Route path={"/church-bk/global-growth"}>
+        <PageLayout component={ChurchBKGlobalGrowth} />
       </Route>
-      <Route path={"/academy/clergy-metrics"}>
-        <PageLayout component={AcademyClergyMetrics} />
+      <Route path={"/church-bk/clergy-metrics"}>
+        <PageLayout component={ChurchBKClergyMetrics} />
       </Route>
-      <Route path={"/academy/sacramental-data"}>
-        <PageLayout component={AcademySacramentalData} />
+      <Route path={"/church-bk/sacramental-data"}>
+        <PageLayout component={ChurchBKSacramentalData} />
       </Route>
-      <Route path={"/academy/global-metrics"}>
-        <PageLayout component={AcademyGlobalChurchMetrics} />
+      <Route path={"/church-bk/institutional-structure"}>
+        <PageLayout component={ChurchBKInstitutionalStructure} />
       </Route>
-      <Route path={"/academy/institutional-structure"}>
-        <PageLayout component={AcademyInstitutionalStructure} />
+      <Route path={"/church-bk/diocesan-finance"}>
+        <PageLayout component={ChurchBKDiocesanFinance} />
       </Route>
-      <Route path={"/academy/diocesan-finance"}>
-        <PageLayout component={AcademyDiocesanFinance} />
+      <Route path={"/church-bk/financial-operating-model"}>
+        <PageLayout component={ChurchBKFinancialModel} />
       </Route>
-      <Route path={"/academy/financial-model"}>
-        <PageLayout component={AcademyFinancialModel} />
+      <Route path={"/church-bk/stakeholder-analysis"}>
+        <PageLayout component={ChurchBKStakeholderAnalysis} />
       </Route>
-      <Route path={"/academy/stakeholder-analysis"}>
-        <PageLayout component={AcademyStakeholderAnalysis} />
+      <Route path={"/church-bk/the-cardinalate"}>
+        <PageLayout component={ChurchBKTheCardinalate} />
       </Route>
-      <Route path={"/academy/the-cardinalate"}>
-        <PageLayout component={AcademyTheCardinalate} />
+      <Route path={"/church-bk/the-corporate-veil"}>
+        <PageLayout component={ChurchBKTheCorporateVeil} />
       </Route>
-      <Route path={"/academy/cardinalate-mccarrick"}>
-        <PageLayout component={AcademyCardinalateAndMcCarrick} />
-      </Route>
-      <Route path={"/academy/corporate-veil"}>
-        <PageLayout component={AcademyTheCorporateVeil} />
-      </Route>
-      <Route path={"/academy/mccarrick-mechanism"}>
-        <PageLayout component={AcademyMcCarrickMechanism} />
+      <Route path={"/church-bk/mccarrick-mechanism"}>
+        <PageLayout component={ChurchBKMcCarrickMechanism} />
       </Route>
 
       {/* Ruling Routes */}

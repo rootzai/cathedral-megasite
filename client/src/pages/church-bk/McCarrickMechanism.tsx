@@ -1,11 +1,11 @@
-import AcademyLayout from "@/components/AcademyLayout";
+import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Landmark, Briefcase, Network, ArrowRight } from "lucide-react";
 
 export default function McCarrickMechanism() {
   return (
-    <AcademyLayout>
+    <Layout>
       <SectionHeader 
         title="The McCarrick Mechanism" 
         subtitle="Deconstructing the fundraising dynasty that generated over $1 Billion in government grants and private donations, buying influence and silence for decades."
@@ -94,6 +94,6 @@ export default function McCarrickMechanism() {
           </Card>
         </div>
       </div>
-    </AcademyLayout>
+    </Layout>
   );
 }

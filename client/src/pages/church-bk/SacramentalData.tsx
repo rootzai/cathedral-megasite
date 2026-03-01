@@ -1,44 +1,44 @@
-import AcademyLayout from "@/components/AcademyLayout";
-import KeyMetricCard from "@/components/KeyMetricCard";
+import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
+import KeyMetricCard from "@/components/KeyMetricCard";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function SacramentalData() {
   return (
-    <AcademyLayout>
-      <SectionHeader
-        title="Sacramental Index"
+    <Layout>
+      <SectionHeader 
+        title="Sacramental Index" 
         subtitle="Tracking the core engagement metrics of the faithful: Baptisms, Communions, and Confirmations."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <KeyMetricCard
-          title="Adult Baptisms"
-          value="2.70M"
-          change="+35.0%"
-          trend="up"
+        <KeyMetricCard 
+          title="Adult Baptisms" 
+          value="2.70M" 
+          change="+35.0%" 
+          trend="up" 
           description="Significant 30-year growth, with Africa accounting for 36% of the global total."
           highlight={true}
         />
-        <KeyMetricCard
-          title="Total Baptisms"
-          value="13.15M"
-          change="-20.3%"
-          trend="down"
+        <KeyMetricCard 
+          title="Total Baptisms" 
+          value="13.15M" 
+          change="-20.3%" 
+          trend="down" 
           description="Decline correlates with falling global birth rates. Peak was 18.4M in 2000."
         />
-        <KeyMetricCard
-          title="First Communions"
-          value="9.10M"
-          change="+21.3%"
-          trend="up"
+        <KeyMetricCard 
+          title="First Communions" 
+          value="9.10M" 
+          change="+21.3%" 
+          trend="up" 
           description="Strong rebound post-2020, led by the Americas and Europe."
         />
-        <KeyMetricCard
-          title="Confirmations"
-          value="7.70M"
-          change="+18.5%"
-          trend="up"
+        <KeyMetricCard 
+          title="Confirmations" 
+          value="7.70M" 
+          change="+18.5%" 
+          trend="up" 
           description="Steady increase in youth engagement, particularly in Oceania and Africa."
         />
       </div>
@@ -53,7 +53,7 @@ export default function SacramentalData() {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               This indicates a shift from "cultural Catholicism" (inherited at birth) to "intentional Catholicism" (chosen by adults), particularly in mission territories where the Church is expanding through conversion rather than just biological growth.
             </p>
-
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div className="bg-muted/30 p-4 rounded-sm border border-border">
                 <span className="block text-xs font-bold uppercase text-muted-foreground mb-1">Africa's Share</span>
@@ -70,7 +70,7 @@ export default function SacramentalData() {
         </Card>
 
         <div className="bg-primary text-primary-foreground p-8 rounded-sm flex flex-col justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/assets/images/marble-texture-bg.png')] opacity-10 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[url('/images/marble-texture-bg.png')] opacity-10 mix-blend-overlay" />
           <div className="relative z-10">
             <h3 className="font-serif font-bold text-2xl mb-4 text-accent">Sacramental Retention</h3>
             <p className="text-primary-foreground/80 mb-6 text-sm leading-relaxed">
@@ -108,6 +108,6 @@ export default function SacramentalData() {
           </div>
         </div>
       </div>
-    </AcademyLayout>
+    </Layout>
   );
 }

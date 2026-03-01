@@ -1,4 +1,4 @@
-import AcademyLayout from "@/components/AcademyLayout";
+import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -6,7 +6,7 @@ import { Crown, Users, DollarSign, Lock } from "lucide-react";
 
 export default function TheCardinalate() {
   return (
-    <AcademyLayout>
+    <Layout>
       <SectionHeader 
         title="The Cardinalate: Sovereign Wealth & Power" 
         subtitle="An analysis of the four US 'Princes of the Church' who control the donor networks, the Papal Foundation, and the true enterprise value of American Catholicism."
@@ -110,6 +110,6 @@ export default function TheCardinalate() {
           </div>
         </div>
       </div>
-    </AcademyLayout>
+    </Layout>
   );
 }
