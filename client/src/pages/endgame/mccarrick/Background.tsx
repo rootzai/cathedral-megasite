@@ -80,7 +80,7 @@ export default function Background() {
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/profile" asChild>
+          <Link  asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 03 <span className="ml-2">→</span>
             </Button>

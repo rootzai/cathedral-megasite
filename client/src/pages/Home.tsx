@@ -1685,7 +1685,7 @@ The millstone is rising. The answer is coming.
                   <img src="/assets/Saulonsword.png" alt="Saul on Sword" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Saul on Sword</h3>
-                <a href="/Saulonsword.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                <a href="/assets/images/Saulonsword.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
                   Download
                 </a>
               </div>

@@ -48,12 +48,12 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 pt-8">
-              <Link href="/dirty-dozen">
+              <Link href="/ruling/dirty-dozen">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-mono text-xs uppercase tracking-widest rounded-none px-8 py-6 h-auto border border-transparent hover:border-primary/50 transition-all">
                   View The Dirty Dozen
                 </Button>
               </Link>
-              <Link href="/tobin-hypocrisy">
+              <Link href="/ruling/tobin-hypocrisy">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-mono text-xs uppercase tracking-widest rounded-none px-8 py-6 h-auto">
                   Expose The Hypocrisy
                 </Button>
@@ -99,7 +99,7 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <Link href="/analysis">
+                    <Link href="/ruling/analysis">
                       <div className="w-full bg-muted/10 border border-border p-3 flex justify-between items-center group cursor-pointer hover:bg-muted/20 transition-colors">
                         <span className="font-mono text-xs text-primary uppercase tracking-wider">Full Analysis</span>
                         <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />

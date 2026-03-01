@@ -124,10 +124,10 @@ export default function SetonHall() {
 
       <div className="flex justify-between pt-12 border-t border-border">
         <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
-          <Link href="/network">← 04. Network</Link>
+          <Link >← 04. Network</Link>
         </Button>
         <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
-          <Link href="/warnings">06. Warnings →</Link>
+          <Link >06. Warnings →</Link>
         </Button>
       </div>
     </div>

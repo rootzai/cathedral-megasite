@@ -1573,10 +1573,10 @@ export default function EpsteinHome() {
     <p className="footer-disclaimer">This bulletin is an independent investigative publication. All factual claims are sourced and linked. Allegations remain allegations until adjudicated. The identity of the unnamed student in the DOJ files has not been confirmed by this publication. This page is part of the SodomHall.com investigative series on institutional accountability at Seton Hall University.</p>
     <nav className="footer-nav">
       <a href="/">Home</a>
-      <a href="/nyre">The Nyre Dismissal</a>
-      <a href="/mccarrick">The McCarrick Scandal</a>
+      <a href="/expose/nyre-dismissal">The Nyre Dismissal</a>
+      <a href="/endgame/mccarrick">The McCarrick Scandal</a>
       <a href="/epstein">The Epstein Connection</a>
-      <a href="/contact">Contact</a>
+      <a href="/">Contact</a>
     </nav>
   </div>
 </footer>
