@@ -18,9 +18,20 @@ export default function InstitutionalStructure() {
           <p className="mb-4">
             At the core of this structure is the <strong>Diocese</strong>, led by a Bishop. The 20.7% growth in the number of Bishops over the last 30 years reflects the creation of new dioceses to serve growing populations in the Global South.
           </p>
-          <p>
+          <p className="mb-8">
             Below the diocesan level, the <strong>Parish</strong> remains the fundamental unit of community life. While the number of priests has stagnated globally (-1.3% over 15 years), the number of "pastoral centers" and mission stations has exploded, particularly in Africa and Asia, indicating a shift towards more flexible, lay-supported models of ministry.
           </p>
+          
+          <div className="mt-8 border rounded-lg overflow-hidden shadow-sm bg-white">
+            <img 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/hierarchy-diagram_81321007.png" 
+              alt="Catholic Church Hierarchy Diagram" 
+              className="w-full h-auto object-contain"
+            />
+            <div className="p-3 bg-muted/30 text-xs text-center text-muted-foreground italic border-t">
+              Figure 1.1: The Hierarchical Structure of the Catholic Church, from Supreme Pontiff to Laity.
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6">

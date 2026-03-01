@@ -25,7 +25,7 @@ export default function GlobalGrowth() {
           <CardContent className="px-0">
             <div className="aspect-video w-full bg-sidebar rounded-sm overflow-hidden relative mb-4 border border-border">
                <img 
-                src="/images/global-map-data.png" 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/global-map-data_1969f4e2.png" 
                 alt="Global Map Data" 
                 className="w-full h-full object-cover opacity-90"
               />

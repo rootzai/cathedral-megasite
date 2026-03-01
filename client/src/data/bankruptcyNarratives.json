@@ -1,0 +1,530 @@
+{
+  "rockville-centre": {
+    "title": "Diocese of Rockville Centre (NY)",
+    "filingDate": "October 1, 2020",
+    "status": "Active / Plan Confirmed (Dec 2024)",
+    "settlementAmount": "$323 Million",
+    "narrative": "The Diocese of Rockville Centre filed for Chapter 11 protection in October 2020, citing the financial pressure of over 200 lawsuits filed under the New York Child Victims Act. This filing halted all pending litigation and forced survivors into a centralized bankruptcy process. The case has been marked by contentious disputes over insurance coverage and the valuation of diocesan assets. In December 2024, a reorganization plan was confirmed, establishing a $323 million trust for survivors. Critics argue that the diocese used the bankruptcy process to shield significant assets held in separate 'parish corporations' and to avoid full transparency regarding the extent of abuse.",
+    "keyTactics": [
+      "Aggressive use of the 'Corporation Sole' defense to shield parish assets.",
+      "Protracted litigation over insurance coverage to delay settlements.",
+      "Threats of 'Cramdown' to force a lower settlement amount on survivors."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-004-Rockville-Declaration.pdf" },
+      { "title": "First Day Declaration (Charles Moore)", "url": "/documents/DOC-004-Rockville-FirstDay.pdf" },
+      { "title": "Plan of Reorganization", "url": "/documents/DOC-004-Rockville-Plan.pdf" },
+      { "title": "Global Notes on Assets", "url": "/documents/DOC-004-Rockville-GlobalNotes.pdf" }
+    ]
+  },
+  "buffalo": {
+    "title": "Diocese of Buffalo (NY)",
+    "filingDate": "February 28, 2020",
+    "status": "Active / Plan Confirmed (Jan 2025)",
+    "settlementAmount": "$273.9 Million (Total Fund)",
+    "narrative": "Facing a deluge of lawsuits under the Child Victims Act and a RICO lawsuit alleging a systemic cover-up, the Diocese of Buffalo filed for bankruptcy in February 2020. The filing came amidst a scandal involving Bishop Richard Malone. The bankruptcy process has been slow, with the diocese accused of low-balling settlement offers. A reorganization plan was confirmed in January 2025 with a $273.9M total fund. Internal audit documents revealed a 'progressive percentage' tax on parishes to fund the settlement, proving central financial control.",
+    "keyTactics": [
+      "Filing for bankruptcy to halt RICO litigation and discovery.",
+      "Implementation of 'SJIF CVA Tax' accounts (2995/2996) to tax parishes.",
+      "Minimizing the value of real estate assets to reduce the settlement pool."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-005-Buffalo-Petition.pdf" },
+      { "title": "Audit Newsletter: Parish Tax Accounts", "url": "/documents/DOC-005-Buffalo-Audit.pdf" },
+      { "title": "Plan of Reorganization", "url": "/documents/DOC-005-Buffalo-Plan.pdf" }
+    ]
+  },
+  "syracuse": {
+    "title": "Diocese of Syracuse (NY)",
+    "filingDate": "June 19, 2020",
+    "status": "Concluded (Feb 2026)",
+    "settlementAmount": "$176.1 Million",
+    "narrative": "Filed June 2020. Emerged from bankruptcy in Feb 2026 with a $176.1M settlement after a six-year process. The plan includes contributions from the diocese, parishes, and insurance carriers.",
+    "keyTactics": [
+      "Six-year delay strategy.",
+      "Complex three-party contribution structure (Diocese, Parishes, Insurers)."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-011-Syracuse-Petition.pdf" },
+      { "title": "Confirmed Plan of Reorganization", "url": "/documents/DOC-011-Syracuse-Plan.pdf" }
+    ]
+  },
+  "rochester": {
+    "title": "Diocese of Rochester (NY)",
+    "filingDate": "September 12, 2019",
+    "status": "Concluded",
+    "settlementAmount": "$147.5 Million",
+    "narrative": "The first NY diocese to file under the CVA window. Filed Sept 2019. Confirmed plan in 2022.",
+    "keyTactics": [
+      "First-mover advantage in setting CVA precedents."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-015-Rochester-Petition.pdf" }
+    ]
+  },
+  "albany": {
+    "title": "Diocese of Albany (NY)",
+    "filingDate": "March 15, 2023",
+    "status": "Active / Mediation",
+    "settlementAmount": "TBD",
+    "narrative": "Filed March 2023. Currently in mediation. Facing significant pressure from survivors to disclose assets.",
+    "keyTactics": [
+      "Delaying discovery through mediation."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-016-Albany-Petition.pdf" }
+    ]
+  },
+  "ogdensburg": {
+    "title": "Diocese of Ogdensburg (NY)",
+    "filingDate": "July 17, 2023",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed July 2023. Small rural diocese facing disproportionate liability.",
+    "keyTactics": [
+      "Pleading poverty due to rural demographics."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-017-Ogdensburg-Petition.pdf" }
+    ]
+  },
+  "san-francisco": {
+    "title": "Archdiocese of San Francisco (CA)",
+    "filingDate": "August 21, 2023",
+    "status": "Active",
+    "settlementAmount": "$100M - $500M (Est.)",
+    "narrative": "Filed in Aug 2023 to halt 500+ lawsuits. The Committee is fighting to declare parishes and schools as 'divisions' of the Archdiocese, not separate entities. Central assets were reported at $332.7M in 2021, but the Diocese claims much is restricted. Valuation of prime real estate is a key dispute.",
+    "keyTactics": [
+      "Asserting parish/school assets are separate legal entities.",
+      "Undervaluing prime San Francisco real estate.",
+      "Using bankruptcy stay to delay trials."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-002-SF-Petition.pdf" },
+      { "title": "Adversary Proceeding Complaint (Parish Assets)", "url": "/documents/DOC-002-SF-Adversary.pdf" }
+    ]
+  },
+  "oakland": {
+    "title": "Diocese of Oakland (CA)",
+    "filingDate": "May 8, 2023",
+    "status": "Active / Motion to Dismiss",
+    "settlementAmount": "$200 Million Term Sheet",
+    "narrative": "Filed in May 2023. The Committee alleges the Diocese funneled $106M into the 'Oakland Parochial Fund' to shield assets. In Sept 2025, the Diocese moved to dismiss its own case, claiming professional fees ($37M) had 'bled the Debtor dry'. A&M managed the 'liquidity clock' to force a settlement or dismissal decision.",
+    "keyTactics": [
+      "Funneling $106M to 'Oakland Parochial Fund' (OPF).",
+      "Threatening case dismissal when liquidity drops below $3M threshold.",
+      "Tapping Priest Retirement plans to pay professional fees."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-008-Oakland-Petition.pdf" },
+      { "title": "First Day Declaration (Charles Moore)", "url": "/documents/DOC-008-Oakland-FirstDay.pdf" },
+      { "title": "Motion to Dismiss", "url": "/documents/DOC-008-Oakland-Dismissal.pdf" }
+    ]
+  },
+  "sacramento": {
+    "title": "Diocese of Sacramento (CA)",
+    "filingDate": "April 1, 2024",
+    "status": "Active / Mediation",
+    "settlementAmount": "TBD",
+    "narrative": "Filed April 2024 facing 250+ lawsuits. Reported $133.9M in assets. Mediation is ongoing, but insurers have challenged deals allowing test cases to proceed. Bishop Soto argued bankruptcy was the only 'equitable' path to prevent early plaintiffs from draining all assets.",
+    "keyTactics": [
+      "Filing to prevent 'race to the courthouse' by early plaintiffs.",
+      "Leveraging insurance disputes to delay payouts.",
+      "Protecting $108.8M in unrestricted assets."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-009-Sacramento-Petition.pdf" }
+    ]
+  },
+  "san-diego": {
+    "title": "Diocese of San Diego (CA)",
+    "filingDate": "June 17, 2024",
+    "status": "Active / Audit Ordered",
+    "settlementAmount": "$200M (Survivor Est.)",
+    "narrative": "Filed June 2024 with ~450 claims. A federal judge ordered an external audit of 770 parish accounts after accusing the Diocese of 'hiding assets' and conspiring to create separate bank accounts. Reported $85.8M central assets.",
+    "keyTactics": [
+      "Hiding assets in 770 separate parish accounts.",
+      "Conspiring to create separate bank accounts to evade creditors.",
+      "Claiming only $85.8M in central assets available."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-010-SanDiego-Petition.pdf" },
+      { "title": "Court Order for External Audit", "url": "/documents/DOC-010-SanDiego-AuditOrder.pdf" }
+    ]
+  },
+  "fresno": {
+    "title": "Diocese of Fresno (CA)",
+    "filingDate": "July 1, 2025",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed July 2025 with ~160 claims. Reported $50-100M in assets. The Diocese owes $30.3M to its own internal Deposit & Loan Fund, raising questions about asset commingling.",
+    "keyTactics": [
+      "Commingling assets in Deposit & Loan Fund."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-014-Fresno-Petition.pdf" }
+    ]
+  },
+  "santa-rosa": {
+    "title": "Diocese of Santa Rosa (CA)",
+    "filingDate": "March 13, 2023",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed March 2023. Second time filing (first in 2004). Facing 200+ new claims.",
+    "keyTactics": [
+      "Repeat filer strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-018-SantaRosa-Petition.pdf" }
+    ]
+  },
+  "stockton": {
+    "title": "Diocese of Stockton (CA)",
+    "filingDate": "January 15, 2014",
+    "status": "Concluded",
+    "settlementAmount": "$15 Million",
+    "narrative": "Filed Jan 2014. Concluded 2017. First CA diocese to file.",
+    "keyTactics": [
+      "Setting CA precedent."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-019-Stockton-Petition.pdf" }
+    ]
+  },
+  "santa-fe": {
+    "title": "Archdiocese of Santa Fe (NM)",
+    "filingDate": "December 3, 2018",
+    "status": "Concluded",
+    "settlementAmount": "$121.5 Million",
+    "narrative": "Filed Dec 2018. Settled for $121.5M in 2022. Major ruling on fraudulent conveyance regarding Catholic Peoples Foundation.",
+    "keyTactics": [
+      "Attempted transfer of assets to Catholic Peoples Foundation."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-020-SantaFe-Petition.pdf" },
+      { "title": "Ruling on Fraudulent Conveyance", "url": "/documents/DOC-003-SantaFe-Ruling.pdf" }
+    ]
+  },
+  "gallup": {
+    "title": "Diocese of Gallup (NM)",
+    "filingDate": "November 12, 2013",
+    "status": "Concluded",
+    "settlementAmount": "$21 Million",
+    "narrative": "Filed Nov 2013. Cross-border diocese (NM/AZ). Settled for $21M in 2016.",
+    "keyTactics": [
+      "Managing cross-state jurisdiction issues."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-036-Gallup-Petition.pdf" }
+    ]
+  },
+  "baltimore": {
+    "title": "Archdiocese of Baltimore (MD)",
+    "filingDate": "September 29, 2023",
+    "status": "Active / Contentious",
+    "settlementAmount": "$33.1M Offer vs $888M Demand",
+    "narrative": "Filed in Sept 2023 facing ~922 survivor claims. The Archdiocese reported $204.9M in assets but offered only a $33.1M 'Catholic Family Contribution', which the Creditors Committee rejected as 'an insult'. The case is a major battleground over the valuation of assets and the 'Corporation Sole' defense, with survivors demanding nearly $1 billion.",
+    "keyTactics": [
+      "Lowball 'Catholic Family Contribution' offer based on past voluntary settlements.",
+      "Shielding $163.9M in cash/investments from the estate.",
+      "Aggressive litigation to prevent piercing the corporate veil."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-006-Baltimore-Petition.pdf" },
+      { "title": "Creditors Committee Statement on Offer", "url": "/documents/DOC-006-Baltimore-UCC-Statement.pdf" }
+    ]
+  },
+  "new-orleans": {
+    "title": "Archdiocese of New Orleans (LA)",
+    "filingDate": "May 1, 2020",
+    "status": "Active / Plan Effective (Dec 2025)",
+    "settlementAmount": "$230 Million Fund",
+    "narrative": "Filed in May 2020 to stop the deposition of Archbishop Aymond. The case has been highly controversial due to the high 'burn rate' of professional fees and the transfer of assets to new trusts prior to filing. A $230M settlement fund was established for ~600 claimants, effective Dec 2025.",
+    "keyTactics": [
+      "Strategic filing to prevent high-profile depositions.",
+      "High 'burn rate' of professional fees to pressure survivors.",
+      "Pre-filing asset transfers to shield wealth."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-007-NOLA-Petition.pdf" },
+      { "title": "Plan of Reorganization", "url": "/documents/DOC-007-NOLA-Plan.pdf" }
+    ]
+  },
+  "camden": {
+    "title": "Diocese of Camden (NJ)",
+    "filingDate": "October 1, 2020",
+    "status": "Concluded",
+    "settlementAmount": "$180 Million",
+    "narrative": "Filed Oct 2020. Announced a landmark $180M final resolution. The case involved significant disputes over the valuation of assets and insurance coverage.",
+    "keyTactics": [
+      "Negotiated settlement to avoid 'Corporation Sole' piercing.",
+      "Leveraging insurance buyouts."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-012-Camden-Petition.pdf" },
+      { "title": "Settlement Agreement", "url": "/documents/DOC-012-Camden-Settlement.pdf" }
+    ]
+  },
+  "burlington": {
+    "title": "Diocese of Burlington (VT)",
+    "filingDate": "September 30, 2024",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed Sept 2024 with 118 claims. Reported $35M in central assets, but claimants are targeting $500M in collective parish wealth. Professional fees reached $1.5M in the first year alone.",
+    "keyTactics": [
+      "High professional fee burn rate (5% of assets in year 1).",
+      "Shielding parish wealth from the estate."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-013-Burlington-Petition.pdf" }
+    ]
+  },
+  "tucson": {
+    "title": "Diocese of Tucson (AZ)",
+    "filingDate": "September 20, 2004",
+    "status": "Concluded",
+    "settlementAmount": "$22.2 Million",
+    "narrative": "Filed Sept 2004. The second US diocese to file. Settled for $22.2M in 2005.",
+    "keyTactics": [
+      "Early test case for Chapter 11 strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-037-Tucson-Petition.pdf" }
+    ]
+  },
+  "spokane": {
+    "title": "Diocese of Spokane (WA)",
+    "filingDate": "December 6, 2004",
+    "status": "Concluded",
+    "settlementAmount": "$48 Million",
+    "narrative": "Filed Dec 2004. Settled for $48M in 2007. A contentious early case.",
+    "keyTactics": [
+      "Aggressive litigation."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-038-Spokane-Petition.pdf" }
+    ]
+  },
+  "portland": {
+    "title": "Archdiocese of Portland (OR)",
+    "filingDate": "July 6, 2004",
+    "status": "Concluded",
+    "settlementAmount": "$75 Million",
+    "narrative": "Filed July 2004. The very first US diocese to file for bankruptcy on the day a trial was set to begin. Settled for $75M in 2007.",
+    "keyTactics": [
+      "Stopping trial on day of commencement.",
+      "Setting the Chapter 11 precedent."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-039-Portland-Petition.pdf" }
+    ]
+  },
+  "st-paul-minneapolis": {
+    "title": "Archdiocese of St. Paul & Minneapolis (MN)",
+    "filingDate": "January 16, 2015",
+    "status": "Concluded",
+    "settlementAmount": "$210 Million",
+    "narrative": "Filed Jan 2015. Settled for $210M in 2018. A major case that set a high benchmark for settlements.",
+    "keyTactics": [
+      "Large settlement to avoid prolonged litigation."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-021-StPaul-Petition.pdf" }
+    ]
+  },
+  "new-ulm": {
+    "title": "Diocese of New Ulm (MN)",
+    "filingDate": "March 3, 2017",
+    "status": "Concluded",
+    "settlementAmount": "$34 Million",
+    "narrative": "Filed March 2017. Settled for $34M in 2019.",
+    "keyTactics": [
+      "Following the St. Paul precedent."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-022-NewUlm-Petition.pdf" }
+    ]
+  },
+  "duluth": {
+    "title": "Diocese of Duluth (MN)",
+    "filingDate": "December 7, 2015",
+    "status": "Concluded",
+    "settlementAmount": "$40 Million",
+    "narrative": "Filed Dec 2015. Settled for $40M in 2018.",
+    "keyTactics": [
+      "Negotiated settlement."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-023-Duluth-Petition.pdf" }
+    ]
+  },
+  "st-cloud": {
+    "title": "Diocese of St. Cloud (MN)",
+    "filingDate": "June 15, 2020",
+    "status": "Concluded",
+    "settlementAmount": "$22.5 Million",
+    "narrative": "Filed June 2020. Settled for $22.5M in 2022.",
+    "keyTactics": [
+      "Delayed filing strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-024-StCloud-Petition.pdf" }
+    ]
+  },
+  "winona-rochester": {
+    "title": "Diocese of Winona-Rochester (MN)",
+    "filingDate": "November 30, 2018",
+    "status": "Concluded",
+    "settlementAmount": "$21.5 Million",
+    "narrative": "Filed Nov 2018. Settled for $21.5M in 2021.",
+    "keyTactics": [
+      "Reorganization and rebranding."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-025-Winona-Petition.pdf" }
+    ]
+  },
+  "harrisburg": {
+    "title": "Diocese of Harrisburg (PA)",
+    "filingDate": "February 19, 2020",
+    "status": "Concluded",
+    "settlementAmount": "$18.25 Million",
+    "narrative": "Filed Feb 2020. Settled for $18.25M in 2023.",
+    "keyTactics": [
+      "Aggressive asset protection."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-026-Harrisburg-Petition.pdf" }
+    ]
+  },
+  "greensburg": {
+    "title": "Diocese of Greensburg (PA)",
+    "filingDate": "August 20, 2020",
+    "status": "Concluded",
+    "settlementAmount": "Confidential",
+    "narrative": "Filed Aug 2020. Resolved through a confidential trust mechanism.",
+    "keyTactics": [
+      "Confidentiality agreements."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-027-Greensburg-Petition.pdf" }
+    ]
+  },
+  "great-falls-billings": {
+    "title": "Diocese of Great Falls-Billings (MT)",
+    "filingDate": "March 31, 2017",
+    "status": "Concluded",
+    "settlementAmount": "$20 Million",
+    "narrative": "Filed March 2017. Settled for $20M in 2018.",
+    "keyTactics": [
+      "Quick resolution strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-028-GreatFalls-Petition.pdf" }
+    ]
+  },
+  "helena": {
+    "title": "Diocese of Helena (MT)",
+    "filingDate": "January 31, 2014",
+    "status": "Concluded",
+    "settlementAmount": "$15 Million",
+    "narrative": "Filed Jan 2014. Settled for $15M in 2015.",
+    "keyTactics": [
+      "Early adopter of bankruptcy strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-029-Helena-Petition.pdf" }
+    ]
+  },
+  "fairbanks": {
+    "title": "Diocese of Fairbanks (AK)",
+    "filingDate": "February 12, 2008",
+    "status": "Concluded",
+    "settlementAmount": "$9.8 Million",
+    "narrative": "Filed Feb 2008. Settled for $9.8M in 2010. First mission diocese to file.",
+    "keyTactics": [
+      "Pleading mission status poverty."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-030-Fairbanks-Petition.pdf" }
+    ]
+  },
+  "agana": {
+    "title": "Archdiocese of Agana (GU)",
+    "filingDate": "January 16, 2019",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed Jan 2019. Still active. Involves complex international property issues.",
+    "keyTactics": [
+      "International asset shielding."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-031-Agana-Petition.pdf" }
+    ]
+  },
+  "san-juan": {
+    "title": "Archdiocese of San Juan (PR)",
+    "filingDate": "August 29, 2018",
+    "status": "Concluded",
+    "settlementAmount": "Dismissed",
+    "narrative": "Filed Aug 2018. Case dismissed as the court ruled the Archdiocese was not a legal entity capable of filing bankruptcy under PR law.",
+    "keyTactics": [
+      "Legal entity defense."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-032-SanJuan-Petition.pdf" }
+    ]
+  },
+  "wilmington": {
+    "title": "Diocese of Wilmington (DE)",
+    "filingDate": "October 18, 2009",
+    "status": "Concluded",
+    "settlementAmount": "$77 Million",
+    "narrative": "Filed Oct 2009. Settled for $77M in 2011.",
+    "keyTactics": [
+      "Mid-Atlantic strategy."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-033-Wilmington-Petition.pdf" }
+    ]
+  },
+  "norwich": {
+    "title": "Diocese of Norwich (CT)",
+    "filingDate": "July 15, 2021",
+    "status": "Active",
+    "settlementAmount": "TBD",
+    "narrative": "Filed July 2021. Still active. Contentious disputes over insurance.",
+    "keyTactics": [
+      "Insurance litigation."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-034-Norwich-Petition.pdf" }
+    ]
+  },
+  "milwaukee": {
+    "title": "Archdiocese of Milwaukee (WI)",
+    "filingDate": "January 4, 2011",
+    "status": "Concluded",
+    "settlementAmount": "$21 Million",
+    "narrative": "Filed Jan 2011. Settled for $21M in 2015. Infamous for the 'Cemetery Trust' maneuver.",
+    "keyTactics": [
+      "Cemetery Trust asset shielding."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-035-Milwaukee-Petition.pdf" }
+    ]
+  },
+  "davenport": {
+    "title": "Diocese of Davenport (IA)",
+    "filingDate": "October 10, 2006",
+    "status": "Concluded",
+    "settlementAmount": "$37 Million",
+    "narrative": "Filed Oct 2006. Settled for $37M in 2008.",
+    "keyTactics": [
+      "Early Midwest filing."
+    ],
+    "documents": [
+      { "title": "Chapter 11 Petition", "url": "/documents/DOC-040-Davenport-Petition.pdf" }
+    ]
+  }
+}

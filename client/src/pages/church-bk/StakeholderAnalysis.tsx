@@ -19,6 +19,11 @@ export default function StakeholderAnalysis() {
             <Badge variant="outline" className="text-xs font-bold border-primary text-primary">Personal Prelature</Badge>
           </div>
           <div className="relative h-48 rounded-sm overflow-hidden border border-border">
+            <img 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/opus-dei-headquarters_9b61c90b.png" 
+              alt="Opus Dei Headquarters" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
             <div className="absolute bottom-0 left-0 p-4 bg-background/90 backdrop-blur-sm border-t border-r border-border">
               <p className="text-xs font-bold uppercase text-muted-foreground">Financial Strategy</p>
@@ -45,6 +50,11 @@ export default function StakeholderAnalysis() {
             <Badge variant="outline" className="text-xs font-bold border-accent text-accent-foreground">Influencer Network</Badge>
           </div>
           <div className="relative h-48 rounded-sm overflow-hidden border border-border">
+            <img 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/napa-institute-conference_683059bd.png" 
+              alt="Napa Institute Conference" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
             <div className="absolute bottom-0 left-0 p-4 bg-background/90 backdrop-blur-sm border-t border-r border-border">
               <p className="text-xs font-bold uppercase text-muted-foreground">Financial Strategy</p>
@@ -68,14 +78,24 @@ export default function StakeholderAnalysis() {
       <div className="bg-muted/30 border border-border rounded-sm p-8 mb-12">
         <h3 className="font-serif font-bold text-xl mb-6 text-primary">Other Key Financial Powerhouses</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h4 className="font-bold text-primary mb-2">Knights of Columbus</h4>
-            <p className="text-sm text-muted-foreground mb-2">
-              <strong>Asset Class:</strong> Insurance & Investments
-            </p>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              A Fortune 1000 equivalent with over <strong>$29 Billion</strong> in assets under management. It funds Vatican initiatives and US diocesan projects, acting as a "central bank" for loyalist causes.
-            </p>
+          <div className="space-y-4">
+            <div className="relative h-32 rounded-sm overflow-hidden border border-border">
+              <img 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/knights-columbus-vault_8a657443.png" 
+                alt="Knights of Columbus Vault" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-2">Knights of Columbus</h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                <strong>Asset Class:</strong> Insurance & Investments
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                A Fortune 1000 equivalent with over <strong>$29 Billion</strong> in assets under management. It funds Vatican initiatives and US diocesan projects, acting as a "central bank" for loyalist causes.
+              </p>
+            </div>
           </div>
           <div>
             <h4 className="font-bold text-primary mb-2">Legatus</h4>

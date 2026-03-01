@@ -12,13 +12,8 @@ import About from "./pages/About";
 import Dedication from "./pages/Dedication";
 import Documents from "./pages/Documents";
 import CathedralHome from "./pages/Home";
-
-// They Knew Pages
-import BoardOfRegents from "./pages/they-knew/BoardOfRegents";
-import BoardOfTrustees from "./pages/they-knew/BoardOfTrustees";
-import BoardOfVisitors from "./pages/they-knew/BoardOfVisitors";
-import TheyKnewHome from "./pages/they-knew/Home";
-import TheLawyers from "./pages/they-knew/TheLawyers";
+import LandingPage from "./pages/LandingPage";
+import TheyKnew from "./pages/TheyKnew";
 
 // Endgame - McCarrick Pages
 import McCarrickAnalysis from "./pages/endgame/mccarrick/Analysis";
@@ -62,9 +57,14 @@ import MartinLaunder from "./pages/endgame/martin/TheLaunder";
 import ReillyEndgame from "./pages/endgame/Reilly";
 
 // Church BK Pages
+import ChurchBKActiveCaseDossiers from "./pages/church-bk/ActiveCaseDossiers";
+import ChurchBKCardinalateAndMcCarrick from "./pages/church-bk/CardinalateAndMcCarrick";
 import ChurchBKClergyMetrics from "./pages/church-bk/ClergyMetrics";
+import ChurchBKCreditorCommitteePortal from "./pages/church-bk/CreditorCommitteePortal";
 import ChurchBKDiocesanFinance from "./pages/church-bk/DiocesanFinance";
+import ChurchBKDocumentLibrary from "./pages/church-bk/DocumentLibrary";
 import ChurchBKFinancialModel from "./pages/church-bk/FinancialOperatingModel";
+import ChurchBKGlobalChurchMetrics from "./pages/church-bk/GlobalChurchMetrics";
 import ChurchBKGlobalGrowth from "./pages/church-bk/GlobalGrowth";
 import ChurchBKHome from "./pages/church-bk/Home";
 import ChurchBKInstitutionalStructure from "./pages/church-bk/InstitutionalStructure";
@@ -75,7 +75,6 @@ import ChurchBKTheCardinalate from "./pages/church-bk/TheCardinalate";
 import ChurchBKTheCorporateVeil from "./pages/church-bk/TheCorporateVeil";
 
 // Landing/Hub Page
-import LandingPage from "./pages/LandingPage";
 
 // Ruling Pages
 import RulingAnalysis from "./pages/ruling/Analysis";
@@ -107,9 +106,6 @@ import SpitzUnmasking from "./pages/expose/SpitzUnmasking";
 // Epstein Pages
 import EpsteinLayout from "./components/EpsteinLayout";
 import EpsteinHome from "./pages/epstein/Home";
-
-// They Knew Layout
-import TheyKnewLayoutWrapper from "./components/TheyKnewLayout";
 
 import "./index.css";
 
@@ -144,17 +140,6 @@ function EpsteinPageLayout({ component: Component }: { component: React.Componen
   );
 }
 
-function TheyKnewPageLayout({ component: Component }: { component: React.ComponentType }) {
-  return (
-    <>
-      <MegaNavigation />
-      <TheyKnewLayoutWrapper>
-        <Component />
-      </TheyKnewLayoutWrapper>
-    </>
-  );
-}
-
 function Router() {
   return (
     <Switch>
@@ -179,19 +164,7 @@ function Router() {
 
       {/* They Knew Routes */}
       <Route path={"/they-knew"}>
-        <TheyKnewPageLayout component={TheyKnewHome} />
-      </Route>
-      <Route path={"/they-knew/board-of-trustees"}>
-        <TheyKnewPageLayout component={BoardOfTrustees} />
-      </Route>
-      <Route path={"/they-knew/board-of-regents"}>
-        <TheyKnewPageLayout component={BoardOfRegents} />
-      </Route>
-      <Route path={"/they-knew/board-of-visitors"}>
-        <TheyKnewPageLayout component={BoardOfVisitors} />
-      </Route>
-      <Route path={"/they-knew/the-lawyers"}>
-        <TheyKnewPageLayout component={TheLawyers} />
+        <PageLayout component={TheyKnew} />
       </Route>
 
       {/* Endgame Routes */}
@@ -305,23 +278,41 @@ function Router() {
       <Route path={"/church-bk"}>
         <PageLayout component={ChurchBKHome} />
       </Route>
-      <Route path={"/church-bk/global-growth"}>
-        <PageLayout component={ChurchBKGlobalGrowth} />
+      <Route path={"/church-bk/active-case-dossiers"}>
+        <PageLayout component={ChurchBKActiveCaseDossiers} />
+      </Route>
+      <Route path={"/church-bk/cardinalate-mccarrick"}>
+        <PageLayout component={ChurchBKCardinalateAndMcCarrick} />
       </Route>
       <Route path={"/church-bk/clergy-metrics"}>
         <PageLayout component={ChurchBKClergyMetrics} />
       </Route>
-      <Route path={"/church-bk/sacramental-data"}>
-        <PageLayout component={ChurchBKSacramentalData} />
-      </Route>
-      <Route path={"/church-bk/institutional-structure"}>
-        <PageLayout component={ChurchBKInstitutionalStructure} />
+      <Route path={"/church-bk/creditor-committee-portal"}>
+        <PageLayout component={ChurchBKCreditorCommitteePortal} />
       </Route>
       <Route path={"/church-bk/diocesan-finance"}>
         <PageLayout component={ChurchBKDiocesanFinance} />
       </Route>
+      <Route path={"/church-bk/document-library"}>
+        <PageLayout component={ChurchBKDocumentLibrary} />
+      </Route>
       <Route path={"/church-bk/financial-operating-model"}>
         <PageLayout component={ChurchBKFinancialModel} />
+      </Route>
+      <Route path={"/church-bk/global-church-metrics"}>
+        <PageLayout component={ChurchBKGlobalChurchMetrics} />
+      </Route>
+      <Route path={"/church-bk/global-growth"}>
+        <PageLayout component={ChurchBKGlobalGrowth} />
+      </Route>
+      <Route path={"/church-bk/institutional-structure"}>
+        <PageLayout component={ChurchBKInstitutionalStructure} />
+      </Route>
+      <Route path={"/church-bk/mccarrick-mechanism"}>
+        <PageLayout component={ChurchBKMcCarrickMechanism} />
+      </Route>
+      <Route path={"/church-bk/sacramental-data"}>
+        <PageLayout component={ChurchBKSacramentalData} />
       </Route>
       <Route path={"/church-bk/stakeholder-analysis"}>
         <PageLayout component={ChurchBKStakeholderAnalysis} />
@@ -331,9 +322,6 @@ function Router() {
       </Route>
       <Route path={"/church-bk/the-corporate-veil"}>
         <PageLayout component={ChurchBKTheCorporateVeil} />
-      </Route>
-      <Route path={"/church-bk/mccarrick-mechanism"}>
-        <PageLayout component={ChurchBKMcCarrickMechanism} />
       </Route>
 
       {/* Ruling Routes */}

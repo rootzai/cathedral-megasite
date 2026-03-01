@@ -58,7 +58,7 @@ export default function TheCardinalate() {
                   <TableCell className="font-medium">Archdiocese of Newark</TableCell>
                   <TableCell>Card. Joseph Tobin</TableCell>
                   <TableCell>Intl. Logistics & "McCarrick's Bank"</TableCell>
-                  <TableCell className="font-mono font-bold">$4B+</TableCell>
+                  <TableCell className="font-mono font-bold">$4.0B+</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Archdiocese of Boston</TableCell>

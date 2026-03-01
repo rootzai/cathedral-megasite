@@ -3,7 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, Scale, Gavel, AlertTriangle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -11,22 +11,22 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
-        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
+        <div className="absolute inset-0 bg-primary/60 mix-blend-multiply z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
         <img 
           src="/images/hero-vatican-finance.png" 
           alt="Vatican Finance" 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale"
         />
         <div className="absolute bottom-0 left-0 z-30 p-8 md:p-12 max-w-3xl">
-          <div className="inline-block px-3 py-1 mb-4 bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest">
-            Executive Report 2025
+          <div className="inline-block px-3 py-1 mb-4 bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-widest">
+            Confidential Analysis
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
-            The Cathedral Capital Report
+            The Bankruptcy Playbook
           </h1>
           <p className="text-lg text-white/90 font-light max-w-xl leading-relaxed">
-            A comprehensive analysis of the Catholic Church's institutional growth, demographic shifts, and 30-year strategic outlook.
+            Investigating the "Corporate Veil" strategies, Alvarez & Marsal restructuring tactics, and the $4.4 billion Chapter 11 crisis facing US Dioceses.
           </p>
         </div>
       </div>
@@ -34,103 +34,135 @@ export default function Home() {
       {/* Executive Summary */}
       <section className="mb-16">
         <SectionHeader 
-          title="Executive Summary" 
-          subtitle="Despite secularization narratives in the West, the Catholic Church demonstrates robust global expansion driven by the Global South, outpacing world population growth over the last 30 years."
+          title="Executive Summary: The Sovereign Shield" 
+          subtitle="How the Catholic Church utilizes 'Corporation Sole' structures and strategic bankruptcy filings to ring-fence assets from abuse liability."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <KeyMetricCard 
-            title="Global Catholics" 
-            value="1.405B" 
-            change="+36.8%" 
-            trend="up" 
-            description="Steady growth outpacing world population since 1995. Africa and Asia are primary drivers."
-            highlight={true}
-          />
-          <KeyMetricCard 
-            title="World Share" 
-            value="17.8%" 
-            change="-0.1 pts" 
-            trend="neutral" 
-            description="Remarkably stable market share of global population over three decades (17-18%)."
-          />
-          <KeyMetricCard 
-            title="Bishops" 
-            value="5,430" 
-            change="+20.7%" 
-            trend="up" 
-            description="Institutional leadership has expanded significantly, particularly in emerging markets."
-          />
-          <KeyMetricCard 
-            title="Seminarian Retention" 
-            value="~75%" 
-            change="High" 
-            trend="up" 
-            description="Global ordination conversion rate remains strong at 70-75%, with US hitting 50-year highs."
-          />
+          <Link href="/church-bk/active-case-dossiers">
+            <KeyMetricCard 
+              title="Active Bankruptcies" 
+              value="43" 
+              change="+2 (Q4)" 
+              trend="up" 
+              description="US Dioceses currently in Chapter 11 reorganization proceedings."
+              highlight={true}
+            />
+          </Link>
+          <Link href="/church-bk/diocesan-finance">
+            <KeyMetricCard 
+              title="Assets in Dispute" 
+              value="$4.4B" 
+              change="High Risk" 
+              trend="neutral" 
+              description="Total value of real estate and liquid capital subject to creditor claims."
+            />
+          </Link>
+          <Link href="/church-bk/the-corporate-veil">
+            <KeyMetricCard 
+              title="Professional Fees" 
+              value="$350M+" 
+              change="Burn Rate" 
+              trend="up" 
+              description="Cumulative legal and restructuring fees paid to firms like Alvarez & Marsal."
+            />
+          </Link>
+          <Link href="/church-bk/active-case-dossiers">
+            <KeyMetricCard 
+              title="Avg. Settlement" 
+              value="18%" 
+              change="Low" 
+              trend="down" 
+              description="Survivors typically receive less than 20 cents on the dollar of claim value."
+            />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-8">
             <div>
               <h3 className="text-xl font-serif font-bold text-primary mb-4 flex items-center">
-                <span className="w-8 h-[1px] bg-accent mr-3"></span>
-                Strategic Outlook: The 30-Year View
+                <span className="w-8 h-[1px] bg-destructive mr-3"></span>
+                Strategic Findings
               </h3>
               <div className="prose prose-slate max-w-none text-muted-foreground">
                 <p className="mb-4">
-                  The data reveals a decisive shift in the center of gravity for the Catholic Church. While European metrics show stagnation or decline, the "Global South" strategy has yielded substantial dividends. The 36.8% growth in the total Catholic population from 1995 to 2023 closely tracks the 37.8% growth in world population, indicating a resilient brand retention despite external pressures.
+                  Our analysis reveals a coordinated legal strategy across multiple US jurisdictions. By filing for Chapter 11, Dioceses trigger an "Automatic Stay" that halts all civil litigation. This maneuver is not driven by traditional insolvency, but by a desire to cap liability exposure and force global settlements.
                 </p>
                 <p>
-                  Key operational metrics such as the number of Bishops (+20.7%) suggest a strengthening of the administrative backbone, essential for managing a decentralized global institution of 1.4 billion members.
+                  The "Two-Hat" legal defense allows Bishops to claim absolute ownership of assets under Canon Law while simultaneously arguing they are "mere administrators" of separate trusts under Civil Law. This contradiction is the central battleground of current bankruptcy litigation.
                 </p>
               </div>
             </div>
 
-            <Card className="bg-muted/30 border-none">
-              <CardContent className="p-6">
-                <h4 className="font-bold text-primary mb-2 uppercase tracking-wider text-sm">Analyst Note</h4>
-                <p className="text-sm text-muted-foreground italic">
-                  "Of every 100 men currently listed as 'major seminarians' worldwide, roughly 72–75 will be ordained priests; in the U.S. that number is now 83–85 — the highest in half a century." — <span className="not-italic font-medium">Vatican Central Office of Church Statistics</span>
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/church-bk/active-case-dossiers">
+                <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-primary/10 rounded-full">
+                        <Scale className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="font-bold text-foreground">Active Case Dossiers</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Live tracking of Rockville Centre, Buffalo, Oakland, and Santa Fe proceedings.
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+              
+              <Link href="/church-bk/the-corporate-veil">
+                <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-destructive/10 rounded-full">
+                        <Shield className="w-5 h-5 text-destructive" />
+                      </div>
+                      <h4 className="font-bold text-foreground">The Corporate Veil</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Deep dive into the "Two-Hat" strategy and Alvarez & Marsal's restructuring playbook.
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
           </div>
 
           <div className="space-y-6">
-            <div className="bg-primary text-primary-foreground p-6 rounded-sm">
-              <h3 className="font-serif font-bold text-xl mb-4 text-accent">Key Drivers</h3>
+            <div className="bg-muted/30 border border-border p-6 rounded-sm">
+              <h3 className="font-serif font-bold text-lg mb-4 flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-accent" />
+                Critical Alerts
+              </h3>
               <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">01</span>
-                  <span className="text-sm opacity-90">Demographic dividend in Sub-Saharan Africa driving baptismal numbers.</span>
+                <li className="pb-4 border-b border-border/50 last:border-0 last:pb-0">
+                  <span className="text-xs font-bold text-destructive uppercase block mb-1">Fraudulent Conveyance</span>
+                  <span className="text-sm text-muted-foreground">Courts in Santa Fe and San Diego have ruled pre-bankruptcy asset transfers were illegal attempts to hide wealth.</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">02</span>
-                  <span className="text-sm opacity-90">Stabilization of clergy numbers through efficient redistribution.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2 font-bold">03</span>
-                  <span className="text-sm opacity-90">High retention rates in priestly formation programs (Seminaries).</span>
+                <li className="pb-4 border-b border-border/50 last:border-0 last:pb-0">
+                  <span className="text-xs font-bold text-destructive uppercase block mb-1">Liquidity Trap</span>
+                  <span className="text-sm text-muted-foreground">Dioceses are using professional fee "burn rates" to deplete cash and force early settlements.</span>
                 </li>
               </ul>
             </div>
             
             <div className="border border-border p-6 rounded-sm">
-              <h3 className="font-serif font-bold text-lg mb-4">Report Sections</h3>
+              <h3 className="font-serif font-bold text-lg mb-4">Investigation Modules</h3>
               <nav className="space-y-3">
-                <Link href="/church-bk/global-growth" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Global Expansion Data
+                <Link href="/church-bk/financial-operating-model" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                  US Financial Operating Model
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
                 <Separator />
-                <Link href="/church-bk/clergy-metrics" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Clergy & Vocations Analysis
+                <Link href="/church-bk/diocesan-finance" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                  Diocesan Intelligence
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
                 <Separator />
-                <Link href="/church-bk/sacramental-data" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
-                  Sacramental Index
+                <Link href="/church-bk/cardinalate-mccarrick" className="flex items-center justify-between text-sm font-medium text-muted-foreground hover:text-primary transition-colors group">
+                  The Cardinalate & McCarrick
                   <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                 </Link>
               </nav>

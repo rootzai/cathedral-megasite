@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Building, DollarSign, FileText, TrendingUp } from "lucide-react";
+import FinancialTooltip from "@/components/FinancialTooltip";
+import WealthMap from "@/components/WealthMap";
 
 export default function DiocesanFinance() {
   return (
@@ -34,19 +36,47 @@ export default function DiocesanFinance() {
                 <div className="mt-6 space-y-4">
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="font-bold text-foreground">Archdiocese of New York</span>
-                    <span className="font-mono text-primary font-bold">$10.0B+ (EV)</span>
+                    <FinancialTooltip 
+                      value="$10.0B+ (EV)" 
+                      breakdown={[
+                        { label: "Real Estate (Manhattan)", amount: "$6.5B" },
+                        { label: "Liquid Assets & Trusts", amount: "$2.5B" },
+                        { label: "Art & Treasures", amount: "$1.0B" }
+                      ]} 
+                    />
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="font-bold text-foreground">Archdiocese of Chicago</span>
-                    <span className="font-mono text-primary font-bold">$7.0B+ (EV)</span>
+                    <FinancialTooltip 
+                      value="$7.0B+ (EV)" 
+                      breakdown={[
+                        { label: "Real Estate (Loop/Suburbs)", amount: "$4.0B" },
+                        { label: "Investment Portfolio", amount: "$2.0B" },
+                        { label: "Insurance Trusts", amount: "$1.0B" }
+                      ]} 
+                    />
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="font-bold text-foreground">Archdiocese of Boston</span>
-                    <span className="font-mono text-primary font-bold">$5.0B+ (EV)</span>
+                    <FinancialTooltip 
+                      value="$5.0B+ (EV)" 
+                      breakdown={[
+                        { label: "Real Estate (Boston)", amount: "$3.0B" },
+                        { label: "Endowments", amount: "$1.5B" },
+                        { label: "Biotech/Med Holdings", amount: "$0.5B" }
+                      ]} 
+                    />
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="font-bold text-foreground">Archdiocese of Newark</span>
-                    <span className="font-mono text-primary font-bold">$4.0B+ (EV)</span>
+                    <FinancialTooltip 
+                      value="$4.0B+ (EV)" 
+                      breakdown={[
+                        { label: "Port/Logistics Land", amount: "$2.5B" },
+                        { label: "McCarrick Fund Legacy", amount: "$1.0B" },
+                        { label: "Operating Capital", amount: "$0.5B" }
+                      ]} 
+                    />
                   </div>
                 </div>
                 <p className="text-xs mt-4 italic">
@@ -62,8 +92,8 @@ export default function DiocesanFinance() {
               <p className="text-sm text-muted-foreground mb-4">
                 The top 10 US Archdioceses control approximately <strong>35%</strong> of the total US Church wealth, creating a "financial primate" system where coastal urban centers subsidize rural mission dioceses and national initiatives.
               </p>
-              <div className="h-48 bg-background border border-border rounded-sm flex items-center justify-center text-muted-foreground text-xs">
-                [Interactive Wealth Map Placeholder]
+              <div className="h-48 bg-background border border-border rounded-sm overflow-hidden">
+                <WealthMap />
               </div>
             </div>
           </div>
