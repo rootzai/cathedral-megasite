@@ -26,7 +26,7 @@ const filterStyles: Record<string, string> = {
   reilly: "badge-reilly",
   tobin: "badge-tobin",
   christie: "badge-christie",
-  nyre: "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]",
+  nyre: "badge-nyre",
 };
 
 export function FilterPanel() {
@@ -156,7 +156,7 @@ export function FilterPanel() {
                               badge === "christie" ? "badge-christie" :
                                 badge === "resigned" ? "bg-[oklch(0.3_0.01_285)] text-[oklch(0.6_0.02_285)] border border-[oklch(0.4_0.01_285/40%)]" :
                                   badge === "clergy" ? "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]" :
-                                    badge === "nyre" ? "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]" :
+                                    badge === "nyre" ? "badge-nyre" :
                                       "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]";
                         return (
                           <span key={badge} className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm text-[9px] font-label ${style}`}>

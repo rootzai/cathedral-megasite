@@ -25,7 +25,7 @@ const badgeStyles: Record<Badge, string> = {
   resigned: "bg-[oklch(0.3_0.01_285)] text-[oklch(0.6_0.02_285)] border border-[oklch(0.4_0.01_285/40%)]",
   clergy: "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]",
   emeritus: "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]",
-  nyre: "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]",
+  nyre: "badge-nyre",
 };
 
 export function PersonCard({ person, index = 0 }: { person: Person; index?: number }) {
