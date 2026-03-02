@@ -81,9 +81,7 @@ const timelineEvents = [
 import { AlertTriangle as AlertTriangleIcon, DollarSign as DollarSignIcon, Home as HomeIcon } from "lucide-react";
 
 export default function Timeline() {
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
 
         <PageHero
           sectionNumber="07"
@@ -145,7 +143,5 @@ export default function Timeline() {
           </div>
         </section>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

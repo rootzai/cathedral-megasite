@@ -5,9 +5,7 @@ import { AlertTriangle, Eye, ShieldAlert } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
-    return (
-        <EndgameLayout>
-            <div className="space-y-16 animate-in fade-in duration-1000">
+    return (<div className="space-y-16 animate-in fade-in duration-1000">
                 {/* Hero Section */}
                 <section className="relative border-b border-border pb-16">
                     <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
@@ -346,7 +344,5 @@ export default function Home() {
                         </Button>
                     </Link>
                 </div>
-            </div>
-        </EndgameLayout>
-    );
+            </div>);
 }

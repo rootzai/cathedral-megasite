@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Share2, Check, Copy } from "lucide-react";
+import { Check, Share2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -11,9 +11,9 @@ interface ShareButtonProps {
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
 }
 
-export function ShareButton({ 
-  title = document.title, 
-  text = "Check out this investigation.", 
+export function ShareButton({
+  title = document.title,
+  text = "Check out this investigation.",
   url = window.location.href,
   className,
   variant = "outline"
@@ -34,7 +34,7 @@ export function ShareButton({
         return;
       } catch (err) {
         // User cancelled or share failed, fall back to clipboard
-        console.log("Share failed or cancelled, falling back to clipboard", err);
+        // Share cancelled or failed — falling back to clipboard
       }
     }
 
@@ -50,9 +50,9 @@ export function ShareButton({
   };
 
   return (
-    <Button 
-      variant={variant} 
-      size="sm" 
+    <Button
+      variant={variant}
+      size="sm"
       className={`font-mono text-xs uppercase tracking-wider gap-2 ${className}`}
       onClick={handleShare}
     >

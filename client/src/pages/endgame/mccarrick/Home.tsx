@@ -5,9 +5,7 @@ import { Link } from "wouter";
 import ImageModal from "@/components/ImageModal";
 
 export default function Home() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-8">
+  return (<div className="space-y-8">
         <SectionHeader 
           number="01" 
           title="Introduction" 
@@ -100,7 +98,5 @@ export default function Home() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

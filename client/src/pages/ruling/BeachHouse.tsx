@@ -7,9 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Bed, ExternalLink, Home, Users } from "lucide-react";
 
 export default function BeachHouse() {
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
 
         {/* Hero Section */}
         <section className="relative border-b border-border pb-16">
@@ -229,7 +227,5 @@ export default function BeachHouse() {
           </div>
         </section>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

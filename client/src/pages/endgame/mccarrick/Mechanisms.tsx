@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Mechanisms() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="06" 
           title="Mechanisms of Abuse" 
@@ -61,7 +59,5 @@ export default function Mechanisms() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

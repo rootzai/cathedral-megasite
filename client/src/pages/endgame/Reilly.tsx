@@ -4,9 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { AlertTriangle, Eye, Scale } from "lucide-react";
 
 export default function Reilly() {
-    return (
-        <EndgameLayout>
-            <div className="space-y-16 animate-in fade-in duration-1000">
+    return (<div className="space-y-16 animate-in fade-in duration-1000">
 
                 {/* Hero Section */}
                 <section className="relative border-b border-border pb-16">
@@ -139,7 +137,5 @@ export default function Reilly() {
                         </div>
                     </div>
                 </section>
-            </div>
-        </EndgameLayout>
-    );
+            </div>);
 }

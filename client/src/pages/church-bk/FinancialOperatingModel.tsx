@@ -6,7 +6,7 @@ import { ArrowRight, Building2, Scale, Wallet } from "lucide-react";
 
 export default function FinancialOperatingModel() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="US Financial Operating Model" 
         subtitle="An analysis of the 'Corporation Sole' structure, diocesan asset management, and the bifurcation of Canon and Civil law in financial governance."
@@ -121,7 +121,6 @@ export default function FinancialOperatingModel() {
             </CardContent>
           </Card>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

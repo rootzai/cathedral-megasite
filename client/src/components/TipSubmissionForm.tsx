@@ -45,7 +45,7 @@ export function TipSubmissionForm() {
 
     // Check honeypot (bots will fill this hidden field)
     if (data.honeypot) {
-      console.log('Spam detected');
+      // Spam detected — silently reject
       return;
     }
 

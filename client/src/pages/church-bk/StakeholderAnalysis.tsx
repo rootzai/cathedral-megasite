@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function StakeholderAnalysis() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="Stakeholder Analysis" 
         subtitle="Mapping the influential para-church organizations and donor networks that shape US Catholic strategy and funding."
@@ -116,7 +116,6 @@ export default function StakeholderAnalysis() {
             </p>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Warnings() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="05" 
           title="Warnings & Cover-ups" 
@@ -82,7 +80,5 @@ export default function Warnings() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

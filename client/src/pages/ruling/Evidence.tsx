@@ -75,9 +75,7 @@ export default function Evidence() {
     doc.id.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
         
         <PageHero 
           sectionNumber="08" 
@@ -146,7 +144,5 @@ export default function Evidence() {
           </Table>
         </Card>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

@@ -54,9 +54,7 @@ export default function ActiveCaseDossiers() {
 
   return (
     <>
-      <SEO title="Active Case Dossiers" />
-      <Layout>
-        <SectionHeader
+      <SEO title="Active Case Dossiers" /><SectionHeader
           title="Active Case Dossiers"
           subtitle="Live tracking of major Chapter 11 reorganizations, professional fee burn rates, and strategic asset maneuvering."
         />
@@ -431,8 +429,6 @@ export default function ActiveCaseDossiers() {
               </TabsContent>
             </div>
           </div>
-        </Tabs>
-      </Layout>
-    </>
+        </Tabs></>
   );
 }

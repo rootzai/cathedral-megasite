@@ -107,6 +107,11 @@ const SpitzUnmasking = React.lazy(() => import("./pages/expose/SpitzUnmasking"))
 import EpsteinLayout from "./components/EpsteinLayout";
 const EpsteinHome = React.lazy(() => import("./pages/epstein/Home"));
 
+// Section Layouts (lifted to router level)
+import ChurchBKLayout from "./components/ChurchBKLayout";
+import EndgameLayout from "./components/EndgameLayout";
+import RulingLayout from "./components/Layout";
+
 import "./index.css";
 
 function PageLayout({ component: Component }: { component: React.ComponentType }) {
@@ -114,6 +119,39 @@ function PageLayout({ component: Component }: { component: React.ComponentType }
     <>
       <MegaNavigation />
       <Component />
+    </>
+  );
+}
+
+function EndgamePageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <EndgameLayout>
+        <Component />
+      </EndgameLayout>
+    </>
+  );
+}
+
+function ChurchBKPageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <ChurchBKLayout>
+        <Component />
+      </ChurchBKLayout>
+    </>
+  );
+}
+
+function RulingPageLayout({ component: Component }: { component: React.ComponentType }) {
+  return (
+    <>
+      <MegaNavigation />
+      <RulingLayout>
+        <Component />
+      </RulingLayout>
     </>
   );
 }
@@ -175,189 +213,189 @@ function Router() {
 
         {/* Endgame Case Files */}
         <Route path={"/endgame/martin"}>
-          <PageLayout component={MartinHome} />
+          <EndgamePageLayout component={MartinHome} />
         </Route>
         <Route path={"/endgame/martin/crimes"}>
-          <PageLayout component={MartinCrimes} />
+          <EndgamePageLayout component={MartinCrimes} />
         </Route>
         <Route path={"/endgame/martin/launder"}>
-          <PageLayout component={MartinLaunder} />
+          <EndgamePageLayout component={MartinLaunder} />
         </Route>
         <Route path={"/endgame/martin/chicago"}>
-          <PageLayout component={MartinChicago} />
+          <EndgamePageLayout component={MartinChicago} />
         </Route>
         <Route path={"/endgame/lorenzo"}>
-          <PageLayout component={LorenzoHome} />
+          <EndgamePageLayout component={LorenzoHome} />
         </Route>
         <Route path={"/endgame/lorenzo/expulsion"}>
-          <PageLayout component={LorenzoExpulsion} />
+          <EndgamePageLayout component={LorenzoExpulsion} />
         </Route>
         <Route path={"/endgame/lorenzo/rehabilitation"}>
-          <PageLayout component={LorenzoRehabilitation} />
+          <EndgamePageLayout component={LorenzoRehabilitation} />
         </Route>
         <Route path={"/endgame/lorenzo/elevation"}>
-          <PageLayout component={LorenzoElevation} />
+          <EndgamePageLayout component={LorenzoElevation} />
         </Route>
         <Route path={"/endgame/reilly"}>
-          <PageLayout component={ReillyEndgame} />
+          <EndgamePageLayout component={ReillyEndgame} />
         </Route>
 
         {/* McCarrick Sub-pages */}
         <Route path={"/endgame/mccarrick"}>
-          <PageLayout component={McCarrickHome} />
+          <EndgamePageLayout component={McCarrickHome} />
         </Route>
         <Route path={"/endgame/mccarrick/background"}>
-          <PageLayout component={McCarrickBackground} />
+          <EndgamePageLayout component={McCarrickBackground} />
         </Route>
         <Route path={"/endgame/mccarrick/profile"}>
-          <PageLayout component={McCarrickProfile} />
+          <EndgamePageLayout component={McCarrickProfile} />
         </Route>
         <Route path={"/endgame/mccarrick/the-rise"}>
-          <PageLayout component={McCarrickTheRise} />
+          <EndgamePageLayout component={McCarrickTheRise} />
         </Route>
         <Route path={"/endgame/mccarrick/the-regime"}>
-          <PageLayout component={McCarrickTheRegime} />
+          <EndgamePageLayout component={McCarrickTheRegime} />
         </Route>
         <Route path={"/endgame/mccarrick/network"}>
-          <PageLayout component={McCarrickNetwork} />
+          <EndgamePageLayout component={McCarrickNetwork} />
         </Route>
         <Route path={"/endgame/mccarrick/warnings"}>
-          <PageLayout component={McCarrickWarnings} />
+          <EndgamePageLayout component={McCarrickWarnings} />
         </Route>
         <Route path={"/endgame/mccarrick/mechanisms"}>
-          <PageLayout component={McCarrickMechanisms} />
+          <EndgamePageLayout component={McCarrickMechanisms} />
         </Route>
         <Route path={"/endgame/mccarrick/seton-hall"}>
-          <PageLayout component={McCarrickSetonHall} />
+          <EndgamePageLayout component={McCarrickSetonHall} />
         </Route>
         <Route path={"/endgame/mccarrick/downfall"}>
-          <PageLayout component={McCarrickDownfall} />
+          <EndgamePageLayout component={McCarrickDownfall} />
         </Route>
         <Route path={"/endgame/mccarrick/the-reckoning"}>
-          <PageLayout component={McCarrickTheReckoning} />
+          <EndgamePageLayout component={McCarrickTheReckoning} />
         </Route>
         <Route path={"/endgame/mccarrick/legal"}>
-          <PageLayout component={McCarrickLegal} />
+          <EndgamePageLayout component={McCarrickLegal} />
         </Route>
         <Route path={"/endgame/mccarrick/survivors"}>
-          <PageLayout component={McCarrickSurvivors} />
+          <EndgamePageLayout component={McCarrickSurvivors} />
         </Route>
         <Route path={"/endgame/mccarrick/responses"}>
-          <PageLayout component={McCarrickResponses} />
+          <EndgamePageLayout component={McCarrickResponses} />
         </Route>
         <Route path={"/endgame/mccarrick/analysis"}>
-          <PageLayout component={McCarrickAnalysis} />
+          <EndgamePageLayout component={McCarrickAnalysis} />
         </Route>
         <Route path={"/endgame/mccarrick/conclusion"}>
-          <PageLayout component={McCarrickConclusion} />
+          <EndgamePageLayout component={McCarrickConclusion} />
         </Route>
 
         {/* Checchio Sub-pages */}
         <Route path={"/endgame/checchio"}>
-          <PageLayout component={CheckchioHome} />
+          <EndgamePageLayout component={CheckchioHome} />
         </Route>
         <Route path={"/endgame/checchio/formation"}>
-          <PageLayout component={CheckchioFormation} />
+          <EndgamePageLayout component={CheckchioFormation} />
         </Route>
         <Route path={"/endgame/checchio/ascent"}>
-          <PageLayout component={CheckchioAscent} />
+          <EndgamePageLayout component={CheckchioAscent} />
         </Route>
         <Route path={"/endgame/checchio/governance"}>
-          <PageLayout component={CheckchioGovernance} />
+          <EndgamePageLayout component={CheckchioGovernance} />
         </Route>
         <Route path={"/endgame/checchio/controversies"}>
-          <PageLayout component={CheckchioControversies} />
+          <EndgamePageLayout component={CheckchioControversies} />
         </Route>
         <Route path={"/endgame/checchio/purge"}>
-          <PageLayout component={CheckchioPurge} />
+          <EndgamePageLayout component={CheckchioPurge} />
         </Route>
         <Route path={"/endgame/checchio/status"}>
-          <PageLayout component={CheckchioStatus} />
+          <EndgamePageLayout component={CheckchioStatus} />
         </Route>
 
         {/* Church BK Routes */}
         <Route path={"/church-bk"}>
-          <PageLayout component={ChurchBKHome} />
+          <ChurchBKPageLayout component={ChurchBKHome} />
         </Route>
         <Route path={"/church-bk/active-case-dossiers"}>
-          <PageLayout component={ChurchBKActiveCaseDossiers} />
+          <ChurchBKPageLayout component={ChurchBKActiveCaseDossiers} />
         </Route>
         <Route path={"/church-bk/cardinalate-mccarrick"}>
-          <PageLayout component={ChurchBKCardinalateAndMcCarrick} />
+          <ChurchBKPageLayout component={ChurchBKCardinalateAndMcCarrick} />
         </Route>
         <Route path={"/church-bk/clergy-metrics"}>
-          <PageLayout component={ChurchBKClergyMetrics} />
+          <ChurchBKPageLayout component={ChurchBKClergyMetrics} />
         </Route>
         <Route path={"/church-bk/creditor-committee-portal"}>
-          <PageLayout component={ChurchBKCreditorCommitteePortal} />
+          <ChurchBKPageLayout component={ChurchBKCreditorCommitteePortal} />
         </Route>
         <Route path={"/church-bk/diocesan-finance"}>
-          <PageLayout component={ChurchBKDiocesanFinance} />
+          <ChurchBKPageLayout component={ChurchBKDiocesanFinance} />
         </Route>
         <Route path={"/church-bk/document-library"}>
-          <PageLayout component={ChurchBKDocumentLibrary} />
+          <ChurchBKPageLayout component={ChurchBKDocumentLibrary} />
         </Route>
         <Route path={"/church-bk/financial-operating-model"}>
-          <PageLayout component={ChurchBKFinancialModel} />
+          <ChurchBKPageLayout component={ChurchBKFinancialModel} />
         </Route>
         <Route path={"/church-bk/global-church-metrics"}>
-          <PageLayout component={ChurchBKGlobalChurchMetrics} />
+          <ChurchBKPageLayout component={ChurchBKGlobalChurchMetrics} />
         </Route>
         <Route path={"/church-bk/global-growth"}>
-          <PageLayout component={ChurchBKGlobalGrowth} />
+          <ChurchBKPageLayout component={ChurchBKGlobalGrowth} />
         </Route>
         <Route path={"/church-bk/institutional-structure"}>
-          <PageLayout component={ChurchBKInstitutionalStructure} />
+          <ChurchBKPageLayout component={ChurchBKInstitutionalStructure} />
         </Route>
         <Route path={"/church-bk/mccarrick-mechanism"}>
-          <PageLayout component={ChurchBKMcCarrickMechanism} />
+          <ChurchBKPageLayout component={ChurchBKMcCarrickMechanism} />
         </Route>
         <Route path={"/church-bk/sacramental-data"}>
-          <PageLayout component={ChurchBKSacramentalData} />
+          <ChurchBKPageLayout component={ChurchBKSacramentalData} />
         </Route>
         <Route path={"/church-bk/stakeholder-analysis"}>
-          <PageLayout component={ChurchBKStakeholderAnalysis} />
+          <ChurchBKPageLayout component={ChurchBKStakeholderAnalysis} />
         </Route>
         <Route path={"/church-bk/the-cardinalate"}>
-          <PageLayout component={ChurchBKTheCardinalate} />
+          <ChurchBKPageLayout component={ChurchBKTheCardinalate} />
         </Route>
         <Route path={"/church-bk/the-corporate-veil"}>
-          <PageLayout component={ChurchBKTheCorporateVeil} />
+          <ChurchBKPageLayout component={ChurchBKTheCorporateVeil} />
         </Route>
 
         {/* Ruling Routes */}
         <Route path={"/ruling"}>
-          <PageLayout component={RulingHome} />
+          <RulingPageLayout component={RulingHome} />
         </Route>
         <Route path={"/ruling/timeline"}>
-          <PageLayout component={RulingTimeline} />
+          <RulingPageLayout component={RulingTimeline} />
         </Route>
         <Route path={"/ruling/evidence"}>
-          <PageLayout component={RulingEvidence} />
+          <RulingPageLayout component={RulingEvidence} />
         </Route>
         <Route path={"/ruling/analysis"}>
-          <PageLayout component={RulingAnalysis} />
+          <RulingPageLayout component={RulingAnalysis} />
         </Route>
         <Route path={"/ruling/dirty-dozen"}>
-          <PageLayout component={DirtyDozen} />
+          <RulingPageLayout component={DirtyDozen} />
         </Route>
         <Route path={"/ruling/tobin-hypocrisy"}>
-          <PageLayout component={TobinHypocrisy} />
+          <RulingPageLayout component={TobinHypocrisy} />
         </Route>
         <Route path={"/ruling/reilly"}>
-          <PageLayout component={Reilly} />
+          <RulingPageLayout component={Reilly} />
         </Route>
         <Route path={"/ruling/beach-house"}>
-          <PageLayout component={BeachHouse} />
+          <RulingPageLayout component={BeachHouse} />
         </Route>
         <Route path={"/ruling/sheeran-mccarrick"}>
-          <PageLayout component={SheeranMcCarrick} />
+          <RulingPageLayout component={SheeranMcCarrick} />
         </Route>
         <Route path={"/ruling/sanction-plea"}>
-          <PageLayout component={SanctionPlea} />
+          <RulingPageLayout component={SanctionPlea} />
         </Route>
         <Route path={"/ruling/corporate-veil"}>
-          <PageLayout component={CorporateVeil} />
+          <RulingPageLayout component={CorporateVeil} />
         </Route>
 
         {/* Expose Routes */}

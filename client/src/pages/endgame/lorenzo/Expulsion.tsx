@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Expulsion() {
-    return (
-        <EndgameLayout>
-            <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+    return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
                 <SectionHeader
                     number="02"
                     title="The Salesian Expulsion"
@@ -44,7 +42,5 @@ export default function Expulsion() {
                         </Button>
                     </Link>
                 </div>
-            </div>
-        </EndgameLayout>
-    );
+            </div>);
 }

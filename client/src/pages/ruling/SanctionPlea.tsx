@@ -6,9 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { AlertTriangle, BookOpen, FileWarning, Gavel, Scale, ShieldAlert } from "lucide-react";
 
 export default function SanctionPlea() {
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
 
         {/* Hero Section */}
         <section className="relative border-b border-border pb-16">
@@ -221,7 +219,5 @@ export default function SanctionPlea() {
         </section>
 
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

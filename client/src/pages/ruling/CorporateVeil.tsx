@@ -9,9 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { ExternalLink, Scale, ShieldAlert, Split, Users } from "lucide-react";
 
 export default function CorporateVeil() {
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
 
         <PageHero
           sectionNumber="06"
@@ -173,7 +171,5 @@ export default function CorporateVeil() {
         </section>
 
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

@@ -5,9 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { AlertTriangle, Camera, FileText, Link as LinkIcon } from "lucide-react";
 
 export default function SheeranMcCarrick() {
-  return (
-    <Layout>
-      <div className="space-y-12 animate-in fade-in duration-1000">
+  return (<div className="space-y-12 animate-in fade-in duration-1000">
         <div className="border-l-2 border-primary pl-6 py-2">
           <p className="font-mono text-xs text-primary uppercase tracking-widest mb-2">Section 10</p>
           <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none mb-4">
@@ -119,7 +117,5 @@ export default function SheeranMcCarrick() {
           </div>
         </div>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

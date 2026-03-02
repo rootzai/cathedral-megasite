@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function InstitutionalStructure() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="Institutional Structure" 
         subtitle="The administrative backbone of the global Church: Dioceses, Parishes, and Pastoral Centers."
@@ -78,7 +78,6 @@ export default function InstitutionalStructure() {
             <div className="text-sm font-medium uppercase tracking-wider opacity-80">Parishes</div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function ChicagoConnection() {
-    return (
-        <EndgameLayout>
-            <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+    return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
                 <SectionHeader
                     number="04"
                     title="The Extortion Parallel"
@@ -74,7 +72,5 @@ export default function ChicagoConnection() {
                     </Link>
                     <div className="flex-1" />
                 </div>
-            </div>
-        </EndgameLayout>
-    );
+            </div>);
 }

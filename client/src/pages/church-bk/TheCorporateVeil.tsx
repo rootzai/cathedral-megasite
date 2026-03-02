@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function TheCorporateVeil() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="The Corporate Veil: Bankruptcy as Strategy" 
         subtitle="How the 'Corporation Sole' legal structure allows Archbishops to shield billions in assets while claiming poverty in federal court."
@@ -180,7 +180,6 @@ export default function TheCorporateVeil() {
             </div>
           </div>
         </TabsContent>
-      </Tabs>
-    </Layout>
+      </Tabs>    </>
   );
 }

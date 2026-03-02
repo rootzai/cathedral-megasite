@@ -7,7 +7,7 @@ import SmartGlossary from "@/components/SmartGlossary";
 
 export default function CardinalateAndMcCarrick() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="The Cardinalate & The McCarrick Mechanism" 
         subtitle="An analysis of the 'Sovereign Sees' power structure and the fundraising dynasty that bought influence in Rome."
@@ -151,7 +151,6 @@ export default function CardinalateAndMcCarrick() {
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

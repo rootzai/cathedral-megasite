@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Profile() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="03" 
           title="Profile: McCarrick" 
@@ -97,7 +95,5 @@ export default function Profile() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

@@ -1,22 +1,21 @@
-import { SmartImage } from "@/components/SmartImage";
-import Layout from "@/components/ChurchBKLayout";
-import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
+import SectionHeader from "@/components/SectionHeader";
+import { SmartImage } from "@/components/SmartImage";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Shield, Scale, Gavel, AlertTriangle } from "lucide-react";
+import { AlertTriangle, ArrowRight, Scale, Shield } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
         <div className="absolute inset-0 bg-primary/60 mix-blend-multiply z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
-        <SmartImage 
-          src="/images/hero-vatican-finance.png" 
-          alt="Vatican Finance" 
+        <SmartImage
+          src="/images/hero-vatican-finance.png"
+          alt="Vatican Finance"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale"
         />
         <div className="absolute bottom-0 left-0 z-30 p-8 md:p-12 max-w-3xl">
@@ -30,50 +29,50 @@ export default function Home() {
             Investigating the "Corporate Veil" strategies, Alvarez & Marsal restructuring tactics, and the $4.4 billion Chapter 11 crisis facing US Dioceses.
           </p>
         </div>
-      </div>
+      </div >
 
       {/* Executive Summary */}
-      <section className="mb-16">
-        <SectionHeader 
-          title="Executive Summary: The Sovereign Shield" 
+      < section className="mb-16" >
+        <SectionHeader
+          title="Executive Summary: The Sovereign Shield"
           subtitle="How the Catholic Church utilizes 'Corporation Sole' structures and strategic bankruptcy filings to ring-fence assets from abuse liability."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <Link href="/church-bk/active-case-dossiers">
-            <KeyMetricCard 
-              title="Active Bankruptcies" 
-              value="43" 
-              change="+2 (Q4)" 
-              trend="up" 
+            <KeyMetricCard
+              title="Active Bankruptcies"
+              value="43"
+              change="+2 (Q4)"
+              trend="up"
               description="US Dioceses currently in Chapter 11 reorganization proceedings."
               highlight={true}
             />
           </Link>
           <Link href="/church-bk/diocesan-finance">
-            <KeyMetricCard 
-              title="Assets in Dispute" 
-              value="$4.4B" 
-              change="High Risk" 
-              trend="neutral" 
+            <KeyMetricCard
+              title="Assets in Dispute"
+              value="$4.4B"
+              change="High Risk"
+              trend="neutral"
               description="Total value of real estate and liquid capital subject to creditor claims."
             />
           </Link>
           <Link href="/church-bk/the-corporate-veil">
-            <KeyMetricCard 
-              title="Professional Fees" 
-              value="$350M+" 
-              change="Burn Rate" 
-              trend="up" 
+            <KeyMetricCard
+              title="Professional Fees"
+              value="$350M+"
+              change="Burn Rate"
+              trend="up"
               description="Cumulative legal and restructuring fees paid to firms like Alvarez & Marsal."
             />
           </Link>
           <Link href="/church-bk/active-case-dossiers">
-            <KeyMetricCard 
-              title="Avg. Settlement" 
-              value="18%" 
-              change="Low" 
-              trend="down" 
+            <KeyMetricCard
+              title="Avg. Settlement"
+              value="18%"
+              change="Low"
+              trend="down"
               description="Survivors typically receive less than 20 cents on the dollar of claim value."
             />
           </Link>
@@ -112,7 +111,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </Link>
-              
+
               <Link href="/church-bk/the-corporate-veil">
                 <Card className="bg-card border-border/50 hover:border-primary/50 transition-colors cursor-pointer h-full">
                   <CardContent className="p-6">
@@ -148,7 +147,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="border border-border p-6 rounded-sm">
               <h3 className="font-serif font-bold text-lg mb-4">Investigation Modules</h3>
               <nav className="space-y-3">
@@ -171,6 +170,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

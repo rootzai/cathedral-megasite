@@ -5,9 +5,7 @@ import { Link } from "wouter";
 import ImageModal from "@/components/ImageModal";
 
 export default function TheReckoning() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="ACT III" 
           title="The Reckoning" 
@@ -142,7 +140,5 @@ export default function TheReckoning() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

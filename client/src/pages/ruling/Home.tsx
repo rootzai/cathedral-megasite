@@ -9,9 +9,7 @@ import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
-  return (
-    <Layout>
-      <div className="space-y-12 animate-in fade-in duration-1000">
+  return (<div className="space-y-12 animate-in fade-in duration-1000">
         <PageHero
           sectionNumber="01"
           title="The Ruling"
@@ -112,7 +110,5 @@ export default function Home() {
           </div>
         </div>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

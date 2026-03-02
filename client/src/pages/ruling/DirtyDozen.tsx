@@ -24,9 +24,7 @@ export default function DirtyDozen() {
     return matchesSearch && matchesStatus;
   });
 
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
         
         <PageHero 
           sectionNumber="02" 
@@ -211,7 +209,5 @@ export default function DirtyDozen() {
           ))}
         </div>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

@@ -6,7 +6,7 @@ import { Crown, Users, DollarSign, Lock } from "lucide-react";
 
 export default function TheCardinalate() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="The Cardinalate: Sovereign Wealth & Power" 
         subtitle="An analysis of the four US 'Princes of the Church' who control the donor networks, the Papal Foundation, and the true enterprise value of American Catholicism."
@@ -109,7 +109,6 @@ export default function TheCardinalate() {
             </p>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

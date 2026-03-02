@@ -4,9 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Purge() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="05" 
           title="The Purge" 
@@ -198,7 +196,5 @@ export default function Purge() {
               <p className="text-right text-sm font-mono mt-4 text-gray-500">- Source close to the investigation</p>
             </div>
           </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }

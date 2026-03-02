@@ -1,23 +1,21 @@
-import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, Gavel, Users, Vote, FileText, ExternalLink, ShieldAlert } from "lucide-react";
 import SmartGlossary from "@/components/SmartGlossary";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertTriangle, ExternalLink, FileText, Gavel, ShieldAlert, Users, Vote } from "lucide-react";
 
 export default function CreditorCommitteePortal() {
   return (
-    <Layout>
-      <SectionHeader 
-        title="Creditor Committee Portal" 
+    <>
+      <SectionHeader
+        title="Creditor Committee Portal"
         subtitle="A guide for survivors and creditors on navigating the Chapter 11 reorganization process, voting rights, and the 'Cramdown' mechanism."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
         {/* Main Guide Column */}
         <div className="lg:col-span-2 space-y-8">
-          
+
           {/* Immediate Action Alert */}
           <Card className="bg-destructive/10 border-destructive/50">
             <CardHeader>
@@ -28,7 +26,7 @@ export default function CreditorCommitteePortal() {
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                In every Chapter 11 case, the court sets a strict deadline called the <SmartGlossary term="Bar Date" definition="The absolute deadline by which a creditor must file a proof of claim. Missing this date typically results in a total loss of rights to compensation.">Bar Date</SmartGlossary>. 
+                In every Chapter 11 case, the court sets a strict deadline called the <SmartGlossary term="Bar Date" definition="The absolute deadline by which a creditor must file a proof of claim. Missing this date typically results in a total loss of rights to compensation.">Bar Date</SmartGlossary>.
                 If you are a survivor of abuse and do not file a "Proof of Claim" by this date, you will be <strong>permanently barred</strong> from receiving any compensation or voting on the reorganization plan.
               </p>
               <div className="flex gap-4">
@@ -54,7 +52,7 @@ export default function CreditorCommitteePortal() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                The <SmartGlossary term="UCC" definition="Official Committee of Unsecured Creditors. A body appointed by the US Trustee to represent the interests of all unsecured creditors (survivors) in the bankruptcy case.">UCC</SmartGlossary> is the primary body representing survivors. 
+                The <SmartGlossary term="UCC" definition="Official Committee of Unsecured Creditors. A body appointed by the US Trustee to represent the interests of all unsecured creditors (survivors) in the bankruptcy case.">UCC</SmartGlossary> is the primary body representing survivors.
                 It is typically composed of 3-7 survivors selected by the US Trustee. The UCC hires its own lawyers and financial advisors, paid for by the Diocese's estate.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -93,10 +91,10 @@ export default function CreditorCommitteePortal() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                To exit bankruptcy, the Diocese must propose a <SmartGlossary term="Plan of Reorganization" definition="A legal document that classifies claims and specifies how they will be treated (paid). It must be approved by the court and voted on by creditors.">Plan of Reorganization</SmartGlossary>. 
+                To exit bankruptcy, the Diocese must propose a <SmartGlossary term="Plan of Reorganization" definition="A legal document that classifies claims and specifies how they will be treated (paid). It must be approved by the court and voted on by creditors.">Plan of Reorganization</SmartGlossary>.
                 Survivors vote on this plan.
               </p>
-              
+
               <div className="space-y-4 mt-4">
                 <div className="border-l-2 border-primary pl-4">
                   <h4 className="font-bold text-foreground">Consensual Plan</h4>
@@ -104,11 +102,11 @@ export default function CreditorCommitteePortal() {
                     The UCC and the Diocese agree on a settlement amount. Survivors vote to accept it. This is the fastest path to payment.
                   </p>
                 </div>
-                
+
                 <div className="border-l-2 border-destructive pl-4">
                   <h4 className="font-bold text-destructive">Non-Consensual "Cramdown"</h4>
                   <p className="text-sm text-muted-foreground">
-                    If the UCC rejects the offer, the Diocese may try to <SmartGlossary term="Cramdown" definition="A legal mechanism allowing a bankruptcy court to approve a reorganization plan over the objection of creditors, provided it is 'fair and equitable' and does not discriminate unfairly.">Cramdown</SmartGlossary> the plan. 
+                    If the UCC rejects the offer, the Diocese may try to <SmartGlossary term="Cramdown" definition="A legal mechanism allowing a bankruptcy court to approve a reorganization plan over the objection of creditors, provided it is 'fair and equitable' and does not discriminate unfairly.">Cramdown</SmartGlossary> the plan.
                     This forces a settlement on survivors against their will. The Diocese must prove the plan is "fair and equitable" and that they are paying all disposable assets.
                   </p>
                 </div>
@@ -142,6 +140,6 @@ export default function CreditorCommitteePortal() {
 
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

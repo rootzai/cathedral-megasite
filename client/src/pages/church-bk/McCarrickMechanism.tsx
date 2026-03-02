@@ -5,7 +5,7 @@ import { Landmark, Briefcase, Network, ArrowRight } from "lucide-react";
 
 export default function McCarrickMechanism() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="The McCarrick Mechanism" 
         subtitle="Deconstructing the fundraising dynasty that generated over $1 Billion in government grants and private donations, buying influence and silence for decades."
@@ -93,7 +93,6 @@ export default function McCarrickMechanism() {
             </CardContent>
           </Card>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

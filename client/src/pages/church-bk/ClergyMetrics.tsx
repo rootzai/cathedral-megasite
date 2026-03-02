@@ -13,7 +13,7 @@ export default function ClergyMetrics() {
   ];
 
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="Clergy & Vocations" 
         subtitle="Analysis of the priestly pipeline, from major seminary enrollment to ordination, highlighting regional efficiency variances."
@@ -101,7 +101,6 @@ export default function ClergyMetrics() {
             </TableBody>
           </Table>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

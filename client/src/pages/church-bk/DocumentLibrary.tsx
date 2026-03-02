@@ -117,7 +117,7 @@ export default function DocumentLibrary() {
   const categories = Array.from(new Set(documents.map(d => d.category)));
 
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="Document Library" 
         subtitle="Primary source repository of bankruptcy filings, court orders, internal financial audits, and settlement agreements."
@@ -212,7 +212,6 @@ export default function DocumentLibrary() {
             </Button>
           </div>
         )}
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

@@ -9,7 +9,7 @@ import WealthMap from "@/components/WealthMap";
 
 export default function DiocesanFinance() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="US Diocesan Financial Intelligence" 
         subtitle="A forensic analysis of the wealth, real estate holdings, and liquidity of major US Archdioceses."
@@ -217,7 +217,6 @@ export default function DiocesanFinance() {
             </div>
           </div>
         </TabsContent>
-      </Tabs>
-    </Layout>
+      </Tabs>    </>
   );
 }

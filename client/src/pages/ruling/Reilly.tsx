@@ -15,9 +15,7 @@ const memeGallery = [
 ];
 
 export default function Reilly() {
-  return (
-    <Layout>
-      <div className="space-y-16 animate-in fade-in duration-1000">
+  return (<div className="space-y-16 animate-in fade-in duration-1000">
 
         {/* Hero Section: The Reilly Focus */}
         <section className="relative border-b border-border pb-16">
@@ -239,7 +237,5 @@ export default function Reilly() {
           </div>
         </section>
         <JourneyNav />
-      </div>
-    </Layout>
-  );
+      </div>);
 }

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function SacramentalData() {
   return (
-    <Layout>
+    <>
       <SectionHeader 
         title="Sacramental Index" 
         subtitle="Tracking the core engagement metrics of the faithful: Baptisms, Communions, and Confirmations."
@@ -107,7 +107,6 @@ export default function SacramentalData() {
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div>    </>
   );
 }

@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function Governance() {
-  return (
-    <EndgameLayout>
-      <div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+  return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
           number="04" 
           title="The Whitewash" 
@@ -78,7 +76,5 @@ export default function Governance() {
             </Button>
           </Link>
         </div>
-      </div>
-    </EndgameLayout>
-  );
+      </div>);
 }
