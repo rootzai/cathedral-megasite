@@ -11,7 +11,7 @@ export default function Portal() {
       <div className="z-10 max-w-4xl w-full space-y-12 text-center">
         <div className="space-y-4 animate-in fade-in duration-1000 slide-in-from-top-8">
           <h1 className="text-5xl md:text-7xl font-display uppercase tracking-tighter text-white text-shadow-blood">
-            The Franchisor
+            The Franchise
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 italic font-serif max-w-2xl mx-auto">
             "Two generations of corruption. One common source."
