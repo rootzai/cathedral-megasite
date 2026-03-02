@@ -178,7 +178,22 @@ export default function Home() {
                 {/* Content */}
                 <div className={`ml-12 md:ml-0 md:w-[45%] ${i % 2 === 0 ? "md:pr-10 md:text-right" : "md:pl-10"}`}>
                   <span className="font-label text-sm tracking-wider text-gold">{item.date}</span>
-                  <p className="text-base text-parchment leading-relaxed mt-1">{item.event}</p>
+                  <p className="text-base text-parchment leading-relaxed mt-1">
+                    {item.event}
+                    {item.link && (
+                      <>
+                        {" "}
+                        <a
+                          href={item.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gold underline hover:text-gold-dim transition-colors"
+                        >
+                          {item.link.label}
+                        </a>
+                      </>
+                    )}
+                  </p>
                 </div>
               </motion.div>
             ))}
