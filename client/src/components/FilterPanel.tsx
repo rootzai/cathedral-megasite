@@ -61,7 +61,7 @@ export function FilterPanel() {
           <h2 className="font-heading text-3xl md:text-5xl tracking-wider text-gold mb-4">
             Who Knew What
           </h2>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-6" />
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-cathedral-gold to-transparent mx-auto mb-6" />
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
             Filter across all three Seton Hall boards to see who was present for key decisions and events.
           </p>
@@ -78,12 +78,14 @@ export function FilterPanel() {
                 transition-all duration-300 border
                 ${filterStyles[f.key!]}
                 ${activeFilter === f.key
-                  ? "ring-2 ring-gold/50 scale-105 shadow-md"
+                  ? "ring-2 ring-cathedral-gold/50 scale-105 shadow-md"
                   : activeFilter === null
                     ? "opacity-80 hover:opacity-100 hover:scale-[1.02]"
                     : "opacity-40 grayscale hover:opacity-70 hover:grayscale-0"
                 }
               `}
+              aria-pressed={activeFilter === f.key}
+              aria-label={`Filter by ${f.label}`}
             >
               {f.icon}
               {f.label}
@@ -92,7 +94,8 @@ export function FilterPanel() {
           {activeFilter && (
             <button
               onClick={() => setActiveFilter(null)}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-label text-sm tracking-wider bg-[oklch(0.15_0.005_285)] text-muted-foreground border border-[oklch(0.3_0.01_285/40%)] hover:text-parchment transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-label text-sm tracking-wider bg-cathedral-light text-muted-foreground border border-[oklch(0.3_0.01_285/40%)] hover:text-parchment transition-colors"
+              aria-label="Clear active filter"
             >
               <X className="w-3.5 h-3.5" />
               Clear
@@ -126,7 +129,7 @@ export function FilterPanel() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: Math.min(i * 0.02, 0.5) }}
-                    className="p-4 rounded-sm gold-border bg-[oklch(0.1_0.005_285)] hover:bg-[oklch(0.13_0.005_285)] transition-colors"
+                    className="p-4 rounded-sm gold-border bg-cathedral-dark hover:bg-[oklch(0.13_0.005_285)] transition-colors"
                   >
                     <div className="flex items-start gap-2 mb-1.5">
                       <User className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
@@ -141,7 +144,7 @@ export function FilterPanel() {
                     {/* Boards this person sits on */}
                     <div className="flex flex-wrap gap-1.5 ml-5 mb-2">
                       {person.boards.map(b => (
-                        <span key={b} className="text-[10px] font-label px-2 py-0.5 rounded-sm bg-[oklch(0.15_0.005_285)] text-muted-foreground border border-[oklch(0.25_0.02_85/20%)]">
+                        <span key={b} className="text-[10px] font-label px-2 py-0.5 rounded-sm bg-cathedral-light text-muted-foreground border border-[oklch(0.25_0.02_85/20%)]">
                           {b}
                         </span>
                       ))}
@@ -167,7 +170,7 @@ export function FilterPanel() {
                     </div>
 
                     {person.note && (
-                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 ml-3 mt-2">
+                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 ml-3 mt-2">
                         {person.note}
                       </p>
                     )}

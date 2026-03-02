@@ -1,3 +1,4 @@
+import { SmartImage } from "@/components/SmartImage";
 import { Link } from "wouter";
 
 export default function Portal() {
@@ -22,7 +23,7 @@ export default function Portal() {
           <Link href="/endgame/mccarrick">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
-              <img
+              <SmartImage
                 src="/assets/images/mccarrick_portrait.jpg"
                 alt="Theodore McCarrick"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
@@ -43,7 +44,7 @@ export default function Portal() {
           <Link href="/endgame/checchio">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
-              <img
+              <SmartImage
                 src="/assets/images/checchio_portrait.jpg"
                 alt="James Checchio"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
@@ -64,7 +65,7 @@ export default function Portal() {
           <Link href="/endgame/reilly">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
-              <img
+              <SmartImage
                 src="/assets/figures/reilly_portrait.jpg"
                 alt="Joseph Reilly"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
@@ -85,7 +86,7 @@ export default function Portal() {
           <Link href="/endgame/martin">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
-              <img
+              <SmartImage
                 src="/assets/images/martin_portrait.png"
                 alt="Ken Martin"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
@@ -106,7 +107,7 @@ export default function Portal() {
           <Link href="/endgame/lorenzo">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
-              <img
+              <SmartImage
                 src="/assets/images/lorenzo_portrait.png"
                 alt="Elias Lorenzo"
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"

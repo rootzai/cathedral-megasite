@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
+import { SmartImage } from "@/components/SmartImage";
+
 
 export default function MegaNavigation() {
   const [location] = useLocation();
@@ -25,7 +27,7 @@ export default function MegaNavigation() {
           <div className="flex items-center justify-evenly w-full h-full">
             <Link href="/">
               <a className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0">
-                <img
+                <SmartImage
                   src="/assets/sodom-hall-logo.png"
                   alt="Sodom Hall Home"
                   className="h-10 w-auto grayscale brightness-200 group-hover:brightness-100 group-hover:grayscale-0 transition-all drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
@@ -47,7 +49,7 @@ export default function MegaNavigation() {
           <div className="flex items-center justify-between py-3">
             <Link href="/">
               <a className="flex items-center">
-                <img
+                <SmartImage
                   src="/assets/sodom-hall-logo.png"
                   alt="Sodom Hall Home"
                   className="h-8 w-auto grayscale brightness-200"

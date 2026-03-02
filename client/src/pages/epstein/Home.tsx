@@ -1,3 +1,4 @@
+import { SmartImage } from "@/components/SmartImage";
 import React, { useState, useEffect } from "react";
 import "./epstein.css";
 
@@ -85,7 +86,7 @@ export default function EpsteinHome() {
     {/* CENTER: Photo */}
     <div className="front-col front-col-center">
       <div className="front-photo-wrap">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/faZgOUIitaWUnhtW.jpg"
+        <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/faZgOUIitaWUnhtW.jpg"
              alt="Seton Hall University, South Orange, New Jersey" />
         <div className="front-photo-caption">Seton Hall University &mdash; South Orange, New Jersey &mdash; Founded 1856</div>
       </div>
@@ -450,7 +451,7 @@ export default function EpsteinHome() {
 
         <div className="email-exhibit">
           <div className="email-exhibit-label">Exhibit A — September 29, 2018 // SHU Board Presentation Day</div>
-          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/RQfdqTDXiNWwWKiP.jpeg" alt="Email exchange between Jeffrey Epstein and Kathy Ruemmler, September 29, 2018 — Jmail screenshot showing Ruemmler telling Epstein she has to present to the Seton Hall board" />
+          <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/RQfdqTDXiNWwWKiP.jpeg" alt="Email exchange between Jeffrey Epstein and Kathy Ruemmler, September 29, 2018 — Jmail screenshot showing Ruemmler telling Epstein she has to present to the Seton Hall board" />
           <div className="email-exhibit-caption">
             <strong>Context:</strong> Epstein (using the address jeevacation@gmail.com) asks to visit Ruemmler's apartment. She replies that her contractor is present but that she has to <em>"present to Seton Hall board this morning at 10am in New Jersey"</em> and will be back by noon. This places Ruemmler in direct communication with Epstein on the same day she was presenting to the SHU Board of Regents — the board chaired by Kevin Marino.
           </div>
@@ -458,7 +459,7 @@ export default function EpsteinHome() {
 
         <div className="email-exhibit">
           <div className="email-exhibit-label">Exhibit B — February 27, 2019 // Scheduling Around Bishops and JPMorgan</div>
-          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/fervbSAfhWqGKsvz.jpeg" alt="Email exchange between Jeffrey Epstein and Kathy Ruemmler, February 27, 2019 — Jmail screenshot showing Ruemmler scheduling visit around meeting the Cardinal in Newark" />
+          <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/fervbSAfhWqGKsvz.jpeg" alt="Email exchange between Jeffrey Epstein and Kathy Ruemmler, February 27, 2019 — Jmail screenshot showing Ruemmler scheduling visit around meeting the Cardinal in Newark" />
           <div className="email-exhibit-caption">
             <strong>Context:</strong> This exchange, dated February 27, 2019, shows Ruemmler scheduling a visit to Epstein while simultaneously managing her obligations to interview bishops in Newark (as part of the SHU/McCarrick review) and a 1PM meeting at JPMorgan. She writes: <em>"Meeting the Cardinal at 2 pm in Newark, and have 1PMorgan at 9:30. Are you free @ 11 am if I came by then?"</em> The Cardinal referenced is almost certainly Cardinal Joseph Tobin of the Archdiocese of Newark — the same Cardinal who would later order the Ropes &amp; Gray review of the Latham &amp; Watkins report Ruemmler produced.
           </div>

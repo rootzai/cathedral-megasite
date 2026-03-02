@@ -41,7 +41,7 @@ export function PersonCard({ person, index = 0 }: { person: Person; index?: numb
       className={`
         relative p-4 rounded-sm transition-all duration-300
         ${isFlagged ? "gold-border-bright gold-glow" : "gold-border"}
-        bg-[oklch(0.1_0.005_285)] hover:bg-[oklch(0.13_0.005_285)]
+        bg-cathedral-dark hover:bg-[oklch(0.13_0.005_285)]
       `}
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -72,7 +72,7 @@ export function PersonCard({ person, index = 0 }: { person: Person; index?: numb
       )}
 
       {hasNote && (
-        <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-[oklch(0.75_0.12_85/20%)] pl-3 mt-2">
+        <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 mt-2">
           {person.note}
         </p>
       )}

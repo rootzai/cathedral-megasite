@@ -2,6 +2,8 @@ import { BoschOwl, HollowEye, TwistedBranch } from "@/components/BoschSymbols";
 import { ScreamToggle } from "@/components/ScreamToggle";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
+import { SmartImage } from "@/components/SmartImage";
+
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -40,7 +42,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="p-4 border-b border-border flex flex-col items-center">
           <Link href="/cathedral">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
-              <img
+              <SmartImage
                 src="/assets/sodom-hall-logo.png"
                 alt="Sodom Hall Home"
                 className="h-20 w-auto grayscale brightness-200"

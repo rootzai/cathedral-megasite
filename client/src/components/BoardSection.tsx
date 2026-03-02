@@ -23,7 +23,7 @@ export function BoardSection({ board }: { board: BoardSectionType }) {
         <h2 className="font-heading text-3xl md:text-4xl tracking-wider text-gold mb-4">
           {board.title}
         </h2>
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-6" />
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-cathedral-gold to-transparent mx-auto mb-6" />
         <p className="max-w-3xl mx-auto text-base text-muted-foreground leading-relaxed">
           {board.description}
         </p>

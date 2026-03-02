@@ -1,3 +1,4 @@
+import { SmartImage } from "@/components/SmartImage";
 import NetworkDiagram from '@/components/NetworkDiagram';
 import { PerryLawTimeline } from '@/components/PerryLawTimeline';
 import { Search } from '@/components/Search';
@@ -1486,7 +1487,7 @@ The millstone is rising. The answer is coming.
               {/* The Unholy Trinity */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Unholy.png" alt="The Unholy Trinity" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Unholy.png" alt="The Unholy Trinity" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">The Unholy Trinity</h3>
                 <a href="/assets/Unholy.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1497,7 +1498,7 @@ The millstone is rising. The answer is coming.
               {/* Bless Me Father */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Blessmefather.png" alt="Bless Me Father" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Blessmefather.png" alt="Bless Me Father" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Bless Me Father</h3>
                 <a href="/assets/Blessmefather.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1508,7 +1509,7 @@ The millstone is rising. The answer is coming.
               {/* Better Call Scrivo */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/BetterScrivocall.png" alt="Better Call Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/BetterScrivocall.png" alt="Better Call Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Better Call Scrivo</h3>
                 <a href="/assets/BetterScrivocall.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1519,7 +1520,7 @@ The millstone is rising. The answer is coming.
               {/* Most Likely */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Mostlikely.png" alt="Most Likely" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Mostlikely.png" alt="Most Likely" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Most Likely</h3>
                 <a href="/assets/Mostlikely.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1528,7 +1529,7 @@ The millstone is rising. The answer is coming.
               </div>            {/* Hall of Shame */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/HallofShame.png" alt="Hall of Shame" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/HallofShame.png" alt="Hall of Shame" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Hall of Shame</h3>
                 <a href="/assets/HallofShame.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1539,7 +1540,7 @@ The millstone is rising. The answer is coming.
               {/* Pyramid Scheme */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/pyramidscheme.png" alt="Pyramid Scheme" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/pyramidscheme.png" alt="Pyramid Scheme" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Pyramid Scheme</h3>
                 <a href="/assets/pyramidscheme.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1550,7 +1551,7 @@ The millstone is rising. The answer is coming.
               {/* Goddamn Right */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/goddamnright.png" alt="Goddamn Right" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/goddamnright.png" alt="Goddamn Right" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Goddamn Right</h3>
                 <a href="/assets/goddamnright.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1561,7 +1562,7 @@ The millstone is rising. The answer is coming.
               {/* Devil Likes Your Work */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Devillikesyourwork.png" alt="Devil Likes Your Work" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Devillikesyourwork.png" alt="Devil Likes Your Work" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Devil Likes Your Work</h3>
                 <a href="/assets/Devillikesyourwork.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1572,7 +1573,7 @@ The millstone is rising. The answer is coming.
               {/* Let Us Pray */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/letuspray.png" alt="Let Us Pray" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/letuspray.png" alt="Let Us Pray" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Let Us Pray</h3>
                 <a href="/assets/letuspray.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1583,7 +1584,7 @@ The millstone is rising. The answer is coming.
               {/* Who Speaks Scrivo */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/who_speaks_scrivo.png" alt="Who Speaks for Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/who_speaks_scrivo.png" alt="Who Speaks for Scrivo" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Who Speaks for Scrivo</h3>
                 <a href="/assets/who_speaks_scrivo.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1594,7 +1595,7 @@ The millstone is rising. The answer is coming.
               {/* In Practice */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/inpractice.png" alt="In Practice" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/inpractice.png" alt="In Practice" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">In Practice</h3>
                 <a href="/assets/inpractice.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1605,7 +1606,7 @@ The millstone is rising. The answer is coming.
               {/* Canon Law 404 */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/canonlaw404.png" alt="Canon Law 404" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/canonlaw404.png" alt="Canon Law 404" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Canon Law 404</h3>
                 <a href="/assets/canonlaw404.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1616,7 +1617,7 @@ The millstone is rising. The answer is coming.
               {/* Beach House Once */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Beachhouseonce.png" alt="Beach House Once" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Beachhouseonce.png" alt="Beach House Once" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Beach House Once</h3>
                 <a href="/assets/Beachhouseonce.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1627,7 +1628,7 @@ The millstone is rising. The answer is coming.
               {/* Bridge Closing */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Bridgeclosing.png" alt="Bridge Closing" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Bridgeclosing.png" alt="Bridge Closing" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Bridge Closing</h3>
                 <a href="/assets/Bridgeclosing.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1638,7 +1639,7 @@ The millstone is rising. The answer is coming.
               {/* Degree in Denial */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/degreeindenial.png" alt="Degree in Denial" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/degreeindenial.png" alt="Degree in Denial" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Degree in Denial</h3>
                 <a href="/assets/degreeindenial.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1649,7 +1650,7 @@ The millstone is rising. The answer is coming.
               {/* Incense and Holy Water */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Incenseandholywater.png" alt="Incense and Holy Water" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Incenseandholywater.png" alt="Incense and Holy Water" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Incense & Holy Water</h3>
                 <a href="/assets/Incenseandholywater.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1660,7 +1661,7 @@ The millstone is rising. The answer is coming.
               {/* Truth Latham Report */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/truth_latham_report.png" alt="Truth Latham Report" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/truth_latham_report.png" alt="Truth Latham Report" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Truth: Latham Report</h3>
                 <a href="/assets/truth_latham_report.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1671,7 +1672,7 @@ The millstone is rising. The answer is coming.
               {/* Smoking Gun */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/smoking-gun-clean.png" alt="Smoking Gun" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/smoking-gun-clean.png" alt="Smoking Gun" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Smoking Gun</h3>
                 <a href="/assets/smoking-gun-clean.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1682,7 +1683,7 @@ The millstone is rising. The answer is coming.
               {/* Saul on Sword */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/Saulonsword.png" alt="Saul on Sword" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/Saulonsword.png" alt="Saul on Sword" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Saul on Sword</h3>
                 <a href="/assets/images/Saulonsword.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1693,7 +1694,7 @@ The millstone is rising. The answer is coming.
               {/* McCarrick with JPII */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/mccarrick_with_jpii.png" alt="McCarrick with Pope John Paul II" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/mccarrick_with_jpii.png" alt="McCarrick with Pope John Paul II" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">McCarrick with JPII</h3>
                 <a href="/assets/mccarrick_with_jpii.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1704,7 +1705,7 @@ The millstone is rising. The answer is coming.
               {/* JPII with Cardinals */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/jpii_with_cardinals.png" alt="Pope John Paul II with Cardinals" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/jpii_with_cardinals.png" alt="Pope John Paul II with Cardinals" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">JPII with Cardinals</h3>
                 <a href="/assets/jpii_with_cardinals.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1715,7 +1716,7 @@ The millstone is rising. The answer is coming.
               {/* Pope Francis with Religious Leaders */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/pope_francis_religious_leaders.png" alt="Pope Francis with Religious Leaders" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/pope_francis_religious_leaders.png" alt="Pope Francis with Religious Leaders" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Pope Francis</h3>
                 <a href="/assets/pope_francis_religious_leaders.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
@@ -1726,7 +1727,7 @@ The millstone is rising. The answer is coming.
               {/* Pope JPII at Giants Stadium */}
               <div className="text-center group">
                 <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all">
-                  <img src="/assets/pope_jpii_giants_stadium.png" alt="Pope John Paul II at Giants Stadium" className="w-full transform group-hover:scale-105 transition-transform" />
+                  <SmartImage src="/assets/pope_jpii_giants_stadium.png" alt="Pope John Paul II at Giants Stadium" className="w-full transform group-hover:scale-105 transition-transform" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">JPII at Giants Stadium</h3>
                 <a href="/assets/pope_jpii_giants_stadium.png" download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">

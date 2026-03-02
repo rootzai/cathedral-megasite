@@ -1,6 +1,20 @@
-import { useMemo, useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Upload, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { AlertCircle, CheckCircle, Send, Upload, X } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+const tipSchema = z.object({
+  name: z.string().optional(),
+  email: z.string().email().optional().or(z.literal('')),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(1, "Message is required"),
+  anonymous: z.boolean(),
+  honeypot: z.string().optional(),
+});
+
+type TipFormValues = z.infer<typeof tipSchema>;
 
 export function TipSubmissionForm() {
   const tipEndpoint = useMemo(
@@ -8,24 +22,29 @@ export function TipSubmissionForm() {
     []
   );
   const submissionEnabled = Boolean(tipEndpoint);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    anonymous: false,
-  });
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [honeypot, setHoneypot] = useState(''); // Anti-spam honeypot
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<TipFormValues>({
+    resolver: zodResolver(tipSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+      anonymous: false,
+      honeypot: '',
+    },
+  });
+
+  const isAnonymous = watch('anonymous');
+
+  const onSubmit = async (data: TipFormValues) => {
     setErrorMessage(null);
 
     // Check honeypot (bots will fill this hidden field)
-    if (honeypot) {
+    if (data.honeypot) {
       console.log('Spam detected');
       return;
     }
@@ -41,17 +60,17 @@ export function TipSubmissionForm() {
     try {
       // Create FormData for file uploads
       const submitData = new FormData();
-      
-      if (!formData.anonymous) {
-        submitData.append('name', formData.name);
-        submitData.append('email', formData.email);
+
+      if (!data.anonymous) {
+        submitData.append('name', data.name || '');
+        submitData.append('email', data.email || '');
       }
-      
-      submitData.append('subject', formData.subject);
-      submitData.append('message', formData.message);
-      submitData.append('anonymous', formData.anonymous.toString());
+
+      submitData.append('subject', data.subject);
+      submitData.append('message', data.message);
+      submitData.append('anonymous', data.anonymous.toString());
       submitData.append('timestamp', new Date().toISOString());
-      
+
       // Add files
       files.forEach((file, index) => {
         submitData.append(`file_${index}`, file);
@@ -67,14 +86,7 @@ export function TipSubmissionForm() {
 
       if (response.ok) {
         setStatus('success');
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          anonymous: false,
-        });
+        reset();
         setFiles([]);
       } else {
         throw new Error(`Submission failed with status ${response.status}`);
@@ -121,11 +133,11 @@ export function TipSubmissionForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-gray-800/30 border border-gray-700 rounded-lg">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6 bg-gray-800/30 border border-gray-700 rounded-lg">
       {/* Privacy Notice */}
       <div className="p-4 bg-blue-900/20 border border-blue-600 rounded-lg text-sm">
         <p className="text-blue-300">
-          <strong>Privacy Notice:</strong> Your information is transmitted securely and will be kept confidential. 
+          <strong>Privacy Notice:</strong> Your information is transmitted securely and will be kept confidential.
           We do not share source information with third parties. Check "Anonymous Submission" below if you prefer not to provide contact details.
         </p>
       </div>
@@ -142,8 +154,7 @@ export function TipSubmissionForm() {
         <input
           type="checkbox"
           id="anonymous"
-          checked={formData.anonymous}
-          onChange={(e) => setFormData({ ...formData, anonymous: e.target.checked })}
+          {...register('anonymous')}
           className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-red-600 focus:ring-red-600"
         />
         <label htmlFor="anonymous" className="text-gray-200 font-semibold cursor-pointer">
@@ -152,7 +163,7 @@ export function TipSubmissionForm() {
       </div>
 
       {/* Contact Information (hidden if anonymous) */}
-      {!formData.anonymous && (
+      {!isAnonymous && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-300">
@@ -161,11 +172,11 @@ export function TipSubmissionForm() {
             <input
               type="text"
               id="name"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              {...register('name')}
               className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
               placeholder="Your name"
             />
+            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-300">
@@ -174,11 +185,11 @@ export function TipSubmissionForm() {
             <input
               type="email"
               id="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              {...register('email')}
               className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
               placeholder="your@email.com"
             />
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
         </div>
       )}
@@ -191,12 +202,11 @@ export function TipSubmissionForm() {
         <input
           type="text"
           id="subject"
-          required
-          value={formData.subject}
-          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+          {...register('subject')}
           className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
           placeholder="Brief description of your tip"
         />
+        {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
       </div>
 
       {/* Message */}
@@ -206,13 +216,12 @@ export function TipSubmissionForm() {
         </label>
         <textarea
           id="message"
-          required
           rows={8}
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          {...register('message')}
           className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none resize-none"
           placeholder="Provide as much detail as possible. Include dates, names, locations, and any supporting information."
         />
+        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
       </div>
 
       {/* File Upload */}
@@ -264,9 +273,7 @@ export function TipSubmissionForm() {
       {/* Honeypot (hidden from users, catches bots) */}
       <input
         type="text"
-        name="website"
-        value={honeypot}
-        onChange={(e) => setHoneypot(e.target.value)}
+        {...register('honeypot')}
         style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"

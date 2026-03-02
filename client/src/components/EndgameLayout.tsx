@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
+import { SmartImage } from "@/components/SmartImage";
+
 
 interface EndgameLayoutProps {
   children: React.ReactNode;
@@ -90,7 +92,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         <div className="p-4 border-b border-border flex flex-col items-center">
           <Link href="/cathedral">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
-              <img
+              <SmartImage
                 src="/assets/sodom-hall-logo.png"
                 alt="Sodom Hall Home"
                 className="h-16 w-auto grayscale brightness-200"

@@ -1,49 +1,8 @@
 import { ResponsiveContainer, Tooltip, Treemap } from 'recharts';
 
-const data = [
-  {
-    name: 'Archdiocese of New York',
-    size: 10000,
-    fill: '#8884d8',
-    ev: '$10.0B+'
-  },
-  {
-    name: 'Archdiocese of Chicago',
-    size: 7000,
-    fill: '#83a6ed',
-    ev: '$7.0B+'
-  },
-  {
-    name: 'Archdiocese of Boston',
-    size: 5000,
-    fill: '#8dd1e1',
-    ev: '$5.0B+'
-  },
-  {
-    name: 'Archdiocese of Newark',
-    size: 4000,
-    fill: '#82ca9d',
-    ev: '$4.0B+'
-  },
-  {
-    name: 'Archdiocese of Los Angeles',
-    size: 8000,
-    fill: '#a4de6c',
-    ev: '$8.0B+'
-  },
-  {
-    name: 'Archdiocese of San Francisco',
-    size: 5900,
-    fill: '#d0ed57',
-    ev: '$5.9B+'
-  },
-  {
-    name: 'Other Major Sees',
-    size: 15000,
-    fill: '#ffc658',
-    ev: 'Various'
-  },
-];
+import rawData from '@/data/wealthMapData.json';
+import { safeParseData, WealthMapItem, wealthMapSchema } from '@/schemas/dataSchemas';
+import { useMemo } from 'react';
 
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
@@ -84,7 +43,7 @@ const CustomContent = (props: any) => {
             fontSize={10}
             fontWeight="bold"
           >
-            {name ? name.split(' ').slice(-1)[0] : ''}
+            {typeof name === 'string' ? name.split(' ').slice(-1)[0] : ''}
           </text>
           <text
             x={x + width / 2}
@@ -102,6 +61,15 @@ const CustomContent = (props: any) => {
 };
 
 export default function WealthMap() {
+  const data: WealthMapItem[] = useMemo(() => {
+    try {
+      return safeParseData(wealthMapSchema, rawData);
+    } catch (e) {
+      console.error(e);
+      return [];
+    }
+  }, []);
+
   return (
     <div className="w-full h-full min-h-[200px]">
       <ResponsiveContainer width="100%" height="100%">

@@ -1,3 +1,4 @@
+import { SmartImage } from "@/components/SmartImage";
 import Layout from "@/components/ChurchBKLayout";
 import SectionHeader from "@/components/SectionHeader";
 import KeyMetricCard from "@/components/KeyMetricCard";
@@ -13,7 +14,7 @@ export default function Home() {
       <div className="relative w-full h-[400px] mb-12 rounded-sm overflow-hidden group">
         <div className="absolute inset-0 bg-primary/60 mix-blend-multiply z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
-        <img 
+        <SmartImage 
           src="/images/hero-vatican-finance.png" 
           alt="Vatican Finance" 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale"

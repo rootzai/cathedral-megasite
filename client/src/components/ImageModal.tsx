@@ -2,6 +2,8 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Download, Share2, X, Twitter, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { SmartImage } from "@/components/SmartImage";
+
 
 interface ImageModalProps {
   src: string;
@@ -59,7 +61,7 @@ export default function ImageModal({ src, alt, title, caption, children }: Image
         </div>
         
         <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12">
-          <img 
+          <SmartImage 
             src={src} 
             alt={alt} 
             className="max-w-full max-h-full object-contain shadow-2xl"

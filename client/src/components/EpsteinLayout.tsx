@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../pages/epstein/epstein.css";
+import { SmartImage } from "@/components/SmartImage";
+
 
 export default function EpsteinLayout({ children }: { children: React.ReactNode }) {
     const [activeSection, setActiveSection] = useState('front-page');
@@ -35,7 +37,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
             <nav className="sidebar-nav" id="sidebar-nav">
                 <div className="sidebar-logo">
                     <a href="/" style={{ display: 'block' }}>
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/ohgmPACCpypWjdfQ.png" alt="SodomHall.com" />
+                        <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/ohgmPACCpypWjdfQ.png" alt="SodomHall.com" />
                     </a>
                     <div className="sidebar-site-label">Special Investigation</div>
                 </div>
