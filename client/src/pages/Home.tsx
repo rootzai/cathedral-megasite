@@ -1,12 +1,10 @@
-import NarrativeFlow from '@/components/NarrativeFlow';
-import NetworkDiagram from '@/components/NetworkDiagram';
-import { PerryLawTimeline } from '@/components/PerryLawTimeline';
 import { Search } from '@/components/Search';
 import { SmartImage } from "@/components/SmartImage";
-import { Banana, ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
 
 import { useState } from 'react';
 import { Streamdown } from 'streamdown';
+import { Link } from 'wouter';
 
 // Collapsible Section Component
 function CollapsibleSection({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
@@ -32,16 +30,41 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {isSearchOpen && <Search onClose={() => setIsSearchOpen(false)} />}
-      {/* Breaking News Banner */}
-      <div className="bg-red-600 text-white py-3 px-4 text-center font-bold sticky top-0 z-50 shadow-lg">
-        <div className="container mx-auto">
-          🚨 BREAKING: Judge Orders Release of Hidden Seton Hall Reports — The Vault Opens November 2025
+      {/* News Ticker */}
+      <div className="bg-red-600 text-white py-2 overflow-hidden sticky top-0 z-50 shadow-lg border-b border-red-900/50">
+        <div className="whitespace-nowrap flex animate-ticker">
+          {[
+            "🚨 MAY 18, 2026: Final Court Deadline for 100% Document Production.",
+            "📄 RABNER DOSSIER: Criminal Referral for 'Closed Loop' Legal Fraud.",
+            "🏛️ VAULT UNSEALED: 24,000 pages of withheld records ordered released.",
+            "🏦 BK EXPOSURE: McCarrick 'Nephew' network identified in financial ledger.",
+            "⚖️ SCRIVO SANCTIONED: Judge cites 'Deliberate Concealment'.",
+            "🕵️ EPSTEIN NEXUS: Investigation expands to Shared Counsel.",
+          ].map((text, i) => (
+            <span key={i} className="mx-8 font-bold tracking-tight inline-flex items-center">
+              {text}
+            </span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {[
+            "🚨 MAY 18, 2026: Final Court Deadline for 100% Document Production.",
+            "📄 RABNER DOSSIER: Criminal Referral for 'Closed Loop' Legal Fraud.",
+            "🏛️ VAULT UNSEALED: 24,000 pages of withheld records ordered released.",
+            "🏦 BK EXPOSURE: McCarrick 'Nephew' network identified in financial ledger.",
+            "⚖️ SCRIVO SANCTIONED: Judge cites 'Deliberate Concealment'.",
+            "🕵️ EPSTEIN NEXUS: Investigation expands to Shared Counsel.",
+          ].map((text, i) => (
+            <span key={i + 6} className="mx-8 font-bold tracking-tight inline-flex items-center">
+              {text}
+            </span>
+          ))}
         </div>
       </div>
 
       {/* Header Section */}
-      <header className="bg-gradient-to-b from-gray-900 to-black text-white py-12 border-b-4 border-red-600">
-        <div className="container mx-auto px-4">
+      <header className="bg-gradient-to-b from-gray-900 to-black text-white py-20 border-b-4 border-red-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/assets/vault/archive_storage.jpg')] bg-cover bg-center opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-end items-center gap-4 mb-4">
             <a href="/documents" className="text-gray-300 hover:text-white transition-colors text-sm font-semibold">Documents</a>
             <a href="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-semibold">About</a>
@@ -53,129 +76,193 @@ export default function Home() {
               <span className="text-sm font-semibold">Search</span>
             </button>
           </div>
-          <div className="text-center mb-6">
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-3">SPECIAL INVESTIGATION</p>
-            <h1 className="text-7xl font-bold mb-4 tracking-tight">SODOM HALL</h1>
-            <h2 className="text-3xl mb-6 text-gray-300 font-light">The Cathedral of Documents</h2>
-            <p className="text-lg italic text-gray-400 max-w-3xl mx-auto mb-8">
-              How Seton Hall University and NJ's Catholic Political Elite Protected Sexual Predators for Decades
-            </p>
-            <div className="flex justify-center h-4">
-              {/* Social share removed per forensic tone requirements */}
-            </div>
+          <div className="text-center max-w-4xl mx-auto">
+            <p className="text-sm uppercase tracking-[0.5em] text-red-500 mb-6 font-mono">Special Forensic Investigation</p>
+            <h1 className="text-8xl font-bold mb-4 tracking-tighter">SODOM <span className="text-red-600">HALL</span></h1>
+            <h2 className="text-3xl mb-8 text-gray-400 font-light tracking-widest uppercase">The Cathedral of Documents</h2>
+            <div className="w-24 h-1 bg-red-600 mx-auto mb-8" />
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="bg-black text-white">
-
-        {/* Hero Section with Millstone */}
-        <section
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/70"
-          style={{ backgroundImage: 'url(/assets/millstone/vintage_millstone.jpg)' }}
-        >
-          <div className="container mx-auto max-w-4xl relative z-10">
-            <div className="prose prose-invert prose-xl max-w-none">
-              <blockquote className="border-l-4 border-red-600 pl-8 italic text-2xl mb-12 bg-black/80 p-8 rounded">
-                "It were better for him that a millstone were hanged about his neck, and he cast into the sea, than that he should offend one of these little ones."
-                <footer className="text-gray-400 mt-4 text-lg">— Luke 17:2</footer>
-              </blockquote>
-
-              <Streamdown>{`
-In the Gospel of Matthew, Christ warns those who would harm children: better to have a millstone tied around your neck and be cast into the sea.
-
-For decades, a different kind of stone has been sinking — not into water, but into the institutional memory of the Roman Catholic Church and New Jersey's political establishment.
-
-This is the story of that stone, and the men who tried to hold it underwater.
-
-
-`}</Streamdown>
+        {/* Leading Reckoning Section */}
+        <section className="py-24 px-4 border-b border-red-900/10">
+          <div className="container mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <blockquote className="border-l-4 border-red-600 pl-8 italic text-3xl mb-12 bg-zinc-950 p-12 rounded-r-lg shadow-2xl">
+                  "The vault is no longer accidental. It is deliberate. And on May 18, 2026, it becomes a crime."
+                  <footer className="text-gray-500 mt-4 text-sm font-mono uppercase tracking-widest">— Forensic Note: Exhibit 00</footer>
+                </blockquote>
+              </div>
+              <div className="prose prose-invert prose-xl">
+                <p className="text-2xl font-bold text-red-500 mb-6 leading-tight">
+                  For six years, the Latham Report was a ghost.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  As of May 2026, the institutional memory of New Jersey's Catholic political elite is no longer protected by privilege. Judge Avion Benjamin's unsealing order has fundamentally breached the cathedral walls.
+                </p>
+                <p className="text-gray-300">
+                  This is the reckoning. The unmasked identities of the "twelve clergymen" are now flowing into the public record. The following dossier maps the active collapse of the silence.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Narrative Flow - "Nano Banana Pro" Visual */}
-        <section className="py-12 bg-black/40 border-y border-red-900/20">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-2 mb-8 justify-center">
-              <Banana className="w-4 h-4 text-[#FFD700] rotate-90" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground">The "Nano Banana" Narrative Flow</span>
-            </div>
-            <NarrativeFlow />
-          </div>
-        </section>
-
-        {/* Site Flow & Logical Architecture */}
-        <section className="py-24 bg-zinc-950 border-b border-red-900/10">
+        {/* Act VII - THE RECKONING OF MAY (May 18, 2026) */}
+        <section id="act-vii" className="py-32 bg-zinc-950 border-y border-red-900/20 relative">
           <div className="container mx-auto max-w-6xl px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 tracking-tight uppercase">Site Architecture</h2>
-              <p className="text-gray-400 font-mono text-xs uppercase tracking-[0.3em] mb-8">The 7 Pillars of Exposure</p>
-              <div className="w-24 h-px bg-red-600 mx-auto" />
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-red-900/30" />
+              <span className="font-mono text-red-600 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
+              <div className="h-px flex-1 bg-red-900/30" />
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="p-8 border-l border-red-900/30 bg-black/40 group hover:bg-red-900/5 transition-colors">
-                <h3 className="text-red-500 font-bold mb-4 flex items-center gap-2">01. THE CATHEDRAL</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The master narrative. A chronological descent through the vault, mapping the broad strokes of institutional betrayal from 1987 to 2026.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-red-400 transition-colors uppercase tracking-widest">
-                  <span className="text-red-900 mr-2">Overlap:</span> Entry point for all forensic data.
-                </div>
+            <div className="bg-black border border-red-900/30 p-16 rounded-lg relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-9xl font-bold text-red-900/10 select-none">VII</span>
               </div>
 
-              <div className="p-8 border-l border-blue-900/30 bg-black/40 group hover:bg-blue-900/5 transition-colors">
-                <h3 className="text-blue-500 font-bold mb-4 flex items-center gap-2">02. THE RULING</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The legal breach. Detailed analysis of Judge Benjamin's orders and the destruction of the University's privilege claims.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-blue-400 transition-colors uppercase tracking-widest">
-                  <span className="text-blue-900 mr-2">Overlap:</span> Benjamin's order unsealed the "Architecture" exhibits.
-                </div>
-              </div>
+              <h2 className="text-red-500 font-bold text-xl mb-4 font-mono tracking-widest">ACT VII</h2>
+              <h3 className="text-6xl font-bold mb-8 tracking-tighter">The Reckoning of May</h3>
+              <p className="text-3xl text-gray-500 mb-12 font-light">May 18, 2026</p>
 
-              <div className="p-8 border-l border-emerald-900/30 bg-black/40 group hover:bg-emerald-900/5 transition-colors">
-                <h3 className="text-emerald-500 font-bold mb-4 flex items-center gap-2">03. THE FRANCHISE</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The individual profiles. Detailed dossiers on the "Dirty Dozen" and the network of McCarrick "nephews" still in leadership.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-emerald-400 transition-colors uppercase tracking-widest">
-                  <span className="text-emerald-900 mr-2">Overlap:</span> Maps legal counsel to "Church BK" strategies.
-                </div>
-              </div>
+              <div className="prose prose-invert prose-2xl max-w-none mb-12">
+                <Streamdown>{`
+The discovery deadline has passed. 24,000 pages of previously suppressed records—Title IX logs, witness rosters, and Board Risk Committee minutes—are now in the hands of investigators.
 
-              <div className="p-8 border-l border-teal-900/30 bg-black/40 group hover:bg-teal-900/5 transition-colors">
-                <h3 className="text-teal-500 font-bold mb-4 flex items-center gap-2">04. EPSTEIN NEXUS</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The investigative cross-section. Mapping the external networks of influence and the shared legal architecture between institutions.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-teal-400 transition-colors uppercase tracking-widest">
-                  <span className="text-teal-900 mr-2">Status:</span> Active News & External Investigation.
-                </div>
-              </div>
+** The highlights of the production include:**
 
-              <div className="p-8 border-l border-orange-900/30 bg-black/40 group hover:bg-orange-900/5 transition-colors">
-                <h3 className="text-orange-500 font-bold mb-4 flex items-center gap-2">05. CHURCH BK</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The financial shell game. Mapping how bankruptcy is used as a legal SCIF to hide assets while paying massive legal fees.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-orange-400 transition-colors uppercase tracking-widest">
-                  <span className="text-orange-900 mr-2">Overlap:</span> Grounds the "Ruling" in financial motivations.
-                </div>
+1. **The "Closed Loop" Unmasked**: Exhibits proving Thomas Scrivo's direct coordination between the University and the RCAN.
+2. **The 100% Disclosure**: Full identities of the McCarrick network confirmed.
+3. **The Rabner Dossier**: Evidence of institutional fraud against the State.
+`}</Streamdown>
               </div>
-
-              <div className="p-8 border-l border-purple-900/30 bg-black/40 group hover:bg-purple-900/5 transition-colors">
-                <h3 className="text-purple-500 font-bold mb-4 flex items-center gap-2">06. THEY KNEW</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">The complicity matrix. A searchable database of board members who were present for the 2019 Latham suppression vote.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-purple-400 transition-colors uppercase tracking-widest">
-                  <span className="text-purple-900 mr-2">Overlap:</span> Sorting function for all named actors in Act I.
-                </div>
-              </div>
-
-              <div className="p-8 border-l border-zinc-500/30 bg-black/40 lg:col-span-3 group hover:bg-zinc-800 transition-colors">
-                <h3 className="text-zinc-400 font-bold mb-4 flex items-center gap-2 justify-center">07. THE ARCHITECTURE</h3>
-                <p className="text-gray-300 leading-relaxed mb-4 text-center max-w-2xl mx-auto">The forensic dossier. The raw evidence, letters to Chief Justice Rabner, and the unmasked whistleblower accounts.</p>
-                <div className="text-[10px] font-mono text-gray-400 group-hover:text-white transition-colors uppercase tracking-widest text-center">
-                  <span className="text-zinc-700 mr-2">Final Depth:</span> The raw records unsealed by the Benjamin Order.
-                </div>
+              <div className="flex gap-4">
+                <Link href="/documents">
+                  <a className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all uppercase tracking-widest text-sm">Review Exhibits</a>
+                </Link>
+                <Link href="/ruling">
+                  <a className="px-8 py-4 border border-zinc-700 hover:border-red-600 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Act V - THE BREACH */}
+        {/* Other Acts (I-VI) - Navigation Grid */}
+        <section className="py-24 bg-gray-900 border-y border-red-900/10">
+          <div className="container mx-auto max-w-6xl px-4">
+            <h2 className="text-4xl font-bold mb-4 text-center tracking-tight uppercase">The Descent</h2>
+            <p className="text-gray-400 font-mono text-xs uppercase tracking-[0.3em] mb-12 text-center underline decoration-red-600/50 underline-offset-8">Complete Forensic Investigation</p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <a href="#act-vii" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act VII</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Reckoning</p>
+                <p className="text-gray-400 text-sm italic">May 18, 2026: Final Deadline</p>
+              </a>
+
+              <a href="#act-vi" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act VI</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Succession</p>
+                <p className="text-gray-400 text-sm italic">2027: Who Inherits the Cathedral?</p>
+              </a>
+
+              <a href="#act-v" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act V</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Breach</p>
+                <p className="text-gray-400 text-sm italic">Nov 2025: The Court Orders Disclosure</p>
+              </a>
+
+              <a href="#act-iv" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act IV</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Courtroom</p>
+                <p className="text-gray-400 text-sm italic">2023-25: Survivors & The Reckoning</p>
+              </a>
+
+              <a href="#act-iii" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act III</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Concealment</p>
+                <p className="text-gray-400 text-sm italic">2020-23: The Network of Silence</p>
+              </a>
+
+              <a href="#act-ii" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act II</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Labyrinth</p>
+                <p className="text-gray-400 text-sm italic">1987-2020: Building the Network</p>
+              </a>
+
+              <a href="#act-i" className="block p-6 bg-black border border-gray-800 hover:border-red-600 transition-all rounded-lg lg:col-span-3 text-center group">
+                <h3 className="text-xl font-bold mb-2 text-red-500 group-hover:text-red-400">Act I</h3>
+                <p className="text-lg mb-2 font-bold uppercase tracking-wider">The Vault</p>
+                <p className="text-gray-400 text-sm italic">August 27, 2019: The Secret Meeting</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Act VI - THE ARCHITECTURE OF SILENCE & SUCCESSION */}
+        <section
+          id="act-vi"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
+          style={{ backgroundImage: 'url(/assets/symbols/blueprint_scales.png)' }}
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-black/90 p-12 rounded-lg border-4 border-zinc-500">
+              <h2 className="text-6xl font-bold mb-4 text-zinc-500">Act VI</h2>
+              <h3 className="text-5xl font-bold mb-4">The Architecture of Silence</h3>
+              <p className="text-2xl text-gray-400 mb-12">February 13, 2026</p>
+
+              <div className="prose prose-invert prose-xl max-w-none mb-12">
+                <Streamdown>{`
+On February 13, 2026, a formal dossier—**Exhibit 00**—was submitted to New Jersey Chief Justice Stuart Rabner. 
+
+The letter demanded the appointment of a **Special Prosecutor** to investigate the "Closed Loop" of judicial and legal corruption that has protected the McCarrick network for four decades.
+
+**The dossier documents:**
+- The coordinated unmasking of whistleblowers
+- The systematic withholding of 24,000 pages of evidence
+- The conflict of interest involving former NJ Attorney Generals sitting on the University's Board
+- The failure of the Current AG's office to act against their mentors and former law firm colleagues
+`}</Streamdown>
+              </div>
+
+              <CollapsibleSection title="The Closed Loop" defaultOpen={true}>
+                <Streamdown>{`
+The "Architecture of Silence" is a structural failure of justice. 
+
+**The Christie Network:**
+1. **Chris Christie**: Former Governor, mentor to the legal cabal.
+2. **Christopher Porrino**: Former AG under Christie, now Lowenstein Sandler partner (SHU Board).
+3. **Jennifer Davenport**: Former First Assistant to Porrino, now the Current AG nominating by Gov. Sherrill.
+
+This loop ensures that no one investigates the investigators. When Seton Hall hides reports, and the AG's office is filled with the friends and colleagues of the men hiding the reports, **the system fails.**
+`}</Streamdown>
+              </CollapsibleSection>
+
+              <CollapsibleSection title="The Succession: 2027">
+                <Streamdown>{`
+Cardinal Joseph Tobin turns 75 in 2027. Canon law requires him to submit his resignation to the Pope. The question becomes: who inherits the scandal?
+
+**Three Possible Futures:**
+
+**1. Resignation Accepted**: Pope Leo accepts Tobin's resignation. A new Archbishop is appointed.
+**2. Resignation Delayed**: The Pope asks Tobin to stay on temporarily.
+**3. Forced Removal**: The grand jury report is released. Criminal charges are filed.
+
+**Who Succeeds?**
+Bishop Elias Lorenzo—Tobin's protégé—is the obvious choice. Meanwhile, Monsignor Reilly returned as President of SHU in 2024. The dual succession: Lorenzo inherits the cathedral, Reilly inherits the university. Both McCarrick's protégés.
+`}</Streamdown>
+              </CollapsibleSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Act V - THE BREACH & ROME KNEW */}
         <section
           id="act-v"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
@@ -197,420 +284,131 @@ On November 12, 2025, Judge Avion Benjamin ordered the release of two sealed inv
 
               <CollapsibleSection title="Breaking News Coverage" defaultOpen={true}>
                 <Streamdown>{`
-On November 17, Judge Benjamin's ruling made national headlines. The NY Post and Politico both covered the story:
-
-**Key quotes from coverage:**
+On November 17, Judge Benjamin's ruling made national headlines. 
 
 **Judge Benjamin:** "There is a legitimate need for the evidence. The evidence is material and relevant."
 
 **Mark Crawford (SNAP NJ):** "For far too long, survivors and the public have been denied access to information that is essential for truth, accountability, and healing."
 
-**John Baldante (Attorney for Survivors):** "Survivors are entitled to know what this investigation revealed and what, if anything, Seton Hall did to protect children."
-
-**Read the full coverage:**
-- [NY Post: "Seton Hall sex abuse report ordered to be released by judge"](https://nypost.com/2025/11/17/us-news/seton-hall-sex-abuse-report-ordered-to-be-released-by-judge/) (Peter Senzamici)
-- [Politico: "Seton Hall must turn over clergy abuse documents, judge says"](https://archive.ph/https://www.politico.com/news/2025/11/17/seton-hall-clergy-abuse-documents-00654168) (Dustin Racioppi)
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Order & Timeline">
-                <Streamdown>{`
-Judge Benjamin's ruling is surgical and devastating. She reviewed 20,500 pages of documents in camera—meaning she personally examined every page that Seton Hall claimed was privileged.
-
-**Timeline of Exposure:**
-
-- **November 26, 2025**: Search terms finalized
-- **Late November 2025**: Document production begins (Seton Hall will appeal and lose, delaying by ~30 days)
-- **January 2026**: First major revelations as documents become public
-- **February-May 2026**: Depositions under oath (Tobin, Reilly, Lorenzo, Marino)
-- **May 18, 2026**: Discovery deadline—all evidence must be disclosed
-- **Summer 2026**: Criminal referrals, federal investigations, media firestorm
-
-The appeal will fail. The documents will flow. The truth will emerge.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="How the Cover-Up Died">
-                <Streamdown>{`
-In her Statement of Reasons, Judge Benjamin systematically demolished every privilege claim:
-
-### 1. The Fatal Disclaimer
-
-Latham & Watkins explicitly stated in their report: **"the University has never been a Latham client."**
-
-You cannot claim attorney-client privilege without a client relationship. This alone destroys Seton Hall's primary defense.
-
-### 2. The Kozloz Test
-
-Even if privilege existed, New Jersey law allows it to be pierced when three conditions are met:
-
-1. **The party seeking discovery has a substantial need** → The survivors need this evidence
-2. **The materials are material and relevant** → These documents are the core evidence
-3. **No other source exists** → Seton Hall has buried this for six years
-
-All three prongs satisfied. Privilege pierced.
-
-### 3. Pre-Existing Documents Are Never Privileged
-
-Judge Benjamin found **thousands of pages** of documents that existed before the investigation:
-
-- Employment files for Reilly, Lorenzo, and the other ten
-- Seminary policies on abuse reporting
-- The grievance policy logbook (before and after erasure)
-- Email chains between administrators
-
-Black-letter law in New Jersey: **you cannot make existing documents privileged by giving them to your lawyer.**
-
-### 4. Why the Appeal Will Fail
-
-1. **The disclaimer is fatal** — Latham said SHU wasn't their client
-2. **The Kozloz test is satisfied** — All three prongs met
-3. **Pre-existing documents are never privileged** — Settled law
-4. **Judge Benjamin reviewed everything** — She knows exactly what she's ordering
-
-The appeal will delay by ~30 days. But it will not stop the truth.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="What the Documents Will Reveal" defaultOpen={true}>
-                <Streamdown>{`
-### The Dirty Dozen
-
-The Latham Report names **twelve clergymen** who enabled or concealed abuse. For six years, Seton Hall has hidden their identities.
-
-**Who are the twelve?**
-
-We know two names:
-- **Monsignor Joseph Reilly** (Seminary Rector, now SHU President)
-- One other whose identity remains sealed
-
-**Where are they now?**
-
-The release of these names will have significant implications for dioceses nationwide, as it will reveal where these clergymen are currently assigned. When the twelve names are revealed, we will learn which parishes, schools, and dioceses are unknowingly harboring men who enabled predators.
-
-### Cardinal Tobin's Role and Cooperation
-
-A significant finding is in the **Gibbons Report:**
-
-**According to sources familiar with the investigation, Cardinal Joseph Tobin's level of cooperation with investigators became a point of concern.**
-
-Seton Hall enforced a cooperation standard through explicit termination threats based on the vague "Cooperation" clause (Policy Against Sexual Misconduct, Section IV.D). The Board fired Teresina DeAlmeida for refusing to cooperate. But when it came to the Cardinal?
-
-### Everyone Knew the Cardinal Was Compromised
-
-The documents will reveal something even more damning: **Board Risk Committee minutes proving that everyone in leadership knew the Cardinal was compromised.**
-
-The Board of Regents discussed the question explicitly: If the Cardinal is caught, do we go adverse to the Archdiocese of Newark?
-
-Their answer: **Yes.**
-
-They knew. They knew Tobin was vulnerable. They knew he could be exposed. And they planned for it.
-
-### Marino's Leverage
-
-How did this happen? How did a university Board Chair secure a Cardinal's support despite the Cardinal's knowledge of institutional failures?
-
-The answer lies in the institutional dynamics and the power of legal counsel. Marino, as Board Chair, had significant influence over university decisions that affected the Archdiocese's relationship with Seton Hall.
-
-Silence.
-
-### Disparate Application of University Cooperation Policy
-
-**The Standard:** Failure to cooperate = removal from positions
-
-Seton Hall enforced this standard through explicit termination threats based on a broad interpretation of the university's vague "Cooperation" clause (Policy Against Sexual Misconduct, Section IV.D), despite the fact that the Grievance Procedure explicitly prohibits compelling witnesses to participate.
-
-**The Enforcement:**
-
-- **Teresina DeAlmeida**, a university employee, refused to sit for investigators. She was fired.
-- **Monsignor Reilly** received two termination threat letters (November: warning to cooperate; February: acknowledging he complied). He appeared for investigators.
-- **The twelve clergymen** named in the Latham Report for enabling or concealing abuse faced removal from their positions.
-
-**The Exception:**
-
-- **Cardinal Tobin's** cooperation became a concern. He faced no consequences.
-
-The subordinate understood she was subject to the rules. The subordinates understood they were subject to the rules. The Cardinal believed he was above them.
-
-### The Irony of Counsel
-
-It is a notable contradiction: **The same RCAN (Roman Catholic Archdiocese of Newark) lawyers who advised Reilly to resist, then comply, were also the lawyers advising Tobin.**
-
-They told Reilly: "You must cooperate or face automatic termination."
-
-They told Tobin: "You can refuse. There will be no consequences."
-
-The same legal team. The same institutional protection network. Different rules for different ranks.
-
-This wasn't just hypocrisy—it was coordinated institutional strategy to protect the powerful while sacrificing the expendable.
-
-### The Policy Contradiction
-
-Seton Hall's enforcement of cooperation requirements was based on a fundamental contradiction in its own policies.
-
-**The Policy Against Sexual Misconduct (Section IV.D)** contains a vague "Cooperation" clause:
-
-> "All members of the University community have an obligation to cooperate in achieving the University's goal of an environment free of sexual harassment, sexual misconduct, domestic violence, dating violence, stalking, and retaliation."
-
-### 20,500 Pages of Evidence
-
-**What's NOT Protected:**
-- The Latham Report (except legal conclusions)
-- Employment files for all twelve clergymen
-- Emails between SHU administrators
-- Pre-existing documents (policies, grievance policy records)
-- Third-party communications
-
-**What IS Protected (Very Little):**
-- Emails with BOTH Gibbons AND SHU on the chain
-- Latham's legal advice and conclusions
-
-The court's order mandates the release of a significant volume of previously sealed documents.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Disinfectant of Sunlight">
-                <Streamdown>{`
-Justice Louis Brandeis wrote: "Sunlight is said to be the best of disinfectants."
-
-For six years, Seton Hall has operated in darkness. The Board of Regents met in secret. The Latham Report was locked in a vault. The names were hidden. The evidence was buried.
-
-On November 12, 2025, Judge Benjamin turned on the lights.
-
-The documents are coming. The depositions are coming. The truth is coming.
-
-For the survivors who have waited six years for justice: **vindication is coming.**
-
-For those who enabled predators and then hid behind privilege claims: **accountability is coming.**
-
-The vault is opening. The millstone is rising. And nothing can stop it now.
-
----
-
-*Note: Seton Hall will appeal this order. The appeal will delay document production by approximately 30 days but will not prevent disclosure.*
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="A Plea to Judge Benjamin: Sanction Tom Scrivo">
-                <Streamdown>{`
-## The Discovery Abuse Must Be Punished
-
-Your Honor, the conduct of Thomas Scrivo in this case demands sanctions under New Jersey Court Rules.
-
-### The Double Crime
-
-Mr. Scrivo and his co-counsel engaged in a calculated scheme of discovery abuse:
-
-**Crime One: Hiding the Latham Report**
-
-For six years, Seton Hall concealed the Latham Report as if it never existed. When survivors sought discovery, Scrivo's team:
-- Failed to disclose the report's existence
-- Claimed attorney-client privilege when finally forced to acknowledge it
-- Fought tooth and nail to prevent its production
-
-This was not negligence. This was **planned, deliberate concealment**.
-
-**Crime Two: Suing Joe Nyre for "Leaking" It
-
-Simultaneously, Mr. Scrivo's firm sued whistleblower Joe Nyre for allegedly disclosing information from that same Latham Report.
-
-Let that sink in: **They claimed the report was privileged and couldn't be produced, while simultaneously suing someone for disclosing it.**
-
-This is an admission. By suing Nyre for "leaking" the Latham Report, Scrivo admitted:
-1. The report existed (contradicting their concealment)
-2. The information was disclosed (contradicting their privilege claims)
-3. They knew what was in it (contradicting their claims of ignorance)
-
-You cannot have it both ways. You cannot claim something is privileged AND sue someone for disclosing it. That's not legal strategy—that's fraud on the court.
-
-### New Jersey Precedent for Sanctions
-
-Under **R. 1:4-8** and **R. 4:23**, New Jersey courts have broad authority to sanction discovery abuse, including:
-
-**Monetary sanctions** for willful failure to comply with discovery obligations (*Abtrax Pharms., Inc. v. Elkins-Sinn, Inc.*, 139 N.J. 499 (1995))
-
-**Adverse inferences** when a party destroys or conceals evidence (*Rosenblit v. Zimmerman*, 166 N.J. 391 (2001))
-
-**Dismissal or default** for egregious discovery violations (*Abouzahr v. Matera Concrete Prods., Inc.*, 303 N.J. Super. 134 (App. Div. 1997))
-
-**Attorney fee awards** against counsel personally when discovery abuse is willful and in bad faith (*Pressler & Verniero, Current N.J. Court Rules*)
-
-### Bad Faith Litigation
-
-The lawsuit against Joe Nyre was not just discovery abuse—it was **bad faith litigation** designed to intimidate a whistleblower and chill future disclosures.
-
-New Jersey recognizes that abuse of process claims lie when legal proceedings are used for an improper purpose (*LoBiondo v. Schwartz*, 199 N.J. 62 (2009)).
-
-Suing a whistleblower for disclosing the very documents you're hiding in discovery is textbook abuse of process.
-
-### The Sanction Must Fit the Crime
-
-Your Honor, Tom Scrivo is not just any lawyer. He's:
-- Former Chief Counsel to Governor Chris Christie
-- Chair of the New Jersey Economic Development Authority  
-- Partner at a prominent New Jersey law firm
-- A graduate of Seton Hall Law School
-
-He knew better. He knew the rules. He violated them anyway.
-
-The sanction must be:
-1. **Monetary** — Scrivo and his firm should pay the survivors' attorney fees for all discovery motions related to the Latham Report
-2. **Professional** — A referral to the Office of Attorney Ethics for investigation of his conduct
-3. **Evidentiary** — An adverse inference that the concealed documents contain evidence of Seton Hall's knowledge and complicity
-
-### For the Record
-
-Tom Scrivo is a creep. Not because of his legal tactics—though those are reprehensible—but because he used the law as a weapon against abuse survivors.
-
-He hid evidence of predator-enablers. He sued a whistleblower for telling the truth. He turned the legal system into a tool of institutional oppression.
-
-That is not advocacy. That is betrayal of the profession.
-
-Your Honor, you have the power to send a message: **Discovery abuse in cases involving child sexual abuse will not be tolerated.**
-
-Sanction Tom Scrivo. Make it hurt. Make it public. Make it a warning to every lawyer who thinks they can hide evidence of abuse behind privilege claims while simultaneously weaponizing the courts against survivors.
-
-Justice demands it.
+**Joe Nyre's Decision:** President Nyre sent the Latham Report directly to the Holy See in 2019. "We believe you should be aware of these findings." Rome has known everything since the beginning.
 `}</Streamdown>
               </CollapsibleSection>
             </div>
           </div>
         </section>
 
-        {/* Act I - THE VAULT */}
+        {/* Act IV - THE COURTROOM */}
         <section
-          id="act-i"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
-          style={{ backgroundImage: 'url(/assets/symbols/scales_justice_dark.jpg)' }}
+          id="act-iv"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
+          style={{ backgroundImage: 'url(/assets/symbols/scales_justice_light.jpg)' }}
         >
           <div className="container mx-auto max-w-5xl relative z-10">
             <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act I</h2>
-              <h3 className="text-5xl font-bold mb-4">The Vault</h3>
-              <p className="text-2xl text-gray-400 mb-12">August 27, 2019</p>
+              <h2 className="text-6xl font-bold mb-4 text-red-500">Act IV</h2>
+              <h3 className="text-5xl font-bold mb-4">The Courtroom</h3>
+              <p className="text-2xl text-gray-400 mb-12">2023-2025 — The Reckoning</p>
 
               <div className="prose prose-invert prose-xl max-w-none mb-8">
                 <Streamdown>{`
-In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
+While institutions chose silence, individuals chose courage. Some spoke publicly. Others remain anonymous, unable to believe their eyes that someone is finally holding accountable those who cloak themselves in righteousness and loyalty to the order.
 
-Among the twelve names: **Monsignor Joseph Reilly**, the powerful seminary rector.
+Your pain won't disappear, but perhaps you'll find an errant smile or two when you think of these days.
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="In the Room: The Architects">
+              <CollapsibleSection title="The Survivors">
                 <Streamdown>{`
-**Kevin Marino**
+**Dr. Joseph Nyre**
 
-Chair of the Board of Regents. The abusive orchestrator. Center of Chris Christie's Seton Hall Law School legal cabal. Criminal defense attorney who represents New Jersey's most powerful: George Norcross, Bill Stepien (Bridgegate). The man who architected the gaslighting of the century—getting the New York Times to rewrite history based on a sham investigation.
+President who commissioned the Latham Report and sent it to the Vatican and NJ Attorney General. Faced retaliation, lost health insurance, filed whistleblower lawsuit.
 
-**Tom Scrivo**
+**Kelli Nyre**
 
-Seton Hall Law School graduate—"the best in New Jersey," just ask Tony Soprano. Chris Christie's Chief Counsel (2015-2017), Chair of NJ Economic Development Authority. Partner at O'Toole Scrivo. The institutional insider who designs the communications plan to bury the news.
+Survived Kevin Marino's sexual harassment. Stood with her husband against coordinated retaliation from the university and Archdiocese.
 
-**Cardinal Joseph Tobin**
+**Lara McKeever**
 
-Archbishop of Newark. The ultimate decider.
+Confronted Cardinal Tobin with prophetic truth about his failures and the institutional cover-up.
 
-The room waits. Thirty-five regents have just heard the devastating findings. Twelve priests named. Reilly among them.
+**Mark Crawford**
 
-Marino speaks first:
+Survivor and advocate who refused to let the truth be buried.
 
-> "We've been through difficult situations before. The key is unity and discretion. Trust me—I know how to manage these matters. The Cardinal and I are aligned."
-> 
-> — Kevin Marino
+**Bob Hoatson**
 
-The room relaxes. Marino's tone is calm, measured, authoritative. No drama. No panic. Just quiet confidence. If Marino says it's handled, it's handled. If the Cardinal is aligned, there's nothing to worry about.
+Tireless advocate for survivors, speaking truth to power for decades.
 
-**The Inner Circle**
+**SNAP**
 
-But five people in that room know something the other thirty don't:
+Survivors Network of those Abused by Priests—the organization that refuses to let the Church forget.
 
-- **Kevin Marino** (Board Chair)
-- **Tom Scrivo** (lawyer/strategist)
-- **Joseph LaSala** (task force chair)
-- **Patrick Murray**
-- **Bishop James Checchio**
+**TM**
 
-They're on the Board leadership. They're on the response task force. And they've seen something the others haven't: **Cardinal Tobin's testimony is absent from the Latham Report.**
+Anonymous survivor whose story matters, whose courage counts.
 
-Why? Because Tobin **refused to sit with the Latham investigators**. On advice of his counsel—the same RCAN lawyers who advised Reilly.
+**All the Anonymous Survivors**
 
-The Gibbons Report documents this refusal. The inner circle knows what it means: Tobin is compromised. He's been protecting the network. And now he needs their protection.
-
-**This is leverage.** This is control. And they know exactly what needs to be done.
-
-The other thirty regents? They're in the dark. They don't know about the Gibbons material. They don't know about questions regarding Tobin's cooperation. They trust Marino. They trust the Cardinal.
-
-**The inner circle is already planning something far more sophisticated than a simple cover-up. They're planning a controlled demolition of the truth.**
-
-The vault door closes. The secrets stay buried. For now.
+Those who cannot yet speak publicly but who witness this moment with hope. Someone is finally holding these individuals accountable.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="Three Things Got Done at the Meeting">
+              <CollapsibleSection title="The Judges">
                 <Streamdown>{`
-**1. Latham attorneys read the verdicts aloud**
+**Judge Avion Benjamin**: Ordered Seton Hall to produce the full, unredacted Latham Report in November 2025. "The vault must open."
 
-The Latham Report attorneys read the verdicts for each of the twelve clergymen. One by one, renditions of the crimes each man committed.
+**Judge Jose Linares**: Corrupt former federal judge who released the Perry Law Report to Kevin Marino while his father was a priest abuser.
 
-**2. Unanimous vote to accept and enforce the Responsive Action Plan**
-
-The Board unanimously voted to accept the plan requiring all the men to be removed from the Board and let go from their jobs. They could no longer serve in leadership positions.
-
-**3. Regents agreed on the communications plan concocted by Tom Scrivo**
-
-"Bury the news." Completely ignore the twelve clergymen and only announce that McCarrick was guilty. Hope no one is paying attention. The material went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
+**Judge Cynthia Santomauro**: Chancery Court judge blatant manipulated by Tom Scrivo.
 `}</Streamdown>
               </CollapsibleSection>
             </div>
           </div>
         </section>
 
-        {/* Navigation to Other Acts */}
-        <section className="py-16 px-4 bg-gray-900">
-          <div className="container mx-auto max-w-5xl">
-            <h2 className="text-4xl font-bold mb-12 text-center">The Complete Investigation</h2>
+        {/* Act III - THE CONCEALMENT */}
+        <section
+          id="act-iii"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
+          style={{ backgroundImage: 'url(/assets/symbols/gavel_scales.png)' }}
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-black/90 p-12 rounded-lg">
+              <h2 className="text-6xl font-bold mb-4 text-red-500">Act III</h2>
+              <h3 className="text-5xl font-bold mb-4">The Concealment</h3>
+              <p className="text-2xl text-gray-400 mb-12">The Network of Silence (2020-2023)</p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <a href="#act-ii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act II</h3>
-                <p className="text-xl mb-2">The Labyrinth</p>
-                <p className="text-gray-400">How the McCarrick network was built (1987-2020)</p>
-              </a>
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
+After the McCarrick scandal still smoldered, Seton Hall hired its outsider president, Dr. Joseph Nyre. But the network was already preparing its defense.
 
-              <a href="#act-iii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act III</h3>
-                <p className="text-xl mb-2">The Concealment</p>
-                <p className="text-gray-400">The network of silence (2020-2023)</p>
-              </a>
+**The Christie Legal Network:**
+- **Tom Scrivo**: The document destroyer.
+- **Chris Porrino**: Former NJ Attorney General, now Lowenstein Sandler partner.
+- **Kevin Marino**: The abusive Board Chair who leads the cover-up.
 
-              <a href="#act-iv" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act IV</h3>
-                <p className="text-xl mb-2">The Courtroom</p>
-                <p className="text-gray-400">Survivors, judges, and the reckoning (2023-2025)</p>
-              </a>
-
-              <a href="#act-vi" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act VI</h3>
-                <p className="text-xl mb-2">The Architecture of Silence</p>
-                <p className="text-gray-400">The Rabner Dossier (Feb 2026)</p>
-              </a>
-
-              <a href="#act-vii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act VII</h3>
-                <p className="text-xl mb-2">The Reckoning of May</p>
-                <p className="text-gray-400">Final Discovery Deadline (May 2026)</p>
-              </a>
-            </div>
-
-            <div className="mt-12 p-8 bg-black/50 border-2 border-yellow-600 rounded-lg text-center">
-              <p className="text-xl mb-4">
-                <strong>Note:</strong> Each Act contains detailed evidence, documents, and testimony. Click any Act above to explore the full story, or continue scrolling for the complete narrative.
-              </p>
-              <p className="text-gray-400">This is a cathedral of documents. You can skim the surface or descend into the archives.</p>
+**The Perry Law Whitewash:**
+Seton Hall commissioned a sham report to exonerate Marino, release it illegally to him, and then got the New York Times to parrot its conclusions. "No evidence" despite corroborating witnesses like Regent Kevin Flood.
+`}</Streamdown>
+              </div>
             </div>
           </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* Act II - THE LABYRINTH */}
         <section
@@ -773,854 +571,93 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
 **The cycle of protection became a cycle of promotion.**
 `}</Streamdown>
               </CollapsibleSection>
-
-
-
-              <CollapsibleSection title="2017: The Inheritance">
-                <Streamdown>{`
-When Cardinal Joseph Tobin was appointed Archbishop of Newark in 2017, he inherited more than just a title. He inherited McCarrick's entire network—the strategic placements, the culture of secrecy, and the skeletons in the closet.
-
-He had a choice: dismantle the machine or become its new operator.
-
-He chose to become its operator.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="Eight Days of Defiance (February 18-27, 2020)">
-                <Streamdown>{`
-**February 18, 2020**
-
-Supplemental Notice to Monsignor Reilly:
-
-"Reilly violated the University's grievance policies by failing to report sexual harassment allegations in 2012"
-
-"The Responsive Action Plan recommends that the Archbishop of Newark remove you from your position as Rector"
-
-"Cardinal Tobin has sole canonical authority to act"
-
-**February 27, 2020 — Nine Days Later**
-
-Pope Francis appoints Elias Lorenzo as Auxiliary Bishop of Newark.
-
-Cardinal Tobin extends Reilly's contract by two years and offers him a sabbatical.
-
-**This is the smoking gun.**
-
-Eight days between the final warning and the reward. Eight days that prove the choice was deliberate. Eight days that show the network protecting itself.
-`}</Streamdown>
-              </CollapsibleSection>
             </div>
           </div>
         </section>
 
-        {/* Act III - THE CONCEALMENT */}
+        {/* Act I - THE VAULT */}
         <section
-          id="act-iii"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/symbols/gavel_scales.png)' }}
+          id="act-i"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
+          style={{ backgroundImage: 'url(/assets/symbols/scales_justice_dark.jpg)' }}
         >
           <div className="container mx-auto max-w-5xl relative z-10">
             <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act III</h2>
-              <h3 className="text-5xl font-bold mb-4">The Concealment</h3>
-              <p className="text-2xl text-gray-400 mb-12">The Network of Silence (2020-2023)</p>
+              <h2 className="text-6xl font-bold mb-4 text-red-500">Act I</h2>
+              <h3 className="text-5xl font-bold mb-4">The Vault</h3>
+              <p className="text-2xl text-gray-400 mb-12">August 27, 2019</p>
 
               <div className="prose prose-invert prose-xl max-w-none mb-8">
                 <Streamdown>{`
-After the McCarrick scandal still smoldered, Seton Hall announced its savior: Dr. Joseph E. Nyre. After a yearlong national search, the Board voted "overwhelmingly" to appoint Nyre as the University's 21st president.
+In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
 
-What they didn't tell him—what they were already hiding—was that the same men who hired him were about to bury a report that would expose sexual harassment and institutional cover-ups at the highest levels.
-
-The university president was positioned to bear the institutional blame.
+Among the twelve names: **Monsignor Joseph Reilly**, the powerful seminary rector.
 `}</Streamdown>
               </div>
 
-              <CollapsibleSection title="The Perfect President (August 2019)">
+              <CollapsibleSection title="In the Room: The Architects">
                 <Streamdown>{`
-After a yearlong national search led by Kevin Marino (Chair) and Mark Ganton (Vice Chair), the Board of Regents voted "overwhelmingly" to appoint Nyre. The praise was effusive:
+**Kevin Marino**
 
-**Patrick Murray (Board Chair):** "An experienced leader, a bold visionary... the perfect choice to lead Seton Hall into the highest echelon of American Catholic universities."
-
-**Kevin Marino:** "Distinguished service... transformational higher education leadership... will help guide and propel Seton Hall to even greater national prominence."
-
-**Cardinal Tobin:** "An excellent choice to guide Seton Hall."
-
-Nyre's credentials were impeccable: a nationally recognized psychologist, former president of Iona College who had tripled its endowment, launched new programs, and achieved record fundraising.
-
-**The Price Tag:**
-
-Seton Hall made Nyre the highest-paid university president in New Jersey—more than Princeton's president. His 2020 compensation exceeded $1.7 million.
-
-They spared no expense. They praised him to the heavens. They called him perfect.
-
-**The Outsider:**
-
-To the insiders—the priests, the lawyers, the Board members who had protected each other for decades—Nyre was a threat. An outsider. A reformer coming to ruin the party.
-
-**The Room (August 2019)**
-
-Somewhere in the formal proceedings of August 2019, a meeting took place. The details are murky, but the participants are known:
-
-- Tom Scrivo (the lawyer)
-- Kevin Marino (Board Chair)
-- Mark Masharelli (Board member)
-- Anthony D'Alessandro (Board member)
-
-To Masharelli and D'Alessandro, it seemed like a routine board discussion. Formal. Procedural. Subtle.
-
-But Scrivo and Marino understood something the others didn't. They exchanged glances. They spoke in code. They connived on a plan that only they fully grasped.
-
-Masharelli and D'Alessandro were patsies—present but oblivious to the real agenda being set in motion.
-
-The trap was being prepared. But the trigger wouldn't be pulled until February 2020.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Scapegoat (October 2019 - February 2020)">
-                <Streamdown>{`
-**September 2019: The Report Arrives**
-
-After the material sat in the Vault/SCIF for two weeks in September, letters were finally sent to the twelve clergymen in October 2019. Each letter listed their crimes and their uniform punishment: removal from the Board of Regents, termination from university positions, permanent ban from leadership roles.
-
-Cardinal Joseph Tobin was also included in the report for failing to appear before investigators. Everyone knew. But they chose to ignore it—too politically inconvenient.
-
-**The Priest Rebellion**
-
-The response was immediate and furious. Priests in the seminary protested. They felt the punishment was unfair, the process unjust. And they needed someone to blame.
-
-They blamed Joe Nyre.
-
-The outsider. The reformer. Surely he was behind this crackdown. They didn't know—or didn't want to know—that the architects were Marino, Scrivo, and Tobin.
-
-**January 2020: Reilly's Second Letter**
-
-Msgr. Robert Reilly, rector of Immaculate Conception Seminary, sent his second letter to the Board. The message was clear: the priests were in revolt, and Joe Nyre had to go.
-
-Reilly was positioning himself. He wanted his contract extended. He wanted to remain in power. And he knew exactly who to blame for the chaos.
-
-**February 2020: The Cardinal's Decision**
-
-On February 27, 2020, Pope Francis appointed Elias Lorenzo as Auxiliary Bishop of Newark. This was the moment Cardinal Tobin had been waiting for.
-
-With Lorenzo now a bishop, Tobin could execute his long-term plan:
-- Extend Reilly's contract and position him as the next president of Seton Hall
-- Groom Lorenzo as the next Archbishop of Newark
-- Maintain complete ecclesiastical control over both institutions
-
-And Joe Nyre? He was no longer needed.
-
-**March 2020: The Coverup Decision**
-
-**This was when the coverup truly began.** Not in August 2019 at the Board meeting—that was just Marino and Scrivo positioning themselves, assuring everyone they had it "under control."
-
-The actual decision to protect Reilly and remove Nyre came in **March 2020**, after two critical events:
-1. Lorenzo's elevation to auxiliary bishop (February 27, 2020)
-2. Reilly's second task force letter demanding Nyre's removal (January 2020)
-
-**The Ecclesiastical Purpose**
-
-The decision wasn't just about protecting Reilly. It was about **returning a priest president to Seton Hall**. With Lorenzo now elevated to auxiliary bishop, the succession plan was clear:
-
-**Reilly** → President of Seton Hall (returning priest president to the university)
-
-**Lorenzo** → Archbishop of Newark (succeeding Tobin)
-
-**Birds of a feather.** Both ordained by McCarrick in 1987. Both planted as "twins" to control the institutions. The cycle of protection becomes a cycle of promotion.
-
-But there was one problem: **Joe Nyre**. Too much of a boy scout. Too committed to accountability. The turd in the punch bowl.
-
-With Lorenzo elevated and Reilly demanding action, Cardinal Tobin made his choice: **protect the network, sacrifice the reformer, execute the long-term plan.**
-
-**The Regents Subcommittee: "I Will Take Care of Joe Nyre"**
-
-Shortly after the Cardinal's decision, a critical meeting took place:
-
-- Joseph LaSala - Chair of the special task force
-- Bishop James Checchio
-- Kevin Marino - Board Chair
-- Cardinal Joseph Tobin
-- Tom Scrivo - The lawyer
-- Patrick Murray
-- Msgr. Joseph Cerny
-- Jim Collins
-
-"We don't want to fire him because then we'd owe him millions."
-
-"Let's see if we can get him to quit."
-
-**Kevin Marino:** "I will take care of Joe Nyre. I know how to do it."
-
-**Early 2020: The Sidelining**
-
-Soon after, Nyre was assigned to a new program: training priests in university administration to identify potential future priest-presidents.
-
-It was a demotion disguised as an initiative. A way to sideline him while they prepared Lorenzo's ascension.
-
-The trap was set. The scapegoat was chosen. The cover-up would continue.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Lawyers: Architects of Deceit">
-                <Streamdown>{`
-The cover-up required a network of lawyers willing to destroy evidence, manipulate records, and silence victims.
+Chair of the Board of Regents. The abusive orchestrator. Center of Chris Christie's Seton Hall Law School legal cabal. Criminal defense attorney who represents New Jersey's most powerful: George Norcross, Bill Stepien (Bridgegate). The man who architected the gaslighting of the century—getting the New York Times to rewrite history based on a sham investigation.
 
 **Tom Scrivo**
 
-Seton Hall Law School graduate. Christie's Chief Counsel (2015-2017), Chair of NJ Economic Development Authority. Partner at O'Toole Scrivo.
+Seton Hall Law School graduate—"the best in New Jersey," just ask Tony Soprano. Chris Christie's Chief Counsel (2015-2017), Chair of NJ Economic Development Authority. Partner at O'Toole Scrivo. The institutional insider who designs the communications plan to bury the news.
 
-The document destroyer. Made the Latham Report disappear into a secure facility. Orchestrated the burial of the Gibbons Report. Now represents Seton Hall in their countersuit against Joe Nyre—for leaking the Latham Report. The same document Scrivo has been concealing.
+**Cardinal Joseph Tobin**
 
-**Chris Porrino**
+Archbishop of Newark. The ultimate decider.
 
-Seton Hall Law School alumnus. Charter member of Christie's mafia. Former New Jersey Attorney General (60th AG).
+The room waits. Thirty-five regents have just heard the devastating findings. Twelve priests named. Reilly among them.
 
-Now head of litigation at Lowenstein Sandler. Represents Kevin Marino (not Seton Hall) in matters related to the Nyre lawsuit, even though Marino is not named as a defendant.
+Marino speaks first:
 
-**Angelo Stio**
-
-Troutman Pepper attorney. Enabled the erasure of the grievance policy abuse complaint logbook in May 2023 on behalf of Kevin Marino.
-
-This logbook documented harassment complaints against Marino and other board members. Its erasure was cited by Regent Kevin Flood in his resignation letter (Politico, Sept 2024).
-
-**Judge Jose Linares**
-
-Corrupt former federal judge at McCarter & English. Released confidential Perry Law Report to Kevin Marino with excuse he "also gave it to Joe Nyre."
-
-Compromised: his father was a priest abuser.
-
-**Kevin Marino**
-
-Board Chair. Sexual harasser. Christie ally. The man who orchestrated the entire cover-up while being investigated for his own misconduct.
-
-Accused of harassment by four different people: General Counsel Kim Capadona, CFO Donna McMonagle, President's wife Kelli Nyre, and another woman.
-
-Their complaints were erased from the grievance policy logbook. Resigned mid-term at an emergency Christmas holiday Regents meeting (December 2023).
-
-**Karen Friedman Agnifilo**
-
-Perry Law attorney who wrote the sham report exonerating Marino. Later represented Luigi Mangione. No longer lists Perry Law on her resume.
-
-The third law firm in six months—the others weren't "pliable" enough.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Perry Law Whitewash">
-                <Streamdown>{`
-In what may be the most audacious manipulation of the press in this entire saga, Kevin Marino orchestrated a masterclass in gaslighting—getting the New York Times itself to rewrite the narrative in his favor.
-
-**The Setup**
-
-Marino was under fire. The grievance policy logbook had been erased on his behalf—Angelo Stio authorized it, Jim Masharelli made it happen. Regents were resigning. Joe Nyre was blowing the whistle. The walls were closing in.
-
-So Marino did what powerful men in New Jersey do: attack first, hire the right lawyer, and manipulate the right reporter.
-`}</Streamdown>
-
-                <div className="my-8 p-6 bg-red-50 border-l-4 border-red-600">
-                  <h4 className="font-bold text-lg mb-4">Marino's Preemptive Strike: The Setonian Editorial</h4>
-                  <p className="mb-4"><strong>February 16, 2024</strong> — Before the Perry Law whitewash, Marino used the student newspaper to defame Nyre.</p>
-                  <p className="mb-4"><strong>Headline:</strong> "Former Regents Chair Kevin Marino's response to Nyre's lawsuit: <span className="font-bold text-red-700">Desperate and pathetic attempt will fail</span>"</p>
-                  <div className="space-y-2 text-sm">
-                    <p>• Calls lawsuit "rife with false and defamatory statements"</p>
-                    <p>• Accuses Nyre of "gross mishandling" of law school embezzlement investigation</p>
-                    <p>• Calls Kelli Nyre's harassment claims "disgraceful" and "false in every respect. That never happened, and she knows it."</p>
-                    <p>• Claims he has "provided ample evidence to the EEO Office" and expects "to be fully exonerated"</p>
-                    <p>• Accuses Nyre of "attempting to rehabilitate his tarnished reputation and secure another undeserved payout"</p>
-                    <p>• Ends with: "I am confident that desperate and pathetic attempt will fail."</p>
-                  </div>
-                  <p className="mt-4"><a href="https://www.thesetonian.com/article/2024/02/marino-responds" target="_blank" className="text-red-600 hover:text-red-500 font-bold">→ Read Marino's Full Setonian Editorial</a></p>
-                </div>
-
-                <Streamdown>{`
-**The Perry Law Report: A Fabricated Document**
-
-Five months after Marino's editorial attack, Seton Hall hired Perry Law—the **third law firm in six months**—to investigate Marino's conduct. The first firm (Dechert LLP) was deemed "less than pliable." The second (a small PA firm) was "jettisoned quickly." Finally, they landed at the nascent, female-led Perry Law Group.
-
-Perry Law assigned **Karen Friedman Agnifilo** to write the report. Former Manhattan ADA, former deputy chief of sex crimes unit. Now: defender of Luigi Mangione (accused of killing UnitedHealthcare CEO). And someone who **no longer lists Perry Law on her resume**.
-
-Completed July 2, 2024. Released July 10, 2024.
-
-<a href="/Perry-lawSHU.pdf" target="_blank" className="text-red-500 hover:text-red-400 font-bold">→ Read the Full Perry Law Report (PDF)</a>
-
-**The Conclusion**
-
-The report explicitly states it was written **"at the University's direction"** to conclude:
-
-> "There is no evidence to support that Mr. Marino sexually harassed Mrs. Nyre, or that the University intentionally ignored or diminished any such allegations made by the Nyres."
-
-This is not an investigation. **It's a commissioned whitewash.**
-
-**But the Report ITSELF Contradicts This Conclusion**
-
-The Perry Law Report claims "not a single witness corroborates the alleged instances of harassment." This is a lie. The report **ADMITS**:
-
-1. **Regent Kevin Flood corroborates Kelli Nyre's December 6, 2022 harassment claim:**
-   - Flood saw "Mrs. Nyre speaking to Mr. Marino, who appeared to be standing behind her with his hands on her shoulders"
-   - This matches Kelli's account exactly
-   - Perry Law buries this, pretending "no corroboration exists"
-
-2. **Joe Nyre complained in December 2022:**
-   - Flew to Florida to inform Audit Committee Chair about Marino's conduct
-   - Report admits Seton Hall knew of complaints since 2022
-
-3. **March 2023: THREE complaints filed against Marino:**
-   - 3.23.2023: "intimidation and hostile work environment"
-   - 3.25.2023: "hostile work environment based on gender and discrimination"
-   - 3.28.2023: "toxic, abusive and hostile work environment"
-
-4.4. **Kim Capadona complained repeatedly:**
-   - November 2022, December 2022, March 2023, April 2023
-   - Report dismisses these because "confidential settlement negotiation"
-   - Capadona settled by insisting Marino resign as Regent
-
-5. **Donna McMonagle complained March 2023:**
-   - Verbally reported to J. Nyre about Marino harassing her
-   - March 23, 2023: complained about "uncomfortable and aggressive interaction" with Marino
-
-6. **May 2023: Logbook erasure BEFORE Perry Law investigation:**
-   - Anthony Masherelli ordered complaints REMOVED from Seton Hall University Confidential Log
-   - Report admits this happened
-
-7. **June 6, 2023: Email proves SHU knew:**
-   - J. Nyre emailed Capadona about announcement, noting "pending internal complaints against Chairman Marino relating to his retaliatory conduct and multiple violations of University policies"
-
-**The report says "no evidence" while ADMITTING evidence on every page.**
-
-<EvidenceCard
-  title="Perry Law Report: Key Excerpts"
-  date="July 2, 2024"
-  source="Karen Friedman Agnifilo investigation commissioned by Seton Hall"
-  findings={[
-    "Report Conclusion: 'At the University's direction, [we] conclude there is no evidence of sexual harassment'",
-    "BUT Report ADMITS: Kevin Flood saw Marino's hands on Kelli Nyre's shoulders (corroborating physical contact)",
-    "BUT Report ADMITS: Kim Capadona filed complaints November 2022, December 2022, March 2023, April 2023",
-    "BUT Report ADMITS: Donna McMonagle complained March 2023 about 'uncomfortable and aggressive interaction' with Marino",
-    "BUT Report ADMITS: Kelli Nyre filed multiple grievance complaints (March 23, 25, 28, 2023) about 'toxic, abusive and hostile work environment'",
-    "BUT Report ADMITS: June 6, 2023 email proves SHU knew about 'pending internal complaints against Chairman Marino'",
-    "Report dismisses all complaints as 'confidential settlement negotiation' or because Nyres 'refused to meet' (they declined via counsel per NJ RPC 4.2)"
-  ]}
-  outcome="Report concludes 'no evidence' despite admitting corroborating witness, multiple complaints, and documented hostile environment. Third law firm in six months. Released illegally to Marino (the accused) by Judge Linares. Filed publicly unredacted by Porrino, outing victims. Parroted by NYT's Christopher Maag."
-/>
-
-**The Irregularities: A Crime Scene**
-
-**1. "At the University's Direction"**
-
-The report explicitly states it was written to reach a predetermined conclusion. Not an investigation—a whitewash.
-
-**2. Third Firm in Six Months**
-
-Marino's team shopped for a compliant firm. Perry Law was chosen because they would write what Marino wanted.
-
-**3. Linares' Illegal Leak**
-
-On July 10, 2024, former Judge **Jose Linares** allowed the confidential report—marked **"Privileged & Confidential"** and **"Attorney-Client Communication"**—to be released to:
-- Kevin Marino (the accused!)
-- Joe Nyre
-- Plaintiffs' counsel
-- SHU officials
-
-**This is unprecedented.** Universities don't hand accused parties sensitive probes. This violates:
-- Seton Hall's confidentiality code
-- NJ law (N.J.S.A. 18A:6-8.1, grievance policy privacy)
-
-**Marino, the only beneficiary, likely architected this breach.** Linares' ruling reeks of corruption—judges don't greenlight such leaks absent pressure. No precedent exists for this.
-
-**4. Porrino's Public Filing**
-
-Hours before the NYT article, **Chris Porrino** (Marino's lawyer, Christie's Legal Network) filed the **unredacted report** in an amicus brief, **outing Donna McMonagle and Kim Capadona by name**.
-
-Greenlit by Linares. Reeking of illegality.
-
-**5. Agnifilo Scrubs Her CV**
-
-Karen Friedman Agnifilo **no longer includes Perry Law on her work history**. She knows her Perry Law work is shameful.
-
-**Christopher Maag and the New York Times' Corrupt Collusion**
-
-On July 11, 2024, Christopher Maag published in the New York Times:
-
-**"Investigators Find No Evidence of Sexual Harassment in Seton Hall Case"**
-
-<a href="https://web.archive.org/web/20250723092722/https://www.nytimes.com/2024/07/11/nyregion/seton-hall-sexual-harassment-case.html" target="_blank" className="text-red-500 hover:text-red-400 font-bold">→ Read Maag's NYT Article</a>
-
-The article parrots the Perry Law report. Presents Marino as a victim. Downplays the logbook erasure. Frames Nyre's whistleblowing as a vendetta.
-
-**What Maag Got Wrong (or Deliberately Ignored):**
-
-1. **"Nyres Refused to Meet"**: Shameless distortion. Nyres declined via counsel citing their February 2024 lawsuit—a standard legal move under N.J. RPC 4.2. The report admits "several attempts to contact them through their counsel," proving communication occurred. Maag spins this as stonewalling.
-
-2. **Ignored Flood's Corroboration**: Flood's testimony—hands on shoulders—alone destroys "no evidence." Maag skipped this entirely.
-
-3. **Swallowed the Vacation Lie**: Porrino claims "cozy Nyre-Marino bond, including fabricated Martha's Vineyard vacation." Grotesque lie. Kelli avoided Marino post-June 2021, using buffers at events. Flood's testimony confirms tension. **No vacation ever happened.** Maag gulps the lie whole.
-
-4. **Ignored Linares' Breach**: Maag didn't question how Marino got a "secret" report when Seton Hall never releases anything. The unredacted McMonagle/Capadona outing? Zero mention.
-
-5. **Ignored the Report's Doublespeak**: Evidence aplenty (Flood, Capadona, McMonagle), yet "no evidence" is blatant. Maag didn't read past the headline.
-
-**The Tip-Off**
-
-The July 11 story came on an urgent tip from Marino's team. Porrino's hotline to Maag, prepped PR—not journalism. Linares' illegal release to Marino should've sparked outrage. The NYT's silence suggests Marino's team had editorial pull—**corruption, not incompetence.**
-
-**The Irony**
-
-This is the same New York Times that broke the McCarrick story in 2018. The same paper whose investigative journalism by [Laurie Goodstein](https://archive.ph/https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html) exposed decades of abuse.
-
-But in 2024, the Times became a tool of the cover-up. Because Marino knew the game: attack first (Setonian editorial), hire the right lawyer (Perry Law), produce the right report ("at the University's direction"), leak it illegally (Linares), file it publicly (Porrino), and feed it to the right reporter (Maag).
-
-**The gaslighting of the century.**
-
-This is how institutional power works: not by hiding the truth, but by rewriting it.
-`}</Streamdown>
-
-                <PerryLawTimeline />
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Christie Connection: Christie's Legal Network">
-                <Streamdown>{`
-Among the Regents sat Mary Pat Christie, wife of former New Jersey Governor Chris Christie. Her presence symbolized the deep political protection surrounding Seton Hall's leadership.
-
-Chris Christie himself is a central figure in what can only be called **Christie's Legal Network:**
-
-- **Chris Porrino** — Former NJ Attorney General, now head of litigation at Lowenstein Sandler
-- **Tom Scrivo** — Christie's Chief Counsel (2015-2017), Chair of NJ EDA, Partner at O'Toole Scrivo
-- **Kevin Marino** — Christie ally and Board Chair who led the cover-up
-
-The same network that ran New Jersey's government became the architects of Seton Hall's concealment.
-`}
-                </Streamdown>
-
-                <NetworkDiagram />
-
-                <Streamdown>{`
-**Mary Pat Christie: Recruited, Resigned, Regretted**
-
-In November 2022, Mary Pat Christie was announced as a new member of the Board of Regents. She was recruited by Kevin Marino, a social friend and Christie ally.
-
-Regents serve three-year terms beginning July 1. But Mary Pat Christie is no longer listed as a member. She resigned abruptly, without explanation, after serving one full term (July 2022 - July 2025)—walking away from the scandal as it intensified.
-
-Her resignation drew her husband back into the mess. In July 2025, Chris Christie publicly defended Reilly in a [Politico article](https://subscriber.politicopro.com/article/2025/07/chris-christie-backs-seton-hall-president-amid-clergy-abuse-investigation-00465310):
-
-> "I think that these things that have been reported on have been, in my opinion, completely mischaracterized and mischaracterized him. I think the university is partly at fault for that for a lack of transparency."
+> "We've been through difficult situations before. The key is unity and discretion. Trust me—I know how to manage these matters. The Cardinal and I are aligned."
 > 
-> "Nonetheless, I support the president. I think he's a good man. And I suspect he'll be there for quite some time."
-> 
-> — Chris Christie, July 21, 2025 (Politico)
+> — Kevin Marino
 
-**The Denial Chorus: Christie and D'Alessandro**
+The room relaxes. Marino's tone is calm, measured, authoritative. No drama. No panic. Just quiet confidence. If Marino says it's handled, it's handled. If the Cardinal is aligned, there's nothing to worry about.
 
-Both men used nearly identical language to dismiss the Politico reporting:
+**The Inner Circle**
 
-**Chris Christie:** "completely mischaracterized and mischaracterized him"
+But five people in that room know something the other thirty don't:
 
-**Hank D'Alessandro:** "falsely and unfairly portrayed"
+- **Kevin Marino** (Board Chair)
+- **Tom Scrivo** (lawyer/strategist)
+- **Joseph LaSala** (task force chair)
+- **Patrick Murray**
+- **Bishop James Checchio**
 
-Neither man addressed the substance of the allegations: that Reilly knew about McCarrick's abuse and failed to report it.
+They're on the Board leadership. They're on the response task force. And they've seen something the others haven't: **Cardinal Tobin's testimony is absent from the Latham Report.**
 
-Mary Pat walked away. Chris stayed to defend the indefensible. The Christie name is now permanently tied to the cover-up.
-`}</Streamdown>
-              </CollapsibleSection>
-            </div>
-          </div>
-        </section>
+Why? Because Tobin **refused to sit with the Latham investigators**. On advice of his counsel—the same RCAN lawyers who advised Reilly.
 
-        {/* Act VI - THE ARCHITECTURE OF SILENCE */}
-        <section
-          id="act-vi"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/symbols/blueprint_scales.png)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg border-4 border-zinc-500">
-              <h2 className="text-6xl font-bold mb-4 text-zinc-500">Act VI</h2>
-              <h3 className="text-5xl font-bold mb-4">The Architecture of Silence</h3>
-              <p className="text-2xl text-gray-400 mb-12">February 13, 2026</p>
+The Gibbons Report documents this refusal. The inner circle knows what it means: Tobin is compromised. He's been protecting the network. And now he needs their protection.
 
-              <div className="prose prose-invert prose-xl max-w-none mb-12">
-                <Streamdown>{`
-On February 13, 2026, a formal dossier—**Exhibit 00**—was submitted to New Jersey Chief Justice Stuart Rabner. 
+**This is leverage.** This is control. And they know exactly what needs to be done.
 
-The letter demanded the appointment of a **Special Prosecutor** to investigate the "Closed Loop" of judicial and legal corruption that has protected the McCarrick network for four decades.
+The other thirty regents? They're in the dark. They don't know about the Gibbons material. They don't know about questions regarding Tobin's cooperation. They trust Marino. They trust the Cardinal.
 
-**The dossier documents:**
-- The coordinated unmasking of whistleblowers
-- The systematic withholding of 24,000 pages of evidence
-- The conflict of interest involving former NJ Attorney Generals sitting on the University's Board
-- The failure of the Current AG's office to act against their mentors and former law firm colleagues
-`}</Streamdown>
-              </div>
+**The inner circle is already planning something far more sophisticated than a simple cover-up. They're planning a controlled demolition of the truth.**
 
-              <CollapsibleSection title="The Closed Loop" defaultOpen={true}>
-                <Streamdown>{`
-The "Architecture of Silence" is a structural failure of justice. 
-
-**The Christie Network:**
-1. **Chris Christie**: Former Governor, mentor to the legal cabal.
-2. **Christopher Porrino**: Former AG under Christie, now Lowenstein Sandler partner (SHU Board).
-3. **Jennifer Davenport**: Former First Assistant to Porrino, now the Current AG nominating by Gov. Sherrill.
-
-This loop ensures that no one investigates the investigators. When Seton Hall hides reports, and the AG's office is filled with the friends and colleagues of the men hiding the reports, **the system fails.**
-`}</Streamdown>
-              </CollapsibleSection>
-            </div>
-          </div>
-        </section>
-
-        {/* Act VII - THE RECKONING OF MAY */}
-        <section
-          id="act-vii"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/90 font-serif"
-          style={{ backgroundImage: 'url(/assets/symbols/gates_opening.jpg)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/95 p-12 rounded-lg border-t-8 border-emerald-600 shadow-2xl shadow-emerald-900/20">
-              <h2 className="text-6xl font-bold mb-4 text-emerald-500">Act VII</h2>
-              <h3 className="text-5xl font-bold mb-8 italic">The Reckoning of May</h3>
-              <p className="text-2xl text-gray-400 mb-12 font-mono">May 18, 2026</p>
-
-              <div className="prose prose-invert prose-xl max-w-none mb-12 leading-relaxed">
-                <Streamdown>{`
-May 18, 2026. The court-ordered deadline for the final production of all withheld documents.
-
-**The Fallout:**
-- **The Final 3,500 Documents**: The raw communications between Kevin Marino and Tom Scrivo regarding the decision to erase the Title IX logbooks.
-- **The Criminal Referrals**: Federal indicators begin investigating witness tampering and obstruction of justice.
-- **The Board Collapse**: The final remnants of the 2019 "Voters" are forced to resign.
-
-The architecture of silence has not just been breached—it has been demolished.
-`}</Streamdown>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Act IV - THE COURTROOM */}
-        <section
-          id="act-iv"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/symbols/scales_justice_light.jpg)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act IV</h2>
-              <h3 className="text-5xl font-bold mb-4">The Courtroom</h3>
-              <p className="text-2xl text-gray-400 mb-12">2023-2025 — The Reckoning</p>
-
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
-                <Streamdown>{`
-While institutions chose silence, individuals chose courage. Some spoke publicly. Others remain anonymous, unable to believe their eyes that someone is finally holding accountable those who cloak themselves in righteousness and loyalty to the order.
-
-Your pain won't disappear, but perhaps you'll find an errant smile or two when you think of these days.
-`}</Streamdown>
-              </div>
-
-              <CollapsibleSection title="The Survivors">
-                <Streamdown>{`
-**Dr. Joseph Nyre**
-
-President who commissioned the Latham Report and sent it to the Vatican and NJ Attorney General. Faced retaliation, lost health insurance, filed whistleblower lawsuit.
-
-**Kelli Nyre**
-
-Survived Kevin Marino's sexual harassment. Stood with her husband against coordinated retaliation from the university and Archdiocese.
-
-**Lara McKeever**
-
-Confronted Cardinal Tobin with prophetic truth about his failures and the institutional cover-up.
-
-**Mark Crawford**
-
-Survivor and advocate who refused to let the truth be buried.
-
-**Bob Hoatson**
-
-Tireless advocate for survivors, speaking truth to power for decades.
-
-**SNAP**
-
-Survivors Network of those Abused by Priests—the organization that refuses to let the Church forget.
-
-**TM**
-
-Anonymous survivor whose story matters, whose courage counts.
-
-**All the Anonymous Survivors**
-
-Those who cannot yet speak publicly but who witness this moment with hope. Someone is finally holding these individuals accountable.
+The vault door closes. The secrets stay buried. For now.
 `}</Streamdown>
               </CollapsibleSection>
 
-              <CollapsibleSection title="February 2025: The Denial">
+              <CollapsibleSection title="Three Things Got Done at the Meeting">
                 <Streamdown>{`
-As pressure mounted, the Chairman of the Board of Regents, Hank D'Alessandro, sent a university-wide email. In it, he made a stunning and false claim: Monsignor Reilly had "never been subject to formal review."
+**1. Latham attorneys read the verdicts aloud**
 
-> "We had full access to every relevant piece of information. We knew the full contents of the Latham Report and were satisfied that Monsignor Reilly had demonstrated maturity, service, and readiness to lead."
+The Latham Report attorneys read the verdicts for each of the twelve clergymen. One by one, renditions of the crimes each man committed.
 
-This was a calculated deception. D'Alessandro and the board had been briefed on the Latham Report in 2019. They knew Reilly was not only named, but was a central figure.
+**2. Unanimous vote to accept and enforce the Responsive Action Plan**
 
-By sending this email, D'Alessandro may have committed **wire fraud**, using electronic communications to disseminate materially false information in furtherance of the cover-up.
-`}</Streamdown>
-              </CollapsibleSection>
+The Board unanimously voted to accept the plan requiring all the men to be removed from the Board and let go from their jobs. They could no longer serve in leadership positions.
 
-              <CollapsibleSection title="The Judges">
-                <Streamdown>{`
-**Judge Avion Benjamin**
+**3. Regents agreed on the communications plan concocted by Tom Scrivo**
 
-In a landmark November 2025 ruling, she ordered Seton Hall to produce the full, unredacted Latham Report for review, piercing the veil of secrecy.
-
-On November 12, 2025, she issued the order that ended the six-year cover-up: **The vault must open.**
-
-**Judge Jose Linares**
-
-The corrupt former federal judge who works for McCarter & English. Linares released the confidential Perry Law Report to Kevin Marino with the excuse that he "also gave it to Joe Nyre"—weaponizing transparency to protect the powerful.
-
-Linares is compromised: his father was a priest abuser, a fact he desperately wants to keep hidden.
-
-**Judge Cynthia Santomauro**
-
-The Chancery Court judge who should not have taken the case—there's already litigation pending. She is being blatantly manipulated by Tom Scrivo, who helped her get appointed as a judge.
-
-Scrivo employs her star former clerk, [Gianna D'Onofrio](https://www.oslaw.com/attorneys/gianna-d-onofrio), at O'Toole Scrivo.
-
-Blatant corruption. The judge is compromised by the very lawyer orchestrating the cover-up.
-`}</Streamdown>
-              </CollapsibleSection>
-            </div>
-          </div>
-        </section>
-
-        {/* Act V - ROME KNEW */}
-        <section
-          id="act-v"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_1.jpg)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act V</h2>
-              <h3 className="text-5xl font-bold mb-4">Rome Knew</h3>
-              <p className="text-2xl text-gray-400 mb-12">2020-2025 — The Vatican Connection</p>
-
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
-                <Streamdown>{`
-Joe Nyre, President of Seton Hall University, makes a decision that will change everything. He sends the Latham Report — all of it — directly to the Holy See.
-
-"We believe you should be aware of these findings."
-
-**From this moment forward, Rome cannot claim ignorance.**
-`}</Streamdown>
-              </div>
-
-              <CollapsibleSection title="September 2019: The Letter to Rome">
-                <Streamdown>{`
-With those words, the Vatican receives documentation of:
-
-→ Twelve abusers at Seton Hall seminaries
-→ Decades of systematic concealment
-→ Monsignor Joseph Reilly's involvement
-→ The culture of protection over accountability
-
-From this moment forward, **Rome cannot claim ignorance.**
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="November 2020: The McCarrick Report">
-                <Streamdown>{`
-Fourteen months after receiving the Latham Report, the Vatican releases its own investigation into Cardinal Theodore McCarrick's decades of abuse and cover-up.
-
-**Read:** [The McCarrick Report (Vatican PDF)](https://www.vatican.va/resources/resources_rapporto-card-mccarrick_20201110_en.pdf)
-
-**The Connection**
-
-The Vatican's McCarrick Report draws directly from the Latham Report. The same seminaries. The same culture of concealment. The same archdiocese. The same patterns of institutional protection.
-
-Rome knew because Joe Nyre told them. And they used that knowledge to build their own investigation.
-
-But the McCarrick Report is silent on one crucial detail: sources familiar with the investigation say Cardinal Joseph Tobin's level of cooperation became a point of concern. His recommendation of Lorenzo to Pope Francis despite warnings. His protection of Reilly.
-
-**Rome knew.**
-**Rome used the information.**
-**Rome said nothing.**
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="Bishop James Checchio: The Reward System">
-                <Streamdown>{`
-**Bishop James Checchio**
-
-Member of the Regent Task Force that wrote the warning letters to Reilly and Tobin in February 2020. He knew the standard. He knew the violations. He knew Tobin defied the task force.
-
-**November 25, 2019:** First Notice to Reilly - LaSala Committee letter signed by Checchio
-
-**February 11, 2020:** Checchio signs task force letter - "Failure to cooperate = immediate removal"
-
-**February 26-27, 2020:** Tobin defies the task force - Extends Reilly's contract, recommends Lorenzo (Pope Francis appoints him Feb 27)
-
-**2025:** Pope Leo appoints Checchio as Archbishop of New Orleans
-
-**A promotion. A reward. A message.**
-
-The man who set the standard is promoted despite watching it be violated.
-
-This is not ignorance. This is not oversight. **This is a reward for institutional loyalty.**
-
-### The Reward System
-
-Protection equals promotion. Cover-up equals career advancement.
-
-**Monsignor Joseph Reilly**
-- Protected: McCarrick (1994) + Seton Hall seminaries reputation
-- Reward: President of Seton Hall University (2024)
-
-**Bishop Elias Lorenzo**
-- Protected: Delbarton monks from exposure
-- Reward: Auxiliary Bishop of Newark (2019), groomed for next SHU president (2027)
-
-**Bishop James Checchio**
-- Protected: Cardinal Tobin + diocesan establishment
-- Reward: Archbishop of New Orleans (2025)
-
-This is not a church. **This is a patronage network.**
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="The Papal Succession of Complicity">
-                <Streamdown>{`
-Four popes. Thirty years. One unbroken chain of institutional protection.
-
-**I. Pope John Paul II (1994)**
-
-McCarrick covers up abuse with Reilly's help. Papal nuncios investigate but are stonewalled. JP II visits New Jersey with McCarrick as host. No consequences. McCarrick's rise continues.
-
-**II. Pope Benedict XVI (2005-2013)**
-
-Knew about McCarrick's abuse. Did nothing. On the same day Francis was elected (2013), McCarrick was elevated to Cardinal.
-
-**III. Pope Francis (2013-2024)**
-
-Received the Latham Report (2019). Received warnings about Tobin. Knew Tobin defied the task force. Appointed Lorenzo as Auxiliary Bishop (Dec 2019) despite the McCarrick connection. Let Tobin remain in power as Cardinal.
-
-**IV. Pope Leo XIV (2025-present)**
-
-Inherits all the reports. Knows the full history. Champions press freedom in Peru. Appoints Checchio (who protected Tobin) as Archbishop of New Orleans.
-
-**The Hypocrisy:**
-
-Pope Leo delivers fiery defense of freedom of the press, supports Peruvian journalists exposing corruption—while simultaneously rewarding the man who helped bury the Seton Hall scandal.
-
-Press freedom abroad. Protection of abusers at home.
-
-**From McCarrick to Pope Leo XIV**
-
-The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates it.
-`}</Streamdown>
-              </CollapsibleSection>
-            </div>
-          </div>
-        </section>
-
-        {/* Act VI - THE SUCCESSION */}
-        <section
-          id="act-vi"
-          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-          style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_2.jpg)' }}
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act VI</h2>
-              <h3 className="text-5xl font-bold mb-4">The Succession</h3>
-              <p className="text-2xl text-gray-400 mb-12">2027 — Who Inherits the Cathedral?</p>
-
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
-                <Streamdown>{`
-**2027**
-
-Cardinal Joseph Tobin turns 75. Canon law requires him to submit his resignation to the Pope.
-
-The question becomes: who inherits the scandal?
-`}</Streamdown>
-              </div>
-
-              <CollapsibleSection title="Three Possible Futures">
-                <Streamdown>{`
-**Scenario 1: Resignation Accepted**
-
-Pope Leo accepts Tobin's resignation. A new Archbishop is appointed. The question becomes: who inherits the scandal?
-
-Will the new Archbishop cooperate with investigators? Will they release the documents? Will they choose transparency?
-
-**Scenario 2: Resignation Delayed**
-
-The Pope asks Tobin to stay on temporarily. The succession is postponed. The grand jury investigation continues. The pressure builds.
-
-This is the institutional play: delay, deflect, wait for the news cycle to move on.
-
-**Scenario 3: Forced Removal**
-
-The grand jury report is released. Criminal charges are filed. The Pope has no choice but to remove Tobin before 2027.
-
-This is the sword. This is Saul's fate. This is accountability enforced.
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="Who Could Succeed Tobin?">
-                <Streamdown>{`
-**Bishop Elias Lorenzo**
-
-The obvious choice for **Archbishop of Newark**. Tobin's protégé. McCarrick's 1987 "twin" (ordained with Reilly). Currently Auxiliary Bishop of Newark.
-
-✓ Knows the system intimately
-✓ Loyal to Tobin
-✓ Groomed for this role since 2020
-✗ Appointed despite task force warnings
-✗ Part of the concealment network
-
-**Meanwhile, Monsignor Reilly** - Lorenzo's 1987 twin and McCarrick's former personal secretary (1994) - becomes **President of Seton Hall University** in 2024, returning a priest president to the institution.
-
-**Birds of a feather.** The dual succession plan: Lorenzo inherits the cathedral, Reilly inherits the university. Both McCarrick's protégés. Both protected despite the scandal. Reilly went from McCarrick's secretary (aware of abuse allegations during the 1995 papal visit preparations) to university president. The protection-to-promotion pipeline in action.
-
-Would this be continuity or complicity?
-
-**An Outsider**
-
-Someone with no connection to the scandal. A reformer. Someone committed to transparency.
-
-✓ Fresh start for the archdiocese
-✓ No loyalty to the old network
-✓ Could cooperate with investigators
-✗ Would face resistance from within
-
-Would Rome choose reform over continuity?
-
-**The choice of successor will reveal Rome's priorities.**
-`}</Streamdown>
-              </CollapsibleSection>
-
-              <CollapsibleSection title="What Hangs in the Balance">
-                <Streamdown>{`
-**For Survivors**
-
-Will the next Archbishop acknowledge their pain? Will he release the documents? Will he cooperate with investigations? Will he choose truth over institutional protection?
-
-**For the Archdiocese**
-
-Will the next Archbishop restore trust? Will he reform the seminary system? Will he break the cycle of concealment? Will he choose transparency?
-
-**For the Catholic Church**
-
-Will Rome demonstrate that accountability matters? Will they show that refusal to cooperate has consequences? Will they choose reform over protection?
-
-**For Justice**
-
-Will the grand jury report be released? Will criminal charges be filed? Will those who concealed abuse face consequences? Will the system change?
-
-**2027 is not just a succession. It's a referendum on institutional accountability.**
-
-Will the cathedral choose truth, or will it choose protection?
-
-Who will inherit the cathedral?
-
-Someone who will open the vault? Or someone who will keep it closed?
-
-The millstone is rising. The answer is coming.
+"Bury the news." Completely ignore the twelve clergymen and only announce that McCarrick was guilty. Hope no one is paying attention. The material went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
 `}</Streamdown>
               </CollapsibleSection>
             </div>
@@ -1949,6 +986,6 @@ For truth emerging.
         </section>
 
       </main>
-    </div>
+    </div >
   );
 }

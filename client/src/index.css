@@ -379,4 +379,70 @@
     color: oklch(0.7 0.15 45);
     border: 1px solid oklch(0.45 0.15 45 / 40%);
   }
+
+  /* News Ticker Animation */
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+  }
+
+  .animate-ticker:hover {
+    animation-play-state: paused;
+  }
+
+  /* Cathedral Specific Utilities */
+  .gold-border {
+    border: 1px solid oklch(0.75 0.12 85 / 30%);
+  }
+
+  .gold-border-bright {
+    border: 1px solid oklch(0.75 0.12 85 / 70%);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 15px oklch(0.75 0.12 85 / 15%);
+  }
+
+  .text-gold {
+    color: oklch(0.75 0.12 85);
+  }
+
+  .text-gold-dim {
+    color: oklch(0.75 0.12 85 / 70%);
+  }
+
+  .bg-cathedral-dark {
+    background-color: oklch(0.1 0.005 285);
+  }
+
+  .bg-cathedral-light {
+    background-color: oklch(0.15 0.005 285);
+  }
+
+  .font-label {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .font-heading {
+    font-family: Georgia, serif;
+  }
+
+  .text-parchment {
+    color: #faf6ee;
+  }
+
+  .text-crimson {
+    color: #dc2626;
+  }
 }

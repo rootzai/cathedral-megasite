@@ -3,10 +3,13 @@
  * Each board rendered as a section in the cathedral descent
  */
 import type { BoardSection as BoardSectionType } from "@/lib/data";
-import { PersonCard } from "./PersonCard";
 import { motion } from "framer-motion";
+import { PersonCard } from "./PersonCard";
 
-export function BoardSection({ board }: { board: BoardSectionType }) {
+export function BoardSection({ board, onFilterChange }: {
+  board: BoardSectionType;
+  onFilterChange?: (filter: any) => void;
+}) {
   return (
     <section id={board.id} className="relative py-16 md:py-24">
       {/* Section Header */}
@@ -37,7 +40,7 @@ export function BoardSection({ board }: { board: BoardSectionType }) {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {board.leadership.map((person, i) => (
-              <PersonCard key={person.name} person={person} index={i} />
+              <PersonCard key={person.name} person={person} index={i} onBadgeClick={onFilterChange} />
             ))}
           </div>
         </div>
@@ -51,7 +54,7 @@ export function BoardSection({ board }: { board: BoardSectionType }) {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {board.exOfficio.map((person, i) => (
-              <PersonCard key={person.name} person={person} index={i} />
+              <PersonCard key={person.name} person={person} index={i} onBadgeClick={onFilterChange} />
             ))}
           </div>
         </div>
@@ -65,7 +68,7 @@ export function BoardSection({ board }: { board: BoardSectionType }) {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {board.members.map((person, i) => (
-              <PersonCard key={person.name} person={person} index={i} />
+              <PersonCard key={person.name} person={person} index={i} onBadgeClick={onFilterChange} />
             ))}
           </div>
         </div>
@@ -79,7 +82,7 @@ export function BoardSection({ board }: { board: BoardSectionType }) {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {board.clergy.map((person, i) => (
-              <PersonCard key={person.name} person={person} index={i} />
+              <PersonCard key={person.name} person={person} index={i} onBadgeClick={onFilterChange} />
             ))}
           </div>
         </div>

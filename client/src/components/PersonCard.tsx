@@ -28,7 +28,11 @@ const badgeStyles: Record<Badge, string> = {
   nyre: "badge-nyre",
 };
 
-export function PersonCard({ person, index = 0 }: { person: Person; index?: number }) {
+export function PersonCard({ person, index = 0, onBadgeClick }: {
+  person: Person;
+  index?: number;
+  onBadgeClick?: (badge: Badge) => void;
+}) {
   const hasNote = !!person.note;
   const isFlagged = person.badges.includes("latham") || person.badges.includes("reilly");
 
@@ -59,14 +63,18 @@ export function PersonCard({ person, index = 0 }: { person: Person; index?: numb
       {person.badges.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-2">
           {person.badges.map((badge) => (
-            <span
+            <button
               key={badge}
-              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-label ${badgeStyles[badge]}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                onBadgeClick?.(badge);
+              }}
+              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-label transition-transform hover:scale-110 active:scale-95 ${badgeStyles[badge]}`}
               title={BADGE_LABELS[badge]}
             >
               {badgeIcons[badge]}
               {badge === "latham" ? "Latham" : badge === "reilly" ? "Voted Reilly" : badge === "tobin" ? "Tobin Letters" : badge === "christie" ? "Christie" : badge === "resigned" ? "Resigned" : badge === "clergy" ? "Clergy" : badge === "emeritus" ? "Emeritus" : "Nyre Case"}
-            </span>
+            </button>
           ))}
         </div>
       )}

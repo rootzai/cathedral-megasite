@@ -130,8 +130,8 @@ export default function TheyKnew() {
 
       <GothicDivider />
 
-      {/* ===== KEY DATES TIMELINE ===== */}
-      <section id="timeline" className="py-16 md:py-24">
+      {/* ===== KEY DATES TIMELINE — "The Parchment Hall" ===== */}
+      <section id="timeline" className="py-16 md:py-24 bg-[oklch(0.12_0.02_45)] border-y border-[oklch(0.2_0.05_45/30%)]">
         <div className="container max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -194,29 +194,35 @@ export default function TheyKnew() {
 
       <GothicDivider />
 
-      {/* ===== BOARD OF TRUSTEES ===== */}
-      <div className="container">
-        <BoardSection board={boardOfTrustees} />
+      {/* ===== BOARD OF TRUSTEES — "The Apostolic Chamber" ===== */}
+      <div className="container-fluid bg-[oklch(0.1_0.02_240)] border-b border-blue-900/30">
+        <div className="container">
+          <BoardSection board={boardOfTrustees} onFilterChange={handleFilterChange} />
+        </div>
       </div>
 
       <GothicDivider />
 
-      {/* ===== BOARD OF REGENTS ===== */}
-      <div className="container">
-        <BoardSection board={boardOfRegents} />
+      {/* ===== BOARD OF REGENTS — "The Hall of Governance" ===== */}
+      <div className="container-fluid bg-[oklch(0.08_0.03_15)] border-b border-red-950/30">
+        <div className="container">
+          <BoardSection board={boardOfRegents} onFilterChange={handleFilterChange} />
+        </div>
       </div>
 
       <GothicDivider />
 
-      {/* ===== BOARD OF VISITORS ===== */}
-      <div className="container">
-        <BoardSection board={boardOfVisitors} />
+      {/* ===== BOARD OF VISITORS — "The Secular Cloister" ===== */}
+      <div className="container-fluid bg-[oklch(0.12_0.01_285)] border-b border-zinc-800/30">
+        <div className="container">
+          <BoardSection board={boardOfVisitors} onFilterChange={handleFilterChange} />
+        </div>
       </div>
 
       <GothicDivider />
 
-      {/* ===== THE LAWYERS ===== */}
-      <section id="lawyers" className="relative py-16 md:py-24">
+      {/* ===== THE LAWYERS — "The Chancery of Deceit" ===== */}
+      <section id="lawyers" className="relative py-16 md:py-24 bg-[oklch(0.1_0.03_285)]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${LAWYERS_BG})` }}
