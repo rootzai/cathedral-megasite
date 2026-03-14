@@ -9,7 +9,7 @@
 import { type Badge, getAllBoardMembers, getUniqueMembers } from "@/lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Church, Crown, Filter, Gavel, Shield, User, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 type FilterType = "latham" | "reilly" | "tobin" | "christie" | "nyre" | null;
 
@@ -29,8 +29,10 @@ const filterStyles: Record<string, string> = {
   nyre: "badge-nyre",
 };
 
-export function FilterPanel() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>(null);
+export function FilterPanel({ activeFilter, onFilterChange }: {
+  activeFilter: FilterType,
+  onFilterChange: (filter: FilterType) => void
+}) {
 
   const allMembers = useMemo(() => getAllBoardMembers(), []);
   const uniqueMembers = useMemo(() => getUniqueMembers(allMembers), [allMembers]);
@@ -72,7 +74,7 @@ export function FilterPanel() {
           {FILTERS.map(f => (
             <button
               key={f.key}
-              onClick={() => setActiveFilter(activeFilter === f.key ? null : f.key)}
+              onClick={() => onFilterChange(activeFilter === f.key ? null : f.key)}
               className={`
                 inline-flex items-center gap-2 px-5 py-2.5 rounded-sm font-label text-sm tracking-wider
                 transition-all duration-300 border
@@ -93,7 +95,7 @@ export function FilterPanel() {
           ))}
           {activeFilter && (
             <button
-              onClick={() => setActiveFilter(null)}
+              onClick={() => onFilterChange(null)}
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-label text-sm tracking-wider bg-cathedral-light text-muted-foreground border border-[oklch(0.3_0.01_285/40%)] hover:text-parchment transition-colors"
               aria-label="Clear active filter"
             >

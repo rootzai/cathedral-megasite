@@ -114,67 +114,67 @@ import RulingLayout from "./components/Layout";
 
 import "./index.css";
 
-function PageLayout({ component: Component }: { component: React.ComponentType }) {
+function PageLayout({ component: Component, theme = "theme-cathedral" }: { component: React.ComponentType; theme?: string }) {
   return (
-    <>
+    <div className={`${theme} min-h-screen bg-background text-foreground transition-colors duration-500`}>
       <MegaNavigation />
       <Component />
-    </>
+    </div>
   );
 }
 
 function EndgamePageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
-    <>
+    <div className="theme-endgame min-h-screen bg-background text-foreground transition-colors duration-500">
       <MegaNavigation />
       <EndgameLayout>
         <Component />
       </EndgameLayout>
-    </>
+    </div>
   );
 }
 
 function ChurchBKPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
-    <>
+    <div className="theme-bankruptcy min-h-screen bg-background text-foreground transition-colors duration-500">
       <MegaNavigation />
       <ChurchBKLayout>
         <Component />
       </ChurchBKLayout>
-    </>
+    </div>
   );
 }
 
 function RulingPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
-    <>
+    <div className="theme-ruling min-h-screen bg-background text-foreground transition-colors duration-500">
       <MegaNavigation />
       <RulingLayout>
         <Component />
       </RulingLayout>
-    </>
+    </div>
   );
 }
 
 function ExposePageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
-    <>
+    <div className="theme-expose min-h-screen bg-background text-foreground transition-colors duration-500">
       <MegaNavigation />
       <ExposeLayoutWrapper>
         <Component />
       </ExposeLayoutWrapper>
-    </>
+    </div>
   );
 }
 
 function EpsteinPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
-    <>
+    <div className="theme-epstein min-h-screen bg-background text-foreground transition-colors duration-500">
       <MegaNavigation />
       <EpsteinLayout>
         <Component />
       </EpsteinLayout>
-    </>
+    </div>
   );
 }
 
@@ -203,7 +203,7 @@ function Router() {
 
         {/* They Knew Routes */}
         <Route path={"/they-knew"}>
-          <PageLayout component={TheyKnew} />
+          <PageLayout component={TheyKnew} theme="theme-theyknew" />
         </Route>
 
         {/* Endgame Routes */}

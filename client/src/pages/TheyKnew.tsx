@@ -12,12 +12,13 @@ import { FilterPanel } from "@/components/FilterPanel";
 import { FirmCard } from "@/components/FirmCard";
 import { GothicDivider } from "@/components/GothicDivider";
 import {
+  Badge,
   BADGE_LABELS,
-  KEY_DATES,
   boardOfRegents,
   boardOfTrustees,
   boardOfVisitors,
   investigativeFirms,
+  KEY_DATES,
   njagConnection,
   rcanLawyers,
   shuLawyers,
@@ -35,36 +36,25 @@ import {
   Shield,
   User
 } from "lucide-react";
-import { Link } from "wouter";
+import { useState } from "react";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/hero-cathedral-gtrH4ddunz7PPhnoSpqctQ.webp";
 const LAWYERS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/lawyers-section-bg-ifkQhGphyaJc4dbtuowvcN.webp";
 
-export default function Home() {
+export default function TheyKnew() {
+  const [activeFilter, setActiveFilter] = useState<any>(null);
+
+  const handleFilterChange = (filter: any) => {
+    setActiveFilter(filter);
+    if (filter) {
+      const el = document.getElementById('filter');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* ===== STICKY NAV ===== */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[oklch(0.06_0.005_285/95%)] backdrop-blur-md border-b border-[oklch(0.75_0.12_85/15%)]">
-        <div className="container flex items-center justify-between h-14">
-          <Link href="/cathedral">
-            <a className="hover:opacity-80 transition-opacity flex items-center">
-              <img
-                src="/assets/sodom-hall-logo.png"
-                alt="Sodom Hall Home"
-                className="h-10 w-auto grayscale brightness-200"
-              />
-            </a>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#filter" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Who Knew</a>
-            <a href="#trustees" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Trustees</a>
-            <a href="#regents" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Regents</a>
-            <a href="#visitors" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Visitors</a>
-            <a href="#lawyers" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Lawyers</a>
-            <a href="#timeline" className="font-label text-xs tracking-[0.15em] text-muted-foreground hover:text-gold transition-colors">Timeline</a>
-          </div>
-        </div>
-      </nav>
+      {/* Local nav removed in favor of global MegaNavigation sub-nav */}
 
       {/* ===== HERO ===== */}
       <header className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -120,14 +110,15 @@ export default function Home() {
                 { badge: "clergy" as const, icon: <Church className="w-3.5 h-3.5" />, label: "Clergy", style: "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]" },
                 { badge: "nyre" as const, icon: <Gavel className="w-3.5 h-3.5" />, label: "Named in Nyre Case", style: "bg-[oklch(0.35_0.15_45/20%)] text-[oklch(0.7_0.15_45)] border border-[oklch(0.45_0.15_45/40%)]" },
               ].map(({ badge, icon, label, style }) => (
-                <span
+                <button
                   key={badge}
-                  className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-sm text-sm font-label ${style}`}
-                  title={BADGE_LABELS[badge]}
+                  onClick={() => handleFilterChange(badge)}
+                  className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-sm text-sm font-label transition-all hover:scale-105 active:scale-95 ${style} ${activeFilter === badge ? 'ring-2 ring-gold shadow-lg shadow-gold/20' : 'opacity-80 hover:opacity-100'}`}
+                  title={BADGE_LABELS[badge as Badge]}
                 >
                   {icon}
                   {label}
-                </span>
+                </button>
               ))}
             </div>
           </motion.div>
@@ -135,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* ===== FILTER PANEL — "Who Knew What" ===== */}
-      <FilterPanel />
+      <FilterPanel activeFilter={activeFilter} onFilterChange={handleFilterChange} />
 
       <GothicDivider />
 

@@ -27,45 +27,56 @@ const milestones: Milestone[] = [
         id: "latham",
         year: "2019",
         title: "The Latham Suppression",
-        subtitle: "24,000 Pages Sealed",
-        desc: "Kathryn Ruemmler leads the seminary investigation. The report identifies 12 clergymen and documents pervasive failures, but is immediately sealed from public and survivor view.",
+        subtitle: "The Vault Door Closes",
+        desc: "Kathryn Ruemmler (Latham) presents findings to the Board. 12 clergymen identified. The decision is made: suppress the report, bury the names, and hire 'outsider' Joe Nyre to bear the institutional burden.",
         icon: <FileSearch className="w-5 h-5" />,
         route: "/ruling/evidence",
         color: "#b45309", // Gold
-        impact: "6 Years of Silence"
+        impact: "Phase 1: Concealment"
     },
     {
         id: "whistleblower",
         year: "2023",
-        title: "The Whistleblower",
-        subtitle: "Dr. Joseph Nyre Reports",
-        desc: "President Nyre reports sexual harassment by Board Chair Kevin Marino. The university responds by ceasing severance and obstructing investigations.",
+        title: "The Rebellion",
+        subtitle: "Nyre v. Seton Hall",
+        desc: "President Nyre refuses to participate in the continued suppression. He reports Board Chair Kevin Marino for sexual misconduct. The university retaliates by unmasking him and suing for 'leaking' the vault's contents.",
         icon: <ShieldAlert className="w-5 h-5" />,
         route: "/expose/nyre-dismissal",
         color: "#7c2d12", // Blood
-        impact: "Institutional Retaliation"
+        impact: "Phase 2: Retaliation"
     },
     {
         id: "benjamin",
         year: "2025",
-        title: "The Benjamin Ruling",
-        subtitle: "The Names Unsealed",
-        desc: "Judge Avion Benjamin orders the unsealing of the Latham Report. Thomas Scrivo is sanctioned for 'systematic concealment' of critical discovery.",
+        title: "The Breach",
+        subtitle: "The Benjamin Order",
+        desc: "November 12, 2025. Judge Avion Benjamin orders the release of 20,500 pages. She rules that pre-existing documents are NOT privileged. The vault door is pried open.",
         icon: <Gavel className="w-5 h-5" />,
         route: "/ruling/analysis",
-        color: "#0f172a", // Ink
-        impact: "Judicial Breakthrough"
+        color: "#1e3a8a", // Blue (Ruling theme)
+        impact: "Phase 3: Revelation"
     },
     {
         id: "rabner",
         year: "2026",
         title: "The Architecture",
-        subtitle: "Rabner Escalation",
-        desc: "A formal dossier is submitted to Chief Justice Rabner demanding a Special Prosecutor to investigate the 'Closed Loop' of judicial and legal corruption.",
+        subtitle: "Special Prosecutor Demand",
+        desc: "February 13, 2026. A formal dossier (Exhibit 00) is sent to Chief Justice Rabner exposing the 'Closed Loop' of Christie-era legal and judicial corruption. The scale of the cover-up reaches the state's highest office.",
         icon: <Scale className="w-5 h-5" />,
         route: "/expose/rabner-exhibits",
-        color: "#991b1b", // Deep Red
-        impact: "Constitutional Escalation"
+        color: "#991b1b", // Red (Cathedral theme)
+        impact: "Phase 4: Escalation"
+    },
+    {
+        id: "reckoning",
+        year: "May 2026",
+        title: "The Reckoning",
+        subtitle: "Final Discovery Deadline",
+        desc: "May 18, 2026. The court-ordered deadline for full production. The final 3,500 withheld documents are exposed. Criminal referrals and federal investigations begin as the architecture of silence collapses.",
+        icon: <ArrowRight className="w-5 h-5" />,
+        route: "/cathedral",
+        color: "#059669", // Emerald
+        impact: "Phase 5: Accountability"
     }
 ];
 
@@ -102,8 +113,8 @@ export default function NarrativeFlow() {
                             >
                                 <div
                                     className={`w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all duration-500 shadow-lg ${activeId === m.id
-                                            ? "bg-background border-primary scale-110"
-                                            : "bg-muted border-transparent opacity-60 grayscale hover:grayscale-0"
+                                        ? "bg-background border-primary scale-110"
+                                        : "bg-muted border-transparent opacity-60 grayscale hover:grayscale-0"
                                         }`}
                                     style={{ borderColor: activeId === m.id ? m.color : 'transparent' }}
                                 >

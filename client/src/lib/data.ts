@@ -75,7 +75,9 @@ export const KEY_DATES = [
   { date: "Feb 20, 2025", event: "Seton Hall sues former President Nyre for 'leaking' the very report they were hiding" },
   { date: "May 2025", event: "Tom Scrivo blocks Nyre from cooperating with Ropes & Gray investigation (first time)" },
   { date: "July 2025", event: "Mary Pat Christie and others leave Seton Hall Board of Regents amid scandal" },
-  { date: "Nov 25, 2025", event: "Judge Avion Benjamin ruled that the docs would be released to the attorneys." },
+  { date: "Oct 2025", event: "Oral arguments in the Nyre v. Seton Hall case. Judge Benjamin questions the validity of privilege claims over reports commissioned by third parties." },
+  { date: "Nov 12, 2025", event: "Final hearing on document production. Judge Benjamin delivers her 'Statement of Reasons' and orders the release of 20,500 pages." },
+  { date: "Nov 25, 2025", event: "The official order is signed, mandating production within 30 days. Seton Hall signals intent to appeal." },
   { date: "Feb 2026", event: "Gov. Mikie Sherrill names Jennifer Davenport (Porrino's former First Assistant) as NJ Attorney General" },
   { date: "Early 2026", event: "Recent dismissal of the Nyre case nearly two years after it was filed and with no evidence presented." }
 ];

@@ -3,7 +3,6 @@ import NetworkDiagram from '@/components/NetworkDiagram';
 import { PerryLawTimeline } from '@/components/PerryLawTimeline';
 import { Search } from '@/components/Search';
 import { SmartImage } from "@/components/SmartImage";
-import { SocialShare } from '@/components/SocialShare';
 import { Banana, ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
 
 import { useState } from 'react';
@@ -61,8 +60,8 @@ export default function Home() {
             <p className="text-lg italic text-gray-400 max-w-3xl mx-auto mb-8">
               How Seton Hall University and NJ's Catholic Political Elite Protected Sexual Predators for Decades
             </p>
-            <div className="flex justify-center">
-              <SocialShare />
+            <div className="flex justify-center h-4">
+              {/* Social share removed per forensic tone requirements */}
             </div>
           </div>
         </div>
@@ -107,16 +106,85 @@ This is the story of that stone, and the men who tried to hold it underwater.
           </div>
         </section>
 
-        {/* Act VIII - THE VAULT OPENS (BREAKING NEWS) */}
+        {/* Site Flow & Logical Architecture */}
+        <section className="py-24 bg-zinc-950 border-b border-red-900/10">
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 tracking-tight uppercase">Site Architecture</h2>
+              <p className="text-gray-400 font-mono text-xs uppercase tracking-[0.3em] mb-8">The 7 Pillars of Exposure</p>
+              <div className="w-24 h-px bg-red-600 mx-auto" />
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-8 border-l border-red-900/30 bg-black/40 group hover:bg-red-900/5 transition-colors">
+                <h3 className="text-red-500 font-bold mb-4 flex items-center gap-2">01. THE CATHEDRAL</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The master narrative. A chronological descent through the vault, mapping the broad strokes of institutional betrayal from 1987 to 2026.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-red-400 transition-colors uppercase tracking-widest">
+                  <span className="text-red-900 mr-2">Overlap:</span> Entry point for all forensic data.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-blue-900/30 bg-black/40 group hover:bg-blue-900/5 transition-colors">
+                <h3 className="text-blue-500 font-bold mb-4 flex items-center gap-2">02. THE RULING</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The legal breach. Detailed analysis of Judge Benjamin's orders and the destruction of the University's privilege claims.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-blue-400 transition-colors uppercase tracking-widest">
+                  <span className="text-blue-900 mr-2">Overlap:</span> Benjamin's order unsealed the "Architecture" exhibits.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-emerald-900/30 bg-black/40 group hover:bg-emerald-900/5 transition-colors">
+                <h3 className="text-emerald-500 font-bold mb-4 flex items-center gap-2">03. THE FRANCHISE</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The individual profiles. Detailed dossiers on the "Dirty Dozen" and the network of McCarrick "nephews" still in leadership.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-emerald-400 transition-colors uppercase tracking-widest">
+                  <span className="text-emerald-900 mr-2">Overlap:</span> Maps legal counsel to "Church BK" strategies.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-teal-900/30 bg-black/40 group hover:bg-teal-900/5 transition-colors">
+                <h3 className="text-teal-500 font-bold mb-4 flex items-center gap-2">04. EPSTEIN NEXUS</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The investigative cross-section. Mapping the external networks of influence and the shared legal architecture between institutions.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-teal-400 transition-colors uppercase tracking-widest">
+                  <span className="text-teal-900 mr-2">Status:</span> Active News & External Investigation.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-orange-900/30 bg-black/40 group hover:bg-orange-900/5 transition-colors">
+                <h3 className="text-orange-500 font-bold mb-4 flex items-center gap-2">05. CHURCH BK</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The financial shell game. Mapping how bankruptcy is used as a legal SCIF to hide assets while paying massive legal fees.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-orange-400 transition-colors uppercase tracking-widest">
+                  <span className="text-orange-900 mr-2">Overlap:</span> Grounds the "Ruling" in financial motivations.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-purple-900/30 bg-black/40 group hover:bg-purple-900/5 transition-colors">
+                <h3 className="text-purple-500 font-bold mb-4 flex items-center gap-2">06. THEY KNEW</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">The complicity matrix. A searchable database of board members who were present for the 2019 Latham suppression vote.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-purple-400 transition-colors uppercase tracking-widest">
+                  <span className="text-purple-900 mr-2">Overlap:</span> Sorting function for all named actors in Act I.
+                </div>
+              </div>
+
+              <div className="p-8 border-l border-zinc-500/30 bg-black/40 lg:col-span-3 group hover:bg-zinc-800 transition-colors">
+                <h3 className="text-zinc-400 font-bold mb-4 flex items-center gap-2 justify-center">07. THE ARCHITECTURE</h3>
+                <p className="text-gray-300 leading-relaxed mb-4 text-center max-w-2xl mx-auto">The forensic dossier. The raw evidence, letters to Chief Justice Rabner, and the unmasked whistleblower accounts.</p>
+                <div className="text-[10px] font-mono text-gray-400 group-hover:text-white transition-colors uppercase tracking-widest text-center">
+                  <span className="text-zinc-700 mr-2">Final Depth:</span> The raw records unsealed by the Benjamin Order.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Act V - THE BREACH */}
         <section
-          id="act-viii"
+          id="act-v"
           className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
           style={{ backgroundImage: 'url(/assets/vault/archive_storage.jpg)' }}
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-black/90 p-12 rounded-lg border-4 border-red-600">
-              <h2 className="text-6xl font-bold mb-4 text-red-500">Act VIII</h2>
-              <h3 className="text-5xl font-bold mb-4">The Vault Opens</h3>
+            <div className="bg-black/90 p-12 rounded-lg border-4 border-blue-600">
+              <h2 className="text-6xl font-bold mb-4 text-blue-500">Act V</h2>
+              <h3 className="text-5xl font-bold mb-4">The Breach</h3>
               <p className="text-2xl text-gray-400 mb-12">November 12, 2025</p>
 
               <div className="prose prose-invert prose-xl max-w-none mb-12">
@@ -522,16 +590,16 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
                 <p className="text-gray-400">Survivors, judges, and the reckoning (2023-2025)</p>
               </a>
 
-              <a href="#act-v" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
-                <h3 className="text-2xl font-bold mb-2 text-red-500">Act V</h3>
-                <p className="text-xl mb-2">Rome Knew</p>
-                <p className="text-gray-400">The Vatican connection (2020-2025)</p>
-              </a>
-
               <a href="#act-vi" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
                 <h3 className="text-2xl font-bold mb-2 text-red-500">Act VI</h3>
-                <p className="text-xl mb-2">The Succession</p>
-                <p className="text-gray-400">Who inherits the cathedral? (2027)</p>
+                <p className="text-xl mb-2">The Architecture of Silence</p>
+                <p className="text-gray-400">The Rabner Dossier (Feb 2026)</p>
+              </a>
+
+              <a href="#act-vii" className="block p-6 bg-black border-2 border-gray-700 hover:border-red-600 transition-colors rounded-lg">
+                <h3 className="text-2xl font-bold mb-2 text-red-500">Act VII</h3>
+                <p className="text-xl mb-2">The Reckoning of May</p>
+                <p className="text-gray-400">Final Discovery Deadline (May 2026)</p>
               </a>
             </div>
 
@@ -1155,6 +1223,75 @@ Mary Pat walked away. Chris stayed to defend the indefensible. The Christie name
           </div>
         </section>
 
+        {/* Act VI - THE ARCHITECTURE OF SILENCE */}
+        <section
+          id="act-vi"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
+          style={{ backgroundImage: 'url(/assets/symbols/blueprint_scales.png)' }}
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-black/90 p-12 rounded-lg border-4 border-zinc-500">
+              <h2 className="text-6xl font-bold mb-4 text-zinc-500">Act VI</h2>
+              <h3 className="text-5xl font-bold mb-4">The Architecture of Silence</h3>
+              <p className="text-2xl text-gray-400 mb-12">February 13, 2026</p>
+
+              <div className="prose prose-invert prose-xl max-w-none mb-12">
+                <Streamdown>{`
+On February 13, 2026, a formal dossier—**Exhibit 00**—was submitted to New Jersey Chief Justice Stuart Rabner. 
+
+The letter demanded the appointment of a **Special Prosecutor** to investigate the "Closed Loop" of judicial and legal corruption that has protected the McCarrick network for four decades.
+
+**The dossier documents:**
+- The coordinated unmasking of whistleblowers
+- The systematic withholding of 24,000 pages of evidence
+- The conflict of interest involving former NJ Attorney Generals sitting on the University's Board
+- The failure of the Current AG's office to act against their mentors and former law firm colleagues
+`}</Streamdown>
+              </div>
+
+              <CollapsibleSection title="The Closed Loop" defaultOpen={true}>
+                <Streamdown>{`
+The "Architecture of Silence" is a structural failure of justice. 
+
+**The Christie Network:**
+1. **Chris Christie**: Former Governor, mentor to the legal cabal.
+2. **Christopher Porrino**: Former AG under Christie, now Lowenstein Sandler partner (SHU Board).
+3. **Jennifer Davenport**: Former First Assistant to Porrino, now the Current AG nominating by Gov. Sherrill.
+
+This loop ensures that no one investigates the investigators. When Seton Hall hides reports, and the AG's office is filled with the friends and colleagues of the men hiding the reports, **the system fails.**
+`}</Streamdown>
+              </CollapsibleSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Act VII - THE RECKONING OF MAY */}
+        <section
+          id="act-vii"
+          className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/90 font-serif"
+          style={{ backgroundImage: 'url(/assets/symbols/gates_opening.jpg)' }}
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-black/95 p-12 rounded-lg border-t-8 border-emerald-600 shadow-2xl shadow-emerald-900/20">
+              <h2 className="text-6xl font-bold mb-4 text-emerald-500">Act VII</h2>
+              <h3 className="text-5xl font-bold mb-8 italic">The Reckoning of May</h3>
+              <p className="text-2xl text-gray-400 mb-12 font-mono">May 18, 2026</p>
+
+              <div className="prose prose-invert prose-xl max-w-none mb-12 leading-relaxed">
+                <Streamdown>{`
+May 18, 2026. The court-ordered deadline for the final production of all withheld documents.
+
+**The Fallout:**
+- **The Final 3,500 Documents**: The raw communications between Kevin Marino and Tom Scrivo regarding the decision to erase the Title IX logbooks.
+- **The Criminal Referrals**: Federal indicators begin investigating witness tampering and obstruction of justice.
+- **The Board Collapse**: The final remnants of the 2019 "Voters" are forced to resign.
+
+The architecture of silence has not just been breached—it has been demolished.
+`}</Streamdown>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Act IV - THE COURTROOM */}
         <section
           id="act-iv"
@@ -1751,27 +1888,9 @@ The millstone is rising. The answer is coming.
 
             </div>
 
-            <div className="mt-16 p-8 bg-black/50 border-2 border-red-600 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4 text-center">How to Share</h3>
-              <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <p className="text-4xl mb-2">📱</p>
-                  <p className="font-bold mb-2">Social Media</p>
-                  <p className="text-gray-400">Post on Twitter, Facebook, Instagram. Tag journalists and advocates.</p>
-                </div>
-                <div>
-                  <p className="text-4xl mb-2">✉️</p>
-                  <p className="font-bold mb-2">Email</p>
-                  <p className="text-gray-400">Send to your diocese, local news, elected officials for further information.</p>
-                </div>
-                <div>
-                  <p className="text-4xl mb-2">🗣️</p>
-                  <p className="font-bold mb-2">Word of Mouth</p>
-                  <p className="text-gray-400">Tell your parish. Tell your community. The truth spreads person to person.</p>
-                </div>
-              </div>
-              <p className="text-center mt-8 text-gray-400">
-                Contact relevant authorities: <span className="text-red-500">New Jersey Office of the Attorney General</span>
+            <div className="mt-16 p-8 bg-zinc-950 border-2 border-red-900/20 rounded-lg text-center">
+              <p className="text-gray-400 italic">
+                This investigation persists through the preservation of primary source documents.
               </p>
             </div>
           </div>

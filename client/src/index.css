@@ -46,6 +46,18 @@
   --color-cathedral-darker: oklch(0.08 0.005 285);
   --color-cathedral-light: oklch(0.15 0.005 285);
   --color-cathedral-accent: oklch(0.06 0.005 285);
+
+  /* Section Theme Tokens */
+  --color-ruling-blue: oklch(0.3 0.1 240);
+  --color-ruling-gold: oklch(0.75 0.15 85);
+  --color-theyknew-purple: oklch(0.25 0.1 290);
+  --color-theyknew-silver: oklch(0.8 0.02 290);
+  --color-expose-bg: oklch(0.98 0.01 85);
+  --color-expose-accent: oklch(0.25 0.05 20);
+  --color-endgame-green: oklch(0.7 0.2 140);
+  --color-endgame-dark: oklch(0.15 0.02 140);
+  --color-bankruptcy-rust: oklch(0.4 0.15 45);
+  --color-epstein-teal: oklch(0.4 0.12 180);
 }
 
 :root {
@@ -149,6 +161,64 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+
+  /* Section Themes */
+  .theme-cathedral {
+    --background: oklch(0.05 0.01 285);
+    --foreground: oklch(0.95 0.01 85);
+    --primary: oklch(0.6 0.25 25);
+    --accent: var(--color-cathedral-gold);
+    --border: oklch(1 0 0 / 15%);
+  }
+
+  .theme-theyknew {
+    --background: oklch(0.1 0.02 290);
+    --foreground: oklch(0.9 0.02 290);
+    --primary: oklch(0.6 0.15 290);
+    --accent: oklch(0.8 0.05 290);
+    --border: oklch(0.8 0.05 290 / 20%);
+  }
+
+  .theme-ruling {
+    --background: oklch(0.12 0.05 240);
+    --foreground: oklch(0.95 0.02 240);
+    --primary: oklch(0.5 0.15 240);
+    --accent: oklch(0.75 0.15 85);
+    --border: oklch(0.75 0.15 85 / 20%);
+  }
+
+  .theme-expose {
+    --background: oklch(0.98 0.01 85);
+    --foreground: oklch(0.15 0.02 20);
+    --primary: oklch(0.4 0.15 20);
+    --accent: oklch(0.25 0.05 20);
+    --border: oklch(0 0 0 / 10%);
+    @apply antialiased;
+  }
+
+  .theme-endgame {
+    --background: oklch(0.08 0.01 140);
+    --foreground: oklch(0.9 0.02 140);
+    --primary: oklch(0.7 0.2 140);
+    --accent: oklch(0.5 0.15 140);
+    --border: oklch(0.7 0.2 140 / 15%);
+  }
+
+  .theme-bankruptcy {
+    --background: oklch(0.1 0.02 45);
+    --foreground: oklch(0.9 0.02 45);
+    --primary: oklch(0.4 0.15 45);
+    --accent: oklch(0.6 0.15 45);
+    --border: oklch(0.6 0.18 45 / 20%);
+  }
+
+  .theme-epstein {
+    --background: oklch(0.08 0.03 180);
+    --foreground: oklch(0.9 0.02 180);
+    --primary: oklch(0.4 0.12 180);
+    --accent: oklch(0.6 0.15 180);
+    --border: oklch(0.6 0.12 180 / 20%);
   }
 }
 

@@ -1,9 +1,8 @@
 import { JourneyNav } from "@/components/JourneyNav";
-import Layout from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Siren, UserMinus, UserPlus } from "lucide-react";
+import { FileText, Gavel, Siren, UserMinus, UserPlus } from "lucide-react";
 
 const timelineEvents = [
   {
@@ -70,11 +69,25 @@ const timelineEvents = [
     icon: UserPlus
   },
   {
-    year: "Nov 2025",
-    title: "The Leak",
-    description: "Politico exposes the Latham Report contents. The cover-up collapses.",
+    year: "Oct 2025",
+    title: "The Benjamin Arguments",
+    description: "Oral arguments take place in the Benjamin case regarding the unsealing of the Latham and Gibbons reports.",
+    type: "legal",
+    icon: Gavel
+  },
+  {
+    year: "Nov 12, 2025",
+    title: "The Benjamin Order",
+    description: "Judge Avion Benjamin orders the unsealing of the Latham Report findings. Thomas Scrivo is sanctioned for systematic concealment.",
     type: "revelation",
     icon: Siren
+  },
+  {
+    year: "Nov 25, 2025",
+    title: "The Deadline",
+    description: "Judge Benjamin's deadline for search term finalization and the start of production for 20,500 pages of evidence.",
+    type: "milestone",
+    icon: FileText
   }
 ];
 
@@ -83,65 +96,65 @@ import { AlertTriangle as AlertTriangleIcon, DollarSign as DollarSignIcon, Home 
 export default function Timeline() {
   return (<div className="space-y-16 animate-in fade-in duration-1000">
 
-        <PageHero
-          sectionNumber="07"
-          title="Timeline of"
-          titleHighlight="Erasure"
-        >
-          <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 mb-8 group">
-            <img
-              src="/assets/images/timeline-clock.png"
-              alt="Surreal melting clock over ocean"
-              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-          </div>
-          <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
-            Mapping the decades of abuse against the sudden, coordinated "purge" of 2019-2020.
-          </p>
-        </PageHero>
+    <PageHero
+      sectionNumber="07"
+      title="Timeline of"
+      titleHighlight="Erasure"
+    >
+      <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg border border-border/50 mb-8 group">
+        <img
+          src="/assets/images/timeline-clock.png"
+          alt="Surreal melting clock over ocean"
+          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+      </div>
+      <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
+        Mapping the decades of abuse against the sudden, coordinated "purge" of 2019-2020.
+      </p>
+    </PageHero>
 
-        {/* Timeline Visualization */}
-        <section className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+    {/* Timeline Visualization */}
+    <section className="relative">
+      {/* Vertical Line */}
+      <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
 
-          <div className="space-y-12">
-            {timelineEvents.map((event, index) => (
-              <div key={`${event.year}-${event.title}`} className={`relative flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+      <div className="space-y-12">
+        {timelineEvents.map((event, index) => (
+          <div key={`${event.year}-${event.title}`} className={`relative flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+            }`}>
+
+            {/* Date Marker */}
+            <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-destructive z-10" />
+
+            {/* Content Card */}
+            <div className="w-full md:w-[calc(50%-2rem)] pl-20 md:pl-0">
+              <Card className={`bg-card border-border hover:border-destructive/50 transition-colors duration-300 ${index % 2 === 0 ? "md:text-left" : "md:text-right"
                 }`}>
-
-                {/* Date Marker */}
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-destructive z-10" />
-
-                {/* Content Card */}
-                <div className="w-full md:w-[calc(50%-2rem)] pl-20 md:pl-0">
-                  <Card className={`bg-card border-border hover:border-destructive/50 transition-colors duration-300 ${index % 2 === 0 ? "md:text-left" : "md:text-right"
+                <CardHeader>
+                  <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
                     }`}>
-                    <CardHeader>
-                      <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                        }`}>
-                        <Badge variant="outline" className="font-mono text-xs">{event.year}</Badge>
-                        <Badge variant="secondary" className="font-mono text-[10px] uppercase">{event.type}</Badge>
-                      </div>
-                      <CardTitle className="font-heading text-xl flex items-center gap-2">
-                        {index % 2 !== 0 && <event.icon className="w-5 h-5 text-destructive md:hidden" />}
-                        {event.title}
-                        {index % 2 === 0 && <event.icon className="w-5 h-5 text-destructive md:hidden" />}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="font-body text-sm text-muted-foreground">{event.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
+                    <Badge variant="outline" className="font-mono text-xs">{event.year}</Badge>
+                    <Badge variant="secondary" className="font-mono text-[10px] uppercase">{event.type}</Badge>
+                  </div>
+                  <CardTitle className="font-heading text-xl flex items-center gap-2">
+                    {index % 2 !== 0 && <event.icon className="w-5 h-5 text-destructive md:hidden" />}
+                    {event.title}
+                    {index % 2 === 0 && <event.icon className="w-5 h-5 text-destructive md:hidden" />}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-body text-sm text-muted-foreground">{event.description}</p>
+                </CardContent>
+              </Card>
+            </div>
 
-                {/* Empty space for the other side */}
-                <div className="hidden md:block w-[calc(50%-2rem)]" />
-              </div>
-            ))}
+            {/* Empty space for the other side */}
+            <div className="hidden md:block w-[calc(50%-2rem)]" />
           </div>
-        </section>
-        <JourneyNav />
-      </div>);
+        ))}
+      </div>
+    </section>
+    <JourneyNav />
+  </div>);
 }
