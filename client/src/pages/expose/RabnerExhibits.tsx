@@ -2,14 +2,16 @@
    THE ARCHITECTURE OF SILENCE — The Rabner Dossier
    Bright parchment theme — investigative broadsheet
    ============================================================ */
+import { FileText } from "lucide-react";
 export default function RabnerExhibits() {
   const exhibits = [
+    { num: "00", title: "Letter to Chief Justice Rabner — Feb 13, 2026", desc: "Foundational formal escalation documenting ethical and constitutional violations in the Nyre v. Seton Hall litigation. Demanded appointment of a Special Prosecutor and ACJC referral.", category: "Judicial" },
     { num: "1", title: "OAE Declination Letter — Jan 20, 2026", desc: "Office of Attorney Ethics refused to docket Scrivo/Porrino grievances, citing 'pending litigation' — itself manufactured by Scrivo.", category: "Judicial" },
     { num: "2", title: "Latham Report — Summary Findings", desc: "24,000-page investigation by Kathryn Ruemmler of Latham & Watkins. Identified 12 clergymen; documented Reilly's reporting failures at ICS. Sealed 2019–2025.", category: "Church" },
     { num: "3", title: "Benjamin Sanctions Order — November 2025", desc: "Judge Avion Benjamin sanctioned Scrivo for failing to produce Latham Report documents over multiple years.", category: "Judicial" },
     { num: "4", title: "Venable Letter Opinion — Oct 7, 2024", desc: "Order transferring Nyre litigation to Hudson County. Part of Scrivo's multi-venue delay strategy.", category: "Judicial" },
     { num: "5", title: "Task Force Letters — Nov 2019 & Feb 2020", desc: "Two formal recommendations for Reilly's removal from all boards. Both ignored by the Board of Regents.", category: "Church" },
-    { num: "6", title: "Orange County (CA) Subpoena — Nov 20, 2025", desc: "Cross-jurisdictional subpoena for deposition of journalist Eric Spitz. Filed exactly one year after initial Google subpoena.", category: "Retaliation" },
+    { num: "6", title: "Orange County (CA) Subpoena — Nov 20, 2025", desc: "Cross-jurisdictional subpoena for deposition of a California journalist. Filed exactly one year after initial Google subpoena.", category: "Retaliation" },
     { num: "7", title: "Perry Law (Agnifilo) Report — July 2024", desc: "Third investigative firm; commissioned by Marino's board. Concluded no harassment despite internal contradictions. Regent Flood corroborated Mrs. Nyre's account.", category: "Obstruction" },
     { num: "8", title: "Archdiocese Bulletin — Oct 2024", desc: "Bulletin claiming 'solicitation' — manufactured to create a criminal predicate for the grand jury subpoena.", category: "Retaliation" },
     { num: "9", title: "Grand Jury Subpoena to Google — Nov 20, 2024", desc: "Bergen County grand jury subpoena issued 18 days after Reilly's installation. Sought identity of cardinaltobin@gmail.com account holder.", category: "Retaliation" },
@@ -52,16 +54,14 @@ export default function RabnerExhibits() {
 
       <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
         <p>
-          In late 2025, a comprehensive forensic dossier was submitted to New Jersey Chief Justice Stuart Rabner
-          documenting systemic corruption in the Office of Attorney Ethics, the Essex County judiciary, and the
-          ecclesiastical governance of Seton Hall University. The dossier comprised 19 verified exhibits spanning
-          the full scope of the investigation documented in this website.
+          On February 13, 2026, a comprehensive forensic dossier was formally submitted to New Jersey Chief Justice Stuart Rabner.
+          The escalation documented what is described as a "Closed Loop" of institutional protectionism, where the Office of Attorney Ethics (OAE)
+          declined to investigate potential misconduct by citing the very litigation through which that misconduct was occurring.
         </p>
         <p>
-          The OAE's January 20, 2026 declination letter cited "pending litigation" as the reason it could not
-          investigate Scrivo and Porrino's conduct. The pending litigation was itself created by Scrivo. This
-          circular defense — an attorney immunizing himself from ethics scrutiny by ensuring litigation is always
-          pending — is itself documented as an exhibit in the dossier. The dossier has not been publicly acknowledged.
+          The dossier demanded two extraordinary remedies: the appointment of a <strong>Special Prosecutor</strong> to investigate official misconduct
+          within the Bergen County Prosecutor's Office and the Essex County Superior Court, and the formal referral of the judiciary's handling
+          of the <em>Nyre</em> matter to the <strong>Advisory Committee on Judicial Conduct (ACJC)</strong>.
         </p>
       </div>
 
@@ -135,6 +135,18 @@ export default function RabnerExhibits() {
               >
                 {ex.desc}
               </p>
+              {ex.num === "00" && (
+                <div className="mt-3">
+                  <a
+                    href="/Rabner-Letter-Feb-13-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-gold/80 hover:underline transition-all"
+                  >
+                    <FileText size={14} /> Download Foundational Letter (PDF)
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         ))}

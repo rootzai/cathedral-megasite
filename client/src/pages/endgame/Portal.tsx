@@ -16,6 +16,13 @@ export default function Portal() {
           <p className="text-xl md:text-2xl text-gray-400 italic font-serif max-w-2xl mx-auto">
             "Two generations of corruption. One common source."
           </p>
+          <div className="pt-4">
+            <Link href="/expose">
+              <button className="px-6 py-2 border border-destructive text-destructive font-mono text-xs uppercase tracking-widest hover:bg-destructive hover:text-white transition-all">
+                Access The Architecture of Silence Dossier
+              </button>
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">

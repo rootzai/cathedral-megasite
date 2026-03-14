@@ -3,9 +3,16 @@
    Bright parchment theme — investigative broadsheet
    All law firm affiliations verified February 2026
    ============================================================ */
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { Link } from "wouter";
 export default function LegalTrumvirate() {
   return (
     <div className="page-enter max-w-4xl mx-auto px-6 py-10">
+      <div className="mb-6">
+        <Link href="/expose" className="text-xs font-mono text-gold flex items-center gap-1 hover:underline">
+          <ArrowLeft size={12} /> Back to Dossier Overview
+        </Link>
+      </div>
       <div className="exhibit-label">Section V · Legal Network</div>
       <h1
         className="text-4xl font-black mb-2 leading-tight"
@@ -65,7 +72,7 @@ export default function LegalTrumvirate() {
           </p>
           <p>
             The structural conflict is explicit: Scrivo files motions in Essex County Superior Court before judges
-            he helped appoint. In 2025, Scrivo was <strong style={{ color: "var(--blood)" }}>sanctioned by the court</strong> for
+            he helped appoint. In 2025, Scrivo was <Link href="/ruling/sanction-plea" className="text-blood hover:underline font-bold decoration-blood/30 underline-offset-2">sanctioned by the court</Link> for
             withholding documents in the Nyre litigation. The Office of Attorney Ethics declined to investigate.
             His father, three of his children, and he himself are Seton Hall alumni — a family loyalty that
             transforms professional representation into personal institutional protection.
@@ -192,6 +199,11 @@ export default function LegalTrumvirate() {
             February 19, 2026. Marino resigned as Board Chair but was not removed; he was allowed to resign
             on his own terms, with his reputation managed by Christopher Porrino.
           </p>
+          <div className="mt-2">
+            <Link href="/ruling" className="text-[10px] font-mono text-primary flex items-center gap-1 hover:underline">
+              View Marino's Role in "The Ruling" Era <ExternalLink size={10} />
+            </Link>
+          </div>
         </div>
         <div className="mt-3 pt-3 flex gap-6 text-xs" style={{ borderTop: "1px solid var(--stone-border)", fontFamily: "'Lora', serif", color: "var(--ink-light)" }}>
           <span><strong style={{ color: "var(--blood)" }}>Role:</strong> Former SHU Board Chair</span>

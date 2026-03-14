@@ -1,9 +1,11 @@
-import { SmartImage } from "@/components/SmartImage";
+import NarrativeFlow from '@/components/NarrativeFlow';
 import NetworkDiagram from '@/components/NetworkDiagram';
 import { PerryLawTimeline } from '@/components/PerryLawTimeline';
 import { Search } from '@/components/Search';
+import { SmartImage } from "@/components/SmartImage";
 import { SocialShare } from '@/components/SocialShare';
-import { ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
+import { Banana, ChevronDown, ChevronUp, Search as SearchIcon } from 'lucide-react';
+
 import { useState } from 'react';
 import { Streamdown } from 'streamdown';
 
@@ -91,6 +93,17 @@ This is the story of that stone, and the men who tried to hold it underwater.
 
 `}</Streamdown>
             </div>
+          </div>
+        </section>
+
+        {/* Narrative Flow - "Nano Banana Pro" Visual */}
+        <section className="py-12 bg-black/40 border-y border-red-900/20">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-2 mb-8 justify-center">
+              <Banana className="w-4 h-4 text-[#FFD700] rotate-90" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground">The "Nano Banana" Narrative Flow</span>
+            </div>
+            <NarrativeFlow />
           </div>
         </section>
 

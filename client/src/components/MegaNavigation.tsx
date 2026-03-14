@@ -1,6 +1,6 @@
+import { SmartImage } from "@/components/SmartImage";
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
-import { SmartImage } from "@/components/SmartImage";
 
 
 export default function MegaNavigation() {
@@ -12,12 +12,18 @@ export default function MegaNavigation() {
     return location.startsWith(path);
   };
 
-  const navLinkClass = (path: string) => `
-    px-4 py-3 text-xs lg:text-sm font-bold uppercase tracking-wider transition-all text-center
-    ${isActive(path)
-      ? 'bg-red-600 text-white'
-      : 'text-gray-300 hover:bg-red-600/20 hover:text-white'}
-  `;
+  const navLinkClass = (path: string) => {
+    const isLinkActive = path === '/epstein'
+      ? (location.startsWith('/epstein') || location.includes('epstein-nexus'))
+      : isActive(path);
+
+    return `
+      px-2 lg:px-4 py-3 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-all text-center
+      ${isLinkActive
+        ? 'bg-red-600 text-white'
+        : 'text-gray-300 hover:bg-red-600/20 hover:text-white'}
+    `;
+  };
 
   return (
     <nav className="bg-black border-b-2 border-red-600 sticky top-0 z-50">
@@ -39,7 +45,7 @@ export default function MegaNavigation() {
             <Link href="/endgame"><a className={navLinkClass('/endgame')}>THE FRANCHISE</a></Link>
             <Link href="/church-bk"><a className={navLinkClass('/church-bk')}>CHURCH BK</a></Link>
             <Link href="/ruling"><a className={navLinkClass('/ruling')}>THE RULING</a></Link>
-            <Link href="/expose"><a className={navLinkClass('/expose')}>THE EXPOSÉ</a></Link>
+            <Link href="/expose"><a className={navLinkClass('/expose')}>THE ARCHITECTURE</a></Link>
             <Link href="/epstein"><a className={navLinkClass('/epstein')}>THE EPSTEIN NEXUS</a></Link>
           </div>
         </div>
@@ -73,7 +79,7 @@ export default function MegaNavigation() {
               <Link href="/endgame"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE FRANCHISE</a></Link>
               <Link href="/church-bk"><a className="block px-4 py-2 text-white hover:bg-red-600/20">CHURCH BK</a></Link>
               <Link href="/ruling"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE RULING</a></Link>
-              <Link href="/expose"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE EXPOSÉ</a></Link>
+              <Link href="/expose"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ARCHITECTURE</a></Link>
               <Link href="/epstein"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE EPSTEIN NEXUS</a></Link>
             </div>
           )}

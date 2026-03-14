@@ -101,7 +101,7 @@ const NyreDismissal = React.lazy(() => import("./pages/expose/NyreDismissal"));
 const Overview = React.lazy(() => import("./pages/expose/Overview"));
 const RabnerExhibits = React.lazy(() => import("./pages/expose/RabnerExhibits"));
 const ReillyProtection = React.lazy(() => import("./pages/expose/ReillyProtection"));
-const SpitzUnmasking = React.lazy(() => import("./pages/expose/SpitzUnmasking"));
+const WhistleblowerUnmasking = React.lazy(() => import("./pages/expose/WhistleblowerUnmasking"));
 
 // Epstein Pages
 import EpsteinLayout from "./components/EpsteinLayout";
@@ -408,7 +408,7 @@ function Router() {
         <Route path={"/expose/kenneth-martin"}><ExposePageLayout component={KennethMartinexpose} /></Route>
         <Route path={"/expose/checchio-new-orleans"}><ExposePageLayout component={CheckchioNewOrleans} /></Route>
         <Route path={"/expose/rabner-exhibits"}><ExposePageLayout component={RabnerExhibits} /></Route>
-        <Route path={"/expose/spitz-unmasking"}><ExposePageLayout component={SpitzUnmasking} /></Route>
+        <Route path={"/expose/whistleblower-unmasking"}><ExposePageLayout component={WhistleblowerUnmasking} /></Route>
         <Route path={"/expose/appeal-grounds"}><ExposePageLayout component={AppealGrounds} /></Route>
 
         {/* Epstein Routes */}

@@ -2,9 +2,16 @@
    THE ARCHITECTURE OF SILENCE — The Nyre Dismissal
    Bright parchment theme — investigative broadsheet
    ============================================================ */
+import { ArrowLeft } from "lucide-react";
+import { Link } from "wouter";
 export default function NyreDismissal() {
   return (
     <div className="page-enter max-w-4xl mx-auto px-6 py-10">
+      <div className="mb-6">
+        <Link href="/expose" className="text-xs font-mono text-gold flex items-center gap-1 hover:underline">
+          <ArrowLeft size={12} /> Back to Dossier Overview
+        </Link>
+      </div>
       <div className="exhibit-label">Section IV · Judicial Record</div>
       <h1
         className="text-4xl font-black mb-2 leading-tight"
@@ -29,6 +36,9 @@ export default function NyreDismissal() {
           Latham Report, the Task Force letters recommending Reilly's removal, and the emergence of
           multiple sexual harassment complaints against Board Chair Kevin Marino.
         </p>
+        <p className="text-sm border-l-2 border-primary pl-4 py-1 mt-2">
+          Compare with the <Link href="/ruling/analysis" className="text-primary hover:underline font-semibold">Benjamin transparency era</Link> where the Latham Report was finally unsealed.
+        </p>
         <p>
           Dr. Nyre was a whistleblower. He reported Marino's conduct through proper channels. He was
           subsequently blocked from participating in the Ropes &amp; Gray investigation — the third
@@ -52,6 +62,14 @@ export default function NyreDismissal() {
           commissioned by Seton Hall that concluded Marino's conduct did not constitute sexual harassment.
           The problem: the Perry Law Report was effectively controlled by the accused harasser himself.
         </p>
+        <div className="bg-muted/10 p-4 border border-border/50 text-sm mb-4">
+          <p className="italic">
+            While the <strong>Latham Report</strong> (2019) was suppressed, the <strong>Perry Law Report</strong> was commissioned and released exactly as the institution intended.
+            <Link href="/ruling/evidence" className="text-primary hover:underline ml-1 inline-flex items-center gap-1">
+              View Evidence <ArrowLeft size={10} className="rotate-180" />
+            </Link>
+          </p>
+        </div>
         <p>
           Kevin Marino was Chairman of the Board of Regents. Perry Law was the
           <strong style={{ color: "var(--ink)" }}> third</strong> investigative firm assigned to the matter —

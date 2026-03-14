@@ -27,7 +27,7 @@ const navItems = [
     { path: "/expose/kenneth-martin", label: "Father Kenneth Martin", subtitle: "The Founding Template", icon: Skull, section: "VII" },
     { path: "/expose/checchio-new-orleans", label: "Checchio & New Orleans", subtitle: "Musical Chairs", icon: Users, section: "VIII" },
     { path: "/expose/rabner-exhibits", label: "The Rabner Dossier", subtitle: "19 Exhibits of Corruption", icon: FileText, section: "IX" },
-    { path: "/expose/spitz-unmasking", label: "Subpoena of a Journalist", subtitle: "Use of a Grand Jury Subpoena", icon: Eye, section: "X" },
+    { path: "/expose/whistleblower-unmasking", label: "Subpoena of a Journalist", subtitle: "Use of a Grand Jury Subpoena", icon: Eye, section: "X" },
     { path: "/expose/appeal-grounds", label: "Grounds for Appeal", subtitle: "Seven Reversible Errors", icon: Shield, section: "XI" },
 ];
 

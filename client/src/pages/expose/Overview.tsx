@@ -7,42 +7,42 @@ import { Link } from "wouter";
 
 const sections = [
   {
-    path: "/mccarrick-network",
+    path: "/expose/mccarrick-network",
     section: "II",
     title: "The McCarrick Network",
     desc: "How one archbishop built an interlocking system of church, state, and organized crime that outlasted his defrocking.",
     color: "var(--blood)",
   },
   {
-    path: "/reilly-protection",
+    path: "/expose/reilly-protection",
     section: "III",
     title: "Reilly's Ascent",
     desc: "McCarrick's 1994 secretary — who admitted visiting the Sea Girt beach house — became Seton Hall's president in 2024, despite documented removal recommendations.",
     color: "var(--blood)",
   },
   {
-    path: "/nyre-dismissal",
+    path: "/expose/nyre-dismissal",
     section: "IV",
     title: "The Nyre Dismissal",
     desc: "A February 19, 2026 ruling that resolved disputed facts on a motion to dismiss — crediting a report commissioned by the accused harasser himself.",
     color: "var(--gold)",
   },
   {
-    path: "/legal-triumvirate",
+    path: "/expose/legal-triumvirate",
     section: "V",
     title: "The Christie Administration Legal Network",
     desc: "Scrivo, Porrino, and Ruemmler — three Seton Hall Law alumni who built New Jersey's judiciary and now deploy it to protect the institution.",
     color: "var(--gold)",
   },
   {
-    path: "/epstein-nexus",
+    path: "/expose/epstein-nexus",
     section: "VI",
     title: "The Epstein Nexus",
     desc: "The lead investigator of the seminary probe was in intimate contact with Jeffrey Epstein while conducting it. His money was simultaneously flowing into the university.",
     color: "var(--blood)",
   },
   {
-    path: "/spitz-unmasking",
+    path: "/expose/whistleblower-unmasking",
     section: "X",
     title: "Subpoena of a Journalist",
     desc: "A criminal grand jury subpoena to Google, 18 days after Reilly's installation — weaponizing prosecutorial power to silence a civil whistleblower.",
