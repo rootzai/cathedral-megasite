@@ -1,7 +1,7 @@
+import { APP_TITLE } from "@/const";
+import { Download, ExternalLink, FileText, Search as SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
-import { APP_TITLE } from "@/const";
-import { ExternalLink, FileText, Download, Search as SearchIcon } from "lucide-react";
 
 interface DocumentProps {
   title: string;
@@ -98,7 +98,7 @@ export default function Documents() {
       date: "December 21, 2024",
       source: "Politico",
       description: "Investigation by Politico documenting Reilly's knowledge of abuse allegations and his elevation to university president despite Task Force findings. Includes the two letters to Reilly and Kevin Flood's resignation letter citing the logbook erasure.",
-      url: "https://web.archive.org/web/20250514194547/https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
+      url: "https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
       category: "News",
     },
     {
@@ -106,7 +106,7 @@ export default function Documents() {
       date: "July 16, 2018",
       source: "The New York Times",
       description: "Laurie Goodstein and Sharon Otterman's investigation that broke the McCarrick scandal, exposing decades of abuse and institutional protection.",
-      url: "https://archive.ph/https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html",
+      url: "https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html",
       category: "News",
     },
     {
@@ -114,7 +114,7 @@ export default function Documents() {
       date: "July 11, 2024",
       source: "The New York Times",
       description: "Chris Maag's article about the Perry Law Report that failed to critically examine contradictions between the report's conclusion and its own admissions of corroborated complaints.",
-      url: "https://web.archive.org/web/20250723092722/https://www.nytimes.com/2024/07/11/nyregion/seton-hall-sexual-harassment-case.html",
+      url: "https://www.nytimes.com/2024/07/11/nyregion/seton-hall-sexual-harassment-case.html",
       category: "News",
     },
     {
@@ -122,7 +122,7 @@ export default function Documents() {
       date: "May 7, 2020",
       source: "Politico",
       description: "Coverage of the unanimous Supreme Court decision in Kelly v. United States overturning Bridgegate convictions. Kevin Marino represented Bill Stepien in the scandal.",
-      url: "https://web.archive.org/web/20250901005654/https://www.politico.com/news/2020/05/07/supreme-court-bridgegate-decision-242344",
+      url: "https://www.politico.com/news/2020/05/07/supreme-court-bridgegate-decision-242344",
       category: "News",
     },
 
@@ -156,7 +156,7 @@ export default function Documents() {
       date: "November 25, 2019",
       source: "Seton Hall Special Task Force",
       description: "First letter to Reilly documenting findings that he was aware of sexual harassment allegations involving ICS seminarians in summer/fall 2012 but did NOT report to SHU officials, violating Title IX. Recommended removal as Rector and from Boards. Deadline: December 6, 2019, 3:00 PM.",
-      url: "https://web.archive.org/web/20250514194547/https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
+      url: "https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
       category: "University",
     },
     {
@@ -164,7 +164,7 @@ export default function Documents() {
       date: "February 18, 2020",
       source: "Seton Hall Special Task Force",
       description: "Second letter acknowledging Reilly's cooperation with Gibbons interview on January 21, 2020, regarding 2014 events at St. Andrew's Hall. Despite findings, Reilly was never removed and became SHU President in 2024.",
-      url: "https://web.archive.org/web/20250514194547/https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
+      url: "https://www.politico.com/news/2024/12/21/seton-hall-president-sexual-abuse-scandal-00194814",
       category: "University",
     },
     {
@@ -181,13 +181,13 @@ export default function Documents() {
 
   // Filter documents based on search and category
   const filteredDocuments = documents.filter(doc => {
-    const matchesSearch = searchQuery === '' || 
+    const matchesSearch = searchQuery === '' ||
       doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.source.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
-    
+
     return matchesSearch && matchesCategory;
   });
 
@@ -243,11 +243,10 @@ export default function Documents() {
             <div className="flex flex-wrap gap-3 mb-4">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  activeCategory === 'all'
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === 'all'
                     ? 'bg-red-600 text-white'
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 All Documents ({documents.length})
               </button>
@@ -257,11 +256,10 @@ export default function Documents() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                      activeCategory === cat
+                    className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === cat
                         ? 'bg-red-600 text-white'
                         : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                    }`}
+                      }`}
                   >
                     {cat} ({count})
                   </button>

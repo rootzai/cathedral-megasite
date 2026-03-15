@@ -454,7 +454,7 @@ Before there was a Latham Report, before there was a Gibbons investigation, befo
 
 "He Preyed on Men Who Wanted to Be Priests. Then He Became a Cardinal."
 
-By Laurie Goodstein and Sharon Otterman | [Read the full investigation](https://archive.ph/https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html?unlocked_article_code=1.1k8.DwkP.W_W9dkmD2eL8&smid=url-share)
+By Laurie Goodstein and Sharon Otterman | [Read the full investigation](https://www.nytimes.com/2018/07/16/us/cardinal-mccarrick-abuse-priest.html?unlocked_article_code=1.1k8.DwkP.W_W9dkmD2eL8&smid=url-share)
 
 ### The Beach House at Sea Girt
 
