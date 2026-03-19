@@ -97,7 +97,8 @@ export default function TheyKnew() {
           <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-3xl mx-auto">
             A comprehensive reference of every individual who served on Seton Hall University's three governing boards from 2016 to 2026 — and the lawyers who defended the indefensible.
           </p>
-          <p className="text-base md:text-lg text-muted-foreground mt-6 italic">
+          <p className="text-base md:text-lg text-muted-foreground mt-6 italic bg-background/50 backdrop-blur-sm p-4 inline-block rounded-sm">
+
             Who heard the Latham Report. Who voted for Reilly. Who received the Cardinal's letters.
           </p>
         </motion.div>
@@ -146,7 +147,8 @@ export default function TheyKnew() {
       <GothicDivider />
 
       {/* ===== KEY DATES TIMELINE — "The Parchment Hall" ===== */}
-      <section id="timeline" className="py-16 md:py-24 bg-[oklch(0.12_0.02_45)] border-y border-[oklch(0.2_0.05_45/30%)]">
+      <section id="timeline" className="py-16 md:py-24 bg-card border-y border-border shadow-inner relative overflow-hidden">
+
         <div className="container max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -184,7 +186,8 @@ export default function TheyKnew() {
                 {/* Content */}
                 <div className={`ml-12 md:ml-0 md:w-[45%] ${i % 2 === 0 ? "md:pr-10 md:text-right" : "md:pl-10"}`}>
                   <span className="font-label text-sm tracking-wider text-gold">{item.date}</span>
-                  <p className="text-base text-parchment leading-relaxed mt-1">
+                  <p className="text-base leading-relaxed mt-1" style={{ color: "var(--ink-mid)" }}>
+
                     {item.event}
                     {item.link && (
                       <>

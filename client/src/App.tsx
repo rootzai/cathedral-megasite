@@ -157,7 +157,6 @@ function ChurchBKPageLayout({ component: Component }: { component: React.Compone
 function RulingPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
     <div className="theme-ruling min-h-screen bg-background text-foreground transition-colors duration-500">
-      <MegaNavigation />
       <RulingLayout>
         <Component />
       </RulingLayout>
@@ -165,10 +164,10 @@ function RulingPageLayout({ component: Component }: { component: React.Component
   );
 }
 
+
 function ExposePageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
     <div className="theme-expose min-h-screen bg-background text-foreground transition-colors duration-500">
-      <MegaNavigation />
       <ExposeLayoutWrapper>
         <Component />
       </ExposeLayoutWrapper>
@@ -176,16 +175,17 @@ function ExposePageLayout({ component: Component }: { component: React.Component
   );
 }
 
+
 function EpsteinPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
     <div className="theme-epstein min-h-screen bg-background text-foreground transition-colors duration-500">
-      <MegaNavigation />
       <EpsteinLayout>
         <Component />
       </EpsteinLayout>
     </div>
   );
 }
+
 
 function Router() {
   return (
@@ -318,11 +318,15 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="flex flex-col min-h-screen">
+            <MegaNavigation />
+            <Router />
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
+
 
 export default App;

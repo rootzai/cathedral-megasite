@@ -80,11 +80,19 @@
   --secondary: oklch(0.98 0.001 286.375);
   --secondary-foreground: oklch(0.4 0.015 65);
   --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.35 0.015 285.938);
-  /* Higher contrast for light mode */
-
+  --muted-foreground: oklch(0.3 0.01 65);
+  /* High Contrast */
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.141 0.005 285.823);
+
+  /* Investigation Tokens - Light Mode */
+  --ink: oklch(0.15 0.02 65);
+  --ink-mid: oklch(0.3 0.02 65);
+  --blood: oklch(0.45 0.25 25);
+  --gold: oklch(0.7 0.15 85);
+  --gold-dim: oklch(0.7 0.15 85 / 50%);
+  --parchment: #faf6ee;
+
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.004 286.32);
@@ -112,11 +120,19 @@
   --secondary: oklch(0.10 0 0);
   --secondary-foreground: oklch(0.85 0.005 65);
   --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.75 0.005 286.067);
-  /* Brighter for dark mode */
-
+  --muted-foreground: oklch(0.8 0.01 286.067);
+  /* Clear High Contrast */
   --accent: oklch(0.577 0.245 27.325);
   --accent-foreground: oklch(1 0 0);
+
+  /* Investigation Tokens - Dark Mode */
+  --ink: oklch(0.95 0.01 85);
+  --ink-mid: oklch(0.75 0.01 85);
+  --blood: oklch(0.6 0.25 25);
+  --gold: oklch(0.75 0.12 85);
+  --gold-dim: oklch(0.75 0.12 85 / 50%);
+  --parchment: oklch(0.95 0.01 85);
+
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);

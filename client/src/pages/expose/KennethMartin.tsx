@@ -63,7 +63,8 @@ export default function KennethMartin() {
         </div>
       </section>
 
-      <section className="mb-16 bg-zinc-50 p-10 rounded-sm border border-gold/10 relative overflow-hidden">
+      <section className="mb-16 bg-muted/20 p-10 rounded-sm border border-gold/10 relative overflow-hidden">
+
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <span className="text-8xl font-black font-serif">1983</span>
         </div>
@@ -74,9 +75,12 @@ export default function KennethMartin() {
 
           <div className="relative pl-12">
             <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-blood shadow-sm" />
-            <h4 className="font-bold text-ink mb-1 uppercase tracking-widest text-xs">The Report</h4>
-            <p className="text-sm text-ink-mid uppercase mb-2">1983 · Newark Chancery</p>
-            <p className="text-base text-ink-mid">
+            <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>The Report</h4>
+
+            <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>1983 · Newark Chancery</p>
+
+            <p className="text-base" style={{ color: "var(--ink-mid)" }}>
+
               Mark Crawford reports long-term abuse to the Archdiocese. Martin remains in ministry.
               The institution begins its forty-year strategy of tactical promotion.
             </p>
@@ -84,9 +88,12 @@ export default function KennethMartin() {
 
           <div className="relative pl-12">
             <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-gold shadow-sm" />
-            <h4 className="font-bold text-ink mb-1 uppercase tracking-widest text-xs">The Ascension</h4>
-            <p className="text-sm text-ink-mid uppercase mb-2">1990 · The Inner Circle</p>
-            <p className="text-base text-ink-mid">
+            <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>
+              The Ascension</h4>
+            <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>
+              1990 · The Inner Circle</p>
+            <p className="text-base" style={{ color: "var(--ink-mid)" }}>
+
               Martin is appointed personal secretary to Archbishop McCarrick. The abuser is now
               the gatekeeper of the Archdiocese's darkest secrets.
             </p>
@@ -94,9 +101,12 @@ export default function KennethMartin() {
 
           <div className="relative pl-12">
             <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-gold shadow-sm" />
-            <h4 className="font-bold text-ink mb-1 uppercase tracking-widest text-xs">The Succession</h4>
-            <p className="text-sm text-ink-mid uppercase mb-2">1994 · Handing the Baton</p>
-            <p className="text-base text-ink-mid">
+            <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>
+              The Succession</h4>
+            <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>
+              1994 · Handing the Baton</p>
+            <p className="text-base" style={{ color: "var(--ink-mid)" }}>
+
               Joseph Reilly succeeds Martin as McCarrick's secretary. The infrastructure of
               silence is handed to a new generation of loyalists.
             </p>
@@ -104,9 +114,12 @@ export default function KennethMartin() {
 
           <div className="relative pl-12">
             <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-blood shadow-sm" />
-            <h4 className="font-bold text-ink mb-1 uppercase tracking-widest text-xs">The Arrest</h4>
-            <p className="text-sm text-ink-mid uppercase mb-2">2001 · Wilmington, DE</p>
-            <p className="text-base text-ink-mid">
+            <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>
+              The Arrest</h4>
+            <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>
+              2001 · Wilmington, DE</p>
+            <p className="text-base" style={{ color: "var(--ink-mid)" }}>
+
               Martin is arrested for child sex abuse. The court grants "probation before judgment,"
               and the Church continues to permit his work for ecclesiastical entities.
             </p>
@@ -114,9 +127,12 @@ export default function KennethMartin() {
 
           <div className="relative pl-12">
             <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-ink shadow-sm" />
-            <h4 className="font-bold text-ink mb-1 uppercase tracking-widest text-xs">The Reckoning</h4>
-            <p className="text-sm text-ink-mid uppercase mb-2">2008 · The Vatican</p>
-            <p className="text-base text-ink-mid">
+            <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>
+              The Reckoning</h4>
+            <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>
+              2008 · The Vatican</p>
+            <p className="text-base" style={{ color: "var(--ink-mid)" }}>
+
               Twenty-five years after the first report, the Vatican finally bars Martin from
               ministry. The template had served its purpose for a quarter-century.
             </p>
