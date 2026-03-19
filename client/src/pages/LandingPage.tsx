@@ -77,7 +77,7 @@ export default function LandingPage() {
           bottom: 4rem;
           left: 50%;
           transform: translateX(-50%);
-          z-index: 20;
+          z-index: 50;
           background: rgba(0,0,0,0.6);
           border: 1px solid rgba(250, 246, 238, 0.2);
           color: #faf6ee;
@@ -175,14 +175,6 @@ export default function LandingPage() {
 
                   {/* Panel II: The Breach */}
                   <div className="bg-zinc-900/40 border border-red-600/30 p-8 rounded-lg transform lg:-translate-y-4 shadow-2xl shadow-red-900/10 group hover:bg-zinc-900/60 transition-all duration-500">
-                    <div className="relative aspect-video mb-8 overflow-hidden rounded border border-red-900/30">
-                      <img
-                        src="/assets/site_logic_triptych_style_1773527451986.png"
-                        alt="The Breach"
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                    </div>
                     <span className="text-red-600 font-mono text-xs block mb-4 tracking-[0.3em]">PANEL II</span>
                     <h3 className="text-2xl font-bold text-parchment mb-4 uppercase tracking-tighter">The Breach</h3>
                     <p className="text-zinc-500 font-serif italic mb-6 text-sm">The Legal Unsealing</p>
