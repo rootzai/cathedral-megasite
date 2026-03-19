@@ -25,8 +25,11 @@ import {
   victimsAttorneys,
 } from "@/lib/data";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+
 import {
   AlertTriangle,
+  ArrowLeft,
   BookOpen,
   Church,
   Crown,
@@ -36,6 +39,9 @@ import {
   Shield,
   User
 } from "lucide-react";
+
+
+
 import { useState } from "react";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/hero-cathedral-gtrH4ddunz7PPhnoSpqctQ.webp";

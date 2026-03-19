@@ -25,7 +25,10 @@ import {
   Users,
   Wallet
 } from "lucide-react";
+
 import { useEffect, useState } from "react";
+import { SmartImage } from "./SmartImage";
+
 import { Link, useLocation } from "wouter";
 
 interface LayoutProps {
@@ -67,14 +70,17 @@ export default function Layout({ children }: LayoutProps) {
       <div className="p-6">
         <Link href="/">
           <div className="flex items-center gap-3 mb-2 cursor-pointer group">
-            <div className="w-8 h-8 bg-accent rounded-none flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-accent-foreground font-serif font-bold text-xl">V</span>
-            </div>
+            <SmartImage
+              src="/assets/sodom-hall-logo.png"
+              alt="Sodom Hall"
+              className="h-10 w-auto grayscale brightness-200 group-hover:brightness-100 group-hover:grayscale-0 transition-all shadow-[0_0_10px_rgba(220,38,38,0.2)]"
+            />
             <h1 className="font-serif font-bold text-2xl tracking-tight leading-none text-foreground group-hover:text-accent transition-colors">
               THE<br />VAULT
             </h1>
           </div>
         </Link>
+
         <p className="text-xs text-muted-foreground mt-2 uppercase tracking-widest font-mono">
           Raw Evidence Depository
         </p>

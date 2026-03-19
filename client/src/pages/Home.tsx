@@ -146,13 +146,14 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
 `}</Streamdown>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link href="/expose">
+                <Link href="/vault">
                   <a className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-red-900/20">Review Exhibits</a>
                 </Link>
-                <Link href="/ruling">
+                <Link href="/breach">
                   <a className="px-8 py-4 border border-zinc-700 hover:border-red-600 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
                 </Link>
               </div>
+
             </div>
           </div>
         </section>
@@ -213,10 +214,11 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
 `}</Streamdown>
               </div>
               <div className="flex justify-end">
-                <Link href="/ruling">
+                <Link href="/breach">
                   <a className="px-6 py-3 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
                 </Link>
               </div>
+
             </div>
           </div>
         </section>

@@ -80,7 +80,9 @@
   --secondary: oklch(0.98 0.001 286.375);
   --secondary-foreground: oklch(0.4 0.015 65);
   --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
+  --muted-foreground: oklch(0.35 0.015 285.938);
+  /* Higher contrast for light mode */
+
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.141 0.005 285.823);
   --destructive: oklch(0.577 0.245 27.325);
@@ -110,7 +112,9 @@
   --secondary: oklch(0.10 0 0);
   --secondary-foreground: oklch(0.85 0.005 65);
   --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.65 0.015 286.067);
+  --muted-foreground: oklch(0.75 0.005 286.067);
+  /* Brighter for dark mode */
+
   --accent: oklch(0.577 0.245 27.325);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -214,12 +218,17 @@
 
   .theme-expose {
     --background: oklch(0.98 0.01 85);
-    --foreground: oklch(0.15 0.02 20);
+    /* Clean Parchment */
+    --foreground: oklch(0.1 0.02 20);
+    /* Deep Indigo/Black */
     --primary: oklch(0.4 0.15 20);
     --accent: oklch(0.25 0.05 20);
-    --border: oklch(0 0 0 / 10%);
+    --border: oklch(1 0 0 / 15%);
+    --muted-foreground: oklch(0.3 0.02 20);
+    /* High contrast subtitle */
     @apply antialiased;
   }
+
 
   .theme-endgame {
     --background: oklch(0.08 0.01 140);

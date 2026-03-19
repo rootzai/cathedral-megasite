@@ -2,20 +2,20 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { ShareButton } from "./ShareButton";
 
-const RULING_BASE_PATH = "/ruling";
 const ROUTES = [
-  { path: RULING_BASE_PATH, label: "The Ruling" },
-  { path: `${RULING_BASE_PATH}/dirty-dozen`, label: "The Dirty Dozen" },
-  { path: `${RULING_BASE_PATH}/reilly`, label: "The Presidency of Joseph Reilly" },
-  { path: `${RULING_BASE_PATH}/beach-house`, label: "The Beach House" },
-  { path: `${RULING_BASE_PATH}/tobin-hypocrisy`, label: "Tobin's Hypocrisy" },
-  { path: `${RULING_BASE_PATH}/corporate-veil`, label: "The Corporate Veil" },
-  { path: `${RULING_BASE_PATH}/timeline`, label: "Timeline of Erasure" },
-  { path: `${RULING_BASE_PATH}/evidence`, label: "Evidence Repository" },
-  { path: `${RULING_BASE_PATH}/analysis`, label: "Analysis" },
-  { path: `${RULING_BASE_PATH}/sheeran-mccarrick`, label: "The Nexus" },
-  { path: `${RULING_BASE_PATH}/sanction-plea`, label: "Sanction Plea" },
+  { path: "/origin", label: "The Origin" },
+  { path: "/origin/beach-house", label: "The Beach House" },
+  { path: "/coverup", label: "The Cover-Up" },
+  { path: "/coverup/legal", label: "The Legal Triumvirate" },
+  { path: "/breach", label: "The Breach" },
+  { path: "/breach/courtroom", label: "The Benjamin Order" },
+  { path: "/succession", label: "The Succession" },
+  { path: "/succession/epilogue", label: "The Millstone Epilogue" },
+  { path: "/opinion", label: "Public Opinion" },
+  { path: "/ledger", label: "The Ledger" },
+  { path: "/vault", label: "The Vault" },
 ];
+
 
 export function JourneyNav() {
   const [location] = useLocation();
