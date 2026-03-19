@@ -7,13 +7,12 @@ export default function LandingPage() {
   const [showLogic, setShowLogic] = useState(false);
 
   const pillars = [
-    { id: '01', title: 'CATHEDRAL', path: '/cathedral', desc: 'The Master Narrative' },
-    { id: '02', title: 'RULING', path: '/ruling', desc: 'The Legal Breach' },
-    { id: '03', title: 'FRANCHISE', path: '/endgame', desc: 'Institutional Players' },
-    { id: '04', title: 'EPSTEIN', path: '/epstein', desc: 'Cross-Network Nexus' },
-    { id: '05', title: 'CHURCH BK', path: '/church-bk', desc: 'Financial Ledger' },
-    { id: '06', title: 'THEY KNEW', path: '/they-knew', desc: 'Complicity Matrix' },
-    { id: '07', title: 'ARCHITECTURE', path: '/expose', desc: 'Forensic Exhibits' }
+    { id: '01', title: 'THE ORIGIN', path: '/origin', desc: 'The Machine is Built' },
+    { id: '02', title: 'THE COVER-UP', path: '/coverup', desc: 'The Institutional Protection' },
+    { id: '03', title: 'THE BREACH', path: '/breach', desc: 'The Vault is Unsealed' },
+    { id: '04', title: 'THE SUCCESSION', path: '/succession', desc: 'The Existential Horizon' },
+    { id: '05', title: 'THE LEDGER', path: '/ledger', desc: 'Complicity Matrix' },
+    { id: '06', title: 'THE VAULT', path: '/vault', desc: 'Forensic Documents' }
   ];
 
   return (
@@ -206,7 +205,7 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                   {pillars.map((p) => (
                     <Link key={p.id} href={p.path}>
                       <a className="group p-4 border border-zinc-900 bg-zinc-950/40 hover:bg-red-950/20 hover:border-red-600/50 transition-all text-center">

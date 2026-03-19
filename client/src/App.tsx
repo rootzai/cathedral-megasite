@@ -107,10 +107,11 @@ const WhistleblowerUnmasking = React.lazy(() => import("./pages/expose/Whistlebl
 import EpsteinLayout from "./components/EpsteinLayout";
 const EpsteinHome = React.lazy(() => import("./pages/epstein/Home"));
 
-// Section Layouts (lifted to router level)
+// Section Layouts
 import ChurchBKLayout from "./components/ChurchBKLayout";
 import EndgameLayout from "./components/EndgameLayout";
 import RulingLayout from "./components/Layout";
+import { BreachLayout, CoverUpLayout, OriginLayout, SuccessionLayout } from "./components/UnifiedSectionLayouts";
 
 import "./index.css";
 
@@ -187,232 +188,94 @@ function Router() {
           <PageLayout component={LandingPage} />
         </Route>
 
-        {/* Cathedral Routes */}
-        <Route path={"/cathedral"}>
-          <PageLayout component={CathedralHome} />
-        </Route>
-        <Route path={"/about"}>
-          <PageLayout component={About} />
-        </Route>
-        <Route path={"/dedication"}>
-          <PageLayout component={Dedication} />
-        </Route>
-        <Route path={"/documents"}>
-          <PageLayout component={Documents} />
-        </Route>
+        {/* -------------------------------------------
+            THE ORIGIN (Act 1)
+        ------------------------------------------- */}
+        <Route path={"/origin"}><OriginLayout><KennethMartinexpose /></OriginLayout></Route>
+        <Route path={"/origin/martin"}><OriginLayout><KennethMartinexpose /></OriginLayout></Route>
+        <Route path={"/origin/beach-house"}><OriginLayout><BeachHouse /></OriginLayout></Route>
+        <Route path={"/origin/network"}><OriginLayout><McCarrickNetworkexpose /></OriginLayout></Route>
+        <Route path={"/origin/explosion"}><OriginLayout><McCarrickDownfall /></OriginLayout></Route>
 
-        {/* They Knew Routes */}
-        <Route path={"/they-knew"}>
-          <PageLayout component={TheyKnew} theme="theme-theyknew" />
-        </Route>
+        {/* -------------------------------------------
+            THE COVER-UP (Act 2)
+        ------------------------------------------- */}
+        <Route path={"/coverup"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>
+        <Route path={"/coverup/financial"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>
+        <Route path={"/coverup/complicity"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>
+        <Route path={"/coverup/legal"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>
+        <Route path={"/coverup/epstein"}><CoverUpLayout><EpsteinNexus /></CoverUpLayout></Route>
 
-        {/* Endgame Routes */}
-        <Route path={"/endgame"}>
-          <PageLayout component={EndgamePortal} />
-        </Route>
+        {/* -------------------------------------------
+            THE BREACH (Act 3)
+        ------------------------------------------- */}
+        <Route path={"/breach"}><BreachLayout><WhistleblowerUnmasking /></BreachLayout></Route>
+        <Route path={"/breach/whistleblowers"}><BreachLayout><WhistleblowerUnmasking /></BreachLayout></Route>
+        <Route path={"/breach/courtroom"}><BreachLayout><RulingTimeline /></BreachLayout></Route>
+        <Route path={"/breach/rabner"}><BreachLayout><RabnerExhibits /></BreachLayout></Route>
+        <Route path={"/breach/forensics"}><BreachLayout><Overview /></BreachLayout></Route>
 
-        {/* Endgame Case Files */}
-        <Route path={"/endgame/martin"}>
-          <EndgamePageLayout component={MartinHome} />
-        </Route>
-        <Route path={"/endgame/martin/crimes"}>
-          <EndgamePageLayout component={MartinCrimes} />
-        </Route>
-        <Route path={"/endgame/martin/launder"}>
-          <EndgamePageLayout component={MartinLaunder} />
-        </Route>
-        <Route path={"/endgame/martin/chicago"}>
-          <EndgamePageLayout component={MartinChicago} />
-        </Route>
-        <Route path={"/endgame/lorenzo"}>
-          <EndgamePageLayout component={LorenzoHome} />
-        </Route>
-        <Route path={"/endgame/lorenzo/expulsion"}>
-          <EndgamePageLayout component={LorenzoExpulsion} />
-        </Route>
-        <Route path={"/endgame/lorenzo/rehabilitation"}>
-          <EndgamePageLayout component={LorenzoRehabilitation} />
-        </Route>
-        <Route path={"/endgame/lorenzo/elevation"}>
-          <EndgamePageLayout component={LorenzoElevation} />
-        </Route>
-        <Route path={"/endgame/reilly"}>
-          <EndgamePageLayout component={ReillyEndgame} />
-        </Route>
+        {/* -------------------------------------------
+            THE SUCCESSION (Act 4)
+        ------------------------------------------- */}
+        <Route path={"/succession"}><SuccessionLayout><LorenzoHome /></SuccessionLayout></Route>
+        <Route path={"/succession/regime"}><SuccessionLayout><LorenzoHome /></SuccessionLayout></Route>
+        <Route path={"/succession/checchio"}><SuccessionLayout><CheckchioNewOrleans /></SuccessionLayout></Route>
+        <Route path={"/succession/cases"}><SuccessionLayout><ChurchBKActiveCaseDossiers /></SuccessionLayout></Route>
+        <Route path={"/succession/horizon"}><SuccessionLayout><ChurchBKGlobalChurchMetrics /></SuccessionLayout></Route>
 
-        {/* McCarrick Sub-pages */}
-        <Route path={"/endgame/mccarrick"}>
-          <EndgamePageLayout component={McCarrickHome} />
-        </Route>
-        <Route path={"/endgame/mccarrick/background"}>
-          <EndgamePageLayout component={McCarrickBackground} />
-        </Route>
-        <Route path={"/endgame/mccarrick/profile"}>
-          <EndgamePageLayout component={McCarrickProfile} />
-        </Route>
-        <Route path={"/endgame/mccarrick/the-rise"}>
-          <EndgamePageLayout component={McCarrickTheRise} />
-        </Route>
-        <Route path={"/endgame/mccarrick/the-regime"}>
-          <EndgamePageLayout component={McCarrickTheRegime} />
-        </Route>
-        <Route path={"/endgame/mccarrick/network"}>
-          <EndgamePageLayout component={McCarrickNetwork} />
-        </Route>
-        <Route path={"/endgame/mccarrick/warnings"}>
-          <EndgamePageLayout component={McCarrickWarnings} />
-        </Route>
-        <Route path={"/endgame/mccarrick/mechanisms"}>
-          <EndgamePageLayout component={McCarrickMechanisms} />
-        </Route>
-        <Route path={"/endgame/mccarrick/seton-hall"}>
-          <EndgamePageLayout component={McCarrickSetonHall} />
-        </Route>
-        <Route path={"/endgame/mccarrick/downfall"}>
-          <EndgamePageLayout component={McCarrickDownfall} />
-        </Route>
-        <Route path={"/endgame/mccarrick/the-reckoning"}>
-          <EndgamePageLayout component={McCarrickTheReckoning} />
-        </Route>
-        <Route path={"/endgame/mccarrick/legal"}>
-          <EndgamePageLayout component={McCarrickLegal} />
-        </Route>
-        <Route path={"/endgame/mccarrick/survivors"}>
-          <EndgamePageLayout component={McCarrickSurvivors} />
-        </Route>
-        <Route path={"/endgame/mccarrick/responses"}>
-          <EndgamePageLayout component={McCarrickResponses} />
-        </Route>
-        <Route path={"/endgame/mccarrick/analysis"}>
-          <EndgamePageLayout component={McCarrickAnalysis} />
-        </Route>
-        <Route path={"/endgame/mccarrick/conclusion"}>
-          <EndgamePageLayout component={McCarrickConclusion} />
-        </Route>
+        {/* -------------------------------------------
+            THE LEDGER (Appendix 1) - Reusing Endgame Framework
+        ------------------------------------------- */}
+        <Route path={"/ledger"}><EndgamePageLayout component={EndgamePortal} /></Route>
+        <Route path={"/endgame*"}><EndgamePageLayout component={EndgamePortal} /></Route>
 
-        {/* Checchio Sub-pages */}
-        <Route path={"/endgame/checchio"}>
-          <EndgamePageLayout component={CheckchioHome} />
-        </Route>
-        <Route path={"/endgame/checchio/formation"}>
-          <EndgamePageLayout component={CheckchioFormation} />
-        </Route>
-        <Route path={"/endgame/checchio/ascent"}>
-          <EndgamePageLayout component={CheckchioAscent} />
-        </Route>
-        <Route path={"/endgame/checchio/governance"}>
-          <EndgamePageLayout component={CheckchioGovernance} />
-        </Route>
-        <Route path={"/endgame/checchio/controversies"}>
-          <EndgamePageLayout component={CheckchioControversies} />
-        </Route>
-        <Route path={"/endgame/checchio/purge"}>
-          <EndgamePageLayout component={CheckchioPurge} />
-        </Route>
-        <Route path={"/endgame/checchio/status"}>
-          <EndgamePageLayout component={CheckchioStatus} />
-        </Route>
+        <Route path={"/ledger/martin"}><EndgamePageLayout component={MartinHome} /></Route>
+        <Route path={"/ledger/martin/crimes"}><EndgamePageLayout component={MartinCrimes} /></Route>
+        <Route path={"/ledger/martin/launder"}><EndgamePageLayout component={MartinLaunder} /></Route>
+        <Route path={"/ledger/martin/chicago"}><EndgamePageLayout component={MartinChicago} /></Route>
 
-        {/* Church BK Routes */}
-        <Route path={"/church-bk"}>
-          <ChurchBKPageLayout component={ChurchBKHome} />
-        </Route>
-        <Route path={"/church-bk/active-case-dossiers"}>
-          <ChurchBKPageLayout component={ChurchBKActiveCaseDossiers} />
-        </Route>
-        <Route path={"/church-bk/cardinalate-mccarrick"}>
-          <ChurchBKPageLayout component={ChurchBKCardinalateAndMcCarrick} />
-        </Route>
-        <Route path={"/church-bk/clergy-metrics"}>
-          <ChurchBKPageLayout component={ChurchBKClergyMetrics} />
-        </Route>
-        <Route path={"/church-bk/creditor-committee-portal"}>
-          <ChurchBKPageLayout component={ChurchBKCreditorCommitteePortal} />
-        </Route>
-        <Route path={"/church-bk/diocesan-finance"}>
-          <ChurchBKPageLayout component={ChurchBKDiocesanFinance} />
-        </Route>
-        <Route path={"/church-bk/document-library"}>
-          <ChurchBKPageLayout component={ChurchBKDocumentLibrary} />
-        </Route>
-        <Route path={"/church-bk/financial-operating-model"}>
-          <ChurchBKPageLayout component={ChurchBKFinancialModel} />
-        </Route>
-        <Route path={"/church-bk/global-church-metrics"}>
-          <ChurchBKPageLayout component={ChurchBKGlobalChurchMetrics} />
-        </Route>
-        <Route path={"/church-bk/global-growth"}>
-          <ChurchBKPageLayout component={ChurchBKGlobalGrowth} />
-        </Route>
-        <Route path={"/church-bk/institutional-structure"}>
-          <ChurchBKPageLayout component={ChurchBKInstitutionalStructure} />
-        </Route>
-        <Route path={"/church-bk/mccarrick-mechanism"}>
-          <ChurchBKPageLayout component={ChurchBKMcCarrickMechanism} />
-        </Route>
-        <Route path={"/church-bk/sacramental-data"}>
-          <ChurchBKPageLayout component={ChurchBKSacramentalData} />
-        </Route>
-        <Route path={"/church-bk/stakeholder-analysis"}>
-          <ChurchBKPageLayout component={ChurchBKStakeholderAnalysis} />
-        </Route>
-        <Route path={"/church-bk/the-cardinalate"}>
-          <ChurchBKPageLayout component={ChurchBKTheCardinalate} />
-        </Route>
-        <Route path={"/church-bk/the-corporate-veil"}>
-          <ChurchBKPageLayout component={ChurchBKTheCorporateVeil} />
-        </Route>
+        <Route path={"/ledger/lorenzo"}><EndgamePageLayout component={LorenzoHome} /></Route>
+        <Route path={"/ledger/lorenzo/expulsion"}><EndgamePageLayout component={LorenzoExpulsion} /></Route>
+        <Route path={"/ledger/lorenzo/rehabilitation"}><EndgamePageLayout component={LorenzoRehabilitation} /></Route>
+        <Route path={"/ledger/lorenzo/elevation"}><EndgamePageLayout component={LorenzoElevation} /></Route>
 
-        {/* Ruling Routes */}
-        <Route path={"/ruling"}>
-          <RulingPageLayout component={RulingHome} />
-        </Route>
-        <Route path={"/ruling/timeline"}>
-          <RulingPageLayout component={RulingTimeline} />
-        </Route>
-        <Route path={"/ruling/evidence"}>
-          <RulingPageLayout component={RulingEvidence} />
-        </Route>
-        <Route path={"/ruling/analysis"}>
-          <RulingPageLayout component={RulingAnalysis} />
-        </Route>
-        <Route path={"/ruling/dirty-dozen"}>
-          <RulingPageLayout component={DirtyDozen} />
-        </Route>
-        <Route path={"/ruling/tobin-hypocrisy"}>
-          <RulingPageLayout component={TobinHypocrisy} />
-        </Route>
-        <Route path={"/ruling/reilly"}>
-          <RulingPageLayout component={Reilly} />
-        </Route>
-        <Route path={"/ruling/beach-house"}>
-          <RulingPageLayout component={BeachHouse} />
-        </Route>
-        <Route path={"/ruling/sheeran-mccarrick"}>
-          <RulingPageLayout component={SheeranMcCarrick} />
-        </Route>
-        <Route path={"/ruling/sanction-plea"}>
-          <RulingPageLayout component={SanctionPlea} />
-        </Route>
-        <Route path={"/ruling/corporate-veil"}>
-          <RulingPageLayout component={CorporateVeil} />
-        </Route>
+        <Route path={"/ledger/reilly"}><EndgamePageLayout component={ReillyEndgame} /></Route>
 
-        {/* Expose Routes */}
-        <Route path={"/expose"}><ExposePageLayout component={Overview} /></Route>
-        <Route path={"/expose/mccarrick-network"}><ExposePageLayout component={McCarrickNetworkexpose} /></Route>
-        <Route path={"/expose/reilly-protection"}><ExposePageLayout component={ReillyProtection} /></Route>
-        <Route path={"/expose/nyre-dismissal"}><ExposePageLayout component={NyreDismissal} /></Route>
-        <Route path={"/expose/legal-triumvirate"}><ExposePageLayout component={LegalTrumvirate} /></Route>
-        <Route path={"/expose/epstein-nexus"}><ExposePageLayout component={EpsteinNexus} /></Route>
-        <Route path={"/expose/kenneth-martin"}><ExposePageLayout component={KennethMartinexpose} /></Route>
-        <Route path={"/expose/checchio-new-orleans"}><ExposePageLayout component={CheckchioNewOrleans} /></Route>
-        <Route path={"/expose/rabner-exhibits"}><ExposePageLayout component={RabnerExhibits} /></Route>
-        <Route path={"/expose/whistleblower-unmasking"}><ExposePageLayout component={WhistleblowerUnmasking} /></Route>
-        <Route path={"/expose/appeal-grounds"}><ExposePageLayout component={AppealGrounds} /></Route>
+        <Route path={"/ledger/mccarrick"}><EndgamePageLayout component={McCarrickHome} /></Route>
+        <Route path={"/ledger/mccarrick/background"}><EndgamePageLayout component={McCarrickBackground} /></Route>
+        <Route path={"/ledger/mccarrick/profile"}><EndgamePageLayout component={McCarrickProfile} /></Route>
+        <Route path={"/ledger/mccarrick/the-rise"}><EndgamePageLayout component={McCarrickTheRise} /></Route>
+        <Route path={"/ledger/mccarrick/the-regime"}><EndgamePageLayout component={McCarrickTheRegime} /></Route>
+        <Route path={"/ledger/mccarrick/network"}><EndgamePageLayout component={McCarrickNetwork} /></Route>
+        <Route path={"/ledger/mccarrick/warnings"}><EndgamePageLayout component={McCarrickWarnings} /></Route>
+        <Route path={"/ledger/mccarrick/mechanisms"}><EndgamePageLayout component={McCarrickMechanisms} /></Route>
+        <Route path={"/ledger/mccarrick/seton-hall"}><EndgamePageLayout component={McCarrickSetonHall} /></Route>
+        <Route path={"/ledger/mccarrick/downfall"}><EndgamePageLayout component={McCarrickDownfall} /></Route>
+        <Route path={"/ledger/mccarrick/the-reckoning"}><EndgamePageLayout component={McCarrickTheReckoning} /></Route>
+        <Route path={"/ledger/mccarrick/legal"}><EndgamePageLayout component={McCarrickLegal} /></Route>
+        <Route path={"/ledger/mccarrick/survivors"}><EndgamePageLayout component={McCarrickSurvivors} /></Route>
+        <Route path={"/ledger/mccarrick/responses"}><EndgamePageLayout component={McCarrickResponses} /></Route>
+        <Route path={"/ledger/mccarrick/analysis"}><EndgamePageLayout component={McCarrickAnalysis} /></Route>
+        <Route path={"/ledger/mccarrick/conclusion"}><EndgamePageLayout component={McCarrickConclusion} /></Route>
 
-        {/* Epstein Routes */}
-        <Route path={"/epstein"}><EpsteinPageLayout component={EpsteinHome} /></Route>
+        <Route path={"/ledger/checchio"}><EndgamePageLayout component={CheckchioHome} /></Route>
+        <Route path={"/ledger/checchio/formation"}><EndgamePageLayout component={CheckchioFormation} /></Route>
+        <Route path={"/ledger/checchio/ascent"}><EndgamePageLayout component={CheckchioAscent} /></Route>
+        <Route path={"/ledger/checchio/governance"}><EndgamePageLayout component={CheckchioGovernance} /></Route>
+        <Route path={"/ledger/checchio/controversies"}><EndgamePageLayout component={CheckchioControversies} /></Route>
+        <Route path={"/ledger/checchio/purge"}><EndgamePageLayout component={CheckchioPurge} /></Route>
+        <Route path={"/ledger/checchio/status"}><EndgamePageLayout component={CheckchioStatus} /></Route>
+
+        {/* -------------------------------------------
+            THE VAULT (Appendix 2) - Raw Evidence & Ledgers
+        ------------------------------------------- */}
+        <Route path={"/vault"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
+        <Route path={"/vault/documents"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
+        <Route path={"/vault/finances"}><ChurchBKPageLayout component={ChurchBKDiocesanFinance} /></Route>
+        <Route path={"/church-bk*"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
+        <Route path={"/cathedral"}><PageLayout component={CathedralHome} /></Route>
+        <Route path={"/cathedral*"}><PageLayout component={CathedralHome} /></Route>
 
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
