@@ -73,7 +73,9 @@ const successionNavItems = [
     { id: "4.2", label: "Musical Chairs", path: "/succession/checchio" },
     { id: "4.3", label: "Active Litigations", path: "/succession/cases" },
     { id: "4.4", label: "The 2027 Horizon", path: "/succession/horizon" },
+    { id: "4.5", label: "The Millstone Rises", path: "/succession/epilogue" },
 ];
+
 
 export function SuccessionLayout({ children }: { children: React.ReactNode }) {
     return (

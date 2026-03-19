@@ -2,6 +2,8 @@ import { cn } from "@/lib/utils";
 import React, { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
+
+
 interface NavItem {
     path: string;
     label: string;
@@ -32,9 +34,10 @@ export default function UnifiedLayout({
     }, [location]);
 
     return (
-        <div className={cn(`min-h-screen flex flex-col pt-16`, themeClass)} style={{ background: "var(--background)", color: "var(--foreground)" }}>
+        <div className={cn(`min-h-screen flex flex-col pt-20`, themeClass)} style={{ background: "var(--background)", color: "var(--foreground)" }}>
             {/* Header Section */}
-            <header className="w-full border-b border-border bg-card/50 backdrop-blur-md pt-8 pb-4 px-4 md:px-8 z-40 sticky top-16">
+            <header className="w-full border-b border-border bg-card/50 backdrop-blur-md pt-8 pb-4 px-4 md:px-8 z-40 sticky top-20">
+
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
@@ -68,10 +71,10 @@ export default function UnifiedLayout({
                             return (
                                 <Link key={item.id} href={item.path}>
                                     <div className={cn(
-                                        "flex-shrink-0 py-3 px-6 text-center font-mono text-xs uppercase tracking-widest cursor-pointer transition-all border-r border-border hover:bg-muted/50 last:border-r-0 whitespace-nowrap",
+                                        "flex-shrink-0 py-3 px-6 text-center font-mono text-xs uppercase tracking-widest cursor-pointer transition-all border-r border-border hover:bg-foreground/5 last:border-r-0 whitespace-nowrap",
                                         isActive
-                                            ? "border-b-2 border-b-destructive text-destructive font-bold bg-muted/20"
-                                            : "border-b-2 border-b-transparent text-muted-foreground"
+                                            ? "border-b-2 border-b-destructive text-destructive font-bold bg-foreground/10"
+                                            : "border-b-2 border-b-transparent text-foreground/60 hover:text-foreground"
                                     )}>
                                         <span className="opacity-50 mr-2 text-[9px]">{item.id}</span>
                                         {item.label}

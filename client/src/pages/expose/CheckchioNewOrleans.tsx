@@ -1,171 +1,135 @@
-/* ============================================================
-   THE ARCHITECTURE OF SILENCE — Checchio & New Orleans
-   Bright parchment theme — investigative broadsheet
-   ============================================================ */
+import { JourneyNav } from "@/components/JourneyNav";
+import { ArrowRight, Landmark, MapPin } from "lucide-react";
+
 export default function CheckchioNewOrleans() {
   return (
-    <div className="page-enter max-w-4xl mx-auto px-6 py-10">
-      <div className="exhibit-label">Section VIII · Ecclesiastical Transfers</div>
-      <h1
-        className="text-4xl font-black mb-2 leading-tight"
-        style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
-      >
-        Archbishop Checchio &amp; the New Orleans Transfer
-      </h1>
-      <p className="text-base mb-8" style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
-        Musical Chairs — From Seton Hall Regent to Archbishop of New Orleans · February 11, 2026
-      </p>
+    <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20">
 
-      <div className="pull-quote">
-        "The New Orleans transfer is not a coincidence. It is the network's self-preservation mechanism — moving the problem before accountability can arrive."
-      </div>
-
-      <div className="space-y-5 text-base leading-relaxed mb-8" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
-        <p>
-          Archbishop James Checchio served as a member of Seton Hall University's Board of Regents during
-          the most consequential period in the university's modern history: the release of the Latham Report,
-          the Task Force letters recommending Reilly's removal, and the subsequent election of Reilly as
-          university president. As a regent, Checchio was a member of the governing body that received the
-          Task Force's recommendations — and chose not to act on them.
+      {/* Investigative Header */}
+      <header className="mb-16 border-b-2 border-gold/30 pb-12">
+        <div className="exhibit-label mb-4 uppercase tracking-[0.2em] font-mono text-xs text-gold">The Succession · Special Report</div>
+        <h1 className="text-6xl font-black mb-6 leading-[0.9] tracking-tighter uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
+          The Musical <br />
+          <span className="text-gold italic">Chairs</span>
+        </h1>
+        <p className="text-2xl font-serif italic text-muted-foreground leading-relaxed max-w-3xl">
+          From Seton Hall Regent to the Archdiocese of New Orleans—how the hierarchy relocates the problem days before the truth is scheduled to arrive.
         </p>
-        <p>
-          On February 11, 2026 — as the Nyre litigation reached its critical juncture and the Latham Report
-          was finally being produced under court order — Checchio officially assumed the archepiscopal seat
-          of <strong style={{ color: "var(--ink)" }}>New Orleans</strong>, succeeding Gregory Aymond, who had
-          led the archdiocese into bankruptcy in May 2020 to manage over 500 clergy abuse claims. The timing
-          is precise. The transfer removes Checchio from the jurisdiction of the New Jersey courts, from the
-          reach of the Essex County litigation, and from the institutional accountability that the unsealing
-          of the Latham Report might otherwise impose.
-        </p>
-      </div>
+      </header>
 
-      {/* Checchio's role */}
-      <h2 className="section-heading">Checchio's Role in the Suppression</h2>
-      <div style={{ overflowX: "auto" }} className="mb-8">
-        <table className="forensic-table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Checchio's Role</th>
-              <th>Forensic Significance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ color: "var(--gold)", fontWeight: 600, whiteSpace: "nowrap" }}>2018–2024</td>
-              <td style={{ color: "var(--ink)" }}>Member, Seton Hall Board of Regents</td>
-              <td>Present during Latham Report presentation and Task Force deliberations</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--gold)", fontWeight: 600, whiteSpace: "nowrap" }}>Aug 27, 2019</td>
-              <td style={{ color: "var(--ink)" }}>Regent during Latham Report presentation</td>
-              <td>Received 24,000 pages of findings; report subsequently sealed</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--gold)", fontWeight: 600, whiteSpace: "nowrap" }}>Nov 2019–Feb 2020</td>
-              <td style={{ color: "var(--ink)" }}>Regent during Task Force removal letters</td>
-              <td>Governing body received two formal letters recommending Reilly's removal; took no action</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--gold)", fontWeight: 600, whiteSpace: "nowrap" }}>July 1, 2024</td>
-              <td style={{ color: "var(--ink)" }}>Regent who elected Reilly as president</td>
-              <td style={{ color: "var(--blood)", fontWeight: 600 }}>Voted to install a man documented as unfit to serve</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--gold)", fontWeight: 600, whiteSpace: "nowrap" }}>Feb 11, 2026</td>
-              <td style={{ color: "var(--ink)" }}>Installed as Archbishop of New Orleans</td>
-              <td style={{ color: "var(--blood)", fontWeight: 600 }}>Transfer coincides with Latham Report production and Nyre dismissal</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {/* Narrative Section: The New Orleans Transfer */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="lg:col-span-12 prose-investigative max-w-none">
+          <h2 className="section-heading mb-12">The Calculus of Relocation</h2>
 
-      {/* The Musical Chairs Pattern */}
-      <h2 className="section-heading">The Musical Chairs Pattern — A Systemic Mechanism</h2>
-      <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
-        <p>
-          The transfer of Checchio to New Orleans is not an isolated event. It is the latest iteration
-          of a pattern that has characterized the Catholic Church's response to accountability for decades:
-          when exposure approaches, move the problem. The 12 clergymen identified in the Latham Report
-          were not prosecuted or laicized — they were transferred to other dioceses. Cardinal Tobin,
-          named in the Gibbons Report, was not removed — he was elevated to Archbishop of Newark.
-          Reilly was not removed — he was promoted to the presidency.
-        </p>
-        <p>
-          When asked at a news conference if he would investigate Archbishop Aymond's alleged role in
-          hiding abuse, Checchio replied that he saw <strong style={{ color: "var(--blood)" }}>"no reason"</strong> to
-          do so. This response — from a man who was present on the Seton Hall Board of Regents when the
-          Latham Report was suppressed — is not surprising. It is consistent. The architecture of silence
-          does not collapse when it is transferred to a new jurisdiction. It relocates.
-        </p>
-      </div>
+          <div className="columns-1 md:columns-2 gap-12 space-y-8 text-lg leading-relaxed text-muted-foreground font-serif">
+            <p className="first-letter:text-6xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-foreground">
+              J
+              ames Checchio was more than a bishop; he was a Regent. He sat on the
+              Seton Hall Board during the most consequential period in its modern
+              history. He was in the room on August 27, 2019, when the Latham Report
+              findings were read. He was present when the formal removal letters for
+              Joseph Reilly were received—and ignored.
+            </p>
 
-      {/* New Orleans Bankruptcy */}
-      <h2 className="section-heading">New Orleans Archdiocese Bankruptcy — The Settlement Checchio Inherited</h2>
-      <div style={{ overflowX: "auto" }} className="mb-8">
-        <table className="forensic-table">
-          <thead>
-            <tr>
-              <th>Settlement Component</th>
-              <th>Amount</th>
-              <th>Detail</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ color: "var(--ink)", fontWeight: 600 }}>Base Survivor Fund</td>
-              <td style={{ color: "var(--gold)", fontWeight: 700 }}>$230 Million</td>
-              <td>Approved December 9, 2025</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--ink)", fontWeight: 600 }}>Insurer Contribution</td>
-              <td style={{ color: "var(--gold)", fontWeight: 700 }}>$75 Million</td>
-              <td>Negotiated with Travelers Insurance</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--ink)", fontWeight: 600 }}>Total Compensation</td>
-              <td style={{ color: "var(--gold)", fontWeight: 700 }}>$305 Million</td>
-              <td>For approximately 600 survivors</td>
-            </tr>
-            <tr>
-              <td style={{ color: "var(--ink)", fontWeight: 600 }}>Legal Fees</td>
-              <td style={{ color: "var(--blood)", fontWeight: 700 }}>$50 Million</td>
-              <td>Incurred over five years of Chapter 11 proceedings</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <p>
+              On February 11, 2026—as the 24,000-page Latham Report was finally being
+              produced under New Jersey court order—the "Musical Chairs" mechanism was
+              activated. James Checchio was officially installed as the Archbishop
+              of New Orleans. The timing was surgical.
+            </p>
 
-      {/* Tobin parallel */}
-      <div className="finding-box mb-8">
-        <div className="exhibit-label" style={{ color: "var(--blood-bright)", borderColor: "var(--blood)" }}>
-          The Tobin Parallel — Named in Gibbons Report, Refused to Appear
+            <blockquote className="border-l-4 border-gold pl-8 py-4 my-10 bg-gold/5 not-italic text-foreground">
+              <p className="text-2xl font-bold leading-tight mb-4">
+                "The transfer is not a coincidence. It is the network's self-preservation
+                mechanism—moving the problem before accountability can arrive."
+              </p>
+              <footer className="font-mono text-xs uppercase tracking-widest opacity-60">
+                — Forensic Finding
+              </footer>
+            </blockquote>
+
+            <p>
+              By moving Checchio to Louisiana, the hierarchy achieved a dual victory:
+              they removed a key Seton Hall regent from the immediate jurisdiction
+              of the New Jersey courts, and they placed a veteran of the "Architecture
+              of Silence" at the head of an Archdiocese that had just led the world into the first
+              clerical bankruptcy of the 2020s.
+            </p>
+          </div>
         </div>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
-          Cardinal Joseph Tobin — the current Archbishop of Newark — was named in the Gibbons Report,
-          the first investigation into seminary misconduct. Tobin
-          <strong style={{ color: "var(--ink)" }}> failed to appear before investigators</strong>. Under
-          the university's own protocols, failure to cooperate with an investigation is grounds for
-          immediate termination. This consequence was never applied. Tobin remains the Archbishop of
-          Newark — the ecclesiastical superior of Seton Hall University, the man who presides over
-          the same institution whose governance failures he refused to help investigate. The Checchio
-          transfer and the Tobin non-removal are two expressions of the same institutional logic:
-          accountability is for others.
+      </section>
+
+      {/* Forensic Asset: The Relocation Map */}
+      <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+
+        <header className="mb-12 text-center">
+          <h3 className="font-heading text-3xl mb-2">Relocation Path: NJ → LA</h3>
+          <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Jurisdictional Avoidance Dataset</p>
+        </header>
+
+        <div className="relative h-48 flex items-center justify-center mb-12">
+          <div className="flex flex-col items-center">
+            <Landmark className="w-12 h-12 text-gold mb-2" />
+            <span className="font-mono text-[10px] uppercase text-gold">Seton Hall</span>
+            <span className="text-sm font-bold">Newark, NJ</span>
+          </div>
+          <div className="flex-1 h-px bg-dashed border-t border-dashed border-gold/30 mx-8 relative">
+            <ArrowRight className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-gold animate-pulse" />
+          </div>
+          <div className="flex flex-col items-center">
+            <MapPin className="w-12 h-12 text-blood mb-2" />
+            <span className="font-mono text-[10px] uppercase text-blood">The See</span>
+            <span className="text-sm font-bold">New Orleans, LA</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+          <div className="p-6 bg-white/5 border border-white/10 space-y-4">
+            <h4 className="font-heading text-lg text-gold">Governance Record (NJ)</h4>
+            <ul className="text-sm space-y-2 font-serif text-muted-foreground list-disc pl-4">
+              <li>Voted to elect Joseph Reilly President (July 2024).</li>
+              <li>Ignored Task Force removal recommendations (2019).</li>
+              <li>Oversaw the sealing of the 24,000-page Latham Report.</li>
+            </ul>
+          </div>
+          <div className="p-6 bg-white/5 border border-white/10 space-y-4">
+            <h4 className="font-heading text-lg text-blood">Inherited Settlement (LA)</h4>
+            <div className="space-y-3">
+              <div className="flex justify-between border-b border-white/10 pb-2">
+                <span className="text-xs font-mono uppercase tracking-widest">Base Payout</span>
+                <span className="text-xs font-bold">$230 Million</span>
+              </div>
+              <div className="flex justify-between border-b border-white/10 pb-2">
+                <span className="text-xs font-mono uppercase tracking-widest">Survivors</span>
+                <span className="text-xs font-bold">~600 Claims</span>
+              </div>
+              <p className="text-[10px] italic font-serif text-muted-foreground pt-2">
+                Checchio stated he saw 'no reason' to investigate the prior administration's concealment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Final Connection */}
+      <div className="evidence-box bg-gold/10 text-foreground p-12 rounded-none border-l-4 border-gold shadow-2xl">
+        <div className="exhibit-label text-gold mb-4 uppercase tracking-[0.2em] font-mono text-xs">Conclusion · Relocation Strategy</div>
+        <p className="text-2xl leading-relaxed italic mb-8 font-serif">
+          "The architecture of silence does not collapse when it is transferred to a new
+          jurisdiction. It relocates, and it grows."
+        </p>
+        <p className="text-sm leading-relaxed text-muted-foreground font-serif max-w-2xl">
+          The Checchio transfer is the textbook example of hierarchical self-preservation.
+          As the investigation in New Jersey reaches the level of the Board of Regents,
+          the key players are moved to different see cities, positioned behind the
+          walls of new dioceses and the complexity of Chapter 11 proceedings.
+          The silence remains unbroken; it simply changes zip codes.
         </p>
       </div>
 
-      <div className="evidence-box">
-        <div className="exhibit-label">The Network's Self-Preservation Logic</div>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
-          The appointment of Checchio to lead the post-settlement New Orleans Archdiocese illustrates
-          the self-perpetuating nature of the protectionist network. Officials who managed abuse scandals
-          are not removed — they are transferred to larger jurisdictions, given greater authority, and
-          positioned to manage the next wave of accountability demands. The Archdiocese of New Orleans —
-          itself with its own history of abuse and cover-up — now hosts a man who was present at the
-          highest levels of the Seton Hall suppression apparatus. The architecture of silence does not
-          collapse. It relocates, and it grows.
-        </p>
-      </div>
+      <JourneyNav />
     </div>
   );
 }

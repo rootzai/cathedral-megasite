@@ -69,9 +69,18 @@ export default function TheyKnew() {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative z-10 text-center px-4 max-w-5xl"
         >
+          <div className="mb-6 flex justify-center">
+            <Link href="/">
+              <div className="inline-flex items-center gap-2 group cursor-pointer">
+                <ArrowLeft className="w-4 h-4 text-gold-dim group-hover:text-gold transition-colors" />
+                <span className="font-label text-sm tracking-[0.4em] text-gold-dim group-hover:text-gold uppercase transition-colors">Return to Archway</span>
+              </div>
+            </Link>
+          </div>
           <p className="font-label text-sm md:text-base tracking-[0.4em] text-gold-dim uppercase mb-6">
             SodomHall.com Presents
           </p>
+
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold leading-tight mb-4">
             Seton Hall
           </h1>
@@ -248,6 +257,7 @@ export default function TheyKnew() {
             <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
               The firms and attorneys who defended Seton Hall, conducted investigations, represented the Archdiocese, and now hold the keys to whether justice is served or buried.
             </p>
+
           </motion.div>
 
           {/* Seton Hall's Counsel */}

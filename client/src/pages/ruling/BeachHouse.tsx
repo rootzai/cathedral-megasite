@@ -1,189 +1,201 @@
 import { JourneyNav } from "@/components/JourneyNav";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertTriangle, Bed, Home, MapPin, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { AlertTriangle, Home, MapPin, Users } from "lucide-react";
 
 export default function BeachHouse() {
-  return (<div className="space-y-16 animate-in fade-in duration-1000">
+  return (
+    <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20">
 
-    {/* Hero Section */}
-    <section className="relative border-b border-border pb-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-widest">
-            <Home className="w-3 h-3" />
-            THE EPICENTER OF ABUSE
-          </div>
-          <h1 className="font-heading text-6xl md:text-7xl text-foreground leading-none">
-            The Beach <br />
-            <span className="text-destructive">House</span>
-          </h1>
-          <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl">
-            300 Ocean Avenue, Sea Girt, NJ. For over twenty years, this modest oceanfront property served as the primary grooming ground for Theodore McCarrick.
-          </p>
-        </div>
-        <div className="relative aspect-video bg-zinc-900 rounded-lg border border-border overflow-hidden group">
-          <iframe
-            title="The Beach House Map"
-            className="w-full h-full border-0 absolute inset-0"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=300%20Ocean%20Avenue,%20Sea%20Girt,%20NJ&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          ></iframe>
-          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            <Button
-              variant="secondary"
-              size="sm"
-              className="gap-2 font-mono text-xs uppercase tracking-wider shadow-lg bg-black/80 hover:bg-black text-white hover:text-red-500 border border-red-900/50"
-              onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University,+South+Orange+Ave,+South+Orange,+NJ/300+Ocean+Ave,+Sea+Girt,+NJ+08750", "_blank")}
-            >
-              <MapPin className="w-3 h-3" />
-              Get Directions
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
+      {/* Narrative Hero */}
+      <section className="relative border-b border-border pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-destructive text-xs font-mono uppercase tracking-[0.2em]">
+              <Home className="w-3 h-3" />
+              Forensic Site Analysis
+            </div>
 
-    {/* The System Section */}
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-      <div className="lg:col-span-1 space-y-6">
-        <h2 className="font-heading text-3xl text-foreground">The System</h2>
-        <p className="font-body text-muted-foreground leading-relaxed">
-          McCarrick personally controlled access. The routine was identical for 20+ years. Seminarians were told: "If you don't go, you'll never be ordained."
-        </p>
-        <div className="space-y-4 pt-4">
-          <div className="flex items-start gap-4">
-            <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-sm shrink-0">1</div>
-            <div>
-              <h4 className="font-heading text-lg text-foreground">The Invitation</h4>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Thursday/Friday afternoon pickup. "Archbishop's retreat."</p>
+            <h1 className="font-heading text-7xl md:text-8xl text-foreground leading-[0.9] tracking-tighter">
+              The Ocean <br />
+              <span className="text-destructive italic underline decoration-destructive/30 underline-offset-8">Avenue</span>
+            </h1>
+
+            <div className="prose-investigative text-xl leading-relaxed text-muted-foreground font-serif italic">
+              "300 Ocean Avenue was not a retreat. It was a laboratory of coercion—a quiet, salt-aired house where the hierarchy of the Church was used to dismantle the boundaries of the young."
             </div>
           </div>
-          <div className="flex items-start gap-4">
-            <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-sm shrink-0">2</div>
-            <div>
-              <h4 className="font-heading text-lg text-foreground">The Assignment</h4>
-              <p className="font-mono text-xs text-muted-foreground mt-1">"There are only four beds, so two of you will have to share."</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center text-destructive font-bold text-sm shrink-0">3</div>
-            <div>
-              <h4 className="font-heading text-lg text-foreground">The "Cuddle"</h4>
-              <p className="font-mono text-xs text-muted-foreground mt-1">Forced bed-sharing. Unwanted physical contact. Grooming.</p>
+
+          <div className="space-y-6">
+            <div className="relative aspect-video bg-zinc-950 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
+              <iframe
+                title="The Beach House Map"
+                className="w-full h-full border-0 absolute inset-0 opacity-40 mix-blend-screen"
+                loading="lazy"
+                allowFullScreen
+                src="https://maps.google.com/maps?q=300%20Ocean%20Avenue,%20Sea%20Girt,%20NJ&t=k&z=17&ie=UTF8&iwloc=&output=embed"
+              ></iframe>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-white/60">
+                  Coordinates: 40.1311° N, 74.0315° W
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2 font-mono text-[10px] uppercase tracking-widest bg-black/50 border-destructive/50 text-white hover:bg-destructive hover:text-white transition-all"
+                  onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University/300+Ocean+Ave,+Sea+Girt,+NJ", "_blank")}
+                >
+                  <MapPin className="w-3 h-3" />
+                  View Route
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Floor Plan Visualization */}
-      <div className="lg:col-span-2">
-        <Card className="bg-card border-border h-full">
-          <CardHeader>
-            <CardTitle className="font-heading text-xl flex items-center gap-2">
-              <Bed className="w-5 h-5 text-destructive" />
-              The Layout of Coercion
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {/* Bedroom 1 */}
-              <div className="aspect-square bg-zinc-900/50 border border-border rounded p-4 flex flex-col justify-between">
-                <span className="font-mono text-xs text-muted-foreground uppercase">Bedroom 1</span>
-                <div className="text-center">
-                  <Users className="w-8 h-8 text-foreground mx-auto mb-2" />
-                  <span className="font-heading text-sm text-foreground">McCarrick</span>
-                </div>
-              </div>
+      {/* The Atlantic Reconstruction */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="lg:col-span-12 prose-investigative max-w-none">
+          <h2 className="section-heading mb-12">The Ritual of the Weekend</h2>
 
-              {/* Bedroom 2 */}
-              <div className="aspect-square bg-zinc-900/50 border border-border rounded p-4 flex flex-col justify-between">
-                <span className="font-mono text-xs text-muted-foreground uppercase">Bedroom 2</span>
-                <div className="text-center">
-                  <Users className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <span className="font-heading text-sm text-muted-foreground">Secretary</span>
-                </div>
-              </div>
+          <div className="columns-1 md:columns-2 gap-12 space-y-8 text-lg leading-relaxed text-muted-foreground font-serif">
+            <p className="first-letter:text-6xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-foreground">
+              T
+              he drive began in late afternoon sunlight, usually on a Thursday or Friday.
+              The car—often driven by one of the "nephews"—would wind its way south from
+              the heavy gothic architectures of Newark and South Orange toward the coastal
+              anonymity of Sea Girt. Theodore McCarrick sat in the front seat, a prince
+              of the Church shedding his vestments for the casual affect of a mentor.
+              To the seminarians in the back, the invitation was the ultimate mark of
+              favor—a weekend at the Archbishop’s private oceanfront sanctuary.
+            </p>
 
-              {/* Bedroom 3 */}
-              <div className="aspect-square bg-zinc-900/50 border border-border rounded p-4 flex flex-col justify-between">
-                <span className="font-mono text-xs text-muted-foreground uppercase">Bedroom 3</span>
-                <div className="text-center">
-                  <Users className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <span className="font-heading text-sm text-muted-foreground">Guest / Priest</span>
-                </div>
-              </div>
+            <p>
+              But the favor was a cage. The ritual at 300 Ocean Avenue was as consistent
+              as the tide. It began with pizza and beer—a calculated leveling of roles
+              designed to blur the line between spiritual father and casual peer. As
+              night fell, the Archbishop would orchestrate the sleeping arrangements.
+              Despite the house’s multiple bedrooms, there was always a "lack of space."
+              The decree was issued with paternal finality: two of the young men would
+              have to share a bed. Often, that bed was in the small secondary room on
+              the second floor—or, most chillingly, in the Archbishop's own quarters.
+            </p>
 
-              {/* Bedroom 4 */}
-              <div className="aspect-square bg-zinc-900/50 border border-border rounded p-4 flex flex-col justify-between">
-                <span className="font-mono text-xs text-muted-foreground uppercase">Bedroom 4</span>
-                <div className="text-center">
-                  <Users className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <span className="font-heading text-sm text-muted-foreground">Guest / Priest</span>
-                </div>
-              </div>
+            <blockquote className="border-l-4 border-destructive pl-8 py-4 my-10 bg-destructive/5 not-italic text-foreground">
+              <p className="text-2xl font-bold leading-tight mb-4">
+                "If you don't go, you'll never be ordained."
+              </p>
+              <footer className="font-mono text-xs uppercase tracking-widest opacity-60">
+                — Recurring testimony from survivors of the Sea Girt weekends
+              </footer>
+            </blockquote>
 
-              {/* Bedroom 5 - The Trap */}
-              <div className="col-span-2 md:col-span-2 aspect-[2/1] bg-destructive/5 border border-destructive/30 rounded p-6 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-2">
-                  <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
-                </div>
-                <span className="font-mono text-xs text-destructive uppercase tracking-widest">Bedroom 5: "The Trap"</span>
-                <div className="flex items-end justify-center gap-0">
-                  <div className="flex flex-col items-center flex-1">
-                    <div className="w-16 h-24 border-2 border-dashed border-r border-destructive/50 rounded-l mx-auto mb-2 bg-destructive/10" />
-                    <span className="font-mono text-[10px] text-destructive text-center">Single Bed</span>
-                  </div>
-                  <div className="flex flex-col items-center flex-1">
-                    <div className="w-16 h-24 border-2 border-dashed border-l border-destructive/50 rounded-r mx-auto mb-2 bg-destructive/10" />
-                    <span className="font-mono text-[10px] text-destructive text-center">Twin Bed</span>
-                  </div>
-                </div>
-                <p className="text-center font-body text-sm text-destructive mt-4">
-                  "Pushed together." The site of the abuse.
-                </p>
-              </div>
+            <p>
+              What followed was what survivors came to call "the cuddle"—a sanitized
+              euphemism for a brutal violation of boundaries. Under the guise of
+              mentorship, McCarrick would engage in unwanted physical contact,
+              leveraging his absolute power over their futures to enforce their
+              silence. To object was to risk a vocation; to flee was to
+              confront the absolute weight of the Church's hierarchy. In the
+              quiet of Sea Girt, the ocean provided the only witness.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* High-Fidelity Floor Plan */}
+      <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-destructive to-transparent" />
+
+        <header className="mb-12 text-center">
+          <h3 className="font-heading text-3xl mb-2">The Architecture of Coercion</h3>
+          <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Reconstruction of the 2nd Floor Sleeping Quarters</p>
+        </header>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="p-6 border border-border bg-black/40 flex flex-col justify-between aspect-square group">
+            <span className="font-mono text-[10px] text-muted-foreground uppercase">Room A</span>
+            <div className="text-center">
+              <Users className="w-6 h-6 text-destructive/40 mx-auto mb-3 group-hover:text-destructive transition-colors" />
+              <div className="font-heading text-sm text-foreground">The Archbishop</div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
+            <p className="font-mono text-[9px] text-muted-foreground leading-tight">Master Suite. Site of the most frequent 'Nephew' assignments.</p>
+          </div>
 
-    {/* Who Knew Section */}
-    <section className="space-y-8">
-      <div className="flex items-center gap-4">
-        <div className="h-px flex-1 bg-border" />
-        <h2 className="font-heading text-3xl text-foreground flex items-center gap-2">
-          Who Knew?
-        </h2>
-        <div className="h-px flex-1 bg-border" />
-      </div>
+          <div className="p-6 border border-border bg-black/40 flex flex-col justify-between aspect-square group">
+            <span className="font-mono text-[10px] text-muted-foreground uppercase">Room B</span>
+            <div className="text-center">
+              <Users className="w-6 h-6 text-muted-foreground/20 mx-auto mb-3" />
+              <div className="font-heading text-sm text-muted-foreground/60 tracking-widest">SECRETARY</div>
+            </div>
+            <p className="font-mono text-[9px] text-muted-foreground leading-tight">Reserved for Reilly or other assistants. The room of the silent witness.</p>
+          </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { name: "Msgr. Joseph Reilly", role: "Seminarian / Secretary", year: "1994", detail: "Personally avoided staying overnight after hearing rumors." },
-          { name: "Bishop Arthur Serratelli", role: "Rector, St. Andrew's", year: "1997-2000", detail: "Heard direct complaints from seminarians." },
-          { name: "Msgr. Robert Harahan", role: "McCarrick Secretary", year: "1986-1995", detail: "Scheduled seminarians for weekends." },
-          { name: "Msgr. John Doran", role: "ICS Faculty", year: "1990s", detail: "Multiple seminarians confided in him." },
-          { name: "Msgr. Gerard McCarren", role: "Seminarian", year: "1991", detail: "Invited once, declined." },
-          { name: "Cardinal Justin Rigali", role: "Vatican Official", year: "1999", detail: "Received anonymous letter describing the bed-sharing." },
-        ].map((person, i) => (
-          <Card key={i} className="bg-card border-border">
-            <CardHeader>
-              <Badge variant="outline" className="w-fit mb-2 font-mono text-xs">{person.year}</Badge>
-              <CardTitle className="font-heading text-xl">{person.name}</CardTitle>
-              <p className="font-mono text-xs text-muted-foreground">{person.role}</p>
-            </CardHeader>
-            <CardContent>
-              <p className="font-body text-sm text-muted-foreground">{person.detail}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
-    <JourneyNav />
-  </div>);
+          <div className="col-span-2 p-8 border border-destructive/20 bg-destructive/[0.02] flex flex-col justify-between relative overflow-hidden shadow-inner">
+            <div className="absolute top-2 right-2 flex gap-1">
+              <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
+            </div>
+            <div className="flex justify-between items-start mb-6">
+              <span className="font-mono text-[10px] text-destructive uppercase tracking-widest">Room C: "The Overflow"</span>
+              <div className="h-px flex-1 bg-destructive/20 mx-4 mt-2" />
+            </div>
+            <div className="flex justify-center gap-4 mb-8">
+              <div className="w-20 h-32 border-2 border-dashed border-destructive/40 bg-destructive/10 rounded-sm" />
+              <div className="w-20 h-32 border-2 border-dashed border-destructive/40 bg-destructive/10 rounded-sm" />
+            </div>
+            <p className="font-serif text-sm italic text-destructive/80 text-center leading-relaxed">
+              "Pushed together." The calculated 'lack of space' that turned a beach house into a grooming facility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Gallery of Silence */}
+      <section className="space-y-12">
+        <header className="flex items-center gap-6">
+          <h2 className="font-heading text-4xl text-foreground shrink-0 uppercase tracking-tighter">The Gallery of Silence</h2>
+          <div className="h-px flex-1 bg-border" />
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              name: "Msgr. Joseph Reilly",
+              role: "The Gatekeeper",
+              context: "1987-1994",
+              narrative: "Claims to have visited the house exactly 'once' during a decade of service as McCarrick's right hand. An implausible admission given the role's requirement for constant proximity."
+            },
+            {
+              name: "Msgr. Robert Harahan",
+              role: "The Administrator",
+              context: "1986-1995",
+              narrative: "Responsible for the logistical scheduling of the 'Nephews'. Testimony suggests he were fully aware of the bed-sharing mandates as a standard operating procedure."
+            },
+            {
+              name: "Bishop James Checchio",
+              role: "The Witness",
+              context: "2019 Task Force",
+              narrative: "As a member of the Regent Task Force, he heard the first-hand accounts of Sea Girt survivors. He chose to sign the reward letters for Tobin instead of the criminal referrals."
+            }
+          ].map((vignette, i) => (
+            <Card key={i} className="bg-zinc-950 border-border group hover:border-destructive/50 transition-all duration-500 shadow-xl rounded-none">
+              <CardContent className="p-8 space-y-6">
+                <div className="flex justify-between items-start">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-destructive">{vignette.context}</div>
+                  <Users className="w-4 h-4 text-muted-foreground group-hover:text-destructive transition-colors" />
+                </div>
+                <h4 className="font-heading text-2xl text-foreground group-hover:text-destructive transition-colors">{vignette.name}</h4>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-b border-border pb-4">{vignette.role}</div>
+                <p className="font-serif text-base leading-relaxed text-muted-foreground italic">"{vignette.narrative}"</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <JourneyNav />
+    </div>
+  );
 }

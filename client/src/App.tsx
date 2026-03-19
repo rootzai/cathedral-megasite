@@ -102,6 +102,14 @@ const Overview = React.lazy(() => import("./pages/expose/Overview"));
 const RabnerExhibits = React.lazy(() => import("./pages/expose/RabnerExhibits"));
 const ReillyProtection = React.lazy(() => import("./pages/expose/ReillyProtection"));
 const WhistleblowerUnmasking = React.lazy(() => import("./pages/expose/WhistleblowerUnmasking"));
+const SuccessionEpilogue = React.lazy(() => import("./pages/SuccessionEpilogue"));
+const OpinionsHub = React.lazy(() => import("./pages/opinions/Hub"));
+const NoonanEssay = React.lazy(() => import("./pages/opinions/Noonan"));
+const CannonEssay = React.lazy(() => import("./pages/opinions/Cannon"));
+const MatthewsEssay = React.lazy(() => import("./pages/opinions/Matthews"));
+const StephensEssay = React.lazy(() => import("./pages/opinions/Stephens"));
+
+
 
 // Epstein Pages
 import EpsteinLayout from "./components/EpsteinLayout";
@@ -118,16 +126,15 @@ import "./index.css";
 function PageLayout({ component: Component, theme = "theme-cathedral" }: { component: React.ComponentType; theme?: string }) {
   return (
     <div className={`${theme} min-h-screen bg-background text-foreground transition-colors duration-500`}>
-      <MegaNavigation />
       <Component />
     </div>
   );
 }
 
+
 function EndgamePageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
     <div className="theme-endgame min-h-screen bg-background text-foreground transition-colors duration-500">
-      <MegaNavigation />
       <EndgameLayout>
         <Component />
       </EndgameLayout>
@@ -135,16 +142,17 @@ function EndgamePageLayout({ component: Component }: { component: React.Componen
   );
 }
 
+
 function ChurchBKPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
     <div className="theme-bankruptcy min-h-screen bg-background text-foreground transition-colors duration-500">
-      <MegaNavigation />
       <ChurchBKLayout>
         <Component />
       </ChurchBKLayout>
     </div>
   );
 }
+
 
 function RulingPageLayout({ component: Component }: { component: React.ComponentType }) {
   return (
@@ -223,12 +231,13 @@ function Router() {
         <Route path={"/succession/checchio"}><SuccessionLayout><CheckchioNewOrleans /></SuccessionLayout></Route>
         <Route path={"/succession/cases"}><SuccessionLayout><ChurchBKActiveCaseDossiers /></SuccessionLayout></Route>
         <Route path={"/succession/horizon"}><SuccessionLayout><ChurchBKGlobalChurchMetrics /></SuccessionLayout></Route>
+        <Route path={"/succession/epilogue"}><SuccessionLayout><SuccessionEpilogue /></SuccessionLayout></Route>
 
         {/* -------------------------------------------
-            THE LEDGER (Appendix 1) - Reusing Endgame Framework
+            THE LEDGER (Appendix 1) - The People Index
         ------------------------------------------- */}
-        <Route path={"/ledger"}><EndgamePageLayout component={EndgamePortal} /></Route>
-        <Route path={"/endgame*"}><EndgamePageLayout component={EndgamePortal} /></Route>
+        <Route path={"/ledger"}><PageLayout component={TheyKnew} theme="theme-theyknew" /></Route>
+        <Route path={"/endgame"}><PageLayout component={TheyKnew} theme="theme-theyknew" /></Route>
 
         <Route path={"/ledger/martin"}><EndgamePageLayout component={MartinHome} /></Route>
         <Route path={"/ledger/martin/crimes"}><EndgamePageLayout component={MartinCrimes} /></Route>
@@ -248,6 +257,16 @@ function Router() {
         <Route path={"/ledger/mccarrick/the-rise"}><EndgamePageLayout component={McCarrickTheRise} /></Route>
         <Route path={"/ledger/mccarrick/the-regime"}><EndgamePageLayout component={McCarrickTheRegime} /></Route>
         <Route path={"/ledger/mccarrick/network"}><EndgamePageLayout component={McCarrickNetwork} /></Route>
+
+        {/* -------------------------------------------
+            THE OPINION SECTION (Act 5)
+        ------------------------------------------- */}
+        <Route path={"/opinion"}><PageLayout component={OpinionsHub} theme="theme-opinion" /></Route>
+        <Route path={"/opinion/noonan"}><PageLayout component={NoonanEssay} theme="theme-opinion" /></Route>
+        <Route path={"/opinion/cannon"}><PageLayout component={CannonEssay} theme="theme-opinion" /></Route>
+        <Route path={"/opinion/matthews"}><PageLayout component={MatthewsEssay} theme="theme-opinion" /></Route>
+        <Route path={"/opinion/stephens"}><PageLayout component={StephensEssay} theme="theme-opinion" /></Route>
+
         <Route path={"/ledger/mccarrick/warnings"}><EndgamePageLayout component={McCarrickWarnings} /></Route>
         <Route path={"/ledger/mccarrick/mechanisms"}><EndgamePageLayout component={McCarrickMechanisms} /></Route>
         <Route path={"/ledger/mccarrick/seton-hall"}><EndgamePageLayout component={McCarrickSetonHall} /></Route>
@@ -273,6 +292,15 @@ function Router() {
         <Route path={"/vault"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
         <Route path={"/vault/documents"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
         <Route path={"/vault/finances"}><ChurchBKPageLayout component={ChurchBKDiocesanFinance} /></Route>
+        <Route path={"/vault/the-corporate-veil"}><ChurchBKPageLayout component={ChurchBKTheCorporateVeil} /></Route>
+        <Route path={"/vault/active-case-dossiers"}><ChurchBKPageLayout component={ChurchBKActiveCaseDossiers} /></Route>
+        <Route path={"/vault/creditor-committee-portal"}><ChurchBKPageLayout component={ChurchBKCreditorCommitteePortal} /></Route>
+        <Route path={"/vault/financial-operating-model"}><ChurchBKPageLayout component={ChurchBKFinancialModel} /></Route>
+        <Route path={"/vault/diocesan-finance"}><ChurchBKPageLayout component={ChurchBKDiocesanFinance} /></Route>
+        <Route path={"/vault/cardinalate-mccarrick"}><ChurchBKPageLayout component={ChurchBKCardinalateAndMcCarrick} /></Route>
+        <Route path={"/vault/institutional-structure"}><ChurchBKPageLayout component={ChurchBKInstitutionalStructure} /></Route>
+        <Route path={"/vault/stakeholder-analysis"}><ChurchBKPageLayout component={ChurchBKStakeholderAnalysis} /></Route>
+        <Route path={"/vault/global-church-metrics"}><ChurchBKPageLayout component={ChurchBKGlobalChurchMetrics} /></Route>
         <Route path={"/church-bk*"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
         <Route path={"/cathedral"}><PageLayout component={CathedralHome} /></Route>
         <Route path={"/cathedral*"}><PageLayout component={CathedralHome} /></Route>

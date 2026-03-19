@@ -1,28 +1,4 @@
-import { Link, useLocation } from "wouter";
-import { cn } from "@/lib/utils";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { 
-  BarChart3, 
-  BookOpen, 
-  Globe, 
-  Landmark, 
-  Users, 
-  Menu,
-  X,
-  Wallet,
-  Scale,
-  DollarSign,
-  Crown,
-  Network,
-  Shield,
-  FileText,
-  Search
-} from "lucide-react";
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Input } from "@/components/ui/input";
 import {
   CommandDialog,
   CommandEmpty,
@@ -31,6 +7,26 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import {
+  BarChart3,
+  Crown,
+  DollarSign,
+  FileText,
+  Globe,
+  Landmark,
+  Menu,
+  Scale,
+  Search,
+  Shield,
+  Users,
+  Wallet
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "wouter";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -53,38 +49,40 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   const navItems = [
-    { href: "/church-bk", label: "Executive Summary", icon: BarChart3 },
-    { href: "/church-bk/the-corporate-veil", label: "The Corporate Veil", icon: Shield },
-    { href: "/church-bk/active-case-dossiers", label: "Active Case Dossiers", icon: Scale },
-    { href: "/church-bk/document-library", label: "Document Library", icon: FileText },
-    { href: "/church-bk/creditor-committee-portal", label: "Creditor Committee Portal", icon: Users },
-    { href: "/church-bk/financial-operating-model", label: "US Financial Model", icon: Wallet },
-    { href: "/church-bk/diocesan-finance", label: "Diocesan Intelligence", icon: DollarSign },
-    { href: "/church-bk/cardinalate-mccarrick", label: "The Cardinalate & McCarrick", icon: Crown },
-    { href: "/church-bk/institutional-structure", label: "Institutional Structure", icon: Landmark },
-    { href: "/church-bk/stakeholder-analysis", label: "Stakeholder Analysis", icon: Users },
-    { href: "/church-bk/global-church-metrics", label: "Global Church Metrics", icon: Globe },
+    { href: "/vault", label: "Executive Summary", icon: BarChart3 },
+    { href: "/vault/the-corporate-veil", label: "The Corporate Veil", icon: Shield },
+    { href: "/vault/active-case-dossiers", label: "Active Case Dossiers", icon: Scale },
+    { href: "/vault/documents", label: "Document Library", icon: FileText },
+    { href: "/vault/creditor-committee-portal", label: "Creditor Committee Portal", icon: Users },
+    { href: "/vault/financial-operating-model", label: "US Financial Model", icon: Wallet },
+    { href: "/vault/diocesan-finance", label: "Diocesan Intelligence", icon: DollarSign },
+    { href: "/vault/cardinalate-mccarrick", label: "The Cardinalate & McCarrick", icon: Crown },
+    { href: "/vault/institutional-structure", label: "Institutional Structure", icon: Landmark },
+    { href: "/vault/stakeholder-analysis", label: "Stakeholder Analysis", icon: Users },
+    { href: "/vault/global-church-metrics", label: "Global Church Metrics", icon: Globe },
   ];
 
   const NavContent = () => (
     <div className="flex flex-col h-full bg-sidebar text-sidebar-foreground border-r border-sidebar-border">
       <div className="p-6">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-8 bg-accent rounded-none flex items-center justify-center">
-            <span className="text-accent-foreground font-serif font-bold text-xl">C</span>
+        <Link href="/">
+          <div className="flex items-center gap-3 mb-2 cursor-pointer group">
+            <div className="w-8 h-8 bg-accent rounded-none flex items-center justify-center transition-transform group-hover:scale-105">
+              <span className="text-accent-foreground font-serif font-bold text-xl">V</span>
+            </div>
+            <h1 className="font-serif font-bold text-2xl tracking-tight leading-none text-foreground group-hover:text-accent transition-colors">
+              THE<br />VAULT
+            </h1>
           </div>
-          <h1 className="font-serif font-bold text-lg tracking-tight leading-none">
-            CATHOLIC<br/>CHURCH<br/>ACADEMY
-          </h1>
-        </div>
-        <p className="text-xs text-muted-foreground mt-2 uppercase tracking-widest">
-          Global Analytics Report
+        </Link>
+        <p className="text-xs text-muted-foreground mt-2 uppercase tracking-widest font-mono">
+          Raw Evidence Depository
         </p>
       </div>
-      
+
       <div className="px-4 mb-4">
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           className="w-full justify-start text-muted-foreground text-xs h-9"
           onClick={() => setOpen(true)}
         >
@@ -97,7 +95,7 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       <Separator className="bg-sidebar-border opacity-50" />
-      
+
       <ScrollArea className="flex-1 py-4">
         <nav className="px-4 space-y-1">
           {navItems.map((item) => {
@@ -107,8 +105,8 @@ export default function Layout({ children }: LayoutProps) {
                 <div
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors cursor-pointer group",
-                    isActive 
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground border-l-2 border-accent pl-[10px]" 
+                    isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground border-l-2 border-accent pl-[10px]"
                       : "text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/50"
                   )}
                 >
@@ -122,10 +120,15 @@ export default function Layout({ children }: LayoutProps) {
       </ScrollArea>
 
       <div className="p-6 mt-auto border-t border-sidebar-border bg-sidebar-accent/10">
+        <Link href="/">
+          <div className="font-mono text-xs text-muted-foreground hover:text-foreground cursor-pointer flex items-center gap-2 mb-4 border border-sidebar-border p-2 justify-center rounded-sm transition-colors hover:bg-sidebar-accent/50">
+            ← Return to Archway
+          </div>
+        </Link>
         <div className="text-xs text-muted-foreground">
-          <p className="font-semibold mb-1 text-foreground">Report Status: FINAL</p>
-          <p>Last Updated: Dec 2025</p>
-          <p className="mt-2 opacity-70">Confidential & Proprietary</p>
+          <p className="font-semibold mb-1 text-foreground">Archive Status: UNSEALED</p>
+          <p>Index: Sodom Hall v7.3</p>
+          <p className="mt-2 opacity-70">Sourced from Public Records</p>
         </div>
       </div>
     </div>
@@ -170,11 +173,15 @@ export default function Layout({ children }: LayoutProps) {
             ))}
           </CommandGroup>
           <CommandGroup heading="Quick Actions">
-            <CommandItem onSelect={() => { setLocation("/document-library"); setOpen(false); }}>
+            <CommandItem onSelect={() => { setLocation("/"); setOpen(false); }}>
+              <Menu className="mr-2 h-4 w-4" />
+              <span>Return to Archway (Home)</span>
+            </CommandItem>
+            <CommandItem onSelect={() => { setLocation("/vault/documents"); setOpen(false); }}>
               <FileText className="mr-2 h-4 w-4" />
               <span>Browse Court Filings</span>
             </CommandItem>
-            <CommandItem onSelect={() => { setLocation("/active-case-dossiers"); setOpen(false); }}>
+            <CommandItem onSelect={() => { setLocation("/vault/active-case-dossiers"); setOpen(false); }}>
               <Scale className="mr-2 h-4 w-4" />
               <span>View Bankruptcy Map</span>
             </CommandItem>
@@ -187,7 +194,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="flex-1 container max-w-5xl py-8 md:py-12 px-4 md:px-8 animate-in fade-in duration-500">
           {children}
         </div>
-        
+
         <footer className="border-t border-border py-6 mt-auto bg-muted/30">
           <div className="container max-w-5xl px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
             <p>© 2025 Catholic Church Academy. All Rights Reserved.</p>

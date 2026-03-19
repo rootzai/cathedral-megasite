@@ -15,50 +15,50 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   const isReilly = location.includes('/reilly');
 
   const mccarrickItems = [
-    { href: "/endgame/mccarrick", label: "01. INTRODUCTION", id: "01" },
-    { href: "/endgame/mccarrick/background", label: "02. BACKGROUND", id: "02" },
-    { href: "/endgame/mccarrick/profile", label: "03. PROFILE", id: "03" },
-    { href: "/endgame/mccarrick/the-rise", label: "04. THE RISE", id: "04" },
-    { href: "/endgame/mccarrick/the-regime", label: "05. THE REGIME", id: "05" },
-    { href: "/endgame/mccarrick/network", label: "06. THE NETWORK", id: "06" },
-    { href: "/endgame/mccarrick/warnings", label: "07. WARNINGS IGNORED", id: "07" },
-    { href: "/endgame/mccarrick/mechanisms", label: "08. MECHANISMS", id: "08" },
-    { href: "/endgame/mccarrick/seton-hall", label: "09. SETON HALL", id: "09" },
-    { href: "/endgame/mccarrick/downfall", label: "10. DOWNFALL", id: "10" },
-    { href: "/endgame/mccarrick/the-reckoning", label: "11. THE RECKONING", id: "11" },
-    { href: "/endgame/mccarrick/legal", label: "12. LEGAL ACTIONS", id: "12" },
-    { href: "/endgame/mccarrick/survivors", label: "13. SURVIVORS", id: "13" },
-    { href: "/endgame/mccarrick/responses", label: "14. RESPONSES", id: "14" },
-    { href: "/endgame/mccarrick/analysis", label: "15. ANALYSIS", id: "15" },
-    { href: "/endgame/mccarrick/conclusion", label: "16. CONCLUSION", id: "16" },
+    { href: "/ledger/mccarrick", label: "01. INTRODUCTION", id: "01" },
+    { href: "/ledger/mccarrick/background", label: "02. BACKGROUND", id: "02" },
+    { href: "/ledger/mccarrick/profile", label: "03. PROFILE", id: "03" },
+    { href: "/ledger/mccarrick/the-rise", label: "04. THE RISE", id: "04" },
+    { href: "/ledger/mccarrick/the-regime", label: "05. THE REGIME", id: "05" },
+    { href: "/ledger/mccarrick/network", label: "06. THE NETWORK", id: "06" },
+    { href: "/ledger/mccarrick/warnings", label: "07. WARNINGS IGNORED", id: "07" },
+    { href: "/ledger/mccarrick/mechanisms", label: "08. MECHANISMS", id: "08" },
+    { href: "/ledger/mccarrick/seton-hall", label: "09. SETON HALL", id: "09" },
+    { href: "/ledger/mccarrick/downfall", label: "10. DOWNFALL", id: "10" },
+    { href: "/ledger/mccarrick/the-reckoning", label: "11. THE RECKONING", id: "11" },
+    { href: "/ledger/mccarrick/legal", label: "12. LEGAL ACTIONS", id: "12" },
+    { href: "/ledger/mccarrick/survivors", label: "13. SURVIVORS", id: "13" },
+    { href: "/ledger/mccarrick/responses", label: "14. RESPONSES", id: "14" },
+    { href: "/ledger/mccarrick/analysis", label: "15. ANALYSIS", id: "15" },
+    { href: "/ledger/mccarrick/conclusion", label: "16. CONCLUSION", id: "16" },
   ];
 
   const checchioItems = [
-    { href: "/endgame/checchio", label: "01. INTRODUCTION", id: "01" },
-    { href: "/endgame/checchio/formation", label: "02. FORMATION", id: "02" },
-    { href: "/endgame/checchio/ascent", label: "03. THE ASCENT", id: "03" },
-    { href: "/endgame/checchio/governance", label: "04. GOVERNANCE", id: "04" },
-    { href: "/endgame/checchio/controversies", label: "05. CONTROVERSIES", id: "05" },
-    { href: "/endgame/checchio/purge", label: "06. THE PURGE", id: "06" },
-    { href: "/endgame/checchio/status", label: "07. CURRENT STATUS", id: "07" },
+    { href: "/ledger/checchio", label: "01. INTRODUCTION", id: "01" },
+    { href: "/ledger/checchio/formation", label: "02. FORMATION", id: "02" },
+    { href: "/ledger/checchio/ascent", label: "03. THE ASCENT", id: "03" },
+    { href: "/ledger/checchio/governance", label: "04. GOVERNANCE", id: "04" },
+    { href: "/ledger/checchio/controversies", label: "05. CONTROVERSIES", id: "05" },
+    { href: "/ledger/checchio/purge", label: "06. THE PURGE", id: "06" },
+    { href: "/ledger/checchio/status", label: "07. CURRENT STATUS", id: "07" },
   ];
 
   const martinItems = [
-    { href: "/endgame/martin", label: "01. THE CASE OF KENNETH MARTIN", id: "01" },
-    { href: "/endgame/martin/crimes", label: "02. THE INCIDENT", id: "02" },
-    { href: "/endgame/martin/launder", label: "03. THE LAUNDER", id: "03" },
-    { href: "/endgame/martin/chicago", label: "04. COMPLICITY", id: "04" }
+    { href: "/ledger/martin", label: "01. THE CASE OF KENNETH MARTIN", id: "01" },
+    { href: "/ledger/martin/crimes", label: "02. THE INCIDENT", id: "02" },
+    { href: "/ledger/martin/launder", label: "03. THE LAUNDER", id: "03" },
+    { href: "/ledger/martin/chicago", label: "04. COMPLICITY", id: "04" }
   ];
 
   const lorenzoItems = [
-    { href: "/endgame/lorenzo", label: "01. THE CASE OF ELIAS LORENZO", id: "01" },
-    { href: "/endgame/lorenzo/expulsion", label: "02. THE EXPULSION", id: "02" },
-    { href: "/endgame/lorenzo/rehabilitation", label: "03. REHABILITATION", id: "03" },
-    { href: "/endgame/lorenzo/elevation", label: "04. THE ELEVATION", id: "04" }
+    { href: "/ledger/lorenzo", label: "01. THE CASE OF ELIAS LORENZO", id: "01" },
+    { href: "/ledger/lorenzo/expulsion", label: "02. THE EXPULSION", id: "02" },
+    { href: "/ledger/lorenzo/rehabilitation", label: "03. REHABILITATION", id: "03" },
+    { href: "/ledger/lorenzo/elevation", label: "04. THE ELEVATION", id: "04" }
   ];
 
   const reillyItems = [
-    { href: "/endgame/reilly", label: "01. FACE OF IMPUNITY", id: "01" }
+    { href: "/ledger/reilly", label: "01. FACE OF IMPUNITY", id: "01" }
   ];
 
   let navItems = mccarrickItems;
@@ -90,7 +90,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
       {/* Sidebar Navigation */}
       <aside className="w-64 fixed h-full border-r border-border bg-sidebar hidden lg:flex flex-col z-50">
         <div className="p-4 border-b border-border flex flex-col items-center">
-          <Link href="/cathedral">
+          <Link href="/">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
               <SmartImage
                 src="/assets/sodom-hall-logo.png"
@@ -109,7 +109,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
         {/* Section Toggle */}
         <div className="flex border-b border-border w-full overflow-x-auto scrollbar-thin">
-          <Link href="/endgame/mccarrick">
+          <Link href="/ledger/mccarrick">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly
@@ -119,7 +119,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
               McCarrick
             </div>
           </Link>
-          <Link href="/endgame/checchio">
+          <Link href="/ledger/checchio">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isChecchio
@@ -129,7 +129,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
               Checchio
             </div>
           </Link>
-          <Link href="/endgame/reilly">
+          <Link href="/ledger/reilly">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isReilly
@@ -139,7 +139,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
               Reilly
             </div>
           </Link>
-          <Link href="/endgame/martin">
+          <Link href="/ledger/martin">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isMartin
@@ -149,7 +149,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
               Martin
             </div>
           </Link>
-          <Link href="/endgame/lorenzo">
+          <Link href="/ledger/lorenzo">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isLorenzo
@@ -187,10 +187,15 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           })}
         </nav>
 
-        <div className="p-4 border-t border-border">
-          <Link href="/endgame">
-            <div className="font-mono text-xs text-muted-foreground hover:text-foreground cursor-pointer flex items-center gap-2">
-              ← Back to Portal
+        <div className="p-4 border-t border-border mt-auto">
+          <Link href="/">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground cursor-pointer transition-colors border border-border px-3 py-2 rounded-sm text-center mb-3">
+              Return to Archway
+            </div>
+          </Link>
+          <Link href="/ledger">
+            <div className="font-mono text-xs text-muted-foreground hover:text-foreground cursor-pointer flex items-center justify-center gap-2">
+              ← Back to Ledger
             </div>
           </Link>
         </div>

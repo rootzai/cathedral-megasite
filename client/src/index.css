@@ -164,6 +164,30 @@
   }
 
   /* Section Themes */
+  .theme-opinion {
+    --background: 46 25% 98%;
+    /* Bone / Parchment (#fdfcf8) */
+    --foreground: 0 0% 10%;
+    --primary: 0 72% 35%;
+    /* Crimson Red */
+    --secondary: 46 15% 90%;
+    --accent: 46 25% 95%;
+    --border: 0 0% 80%;
+  }
+
+  .theme-opinion h1,
+  .theme-opinion h2,
+  .theme-opinion h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .theme-opinion .prose-investigative {
+    color: #1a1a1a;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .theme-cathedral {
     --background: oklch(0.05 0.01 285);
     --foreground: oklch(0.95 0.01 85);

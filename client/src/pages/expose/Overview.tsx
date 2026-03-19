@@ -61,7 +61,15 @@ export default function Overview() {
           borderBottom: "4px solid var(--gold)",
         }}
       >
+        <div className="absolute top-6 right-8">
+          <Link href="/">
+            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-sidebar-dim hover:text-sidebar-gold cursor-pointer transition-colors border border-[#2e2416] px-3 py-1.5 rounded-full">
+              <ArrowRight size={10} className="rotate-180" /> Return to Archway
+            </div>
+          </Link>
+        </div>
         <div className="max-w-4xl mx-auto">
+
           <div
             className="text-xs tracking-widest uppercase mb-4 font-semibold"
             style={{ color: "var(--sidebar-dim)", fontFamily: "'Playfair Display', serif", letterSpacing: "0.18em" }}
