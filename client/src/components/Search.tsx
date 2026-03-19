@@ -58,6 +58,10 @@ export function Search({ onClose }: SearchProps) {
       { act: 'Act III', section: 'Agnifilo', title: 'Karen Friedman Agnifilo', snippet: 'Wrote Perry Law report, now scrubs it from her CV, defends Luigi Mangione' },
       { act: 'Act III', section: 'Flood', title: 'Kevin Flood', snippet: 'Regent who saw Marino\'s hands on Kelli\'s shoulders, resigned citing logbook erasure' },
 
+      // Act IV
+      { act: 'Act IV', section: 'Benjamin', title: 'Judge Avion Benjamin', snippet: 'Ordered release of the suppressed Latham and Gibbons reports, piercing the veil of secrecy' },
+      { act: 'Act IV', section: 'Santomauro', title: 'Judge Cynthia Santomauro', snippet: 'Compromised Chancery Court judge manipulated by Tom Scrivo' },
+
       // Key people
       { act: 'People', section: 'Marino', title: 'Kevin Marino', snippet: 'Board Chair who sexually harassed three women, bullied President Nyre' },
       { act: 'People', section: 'Reilly', title: 'Joseph Reilly', snippet: 'McCarrick\'s secretary, now SHU President despite Task Force findings' },
