@@ -93,14 +93,61 @@ export default function About() {
             </p>
           </section>
 
+          <section className="p-6 bg-red-950/20 border-2 border-red-600/50 rounded-lg">
+            <h2 className="text-3xl font-bold mb-4 text-red-400">We Welcome Legal Process</h2>
+            <p className="mb-4">
+              This investigation welcomes any legal challenge. We will litigate in the open. All demand
+              letters, cease-and-desist notices, and legal filings directed at this site will be
+              published in full on our{" "}
+              <Link href="/corrections">
+                <a className="text-red-400 hover:text-red-300 underline font-bold">Corrections page</a>
+              </Link>.
+            </p>
+            <p className="mb-4">
+              We do not settle. We do not retract documented facts. If any institution believes a
+              claim on this site is false, we invite them to identify it — on or off the record.
+            </p>
+            <p className="text-sm text-gray-400 italic">
+              To date, no legal demand has been received. This fact is documented on the{" "}
+              <Link href="/corrections">
+                <a className="text-red-400 hover:text-red-300 underline">Corrections page</a>
+              </Link>.
+            </p>
+          </section>
+
+          <section className="p-6 bg-yellow-950/10 border border-yellow-600/30 rounded-lg">
+            <h2 className="text-3xl font-bold mb-4 text-yellow-400">The Silence Doctrine</h2>
+            <p className="mb-4">
+              In the course of this investigation, representatives of Seton Hall University, the
+              Archdiocese of Newark, and the individuals named herein have been contacted for comment.
+              In every instance, the response has been: <strong className="text-yellow-300">"No comment."</strong>
+            </p>
+            <p className="mb-4">
+              We accept this as their answer and publish accordingly. This institutional silence is
+              itself a data point.
+            </p>
+            <p className="mb-4">
+              When Penn State faced similar allegations, its officials were compelled to testify
+              under oath. When Michigan State faced similar allegations, its president resigned
+              within hours of sentencing. Seton Hall's response to 40 years of documented abuse
+              has been: silence, promotion, and the sanctioning of the lawyer who withheld the evidence.
+            </p>
+            <p className="text-sm text-gray-400">
+              For a full comparison of institutional responses, see{" "}
+              <Link href="/parallels">
+                <a className="text-yellow-400 hover:text-yellow-300 underline font-bold">The Precedent: Institutional Parallels</a>
+              </Link>.
+            </p>
+          </section>
+
           <section>
             <h2 className="text-3xl font-bold mb-4">Submit a Tip</h2>
             <p className="mb-6">
               We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct. Your submission can be anonymous.
             </p>
-            
+
             <TipSubmissionForm />
-            
+
             <div className="mt-8 p-6 bg-gray-800/50 border border-gray-700 rounded-lg">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-green-500" />
