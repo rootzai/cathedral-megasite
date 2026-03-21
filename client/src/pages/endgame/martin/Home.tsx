@@ -32,7 +32,7 @@ export default function Home() {
                                 <div className="relative group cursor-pointer perspective-1000">
                                     <div className="absolute inset-0 bg-destructive/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105">
-                                        <div className="aspect-[4/5] bg-black border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
+                                        <div className="aspect-[4/5] bg-white border-2 border-destructive/50 overflow-hidden relative shadow-2xl shadow-destructive/20">
                                             <img
                                                 src="/assets/images/martin_portrait.png"
                                                 alt="Father Kenneth Martin"
@@ -41,7 +41,7 @@ export default function Home() {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
                                             <div className="absolute bottom-0 left-0 right-0 p-8">
                                                 <div className="font-mono text-xs text-destructive mb-2">STATUS: BARRED (2008)</div>
-                                                <h2 className="font-heading text-3xl text-white">Father Kenneth Martin</h2>
+                                                <h2 className="font-heading text-3xl text-zinc-900">Father Kenneth Martin</h2>
                                                 <p className="font-mono text-sm text-gray-400 mt-2">Personal Secretary to McCarrick</p>
                                                 <div className="mt-4 flex items-center text-xs font-mono text-destructive opacity-0 group-hover:opacity-100 transition-opacity">
                                                     <Eye className="w-4 h-4 mr-2" />
@@ -52,7 +52,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </DialogTrigger>
-                            <DialogContent className="max-w-4xl bg-black border-destructive/20">
+                            <DialogContent className="max-w-4xl bg-white border-destructive/20">
                                 <DialogHeader>
                                     <DialogTitle className="font-heading text-2xl text-destructive">Father Kenneth Martin</DialogTitle>
                                 </DialogHeader>
@@ -133,7 +133,7 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="mt-8 border border-border rounded-lg overflow-hidden bg-black/50">
+                        <div className="mt-8 border border-border rounded-lg overflow-hidden bg-white/50">
                             <table className="w-full text-left font-body">
                                 <thead>
                                     <tr className="bg-muted/50 border-b border-border">

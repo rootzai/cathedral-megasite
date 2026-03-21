@@ -7,11 +7,11 @@ export default function McCarrickMechanism() {
     <div className="page-enter max-w-4xl mx-auto px-6 py-12 space-y-20">
 
       {/* Investigative Header */}
-      <header className="mb-16 border-b-4 border-blood pb-12">
-        <div className="exhibit-label text-blood mb-4">Special Investigation · The Cover-Up</div>
+      <header className="mb-16 border-b-4 border-zinc-400 pb-12">
+        <div className="exhibit-label text-zinc-800 mb-4">Special Investigation · The Cover-Up</div>
         <h1 className="text-6xl font-black mb-6 leading-[0.9] tracking-tighter uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
           The Billion-Dollar <br />
-          <span className="text-blood">Mechanism</span>
+          <span className="text-zinc-800">Mechanism</span>
         </h1>
         <p className="text-2xl font-serif italic text-muted-foreground leading-relaxed">
           How Theodore McCarrick turned the American Church into a global fundraising engine—and bought decades of institutional silence with the proceeds.
@@ -19,12 +19,12 @@ export default function McCarrickMechanism() {
       </header>
 
       {/* The 2019 Catalyst (The Secret Meeting) */}
-      <section className="bg-zinc-950 p-12 rounded-sm border-2 border-blood/20 shadow-2xl relative overflow-hidden">
+      <section className="bg-zinc-50 p-12 rounded-sm border-2 border-zinc-400/20 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 p-6 opacity-5">
-          <Landmark className="w-32 h-32 text-blood" />
+          <Landmark className="w-32 h-32 text-zinc-800" />
         </div>
 
-        <h2 className="text-3xl font-bold mb-8 text-blood uppercase tracking-widest" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <h2 className="text-3xl font-bold mb-8 text-zinc-800 uppercase tracking-widest" style={{ fontFamily: "'Playfair Display', serif" }}>
           August 27, 2019: The Vault Closes
         </h2>
 
@@ -41,7 +41,7 @@ export default function McCarrickMechanism() {
             was absolute. The crime was documented. But in that room, the
             conversation didn't turn to justice—it turned to management.
           </p>
-          <div className="bg-blood/10 border-l-4 border-blood p-8 my-10 italic">
+          <div className="bg-zinc-800/10 border-l-4 border-zinc-400 p-8 my-10 italic">
             "We've been through difficult situations before. The key is unity and discretion. Trust me—I know how to manage these matters."
             <footer className="mt-4 font-mono text-xs uppercase tracking-widest opacity-60">— Kevin Marino, Board Chair</footer>
           </div>
@@ -108,7 +108,7 @@ export default function McCarrickMechanism() {
 
         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="p-6 bg-white border border-border shadow-sm flex flex-col justify-between aspect-square">
-            <Landmark className="w-8 h-8 text-blood mb-4" />
+            <Landmark className="w-8 h-8 text-zinc-800 mb-4" />
             <div className="font-bold text-lg leading-tight mb-2">Government Grants</div>
             <p className="text-[10px] uppercase font-mono tracking-widest opacity-60">$1.2B / Year</p>
           </div>
@@ -119,15 +119,15 @@ export default function McCarrickMechanism() {
 
           </div>
           <div className="p-6 bg-white border border-border shadow-sm flex flex-col justify-between aspect-square border-l-4 border-l-blood">
-            <Network className="w-8 h-8 text-blood mb-4" />
+            <Network className="w-8 h-8 text-zinc-800 mb-4" />
             <div className="font-bold text-lg leading-tight mb-2">Archbishop's Fund</div>
             <p className="text-[10px] uppercase font-mono tracking-widest opacity-60">Leverage & Tips</p>
           </div>
         </div>
       </section>
 
-      <div className="evidence-box bg-blood text-white p-12 rounded-none shadow-2xl">
-        <div className="exhibit-label text-white/60 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Statement · The Mechanism</div>
+      <div className="evidence-box bg-zinc-800 text-zinc-900 p-12 rounded-none shadow-2xl">
+        <div className="exhibit-label text-zinc-900/60 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Statement · The Mechanism</div>
         <p className="text-2xl leading-relaxed italic mb-6 font-serif">
           "The fundraising was the shield. The money didn't just buy influence; it bought immunity."
         </p>

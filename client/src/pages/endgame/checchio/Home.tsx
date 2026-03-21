@@ -39,11 +39,11 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
-                <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">Leo's Calculated Risk</h2>
+                <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">Leo's Calculated Risk</h2>
                 <p className="text-sm text-gray-300 italic">"A Newark product for a New Orleans crisis."</p>
               </div>
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20">
+                <span className="bg-white/70 text-zinc-900 text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
               </div>
             </div>
           </ImageModal>

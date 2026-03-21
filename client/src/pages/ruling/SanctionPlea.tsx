@@ -54,7 +54,7 @@ export default function SanctionPlea() {
             <Card className="bg-card border-border hover:border-destructive/50 transition-all duration-500">
               <CardHeader>
                 <Badge variant="outline" className="w-fit mb-2 font-mono text-destructive border-destructive/50">CRIME ONE</Badge>
-                <CardTitle className="font-heading text-2xl text-white">Hiding the Latham Report</CardTitle>
+                <CardTitle className="font-heading text-2xl text-zinc-900">Hiding the Latham Report</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-muted-foreground">
@@ -65,7 +65,7 @@ export default function SanctionPlea() {
                   <li>Claimed attorney-client privilege when finally forced to acknowledge it</li>
                   <li>Fought tooth and nail to prevent its production</li>
                 </ul>
-                <p className="font-body text-white border-l-2 border-destructive pl-4 italic">
+                <p className="font-body text-zinc-900 border-l-2 border-destructive pl-4 italic">
                   "This was not negligence. This was planned, deliberate concealment."
                 </p>
               </CardContent>
@@ -74,14 +74,14 @@ export default function SanctionPlea() {
             <Card className="bg-card border-border hover:border-destructive/50 transition-all duration-500">
               <CardHeader>
                 <Badge variant="outline" className="w-fit mb-2 font-mono text-destructive border-destructive/50">CRIME TWO</Badge>
-                <CardTitle className="font-heading text-2xl text-white">Suing Joe Nyre for "Leaking" It</CardTitle>
+                <CardTitle className="font-heading text-2xl text-zinc-900">Suing Joe Nyre for "Leaking" It</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="font-body text-muted-foreground">
                   Simultaneously, Mr. Scrivo's firm sued whistleblower Joe Nyre for allegedly disclosing information from that same Latham Report.
                 </p>
                 <div className="bg-destructive/10 p-4 rounded border border-destructive/20">
-                  <p className="font-body text-white">
+                  <p className="font-body text-zinc-900">
                     They claimed the report was privileged and couldn't be produced, while simultaneously suing someone for disclosing it.
                   </p>
                 </div>
@@ -98,7 +98,7 @@ export default function SanctionPlea() {
           </div>
 
           <div className="bg-secondary/20 border border-destructive/30 p-8 rounded-lg text-center max-w-4xl mx-auto">
-            <p className="font-heading text-2xl text-white leading-relaxed">
+            <p className="font-heading text-2xl text-zinc-900 leading-relaxed">
               "You cannot have it both ways. You cannot claim something is privileged AND sue someone for disclosing it. That's not legal strategy—that's fraud on the court."
             </p>
           </div>
@@ -116,27 +116,27 @@ export default function SanctionPlea() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-4 p-6 border border-border bg-black/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">R. 1:4-8 and R. 4:23</div>
-              <h3 className="font-heading text-xl text-white">Monetary Sanctions</h3>
+              <h3 className="font-heading text-xl text-zinc-900">Monetary Sanctions</h3>
               <p className="font-body text-sm text-muted-foreground">
                 For willful failure to comply with discovery obligations.
               </p>
               <p className="font-mono text-xs text-gray-500 italic">Abtrax Pharms., Inc. v. Elkins-Sinn, Inc. (1995)</p>
             </div>
 
-            <div className="space-y-4 p-6 border border-border bg-black/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">Adverse Inference</div>
-              <h3 className="font-heading text-xl text-white">Evidentiary Penalty</h3>
+              <h3 className="font-heading text-xl text-zinc-900">Evidentiary Penalty</h3>
               <p className="font-body text-sm text-muted-foreground">
                 When a party destroys or conceals evidence.
               </p>
               <p className="font-mono text-xs text-gray-500 italic">Rosenblit v. Zimmerman (2001)</p>
             </div>
 
-            <div className="space-y-4 p-6 border border-border bg-black/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">Dismissal or Default</div>
-              <h3 className="font-heading text-xl text-white">Egregious Violations</h3>
+              <h3 className="font-heading text-xl text-zinc-900">Egregious Violations</h3>
               <p className="font-body text-sm text-muted-foreground">
                 For severe and intentional discovery abuse.
               </p>
@@ -166,7 +166,7 @@ export default function SanctionPlea() {
               The Sanction Must Fit
             </h2>
             <div className="bg-card border border-border p-6 space-y-4">
-              <p className="font-body text-white">
+              <p className="font-body text-zinc-900">
                 Tom Scrivo is not just any lawyer. He knew better.
               </p>
               <ul className="space-y-2 font-mono text-sm text-muted-foreground">
@@ -182,7 +182,7 @@ export default function SanctionPlea() {
         {/* The Demand Section */}
         <section className="bg-destructive/5 border border-destructive/20 p-8 md:p-12 rounded-lg space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="font-heading text-4xl text-white">For the Record</h2>
+            <h2 className="font-heading text-4xl text-zinc-900">For the Record</h2>
             <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
               Tom Scrivo is a creep. Not because of his legal tactics—though those are reprehensible—but because he used the law as a weapon against abuse survivors.
             </p>
@@ -206,14 +206,14 @@ export default function SanctionPlea() {
           <Separator className="bg-destructive/30" />
 
           <div className="text-center space-y-6">
-            <p className="font-heading text-2xl text-white">
+            <p className="font-heading text-2xl text-zinc-900">
               "Sanction Tom Scrivo. Make it hurt. Make it public."
             </p>
             <p className="font-body text-muted-foreground">
               Make it a warning to every lawyer who thinks they can hide evidence of abuse behind privilege claims while simultaneously weaponizing the courts against survivors.
             </p>
             <div className="inline-block border-b-2 border-destructive pb-1">
-              <span className="font-heading text-3xl text-white uppercase tracking-widest">Justice Demands It</span>
+              <span className="font-heading text-3xl text-zinc-900 uppercase tracking-widest">Justice Demands It</span>
             </div>
           </div>
         </section>

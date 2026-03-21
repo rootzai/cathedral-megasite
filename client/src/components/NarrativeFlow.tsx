@@ -160,7 +160,7 @@ export default function NarrativeFlow() {
                             >
                                 <div className="flex items-center gap-3">
                                     <span
-                                        className="px-3 py-1 rounded-sm text-[10px] font-mono text-white uppercase tracking-widest"
+                                        className="px-3 py-1 rounded-sm text-[10px] font-mono text-zinc-900 uppercase tracking-widest"
                                         style={{ backgroundColor: activeMilestone.color }}
                                     >
                                         {activeMilestone.impact}

@@ -27,7 +27,7 @@ export default function BeachHouse() {
           </div>
 
           <div className="space-y-6">
-            <div className="relative aspect-video bg-zinc-950 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
+            <div className="relative aspect-video bg-zinc-50 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
               <iframe
                 title="The Beach House Map"
                 className="w-full h-full border-0 absolute inset-0 opacity-40 mix-blend-screen"
@@ -37,13 +37,13 @@ export default function BeachHouse() {
               ></iframe>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-white/60">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-900/60">
                   Coordinates: 40.1311° N, 74.0315° W
                 </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 font-mono text-[10px] uppercase tracking-widest bg-black/50 border-destructive/50 text-white hover:bg-destructive hover:text-white transition-all"
+                  className="gap-2 font-mono text-[10px] uppercase tracking-widest bg-white/50 border-destructive/50 text-zinc-900 hover:bg-destructive hover:text-zinc-900 transition-all"
                   onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University/300+Ocean+Ave,+Sea+Girt,+NJ", "_blank")}
                 >
                   <MapPin className="w-3 h-3" />
@@ -106,7 +106,7 @@ export default function BeachHouse() {
       </section>
 
       {/* High-Fidelity Floor Plan */}
-      <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+      <section className="bg-zinc-50 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-destructive to-transparent" />
 
         <header className="mb-12 text-center">
@@ -115,7 +115,7 @@ export default function BeachHouse() {
         </header>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 border border-border bg-black/40 flex flex-col justify-between aspect-square group">
+          <div className="p-6 border border-border bg-white/40 flex flex-col justify-between aspect-square group">
             <span className="font-mono text-[10px] text-muted-foreground uppercase">Room A</span>
             <div className="text-center">
               <Users className="w-6 h-6 text-destructive/40 mx-auto mb-3 group-hover:text-destructive transition-colors" />
@@ -124,7 +124,7 @@ export default function BeachHouse() {
             <p className="font-mono text-[9px] text-muted-foreground leading-tight">Master Suite. Site of the most frequent 'Nephew' assignments.</p>
           </div>
 
-          <div className="p-6 border border-border bg-black/40 flex flex-col justify-between aspect-square group">
+          <div className="p-6 border border-border bg-white/40 flex flex-col justify-between aspect-square group">
             <span className="font-mono text-[10px] text-muted-foreground uppercase">Room B</span>
             <div className="text-center">
               <Users className="w-6 h-6 text-muted-foreground/20 mx-auto mb-3" />
@@ -180,7 +180,7 @@ export default function BeachHouse() {
               narrative: "As a member of the Regent Task Force, he heard the first-hand accounts of Sea Girt survivors. He chose to sign the reward letters for Tobin instead of the criminal referrals."
             }
           ].map((vignette, i) => (
-            <Card key={i} className="bg-zinc-950 border-border group hover:border-destructive/50 transition-all duration-500 shadow-xl rounded-none">
+            <Card key={i} className="bg-zinc-50 border-border group hover:border-destructive/50 transition-all duration-500 shadow-xl rounded-none">
               <CardContent className="p-8 space-y-6">
                 <div className="flex justify-between items-start">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-destructive">{vignette.context}</div>

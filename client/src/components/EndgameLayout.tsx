@@ -113,7 +113,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly
-                ? "bg-destructive text-white"
+                ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               McCarrick
@@ -123,7 +123,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isChecchio
-                ? "bg-destructive text-white"
+                ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Checchio
@@ -133,7 +133,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isReilly
-                ? "bg-destructive text-white"
+                ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Reilly
@@ -143,7 +143,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isMartin
-                ? "bg-destructive text-white"
+                ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Martin
@@ -153,7 +153,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isLorenzo
-                ? "bg-destructive text-white"
+                ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Lorenzo
@@ -177,7 +177,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
                   <span className="truncate">{item.label}</span>
                   <span className={cn(
                     "w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2",
-                    isActive ? "bg-destructive text-white" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
+                    isActive ? "bg-destructive text-zinc-900" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   )}>
                     {item.id}
                   </span>

@@ -10,7 +10,7 @@ export default function Citation({ number, source, url, page }: CitationProps) {
   
   if (url) {
     return (
-      <sup className="text-red-500">
+      <sup className="text-zinc-700">
         <a 
           href={url} 
           target="_blank" 
@@ -25,7 +25,7 @@ export default function Citation({ number, source, url, page }: CitationProps) {
   }
   
   return (
-    <sup className="text-red-500" title={citationText}>
+    <sup className="text-zinc-700" title={citationText}>
       [{number}]
     </sup>
   );

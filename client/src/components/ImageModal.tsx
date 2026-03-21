@@ -44,18 +44,18 @@ export default function ImageModal({ src, alt, title, caption, children }: Image
       <DialogTrigger asChild className="cursor-zoom-in">
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-black/95 border-none flex flex-col items-center justify-center overflow-hidden">
+      <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-white/95 border-none flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute top-4 right-4 z-50 flex gap-2">
-          <Button variant="ghost" size="icon" onClick={handleDownload} className="text-white hover:bg-white/20">
+          <Button variant="ghost" size="icon" onClick={handleDownload} className="text-zinc-900 hover:bg-white/20">
             <Download className="h-6 w-6" />
           </Button>
-          <Button variant="ghost" size="icon" onClick={() => handleShare('twitter')} className="text-white hover:bg-white/20">
+          <Button variant="ghost" size="icon" onClick={() => handleShare('twitter')} className="text-zinc-900 hover:bg-white/20">
             <Twitter className="h-6 w-6" />
           </Button>
-          <Button variant="ghost" size="icon" onClick={() => handleShare('linkedin')} className="text-white hover:bg-white/20">
+          <Button variant="ghost" size="icon" onClick={() => handleShare('linkedin')} className="text-zinc-900 hover:bg-white/20">
             <Linkedin className="h-6 w-6" />
           </Button>
-          <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white hover:bg-white/20">
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-zinc-900 hover:bg-white/20">
             <X className="h-6 w-6" />
           </Button>
         </div>
@@ -69,9 +69,9 @@ export default function ImageModal({ src, alt, title, caption, children }: Image
         </div>
 
         {(title || caption) && (
-          <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-6 backdrop-blur-sm border-t border-white/10">
+          <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-6 backdrop-blur-sm border-t border-white/10">
             <div className="max-w-4xl mx-auto">
-              {title && <h3 className="text-xl font-display font-bold text-white mb-2">{title}</h3>}
+              {title && <h3 className="text-xl font-display font-bold text-zinc-900 mb-2">{title}</h3>}
               {caption && <p className="text-gray-300 font-serif italic">{caption}</p>}
             </div>
           </div>

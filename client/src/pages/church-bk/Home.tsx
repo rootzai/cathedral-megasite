@@ -22,10 +22,10 @@ export default function Home() {
           <div className="inline-block px-3 py-1 mb-4 bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-widest">
             Confidential Analysis
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-zinc-900 mb-4 leading-tight">
             The Bankruptcy Playbook
           </h1>
-          <p className="text-lg text-white/90 font-light max-w-xl leading-relaxed">
+          <p className="text-lg text-zinc-900/90 font-light max-w-xl leading-relaxed">
             Investigating the "Corporate Veil" strategies, Alvarez & Marsal restructuring tactics, and the $4.4 billion Chapter 11 crisis facing US Dioceses.
           </p>
         </div>

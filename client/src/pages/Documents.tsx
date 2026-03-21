@@ -19,7 +19,7 @@ function DocumentCard({ title, date, source, description, url, localPath, catego
     Court: "border-blue-600 bg-blue-900/20",
     News: "border-green-600 bg-green-900/20",
     Reports: "border-yellow-600 bg-yellow-900/20",
-    University: "border-red-600 bg-red-900/20",
+    University: "border-zinc-300 bg-zinc-200/50",
   };
 
   return (
@@ -40,7 +40,7 @@ function DocumentCard({ title, date, source, description, url, localPath, catego
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition-colors"
+            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-zinc-900 px-4 py-2 rounded text-sm font-bold transition-colors"
           >
             <ExternalLink className="w-4 h-4" />
             View Online
@@ -50,7 +50,7 @@ function DocumentCard({ title, date, source, description, url, localPath, catego
           <a
             href={localPath}
             target="_blank"
-            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm font-bold transition-colors"
+            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-zinc-900 px-4 py-2 rounded text-sm font-bold transition-colors"
           >
             <Download className="w-4 h-4" />
             Download PDF
@@ -192,24 +192,24 @@ export default function Documents() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
-            <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
+            <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors">
               {APP_TITLE}
             </a>
           </Link>
           <nav className="flex gap-6">
             <Link href="/">
-              <a className="text-gray-300 hover:text-white transition-colors">Home</a>
+              <a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a>
             </Link>
             <Link href="/documents">
-              <a className="text-white font-bold">Documents</a>
+              <a className="text-zinc-900 font-bold">Documents</a>
             </Link>
             <Link href="/about">
-              <a className="text-gray-300 hover:text-white transition-colors">About</a>
+              <a className="text-gray-300 hover:text-zinc-900 transition-colors">About</a>
             </Link>
           </nav>
         </div>
@@ -219,7 +219,7 @@ export default function Documents() {
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h1 className="text-5xl font-bold mb-4 text-red-600">Source Documents</h1>
+            <h1 className="text-5xl font-bold mb-4 text-zinc-800">Source Documents</h1>
             <p className="text-xl text-gray-300">
               All factual claims on this site are derived from publicly available documents and credible news reporting. This archive provides direct access to our primary sources.
             </p>
@@ -235,7 +235,7 @@ export default function Documents() {
                 placeholder="Search documents by title, description, or source..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-gray-800 text-white pl-12 pr-4 py-3 rounded-lg border border-gray-700 focus:border-red-600 focus:outline-none"
+                className="w-full bg-gray-800 text-zinc-900 pl-12 pr-4 py-3 rounded-lg border border-gray-700 focus:border-zinc-300 focus:outline-none"
               />
             </div>
 
@@ -244,7 +244,7 @@ export default function Documents() {
               <button
                 onClick={() => setActiveCategory('all')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === 'all'
-                    ? 'bg-red-600 text-white'
+                    ? 'bg-red-600 text-zinc-900'
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
               >
@@ -257,7 +257,7 @@ export default function Documents() {
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === cat
-                        ? 'bg-red-600 text-white'
+                        ? 'bg-red-600 text-zinc-900'
                         : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                       }`}
                   >
@@ -279,7 +279,7 @@ export default function Documents() {
               <p className="text-xl text-gray-400">No documents found matching your search.</p>
               <button
                 onClick={() => { setSearchQuery(''); setActiveCategory('all'); }}
-                className="mt-4 text-red-500 hover:text-red-400 font-semibold"
+                className="mt-4 text-zinc-700 hover:text-red-400 font-semibold"
               >
                 Clear filters
               </button>
@@ -322,7 +322,7 @@ export default function Documents() {
 
           <div className="mt-16 text-center">
             <Link href="/">
-              <a className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition-colors">
+              <a className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-8 py-3 rounded font-bold transition-colors">
                 Return to Investigation
               </a>
             </Link>

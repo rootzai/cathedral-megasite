@@ -8,7 +8,7 @@ import { Link } from "wouter";
 
 function StatusBadge({ status }: { status: "done" | "failed" | "pending" }) {
     if (status === "done") return <span className="inline-flex items-center gap-1 text-green-500 font-bold text-xs uppercase"><CheckCircle className="w-3 h-3" /> Yes</span>;
-    if (status === "failed") return <span className="inline-flex items-center gap-1 text-red-500 font-bold text-xs uppercase"><X className="w-3 h-3" /> No</span>;
+    if (status === "failed") return <span className="inline-flex items-center gap-1 text-zinc-700 font-bold text-xs uppercase"><X className="w-3 h-3" /> No</span>;
     return <span className="inline-flex items-center gap-1 text-yellow-500 font-bold text-xs uppercase"><Minus className="w-3 h-3" /> Pending</span>;
 }
 
@@ -106,17 +106,17 @@ const noCommentLog = [
 
 export default function InstitutionalParallels() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-            <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
+            <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
                 <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">
-                        <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
+                        <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors">
                             SODOM HALL
                         </a>
                     </Link>
                     <nav className="flex gap-3 sm:gap-6">
-                        <Link href="/"><a className="text-gray-300 hover:text-white transition-colors">Home</a></Link>
-                        <Link href="/about"><a className="text-gray-300 hover:text-white transition-colors">About</a></Link>
+                        <Link href="/"><a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a></Link>
+                        <Link href="/about"><a className="text-gray-300 hover:text-zinc-900 transition-colors">About</a></Link>
                     </nav>
                 </div>
             </header>
@@ -125,7 +125,7 @@ export default function InstitutionalParallels() {
 
                 <nav className="mb-8 sm:mb-12">
                     <Link href="/">
-                        <a className="flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+                        <a className="flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-gray-400 hover:text-zinc-900 transition-colors">
                             <ArrowLeft className="w-4 h-4" />
                             Return to Archway
                         </a>
@@ -134,9 +134,9 @@ export default function InstitutionalParallels() {
 
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-24">
-                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-red-500 mb-4 sm:mb-6">Special Forensic Analysis</p>
+                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-zinc-700 mb-4 sm:mb-6">Special Forensic Analysis</p>
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tighter leading-[0.9]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        The <span className="italic text-red-600">Precedent</span>
+                        The <span className="italic text-zinc-800">Precedent</span>
                     </h1>
                     <p className="text-base sm:text-lg md:text-2xl text-gray-400 italic max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8" style={{ fontFamily: "'Lora', serif" }}>
                         When Penn State and Michigan State faced their reckonings, presidents were fired, settlements were paid, and records were opened. Seton Hall's response has been: silence.
@@ -147,7 +147,7 @@ export default function InstitutionalParallels() {
                 {/* Lead Narrative */}
                 <section className="max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-24">
                     <div className="columns-1 md:columns-2 gap-8 md:gap-12 space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed text-gray-300" style={{ fontFamily: "'Lora', serif" }}>
-                        <p className="first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-white first-letter:leading-none">
+                        <p className="first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-zinc-900 first-letter:leading-none">
                             E
                             very institutional abuse scandal in American higher education follows the same five-step
                             playbook: <em>know</em> about the abuse, <em>commission</em> an internal report, <em>suppress</em> the
@@ -159,7 +159,7 @@ export default function InstitutionalParallels() {
                             for their leadership.
                         </p>
                         <p>
-                            Seton Hall University is <strong className="text-white">currently at step four</strong>. The man whose career was built
+                            Seton Hall University is <strong className="text-zinc-900">currently at step four</strong>. The man whose career was built
                             within the McCarrick network was promoted to university president <em>after</em> the sealed report
                             recommended his removal. Step five — the attack on the whistleblowers — is actively in progress,
                             with a criminal grand jury subpoena deployed to unmask an anonymous source.
@@ -173,7 +173,7 @@ export default function InstitutionalParallels() {
                 {/* The Comparison Table */}
                 <section className="mb-12 sm:mb-16 md:mb-24">
                     <div className="flex items-center gap-4 mb-8">
-                        <Scale className="w-8 h-8 text-red-500" />
+                        <Scale className="w-8 h-8 text-zinc-700" />
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                             The Forensic Comparison
                         </h2>
@@ -185,7 +185,7 @@ export default function InstitutionalParallels() {
                     <div className="overflow-x-auto border border-gray-800 rounded-lg shadow-2xl">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b-2 border-red-600">
+                                <tr className="border-b-2 border-zinc-300">
                                     <th className="text-left p-4 bg-gray-900 font-mono text-xs uppercase tracking-widest text-gray-400 w-1/4">
                                         Dimension
                                     </th>
@@ -197,7 +197,7 @@ export default function InstitutionalParallels() {
                                         Michigan State
                                         <span className="block text-[10px] text-green-400/60 mt-1">Nassar · 2016</span>
                                     </th>
-                                    <th className="text-left p-4 bg-red-950/30 font-mono text-xs uppercase tracking-widest text-red-400 w-1/4">
+                                    <th className="text-left p-4 bg-zinc-100/30 font-mono text-xs uppercase tracking-widest text-red-400 w-1/4">
                                         Seton Hall
                                         <span className="block text-[10px] text-red-400/60 mt-1">McCarrick · 2018</span>
                                     </th>
@@ -225,7 +225,7 @@ export default function InstitutionalParallels() {
 
                 {/* The Accountability Scorecard */}
                 <section className="mb-12 sm:mb-16 md:mb-24">
-                    <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-red-500 mb-8">Accountability Scorecard</h2>
+                    <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-700 mb-8">Accountability Scorecard</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             {
@@ -271,7 +271,7 @@ export default function InstitutionalParallels() {
                             <div
                                 key={institution.label}
                                 className={`border rounded-lg p-6 ${institution.color === "red"
-                                    ? "border-red-900/50 bg-red-950/10"
+                                    ? "border-red-900/50 bg-zinc-100/10"
                                     : institution.color === "blue"
                                         ? "border-blue-900/50 bg-blue-950/10"
                                         : "border-green-900/50 bg-green-950/10"
@@ -348,7 +348,7 @@ export default function InstitutionalParallels() {
 
                 {/* What Should Have Happened */}
                 <section className="mb-12 sm:mb-16 md:mb-24">
-                    <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-red-500 mb-8">Based on Precedent: What Should Have Happened</h2>
+                    <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-700 mb-8">Based on Precedent: What Should Have Happened</h2>
                     <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 sm:p-8 md:p-10 space-y-4 sm:space-y-6 text-gray-300 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
                         <p>
                             If Seton Hall University were held to the same standard as Penn State or Michigan State,
@@ -356,31 +356,31 @@ export default function InstitutionalParallels() {
                         </p>
                         <ol className="list-decimal list-inside space-y-4 pl-4">
                             <li>
-                                <strong className="text-white">The Latham Report would have been released to the public</strong> — as the Freeh
+                                <strong className="text-zinc-900">The Latham Report would have been released to the public</strong> — as the Freeh
                                 Report was at Penn State. Instead, it has been sealed for six years and its
                                 release was resisted by counsel who was subsequently sanctioned.
                             </li>
                             <li>
-                                <strong className="text-white">The university president would have been removed</strong> — as Spanier was at
+                                <strong className="text-zinc-900">The university president would have been removed</strong> — as Spanier was at
                                 Penn State and Simon was at Michigan State. Instead, Joseph Reilly — whose career
                                 was built within the McCarrick network — was promoted to the presidency.
                             </li>
                             <li>
-                                <strong className="text-white">University officials who failed to act on abuse reports would face criminal charges</strong> — as
+                                <strong className="text-zinc-900">University officials who failed to act on abuse reports would face criminal charges</strong> — as
                                 Curley and Schultz did at Penn State. No official at Seton Hall or the Archdiocese
                                 of Newark has been criminally charged in connection with the McCarrick cover-up.
                             </li>
                             <li>
-                                <strong className="text-white">A financial settlement would have been negotiated</strong> — Penn State paid $109M,
+                                <strong className="text-zinc-900">A financial settlement would have been negotiated</strong> — Penn State paid $109M,
                                 Michigan State paid $500M. Seton Hall's 450+ plaintiffs have received nothing.
                             </li>
                             <li>
-                                <strong className="text-white">The Department of Education would have investigated and imposed fines</strong> — as
+                                <strong className="text-zinc-900">The Department of Education would have investigated and imposed fines</strong> — as
                                 it did at both Penn State ($2.4M) and Michigan State ($4.5M). No such action
                                 has been taken against Seton Hall.
                             </li>
                             <li>
-                                <strong className="text-white">Whistleblowers would have been protected, not pursued</strong> — McQueary won a
+                                <strong className="text-zinc-900">Whistleblowers would have been protected, not pursued</strong> — McQueary won a
                                 $12M whistleblower suit. Denhollander was named to the Time 100. Seton Hall's
                                 whistleblower was targeted with a criminal grand jury subpoena.
                             </li>
@@ -390,7 +390,7 @@ export default function InstitutionalParallels() {
 
                 {/* Closing */}
                 <div className="bg-gray-950 border-2 border-red-900/50 rounded-lg p-6 sm:p-8 md:p-12 text-center mb-12 sm:mb-16">
-                    <p className="text-xl sm:text-2xl md:text-3xl font-black italic mb-4 sm:mb-6 text-white leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-black italic mb-4 sm:mb-6 text-zinc-900 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                         "The pattern is not a coincidence.<br />It is a playbook."
                     </p>
                     <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm" style={{ fontFamily: "'Lora', serif" }}>
@@ -404,7 +404,7 @@ export default function InstitutionalParallels() {
 
                 <div className="text-center">
                     <Link href="/">
-                        <a className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition-colors">
+                        <a className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-8 py-3 rounded font-bold transition-colors">
                             Return to Investigation
                         </a>
                     </Link>

@@ -6,11 +6,11 @@ export default function WhistleblowerUnmasking() {
     <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20">
 
       {/* Investigative Header */}
-      <header className="mb-16 border-b-4 border-blood pb-12">
-        <div className="exhibit-label text-blood mb-4">Special Investigation · The Breach</div>
+      <header className="mb-16 border-b-4 border-zinc-400 pb-12">
+        <div className="exhibit-label text-zinc-800 mb-4">Special Investigation · The Breach</div>
         <h1 className="text-6xl font-black mb-6 leading-[0.9] tracking-tighter uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
           The Unmasking <br />
-          <span className="text-blood">Campaign</span>
+          <span className="text-zinc-800">Campaign</span>
         </h1>
         <p className="text-2xl font-serif italic text-muted-foreground leading-relaxed max-w-3xl">
           How a criminal grand jury was weaponized to identify a civil whistleblower—and the 18-day retaliation clock that followed a presidential installation.
@@ -41,7 +41,7 @@ export default function WhistleblowerUnmasking() {
               they could reach the public.
             </p>
 
-            <blockquote className="border-l-4 border-blood pl-8 py-4 my-10 bg-blood/5 not-italic text-foreground">
+            <blockquote className="border-l-4 border-zinc-400 pl-8 py-4 my-10 bg-zinc-800/5 not-italic text-foreground">
               <p className="text-2xl font-bold leading-tight mb-4">
                 "The message was not legal. It was institutional: we know who you are, and we will find you."
               </p>
@@ -62,8 +62,8 @@ export default function WhistleblowerUnmasking() {
       </section>
 
       {/* Forensic Timeline Visualization */}
-      <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blood to-transparent" />
+      <section className="bg-zinc-50 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
 
         <header className="mb-12 text-center">
           <h3 className="font-heading text-3xl mb-2">Timeline of Retaliation</h3>
@@ -71,16 +71,16 @@ export default function WhistleblowerUnmasking() {
         </header>
 
         <div className="space-y-8 relative">
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-blood/20" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-zinc-800/20" />
 
           <div className="relative pl-16 group">
-            <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-blood group-hover:scale-150 transition-transform" />
-            <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
+            <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-zinc-800 group-hover:scale-150 transition-transform" />
+            <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">Day 18: The First Strike</h4>
-                <span className="font-mono text-[10px] text-blood">JULY 18, 2024</span>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Day 18: The First Strike</h4>
+                <span className="font-mono text-[10px] text-zinc-800">JULY 18, 2024</span>
               </div>
-              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+              <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Grand jury subpoena issued to Google. The network bypasses civil discovery
                 to pierce the whistleblower's anonymity using the threat of criminal prosecution.
               </p>
@@ -89,12 +89,12 @@ export default function WhistleblowerUnmasking() {
 
           <div className="relative pl-16 group">
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-gold group-hover:scale-150 transition-transform" />
-            <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
+            <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">The Manufactured Predicate</h4>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">The Manufactured Predicate</h4>
                 <span className="font-mono text-[10px] text-gold">OCT 2024</span>
               </div>
-              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+              <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Archdiocese bulletin publishes claims of "solicitation," providing the thin
                 veneer of criminal suspicion required to justify the ongoing grand jury process.
               </p>
@@ -102,13 +102,13 @@ export default function WhistleblowerUnmasking() {
           </div>
 
           <div className="relative pl-16 group">
-            <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-blood group-hover:scale-150 transition-transform" />
-            <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
+            <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-zinc-800 group-hover:scale-150 transition-transform" />
+            <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">Transcontinental Escalation</h4>
-                <span className="font-mono text-[10px] text-blood">NOV 20, 2025</span>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Transcontinental Escalation</h4>
+                <span className="font-mono text-[10px] text-zinc-800">NOV 20, 2025</span>
               </div>
-              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+              <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Exactly one year later, despite the California court disposing of the matter,
                 a 52-page deposition package is sent to the whistleblower. Attrition becomes the final strategy.
               </p>
@@ -137,7 +137,7 @@ export default function WhistleblowerUnmasking() {
         </div>
 
         <div className="p-10 border border-border bg-zinc-50 rounded-sm space-y-8">
-          <div className="flex items-center gap-4 text-blood">
+          <div className="flex items-center gap-4 text-zinc-800">
             <Scale className="w-8 h-8" />
             <h3 className="font-heading text-2xl uppercase italic">Legal Precedent</h3>
           </div>
@@ -159,11 +159,11 @@ export default function WhistleblowerUnmasking() {
         </div>
       </section>
 
-      <div className="evidence-box bg-zinc-950 text-parchment p-12 rounded-sm shadow-2xl relative">
-        <div className="absolute inset-0 bg-blood/5 flex items-center justify-center pointer-events-none">
+      <div className="evidence-box bg-zinc-50 text-parchment p-12 rounded-sm shadow-2xl relative">
+        <div className="absolute inset-0 bg-zinc-800/5 flex items-center justify-center pointer-events-none">
           <Lock className="w-64 h-64 opacity-5 rotate-12" />
         </div>
-        <div className="exhibit-label text-blood mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Finding · Retaliation</div>
+        <div className="exhibit-label text-zinc-800 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Finding · Retaliation</div>
         <p className="text-2xl leading-relaxed italic mb-8 font-serif">
           "The unmasking was not about discovery; it was about exposure."
         </p>

@@ -16,28 +16,28 @@ export function EvidenceCard({ title, date, source, findings, outcome, documentU
 
   return (
     <>
-      <div className="my-6 border border-zinc-700 rounded-sm overflow-hidden bg-zinc-900 shadow-sm">
+      <div className="my-6 border border-zinc-300 rounded-sm overflow-hidden bg-zinc-100 shadow-sm">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full p-4 md:p-6 flex items-center justify-between hover:bg-zinc-800/80 transition-colors"
+          className="w-full p-4 md:p-6 flex items-center justify-between hover:bg-zinc-200/80 transition-colors"
         >
           <div className="text-left">
-            <h4 className="font-bold text-lg text-zinc-100 font-serif mb-1">{title}</h4>
-            <p className="text-xs text-zinc-400 font-mono tracking-widest uppercase">{date} • {source}</p>
+            <h4 className="font-bold text-lg text-zinc-900 font-serif mb-1">{title}</h4>
+            <p className="text-xs text-zinc-600 font-mono tracking-widest uppercase">{date} • {source}</p>
           </div>
           {isExpanded ? (
-            <ChevronUp className="w-5 h-5 text-zinc-500 flex-shrink-0 ml-4" />
+            <ChevronUp className="w-5 h-5 text-zinc-600 flex-shrink-0 ml-4" />
           ) : (
-            <ChevronDown className="w-5 h-5 text-zinc-500 flex-shrink-0 ml-4" />
+            <ChevronDown className="w-5 h-5 text-zinc-600 flex-shrink-0 ml-4" />
           )}
         </button>
 
         {isExpanded && (
-          <div className="p-4 md:p-6 border-t border-zinc-800 bg-zinc-950">
+          <div className="p-4 md:p-6 border-t border-zinc-300 bg-zinc-50">
             <div className="space-y-4">
               <div>
-                <h5 className="font-bold text-zinc-300 mb-3 text-sm uppercase tracking-widest">Key Findings:</h5>
-                <ol className="list-decimal list-inside space-y-2 text-zinc-400 font-serif">
+                <h5 className="font-bold text-zinc-800 mb-3 text-sm uppercase tracking-widest">Key Findings:</h5>
+                <ol className="list-decimal list-inside space-y-2 text-zinc-600 font-serif">
                   {findings.map((finding) => (
                     <li key={finding} className="pl-2 leading-relaxed">
                       {finding}
@@ -47,17 +47,17 @@ export function EvidenceCard({ title, date, source, findings, outcome, documentU
               </div>
 
               {outcome && (
-                <div className="mt-6 p-4 bg-zinc-900 border-l-2 border-zinc-500 rounded-r-sm">
-                  <h5 className="font-bold text-zinc-300 mb-2 text-sm uppercase tracking-widest">Outcome:</h5>
-                  <p className="text-zinc-400 font-serif">{outcome}</p>
+                <div className="mt-6 p-4 bg-zinc-100 border-l-2 border-zinc-500 rounded-r-sm">
+                  <h5 className="font-bold text-zinc-800 mb-2 text-sm uppercase tracking-widest">Outcome:</h5>
+                  <p className="text-zinc-600 font-serif">{outcome}</p>
                 </div>
               )}
 
               {documentUrl && (
-                <div className="mt-6 pt-4 border-t border-zinc-800 flex justify-end">
+                <div className="mt-6 pt-4 border-t border-zinc-300 flex justify-end">
                   <button
                     onClick={() => setIsLightboxOpen(true)}
-                    className="flex items-center gap-2 px-4 py-2 border border-zinc-600 rounded-sm text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors uppercase tracking-widest text-xs font-mono shadow-sm"
+                    className="flex items-center gap-2 px-4 py-2 border border-zinc-600 rounded-sm text-zinc-800 hover:text-zinc-900 hover:bg-zinc-200 transition-colors uppercase tracking-widest text-xs font-mono shadow-sm"
                   >
                     View Source Document <ExternalLink className="w-4 h-4" />
                   </button>
@@ -70,14 +70,14 @@ export function EvidenceCard({ title, date, source, findings, outcome, documentU
 
       {/* Lightbox Overlay */}
       {isLightboxOpen && documentUrl && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-8">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/90 backdrop-blur-sm p-4 md:p-8">
           <button
             onClick={() => setIsLightboxOpen(false)}
-            className="absolute top-4 right-4 md:top-8 md:right-8 text-zinc-400 hover:text-white transition-colors bg-zinc-900 p-2 rounded-full border border-zinc-700"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-zinc-600 hover:text-zinc-900 transition-colors bg-zinc-100 p-2 rounded-full border border-zinc-300"
           >
             <X className="w-6 h-6" />
           </button>
-          <div className="w-full max-w-5xl max-h-[90vh] flex flex-col items-center bg-zinc-950 border border-zinc-800 rounded-sm shadow-2xl p-2 md:p-4 overflow-hidden relative">
+          <div className="w-full max-w-5xl max-h-[90vh] flex flex-col items-center bg-zinc-50 border border-zinc-300 rounded-sm shadow-2xl p-2 md:p-4 overflow-hidden relative">
             <div className="w-full h-full flex items-center justify-center overflow-auto bg-white/5">
               {/* Check if it is an image or a PDF. For simplicity, if it ends with pdf we use iframe, otherwise img */}
               {documentUrl.toLowerCase().endsWith('.pdf') ? (
@@ -86,7 +86,7 @@ export function EvidenceCard({ title, date, source, findings, outcome, documentU
                 <img src={documentUrl} alt="Evidence" className="max-w-full max-h-[85vh] object-contain" />
               )}
             </div>
-            <p className="text-center text-zinc-500 font-mono text-xs uppercase tracking-widest mt-4">Exhibit Source: {source}</p>
+            <p className="text-center text-zinc-600 font-mono text-xs uppercase tracking-widest mt-4">Exhibit Source: {source}</p>
           </div>
         </div>
       )}

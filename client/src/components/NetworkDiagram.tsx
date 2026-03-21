@@ -100,7 +100,7 @@ export default function NetworkDiagram() {
   ];
 
   const groupColors = {
-    board: { bg: "bg-red-900/40", border: "border-red-500", text: "text-red-300" },
+    board: { bg: "bg-red-900/40", border: "border-zinc-300", text: "text-red-300" },
     law: { bg: "bg-yellow-900/40", border: "border-yellow-500", text: "text-yellow-300" },
     victims: { bg: "bg-green-900/40", border: "border-green-500", text: "text-green-300" },
   };
@@ -210,7 +210,7 @@ export default function NetworkDiagram() {
                       <div className={`absolute top-0 z-50 w-64 bg-gray-900 border-2 border-gray-600 rounded-lg p-3 shadow-2xl ${
                         group === "victims" ? "right-full mr-4" : "left-full ml-4"
                       }`}>
-                        <div className="font-bold text-sm mb-2 text-white">Connections:</div>
+                        <div className="font-bold text-sm mb-2 text-zinc-900">Connections:</div>
                         <div className="space-y-1 max-h-48 overflow-y-auto">
                           {nodeConnections.map((conn) => {
                             const otherNodeId = conn.from === node.id ? conn.to : conn.from;

@@ -21,7 +21,7 @@ export default function SetonHall() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">Seminary Confidential</h2>
+            <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">Seminary Confidential</h2>
             <p className="text-sm text-gray-300 italic">"Where every confession is off the record."</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function SetonHall() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Faculty Club</h2>
+            <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Faculty Club</h2>
             <p className="text-sm text-gray-300 italic">"Membership has its privileges. Accountability not included."</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function SetonHall() {
 
         <h3 className="text-destructive font-display uppercase tracking-widest mt-12 border-b border-border pb-2">The Room at the Seminary</h3>
         <p>
-          Despite his rising status and eventual move to Washington D.C., McCarrick maintained a disturbing physical presence at Seton Hall. It is documented that he kept a private room at the seminary <strong className="text-white">until 2019</strong>—years after his retirement and well into the period when allegations were becoming public.
+          Despite his rising status and eventual move to Washington D.C., McCarrick maintained a disturbing physical presence at Seton Hall. It is documented that he kept a private room at the seminary <strong className="text-zinc-900">until 2019</strong>—years after his retirement and well into the period when allegations were becoming public.
         </p>
         <p>
           This room served as a base of operations and a symbol of his lingering influence. Its existence raises serious questions about the university administration's complicity and their failure to sever ties with a known predator.
@@ -72,7 +72,7 @@ export default function SetonHall() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-2xl font-display uppercase text-white text-shadow-blood mb-1">"I was only there once"</h2>
+              <h2 className="text-2xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">"I was only there once"</h2>
               <p className="text-sm text-gray-300 italic">Msgr. Reilly's convenient memory.</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function SetonHall() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-2xl font-display uppercase text-white text-shadow-blood mb-1">The Upstairs Secret</h2>
+              <h2 className="text-2xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Upstairs Secret</h2>
               <p className="text-sm text-gray-300 italic">"I went downstairs to bed... knowing what was going on upstairs."</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function SetonHall() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-4xl font-display uppercase text-white text-shadow-blood mb-2">Welcome to Groom Island</h2>
+            <h2 className="text-4xl font-display uppercase text-zinc-900 text-shadow-blood mb-2">Welcome to Groom Island</h2>
             <p className="text-xl text-gray-300 italic">"Where the rich send predators to get spiritual."</p>
           </div>
         </div>
@@ -123,10 +123,10 @@ export default function SetonHall() {
       </div>
 
       <div className="flex justify-between pt-12 border-t border-border">
-        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
+        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-zinc-900 transition-colors" asChild>
           <Link >← 04. Network</Link>
         </Button>
-        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-white transition-colors" asChild>
+        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-zinc-900 transition-colors" asChild>
           <Link >06. Warnings →</Link>
         </Button>
       </div>

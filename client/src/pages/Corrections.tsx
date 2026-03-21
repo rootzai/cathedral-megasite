@@ -3,17 +3,17 @@ import { CheckCircle, Mail, Clock } from "lucide-react";
 
 export default function Corrections() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-            <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
+            <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
                 <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">
-                        <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
+                        <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors">
                             SODOM HALL
                         </a>
                     </Link>
                     <nav className="flex gap-3 sm:gap-6">
-                        <Link href="/"><a className="text-gray-300 hover:text-white transition-colors">Home</a></Link>
-                        <Link href="/about"><a className="text-gray-300 hover:text-white transition-colors">About</a></Link>
+                        <Link href="/"><a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a></Link>
+                        <Link href="/about"><a className="text-gray-300 hover:text-zinc-900 transition-colors">About</a></Link>
                     </nav>
                 </div>
             </header>
@@ -22,7 +22,7 @@ export default function Corrections() {
 
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-red-500 mb-4 sm:mb-6">Public Record</p>
+                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-zinc-700 mb-4 sm:mb-6">Public Record</p>
                     <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 tracking-tighter" style={{ fontFamily: "'Playfair Display', serif" }}>
                         Corrections &<br />Clarifications
                     </h1>
@@ -50,10 +50,10 @@ export default function Corrections() {
 
                 {/* The Record of Silence */}
                 <section className="mb-12 sm:mb-16 md:mb-20">
-                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-red-500 mb-4 sm:mb-6">Institutional Response Log</h2>
+                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-zinc-700 mb-4 sm:mb-6">Institutional Response Log</h2>
                     <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 sm:p-8 md:p-10">
                         <p className="text-gray-300 leading-relaxed mb-6">
-                            To date, <strong className="text-white">no counsel</strong> for Seton Hall University, the Archdiocese
+                            To date, <strong className="text-zinc-900">no counsel</strong> for Seton Hall University, the Archdiocese
                             of Newark, or any individual named on this site has contacted the operators of this
                             publication to dispute any factual claim.
                         </p>
@@ -72,8 +72,8 @@ export default function Corrections() {
 
                 {/* Demand Letter Policy */}
                 <section className="mb-12 sm:mb-16 md:mb-20">
-                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-red-500 mb-4 sm:mb-6">Demand Letter Policy</h2>
-                    <div className="bg-red-950/20 border border-red-900/50 rounded-lg p-6 sm:p-8 md:p-10">
+                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-zinc-700 mb-4 sm:mb-6">Demand Letter Policy</h2>
+                    <div className="bg-zinc-100/20 border border-red-900/50 rounded-lg p-6 sm:p-8 md:p-10">
                         <p className="text-gray-300 leading-relaxed mb-4">
                             Any legal demand, cease-and-desist notice, or takedown request directed at this
                             publication will be <strong className="text-red-400">published in full on this page</strong>, redacted
@@ -89,7 +89,7 @@ export default function Corrections() {
 
                 {/* Request a Correction */}
                 <section className="mb-16">
-                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-red-500 mb-4 sm:mb-6">Request a Correction</h2>
+                    <h2 className="text-[10px] sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-zinc-700 mb-4 sm:mb-6">Request a Correction</h2>
                     <div className="bg-gray-800/30 border border-gray-700 rounded-lg p-6 sm:p-8 md:p-10">
                         <p className="text-gray-300 leading-relaxed mb-6">
                             If you believe any factual claim on this site is in error, we invite you to
@@ -109,7 +109,7 @@ export default function Corrections() {
 
                 <div className="text-center pt-8 border-t border-gray-800">
                     <Link href="/">
-                        <a className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition-colors">
+                        <a className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-8 py-3 rounded font-bold transition-colors">
                             Return to Investigation
                         </a>
                     </Link>

@@ -5,24 +5,24 @@ import { TipSubmissionForm } from "@/components/TipSubmissionForm";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-zinc-950 backdrop-blur-sm border-b border-zinc-800">
+      <header className="sticky top-0 z-50 bg-zinc-50 backdrop-blur-sm border-b border-zinc-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
-            <a className="text-2xl font-bold text-zinc-400 hover:text-zinc-500 transition-colors">
+            <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors">
               {APP_TITLE}
             </a>
           </Link>
           <nav className="flex gap-6">
             <Link href="/">
-              <a className="text-gray-300 hover:text-white transition-colors">Home</a>
+              <a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a>
             </Link>
             <Link href="/documents">
-              <a className="text-gray-300 hover:text-white transition-colors">Documents</a>
+              <a className="text-gray-300 hover:text-zinc-900 transition-colors">Documents</a>
             </Link>
             <Link href="/about">
-              <a className="text-white font-bold">About</a>
+              <a className="text-zinc-900 font-bold">About</a>
             </Link>
           </nav>
         </div>
@@ -30,7 +30,7 @@ export default function About() {
 
       {/* Content */}
       <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-5xl font-bold mb-8 text-zinc-400">About This Investigation</h1>
+        <h1 className="text-5xl font-bold mb-8 text-zinc-600">About This Investigation</h1>
 
         <div className="prose prose-invert prose-lg max-w-none space-y-8">
           <section>
@@ -93,7 +93,7 @@ export default function About() {
             </p>
           </section>
 
-          <section className="p-6 bg-red-950/20 border-2 border-zinc-800/50 rounded-lg">
+          <section className="p-6 bg-zinc-100/20 border-2 border-zinc-300/50 rounded-lg">
             <h2 className="text-3xl font-bold mb-4 text-red-400">We Welcome Legal Process</h2>
             <p className="mb-4">
               This investigation welcomes any legal challenge. We will litigate in the open. All demand
@@ -179,7 +179,7 @@ export default function About() {
 
         <div className="mt-16 text-center">
           <Link href="/">
-            <a className="inline-block bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded font-bold transition-colors">
+            <a className="inline-block bg-zinc-200 hover:bg-zinc-700 text-zinc-900 px-8 py-3 rounded font-bold transition-colors">
               Return to Investigation
             </a>
           </Link>

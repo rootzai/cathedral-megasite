@@ -48,7 +48,7 @@ export default function UnifiedLayout({
                                     />
                                 </Link>
                                 <div className="h-4 w-px bg-border mx-2" />
-                                <p className="font-mono text-xs text-zinc-500 uppercase tracking-[0.2em] font-bold">
+                                <p className="font-mono text-xs text-zinc-600 uppercase tracking-[0.2em] font-bold">
                                     ACT FILE: {caseFile}
                                 </p>
                             </div>
@@ -63,7 +63,7 @@ export default function UnifiedLayout({
 
                         <div className="flex items-center gap-2">
                             <Link href="/">
-                                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-zinc-400 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-zinc-500 hover:bg-zinc-800/50 active:scale-95 shadow-sm">
+                                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-zinc-600 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-zinc-500 hover:bg-zinc-200/50 active:scale-95 shadow-sm">
                                     Return to Archway
                                 </div>
 
@@ -82,10 +82,10 @@ export default function UnifiedLayout({
                                     <div className={cn(
                                         "flex-shrink-0 py-2.5 sm:py-4 px-4 sm:px-6 md:px-8 text-center font-mono text-[10px] sm:text-[11px] md:text-sm uppercase tracking-[0.1em] sm:tracking-[0.15em] cursor-pointer transition-all border-r border-border hover:bg-foreground/5 last:border-r-0",
                                         isActive
-                                            ? "border-b-4 border-b-zinc-400 text-zinc-200 font-black bg-foreground/5 scale-105 z-10"
+                                            ? "border-b-4 border-b-zinc-400 text-zinc-800 font-black bg-foreground/5 scale-105 z-10"
                                             : "border-b-4 border-b-transparent text-foreground/70 hover:text-foreground hover:bg-foreground/[0.02]"
                                     )}>
-                                        <span className={cn("mr-3 text-[10px] font-bold", isActive ? "text-zinc-400" : "opacity-40")}>{item.id}</span>
+                                        <span className={cn("mr-3 text-[10px] font-bold", isActive ? "text-zinc-600" : "opacity-40")}>{item.id}</span>
                                         {item.label}
                                     </div>
 

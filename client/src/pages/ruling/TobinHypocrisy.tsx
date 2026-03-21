@@ -27,7 +27,7 @@ export default function TobinHypocrisy() {
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 font-mono text-xs text-white/70 uppercase tracking-widest">
+              <p className="absolute bottom-4 left-4 font-mono text-xs text-zinc-900/70 uppercase tracking-widest">
                 The Empty Chair: A Symbol of Non-Compliance
               </p>
             </div>

@@ -29,7 +29,7 @@ export function HomeMedia() {
     ];
 
     return (
-        <section id="share" className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 bg-gradient-to-b from-black to-gray-900 border-t border-red-900/10 text-white">
+        <section id="share" className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 bg-gradient-to-b from-black to-gray-900 border-t border-red-900/10 text-zinc-900">
             <div className="container mx-auto max-w-7xl">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center">Share This Report</h2>
                 <p className="text-base sm:text-lg md:text-xl text-gray-400 text-center mb-8 sm:mb-12">Download and share these images. The truth deserves to go viral.</p>
@@ -37,18 +37,18 @@ export function HomeMedia() {
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                     {assets.map((item, idx) => (
                         <div key={idx} className="text-center group">
-                            <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-red-600 transition-all aspect-square flex items-center justify-center bg-zinc-950">
+                            <div className="overflow-hidden rounded-lg shadow-2xl mb-4 border-4 border-transparent group-hover:border-zinc-300 transition-all aspect-square flex items-center justify-center bg-zinc-50">
                                 <SmartImage src={item.src} alt={item.title} className="w-full transform group-hover:scale-105 transition-transform" />
                             </div>
                             <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                            <a href={item.downloadUrl || item.src} download className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-bold transition-colors">
+                            <a href={item.downloadUrl || item.src} download className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 rounded text-sm font-bold transition-colors">
                                 Download
                             </a>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-10 sm:mt-16 p-4 sm:p-8 bg-zinc-950 border-2 border-red-900/20 rounded-lg text-center">
+                <div className="mt-10 sm:mt-16 p-4 sm:p-8 bg-zinc-50 border-2 border-red-900/20 rounded-lg text-center">
                     <p className="text-gray-400 italic">
                         This investigation persists through the preservation of primary source documents.
                     </p>

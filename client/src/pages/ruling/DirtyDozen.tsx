@@ -107,7 +107,7 @@ export default function DirtyDozen() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
                     <div className="absolute top-4 left-4">
-                      <Cross className="w-6 h-6 text-white/50 rotate-180" />
+                      <Cross className="w-6 h-6 text-zinc-900/50 rotate-180" />
                     </div>
                   </div>
 
@@ -143,7 +143,7 @@ export default function DirtyDozen() {
                 </Card>
               </DialogTrigger>
               
-              <DialogContent className="max-w-2xl bg-black border-destructive/20">
+              <DialogContent className="max-w-2xl bg-white border-destructive/20">
                 <DialogHeader>
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="outline" className="font-mono uppercase tracking-widest text-destructive border-destructive/50">
@@ -153,7 +153,7 @@ export default function DirtyDozen() {
                       ID: {member.id.toUpperCase()}
                     </Badge>
                   </div>
-                  <DialogTitle className="font-heading text-4xl text-white mb-1">{member.name}</DialogTitle>
+                  <DialogTitle className="font-heading text-4xl text-zinc-900 mb-1">{member.name}</DialogTitle>
                   <DialogDescription className="font-mono text-lg text-muted-foreground">
                     {member.role} | {member.location}
                   </DialogDescription>
@@ -162,7 +162,7 @@ export default function DirtyDozen() {
                 <div className="space-y-6 py-4">
                   <div className="flex items-center justify-between bg-destructive/10 p-4 rounded border border-destructive/20">
                     <span className="font-mono text-sm uppercase tracking-widest text-destructive">Probability of Implication</span>
-                    <span className="font-heading text-2xl text-white">{member.probability}</span>
+                    <span className="font-heading text-2xl text-zinc-900">{member.probability}</span>
                   </div>
 
                   <div className="space-y-2">

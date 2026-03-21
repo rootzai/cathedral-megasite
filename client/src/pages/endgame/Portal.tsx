@@ -3,14 +3,14 @@ import { Link } from "wouter";
 
 export default function Portal() {
   return (
-    <div className="min-h-screen bg-black text-white font-serif flex flex-col items-center justify-center p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-white text-zinc-900 font-serif flex flex-col items-center justify-center p-8 relative overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-20 pointer-events-none"
         style={{ backgroundImage: "url('/assets/images/paper_texture.png')" }}></div>
 
       <div className="z-10 max-w-4xl w-full space-y-12 text-center">
         <div className="space-y-4 animate-in fade-in duration-1000 slide-in-from-top-8">
-          <h1 className="text-5xl md:text-7xl font-display uppercase tracking-tighter text-white text-shadow-blood">
+          <h1 className="text-5xl md:text-7xl font-display uppercase tracking-tighter text-zinc-900 text-shadow-blood">
             The Franchise
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 italic font-serif max-w-2xl mx-auto">
@@ -18,7 +18,7 @@ export default function Portal() {
           </p>
           <div className="pt-4">
             <Link href="/expose">
-              <button className="px-6 py-2 border border-destructive text-destructive font-mono text-xs uppercase tracking-widest hover:bg-destructive hover:text-white transition-all">
+              <button className="px-6 py-2 border border-destructive text-destructive font-mono text-xs uppercase tracking-widest hover:bg-destructive hover:text-zinc-900 transition-all">
                 Access The Architecture of Silence Dossier
               </button>
             </Link>
@@ -29,7 +29,7 @@ export default function Portal() {
           {/* McCarrick Dossier Card */}
           <Link href="/endgame/mccarrick">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
                 src="/assets/images/mccarrick_portrait.jpg"
                 alt="Theodore McCarrick"
@@ -37,10 +37,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2018-TM</span>
-                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Architect
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
                   The rise and fall of Theodore McCarrick, the predator who built the pipeline.
                 </p>
               </div>
@@ -50,7 +50,7 @@ export default function Portal() {
           {/* Checchio Dossier Card */}
           <Link href="/endgame/checchio">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
                 src="/assets/images/checchio_portrait.jpg"
                 alt="James Checchio"
@@ -58,10 +58,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-JC</span>
-                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Protégé
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
                   James Checchio: The Newark export sent to bury the past in New Orleans.
                 </p>
               </div>
@@ -71,7 +71,7 @@ export default function Portal() {
           {/* Reilly Dossier Card */}
           <Link href="/endgame/reilly">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
                 src="/assets/figures/reilly_portrait.jpg"
                 alt="Joseph Reilly"
@@ -79,10 +79,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-SHU</span>
-                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Presidency of Joseph Reilly
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
                   Joseph Reilly: Protected and promoted to President of Seton Hall University.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function Portal() {
           {/* Martin Dossier Card */}
           <Link href="/endgame/martin">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
                 src="/assets/images/martin_portrait.png"
                 alt="Ken Martin"
@@ -100,10 +100,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1989-KM</span>
-                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Case of Kenneth Martin
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
                   Ken Martin: Serial abuser laundered through the system to serve McCarrick.
                 </p>
               </div>
@@ -113,7 +113,7 @@ export default function Portal() {
           {/* Lorenzo Dossier Card */}
           <Link href="/endgame/lorenzo">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
                 src="/assets/images/lorenzo_portrait.png"
                 alt="Elias Lorenzo"
@@ -121,10 +121,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1980-EL</span>
-                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Case of Elias Lorenzo
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
                   Elias Lorenzo: Kicked out for deviant conduct, rebranded, and elevated to Bishop.
                 </p>
               </div>

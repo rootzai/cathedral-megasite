@@ -284,7 +284,7 @@ export default function DocumentViewer({ title, documentId, children }: Document
         
         <div className="flex-1 bg-muted/10 p-0 overflow-hidden relative">
           <ScrollArea className="h-full">
-            <div className="p-8 min-h-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-mono text-sm leading-relaxed whitespace-pre-wrap shadow-inner">
+            <div className="p-8 min-h-full bg-white dark:bg-zinc-50 text-zinc-900 dark:text-zinc-900 font-mono text-sm leading-relaxed whitespace-pre-wrap shadow-inner">
               {docData ? (
                 docData.content
               ) : (

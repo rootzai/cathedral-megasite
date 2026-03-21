@@ -80,9 +80,9 @@ export default function CorporateVeil() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-center justify-between p-4 bg-zinc-900/50 border border-border rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-zinc-100/50 border border-border rounded-lg">
                   <div className="text-center w-1/3">
-                    <div className="w-12 h-12 mx-auto bg-zinc-800 rounded-full flex items-center justify-center mb-2">
+                    <div className="w-12 h-12 mx-auto bg-zinc-200 rounded-full flex items-center justify-center mb-2">
                       <span className="font-heading text-xl">RCAN</span>
                     </div>
                     <p className="font-mono text-[10px] uppercase text-muted-foreground">Archdiocese</p>
@@ -95,7 +95,7 @@ export default function CorporateVeil() {
                     </div>
                   </div>
                   <div className="text-center w-1/3">
-                    <div className="w-12 h-12 mx-auto bg-zinc-800 rounded-full flex items-center justify-center mb-2">
+                    <div className="w-12 h-12 mx-auto bg-zinc-200 rounded-full flex items-center justify-center mb-2">
                       <span className="font-heading text-xl">SHU</span>
                     </div>
                     <p className="font-mono text-[10px] uppercase text-muted-foreground">University</p>

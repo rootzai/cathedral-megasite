@@ -155,7 +155,7 @@ export function TipSubmissionForm() {
           type="checkbox"
           id="anonymous"
           {...register('anonymous')}
-          className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-red-600 focus:ring-red-600"
+          className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-zinc-800 focus:ring-red-600"
         />
         <label htmlFor="anonymous" className="text-gray-200 font-semibold cursor-pointer">
           Submit Anonymously (no contact information required)
@@ -173,10 +173,10 @@ export function TipSubmissionForm() {
               type="text"
               id="name"
               {...register('name')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
               placeholder="Your name"
             />
-            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+            {errors.name && <p className="text-zinc-700 text-xs mt-1">{errors.name.message}</p>}
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-300">
@@ -186,10 +186,10 @@ export function TipSubmissionForm() {
               type="email"
               id="email"
               {...register('email')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
               placeholder="your@email.com"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+            {errors.email && <p className="text-zinc-700 text-xs mt-1">{errors.email.message}</p>}
           </div>
         </div>
       )}
@@ -197,31 +197,31 @@ export function TipSubmissionForm() {
       {/* Subject */}
       <div>
         <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-gray-300">
-          Subject <span className="text-red-500">*</span>
+          Subject <span className="text-zinc-700">*</span>
         </label>
         <input
           type="text"
           id="subject"
           {...register('subject')}
-          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none"
+          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
           placeholder="Brief description of your tip"
         />
-        {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
+        {errors.subject && <p className="text-zinc-700 text-xs mt-1">{errors.subject.message}</p>}
       </div>
 
       {/* Message */}
       <div>
         <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-300">
-          Your Tip <span className="text-red-500">*</span>
+          Your Tip <span className="text-zinc-700">*</span>
         </label>
         <textarea
           id="message"
           rows={8}
           {...register('message')}
-          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-red-600 focus:outline-none resize-none"
+          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none resize-none"
           placeholder="Provide as much detail as possible. Include dates, names, locations, and any supporting information."
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+        {errors.message && <p className="text-zinc-700 text-xs mt-1">{errors.message.message}</p>}
       </div>
 
       {/* File Upload */}
@@ -229,7 +229,7 @@ export function TipSubmissionForm() {
         <label className="block text-sm font-semibold mb-2 text-gray-300">
           Attach Documents (Optional)
         </label>
-        <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-red-600 transition-colors">
+        <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-zinc-300 transition-colors">
           <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
           <p className="text-gray-400 mb-2">Upload supporting documents, images, or evidence</p>
           <input
@@ -260,7 +260,7 @@ export function TipSubmissionForm() {
                 <button
                   type="button"
                   onClick={() => removeFile(index)}
-                  className="text-red-500 hover:text-red-400 ml-2"
+                  className="text-zinc-700 hover:text-red-400 ml-2"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -282,8 +282,8 @@ export function TipSubmissionForm() {
       {/* Submit Button */}
       <div>
         {status === 'error' && (
-          <div className="mb-4 p-4 bg-red-900/20 border border-red-600 rounded-lg flex items-center gap-3">
-            <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+          <div className="mb-4 p-4 bg-zinc-200/50 border border-zinc-300 rounded-lg flex items-center gap-3">
+            <AlertCircle className="w-5 h-5 text-zinc-700 flex-shrink-0" />
             <p className="text-red-300">
               {errorMessage ?? 'Submission failed. Please try again or use one of the alternative contact methods above.'}
             </p>
@@ -293,7 +293,7 @@ export function TipSubmissionForm() {
         <Button
           type="submit"
           disabled={status === 'submitting' || !submissionEnabled}
-          className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+          className="w-full bg-red-600 hover:bg-red-700 text-zinc-900 font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
         >
           {status === 'submitting' ? (
             <>

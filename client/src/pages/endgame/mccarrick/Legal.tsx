@@ -20,7 +20,7 @@ export default function Legal() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">Reilly Rides a Stang</h2>
+              <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">Reilly Rides a Stang</h2>
               <p className="text-sm text-gray-300 italic">"The wild ride of cover-ups."</p>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Legal() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">Demand Action</h2>
+              <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">Demand Action</h2>
               <p className="text-sm text-gray-300 italic">"Tobin conspired to cover up Reilly's crimes!"</p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Legal() {
 
           <div className="space-y-6">
             <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
+              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
                 <iframe 
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   src="https://www.youtube.com/embed/8uPSR4ysAaw" 
@@ -80,7 +80,7 @@ export default function Legal() {
             </div>
 
             <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
+              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
                 <iframe 
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p" // Placeholder for PBS video if direct embed fails, using generic playlist or similar
@@ -90,7 +90,7 @@ export default function Legal() {
                 />
                 {/* Note: PBS video embed might need specific handling, using iframe for now */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span className="bg-black/50 text-white px-2 py-1 font-mono text-xs">PBS NEWSHOUR ARCHIVE</span>
+                  <span className="bg-white/50 text-zinc-900 px-2 py-1 font-mono text-xs">PBS NEWSHOUR ARCHIVE</span>
                 </div>
               </div>
               <div className="p-3 font-mono text-xs border-t border-border">

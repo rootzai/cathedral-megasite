@@ -61,7 +61,7 @@ export default function CheckchioNewOrleans() {
       </section>
 
       {/* Forensic Asset: The Relocation Map */}
-      <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+      <section className="bg-zinc-50 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
         <header className="mb-12 text-center">
@@ -79,8 +79,8 @@ export default function CheckchioNewOrleans() {
             <ArrowRight className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-gold animate-pulse" />
           </div>
           <div className="flex flex-col items-center">
-            <MapPin className="w-12 h-12 text-blood mb-2" />
-            <span className="font-mono text-[10px] uppercase text-blood">The See</span>
+            <MapPin className="w-12 h-12 text-zinc-800 mb-2" />
+            <span className="font-mono text-[10px] uppercase text-zinc-800">The See</span>
             <span className="text-sm font-bold">New Orleans, LA</span>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function CheckchioNewOrleans() {
             </ul>
           </div>
           <div className="p-6 bg-white/5 border border-white/10 space-y-4">
-            <h4 className="font-heading text-lg text-blood">Inherited Settlement (LA)</h4>
+            <h4 className="font-heading text-lg text-zinc-800">Inherited Settlement (LA)</h4>
             <div className="space-y-3">
               <div className="flex justify-between border-b border-white/10 pb-2">
                 <span className="text-xs font-mono uppercase tracking-widest">Base Payout</span>

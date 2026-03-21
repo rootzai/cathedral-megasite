@@ -38,7 +38,7 @@ export default function TheRegime() {
               <div className="relative pl-8 border-l border-border">
                 <div className="absolute -left-1.5 top-0 w-3 h-3 bg-destructive rounded-full" />
                 <h3 className="font-display font-bold text-2xl mb-2">Internal Communications</h3>
-                <div className="bg-black text-white p-6 font-mono text-sm leading-loose">
+                <div className="bg-white text-zinc-900 p-6 font-mono text-sm leading-loose">
                   <p className="mb-4 uppercase text-destructive font-bold border-b border-white/20 pb-2">CONFIDENTIAL MEMO: O'CONNOR TO NUNCIO</p>
                   <p>
                     In 1999, Cardinal John O'Connor of New York wrote a letter warning against McCarrick's promotion, citing <RedactedText>credible allegations of sexual misconduct</RedactedText>.
@@ -66,8 +66,8 @@ export default function TheRegime() {
                         alt="Reilly Rides a Stang" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-white font-mono text-xs uppercase tracking-widest bg-black/70 px-2 py-1">Expand</span>
+                      <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-zinc-900 font-mono text-xs uppercase tracking-widest bg-white/70 px-2 py-1">Expand</span>
                       </div>
                     </div>
                   </ImageModal>
@@ -85,8 +85,8 @@ export default function TheRegime() {
                         alt="Demand Action" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-white font-mono text-xs uppercase tracking-widest bg-black/70 px-2 py-1">Expand</span>
+                      <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-zinc-900 font-mono text-xs uppercase tracking-widest bg-white/70 px-2 py-1">Expand</span>
                       </div>
                     </div>
                   </ImageModal>
@@ -130,7 +130,7 @@ export default function TheRegime() {
           <h3 className="font-display font-bold text-3xl mb-8 uppercase">Video Evidence</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
+              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
                 <iframe 
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   src="https://www.youtube.com/embed/8uPSR4ysAaw" 
@@ -145,7 +145,7 @@ export default function TheRegime() {
               </div>
             </div>
             <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-black relative group cursor-pointer overflow-hidden">
+              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
                 <iframe 
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p" 

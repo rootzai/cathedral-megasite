@@ -58,7 +58,7 @@ export default function Survivors() {
               </div>
             </div>
 
-            <div className="bg-black text-white p-6 font-mono text-xs leading-loose">
+            <div className="bg-white text-zinc-900 p-6 font-mono text-xs leading-loose">
               <h4 className="font-bold uppercase text-destructive mb-4 border-b border-white/20 pb-2">Impact Statement</h4>
               <p>
                 The psychological toll on survivors includes:

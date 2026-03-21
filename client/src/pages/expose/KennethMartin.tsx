@@ -17,7 +17,7 @@ export default function KennethMartin() {
         <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
           How a documented predator became the blueprint for forty years of institutional concealment.
         </p>
-        <div className="h-1 w-20 bg-blood mb-8" />
+        <div className="h-1 w-20 bg-zinc-800 mb-8" />
       </header>
 
       <div className="prose-investigative mb-16">
@@ -74,7 +74,7 @@ export default function KennethMartin() {
           <div className="absolute left-4 top-0 bottom-0 w-px bg-gold/20" />
 
           <div className="relative pl-12">
-            <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-blood shadow-sm" />
+            <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-zinc-800 shadow-sm" />
             <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>The Report</h4>
 
             <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>1983 · Newark Chancery</p>
@@ -113,7 +113,7 @@ export default function KennethMartin() {
           </div>
 
           <div className="relative pl-12">
-            <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-blood shadow-sm" />
+            <div className="absolute left-3 top-2 w-3 h-3 rounded-full bg-zinc-800 shadow-sm" />
             <h4 className="font-bold mb-1 uppercase tracking-widest text-xs" style={{ color: "var(--ink)" }}>
               The Arrest</h4>
             <p className="text-sm uppercase mb-2" style={{ color: "var(--ink-mid)" }}>

@@ -44,7 +44,7 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
     return (
         <div className="expose-theme flex min-h-screen" style={{ background: "#faf6ee" }}>
             {mobileOpen && (
-                <div className="fixed inset-0 z-40 bg-black/60 lg:hidden" onClick={() => setMobileOpen(false)} />
+                <div className="fixed inset-0 z-40 bg-white/60 lg:hidden" onClick={() => setMobileOpen(false)} />
             )}
 
             <aside

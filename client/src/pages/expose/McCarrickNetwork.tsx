@@ -60,7 +60,7 @@ export default function McCarrickNetwork() {
         className="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tighter"
         style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
       >
-        The House <br />McCarrick <span className="text-blood italic">Built</span>
+        The House <br />McCarrick <span className="text-zinc-800 italic">Built</span>
       </h1>
       <p className="text-lg md:text-xl mb-2 text-gold italic font-serif">
         Church, State, Judiciary &amp; Organized Crime — The Interlocking Architecture of New Jersey Corruption
@@ -69,7 +69,7 @@ export default function McCarrickNetwork() {
         Forensic Analysis · February 2026 · Submitted to Chief Justice Stuart Rabner
       </p>
 
-      <div className="pull-quote border-l-4 border-blood pl-8 mb-16">
+      <div className="pull-quote border-l-4 border-zinc-400 pl-8 mb-16">
         <p className="text-2xl italic text-muted-foreground font-serif leading-relaxed">
           "McCarrick didn't just abuse seminarians. He built a machine — and the machine is still running."
         </p>
@@ -108,7 +108,7 @@ export default function McCarrickNetwork() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         {/* Pillar 1: Church */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-blood border-b border-blood/20 pb-2 font-display">I. The Church</h3>
+          <h3 className="text-xl font-bold text-zinc-800 border-b border-zinc-400/20 pb-2 font-display">I. The Church</h3>
           <p className="text-base text-muted-foreground font-serif leading-relaxed">
             The seminary at Seton Hall was McCarrick's recruitment ground. Those who submitted to his
             demands were rewarded with rapid promotion. Today, the same hierarchy protects the network's legacy.
@@ -117,7 +117,7 @@ export default function McCarrickNetwork() {
 
         {/* Pillar 2: State */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-blood border-b border-blood/20 pb-2 font-display">II. The State</h3>
+          <h3 className="text-xl font-bold text-zinc-800 border-b border-zinc-400/20 pb-2 font-display">II. The State</h3>
           <p className="text-base text-muted-foreground font-serif leading-relaxed">
             Governor Christie appointed 75+ judges currently on the bench. His top legal aides now
             serve as the university's defense counsel, creating a "closed loop" in the judiciary.
@@ -126,7 +126,7 @@ export default function McCarrickNetwork() {
 
         {/* Pillar 3: The Mob */}
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-blood border-b border-blood/20 pb-2 font-display">III. The Omertà</h3>
+          <h3 className="text-xl font-bold text-zinc-800 border-b border-zinc-400/20 pb-2 font-display">III. The Omertà</h3>
           <p className="text-base text-muted-foreground font-serif leading-relaxed">
             The institutional response to abuse — silence, transfer, and intimidation — is structurally
             identical to the mob's culture of omertà. Loyalty is the supreme virtue; exposure is the crime.
@@ -143,8 +143,8 @@ export default function McCarrickNetwork() {
       </div>
 
       {/* Where are they now */}
-      <div className="finding-box bg-zinc-950 border border-zinc-800 p-12 rounded-sm mb-20 ring-1 ring-blood/20">
-        <div className="exhibit-label mb-6 bg-blood text-white inline-block px-4 py-1 uppercase tracking-widest text-[10px] font-bold">
+      <div className="finding-box bg-zinc-50 border border-zinc-300 p-12 rounded-sm mb-20 ring-1 ring-blood/20">
+        <div className="exhibit-label mb-6 bg-zinc-800 text-zinc-900 inline-block px-4 py-1 uppercase tracking-widest text-[10px] font-bold">
           The 12 Clergymen — "Where Are They Now?"
         </div>
         <div className="space-y-6 text-lg text-muted-foreground font-serif leading-relaxed">
@@ -153,7 +153,7 @@ export default function McCarrickNetwork() {
             named. They were transferred. The dioceses that now unknowingly host these individuals include
             parishes and schools across the Northeast. This is the mechanism by which the network perpetuates
             itself: not through active conspiracy in every case, but through the institutional reflex of
-            <strong className="text-white"> moving the problem rather than solving it</strong>.
+            <strong className="text-zinc-900"> moving the problem rather than solving it</strong>.
           </p>
           <p>
             The task force's "double dealing and corruption" — its refusal to abide by its own recommendations,
@@ -165,8 +165,8 @@ export default function McCarrickNetwork() {
       </div>
 
       {/* The Sopranos parallel */}
-      <div className="evidence-box border-t-4 border-blood pt-12">
-        <h3 className="text-xs font-bold font-mono tracking-widest uppercase text-blood mb-4">Case Study · Institutional Parallels</h3>
+      <div className="evidence-box border-t-4 border-zinc-400 pt-12">
+        <h3 className="text-xs font-bold font-mono tracking-widest uppercase text-zinc-800 mb-4">Case Study · Institutional Parallels</h3>
         <p className="text-2xl font-black mb-6 leading-tight font-display">The Sopranos Parallel — <br />Not a Metaphor</p>
         <div className="space-y-6 text-base text-muted-foreground font-serif leading-relaxed max-w-3xl">
           <p>
@@ -178,7 +178,7 @@ export default function McCarrickNetwork() {
             The difference is that the Church's version of this system has tax-exempt status, a law school,
             and a university presidency to offer its loyalists. The use of a criminal grand jury subpoena
             to unmask a civil whistleblower is the institutional equivalent of a knock on the door at night.
-            The message is: <strong className="text-blood shadow-blood">we know who you are, and we will find you.</strong>
+            The message is: <strong className="text-zinc-800 shadow-blood">we know who you are, and we will find you.</strong>
           </p>
         </div>
       </div>

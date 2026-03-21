@@ -27,7 +27,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-6">
-                        <div className="relative aspect-[4/5] bg-zinc-950 border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
+                        <div className="relative aspect-[4/5] bg-zinc-50 border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
                             <img
                                 src="/assets/images/lorenzo_portrait.png"
                                 alt="Elias Lorenzo"
@@ -36,7 +36,7 @@ export default function Home() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
                             <div className="absolute bottom-6 left-6 right-6">
                                 <div className="font-mono text-[10px] uppercase tracking-widest text-destructive mb-2">Docket: Auxiliary Bishop of Newark</div>
-                                <h2 className="font-heading text-3xl text-white">Elias Lorenzo</h2>
+                                <h2 className="font-heading text-3xl text-zinc-900">Elias Lorenzo</h2>
                                 <p className="font-serif text-sm italic text-gray-400">Former Prior of St. Mary's Abbey</p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ export default function Home() {
             </section>
 
             {/* Forensic Asset: The Succession Path */}
-            <section className="bg-zinc-950 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+            <section className="bg-zinc-50 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-destructive to-transparent" />
 
                 <header className="mb-12 text-center">
@@ -102,7 +102,7 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4">
                     <div className="space-y-4 group">
-                        <div className="w-16 h-16 bg-destructive/10 border border-destructive/20 rounded-full flex items-center justify-center mx-auto group-hover:bg-destructive group-hover:text-white transition-all">
+                        <div className="w-16 h-16 bg-destructive/10 border border-destructive/20 rounded-full flex items-center justify-center mx-auto group-hover:bg-destructive group-hover:text-zinc-900 transition-all">
                             <AlertTriangle className="w-6 h-6" />
                         </div>
                         <h4 className="font-heading text-xl">The Reset</h4>
@@ -120,7 +120,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-4 group">
-                        <div className="w-16 h-16 bg-destructive/10 border border-destructive/20 rounded-full flex items-center justify-center mx-auto group-hover:bg-blood group-hover:text-white transition-all">
+                        <div className="w-16 h-16 bg-destructive/10 border border-destructive/20 rounded-full flex items-center justify-center mx-auto group-hover:bg-zinc-800 group-hover:text-zinc-900 transition-all">
                             <Scale className="w-6 h-6" />
                         </div>
                         <h4 className="font-heading text-xl">The Verdict</h4>
@@ -131,11 +131,11 @@ export default function Home() {
             </section>
 
             {/* The Epilogue Tease */}
-            <div className="evidence-box bg-destructive text-white p-12 rounded-none shadow-2xl relative">
-                <div className="absolute inset-0 bg-black/10 flex items-center justify-center pointer-events-none">
+            <div className="evidence-box bg-destructive text-zinc-900 p-12 rounded-none shadow-2xl relative">
+                <div className="absolute inset-0 bg-white/10 flex items-center justify-center pointer-events-none">
                     <Gavel className="w-64 h-64 opacity-5" />
                 </div>
-                <div className="exhibit-label text-white/60 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Final Finding · The Succession</div>
+                <div className="exhibit-label text-zinc-900/60 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Final Finding · The Succession</div>
                 <p className="text-2xl leading-relaxed italic mb-8 font-serif">
                     "Succession is the ultimate act of erasure. If the manager of the silence becomes the
                     leader of the Archdiocese, the silence is no longer a policy. It is the law."

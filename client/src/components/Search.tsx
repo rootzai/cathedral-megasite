@@ -91,7 +91,7 @@ export function Search({ onClose }: SearchProps) {
       const parts = text.split(regex);
       return parts.map((part, i) =>
         i % 2 === 1 ? (
-          <mark key={`${part}-${i}`} className="bg-red-500 text-white px-1">
+          <mark key={`${part}-${i}`} className="bg-red-500 text-zinc-900 px-1">
             {part}
           </mark>
         ) : (
@@ -105,33 +105,33 @@ export function Search({ onClose }: SearchProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex items-start justify-center pt-20 px-4">
-      <div className="w-full max-w-3xl bg-zinc-900 rounded-lg shadow-2xl border-2 border-red-600">
-        <div className="flex items-center gap-3 p-4 border-b border-red-600">
-          <SearchIcon className="w-5 h-5 text-red-500" />
+    <div className="fixed inset-0 bg-white/90 z-50 flex items-start justify-center pt-20 px-4">
+      <div className="w-full max-w-3xl bg-zinc-100 rounded-lg shadow-2xl border-2 border-zinc-300">
+        <div className="flex items-center gap-3 p-4 border-b border-zinc-300">
+          <SearchIcon className="w-5 h-5 text-zinc-700" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for names, dates, events..."
-            className="flex-1 bg-transparent text-white placeholder-zinc-500 outline-none"
+            className="flex-1 bg-transparent text-zinc-900 placeholder-zinc-500 outline-none"
           />
           <button
             onClick={onClose}
-            className="p-1 hover:bg-zinc-800 rounded transition-colors"
+            className="p-1 hover:bg-zinc-200 rounded transition-colors"
           >
-            <X className="w-5 h-5 text-zinc-400" />
+            <X className="w-5 h-5 text-zinc-600" />
           </button>
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto">
           {query.length < 2 ? (
-            <div className="p-8 text-center text-zinc-500">
+            <div className="p-8 text-center text-zinc-600">
               Type at least 2 characters to search
             </div>
           ) : results.length === 0 ? (
-            <div className="p-8 text-center text-zinc-500">
+            <div className="p-8 text-center text-zinc-600">
               No results found for "{query}"
             </div>
           ) : (
@@ -148,17 +148,17 @@ export function Search({ onClose }: SearchProps) {
                       onClose();
                     }
                   }}
-                  className="w-full p-4 text-left hover:bg-zinc-800 transition-colors"
+                  className="w-full p-4 text-left hover:bg-zinc-200 transition-colors"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold text-red-500">{result.act}</span>
-                    <span className="text-xs text-zinc-500">•</span>
-                    <span className="text-xs text-zinc-500">{result.section}</span>
+                    <span className="text-xs font-bold text-zinc-700">{result.act}</span>
+                    <span className="text-xs text-zinc-600">•</span>
+                    <span className="text-xs text-zinc-600">{result.section}</span>
                   </div>
-                  <h4 className="font-bold text-white mb-1">
+                  <h4 className="font-bold text-zinc-900 mb-1">
                     {highlightText(result.title, query)}
                   </h4>
-                  <p className="text-sm text-zinc-400">
+                  <p className="text-sm text-zinc-600">
                     {highlightText(result.snippet, query)}
                   </p>
                 </button>

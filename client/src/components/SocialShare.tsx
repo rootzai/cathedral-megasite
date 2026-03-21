@@ -45,7 +45,7 @@ export function SocialShare({
         href={shareLinks.twitter}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 text-white rounded-lg transition-colors border border-gray-700"
+        className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-gray-900 text-zinc-900 rounded-lg transition-colors border border-gray-700"
         title="Share on X (Twitter)"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -59,7 +59,7 @@ export function SocialShare({
         href={shareLinks.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-lg transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-zinc-900 rounded-lg transition-colors"
         title="Share on LinkedIn"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -71,7 +71,7 @@ export function SocialShare({
       {/* Copy Link (for Instagram and general sharing) */}
       <button
         onClick={handleCopyLink}
-        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-zinc-900 rounded-lg transition-colors"
         title="Copy link for Instagram or other platforms"
       >
         {copied ? (

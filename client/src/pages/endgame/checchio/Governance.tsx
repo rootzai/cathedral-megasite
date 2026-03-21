@@ -29,7 +29,7 @@ export default function Governance() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Fix Is In</h2>
+              <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Fix Is In</h2>
               <p className="text-sm text-gray-300 italic">"The Whitewashing of the Century."</p>
             </div>
           </div>

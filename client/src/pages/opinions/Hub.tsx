@@ -71,7 +71,7 @@ export default function OpinionsHub() {
 
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
-                                    <span className="w-8 h-px bg-black" />
+                                    <span className="w-8 h-px bg-white" />
                                     <span className="font-mono text-[10px] uppercase tracking-widest">{col.title}</span>
                                 </div>
                                 <h2 className="text-4xl font-bold tracking-tight leading-none group-hover:text-red-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>

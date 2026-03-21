@@ -46,7 +46,7 @@ export function PerryLawTimeline() {
 
   const typeColors = {
     resistance: "bg-blue-100 border-blue-600 text-blue-900",
-    coverup: "bg-red-100 border-red-600 text-red-900",
+    coverup: "bg-red-100 border-zinc-300 text-red-900",
     exposure: "bg-yellow-100 border-yellow-600 text-yellow-900"
   };
 

@@ -18,8 +18,8 @@ export default function MegaNavigation() {
     return `
       px-2 lg:px-4 py-3 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-all text-center
       ${isLinkActive
-        ? 'bg-red-600 text-white'
-        : 'text-gray-300 hover:bg-red-600/20 hover:text-white'}
+        ? 'bg-red-600 text-zinc-900'
+        : 'text-gray-300 hover:bg-red-600/20 hover:text-zinc-900'}
     `;
   };
 
@@ -32,12 +32,12 @@ export default function MegaNavigation() {
   ];
 
   return (
-    <nav className="bg-black border-b-2 border-red-600 sticky top-0 z-50">
+    <nav className="bg-white border-b-2 border-zinc-300 sticky top-0 z-50">
       {/* News Ticker */}
       <div className="bg-red-700 h-6 flex items-center overflow-hidden whitespace-nowrap border-b border-red-800">
         <div className="flex animate-ticker py-1">
           {[...newsItems, ...newsItems].map((item, idx) => (
-            <span key={idx} className="inline-block px-10 text-[10px] font-mono font-bold text-white uppercase tracking-wider">
+            <span key={idx} className="inline-block px-10 text-[10px] font-mono font-bold text-zinc-900 uppercase tracking-wider">
               {item}
             </span>
           ))}
@@ -69,7 +69,7 @@ export default function MegaNavigation() {
             <Link href="/about"><a className={navLinkClass('/about')}>ABOUT</a></Link>
             <Link href="/corrections"><a className={navLinkClass('/corrections')}>CORRECTIONS</a></Link>
             <Link href="/about#tips">
-              <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all">
+              <a className="ml-4 bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all">
                 SUBMIT A TIP
               </a>
             </Link>
@@ -90,7 +90,7 @@ export default function MegaNavigation() {
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white p-2"
+              className="text-zinc-900 p-2"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -100,31 +100,31 @@ export default function MegaNavigation() {
 
           {mobileMenuOpen && (
             <div className="pb-3 space-y-1">
-              <Link href="/origin"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE ORIGIN</a></Link>
-              <Link href="/coverup"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE COVER-UP</a></Link>
-              <Link href="/breach"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE BREACH</a></Link>
-              <Link href="/succession"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE SUCCESSION</a></Link>
-              <Link href="/opinion"><a className="block px-4 py-2 text-white hover:bg-red-600/20">OPINION</a></Link>
-              <Link href="/ledger"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE LEDGER</a></Link>
+              <Link href="/origin"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE ORIGIN</a></Link>
+              <Link href="/coverup"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE COVER-UP</a></Link>
+              <Link href="/breach"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE BREACH</a></Link>
+              <Link href="/succession"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE SUCCESSION</a></Link>
+              <Link href="/opinion"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">OPINION</a></Link>
+              <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
 
-              <Link href="/vault"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE VAULT</a></Link>
-              <Link href="/about"><a className="block px-4 py-2 text-white hover:bg-red-600/20">ABOUT</a></Link>
-              <Link href="/corrections"><a className="block px-4 py-2 text-white hover:bg-red-600/20">CORRECTIONS</a></Link>
-              <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-white">SUBMIT A TIP</a></Link>
+              <Link href="/vault"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE VAULT</a></Link>
+              <Link href="/about"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">ABOUT</a></Link>
+              <Link href="/corrections"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">CORRECTIONS</a></Link>
+              <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-zinc-900">SUBMIT A TIP</a></Link>
             </div>
           )}
         </div>
       </div>
       {/* Sub-navigation for The Ledger (People Index) */}
       {location.startsWith('/ledger') && (
-        <div className="bg-zinc-900 border-t border-zinc-800 animate-in slide-in-from-top-2 duration-300">
+        <div className="bg-zinc-100 border-t border-zinc-300 animate-in slide-in-from-top-2 duration-300">
           <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6">
-            <a href="#filter" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Who Knew</a>
-            <a href="#regents" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Regents</a>
-            <a href="#trustees" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Trustees</a>
-            <a href="#visitors" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Visitors</a>
-            <a href="#lawyers" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Lawyers</a>
-            <a href="#timeline" className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Timeline</a>
+            <a href="#filter" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Who Knew</a>
+            <a href="#regents" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Regents</a>
+            <a href="#trustees" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Trustees</a>
+            <a href="#visitors" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Visitors</a>
+            <a href="#lawyers" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Lawyers</a>
+            <a href="#timeline" className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">Timeline</a>
           </div>
         </div>
       )}
@@ -143,12 +143,12 @@ export default function MegaNavigation() {
 
       {/* Sub-navigation for Vault */}
       {location.startsWith('/vault') && (
-        <div className="bg-zinc-900 border-t border-zinc-800 animate-in slide-in-from-top-2 duration-300">
+        <div className="bg-zinc-100 border-t border-zinc-300 animate-in slide-in-from-top-2 duration-300">
           <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6">
-            <Link href="/origin"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Origin</a></Link>
-            <Link href="/coverup"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Cover-Up</a></Link>
-            <Link href="/breach"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Breach</a></Link>
-            <Link href="/succession"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Succession</a></Link>
+            <Link href="/origin"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Origin</a></Link>
+            <Link href="/coverup"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Cover-Up</a></Link>
+            <Link href="/breach"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Breach</a></Link>
+            <Link href="/succession"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Succession</a></Link>
           </div>
         </div>
       )}

@@ -231,7 +231,7 @@ export default function TheyKnew() {
       <GothicDivider />
 
       {/* ===== BOARD OF VISITORS — "The Secular Cloister" ===== */}
-      <div className="container-fluid bg-[oklch(0.12_0.01_285)] border-b border-zinc-800/30">
+      <div className="container-fluid bg-[oklch(0.12_0.01_285)] border-b border-zinc-300/30">
         <div className="container">
           <BoardSection board={boardOfVisitors} onFilterChange={handleFilterChange} />
         </div>
@@ -318,8 +318,8 @@ export default function TheyKnew() {
               className="p-8 rounded-sm border-2 border-[oklch(0.45_0.18_25/40%)] bg-[oklch(0.1_0.005_285)]"
             >
               <div className="flex items-center gap-3 mb-3">
-                <AlertTriangle className="w-6 h-6 text-crimson" />
-                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-crimson">
+                <AlertTriangle className="w-6 h-6 text-zinc-800" />
+                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-zinc-800">
                   {njagConnection.title}
                 </h3>
               </div>
@@ -330,7 +330,7 @@ export default function TheyKnew() {
                 {njagConnection.people.map((person) => (
                   <div key={person.name} className="border-l-2 border-[oklch(0.45_0.18_25/30%)] pl-5">
                     <div className="flex items-center gap-2">
-                      <User className="w-4 h-4 text-crimson shrink-0" />
+                      <User className="w-4 h-4 text-zinc-800 shrink-0" />
                       <span className="font-heading text-base tracking-wide text-parchment">{person.name}</span>
                     </div>
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>

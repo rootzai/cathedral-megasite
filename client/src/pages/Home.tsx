@@ -9,7 +9,7 @@ import { HomeEpilogue } from "./home/components/HomeEpilogue";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-black text-white">
+        <div className="min-h-screen bg-white text-zinc-900">
             <HomeHero />
             <main>
                 <HomeActs />

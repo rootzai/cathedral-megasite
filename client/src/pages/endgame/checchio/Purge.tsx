@@ -35,7 +35,7 @@ export default function Purge() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Architect of the Save</h2>
+              <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Architect of the Save</h2>
               <p className="text-sm text-gray-300 italic">"Nuance is the tool of the cover-up."</p>
             </div>
           </div>

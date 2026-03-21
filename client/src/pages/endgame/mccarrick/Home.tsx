@@ -50,8 +50,8 @@ export default function Home() {
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-destructive/10 mix-blend-multiply pointer-events-none" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                    <span className="bg-black/70 text-white text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20">
+                    <span className="bg-white/70 text-zinc-900 text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
                   </div>
                 </div>
               </ImageModal>

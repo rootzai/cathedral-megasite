@@ -45,7 +45,7 @@ export default function ChicagoConnection() {
                     </div>
                 </div>
 
-                <div className="mt-16 bg-zinc-900 border border-border p-8 rounded-lg relative overflow-hidden group">
+                <div className="mt-16 bg-zinc-100 border border-border p-8 rounded-lg relative overflow-hidden group">
                     <div className="absolute inset-0 bg-destructive/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                     <h2 className="font-heading text-3xl mb-6 relative z-10">The Mechanism of Complicity</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">

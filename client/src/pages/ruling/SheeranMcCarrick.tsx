@@ -34,7 +34,7 @@ export default function SheeranMcCarrick() {
                   <Camera className="w-5 h-5" />
                   <span className="font-mono text-xs uppercase tracking-widest">Archival Evidence</span>
                 </div>
-                <div className="aspect-video bg-black/40 flex items-center justify-center border border-dashed border-muted-foreground/30 mb-4">
+                <div className="aspect-video bg-white/40 flex items-center justify-center border border-dashed border-muted-foreground/30 mb-4">
                   <p className="font-mono text-sm text-muted-foreground text-center px-4">
                     [PLACEHOLDER: Photo of Msgr. Sheeran receiving medal from Pope John Paul II, Rome, 2000]<br/>
                     <span className="text-xs opacity-60">Source: Monsignor William Noe Field Archives (SHU-0049x)</span>

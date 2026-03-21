@@ -13,10 +13,10 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="mb-8 border-l-4 border-zinc-800 pl-6">
+    <div className="mb-8 border-l-4 border-zinc-300 pl-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-zinc-500 transition-colors w-full text-left"
+        className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-zinc-600 transition-colors w-full text-left"
       >
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         {title}
@@ -30,9 +30,9 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
 // Tooltip Component for 8th-grade explanations
 function Term({ word, definition }: { word: string; definition: string }) {
   return (
-    <span className="group relative inline-block border-b border-dashed border-zinc-500 cursor-help text-zinc-300">
+    <span className="group relative inline-block border-b border-dashed border-zinc-500 cursor-help text-zinc-800">
       {word}
-      <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-zinc-800 text-zinc-200 text-sm rounded shadow-xl border border-zinc-700 pointer-events-none z-50 text-left font-sans font-normal leading-relaxed">
+      <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-zinc-200 text-zinc-800 text-sm rounded shadow-xl border border-zinc-300 pointer-events-none z-50 text-left font-sans font-normal leading-relaxed">
         <strong>What does this mean?</strong><br />{definition}
       </span>
     </span>
@@ -53,11 +53,11 @@ export function HomeActs() {
   ];
 
   return (
-    <div className="flex flex-col xl:flex-row w-full bg-zinc-950">
+    <div className="flex flex-col xl:flex-row w-full bg-zinc-50">
       {/* Sidebar TOC */}
-      <aside className="hidden xl:block w-72 flex-shrink-0 border-r border-zinc-900 sticky top-0 h-screen overflow-y-auto p-8 relative">
+      <aside className="hidden xl:block w-72 flex-shrink-0 border-r border-zinc-300 sticky top-0 h-screen overflow-y-auto p-8 relative">
         <div className="flex justify-between items-center mb-8">
-          <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-sm">Table of Contents</h4>
+          <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-sm">Table of Contents</h4>
         </div>
         <button
           onClick={() => {
@@ -65,14 +65,14 @@ export function HomeActs() {
             const main = document.getElementById('home-acts-main');
             if (main) main.classList.toggle('reading-mode-active');
           }}
-          className="w-full mb-8 py-2 px-4 border border-zinc-700 rounded text-xs text-zinc-300 font-mono tracking-widest hover:bg-zinc-800 transition-colors uppercase"
+          className="w-full mb-8 py-2 px-4 border border-zinc-300 rounded text-xs text-zinc-800 font-mono tracking-widest hover:bg-zinc-200 transition-colors uppercase"
         >
           Toggle Reading View
         </button>
         <nav className="flex flex-col gap-4 text-sm font-serif">
-          <a href="#executive-summary" className="text-zinc-400 hover:text-zinc-100 transition-colors">Executive Summary (TL;DR)</a>
+          <a href="#executive-summary" className="text-zinc-600 hover:text-zinc-900 transition-colors">Executive Summary (TL;DR)</a>
           {toc.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="text-zinc-500 hover:text-zinc-200 transition-colors">
+            <a key={item.id} href={`#${item.id}`} className="text-zinc-600 hover:text-zinc-800 transition-colors">
               {item.title}
             </a>
           ))}
@@ -81,19 +81,19 @@ export function HomeActs() {
 
       <main id="home-acts-main" className="flex-1 min-w-0 transition-colors duration-500">
         {/* Executive Summary */}
-        <section id="executive-summary" className="py-12 sm:py-16 md:py-24 bg-zinc-900 border-y border-zinc-800/50">
+        <section id="executive-summary" className="py-12 sm:py-16 md:py-24 bg-zinc-100 border-y border-zinc-300/50">
           <div className="container mx-auto max-w-4xl px-3 sm:px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-zinc-100 tracking-tight">Executive Summary</h2>
-            <div className="bg-zinc-800/50 p-6 sm:p-8 rounded-lg border border-zinc-700 shadow-xl">
-              <p className="text-xl font-bold text-zinc-200 mb-6 font-serif">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-zinc-900 tracking-tight">Executive Summary</h2>
+            <div className="bg-zinc-200/50 p-6 sm:p-8 rounded-lg border border-zinc-300 shadow-xl">
+              <p className="text-xl font-bold text-zinc-800 mb-6 font-serif">
                 The "Sodom Hall" investigation reveals how Seton Hall University and the Archdiocese of Newark worked together for 40 years to hide abusive priests from the public and the police.
               </p>
-              <ul className="space-y-4 text-zinc-300 text-lg">
-                <li><strong className="text-zinc-100">The Secret Files:</strong> Lawyers kept two sets of records—one for the public, and a highly secret "vault" holding 24,000 pages of true reports.</li>
-                <li><strong className="text-zinc-100">The Network:</strong> A small group of powerful men made sure certain accused individuals were never punished. They used a legal strategy to ensure lawsuits never exposed the truth.</li>
-                <li><strong className="text-zinc-100">The Breakthrough:</strong> A judge finally forced the university to hand over the secret files in May 2026, blowing the cover-up wide open.</li>
+              <ul className="space-y-4 text-zinc-800 text-lg">
+                <li><strong className="text-zinc-900">The Secret Files:</strong> Lawyers kept two sets of records—one for the public, and a highly secret "vault" holding 24,000 pages of true reports.</li>
+                <li><strong className="text-zinc-900">The Network:</strong> A small group of powerful men made sure certain accused individuals were never punished. They used a legal strategy to ensure lawsuits never exposed the truth.</li>
+                <li><strong className="text-zinc-900">The Breakthrough:</strong> A judge finally forced the university to hand over the secret files in May 2026, blowing the cover-up wide open.</li>
               </ul>
-              <div className="mt-8 pt-4 border-t border-zinc-700/50 text-sm text-zinc-500 italic">
+              <div className="mt-8 pt-4 border-t border-zinc-300/50 text-sm text-zinc-600 italic">
                 This summary uses simple language to ensure the facts are understandable to everyone. Select a section from the Table of Contents to read the full source evidence.
               </div>
             </div>
@@ -102,21 +102,21 @@ export function HomeActs() {
 
 
         {/* SECTION VII - THE RECKONING OF MAY (May 18, 2026) */}
-        <section id="section-vii" className="py-16 sm:py-24 md:py-32 bg-zinc-950 border-y border-zinc-800/50 relative">
+        <section id="section-vii" className="py-16 sm:py-24 md:py-32 bg-zinc-50 border-y border-zinc-300/50 relative">
           <div className="container mx-auto max-w-6xl px-3 sm:px-4">
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-red-900/30" />
-              <span className="font-mono text-zinc-400 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
+              <span className="font-mono text-zinc-600 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
               <div className="h-px flex-1 bg-red-900/30" />
             </div>
 
-            <div className="bg-zinc-950 border-2 sm:border-4 border-zinc-800 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/50">
+            <div className="bg-zinc-50 border-2 sm:border-4 border-zinc-300 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/50">
               <div className="absolute top-0 right-0 p-8">
                 <span className="text-6xl sm:text-9xl font-bold text-red-900/10 select-none">VII</span>
               </div>
 
-              <h2 className="text-zinc-500 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-white">The Reckoning of May</h3>
+              <h2 className="text-zinc-600 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-zinc-900">The Reckoning of May</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
 
               <div className="prose prose-invert prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12">
@@ -127,9 +127,9 @@ The discovery deadline has passed. 24,000 pages of previously suppressed records
 For 40 years, the "Architecture of Silence" held. It was built by McCarrick, maintained by his protégés, and defended by a "Closed Loop" of New Jersey legal and judicial power. 
 
 **The Production Includes:**
-1. <div className="my-8 bg-zinc-900 border border-zinc-700 p-4 rounded-md">
-              <strong className="text-zinc-100 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Closed Loop"</strong>
-              <p className="text-zinc-400 text-sm mt-0">A "Closed Loop" means that the people investigating a crime are the exact same people who committed or covered up the crime. They keep the investigation "in the family" so the police never find out.</p>
+1. <div className="my-8 bg-zinc-100 border border-zinc-300 p-4 rounded-md">
+              <strong className="text-zinc-900 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Closed Loop"</strong>
+              <p className="text-zinc-600 text-sm mt-0">A "Closed Loop" means that the people investigating a crime are the exact same people who committed or covered up the crime. They keep the investigation "in the family" so the police never find out.</p>
             </div>
 **The Scrivo Connection**: Exhibits proving direct coordination between University Counsel and the Archdiocese.
 2. **The 100% Disclosure**: Full, unredacted identities of the seminarians and the "twelve clergymen."
@@ -138,10 +138,10 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link href="/vault">
-                  <a className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
+                  <a className="px-8 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-900 font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
                 </Link>
                 <Link href="/breach">
-                  <a className="px-8 py-4 border border-zinc-700 hover:border-zinc-800 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
+                  <a className="px-8 py-4 border border-zinc-300 hover:border-zinc-300 text-gray-400 hover:text-zinc-900 transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
                 </Link>
               </div>
 
@@ -150,11 +150,11 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
         </section>
 
         {/* SECTION VIII - THE VAULT OPENS (Nov 12, 2025) */}
-        <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+        <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-50 border-y border-zinc-300/50">
           <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-800 shadow-xl">
-              <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Vault Opens</h3>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-300 shadow-xl">
+              <h2 className="text-zinc-600 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Vault Opens</h3>
               <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
               <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12">
@@ -168,9 +168,9 @@ After six years of litigation, the veil is pierced. The court finds that the "de
 **The November Production:**
 - **The Maag Investigation**: Christopher Maag reports on the "Cathedral of Documents."
 - **Exhibits 1-19**: The first wave of unsealed records showing McCarrick's "nephew" roster.
-- <div className="my-8 bg-zinc-900 border border-zinc-700 p-4 rounded-md">
-              <strong className="text-zinc-100 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Sanctioned"</strong>
-              <p className="text-zinc-400 text-sm mt-0">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
+- <div className="my-8 bg-zinc-100 border border-zinc-300 p-4 rounded-md">
+              <strong className="text-zinc-900 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Sanctioned"</strong>
+              <p className="text-zinc-600 text-sm mt-0">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
             </div>
 **The Scrivo Sanction**: Court records regarding the withholding of 22,000 internal documents.
 `}</Streamdown>
@@ -189,14 +189,14 @@ The investigation revealed that for years, University counsel had maintained Two
         </section>
 
         {/* SECTION IX - THE RABNER DOSSIER (Feb 13, 2026) */}
-        <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+        <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-50 border-y border-zinc-300/50">
           <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-800 text-right shadow-xl">
-              <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Rabner Dossier</h3>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-300 text-right shadow-xl">
+              <h2 className="text-zinc-600 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Rabner Dossier</h3>
               <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
 
-              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-900/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-800">
+              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-100/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-300">
                 <Streamdown>{`
 **A Criminal Referral to the Chief Justice.**
 
@@ -210,7 +210,7 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
               </div>
               <div className="flex justify-end">
                 <Link href="/breach">
-                  <a className="px-6 py-3 border border-zinc-800 text-zinc-500 hover:bg-zinc-800 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
+                  <a className="px-6 py-3 border border-zinc-300 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
                 </Link>
               </div>
 
@@ -223,11 +223,11 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
         {/* SECTION VI - THE SUCCESSION */}
         <section
           id="section-vi"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION VI</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION VI</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Succession</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
 
@@ -332,11 +332,11 @@ The millstone is rising. The answer is coming.
         {/* SECTION V - ROME KNEW */}
         <section
           id="section-v"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION V</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION V</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Rome Knew</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
 
@@ -461,11 +461,11 @@ The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates i
         {/* SECTION IV - THE COURTROOM */}
         <section
           id="section-iv"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION IV</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION IV</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Courtroom</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2023-2025 — The Reckoning</p>
 
@@ -555,11 +555,11 @@ Blatant corruption. The judge is compromised by the very lawyer orchestrating th
         {/* SECTION III - THE CONCEALMENT */}
         <section
           id="section-iii"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION III</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION III</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Concealment</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">The Network of Silence (2020-2023)</p>
 
@@ -692,11 +692,11 @@ The same network that ran New Jersey's government became the architects of Seton
         {/* SECTION II - THE LABYRINTH */}
         <section
           id="section-ii"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION II</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION II</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Labyrinth</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">How the Network Was Built (1987-2020)</p>
 
@@ -857,11 +857,11 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
         {/* SECTION I - THE VAULT */}
         <section
           id="section-i"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
         >
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION I</h2>
+            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION I</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Vault</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">August 27, 2019</p>
 
