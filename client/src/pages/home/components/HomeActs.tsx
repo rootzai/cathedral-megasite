@@ -26,64 +26,139 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
   );
 }
 
-export function HomeActs() {
+
+// Tooltip Component for 8th-grade explanations
+function Term({ word, definition }: { word: string; definition: string }) {
   return (
-    <>
+    <span className="group relative inline-block border-b border-dashed border-zinc-500 cursor-help text-zinc-300">
+      {word}
+      <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-zinc-800 text-zinc-200 text-sm rounded shadow-xl border border-zinc-700 pointer-events-none z-50 text-left font-sans font-normal leading-relaxed">
+        <strong>What does this mean?</strong><br />{definition}
+      </span>
+    </span>
+  );
+}
 
-      {/* SECTION VII - THE RECKONING OF MAY (May 18, 2026) */}
-      <section id="section-vii" className="py-16 sm:py-24 md:py-32 bg-zinc-950 border-y border-zinc-800/50 relative">
-        <div className="container mx-auto max-w-6xl px-3 sm:px-4">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="h-px flex-1 bg-red-900/30" />
-            <span className="font-mono text-zinc-400 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
-            <div className="h-px flex-1 bg-red-900/30" />
+export function HomeActs() {
+  const toc = [
+    { id: 'section-vii', title: 'VII: The Reckoning of May' },
+    { id: 'section-viii', title: 'VIII: The Vault Opens' },
+    { id: 'section-ix', title: 'IX: The Rabner Dossier' },
+    { id: 'section-vi', title: 'VI: The Succession' },
+    { id: 'section-v', title: 'V: The Sanction' },
+    { id: 'section-iv', title: 'IV: Title IX Suppression' },
+    { id: 'section-iii', title: 'III: A Hierarchy of Protection' },
+    { id: 'section-ii', title: 'II: Architecture of Silence' },
+    { id: 'section-i', title: 'I: The Origin' }
+  ];
+
+  return (
+    <div className="flex flex-col xl:flex-row w-full bg-zinc-950">
+      {/* Sidebar TOC */}
+      <aside className="hidden xl:block w-72 flex-shrink-0 border-r border-zinc-900 sticky top-0 h-screen overflow-y-auto p-8 relative">
+        <div className="flex justify-between items-center mb-8">
+          <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-sm">Table of Contents</h4>
+        </div>
+        <button
+          onClick={() => {
+            document.documentElement.classList.toggle('reading-mode');
+            const main = document.getElementById('home-acts-main');
+            if (main) main.classList.toggle('reading-mode-active');
+          }}
+          className="w-full mb-8 py-2 px-4 border border-zinc-700 rounded text-xs text-zinc-300 font-mono tracking-widest hover:bg-zinc-800 transition-colors uppercase"
+        >
+          Toggle Reading View
+        </button>
+        <nav className="flex flex-col gap-4 text-sm font-serif">
+          <a href="#executive-summary" className="text-zinc-400 hover:text-zinc-100 transition-colors">Executive Summary (TL;DR)</a>
+          {toc.map((item) => (
+            <a key={item.id} href={`#${item.id}`} className="text-zinc-500 hover:text-zinc-200 transition-colors">
+              {item.title}
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <main id="home-acts-main" className="flex-1 min-w-0 transition-colors duration-500">
+        {/* Executive Summary */}
+        <section id="executive-summary" className="py-12 sm:py-16 md:py-24 bg-zinc-900 border-y border-zinc-800/50">
+          <div className="container mx-auto max-w-4xl px-3 sm:px-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-zinc-100 tracking-tight">Executive Summary</h2>
+            <div className="bg-zinc-800/50 p-6 sm:p-8 rounded-lg border border-zinc-700 shadow-xl">
+              <p className="text-xl font-bold text-zinc-200 mb-6 font-serif">
+                The "Sodom Hall" investigation reveals how Seton Hall University and the Archdiocese of Newark worked together for 40 years to hide abusive priests from the public and the police.
+              </p>
+              <ul className="space-y-4 text-zinc-300 text-lg">
+                <li><strong className="text-zinc-100">The Secret Files:</strong> Lawyers kept two sets of records—one for the public, and a highly secret "vault" holding 24,000 pages of true reports.</li>
+                <li><strong className="text-zinc-100">The Network:</strong> A small group of powerful men made sure certain accused individuals were never punished. They used a legal strategy to ensure lawsuits never exposed the truth.</li>
+                <li><strong className="text-zinc-100">The Breakthrough:</strong> A judge finally forced the university to hand over the secret files in May 2026, blowing the cover-up wide open.</li>
+              </ul>
+              <div className="mt-8 pt-4 border-t border-zinc-700/50 text-sm text-zinc-500 italic">
+                This summary uses simple language to ensure the facts are understandable to everyone. Select a section from the Table of Contents to read the full source evidence.
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="bg-zinc-950 border-2 sm:border-4 border-zinc-800 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/50">
-            <div className="absolute top-0 right-0 p-8">
-              <span className="text-6xl sm:text-9xl font-bold text-red-900/10 select-none">VII</span>
+
+        {/* SECTION VII - THE RECKONING OF MAY (May 18, 2026) */}
+        <section id="section-vii" className="py-16 sm:py-24 md:py-32 bg-zinc-950 border-y border-zinc-800/50 relative">
+          <div className="container mx-auto max-w-6xl px-3 sm:px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-red-900/30" />
+              <span className="font-mono text-zinc-400 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
+              <div className="h-px flex-1 bg-red-900/30" />
             </div>
 
-            <h2 className="text-zinc-500 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-white">The Reckoning of May</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
+            <div className="bg-zinc-950 border-2 sm:border-4 border-zinc-800 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/50">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-6xl sm:text-9xl font-bold text-red-900/10 select-none">VII</span>
+              </div>
 
-            <div className="prose prose-invert prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12">
-              <Streamdown>{`
+              <h2 className="text-zinc-500 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-white">The Reckoning of May</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
+
+              <div className="prose prose-invert prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12">
+                <Streamdown>{`
 The discovery deadline has passed. 24,000 pages of previously suppressed records—Title IX logs, witness rosters, and Board Risk Committee minutes—are now in the hands of investigators.
 
 **Institutional Collapse:**
 For 40 years, the "Architecture of Silence" held. It was built by McCarrick, maintained by his protégés, and defended by a "Closed Loop" of New Jersey legal and judicial power. 
 
 **The Production Includes:**
-1. **The Scrivo Connection**: Exhibits proving direct coordination between University Counsel and the Archdiocese.
+1. <div className="my-8 bg-zinc-900 border border-zinc-700 p-4 rounded-md">
+              <strong className="text-zinc-100 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Closed Loop"</strong>
+              <p className="text-zinc-400 text-sm mt-0">A "Closed Loop" means that the people investigating a crime are the exact same people who committed or covered up the crime. They keep the investigation "in the family" so the police never find out.</p>
+            </div>
+**The Scrivo Connection**: Exhibits proving direct coordination between University Counsel and the Archdiocese.
 2. **The 100% Disclosure**: Full, unredacted identities of the seminarians and the "twelve clergymen."
 3. **The Audit Leak**: Evidence that Board leadership leaked confidential reports to the accused.
 `}</Streamdown>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/vault">
-                <a className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
-              </Link>
-              <Link href="/breach">
-                <a className="px-8 py-4 border border-zinc-700 hover:border-zinc-800 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
-              </Link>
-            </div>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/vault">
+                  <a className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
+                </Link>
+                <Link href="/breach">
+                  <a className="px-8 py-4 border border-zinc-700 hover:border-zinc-800 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
+                </Link>
+              </div>
 
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION VIII - THE VAULT OPENS (Nov 12, 2025) */}
-      <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
-        <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-800 shadow-xl">
-            <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Vault Opens</h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
+        {/* SECTION VIII - THE VAULT OPENS (Nov 12, 2025) */}
+        <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+          <div className="container mx-auto max-w-5xl px-3 sm:px-4">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-800 shadow-xl">
+              <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Vault Opens</h3>
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
-            <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12">
+                <Streamdown>{`
 **Breaking News: Judge Avion Benjamin orders production of the Latham Report.**
 
 After six years of litigation, the veil is pierced. The court finds that the "deliberate concealment" of the report by University leadership was not an accident, but a strategy. 
@@ -93,32 +168,36 @@ After six years of litigation, the veil is pierced. The court finds that the "de
 **The November Production:**
 - **The Maag Investigation**: Christopher Maag reports on the "Cathedral of Documents."
 - **Exhibits 1-19**: The first wave of unsealed records showing McCarrick's "nephew" roster.
-- **The Scrivo Sanction**: Court records regarding the withholding of 22,000 internal documents.
-`}</Streamdown>
+- <div className="my-8 bg-zinc-900 border border-zinc-700 p-4 rounded-md">
+              <strong className="text-zinc-100 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Sanctioned"</strong>
+              <p className="text-zinc-400 text-sm mt-0">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
             </div>
+**The Scrivo Sanction**: Court records regarding the withholding of 22,000 internal documents.
+`}</Streamdown>
+              </div>
 
-            <CollapsibleSection title="The Maag Investigation (July 2011)">
-              <Streamdown>{`
+              <CollapsibleSection title="The Maag Investigation (July 2011)">
+                <Streamdown>{`
 **Christopher Maag | July 11, 2024**
 "Seton Hall Whistleblower Case: The documents that weren't supposed to exist."
 
 The investigation revealed that for years, University counsel had maintained Two sets of records: one for the public, and one for the vault. The Perry Law Report—commissioned to whitewash the scandal—was leaked to Marino just days before the scheduled disclosure.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION IX - THE RABNER DOSSIER (Feb 13, 2026) */}
-      <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
-        <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-800 text-right shadow-xl">
-            <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Rabner Dossier</h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
+        {/* SECTION IX - THE RABNER DOSSIER (Feb 13, 2026) */}
+        <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+          <div className="container mx-auto max-w-5xl px-3 sm:px-4">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-800 text-right shadow-xl">
+              <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Rabner Dossier</h3>
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
 
-            <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-900/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-800">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-900/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-800">
+                <Streamdown>{`
 **A Criminal Referral to the Chief Justice.**
 
 Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stuart Rabner. The dossier documents how O'Toole Scrivo and Lowenstein Sandler built New Jersey's judiciary—appointing over 75 sitting judges—and then deployed that network to protect Seton Hall from civil and criminal accountability.
@@ -128,42 +207,42 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
 - Misapplication of the religious exemption in NJLAD.
 - Material breach of the Nyre release agreement.
 `}</Streamdown>
-            </div>
-            <div className="flex justify-end">
-              <Link href="/breach">
-                <a className="px-6 py-3 border border-zinc-800 text-zinc-500 hover:bg-zinc-800 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
-              </Link>
-            </div>
+              </div>
+              <div className="flex justify-end">
+                <Link href="/breach">
+                  <a className="px-6 py-3 border border-zinc-800 text-zinc-500 hover:bg-zinc-800 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
+                </Link>
+              </div>
 
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
 
 
-      {/* SECTION VI - THE SUCCESSION */}
-      <section
-        id="section-vi"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION VI</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Succession</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
+        {/* SECTION VI - THE SUCCESSION */}
+        <section
+          id="section-vi"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION VI</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Succession</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 **2027**
 
 Cardinal Joseph Tobin turns 75. Canon law requires him to submit his resignation to the Pope.
 
 The question becomes: who inherits the scandal?
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="Three Possible Futures">
-              <Streamdown>{`
+              <CollapsibleSection title="Three Possible Futures">
+                <Streamdown>{`
 **Scenario 1: Resignation Accepted**
 
 Pope Leo accepts Tobin's resignation. A new Archbishop is appointed. The question becomes: who inherits the scandal?
@@ -182,10 +261,10 @@ The grand jury report is released. Criminal charges are filed. The Pope has no c
 
 This is the sword. This is Saul's fate. This is accountability enforced.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="Who Could Succeed Tobin?">
-              <Streamdown>{`
+              <CollapsibleSection title="Who Could Succeed Tobin?">
+                <Streamdown>{`
 **Bishop Elias Lorenzo**
 
 The obvious choice for **Archbishop of Newark**. Tobin's protégé. McCarrick's 1987 "twin" (ordained with Reilly). Currently Auxiliary Bishop of Newark.
@@ -215,10 +294,10 @@ Would Rome choose reform over continuity?
 
 **The choice of successor will reveal Rome's priorities.**
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="What Hangs in the Balance">
-              <Streamdown>{`
+              <CollapsibleSection title="What Hangs in the Balance">
+                <Streamdown>{`
 **For Survivors**
 
 Will the next Archbishop acknowledge their pain? Will he release the documents? Will he cooperate with investigations? Will he choose truth over institutional protection?
@@ -245,34 +324,34 @@ Someone who will open the vault? Or someone who will keep it closed?
 
 The millstone is rising. The answer is coming.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION V - ROME KNEW */}
-      <section
-        id="section-v"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION V</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Rome Knew</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
+        {/* SECTION V - ROME KNEW */}
+        <section
+          id="section-v"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION V</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Rome Knew</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 Joe Nyre, President of Seton Hall University, makes a decision that will change everything. He sends the Latham Report — all of it — directly to the Holy See.
 
 "We believe you should be aware of these findings."
 
 **From this moment forward, Rome cannot claim ignorance.**
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="September 2019: The Letter to Rome">
-              <Streamdown>{`
+              <CollapsibleSection title="September 2019: The Letter to Rome">
+                <Streamdown>{`
 With those words, the Vatican receives documentation of:
 
 → Twelve abusers at Seton Hall seminaries
@@ -282,10 +361,10 @@ With those words, the Vatican receives documentation of:
 
 From this moment forward, **Rome cannot claim ignorance.**
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="November 2020: The McCarrick Report">
-              <Streamdown>{`
+              <CollapsibleSection title="November 2020: The McCarrick Report">
+                <Streamdown>{`
 Fourteen months after receiving the Latham Report, the Vatican releases its own investigation into Cardinal Theodore McCarrick's decades of abuse and cover-up.
 
 **Read:** [The McCarrick Report (Vatican PDF)](https://www.vatican.va/resources/resources_rapporto-card-mccarrick_20201110_en.pdf)
@@ -302,10 +381,10 @@ But the McCarrick Report is silent on one crucial detail: sources familiar with 
 **Rome used the information.**
 **Rome said nothing.**
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="Bishop James Checchio: The Reward System">
-              <Streamdown>{`
+              <CollapsibleSection title="Bishop James Checchio: The Reward System">
+                <Streamdown>{`
 **Bishop James Checchio**
 
 Member of the Regent Task Force that wrote the warning letters to Reilly and Tobin in February 2020. He knew the standard. He knew the violations. He knew Tobin defied the task force.
@@ -342,10 +421,10 @@ Protection equals promotion. Cover-up equals career advancement.
 
 This is not a church. **This is a patronage network.**
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="The Papal Succession of Complicity">
-              <Streamdown>{`
+              <CollapsibleSection title="The Papal Succession of Complicity">
+                <Streamdown>{`
 Four popes. Thirty years. One unbroken chain of institutional protection.
 
 **I. Pope John Paul II (1994)**
@@ -374,32 +453,32 @@ Press freedom abroad. Protection of abusers at home.
 
 The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates it.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION IV - THE COURTROOM */}
-      <section
-        id="section-iv"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION IV</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Courtroom</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2023-2025 — The Reckoning</p>
+        {/* SECTION IV - THE COURTROOM */}
+        <section
+          id="section-iv"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION IV</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Courtroom</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2023-2025 — The Reckoning</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 While institutions chose silence, individuals chose courage. Some spoke publicly. Others remain anonymous, unable to believe their eyes that someone is finally holding accountable those who cloak themselves in righteousness and loyalty to the order.
 
 Your pain won't disappear, but perhaps you'll find an errant smile or two when you think of these days.
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="The Survivors">
-              <Streamdown>{`
+              <CollapsibleSection title="The Survivors">
+                <Streamdown>{`
 **Dr. Joseph Nyre**
 
 President who commissioned the Latham Report and sent it to the Vatican and NJ Attorney General. Faced retaliation, lost health insurance, filed whistleblower lawsuit.
@@ -432,10 +511,10 @@ Anonymous survivor whose story matters, whose courage counts.
 
 Those who cannot yet speak publicly but who witness this moment with hope. Someone is finally holding these individuals accountable.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="February 2025: The Denial">
-              <Streamdown>{`
+              <CollapsibleSection title="February 2025: The Denial">
+                <Streamdown>{`
 As pressure mounted, the Chairman of the Board of Regents, Hank D'Alessandro, sent a university-wide email. In it, he made a stunning and false claim: Monsignor Reilly had "never been subject to formal review."
 
 > "We had full access to every relevant piece of information. We knew the full contents of the Latham Report and were satisfied that Monsignor Reilly had demonstrated maturity, service, and readiness to lead."
@@ -444,10 +523,10 @@ This was a calculated deception. D'Alessandro and the board had been briefed on 
 
 By sending this email, D'Alessandro may have committed **wire fraud**, using electronic communications to disseminate materially false information in furtherance of the cover-up.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="The Judges">
-              <Streamdown>{`
+              <CollapsibleSection title="The Judges">
+                <Streamdown>{`
 **Judge Avion Benjamin**
 
 In a landmark November 2025 ruling, she ordered Seton Hall to produce the full, unredacted Latham Report for review, piercing the veil of secrecy.
@@ -468,34 +547,34 @@ Scrivo employs her star former clerk, [Gianna D'Onofrio](https://www.oslaw.com/a
 
 Blatant corruption. The judge is compromised by the very lawyer orchestrating the cover-up.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION III - THE CONCEALMENT */}
-      <section
-        id="section-iii"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION III</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Concealment</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">The Network of Silence (2020-2023)</p>
+        {/* SECTION III - THE CONCEALMENT */}
+        <section
+          id="section-iii"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION III</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Concealment</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">The Network of Silence (2020-2023)</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 After the McCarrick scandal still smoldered, Seton Hall announced its savior: Dr. Joseph E. Nyre. After a yearlong national search, the Board voted "overwhelmingly" to appoint Nyre as the University's 21st president.
 
 What they didn't tell him—what they were already hiding—was that the same men who hired him were about to bury a report that would expose sexual harassment and institutional cover-ups at the highest levels.
 
 The university president was positioned to bear the institutional blame.
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="The Perfect President (August 2019)">
-              <Streamdown>{`
+              <CollapsibleSection title="The Perfect President (August 2019)">
+                <Streamdown>{`
 After a yearlong national search led by Kevin Marino (Chair) and Mark Ganton (Vice Chair), the Board of Regents voted "overwhelmingly" to appoint Nyre. The praise was effusive:
 
 **Patrick Murray (Board Chair):** "An experienced leader, a bold visionary... the perfect choice to lead Seton Hall into the highest echelon of American Catholic universities."
@@ -533,10 +612,10 @@ Masharelli and D'Alessandro were patsies—present but oblivious to the real age
 
 The trap was being prepared. But the trigger wouldn't be pulled until February 2020.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="The Perry Law Whitewash">
-              <Streamdown>{`
+              <CollapsibleSection title="The Perry Law Whitewash">
+                <Streamdown>{`
 Seton Hall commissioned a sham report from Perry Law Group to reach a predetermined conclusion: exonerate Kevin Marino.
 
 **The report says "no evidence" while ADMITTING evidence on every page.**
@@ -545,6 +624,7 @@ Seton Hall commissioned a sham report from Perry Law Group to reach a predetermi
   title="Perry Law Report: Key Excerpts"
   date="July 2, 2024"
   source="Karen Friedman Agnifilo investigation commissioned by Seton Hall"
+  documentUrl="/assets/perry_law_report.pdf"
   findings={[
     "Report Conclusion: 'At the University's direction, [we] conclude there is no evidence of sexual harassment'",
     "BUT Report ADMITS: Kevin Flood saw Marino's hands on Kelli Nyre's shoulders (corroborating physical contact)",
@@ -571,11 +651,11 @@ Hours before the NYT article, **Chris Porrino** (Marino's lawyer) filed the **un
 On July 11, 2024, Christopher Maag published an article parroting the Perry Law report's "no evidence" headline while ignoring the corroborating testimony of Board members like Kevin Flood.
 `}</Streamdown>
 
-              <PerryLawTimeline />
-            </CollapsibleSection>
+                <PerryLawTimeline />
+              </CollapsibleSection>
 
-            <CollapsibleSection title="The Christie Connection: Christie's Legal Network">
-              <Streamdown>{`
+              <CollapsibleSection title="The Christie Connection: Christie's Legal Network">
+                <Streamdown>{`
 Among the Regents sat Mary Pat Christie, wife of former New Jersey Governor Chris Christie. Her presence symbolized the deep political protection surrounding Seton Hall's leadership.
 
 Chris Christie himself is a central figure in what can only be called **Christie's Legal Network:**
@@ -586,13 +666,13 @@ Chris Christie himself is a central figure in what can only be called **Christie
 
 The same network that ran New Jersey's government became the architects of Seton Hall's concealment.
 `}
-              </Streamdown>
+                </Streamdown>
 
-              <NetworkDiagram />
-            </CollapsibleSection>
+                <NetworkDiagram />
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
 
 
@@ -609,29 +689,29 @@ The same network that ran New Jersey's government became the architects of Seton
 
 
 
-      {/* SECTION II - THE LABYRINTH */}
-      <section
-        id="section-ii"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION II</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Labyrinth</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">How the Network Was Built (1987-2020)</p>
+        {/* SECTION II - THE LABYRINTH */}
+        <section
+          id="section-ii"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION II</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Labyrinth</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">How the Network Was Built (1987-2020)</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 In 1986, Theodore McCarrick became the Archbishop of Newark. His first act was to shape the future of his Archdiocese. In 1987, two men graduated from Seton Hall seminaries: **Joseph Reilly** and **Elias Lorenzo**. McCarrick ordained them together. McCarrick immediately placed them—like twins—sending Reilly to Seton Hall Prep and Lorenzo to Delbarton.
 
 By 1994, just seven years after ordination, Reilly had proven his loyalty. McCarrick made him **his personal secretary**. An archbishop's secretary is always present. Always aware. As McCarrick's personal secretary during the papal nuncio investigations, Reilly was positioned to know about the abuse allegations and the 1995 papal visit preparations.
 
 They were not just classmates; they were the foundation of a network built to protect the powerful. And Reilly was McCarrick's right hand from the very beginning.
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="1987: The Ordination & Strategic Placement">
-              <Streamdown>{`
+              <CollapsibleSection title="1987: The Ordination & Strategic Placement">
+                <Streamdown>{`
 **Monsignor Joseph Reilly**
 
 Sent to Seton Hall Prep, the feeder school for the seminary. After 15 years at the Prep (1987-2001), he was promoted to Rector of the two Seton Hall seminaries—first St. Andrew's (2002), then Immaculate Conception.
@@ -642,10 +722,10 @@ For over two decades (2002-2024), Reilly oversaw the seminaries' dramatic reduct
 
 Sent to the elite Delbarton School, a Benedictine monastery. Here, he would learn the ways of power, privilege, and protection among New Jersey's elite.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title='"Uncle Ted": The McCarrick System'>
-              <Streamdown>{`
+              <CollapsibleSection title='"Uncle Ted": The McCarrick System'>
+                <Streamdown>{`
 Before there was a Latham Report, before there was a Gibbons investigation, before Tobin arrived in Newark—there was Theodore McCarrick. The architect. The predator. The man whose pattern of abuse created the template for institutional protection that persists today.
 
 **The New York Times, July 16, 2018:**
@@ -692,10 +772,10 @@ When complaints surfaced, the church deployed the "adult" narrative: "These were
 
 **Bullshit.** They were abusing children, then changing the definition to protect themselves.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="Decades of Warnings, Decades of Silence">
-              <Streamdown>{`
+              <CollapsibleSection title="Decades of Warnings, Decades of Silence">
+                <Streamdown>{`
 **1990s:** Several anonymous letters alluding to minor abuse received by cardinals and the nunciature in Washington. The Vatican Report (2020) admits these existed but claims they were "regrettably considered to be not credible."
 
 **1994:** First documented complaint to Bishop of Metuchen about McCarrick's abuse
@@ -712,10 +792,10 @@ When complaints surfaced, the church deployed the "adult" narrative: "These were
 
 **2008:** Richard Sipe writes to Pope Benedict XVI detailing decades of abuse—no response
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="2006: The Seton Hall Apartment">
-              <Streamdown>{`
+              <CollapsibleSection title="2006: The Seton Hall Apartment">
+                <Streamdown>{`
 Even after the settlements, even after the warnings, McCarrick's institutional protection continued. In 2006, he sought an apartment at Seton Hall University.
 
 **Archbishop John Myers opposed it.**
@@ -724,6 +804,7 @@ Even after the settlements, even after the warnings, McCarrick's institutional p
   title="Vatican Report: Page 245"
   date="April 3, 2006"
   source="Archbishop John Myers memorandum to Monsignor Robert Sheeran"
+  documentUrl="/assets/vatican_report.pdf"
   findings={[
     "Myers opposed McCarrick's request for apartment at Seton Hall University",
     "Stated: 'I will take no responsibility for his presence on campus, especially should that become embarrassing.'",
@@ -748,10 +829,10 @@ Only in Spring 2019 did Seton Hall finally pack up his possessions and remove th
 
 Myers' memo was never sent to the Nuncio or the Holy See. The warning stayed buried. The apartment stayed occupied. The protection network stayed intact.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="1994: Reilly's First Cover-Up">
-              <Streamdown>{`
+              <CollapsibleSection title="1994: Reilly's First Cover-Up">
+                <Streamdown>{`
 In 1994, just seven years after his ordination, Joseph Reilly was serving McCarrick as **his personal secretary**. An archbishop's secretary is always present. Always aware. Always complicit.
 
 That year, McCarrick's sexual abuse of seminarians was known to church officials. Papal nuncios were investigating. Complaints were surfacing. The walls were closing in.
@@ -768,32 +849,32 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
 
 **The cycle of protection became a cycle of promotion.**
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* SECTION I - THE VAULT */}
-      <section
-        id="section-i"
-        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
-      >
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION I</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Vault</h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">August 27, 2019</p>
+        {/* SECTION I - THE VAULT */}
+        <section
+          id="section-i"
+          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
+        >
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION I</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Vault</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">August 27, 2019</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-8">
-              <Streamdown>{`
+              <div className="prose prose-invert prose-xl max-w-none mb-8">
+                <Streamdown>{`
 In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
 
 Among the twelve names: **Monsignor Joseph Reilly**, the powerful seminary rector.
 `}</Streamdown>
-            </div>
+              </div>
 
-            <CollapsibleSection title="In the Room: The Architects">
-              <Streamdown>{`
+              <CollapsibleSection title="In the Room: The Architects">
+                <Streamdown>{`
 **Kevin Marino**
 
 Chair of the Board of Regents. The abusive orchestrator. Center of Chris Christie's Seton Hall Law School legal cabal. Criminal defense attorney who represents New Jersey's most powerful: George Norcross, Bill Stepien (Bridgegate). The man who architected the gaslighting of the century—getting the New York Times to rewrite history based on a sham investigation.
@@ -840,10 +921,10 @@ The other thirty regents? They're in the dark. They don't know about the Gibbons
 
 The vault door closes. The secrets stay buried. For now.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
 
-            <CollapsibleSection title="Three Things Got Done at the Meeting">
-              <Streamdown>{`
+              <CollapsibleSection title="Three Things Got Done at the Meeting">
+                <Streamdown>{`
 **1. Latham attorneys read the verdicts aloud**
 
 The Latham Report attorneys read the verdicts for each of the twelve clergymen. One by one, renditions of the crimes each man committed.
@@ -856,12 +937,12 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
 
 "Bury the news." Completely ignore the twelve clergymen and only announce that McCarrick was guilty. Hope no one is paying attention. The material went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
 `}</Streamdown>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </>
+      </main>
+    </div>
   );
 }
-

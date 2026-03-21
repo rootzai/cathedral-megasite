@@ -13,45 +13,38 @@ import {
 import { useState } from 'react';
 import { Link } from 'wouter';
 
-
-
 export default function LandingPage() {
-  const [showLogic, setShowLogic] = useState(false);
-
   const pillars = [
-    { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'How the machine was built in silence.', icon: Factory },
-    { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'The institutional walls that held the line.', icon: Shield },
-    { id: 'III', title: 'THE BREACH', path: '/breach', desc: 'The day the legal seal finally shattered.', icon: Zap },
-    { id: 'IV', title: 'THE SUCCESSION', path: '/succession', desc: 'The next regime and the future horizon.', icon: Crown },
-    { id: 'V', title: 'OPINION', path: '/opinion', desc: 'Four perspectives on a moral catastrophe.', icon: FileText },
-    { id: 'VI', title: 'THE LEDGER', path: '/ledger', desc: 'A forensic index of every name involved.', icon: Users },
-    { id: 'VII', title: 'THE VAULT', path: '/vault', desc: 'Direct access to 24,000 pages of evidence.', icon: Archive }
+    { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'How the abuse and cover-up started, and why no one spoke up.', icon: Factory },
+    { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'How powerful people and organizations worked together to hide the truth.', icon: Shield },
+    { id: 'III', title: 'THE BREACH', path: '/breach', desc: 'The moment the secret files were forced open by the court.', icon: Zap },
+    { id: 'IV', title: 'THE SUCCESSION', path: '/succession', desc: 'Who is in charge now, and what happens next.', icon: Crown },
+    { id: 'V', title: 'OPINION', path: '/opinion', desc: 'Different views on why this disaster happened.', icon: FileText },
+    { id: 'VI', title: 'THE LEDGER', path: '/ledger', desc: 'A list of every person involved and what they did.', icon: Users },
+    { id: 'VII', title: 'THE VAULT', path: '/vault', desc: 'Direct access to all 24,000 pages of the actual evidence.', icon: Archive }
   ];
-
 
   return (
     <>
       <style>{`
         .landing-container {
           position: relative;
-          height: 100vh;
+          min-height: 100vh;
           width: 100%;
           background-color: black;
           background-image: url('/assets/bosch_triptych_clean.jpg');
           background-size: contain;
-          background-position: center 10%;
+          background-position: center top;
           background-repeat: no-repeat;
           display: flex;
-          justify-content: center;
-          align-items: flex-start;
+          flex-direction: column;
+          align-items: center;
           padding-top: 15vh;
-          overflow: hidden;
         }
         
         @media (min-width: 1024px) {
           .landing-container {
-            background-size: cover;
-            background-position: center;
+            background-size: 100% auto;
             padding-top: 12vh;
           }
         }
@@ -59,7 +52,7 @@ export default function LandingPage() {
         .title-block {
           text-align: center;
           z-index: 10;
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          margin-bottom: 4rem;
         }
 
         .title-overlay {
@@ -85,39 +78,7 @@ export default function LandingPage() {
           text-transform: uppercase;
         }
 
-        .logic-trigger {
-          position: absolute;
-          bottom: 4rem;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 50;
-          background: rgba(0,0,0,0.6);
-          border: 1px solid rgba(250, 246, 238, 0.2);
-          color: #faf6ee;
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
-          font-family: 'Playfair Display', serif;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          font-size: 0.75rem;
-          display: flex;
-          items-center;
-          gap: 0.5rem;
-          backdrop-blur: sm;
-          transition: all 0.3s ease;
-        }
-
-        .logic-trigger:hover {
-          background: rgba(250, 246, 238, 0.1);
-          border-color: rgba(250, 246, 238, 0.4);
-        }
-
         .enter-btn {
-          position: absolute;
-          bottom: 8rem;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 20;
           font-family: 'Playfair Display', serif;
           font-size: 1.5rem;
           letter-spacing: 0.3em;
@@ -126,6 +87,8 @@ export default function LandingPage() {
           border-bottom: 2px solid transparent;
           padding: 0.5rem 2rem;
           transition: all 0.5s ease;
+          margin-bottom: 8rem;
+          z-index: 20;
         }
 
         .enter-btn:hover {
@@ -134,68 +97,50 @@ export default function LandingPage() {
         }
       `}</style>
       <div className="landing-container">
-        <div className={`title-block ${showLogic ? 'opacity-0 scale-110 pointer-events-none' : 'opacity-100'}`}>
+        <div className="title-block">
           <h1 className="title-overlay">Sodom Hall</h1>
           <p className="subtitle-overlay">The Architecture of Silence</p>
         </div>
 
-        <Link href="/expose">
-          <a className={`enter-btn ${showLogic ? 'opacity-0' : 'opacity-100'}`}>
-            Access The Audit
+        <Link href="/cathedral">
+          <a className="enter-btn">
+            Access The Investigation
           </a>
         </Link>
 
+        {/* Exposed Architecture Grid */}
+        <div className="w-full bg-zinc-950 border-t border-zinc-900 py-16 px-4 lg:px-12 flex flex-col items-center">
+          <div className="max-w-7xl w-full">
+            <div className="text-center mb-12">
+              <h2 className="font-heading text-4xl text-zinc-300 mb-2 uppercase tracking-tighter">Site Architecture</h2>
+              <p className="text-zinc-500 font-serif italic text-lg uppercase tracking-widest">Index of Documentation</p>
+              <div className="h-px w-32 bg-zinc-800 mx-auto mt-6" />
+            </div>
 
-        <button
-          className="logic-trigger"
-          onClick={() => setShowLogic(!showLogic)}
-        >
-          <Info className="w-4 h-4" />
-          {showLogic ? 'Hide Architecture' : 'Examine Architecture'}
-        </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4 mb-16">
+              {pillars.map((p) => (
+                <Link key={p.id} href={p.path}>
+                  <a className="group relative bg-zinc-900 border border-zinc-800 hover:border-zinc-600 p-6 rounded-lg transition-all duration-300 flex flex-col items-center text-center">
+                    <span className="text-zinc-500 font-mono text-[10px] block mb-4 tracking-[0.3em]">SECTION {p.id}</span>
+                    <p.icon className="w-8 h-8 text-zinc-400 mb-4 group-hover:text-zinc-200 transition-colors" />
+                    <h3 className="text-sm font-bold text-zinc-100 mb-2 uppercase tracking-widest">{p.title}</h3>
+                    <p className="text-xs text-zinc-400 font-serif italic leading-relaxed">
+                      {p.desc}
+                    </p>
+                    {/* Tooltip hint indicator */}
+                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-zinc-800 text-xs px-2 py-1 rounded text-zinc-300 font-mono shadow-lg">Open <ChevronRight className="w-3 h-3 inline" /></div>
+                    </div>
+                  </a>
+                </Link>
+              ))}
+            </div>
 
-        <AnimatePresence>
-          {showLogic && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 z-30 bg-black/98 flex items-center justify-center p-4 lg:p-12 overflow-y-auto"
-            >
-              <div className="max-w-7xl w-full py-12">
-                <div className="text-center mb-16">
-                  <h2 className="font-heading text-6xl text-zinc-300 mb-2 uppercase tracking-tighter">The Triptych of Exposure</h2>
-                  <p className="text-zinc-500 font-serif italic text-lg uppercase tracking-widest">Site Architecture & Narrative Logic</p>
-                  <div className="h-px w-32 bg-zinc-800 mx-auto mt-6" />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 mb-16">
-                  {pillars.map((p) => (
-                    <Link key={p.id} href={p.path}>
-                      <a className="group bg-zinc-950 border border-zinc-900 hover:border-zinc-700 p-6 rounded-lg transition-all duration-500 flex flex-col items-center text-center">
-                        <span className="text-zinc-600 font-mono text-[10px] block mb-4 tracking-[0.3em]">{p.id}</span>
-                        <p.icon className="w-8 h-8 text-zinc-500 mb-4 group-hover:text-zinc-300 transition-colors" />
-                        <h3 className="text-sm font-bold text-zinc-100 mb-2 uppercase tracking-widest">{p.title}</h3>
-                        <p className="text-[10px] text-zinc-500 font-serif italic leading-relaxed">
-                          {p.desc}
-                        </p>
-                        <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ChevronRight className="w-4 h-4 text-zinc-500" />
-                        </div>
-                      </a>
-                    </Link>
-                  ))}
-                </div>
-
-
-
-                <div className="mt-12 text-center text-[10px] text-zinc-600 uppercase tracking-[0.5em] font-mono">
-                  SodomHall.com — An Investigation into Institutional Betrayal
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            <div className="mt-8 text-center text-[10px] text-zinc-600 uppercase tracking-[0.5em] font-mono">
+              SodomHall.com — An Investigation into Institutional Betrayal
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

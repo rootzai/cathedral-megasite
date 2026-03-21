@@ -483,6 +483,7 @@
     letter-spacing: 0.1em;
   }
 
+
   .font-heading {
     font-family: Georgia, serif;
   }
@@ -493,5 +494,46 @@
 
   .text-crimson {
     color: #dc2626;
+  }
+
+  /* Reading Mode Overrides */
+  .reading-mode-active, 
+  .reading-mode-active section,
+  .reading-mode-active .bg-zinc-950,
+  .reading-mode-active .bg-zinc-900,
+  .reading-mode-active .bg-zinc-800 {
+    background-color: #fafbf9 !important;
+    background-image: none !important;
+  }
+  
+  .reading-mode-active,
+  .reading-mode-active h2, 
+  .reading-mode-active h3, 
+  .reading-mode-active h4, 
+  .reading-mode-active p, 
+  .reading-mode-active span, 
+  .reading-mode-active li,
+  .reading-mode-active .text-zinc-100,
+  .reading-mode-active .text-zinc-200,
+  .reading-mode-active .text-zinc-300,
+  .reading-mode-active .text-zinc-400,
+  .reading-mode-active .text-zinc-500,
+  .reading-mode-active .text-gray-400,
+  .reading-mode-active .text-white {
+    color: #1a1a1a !important;
+  }
+
+  .reading-mode-active .border-zinc-800,
+  .reading-mode-active .border-zinc-700,
+  .reading-mode-active .border-zinc-900 {
+    border-color: #e5e5e5 !important;
+  }
+
+  .reading-mode-active a {
+    color: #0369a1 !important;
+  }
+  
+  .reading-mode-active .prose-invert {
+    color: #1a1a1a !important;
   }
 }
