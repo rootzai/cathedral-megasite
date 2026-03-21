@@ -32,7 +32,7 @@ export default function MegaNavigation() {
   ];
 
   return (
-    <nav className="bg-white border-b-2 border-zinc-300 sticky top-0 z-50">
+    <nav className="bg-white border-b-2 border-zinc-300 relative z-50">
       {/* News Ticker */}
       <div className="bg-red-700 h-6 flex items-center overflow-hidden whitespace-nowrap border-b border-red-800">
         <div className="flex animate-ticker py-1">

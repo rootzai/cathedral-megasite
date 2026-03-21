@@ -194,7 +194,7 @@ export default function Documents() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
+      <header className="relative z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors">
@@ -244,8 +244,8 @@ export default function Documents() {
               <button
                 onClick={() => setActiveCategory('all')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === 'all'
-                    ? 'bg-red-600 text-zinc-900'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  ? 'bg-red-600 text-zinc-900'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
               >
                 All Documents ({documents.length})
@@ -257,8 +257,8 @@ export default function Documents() {
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeCategory === cat
-                        ? 'bg-red-600 text-zinc-900'
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      ? 'bg-red-600 text-zinc-900'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                       }`}
                   >
                     {cat} ({count})

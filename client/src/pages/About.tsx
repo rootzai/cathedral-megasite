@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-zinc-50 backdrop-blur-sm border-b border-zinc-300">
+      <header className="relative z-50 bg-zinc-50 backdrop-blur-sm border-b border-zinc-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors">

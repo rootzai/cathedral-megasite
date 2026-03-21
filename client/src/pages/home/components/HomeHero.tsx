@@ -10,7 +10,7 @@ export function HomeHero() {
             {isSearchOpen && <Search onClose={() => setIsSearchOpen(false)} />}
 
             {/* News Ticker */}
-            <div className="bg-zinc-50 text-zinc-800 py-1.5 sm:py-2 overflow-hidden sticky top-0 z-50 shadow-lg border-b border-zinc-300">
+            <div className="bg-zinc-50 text-zinc-800 py-1.5 sm:py-2 overflow-hidden relative z-50 shadow-lg border-b border-zinc-300">
                 <div className="whitespace-nowrap flex animate-ticker">
                     {[
                         "MAY 18, 2026: Final Court Deadline for Document Production.",
