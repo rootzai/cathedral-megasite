@@ -6,6 +6,7 @@ import { Link, useLocation } from 'wouter';
 export default function MegaNavigation() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const isActive = (path: string) => {
     if (path === '/') return false; // Never highlight root in this nav
@@ -85,13 +86,45 @@ export default function MegaNavigation() {
             <Link href="/breach"><a className={navLinkClass('/breach')}>THE BREACH</a></Link>
             <Link href="/succession"><a className={navLinkClass('/succession')}>THE SUCCESSION</a></Link>
             <Link href="/opinion"><a className={navLinkClass('/opinion')}>OPINION</a></Link>
-            <Link href="/ledger"><a className={navLinkClass('/ledger')}>THE LEDGER</a></Link>
 
-            <Link href="/vault"><a className={navLinkClass('/vault')}>THE VAULT</a></Link>
-            <Link href="/the-record"><a className={navLinkClass('/the-record')}>THE RECORD</a></Link>
-            <Link href="/whistleblowers"><a className={navLinkClass('/whistleblowers')}>WHISTLEBLOWERS</a></Link>
-            <Link href="/about"><a className={navLinkClass('/about')}>ABOUT</a></Link>
-            <Link href="/corrections"><a className={navLinkClass('/corrections')}>CORRECTIONS</a></Link>
+            {/* Intelligence Dropdown */}
+            <div
+              className="relative h-full flex items-center"
+              onMouseEnter={() => setOpenDropdown('intelligence')}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={`${navLinkClass('/vault')} flex items-center gap-1`}>
+                INTELLIGENCE
+                <svg className={`w-3 h-3 transition-transform ${openDropdown === 'intelligence' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {openDropdown === 'intelligence' && (
+                <div className="absolute top-full left-0 w-48 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <Link href="/ledger"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">THE LEDGER</a></Link>
+                  <Link href="/vault"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">THE VAULT</a></Link>
+                </div>
+              )}
+            </div>
+
+            {/* Resources Dropdown */}
+            <div
+              className="relative h-full flex items-center"
+              onMouseEnter={() => setOpenDropdown('resources')}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={`${navLinkClass('/about')} flex items-center gap-1`}>
+                RESOURCES
+                <svg className={`w-3 h-3 transition-transform ${openDropdown === 'resources' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {openDropdown === 'resources' && (
+                <div className="absolute top-full right-0 w-48 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <Link href="/the-record"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">THE RECORD</a></Link>
+                  <Link href="/whistleblowers"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">WHISTLEBLOWERS</a></Link>
+                  <Link href="/about"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">ABOUT</a></Link>
+                  <Link href="/corrections"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-red-600/10 hover:text-red-700">CORRECTIONS</a></Link>
+                </div>
+              )}
+            </div>
+
             <Link href="/about#tips">
               <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all shadow-md">
                 SUBMIT A TIP
@@ -129,14 +162,18 @@ export default function MegaNavigation() {
               <Link href="/breach"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE BREACH</a></Link>
               <Link href="/succession"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE SUCCESSION</a></Link>
               <Link href="/opinion"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">OPINION</a></Link>
-              <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
 
+              <div className="pt-2 pb-1 px-4 text-[10px] font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Intelligence</div>
+              <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
               <Link href="/vault"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE VAULT</a></Link>
+
+              <div className="pt-2 pb-1 px-4 text-[10px] font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Resources</div>
               <Link href="/the-record"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE RECORD</a></Link>
               <Link href="/whistleblowers"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">WHISTLEBLOWERS</a></Link>
               <Link href="/about"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">ABOUT</a></Link>
               <Link href="/corrections"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">CORRECTIONS</a></Link>
-              <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-zinc-900">SUBMIT A TIP</a></Link>
+
+              <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-white font-bold text-center mt-4">SUBMIT A TIP</a></Link>
             </div>
           )}
         </div>
