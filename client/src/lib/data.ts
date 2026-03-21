@@ -8,7 +8,7 @@
  * complicit in electing Reilly knowing he was unfit.
  */
 
-export type Badge = "latham" | "reilly" | "tobin" | "christie" | "resigned" | "clergy" | "emeritus" | "nyre";
+export type Badge = "latham" | "reilly" | "tobin" | "christie" | "resigned" | "clergy" | "emeritus" | "nyre" | "epstein" | "sanctioned";
 
 export interface Person {
   name: string;
@@ -36,6 +36,7 @@ export interface LawyerFirm {
     name: string;
     title: string;
     note?: string;
+    badges?: Badge[];
   }[];
   description: string;
 }
@@ -49,6 +50,8 @@ export const BADGE_LABELS: Record<Badge, string> = {
   clergy: "Clergy",
   emeritus: "Emeritus",
   nyre: "Named in Nyre Case (Lucciola, D'Alessandro, et al.)",
+  epstein: "Documented Jeffrey Epstein Connection",
+  sanctioned: "Court Sanctioned for Discovery Misconduct",
 };
 
 export const KEY_DATES = [
@@ -347,8 +350,18 @@ export const shuLawyers: LawyerFirm[] = [
     firm: "O'Toole Scrivo, LLC",
     role: "Lead Outside Counsel for Seton Hall University",
     attorneys: [
-      { name: "Thomas P. Scrivo", title: "Managing Partner", note: "Former Chief Counsel to Gov. Christie. Former Chair of SHU Law Board of Visitors. Fellow, American College of Trial Lawyers. Blocked Nyre from cooperating with Ropes & Gray." },
-      { name: "Kevin J. O'Toole", title: "Founding Partner", note: "Former NJ State Senator. Chairman of the Port Authority. Met Scrivo first day of law school in 1986." },
+      {
+        name: "Thomas P. Scrivo",
+        title: "Managing Partner",
+        note: "Former Chief Counsel to Gov. Christie. Former Chair of SHU Law Board of Visitors. Fellow, American College of Trial Lawyers. Blocked Nyre from cooperating with Ropes & Gray.",
+        badges: ["christie", "sanctioned", "latham", "reilly"] as Badge[]
+      },
+      {
+        name: "Kevin J. O'Toole",
+        title: "Founding Partner",
+        note: "Former NJ State Senator. Chairman of the Port Authority. Met Scrivo first day of law school in 1986.",
+        badges: ["christie"] as Badge[]
+      },
     ],
     description: "The firm leading Seton Hall's legal defense in the clergy abuse litigation. Accused of concealing the Latham Report, suing the whistleblower (Nyre), and blocking witnesses from the Ropes & Gray investigation.",
   },
@@ -380,7 +393,12 @@ export const shuLawyers: LawyerFirm[] = [
     firm: "Lowenstein Sandler LLP",
     role: "Former NJ Attorney General's Firm",
     attorneys: [
-      { name: "Christopher S. Porrino", title: "Partner", note: "Former NJ Attorney General (2016–2018) under Christie. Sits on SHU Law Board of Visitors. Accused of coordinating legal threats against whistleblowers. Wrote op-ed endorsing Davenport as AG." },
+      {
+        name: "Christopher S. Porrino",
+        title: "Partner",
+        note: "Former NJ Attorney General (2016–2018) under Christie. Sits on SHU Law Board of Visitors. Accused of coordinating legal threats against whistleblowers. Wrote op-ed endorsing Davenport as AG.",
+        badges: ["christie", "latham"] as Badge[]
+      },
     ],
     description: "Porrino's current firm. He serves as a bridge between the Christie administration, the Board of Visitors, and the new Attorney General's office through his protégé Jennifer Davenport.",
   },
@@ -400,7 +418,12 @@ export const investigativeFirms: LawyerFirm[] = [
     firm: "Latham & Watkins LLP",
     role: "Conducted the 2018–2019 Investigation (The Latham Report)",
     attorneys: [
-      { name: "Kathryn Ruemmler", title: "Former Global Co-Chair, White Collar Defense", note: "Former White House Counsel to President Obama. In frequent contact with Jeffrey Epstein during the investigation (100+ emails). Received gifts from Epstein. Resigned from Goldman Sachs Feb 2026 over Epstein ties." },
+      {
+        name: "Kathryn Ruemmler",
+        title: "Former Global Co-Chair, White Collar Defense",
+        note: "Former White House Counsel to President Obama. In frequent contact with Jeffrey Epstein during the investigation (100+ emails). Received gifts from Epstein. Resigned from Goldman Sachs Feb 2026 over Epstein ties.",
+        badges: ["latham", "epstein"] as Badge[]
+      },
       { name: "Jonathan Su", title: "Partner, White Collar Defense", note: "Described the investigation as 'one of the most unique and challenging of his career.' Both Su and Ruemmler presented findings to the Seton Hall board on Aug 27, 2019." },
     ],
     description: "Conducted the investigation that produced the Latham Report — the document Seton Hall has fought to suppress for six years. The report identified 12 clergymen and found McCarrick created a 'culture of fear and intimidation.'",

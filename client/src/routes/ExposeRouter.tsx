@@ -22,6 +22,7 @@ const McCarrickNetworkexpose = React.lazy(() => import("../pages/expose/McCarric
 const Overview = React.lazy(() => import("../pages/expose/Overview"));
 const RabnerExhibits = React.lazy(() => import("../pages/expose/RabnerExhibits"));
 const WhistleblowerUnmasking = React.lazy(() => import("../pages/expose/WhistleblowerUnmasking"));
+const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const SuccessionEpilogue = React.lazy(() => import("../pages/SuccessionEpilogue"));
 
 // Endgame
@@ -29,7 +30,7 @@ const McCarrickDownfall = React.lazy(() => import("../pages/endgame/mccarrick/Do
 
 export const ExposeRoutes = [
     // THE ORIGIN (Act 1)
-    <Route key="e1" path={"/origin"}><OriginLayout><KennethMartinexpose /></OriginLayout></Route>,
+    <Route key="e1" path={"/origin/root"}><ExposePortal /></Route>,
     <Route key="e2" path={"/origin/martin"}><OriginLayout><KennethMartinexpose /></OriginLayout></Route>,
     <Route key="e3" path={"/origin/beach-house"}><OriginLayout><BeachHouse /></OriginLayout></Route>,
     <Route key="e4" path={"/origin/network"}><OriginLayout><McCarrickNetworkexpose /></OriginLayout></Route>,
@@ -40,6 +41,7 @@ export const ExposeRoutes = [
     <Route key="e7" path={"/coverup/financial"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
     <Route key="e8" path={"/coverup/complicity"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
     <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
+    <Route key="e9-alias" path={"/coverup/triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
     <Route key="e10" path={"/coverup/epstein"}><CoverUpLayout><EpsteinNexus /></CoverUpLayout></Route>,
 
     // THE BREACH (Act 3)
@@ -55,5 +57,9 @@ export const ExposeRoutes = [
     <Route key="e18" path={"/succession/checchio"}><SuccessionLayout><CheckchioNewOrleans /></SuccessionLayout></Route>,
     <Route key="e19" path={"/succession/cases"}><SuccessionLayout><ChurchBKActiveCaseDossiers /></SuccessionLayout></Route>,
     <Route key="e20" path={"/succession/horizon"}><SuccessionLayout><ChurchBKGlobalChurchMetrics /></SuccessionLayout></Route>,
-    <Route key="e21" path={"/succession/epilogue"}><SuccessionLayout><SuccessionEpilogue /></SuccessionLayout></Route>
+    <Route key="e21" path={"/succession/epilogue"}><SuccessionLayout><SuccessionEpilogue /></SuccessionLayout></Route>,
+
+    // Portals
+    <Route key="portal" path={"/expose"}><ExposePortal /></Route>,
+    <Route key="origin-root" path={"/origin"}><ExposePortal /></Route>
 ];

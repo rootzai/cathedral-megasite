@@ -66,6 +66,13 @@ export default function MegaNavigation() {
             <Link href="/ledger"><a className={navLinkClass('/ledger')}>THE LEDGER</a></Link>
 
             <Link href="/vault"><a className={navLinkClass('/vault')}>THE VAULT</a></Link>
+            <Link href="/about"><a className={navLinkClass('/about')}>ABOUT</a></Link>
+            <Link href="/corrections"><a className={navLinkClass('/corrections')}>CORRECTIONS</a></Link>
+            <Link href="/about#tips">
+              <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all">
+                SUBMIT A TIP
+              </a>
+            </Link>
           </div>
         </div>
 
@@ -101,6 +108,9 @@ export default function MegaNavigation() {
               <Link href="/ledger"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE LEDGER</a></Link>
 
               <Link href="/vault"><a className="block px-4 py-2 text-white hover:bg-red-600/20">THE VAULT</a></Link>
+              <Link href="/about"><a className="block px-4 py-2 text-white hover:bg-red-600/20">ABOUT</a></Link>
+              <Link href="/corrections"><a className="block px-4 py-2 text-white hover:bg-red-600/20">CORRECTIONS</a></Link>
+              <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-white">SUBMIT A TIP</a></Link>
             </div>
           )}
         </div>

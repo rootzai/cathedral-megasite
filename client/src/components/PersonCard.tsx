@@ -4,7 +4,14 @@
  */
 import { type Badge, BADGE_LABELS, type Person } from "@/lib/data";
 import { motion } from "framer-motion";
-import { AlertTriangle, BookOpen, Church, Crown, Gavel, LogOut, Shield } from "lucide-react";
+import { AlertCircle, AlertTriangle, BookOpen, Church, Crown, Gavel, Lock, LogOut, Shield } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const badgeIcons: Record<Badge, React.ReactNode> = {
   latham: <BookOpen className="w-3 h-3" />,
@@ -15,6 +22,8 @@ const badgeIcons: Record<Badge, React.ReactNode> = {
   clergy: <Church className="w-3 h-3" />,
   emeritus: <AlertTriangle className="w-3 h-3" />,
   nyre: <Gavel className="w-3 h-3" />,
+  epstein: <Lock className="w-3 h-3" />,
+  sanctioned: <AlertCircle className="w-3 h-3" />,
 };
 
 const badgeStyles: Record<Badge, string> = {
@@ -26,6 +35,8 @@ const badgeStyles: Record<Badge, string> = {
   clergy: "bg-[oklch(0.3_0.08_280/20%)] text-[oklch(0.6_0.1_280)] border border-[oklch(0.4_0.08_280/40%)]",
   emeritus: "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]",
   nyre: "badge-nyre",
+  epstein: "bg-purple-950/30 text-purple-400 border border-purple-800/40",
+  sanctioned: "bg-red-950/40 text-red-500 border border-red-800/50 font-bold animate-pulse",
 };
 
 export function PersonCard({ person, index = 0, onBadgeClick }: {
@@ -63,18 +74,35 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
       {person.badges.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-2">
           {person.badges.map((badge) => (
-            <button
-              key={badge}
-              onClick={(e) => {
-                e.stopPropagation();
-                onBadgeClick?.(badge);
-              }}
-              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-label transition-transform hover:scale-110 active:scale-95 ${badgeStyles[badge]}`}
-              title={BADGE_LABELS[badge]}
-            >
-              {badgeIcons[badge]}
-              {badge === "latham" ? "Latham" : badge === "reilly" ? "Voted Reilly" : badge === "tobin" ? "Tobin Letters" : badge === "christie" ? "Christie" : badge === "resigned" ? "Resigned" : badge === "clergy" ? "Clergy" : badge === "emeritus" ? "Emeritus" : "Nyre Case"}
-            </button>
+            <Tooltip key={badge}>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onBadgeClick?.(badge);
+                  }}
+                  className={cn(
+                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-label transition-transform hover:scale-110 active:scale-95",
+                    badgeStyles[badge]
+                  )}
+                >
+                  {badgeIcons[badge]}
+                  {badge === "latham" ? "Latham" :
+                    badge === "reilly" ? "Voted Reilly" :
+                      badge === "tobin" ? "Tobin Letters" :
+                        badge === "christie" ? "Christie" :
+                          badge === "resigned" ? "Resigned" :
+                            badge === "clergy" ? "Clergy" :
+                              badge === "emeritus" ? "Emeritus" :
+                                badge === "epstein" ? "Epstein Connection" :
+                                  badge === "sanctioned" ? "SANCTIONED" :
+                                    "Nyre Case"}
+                </button>
+              </TooltipTrigger>
+              <TooltipContent className="bg-black border border-red-900 text-[10px] font-mono uppercase tracking-widest px-3 py-1.5 z-[100]">
+                {BADGE_LABELS[badge]}
+              </TooltipContent>
+            </Tooltip>
           ))}
         </div>
       )}

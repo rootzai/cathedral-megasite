@@ -7,10 +7,10 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
+      <header className="sticky top-0 z-50 bg-zinc-950 backdrop-blur-sm border-b border-zinc-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
-            <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
+            <a className="text-2xl font-bold text-zinc-400 hover:text-zinc-500 transition-colors">
               {APP_TITLE}
             </a>
           </Link>
@@ -30,7 +30,7 @@ export default function About() {
 
       {/* Content */}
       <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-5xl font-bold mb-8 text-red-600">About This Investigation</h1>
+        <h1 className="text-5xl font-bold mb-8 text-zinc-400">About This Investigation</h1>
 
         <div className="prose prose-invert prose-lg max-w-none space-y-8">
           <section>
@@ -93,7 +93,7 @@ export default function About() {
             </p>
           </section>
 
-          <section className="p-6 bg-red-950/20 border-2 border-red-600/50 rounded-lg">
+          <section className="p-6 bg-red-950/20 border-2 border-zinc-800/50 rounded-lg">
             <h2 className="text-3xl font-bold mb-4 text-red-400">We Welcome Legal Process</h2>
             <p className="mb-4">
               This investigation welcomes any legal challenge. We will litigate in the open. All demand
@@ -140,7 +140,7 @@ export default function About() {
             </p>
           </section>
 
-          <section>
+          <section id="tips">
             <h2 className="text-3xl font-bold mb-4">Submit a Tip</h2>
             <p className="mb-6">
               We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct. Your submission can be anonymous.
@@ -179,7 +179,7 @@ export default function About() {
 
         <div className="mt-16 text-center">
           <Link href="/">
-            <a className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition-colors">
+            <a className="inline-block bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded font-bold transition-colors">
               Return to Investigation
             </a>
           </Link>

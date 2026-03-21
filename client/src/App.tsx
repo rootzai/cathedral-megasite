@@ -121,6 +121,7 @@ function Router() {
             STRATEGIC PAGES
         ------------------------------------------- */}
         <Route path={"/corrections"}><Corrections /></Route>
+        <Route path={"/about"}><PageLayout component={About} /></Route>
         <Route path={"/parallels"}><InstitutionalParallels /></Route>
 
         {/* Home fallback routes */}

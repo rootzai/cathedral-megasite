@@ -108,22 +108,22 @@ export default function InstitutionalParallels() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
             <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-red-600">
-                <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">
                         <a className="text-2xl font-bold text-red-600 hover:text-red-500 transition-colors">
                             SODOM HALL
                         </a>
                     </Link>
-                    <nav className="flex gap-6">
+                    <nav className="flex gap-3 sm:gap-6">
                         <Link href="/"><a className="text-gray-300 hover:text-white transition-colors">Home</a></Link>
                         <Link href="/about"><a className="text-gray-300 hover:text-white transition-colors">About</a></Link>
                     </nav>
                 </div>
             </header>
 
-            <main className="container mx-auto px-4 py-16 max-w-6xl">
+            <main className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 md:py-16 max-w-6xl">
 
-                <nav className="mb-12">
+                <nav className="mb-8 sm:mb-12">
                     <Link href="/">
                         <a className="flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
                             <ArrowLeft className="w-4 h-4" />
@@ -133,20 +133,20 @@ export default function InstitutionalParallels() {
                 </nav>
 
                 {/* Header */}
-                <div className="text-center mb-24">
-                    <p className="font-mono text-xs uppercase tracking-[0.5em] text-red-500 mb-6">Special Forensic Analysis</p>
-                    <h1 className="text-7xl font-black mb-6 tracking-tighter leading-[0.9]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <div className="text-center mb-12 sm:mb-16 md:mb-24">
+                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-red-500 mb-4 sm:mb-6">Special Forensic Analysis</p>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tighter leading-[0.9]" style={{ fontFamily: "'Playfair Display', serif" }}>
                         The <span className="italic text-red-600">Precedent</span>
                     </h1>
-                    <p className="text-2xl text-gray-400 italic max-w-3xl mx-auto leading-relaxed mb-8" style={{ fontFamily: "'Lora', serif" }}>
+                    <p className="text-base sm:text-lg md:text-2xl text-gray-400 italic max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8" style={{ fontFamily: "'Lora', serif" }}>
                         When Penn State and Michigan State faced their reckonings, presidents were fired, settlements were paid, and records were opened. Seton Hall's response has been: silence.
                     </p>
-                    <div className="w-24 h-1 bg-red-600 mx-auto" />
+                    <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto" />
                 </div>
 
                 {/* Lead Narrative */}
-                <section className="max-w-4xl mx-auto mb-24">
-                    <div className="columns-1 md:columns-2 gap-12 space-y-8 text-lg leading-relaxed text-gray-300" style={{ fontFamily: "'Lora', serif" }}>
+                <section className="max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-24">
+                    <div className="columns-1 md:columns-2 gap-8 md:gap-12 space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed text-gray-300" style={{ fontFamily: "'Lora', serif" }}>
                         <p className="first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-white first-letter:leading-none">
                             E
                             very institutional abuse scandal in American higher education follows the same five-step
@@ -171,10 +171,10 @@ export default function InstitutionalParallels() {
                 </section>
 
                 {/* The Comparison Table */}
-                <section className="mb-24">
+                <section className="mb-12 sm:mb-16 md:mb-24">
                     <div className="flex items-center gap-4 mb-8">
                         <Scale className="w-8 h-8 text-red-500" />
-                        <h2 className="text-3xl font-black uppercase tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                             The Forensic Comparison
                         </h2>
                     </div>
@@ -224,7 +224,7 @@ export default function InstitutionalParallels() {
                 </section>
 
                 {/* The Accountability Scorecard */}
-                <section className="mb-24">
+                <section className="mb-12 sm:mb-16 md:mb-24">
                     <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-red-500 mb-8">Accountability Scorecard</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
@@ -271,18 +271,18 @@ export default function InstitutionalParallels() {
                             <div
                                 key={institution.label}
                                 className={`border rounded-lg p-6 ${institution.color === "red"
-                                        ? "border-red-900/50 bg-red-950/10"
-                                        : institution.color === "blue"
-                                            ? "border-blue-900/50 bg-blue-950/10"
-                                            : "border-green-900/50 bg-green-950/10"
+                                    ? "border-red-900/50 bg-red-950/10"
+                                    : institution.color === "blue"
+                                        ? "border-blue-900/50 bg-blue-950/10"
+                                        : "border-green-900/50 bg-green-950/10"
                                     }`}
                             >
                                 <h3
                                     className={`text-lg font-black uppercase tracking-wider mb-6 ${institution.color === "red"
-                                            ? "text-red-400"
-                                            : institution.color === "blue"
-                                                ? "text-blue-400"
-                                                : "text-green-400"
+                                        ? "text-red-400"
+                                        : institution.color === "blue"
+                                            ? "text-blue-400"
+                                            : "text-green-400"
                                         }`}
                                 >
                                     {institution.label}
@@ -301,10 +301,10 @@ export default function InstitutionalParallels() {
                 </section>
 
                 {/* The No Comment Doctrine */}
-                <section className="mb-24">
-                    <div className="flex items-center gap-4 mb-4">
-                        <AlertTriangle className="w-6 h-6 text-yellow-500" />
-                        <h2 className="text-3xl font-black uppercase tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <section className="mb-12 sm:mb-16 md:mb-24">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                        <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                             The "No Comment" Doctrine
                         </h2>
                     </div>
@@ -347,9 +347,9 @@ export default function InstitutionalParallels() {
                 </section>
 
                 {/* What Should Have Happened */}
-                <section className="mb-24">
+                <section className="mb-12 sm:mb-16 md:mb-24">
                     <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-red-500 mb-8">Based on Precedent: What Should Have Happened</h2>
-                    <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-10 space-y-6 text-gray-300 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+                    <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 sm:p-8 md:p-10 space-y-4 sm:space-y-6 text-gray-300 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
                         <p>
                             If Seton Hall University were held to the same standard as Penn State or Michigan State,
                             the following would have occurred:
@@ -389,8 +389,8 @@ export default function InstitutionalParallels() {
                 </section>
 
                 {/* Closing */}
-                <div className="bg-gray-950 border-2 border-red-900/50 rounded-lg p-12 text-center mb-16">
-                    <p className="text-3xl font-black italic mb-6 text-white leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <div className="bg-gray-950 border-2 border-red-900/50 rounded-lg p-6 sm:p-8 md:p-12 text-center mb-12 sm:mb-16">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-black italic mb-4 sm:mb-6 text-white leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                         "The pattern is not a coincidence.<br />It is a playbook."
                     </p>
                     <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm" style={{ fontFamily: "'Lora', serif" }}>

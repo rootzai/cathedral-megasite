@@ -1,26 +1,41 @@
 import { JourneyNav } from "@/components/JourneyNav";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
-
+import { PersonCard } from "@/components/PersonCard";
+import { shuLawyers, investigativeFirms, type Badge, type Person } from "@/lib/data";
 
 export default function LegalTrumvirate() {
+  // Extract the triumvirate members from the structured data
+  const scrivo = shuLawyers.find(f => f.firm === "O'Toole Scrivo, LLC")?.attorneys.find(a => a.name === "Thomas P. Scrivo");
+  const porrino = shuLawyers.find(f => f.firm === "Lowenstein Sandler LLP")?.attorneys.find(a => a.name === "Christopher S. Porrino");
+  const ruemmler = investigativeFirms.find(f => f.firm === "Latham & Watkins LLP")?.attorneys.find(a => a.name === "Kathryn Ruemmler");
+
+  // Helper to convert attorney data to Person format for PersonCard
+  const toPerson = (attorney: any, tenure: string): Person => ({
+    name: attorney.name,
+    role: attorney.title,
+    tenure: tenure,
+    badges: attorney.badges || [],
+    note: attorney.note
+  });
+
   return (
     <div className="page-enter max-w-4xl mx-auto px-6 py-12 space-y-16">
 
       <div className="mb-6">
-        <Link href="/coverup" className="text-xs font-mono text-gold flex items-center gap-1 hover:underline">
+        <Link href="/coverup" className="text-xs font-mono text-zinc-500 flex items-center gap-1 hover:underline">
           <ArrowLeft size={12} /> Back to Cover-Up Overview
         </Link>
       </div>
 
       {/* Investigative Header */}
       <header className="mb-16">
-        <div className="exhibit-label mb-4 uppercase tracking-[0.2em] font-mono text-xs text-gold">Forensic Audit · The Legal Network</div>
+        <div className="exhibit-label mb-4 uppercase tracking-[0.2em] font-mono text-xs text-zinc-500">Forensic Audit · The Legal Network</div>
         <h1
           className="text-6xl font-black mb-6 leading-tight tracking-tighter"
           style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
         >
-          The Architecture <br />of <span className="text-blood italic">Silence</span>
+          The Architecture <br />of <span className="text-zinc-400 italic">Silence</span>
         </h1>
         <p className="text-2xl leading-relaxed italic text-muted-foreground font-serif">
           Six attorneys. Four firms. One institution. How a closed-loop legal apparatus was deployed to dismantle the truth.
@@ -53,14 +68,16 @@ export default function LegalTrumvirate() {
 
         {/* Scrivo Profile */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-12">
-            <div className="h-px bg-gold/30 mb-8" />
-            <h3 className="text-xs font-bold tracking-widest uppercase text-gold mb-2 font-mono">Profile 01: The Gatekeeper</h3>
+          <div className="lg:col-span-5">
+            {scrivo && <PersonCard person={toPerson(scrivo, "2018–Present")} index={0} />}
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-2 font-mono">Profile 01: The Gatekeeper</h3>
             <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Thomas P. Scrivo</h2>
-            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-gold/20 pl-8">
+            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-800 pl-8">
               "He files motions in Essex County before judges he helped appoint. In 2025, the court sanctioned him for withholding documents. The Office of Attorney Ethics did nothing."
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-base">
+            <div className="grid grid-cols-1 gap-6 text-base text-muted-foreground font-serif">
               <p>
                 Thomas Scrivo is the architect of the university's defense. As the former
                 Chief Counsel to Governor Christie, he was responsible for the vetting of
@@ -81,13 +98,18 @@ export default function LegalTrumvirate() {
         {/* Porrino Profile */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-12">
-            <div className="h-px bg-gold/30 mb-8" />
-            <h3 className="text-xs font-bold tracking-widest uppercase text-gold mb-2 font-mono">Profile 02: The Strategist</h3>
+            <div className="h-px bg-zinc-800 mb-16" />
+          </div>
+          <div className="lg:col-span-5">
+            {porrino && <PersonCard person={toPerson(porrino, "Active")} index={1} />}
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-2 font-mono">Profile 02: The Strategist</h3>
             <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Christopher Porrino</h2>
-            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-gold/20 pl-8">
+            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-800 pl-8">
               "As a former Attorney General, he knows the levers of narrative control. He launched the media campaign that turned the Perry Law Report—a document commissioned by the accused—into a public exoneration."
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-base">
+            <div className="grid grid-cols-1 gap-6 text-base text-muted-foreground font-serif">
               <p>
                 Christopher Porrino, the 60th Attorney General of New Jersey, serves as counsel
                 to Kevin Marino. His role is not merely legal; it is strategic. Porrino
@@ -107,13 +129,18 @@ export default function LegalTrumvirate() {
         {/* Ruemmler Profile */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-12">
-            <div className="h-px bg-blood/30 mb-8" />
-            <h3 className="text-xs font-bold tracking-widest uppercase text-blood mb-2 font-mono">Profile 03: The Investigtor</h3>
+            <div className="h-px bg-zinc-800 mb-16" />
+          </div>
+          <div className="lg:col-span-5">
+            {ruemmler && <PersonCard person={toPerson(ruemmler, "2018–2019")} index={2} />}
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-2 font-mono">Profile 03: The Investigator</h3>
             <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Kathryn Ruemmler</h2>
-            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-blood/20 pl-8">
+            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-800 pl-8">
               "While leading the Latham investigation into the seminary's dark history, she was in 'intimate personal contact' with Jeffrey Epstein. Every name she cleared in that report must now be re-examined."
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-base">
+            <div className="grid grid-cols-1 gap-6 text-base text-muted-foreground font-serif">
               <p>
                 Kathryn Ruemmler produced the 24,000-page Latham Report—the very document
                 the Regents fought to keep sealed for six years. A former White House
@@ -133,8 +160,8 @@ export default function LegalTrumvirate() {
       </div>
 
       {/* Forensic Findings Box */}
-      <div className="evidence-box bg-ink text-parchment p-12 rounded-sm shadow-2xl mt-20">
-        <h3 className="section-heading text-gold mb-8 uppercase tracking-widest text-sm">Conclusion of Audit · The Closed Loop</h3>
+      <div className="evidence-box bg-ink text-parchment p-12 rounded-sm shadow-2xl mt-20 border-t-4 border-zinc-800">
+        <h3 className="section-heading text-zinc-500 mb-8 uppercase tracking-widest text-sm">Conclusion of Audit · The Closed Loop</h3>
         <p className="text-xl leading-relaxed italic mb-8 font-serif">
           "The Result is not an error in the system; it is the system's intended output."
         </p>

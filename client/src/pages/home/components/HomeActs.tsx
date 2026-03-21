@@ -13,10 +13,10 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="mb-8 border-l-4 border-red-600 pl-6">
+    <div className="mb-8 border-l-4 border-zinc-800 pl-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-red-500 transition-colors w-full text-left"
+        className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-zinc-500 transition-colors w-full text-left"
       >
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         {title}
@@ -30,25 +30,25 @@ export function HomeActs() {
   return (
     <>
 
-      {/* Act VII - THE RECKONING OF MAY (May 18, 2026) */}
-      <section id="act-vii" className="py-32 bg-zinc-950 border-y border-red-900/20 relative">
-        <div className="container mx-auto max-w-6xl px-4">
+      {/* SECTION VII - THE RECKONING OF MAY (May 18, 2026) */}
+      <section id="section-vii" className="py-16 sm:py-24 md:py-32 bg-zinc-950 border-y border-zinc-800/50 relative">
+        <div className="container mx-auto max-w-6xl px-3 sm:px-4">
           <div className="flex items-center gap-4 mb-12">
             <div className="h-px flex-1 bg-red-900/30" />
-            <span className="font-mono text-red-600 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
+            <span className="font-mono text-zinc-400 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
             <div className="h-px flex-1 bg-red-900/30" />
           </div>
 
-          <div className="bg-black border-4 border-red-600 p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-red-900/10">
+          <div className="bg-zinc-950 border-2 sm:border-4 border-zinc-800 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/50">
             <div className="absolute top-0 right-0 p-8">
-              <span className="text-9xl font-bold text-red-900/10 select-none">VII</span>
+              <span className="text-6xl sm:text-9xl font-bold text-red-900/10 select-none">VII</span>
             </div>
 
-            <h2 className="text-red-500 font-bold text-xl mb-4 font-mono tracking-widest">ACT VII</h2>
-            <h3 className="text-6xl font-bold mb-8 tracking-tighter text-white">The Reckoning of May</h3>
-            <p className="text-2xl text-gray-400 mb-12 font-light">May 18, 2026 — The Final Deadline</p>
+            <h2 className="text-zinc-500 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-white">The Reckoning of May</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
 
-            <div className="prose prose-invert prose-2xl max-w-none mb-12">
+            <div className="prose prose-invert prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12">
               <Streamdown>{`
 The discovery deadline has passed. 24,000 pages of previously suppressed records—Title IX logs, witness rosters, and Board Risk Committee minutes—are now in the hands of investigators.
 
@@ -63,10 +63,10 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/vault">
-                <a className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-red-900/20">Review Exhibits</a>
+                <a className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
               </Link>
               <Link href="/breach">
-                <a className="px-8 py-4 border border-zinc-700 hover:border-red-600 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
+                <a className="px-8 py-4 border border-zinc-700 hover:border-zinc-800 text-gray-400 hover:text-white transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
               </Link>
             </div>
 
@@ -74,15 +74,15 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
         </div>
       </section>
 
-      {/* Act VIII - THE VAULT OPENS (Nov 12, 2025) */}
-      <section id="act-viii" className="py-24 bg-black border-y border-red-900/20">
-        <div className="container mx-auto max-w-5xl px-4">
-          <div className="bg-zinc-950 p-12 rounded-lg border-l-4 border-red-600 shadow-xl">
-            <h2 className="text-red-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">Act VIII</h2>
-            <h3 className="text-5xl font-bold mb-6 tracking-tight text-white">The Vault Opens</h3>
-            <p className="text-xl text-gray-400 mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
+      {/* SECTION VIII - THE VAULT OPENS (Nov 12, 2025) */}
+      <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+        <div className="container mx-auto max-w-5xl px-3 sm:px-4">
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-800 shadow-xl">
+            <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Vault Opens</h3>
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-12">
+            <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12">
               <Streamdown>{`
 **Breaking News: Judge Avion Benjamin orders production of the Latham Report.**
 
@@ -109,15 +109,15 @@ The investigation revealed that for years, University counsel had maintained Two
         </div>
       </section>
 
-      {/* Act IX - THE RABNER DOSSIER (Feb 13, 2026) */}
-      <section id="act-ix" className="py-24 bg-zinc-950 border-y border-red-900/20">
-        <div className="container mx-auto max-w-5xl px-4">
-          <div className="bg-black p-12 rounded-lg border-r-4 border-red-600 text-right shadow-xl">
-            <h2 className="text-red-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">Act IX</h2>
-            <h3 className="text-5xl font-bold mb-6 tracking-tight text-white">The Rabner Dossier</h3>
-            <p className="text-xl text-gray-400 mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
+      {/* SECTION IX - THE RABNER DOSSIER (Feb 13, 2026) */}
+      <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50">
+        <div className="container mx-auto max-w-5xl px-3 sm:px-4">
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-800 text-right shadow-xl">
+            <h2 className="text-zinc-500 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">The Rabner Dossier</h3>
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
 
-            <div className="prose prose-invert prose-xl max-w-none mb-12 text-left bg-zinc-900/50 p-8 rounded border border-zinc-800">
+            <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-900/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-800">
               <Streamdown>{`
 **A Criminal Referral to the Chief Justice.**
 
@@ -131,7 +131,7 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
             </div>
             <div className="flex justify-end">
               <Link href="/breach">
-                <a className="px-6 py-3 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
+                <a className="px-6 py-3 border border-zinc-800 text-zinc-500 hover:bg-zinc-800 hover:text-white font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
               </Link>
             </div>
 
@@ -141,17 +141,16 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
 
 
 
-      {/* Act VI - THE SUCCESSION */}
+      {/* SECTION VI - THE SUCCESSION */}
       <section
-        id="act-vi"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-        style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_2.jpg)' }}
+        id="section-vi"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg border-4 border-red-600">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act VI</h2>
-            <h3 className="text-5xl font-bold mb-4">The Succession</h3>
-            <p className="text-2xl text-gray-400 mb-12">2027 — Who Inherits the Cathedral?</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION VI</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Succession</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`
@@ -251,17 +250,16 @@ The millstone is rising. The answer is coming.
         </div>
       </section>
 
-      {/* Act V - ROME KNEW */}
+      {/* SECTION V - ROME KNEW */}
       <section
-        id="act-v"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-        style={{ backgroundImage: 'url(/assets/vatican/st_peters_interior_1.jpg)' }}
+        id="section-v"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg border-4 border-red-600">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act V</h2>
-            <h3 className="text-5xl font-bold mb-4">Rome Knew</h3>
-            <p className="text-2xl text-gray-400 mb-12">2020-2025 — The Vatican Connection</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION V</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Rome Knew</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`
@@ -381,17 +379,16 @@ The thread is unbroken. Each pope inherits the cover-up. Each pope perpetuates i
         </div>
       </section>
 
-      {/* Act IV - THE COURTROOM */}
+      {/* SECTION IV - THE COURTROOM */}
       <section
-        id="act-iv"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-        style={{ backgroundImage: 'url(/assets/symbols/scales_justice_light.jpg)' }}
+        id="section-iv"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg border-4 border-red-600">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act IV</h2>
-            <h3 className="text-5xl font-bold mb-4">The Courtroom</h3>
-            <p className="text-2xl text-gray-400 mb-12">2023-2025 — The Reckoning</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION IV</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Courtroom</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2023-2025 — The Reckoning</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`
@@ -476,17 +473,16 @@ Blatant corruption. The judge is compromised by the very lawyer orchestrating th
         </div>
       </section>
 
-      {/* Act III - THE CONCEALMENT */}
+      {/* SECTION III - THE CONCEALMENT */}
       <section
-        id="act-iii"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-        style={{ backgroundImage: 'url(/assets/symbols/gavel_scales.png)' }}
+        id="section-iii"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg border-4 border-red-600">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act III</h2>
-            <h3 className="text-5xl font-bold mb-4">The Concealment</h3>
-            <p className="text-2xl text-gray-400 mb-12">The Network of Silence (2020-2023)</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-800">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION III</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Concealment</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">The Network of Silence (2020-2023)</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`
@@ -613,17 +609,16 @@ The same network that ran New Jersey's government became the architects of Seton
 
 
 
-      {/* Act II - THE LABYRINTH */}
+      {/* SECTION II - THE LABYRINTH */}
       <section
-        id="act-ii"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/85"
-        style={{ backgroundImage: 'url(/assets/vatican/vatican_archives_shelves.jpg)' }}
+        id="section-ii"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act II</h2>
-            <h3 className="text-5xl font-bold mb-4">The Labyrinth</h3>
-            <p className="text-2xl text-gray-400 mb-12">How the Network Was Built (1987-2020)</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION II</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Labyrinth</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">How the Network Was Built (1987-2020)</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`
@@ -778,17 +773,16 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
         </div>
       </section>
 
-      {/* Act I - THE VAULT */}
+      {/* SECTION I - THE VAULT */}
       <section
-        id="act-i"
-        className="py-20 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80"
-        style={{ backgroundImage: 'url(/assets/symbols/scales_justice_dark.jpg)' }}
+        id="section-i"
+        className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950"
       >
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-black/90 p-12 rounded-lg">
-            <h2 className="text-6xl font-bold mb-4 text-red-500">Act I</h2>
-            <h3 className="text-5xl font-bold mb-4">The Vault</h3>
-            <p className="text-2xl text-gray-400 mb-12">August 27, 2019</p>
+          <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-500">SECTION I</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Vault</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">August 27, 2019</p>
 
             <div className="prose prose-invert prose-xl max-w-none mb-8">
               <Streamdown>{`

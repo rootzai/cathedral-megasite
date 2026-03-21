@@ -4,11 +4,11 @@ export function HomeEpilogue() {
     return (
         <>
             {/* A Plea to Judge Benjamin */}
-            <section className="py-24 bg-black border-y border-red-900/10 text-white">
-                <div className="container mx-auto max-w-4xl px-4">
-                    <div className="bg-zinc-950 p-12 rounded-lg border-2 border-red-600 shadow-2xl relative overflow-hidden">
+            <section className="py-12 sm:py-16 md:py-24 bg-zinc-950 border-y border-zinc-800/50 text-white">
+                <div className="container mx-auto max-w-4xl px-3 sm:px-4">
+                    <div className="bg-zinc-950 p-6 sm:p-8 md:p-12 rounded-lg border-2 border-zinc-800 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-                        <h2 className="text-3xl font-bold mb-8 text-center text-red-500 uppercase tracking-widest">A Plea to Judge Benjamin</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-8 text-center text-zinc-500 uppercase tracking-widest">A Plea to Judge Benjamin</h2>
                         <div className="prose prose-invert prose-xl max-w-none text-center italic font-serif text-gray-300">
                             <Streamdown>{`
 "Your Honor, the time for discretion has passed. Thomas Scrivo and Kevin Marino have not merely litigated this case; they have managed it as an institutional asset. They have withheld 22,000 documents, leaked confidential reports to the accused, and used their influence to build a shield around the McCarrick network."
@@ -24,13 +24,12 @@ The truth is not a privilege. It is a right.
 
             {/* Epilogue */}
             <section
-                className="py-24 px-4 relative bg-cover bg-center bg-blend-overlay bg-black/80 text-white"
-                style={{ backgroundImage: 'url(/assets/millstone/ancient_millstone.jpg)' }}
+                className="py-24 px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-950 text-white"
             >
                 <div className="container mx-auto max-w-4xl relative z-10">
-                    <div className="bg-black/90 p-16 rounded-lg border-4 border-red-600 shadow-2xl">
-                        <h2 className="text-6xl font-bold mb-8 text-center text-white tracking-tighter">Epilogue</h2>
-                        <h3 className="text-4xl font-bold mb-12 text-center text-red-600 uppercase tracking-widest">The Millstone Rises</h3>
+                    <div className="bg-zinc-950 p-8 sm:p-12 md:p-16 rounded-lg border-2 sm:border-4 border-zinc-800 shadow-2xl">
+                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 text-center text-white tracking-tighter">Epilogue</h2>
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center text-zinc-400 uppercase tracking-widest">The Millstone Rises</h3>
 
                         <div className="prose prose-invert prose-2xl max-w-none">
                             <Streamdown>{`
