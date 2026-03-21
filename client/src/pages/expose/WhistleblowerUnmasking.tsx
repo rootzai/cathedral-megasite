@@ -77,10 +77,10 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-blood group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-foreground uppercase tracking-widest text-xs">Day 18: The First Strike</h4>
+                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">Day 18: The First Strike</h4>
                 <span className="font-mono text-[10px] text-blood">JULY 18, 2024</span>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-serif">
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
                 Grand jury subpoena issued to Google. The network bypasses civil discovery
                 to pierce the whistleblower's anonymity using the threat of criminal prosecution.
               </p>
@@ -91,10 +91,10 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-gold group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-foreground uppercase tracking-widest text-xs">The Manufactured Predicate</h4>
+                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">The Manufactured Predicate</h4>
                 <span className="font-mono text-[10px] text-gold">OCT 2024</span>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-serif">
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
                 Archdiocese bulletin publishes claims of "solicitation," providing the thin
                 veneer of criminal suspicion required to justify the ongoing grand jury process.
               </p>
@@ -105,10 +105,10 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-blood group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-900/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-foreground uppercase tracking-widest text-xs">Transcontinental Escalation</h4>
+                <h4 className="font-bold text-zinc-100 uppercase tracking-widest text-xs">Transcontinental Escalation</h4>
                 <span className="font-mono text-[10px] text-blood">NOV 20, 2025</span>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-serif">
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
                 Exactly one year later, despite the California court disposing of the matter,
                 a 52-page deposition package is sent to the whistleblower. Attrition becomes the final strategy.
               </p>

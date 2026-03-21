@@ -497,7 +497,7 @@
   }
 
   /* Reading Mode Overrides */
-  .reading-mode-active, 
+  .reading-mode-active,
   .reading-mode-active section,
   .reading-mode-active .bg-zinc-950,
   .reading-mode-active .bg-zinc-900,
@@ -505,13 +505,13 @@
     background-color: #fafbf9 !important;
     background-image: none !important;
   }
-  
+
   .reading-mode-active,
-  .reading-mode-active h2, 
-  .reading-mode-active h3, 
-  .reading-mode-active h4, 
-  .reading-mode-active p, 
-  .reading-mode-active span, 
+  .reading-mode-active h2,
+  .reading-mode-active h3,
+  .reading-mode-active h4,
+  .reading-mode-active p,
+  .reading-mode-active span,
   .reading-mode-active li,
   .reading-mode-active .text-zinc-100,
   .reading-mode-active .text-zinc-200,
@@ -532,8 +532,32 @@
   .reading-mode-active a {
     color: #0369a1 !important;
   }
-  
+
   .reading-mode-active .prose-invert {
     color: #1a1a1a !important;
+  }
+
+  /* Global Contrast Fix: If a dark background utility is used, force its text variables to be light */
+  .bg-zinc-950,
+  .bg-zinc-900,
+  .bg-zinc-800,
+  .bg-black {
+    --foreground: oklch(0.95 0.01 85) !important;
+    --muted-foreground: oklch(0.7 0.01 85) !important;
+    color: var(--foreground) !important;
+  }
+
+  .bg-zinc-950 .text-muted-foreground,
+  .bg-zinc-900 .text-muted-foreground,
+  .bg-zinc-800 .text-muted-foreground,
+  .bg-black .text-muted-foreground {
+    color: var(--muted-foreground) !important;
+  }
+
+  .bg-zinc-950 .text-foreground,
+  .bg-zinc-900 .text-foreground,
+  .bg-zinc-800 .text-foreground,
+  .bg-black .text-foreground {
+    color: var(--foreground) !important;
   }
 }
