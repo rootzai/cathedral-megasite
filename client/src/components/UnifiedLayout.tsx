@@ -34,7 +34,7 @@ export default function UnifiedLayout({
 
     return (
         <div className={cn(`min-h-screen flex flex-col pt-14 md:pt-20`, themeClass)} style={{ background: "var(--background)", color: "var(--foreground)" }}>
-            <header className="w-full border-b border-border bg-background/95 backdrop-blur-md pt-6 md:pt-10 pb-4 md:pb-6 px-3 sm:px-4 md:px-8 z-40 relative shadow-sm">
+            <header className="w-full border-b border-border bg-background/95 backdrop-blur-md pt-6 md:pt-10 pb-4 md:pb-6 px-3 sm:px-4 md:px-8 z-40 sticky top-14 md:top-20 shadow-sm">
 
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">

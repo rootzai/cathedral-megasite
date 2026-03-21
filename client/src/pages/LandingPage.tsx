@@ -31,8 +31,11 @@ export default function LandingPage() {
           position: relative;
           min-height: 100vh;
           width: 100%;
-          background-color: #fafbf9; /* ProPublica stark off-white */
-          background-image: none;
+          background-color: black;
+          background-image: url('/assets/bosch_triptych_clean.jpg');
+          background-size: contain;
+          background-position: center top;
+          background-repeat: no-repeat;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -41,6 +44,7 @@ export default function LandingPage() {
         
         @media (min-width: 1024px) {
           .landing-container {
+            background-size: 100% auto;
             padding-top: 12vh;
           }
         }
@@ -55,8 +59,9 @@ export default function LandingPage() {
           font-family: 'Playfair Display', serif;
           font-weight: 900;
           font-size: clamp(3rem, 8vw, 7rem);
-          color: #18181b; /* zinc-900 */
+          color: #faf6ee;
           letter-spacing: 0.15em;
+          text-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9), 0px 4px 15px rgba(0, 0, 0, 0.7);
           text-transform: uppercase;
           line-height: 1;
           margin: 0;
@@ -65,10 +70,11 @@ export default function LandingPage() {
         .subtitle-overlay {
           font-family: 'Lora', serif;
           font-size: clamp(0.9rem, 2vw, 1.2rem);
-          color: #52525b; /* zinc-500 */
+          color: rgba(250, 246, 238, 0.8);
           letter-spacing: 0.4em;
           margin-top: 1rem;
           font-style: italic;
+          text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
           text-transform: uppercase;
         }
 
@@ -77,7 +83,7 @@ export default function LandingPage() {
           font-size: 1.5rem;
           letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: #18181b; /* zinc-900 */
+          color: #faf6ee;
           border-bottom: 2px solid transparent;
           padding: 0.5rem 2rem;
           transition: all 0.5s ease;
@@ -86,8 +92,8 @@ export default function LandingPage() {
         }
 
         .enter-btn:hover {
-          color: #71717a; /* zinc-500 */
-          border-color: #71717a;
+          color: #a1a1aa;
+          border-color: #a1a1aa;
         }
       `}</style>
       <div className="landing-container">

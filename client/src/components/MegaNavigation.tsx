@@ -37,7 +37,7 @@ export default function MegaNavigation() {
       <div className="bg-red-700 h-6 flex items-center overflow-hidden whitespace-nowrap border-b border-red-800">
         <div className="flex animate-ticker py-1">
           {[...newsItems, ...newsItems].map((item, idx) => (
-            <span key={idx} className="inline-block px-10 text-[10px] font-mono font-bold text-zinc-900 uppercase tracking-wider">
+            <span key={idx} className="inline-block px-10 text-[10px] font-mono font-bold text-white uppercase tracking-wider">
               {item}
             </span>
           ))}
@@ -69,7 +69,7 @@ export default function MegaNavigation() {
             <Link href="/about"><a className={navLinkClass('/about')}>ABOUT</a></Link>
             <Link href="/corrections"><a className={navLinkClass('/corrections')}>CORRECTIONS</a></Link>
             <Link href="/about#tips">
-              <a className="ml-4 bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all">
+              <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all shadow-md">
                 SUBMIT A TIP
               </a>
             </Link>
