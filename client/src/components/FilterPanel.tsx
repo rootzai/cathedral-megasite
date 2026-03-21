@@ -64,7 +64,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
             Who Knew What
           </h2>
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-cathedral-gold to-transparent mx-auto mb-6" />
-          <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+          <p className="max-w-3xl mx-auto text-lg text-white/80 leading-relaxed">
             Filter across all three Seton Hall boards to see who was present for key decisions and events.
           </p>
         </motion.div>
@@ -146,7 +146,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
                     {/* Boards this person sits on */}
                     <div className="flex flex-wrap gap-1.5 ml-5 mb-2">
                       {person.boards.map(b => (
-                        <span key={b} className="text-[10px] font-label px-2 py-0.5 rounded-sm bg-cathedral-light text-muted-foreground border border-[oklch(0.25_0.02_85/20%)]">
+                        <span key={b} className="text-[10px] font-bold px-2 py-0.5 rounded-sm bg-zinc-700 text-zinc-100 border border-zinc-500/30 uppercase tracking-tighter">
                           {b}
                         </span>
                       ))}
@@ -172,7 +172,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
                     </div>
 
                     {person.note && (
-                      <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 ml-3 mt-2">
+                      <p className="text-sm text-zinc-200 leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 ml-3 mt-2">
                         {person.note}
                       </p>
                     )}
@@ -190,7 +190,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <p className="text-muted-foreground italic text-base">
+            <p className="text-zinc-200 italic text-base">
               Select a filter above to see which board members were involved in key events.
             </p>
           </motion.div>

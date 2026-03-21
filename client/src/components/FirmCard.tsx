@@ -34,7 +34,7 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
             </div>
             <p className="text-[11px] font-label text-gold-dim ml-5">{attorney.title}</p>
             {attorney.note && (
-              <p className="text-xs text-muted-foreground leading-relaxed italic ml-5 mt-1">
+              <p className="text-xs text-white/70 leading-relaxed italic ml-5 mt-1">
                 {attorney.note}
               </p>
             )}
@@ -43,7 +43,7 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
       </div>
 
       {/* Firm Description */}
-      <p className="text-sm text-muted-foreground leading-relaxed mt-4 pt-3 border-t border-cathedral-gold/10">
+      <p className="text-sm text-white/80 leading-relaxed mt-4 pt-3 border-t border-cathedral-gold/10">
         {firm.description}
       </p>
     </motion.div>

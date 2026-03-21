@@ -66,7 +66,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
           </h4>
           <p className="font-label text-sm text-gold-dim mt-0.5">{person.role}</p>
         </div>
-        <span className="text-[10px] font-label text-muted-foreground whitespace-nowrap mt-0.5">
+        <span className="text-[10px] font-label text-white/60 whitespace-nowrap mt-0.5">
           {person.tenure}
         </span>
       </div>
@@ -108,7 +108,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
       )}
 
       {hasNote && (
-        <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 mt-2">
+        <p className="text-sm text-white/70 leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 mt-2">
           {person.note}
         </p>
       )}

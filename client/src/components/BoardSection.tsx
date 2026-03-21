@@ -27,7 +27,7 @@ export function BoardSection({ board, onFilterChange }: {
           {board.title}
         </h2>
         <div className="w-24 h-px bg-gradient-to-r from-transparent via-cathedral-gold to-transparent mx-auto mb-6" />
-        <p className="max-w-3xl mx-auto text-base text-muted-foreground leading-relaxed">
+        <p className="max-w-3xl mx-auto text-base text-white/70 leading-relaxed">
           {board.description}
         </p>
       </motion.div>

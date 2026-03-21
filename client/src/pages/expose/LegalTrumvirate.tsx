@@ -23,14 +23,14 @@ export default function LegalTrumvirate() {
     <div className="page-enter max-w-4xl mx-auto px-6 py-12 space-y-16">
 
       <div className="mb-6">
-        <Link href="/coverup" className="text-xs font-mono text-zinc-600 flex items-center gap-1 hover:underline">
+        <Link href="/coverup" className="text-xs font-mono text-zinc-900 flex items-center gap-1 hover:underline font-bold">
           <ArrowLeft size={12} /> Back to Cover-Up Overview
         </Link>
       </div>
 
       {/* Investigative Header */}
       <header className="mb-16">
-        <div className="exhibit-label mb-4 uppercase tracking-[0.2em] font-mono text-xs text-zinc-600">Forensic Audit · The Legal Network</div>
+        <div className="exhibit-label mb-4 uppercase tracking-[0.2em] font-mono text-xs text-zinc-900 font-bold">Forensic Audit · The Legal Network</div>
         <h1
           className="text-6xl font-black mb-6 leading-tight tracking-tighter"
           style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
@@ -135,7 +135,7 @@ export default function LegalTrumvirate() {
             {ruemmler && <PersonCard person={toPerson(ruemmler, "2018–2019")} index={2} />}
           </div>
           <div className="lg:col-span-7">
-            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-600 mb-2 font-mono">Profile 03: The Investigator</h3>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-900 mb-2 font-mono">Profile 03: The Investigator</h3>
             <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Kathryn Ruemmler</h2>
             <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-300 pl-8">
               "While leading the Latham investigation into the seminary's dark history, she was in 'intimate personal contact' with Jeffrey Epstein. Every name she cleared in that report must now be re-examined."
@@ -161,7 +161,7 @@ export default function LegalTrumvirate() {
 
       {/* Forensic Findings Box */}
       <div className="evidence-box bg-ink text-parchment p-12 rounded-sm shadow-2xl mt-20 border-t-4 border-zinc-300">
-        <h3 className="section-heading text-zinc-600 mb-8 uppercase tracking-widest text-sm">Conclusion of Audit · The Closed Loop</h3>
+        <h3 className="section-heading text-zinc-400 mb-8 uppercase tracking-widest text-sm">Conclusion of Audit · The Closed Loop</h3>
         <p className="text-xl leading-relaxed italic mb-8 font-serif">
           "The Result is not an error in the system; it is the system's intended output."
         </p>

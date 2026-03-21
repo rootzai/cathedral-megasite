@@ -102,7 +102,7 @@ export default function EpsteinRuemmlerPivot() {
             {/* Timeline Overlay */}
             <section className="py-24 px-4 bg-black">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-zinc-600 mb-16 text-center">Overlapping Realities</h2>
+                    <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-zinc-400 mb-16 text-center">Overlapping Realities</h2>
                     <div className="space-y-12">
                         {[
                             { date: "2018", event: "Ruemmler begins coordination with Epstein while Latham is retained for Seton Hall matters." },

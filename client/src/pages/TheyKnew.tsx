@@ -97,8 +97,7 @@ export default function TheyKnew() {
           <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-3xl mx-auto">
             A comprehensive reference of every individual who served on Seton Hall University's three governing boards from 2016 to 2026 — and the lawyers who defended the indefensible.
           </p>
-          <p className="text-base md:text-lg text-muted-foreground mt-6 italic bg-background/50 backdrop-blur-sm p-4 inline-block rounded-sm">
-
+          <p className="text-base md:text-lg text-white/80 mt-6 italic bg-background/50 backdrop-blur-sm p-4 inline-block rounded-sm">
             Who heard the Latham Report. Who voted for Reilly. Who received the Cardinal's letters.
           </p>
         </motion.div>
@@ -263,7 +262,7 @@ export default function TheyKnew() {
               The Lawyers
             </h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-6" />
-            <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+            <p className="max-w-3xl mx-auto text-lg text-white/70 leading-relaxed">
               The firms and attorneys who defended Seton Hall, conducted investigations, represented the Archdiocese, and now hold the keys to whether justice is served or buried.
             </p>
 
@@ -323,7 +322,7 @@ export default function TheyKnew() {
                   {njagConnection.title}
                 </h3>
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed mb-8">
+              <p className="text-base text-white/70 leading-relaxed mb-8">
                 {njagConnection.description}
               </p>
               <div className="space-y-5">
@@ -334,7 +333,7 @@ export default function TheyKnew() {
                       <span className="font-heading text-base tracking-wide text-parchment">{person.name}</span>
                     </div>
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed italic ml-6 mt-1">
+                    <p className="text-sm text-white/60 leading-relaxed italic ml-6 mt-1">
                       {person.note}
                     </p>
                   </div>
@@ -365,7 +364,7 @@ export default function TheyKnew() {
                     </div>
                     {person.firm && <p className="text-sm font-label text-gold-dim ml-6">{person.firm}</p>}
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed italic ml-6 mt-1">
+                    <p className="text-sm text-white/60 leading-relaxed italic ml-6 mt-1">
                       {person.note}
                     </p>
                   </div>
@@ -383,10 +382,10 @@ export default function TheyKnew() {
           <p className="font-heading text-base tracking-[0.2em] text-gold-dim mt-6">
             SodomHall.com — Seton Hall University
           </p>
-          <p className="text-sm text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-white/60 mt-3 max-w-2xl mx-auto leading-relaxed">
             This reference section documents individuals who served on Seton Hall University's governing boards from 2016 to 2026 and the legal teams involved in the clergy abuse scandal. Information is sourced from university announcements, legal filings, tax documents, press releases, and news reporting.
           </p>
-          <p className="text-xs text-muted-foreground mt-4 italic">
+          <p className="text-xs text-white/50 mt-4 italic">
             "The truth will set you free, but first it will make you miserable."
           </p>
         </div>

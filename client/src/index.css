@@ -223,7 +223,7 @@
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.15 0.02 20);
     --muted: oklch(0.95 0.01 85);
-    --muted-foreground: oklch(0.2 0.02 20);
+    --muted-foreground: oklch(0.7 0.04 20);
     --border: oklch(0 0 0 / 15%);
 
     /* Hardcoded Legibility Tokens */
@@ -554,7 +554,11 @@
   .bg-zinc-950,
   .bg-zinc-900,
   .bg-zinc-800,
-  .bg-black {
+  .bg-black,
+  .bg-cathedral-dark,
+  .bg-cathedral-light,
+  .bg-cathedral-accent,
+  .bg-ink {
     --foreground: oklch(0.95 0.01 85) !important;
     --muted-foreground: oklch(0.7 0.01 85) !important;
     color: var(--foreground) !important;
@@ -563,14 +567,22 @@
   .bg-zinc-950 .text-muted-foreground,
   .bg-zinc-900 .text-muted-foreground,
   .bg-zinc-800 .text-muted-foreground,
-  .bg-black .text-muted-foreground {
+  .bg-black .text-muted-foreground,
+  .bg-cathedral-dark .text-muted-foreground,
+  .bg-cathedral-light .text-muted-foreground,
+  .bg-cathedral-accent .text-muted-foreground,
+  .bg-ink .text-muted-foreground {
     color: var(--muted-foreground) !important;
   }
 
   .bg-zinc-950 .text-foreground,
   .bg-zinc-900 .text-foreground,
   .bg-zinc-800 .text-foreground,
-  .bg-black .text-foreground {
+  .bg-black .text-foreground,
+  .bg-cathedral-dark .text-foreground,
+  .bg-cathedral-light .text-foreground,
+  .bg-cathedral-accent .text-foreground,
+  .bg-ink .text-foreground {
     color: var(--foreground) !important;
   }
 }
