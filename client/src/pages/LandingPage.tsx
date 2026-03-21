@@ -17,11 +17,10 @@ export default function LandingPage() {
   const pillars = [
     { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'How the abuse and cover-up started, and why no one spoke up.', icon: Factory },
     { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'How powerful people and organizations worked together to hide the truth.', icon: Shield },
-    { id: 'III', title: 'THE BREACH', path: '/breach', desc: 'The moment the secret files were forced open by the court.', icon: Zap },
-    { id: 'IV', title: 'THE SUCCESSION', path: '/succession', desc: 'Who is in charge now, and what happens next.', icon: Crown },
-    { id: 'V', title: 'OPINION', path: '/opinion', desc: 'Different views on why this disaster happened.', icon: FileText },
-    { id: 'VI', title: 'THE LEDGER', path: '/ledger', desc: 'A list of every person involved and what they did.', icon: Users },
-    { id: 'VII', title: 'THE VAULT', path: '/vault', desc: 'Direct access to all 24,000 pages of the actual evidence.', icon: Archive }
+    { id: 'III', title: 'THE BREACH', path: '/expose/epstein-pivot', desc: 'THE OCTOBER PIVOT: How the seminary probe and Jeffrey Epstein collided.', icon: Zap },
+    { id: 'IV', title: 'THE RECORD', path: '/the-record', desc: 'A living fact-check of the evidence. Zero factual disputes to date.', icon: FileText },
+    { id: 'V', title: 'WHISTLEBLOWERS', path: '/whistleblowers', desc: 'The consequences of courage. A timeline of institutional retaliation.', icon: Users },
+    { id: 'VI', title: 'THE VAULT', path: '/vault', desc: 'Confidential Legal Findings part of the Rabner filings.', icon: Archive }
   ];
 
   return (
@@ -95,8 +94,45 @@ export default function LandingPage() {
           color: #a1a1aa;
           border-color: #a1a1aa;
         }
+
+        .survivor-link {
+          position: fixed;
+          bottom: 2rem;
+          right: 2rem;
+          z-index: 50;
+          background: rgba(185, 28, 28, 0.9);
+          color: white;
+          padding: 0.75rem 1.5rem;
+          font-family: 'Lora', serif;
+          font-size: 0.8rem;
+          font-style: italic;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(8px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          transition: all 0.3s ease;
+        }
+
+        .survivor-link:hover {
+          transform: translateY(-4px);
+          background: rgb(185, 28, 28);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
       `}</style>
       <div className="landing-container">
+        {/* Floating Survivor Link */}
+        <a
+          href="https://www.rainn.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="survivor-link"
+        >
+          <Info size={16} />
+          Survivor Resources Center
+        </a>
+
         <div className="title-block">
           <h1 className="title-overlay">Sodom Hall</h1>
           <p className="subtitle-overlay">The Architecture of Silence</p>
@@ -117,7 +153,7 @@ export default function LandingPage() {
               <div className="h-px w-32 bg-zinc-200 mx-auto mt-6" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-16">
               {pillars.map((p) => (
                 <Link key={p.id} href={p.path}>
                   <a className="group relative bg-zinc-100 border border-zinc-300 hover:border-zinc-600 p-6 rounded-lg transition-all duration-300 flex flex-col items-center text-center">

@@ -19,6 +19,7 @@ const ChurchBKSacramentalData = React.lazy(() => import("../pages/church-bk/Sacr
 const ChurchBKStakeholderAnalysis = React.lazy(() => import("../pages/church-bk/StakeholderAnalysis"));
 const ChurchBKTheCardinalate = React.lazy(() => import("../pages/church-bk/TheCardinalate"));
 const ChurchBKTheCorporateVeil = React.lazy(() => import("../pages/church-bk/TheCorporateVeil"));
+const LegalFindings = React.lazy(() => import("../pages/vault/LegalFindings"));
 
 function ChurchBKPageLayout({ component: Component }: { component: React.ComponentType }) {
     return (
@@ -31,7 +32,9 @@ function ChurchBKPageLayout({ component: Component }: { component: React.Compone
 }
 
 export const VaultRoutes = [
-    <Route key="v1" path={"/vault"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>,
+    <Route key="v1" path={"/vault"}><ChurchBKPageLayout component={LegalFindings} /></Route>,
+    <Route key="v1-findings" path={"/vault/findings"}><ChurchBKPageLayout component={LegalFindings} /></Route>,
+    <Route key="v1-bk" path={"/vault/bankruptcy"}><ChurchBKPageLayout component={ChurchBKHome} /></Route>,
     <Route key="v2" path={"/vault/documents"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>,
     <Route key="v3" path={"/vault/finances"}><ChurchBKPageLayout component={ChurchBKDiocesanFinance} /></Route>,
     <Route key="v4" path={"/vault/the-corporate-veil"}><ChurchBKPageLayout component={ChurchBKTheCorporateVeil} /></Route>,

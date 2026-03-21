@@ -3,7 +3,7 @@
    Penn State / Michigan State / Seton Hall — Side by Side
    Parchment theme — investigative broadsheet
    ============================================================ */
-import { ArrowLeft, Scale, AlertTriangle, CheckCircle, X, Minus } from "lucide-react";
+import { ArrowLeft, Scale, AlertTriangle, CheckCircle, X, Minus, FileDown } from "lucide-react";
 import { Link } from "wouter";
 
 function StatusBadge({ status }: { status: "done" | "failed" | "pending" }) {
@@ -138,9 +138,22 @@ export default function InstitutionalParallels() {
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tighter leading-[0.9]" style={{ fontFamily: "'Playfair Display', serif" }}>
                         The <span className="italic text-zinc-800">Precedent</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-2xl text-gray-400 italic max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8" style={{ fontFamily: "'Lora', serif" }}>
+                    <p className="text-base sm:text-lg md:text-2xl text-gray-400 italic max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10" style={{ fontFamily: "'Lora', serif" }}>
                         When Penn State and Michigan State faced their reckonings, presidents were fired, settlements were paid, and records were opened. Seton Hall's response has been: silence.
                     </p>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 sm:mb-16">
+                        <button className="bg-zinc-900 border border-zinc-700 text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-red-700 hover:border-red-700 transition-all flex items-center gap-2 group shadow-xl">
+                            <FileDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
+                            Download Forensic Briefing (PDF)
+                        </button>
+                        <Link href="/about#tips">
+                            <a className="text-zinc-500 hover:text-white text-[10px] font-bold uppercase tracking-widest border border-zinc-800 px-6 py-3 transition-colors">
+                                Submit More Evidence
+                            </a>
+                        </Link>
+                    </div>
+
                     <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto" />
                 </div>
 

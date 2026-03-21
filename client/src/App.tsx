@@ -45,6 +45,13 @@ const StephensEssay = React.lazy(() => import("./pages/opinions/Stephens"));
 // Epstein Pages
 import EpsteinLayout from "./components/EpsteinLayout";
 const EpsteinHome = React.lazy(() => import("./pages/epstein/Home"));
+const EpsteinRuemmlerPivot = React.lazy(() => import("./pages/expose/EpsteinRuemmlerPivot"));
+
+// New Evidence & Investigative Pages
+const LegalFindings = React.lazy(() => import("./pages/vault/LegalFindings"));
+const WhistleblowerTimeline = React.lazy(() => import("./pages/WhistleblowerTimeline"));
+const TheRecord = React.lazy(() => import("./pages/TheRecord"));
+
 
 // Section Layouts
 import RulingLayout from "./components/Layout";
@@ -116,6 +123,7 @@ function Router() {
             EPSTEIN
         ------------------------------------------- */}
         <Route path={"/epstein"}><EpsteinPageLayout component={EpsteinHome} /></Route>
+        <Route path={"/expose/epstein-pivot"}><EpsteinPageLayout component={EpsteinRuemmlerPivot} /></Route>
 
         {/* -------------------------------------------
             STRATEGIC PAGES
@@ -123,6 +131,10 @@ function Router() {
         <Route path={"/corrections"}><Corrections /></Route>
         <Route path={"/about"}><PageLayout component={About} /></Route>
         <Route path={"/parallels"}><InstitutionalParallels /></Route>
+        <Route path={"/the-record"}><PageLayout component={TheRecord} /></Route>
+        <Route path={"/whistleblowers"}><PageLayout component={WhistleblowerTimeline} /></Route>
+        <Route path={"/vault/findings"}><PageLayout component={LegalFindings} /></Route>
+
 
         {/* Home fallback routes */}
         <Route path={"/cathedral"}><PageLayout component={CathedralHome} /></Route>

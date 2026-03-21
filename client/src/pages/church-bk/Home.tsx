@@ -19,14 +19,14 @@ export default function Home() {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale"
         />
         <div className="absolute bottom-0 left-0 z-30 p-8 md:p-12 max-w-3xl">
-          <div className="inline-block px-3 py-1 mb-4 bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-widest">
-            Confidential Analysis
+          <div className="inline-block px-3 py-1 mb-4 bg-zinc-900 text-white text-xs font-bold uppercase tracking-widest">
+            Strategic Analysis
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-zinc-900 mb-4 leading-tight">
             The Bankruptcy Playbook
           </h1>
           <p className="text-lg text-zinc-900/90 font-light max-w-xl leading-relaxed">
-            Investigating the "Corporate Veil" strategies, Alvarez & Marsal restructuring tactics, and the $4.4 billion Chapter 11 crisis facing US Dioceses.
+            Investigating the "Corporate Veil" strategies, restructuring tactics, and the Chapter 11 crisis used to ring-fence institutional assets.
           </p>
         </div>
       </div >

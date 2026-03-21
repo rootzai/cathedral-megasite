@@ -44,6 +44,28 @@ export default function MegaNavigation() {
         </div>
       </div>
 
+      {/* RAINN Crisis Resource Banner */}
+      <div className="bg-zinc-100 border-b border-zinc-300 py-1 px-4 flex items-center justify-center gap-2 text-[10px] sm:text-xs">
+        <span className="text-zinc-500 font-mono uppercase tracking-wider">If you or someone you know needs help:</span>
+        <a
+          href="https://www.rainn.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-red-700 hover:text-red-900 transition-colors uppercase tracking-wider"
+        >
+          RAINN.org
+        </a>
+        <span className="text-zinc-400">|</span>
+        <a
+          href="tel:1-800-656-4673"
+          className="font-bold text-red-700 hover:text-red-900 transition-colors tracking-wide"
+        >
+          1-800-656-HOPE (4673)
+        </a>
+        <span className="hidden sm:inline text-zinc-400">|</span>
+        <span className="hidden sm:inline text-zinc-500 font-mono uppercase tracking-wider">24/7 · Free · Confidential</span>
+      </div>
+
       <div className="w-full px-2 lg:px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between h-14">
@@ -66,6 +88,8 @@ export default function MegaNavigation() {
             <Link href="/ledger"><a className={navLinkClass('/ledger')}>THE LEDGER</a></Link>
 
             <Link href="/vault"><a className={navLinkClass('/vault')}>THE VAULT</a></Link>
+            <Link href="/the-record"><a className={navLinkClass('/the-record')}>THE RECORD</a></Link>
+            <Link href="/whistleblowers"><a className={navLinkClass('/whistleblowers')}>WHISTLEBLOWERS</a></Link>
             <Link href="/about"><a className={navLinkClass('/about')}>ABOUT</a></Link>
             <Link href="/corrections"><a className={navLinkClass('/corrections')}>CORRECTIONS</a></Link>
             <Link href="/about#tips">
@@ -108,6 +132,8 @@ export default function MegaNavigation() {
               <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
 
               <Link href="/vault"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE VAULT</a></Link>
+              <Link href="/the-record"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE RECORD</a></Link>
+              <Link href="/whistleblowers"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">WHISTLEBLOWERS</a></Link>
               <Link href="/about"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">ABOUT</a></Link>
               <Link href="/corrections"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">CORRECTIONS</a></Link>
               <Link href="/about#tips"><a className="block px-4 py-2 bg-red-700 text-zinc-900">SUBMIT A TIP</a></Link>
@@ -144,15 +170,22 @@ export default function MegaNavigation() {
       {/* Sub-navigation for Vault */}
       {location.startsWith('/vault') && (
         <div className="bg-zinc-100 border-t border-zinc-300 animate-in slide-in-from-top-2 duration-300">
-          <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6">
-            <Link href="/origin"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Origin</a></Link>
-            <Link href="/coverup"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Cover-Up</a></Link>
-            <Link href="/breach"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Breach</a></Link>
-            <Link href="/succession"><a className="text-[10px] font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors">The Succession</a></Link>
+          <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+            <Link href="/vault"><a className="hover:text-zinc-900 transition-colors">Raw Evidence Index</a></Link>
+            <Link href="/vault/documents"><a className="hover:text-zinc-900 transition-colors">Document Library</a></Link>
+            <Link href="/vault/bankruptcy"><a className="hover:text-zinc-900 transition-colors">The Bankruptcy Playbook</a></Link>
           </div>
         </div>
       )}
 
+      {/* Jurisdictional Counter / Who's Watching */}
+      <div className="bg-zinc-900 text-[9px] text-zinc-500 py-1.5 px-4 text-center border-t border-white/5">
+        <span className="uppercase tracking-[0.2em]">Live Traffic Monitor:</span>
+        <span className="ml-2 text-red-700 font-bold tabular-nums">4,812 Access Points</span>
+        <span className="mx-2 opacity-30">|</span>
+        <span className="uppercase tracking-[0.1em]">Recent Jurisdictions:</span>
+        <span className="ml-1 text-zinc-300">Vatican City, Trenton NJ, Newark NJ, Washington DC, Geneva</span>
+      </div>
     </nav>
   );
 }
