@@ -72,34 +72,71 @@ export default function UnifiedLayout({
                     </div>
                 </div>
 
-                {/* Top Tabs: Flex-wrap for better scannability on all devices */}
-                <div className="max-w-6xl mx-auto mt-6">
-                    <div className="flex flex-wrap border-b border-border w-full pb-[1px] gap-y-2">
+            </header>
+
+            {/* Content Layout: 2 Columns on Desktop */}
+            <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row px-3 sm:px-4 md:px-8 py-6 md:py-10 gap-8 md:gap-12">
+
+                {/* Mobile & Tablet Tabs */}
+                <div className="block lg:hidden w-full border-b border-border pb-2">
+                    <div className="flex flex-wrap gap-2">
                         {navItems.map((item) => {
                             const isActive = location === item.path || (location.startsWith(item.path + '/') && item.path !== '/');
                             return (
                                 <Link key={item.id} href={item.path}>
                                     <div className={cn(
-                                        "flex-shrink-0 py-2.5 sm:py-4 px-4 sm:px-6 md:px-8 text-center font-mono text-[10px] sm:text-[11px] md:text-sm uppercase tracking-[0.1em] sm:tracking-[0.15em] cursor-pointer transition-all border-r border-border hover:bg-foreground/5 last:border-r-0",
+                                        "flex-shrink-0 py-2 sm:py-3 px-3 sm:px-5 text-center font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] cursor-pointer transition-all border border-border rounded-sm",
                                         isActive
-                                            ? "border-b-4 border-b-zinc-400 text-zinc-800 font-black bg-foreground/5 scale-105 z-10"
-                                            : "border-b-4 border-b-transparent text-foreground/70 hover:text-foreground hover:bg-foreground/[0.02]"
+                                            ? "bg-foreground/10 border-foreground/30 text-foreground font-bold shadow-sm"
+                                            : "bg-transparent text-foreground/70 hover:bg-foreground/5 hover:text-foreground"
                                     )}>
-                                        <span className={cn("mr-3 text-[10px] font-bold", isActive ? "text-zinc-600" : "opacity-40")}>{item.id}</span>
+                                        <span className={cn("mr-2", isActive ? "text-foreground" : "opacity-50")}>{item.id}</span>
                                         {item.label}
                                     </div>
-
                                 </Link>
                             );
                         })}
                     </div>
                 </div>
-            </header>
 
-            {/* Main Content Area */}
-            <main className="flex-1 w-full max-w-6xl mx-auto p-4 md:p-8 animate-in fade-in duration-700">
-                {children}
-            </main>
+                {/* Desktop Left-Hand Navigation */}
+                <aside className="hidden lg:block w-64 shrink-0">
+                    <div className="sticky top-36 space-y-1 bg-background/50 backdrop-blur-sm border border-border/50 p-2 rounded-lg">
+                        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.2em] px-4 py-3 font-bold border-b border-border/50 mb-2">
+                            Section Index
+                        </p>
+                        {navItems.map((item) => {
+                            const isActive = location === item.path || (location.startsWith(item.path + '/') && item.path !== '/');
+                            return (
+                                <Link key={item.id} href={item.path}>
+                                    <div className={cn(
+                                        "block py-3 px-4 rounded-md transition-all cursor-pointer group",
+                                        isActive
+                                            ? "bg-foreground/10 text-foreground shadow-sm"
+                                            : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
+                                    )}>
+                                        <div className="flex items-center justify-between">
+                                            <span className="font-serif text-sm font-medium">{item.label}</span>
+                                            {isActive && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
+                                        </div>
+                                        <span className={cn(
+                                            "font-mono text-[10px] tracking-widest mt-1 block",
+                                            isActive ? "text-foreground/70" : "text-muted-foreground/50 group-hover:text-muted-foreground/70"
+                                        )}>
+                                            {item.id}
+                                        </span>
+                                    </div>
+                                </Link>
+                            )
+                        })}
+                    </div>
+                </aside>
+
+                {/* Main Content Area */}
+                <main className="flex-1 min-w-0 animate-in fade-in duration-700">
+                    {children}
+                </main>
+            </div>
         </div>
     );
 }
