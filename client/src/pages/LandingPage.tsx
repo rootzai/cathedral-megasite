@@ -36,7 +36,11 @@ export default function LandingPage() {
           position: relative;
           height: 100vh;
           width: 100%;
-          background-color: #09090b;
+          background-color: black;
+          background-image: url('/assets/bosch_triptych_clean.jpg');
+          background-size: contain;
+          background-position: center 10%;
+          background-repeat: no-repeat;
           display: flex;
           justify-content: center;
           align-items: flex-start;
@@ -64,6 +68,7 @@ export default function LandingPage() {
           font-size: clamp(3rem, 8vw, 7rem);
           color: #faf6ee;
           letter-spacing: 0.15em;
+          text-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9), 0px 4px 15px rgba(0, 0, 0, 0.7);
           text-transform: uppercase;
           line-height: 1;
           margin: 0;
@@ -72,10 +77,11 @@ export default function LandingPage() {
         .subtitle-overlay {
           font-family: 'Lora', serif;
           font-size: clamp(0.9rem, 2vw, 1.2rem);
-          color: rgba(250, 246, 238, 0.6);
+          color: rgba(250, 246, 238, 0.8);
           letter-spacing: 0.4em;
           margin-top: 1rem;
           font-style: italic;
+          text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
           text-transform: uppercase;
         }
 
@@ -158,9 +164,9 @@ export default function LandingPage() {
             >
               <div className="max-w-7xl w-full py-12">
                 <div className="text-center mb-16">
-                  <h2 className="font-heading text-4xl text-zinc-100 mb-2 uppercase tracking-tight">Site Architecture</h2>
-                  <p className="text-zinc-500 font-serif italic text-lg uppercase tracking-widest">Index of Documentation</p>
-                  <div className="h-px w-32 bg-zinc-800 mx-auto mt-6" />
+                  <h2 className="font-heading text-6xl text-gold mb-2 uppercase tracking-tighter">The Triptych of Exposure</h2>
+                  <p className="text-zinc-500 font-serif italic text-lg uppercase tracking-widest">Site Architecture & Narrative Logic</p>
+                  <div className="h-px w-32 bg-red-600/50 mx-auto mt-6" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 mb-16">
