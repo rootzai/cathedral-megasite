@@ -44,11 +44,6 @@ export default function GlobalChurchMetrics() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <SectionHeader 
-        title="Global Church Metrics" 
-        subtitle="Comprehensive analysis of demographic shifts, clergy trends, and sacramental participation (1995-2025)."
-      />
-
       <Tabs defaultValue="expansion" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="expansion" className="flex items-center gap-2">
@@ -68,25 +63,25 @@ export default function GlobalChurchMetrics() {
         {/* Global Expansion Tab */}
         <TabsContent value="expansion" className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <KeyMetricCard 
-              title="Total Catholics" 
-              value="1.405 Billion" 
-              change="+17.5%" 
-              trend="up" 
+            <KeyMetricCard
+              title="Total Catholics"
+              value="1.405 Billion"
+              change="+17.5%"
+              trend="up"
               description="Since 2010. Outpacing world population growth."
             />
-            <KeyMetricCard 
-              title="Global Share" 
-              value="17.8%" 
-              change="+0.6 pts" 
-              trend="up" 
+            <KeyMetricCard
+              title="Global Share"
+              value="17.8%"
+              change="+0.6 pts"
+              trend="up"
               description="Percentage of world population identifying as Catholic."
             />
-            <KeyMetricCard 
-              title="Growth Driver" 
-              value="Africa" 
-              change="+2.1%" 
-              trend="up" 
+            <KeyMetricCard
+              title="Growth Driver"
+              value="Africa"
+              change="+2.1%"
+              trend="up"
               description="Annual growth rate, the highest of any region."
             />
           </div>
@@ -101,8 +96,8 @@ export default function GlobalChurchMetrics() {
                   <BarChart data={regionalGrowthData} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={true} stroke="var(--border)" />
                     <XAxis type="number" hide />
-                    <YAxis dataKey="region" type="category" width={80} tick={{fill: 'var(--muted-foreground)'}} />
-                    <Tooltip 
+                    <YAxis dataKey="region" type="category" width={80} tick={{ fill: 'var(--muted-foreground)' }} />
+                    <Tooltip
                       contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: 'var(--radius)' }}
                       itemStyle={{ color: 'var(--foreground)' }}
                     />
@@ -120,9 +115,9 @@ export default function GlobalChurchMetrics() {
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={historicalGrowthData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                    <XAxis dataKey="year" tick={{fill: 'var(--muted-foreground)'}} />
-                    <YAxis tick={{fill: 'var(--muted-foreground)'}} />
-                    <Tooltip 
+                    <XAxis dataKey="year" tick={{ fill: 'var(--muted-foreground)' }} />
+                    <YAxis tick={{ fill: 'var(--muted-foreground)' }} />
+                    <Tooltip
                       contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: 'var(--radius)' }}
                       itemStyle={{ color: 'var(--foreground)' }}
                     />
@@ -141,9 +136,9 @@ export default function GlobalChurchMetrics() {
                 The "Southward Shift"
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                The center of gravity for the Catholic Church has decisively shifted to the Global South. 
-                While Europe stagnates at 0.1% growth, Africa and Asia are driving nearly all net expansion. 
-                By 2050, it is projected that <strong>75% of all Catholics</strong> will live outside the West, 
+                The center of gravity for the Catholic Church has decisively shifted to the Global South.
+                While Europe stagnates at 0.1% growth, Africa and Asia are driving nearly all net expansion.
+                By 2050, it is projected that <strong>75% of all Catholics</strong> will live outside the West,
                 fundamentally altering the geopolitical and financial priorities of the Holy See.
               </p>
             </CardContent>
@@ -153,25 +148,25 @@ export default function GlobalChurchMetrics() {
         {/* Clergy & Vocations Tab */}
         <TabsContent value="clergy" className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <KeyMetricCard 
-              title="Total Priests" 
-              value="406,996" 
-              change="-1.3%" 
-              trend="down" 
+            <KeyMetricCard
+              title="Total Priests"
+              value="406,996"
+              change="-1.3%"
+              trend="down"
               description="Global decline since 2010 peak."
             />
-            <KeyMetricCard 
-              title="Major Seminarians" 
-              value="106,495" 
-              change="-10.5%" 
-              trend="down" 
+            <KeyMetricCard
+              title="Major Seminarians"
+              value="106,495"
+              change="-10.5%"
+              trend="down"
               description="Significant drop in future clergy pipeline."
             />
-            <KeyMetricCard 
-              title="Bishops" 
-              value="5,430" 
-              change="+6.4%" 
-              trend="up" 
+            <KeyMetricCard
+              title="Bishops"
+              value="5,430"
+              change="+6.4%"
+              trend="up"
               description="Administrative leadership continues to expand."
             />
           </div>
@@ -184,10 +179,10 @@ export default function GlobalChurchMetrics() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={clergyData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                  <XAxis dataKey="year" tick={{fill: 'var(--muted-foreground)'}} />
-                  <YAxis yAxisId="left" tick={{fill: 'var(--muted-foreground)'}} />
-                  <YAxis yAxisId="right" orientation="right" tick={{fill: 'var(--muted-foreground)'}} />
-                  <Tooltip 
+                  <XAxis dataKey="year" tick={{ fill: 'var(--muted-foreground)' }} />
+                  <YAxis yAxisId="left" tick={{ fill: 'var(--muted-foreground)' }} />
+                  <YAxis yAxisId="right" orientation="right" tick={{ fill: 'var(--muted-foreground)' }} />
+                  <Tooltip
                     contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: 'var(--radius)' }}
                     itemStyle={{ color: 'var(--foreground)' }}
                   />
@@ -207,8 +202,8 @@ export default function GlobalChurchMetrics() {
                   Western Collapse
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  North America and Europe have seen a <strong>20%+ decline</strong> in seminarians over the last decade. 
-                  Many dioceses in France and Germany now ordain zero new priests annually, relying entirely on 
+                  North America and Europe have seen a <strong>20%+ decline</strong> in seminarians over the last decade.
+                  Many dioceses in France and Germany now ordain zero new priests annually, relying entirely on
                   "missionary priests" imported from Nigeria, India, and the Philippines to staff historic parishes.
                 </p>
               </CardContent>
@@ -220,8 +215,8 @@ export default function GlobalChurchMetrics() {
                   African Boom
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Conversely, African seminaries are at capacity, with a <strong>3-4% annual increase</strong> in vocations. 
-                  This surplus is creating a new "reverse mission" dynamic, where the Global South evangelizes the 
+                  Conversely, African seminaries are at capacity, with a <strong>3-4% annual increase</strong> in vocations.
+                  This surplus is creating a new "reverse mission" dynamic, where the Global South evangelizes the
                   secularized North, bringing with it a more orthodox and traditional theological outlook.
                 </p>
               </CardContent>
@@ -232,25 +227,25 @@ export default function GlobalChurchMetrics() {
         {/* Sacramental Index Tab */}
         <TabsContent value="sacraments" className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <KeyMetricCard 
-              title="Total Baptisms" 
-              value="13.15 M" 
-              change="-22.6%" 
-              trend="down" 
+            <KeyMetricCard
+              title="Total Baptisms"
+              value="13.15 M"
+              change="-22.6%"
+              trend="down"
               description="Sharp decline from 17M peak in 2010."
             />
-            <KeyMetricCard 
-              title="First Communions" 
-              value="9.10 M" 
-              change="+13.8%" 
-              trend="up" 
+            <KeyMetricCard
+              title="First Communions"
+              value="9.10 M"
+              change="+13.8%"
+              trend="up"
               description="Steady growth, driven by Americas."
             />
-            <KeyMetricCard 
-              title="Confirmations" 
-              value="7.70 M" 
-              change="+10.0%" 
-              trend="up" 
+            <KeyMetricCard
+              title="Confirmations"
+              value="7.70 M"
+              change="+10.0%"
+              trend="up"
               description="Resilient youth engagement globally."
             />
           </div>
@@ -263,9 +258,9 @@ export default function GlobalChurchMetrics() {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sacramentalData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                  <XAxis dataKey="year" tick={{fill: 'var(--muted-foreground)'}} />
-                  <YAxis tick={{fill: 'var(--muted-foreground)'}} />
-                  <Tooltip 
+                  <XAxis dataKey="year" tick={{ fill: 'var(--muted-foreground)' }} />
+                  <YAxis tick={{ fill: 'var(--muted-foreground)' }} />
+                  <Tooltip
                     contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: 'var(--radius)' }}
                     itemStyle={{ color: 'var(--foreground)' }}
                   />
@@ -282,9 +277,9 @@ export default function GlobalChurchMetrics() {
             <CardContent className="p-6">
               <h3 className="font-serif text-lg font-semibold mb-2">The "Baptism Gap"</h3>
               <p className="text-muted-foreground leading-relaxed">
-                The <strong>22.6% drop in baptisms</strong> is the single most alarming metric for Church demographers. 
-                It reflects not just lower birth rates in Catholic countries, but a failure to retain the children of 
-                nominal Catholics. While First Communions and Confirmations remain steady (indicating strong retention 
+                The <strong>22.6% drop in baptisms</strong> is the single most alarming metric for Church demographers.
+                It reflects not just lower birth rates in Catholic countries, but a failure to retain the children of
+                nominal Catholics. While First Communions and Confirmations remain steady (indicating strong retention
                 of <em>active</em> families), the "cultural Catholic" pipeline is drying up rapidly.
               </p>
             </CardContent>

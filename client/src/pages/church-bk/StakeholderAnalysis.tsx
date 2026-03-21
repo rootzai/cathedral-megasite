@@ -5,11 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function StakeholderAnalysis() {
   return (
-    <>
-      <SectionHeader 
-        title="Stakeholder Analysis" 
-        subtitle="Mapping the influential para-church organizations and donor networks that shape US Catholic strategy and funding."
-      />
+    <div className="space-y-12 pb-20">
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
         {/* Opus Dei */}
@@ -19,9 +15,9 @@ export default function StakeholderAnalysis() {
             <Badge variant="outline" className="text-xs font-bold border-primary text-primary">Personal Prelature</Badge>
           </div>
           <div className="relative h-48 rounded-sm overflow-hidden border border-border">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/opus-dei-headquarters_9b61c90b.png" 
-              alt="Opus Dei Headquarters" 
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/opus-dei-headquarters_9b61c90b.png"
+              alt="Opus Dei Headquarters"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -50,9 +46,9 @@ export default function StakeholderAnalysis() {
             <Badge variant="outline" className="text-xs font-bold border-accent text-accent-foreground">Influencer Network</Badge>
           </div>
           <div className="relative h-48 rounded-sm overflow-hidden border border-border">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/napa-institute-conference_683059bd.png" 
-              alt="Napa Institute Conference" 
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/napa-institute-conference_683059bd.png"
+              alt="Napa Institute Conference"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
@@ -80,9 +76,9 @@ export default function StakeholderAnalysis() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <div className="relative h-32 rounded-sm overflow-hidden border border-border">
-              <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/knights-columbus-vault_8a657443.png" 
-                alt="Knights of Columbus Vault" 
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/knights-columbus-vault_8a657443.png"
+                alt="Knights of Columbus Vault"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -116,6 +112,7 @@ export default function StakeholderAnalysis() {
             </p>
           </div>
         </div>
-      </div>    </>
+      </div>
+    </div>
   );
 }

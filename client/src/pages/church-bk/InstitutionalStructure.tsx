@@ -4,12 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function InstitutionalStructure() {
   return (
-    <>
-      <SectionHeader 
-        title="Institutional Structure" 
-        subtitle="The administrative backbone of the global Church: Dioceses, Parishes, and Pastoral Centers."
-      />
-
+    <div className="space-y-12 pb-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
         <div className="prose prose-slate max-w-none text-muted-foreground">
           <p className="text-lg font-light text-foreground mb-6">
@@ -21,11 +16,11 @@ export default function InstitutionalStructure() {
           <p className="mb-8">
             Below the diocesan level, the <strong>Parish</strong> remains the fundamental unit of community life. While the number of priests has stagnated globally (-1.3% over 15 years), the number of "pastoral centers" and mission stations has exploded, particularly in Africa and Asia, indicating a shift towards more flexible, lay-supported models of ministry.
           </p>
-          
+
           <div className="mt-8 border rounded-lg overflow-hidden shadow-sm bg-white">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/hierarchy-diagram_81321007.png" 
-              alt="Catholic Church Hierarchy Diagram" 
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/aW7Q8NFGH9kBnGNnehBp2c/hierarchy-diagram_81321007.png"
+              alt="Catholic Church Hierarchy Diagram"
               className="w-full h-auto object-contain"
             />
             <div className="p-3 bg-muted/30 text-xs text-center text-muted-foreground italic border-t">
@@ -78,6 +73,7 @@ export default function InstitutionalStructure() {
             <div className="text-sm font-medium uppercase tracking-wider opacity-80">Parishes</div>
           </div>
         </div>
-      </div>    </>
+      </div>
+    </div>
   );
 }

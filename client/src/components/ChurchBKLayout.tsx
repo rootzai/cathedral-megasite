@@ -56,14 +56,8 @@ export default function Layout({ children }: LayoutProps) {
     { href: "/vault/documents", label: "Document Library", icon: FileText },
     { href: "/vault/bankruptcy", label: "The Bankruptcy Playbook", icon: Shield },
     { href: "/vault/active-case-dossiers", label: "Active Case Dossiers", icon: BarChart3 },
-    { href: "/vault/finances", label: "Diocesan Intelligence", icon: DollarSign },
     { href: "/vault/the-corporate-veil", label: "The Corporate Veil", icon: Shield },
-    { href: "/vault/creditor-committee-portal", label: "Creditor Committee Portal", icon: Users },
-    { href: "/vault/financial-operating-model", label: "US Financial Model", icon: Wallet },
-    { href: "/vault/cardinalate-mccarrick", label: "The Cardinalate & McCarrick", icon: Crown },
-    { href: "/vault/institutional-structure", label: "Institutional Structure", icon: Landmark },
-    { href: "/vault/stakeholder-analysis", label: "Stakeholder Analysis", icon: Users },
-    { href: "/vault/global-church-metrics", label: "Global Church Metrics", icon: Globe },
+    { href: "/vault/intelligence", label: "Research & Intelligence", icon: Landmark },
   ];
 
   const NavContent = () => (

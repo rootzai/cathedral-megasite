@@ -27,14 +27,21 @@ export default function ExposePortal() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     {/* Act 1: The Origin */}
                     <Link href="/origin/martin">
-                        <div className="group cursor-pointer relative h-[350px] border border-gray-800 hover:border-zinc-300 transition-all duration-500 overflow-hidden bg-zinc-100/50">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-                            <div className="p-8 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-zinc-700 font-mono text-[10px] uppercase tracking-widest mb-2">Act I · 1980 - 2018</span>
-                                <h2 className="text-3xl font-bold uppercase text-zinc-900 mb-2 group-hover:text-zinc-700 transition-colors">
+                        <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
+                            <div className="absolute inset-0 z-0">
+                                <SmartImage
+                                    src="/assets/images/sh_origin_seminary.png"
+                                    alt="The Origin"
+                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                                />
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
+                            <div className="p-10 relative z-20 h-full flex flex-col justify-end">
+                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act I · 1980 - 2018</span>
+                                <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Origin
                                 </h2>
-                                <p className="text-sm text-gray-400 group-hover:text-zinc-900 transition-colors max-w-sm">
+                                <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
                                     The construction of the machine. The Sea Girt beach house, the seminarian pipeline, and the early warnings that were systematically ignored.
                                 </p>
                             </div>
@@ -43,14 +50,21 @@ export default function ExposePortal() {
 
                     {/* Act 2: The Cover-Up */}
                     <Link href="/coverup/financial">
-                        <div className="group cursor-pointer relative h-[350px] border border-gray-800 hover:border-zinc-300 transition-all duration-500 overflow-hidden bg-zinc-100/50">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-                            <div className="p-8 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-zinc-700 font-mono text-[10px] uppercase tracking-widest mb-2">Act II · 2018 - 2024</span>
-                                <h2 className="text-3xl font-bold uppercase text-zinc-900 mb-2 group-hover:text-zinc-700 transition-colors">
+                        <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
+                            <div className="absolute inset-0 z-0">
+                                <SmartImage
+                                    src="/assets/images/sh_coverup_vault.png"
+                                    alt="The Cover-Up"
+                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                                />
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
+                            <div className="p-10 relative z-20 h-full flex flex-col justify-end">
+                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act II · 2018 - 2024</span>
+                                <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Cover-Up
                                 </h2>
-                                <p className="text-sm text-gray-400 group-hover:text-zinc-900 transition-colors max-w-sm">
+                                <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
                                     The protection of the machine. The "Legal Triumvirate," the suppression of the Latham Report, and the Christie legal network's intervention.
                                 </p>
                             </div>
@@ -59,14 +73,21 @@ export default function ExposePortal() {
 
                     {/* Act 3: The Breach */}
                     <Link href="/breach/whistleblowers">
-                        <div className="group cursor-pointer relative h-[350px] border border-gray-800 hover:border-zinc-300 transition-all duration-500 overflow-hidden bg-zinc-100/50">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-                            <div className="p-8 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-zinc-700 font-mono text-[10px] uppercase tracking-widest mb-2">Act III · 2024 - 2026</span>
-                                <h2 className="text-3xl font-bold uppercase text-zinc-900 mb-2 group-hover:text-zinc-700 transition-colors">
+                        <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
+                            <div className="absolute inset-0 z-0">
+                                <SmartImage
+                                    src="/assets/images/sh_breach_glass.png"
+                                    alt="The Breach"
+                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                                />
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
+                            <div className="p-10 relative z-20 h-full flex flex-col justify-end">
+                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act III · 2024 - 2026</span>
+                                <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Breach
                                 </h2>
-                                <p className="text-sm text-gray-400 group-hover:text-zinc-900 transition-colors max-w-sm">
+                                <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
                                     The collapse of the machine. Whistleblowers emerge, the Politico revelations, and the judiciary's mandate to produce 24,000 pages.
                                 </p>
                             </div>
@@ -75,14 +96,21 @@ export default function ExposePortal() {
 
                     {/* Act 4: The Succession */}
                     <Link href="/succession/regime">
-                        <div className="group cursor-pointer relative h-[350px] border border-gray-800 hover:border-zinc-300 transition-all duration-500 overflow-hidden bg-zinc-100/50">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-                            <div className="p-8 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-zinc-700 font-mono text-[10px] uppercase tracking-widest mb-2">Act IV · 2026 - Beyond</span>
-                                <h2 className="text-3xl font-bold uppercase text-zinc-900 mb-2 group-hover:text-zinc-700 transition-colors">
+                        <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
+                            <div className="absolute inset-0 z-0">
+                                <SmartImage
+                                    src="/assets/images/sh_succession_cathedral.png"
+                                    alt="The Succession"
+                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                                />
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
+                            <div className="p-10 relative z-20 h-full flex flex-col justify-end">
+                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act IV · 2026 - Beyond</span>
+                                <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Succession
                                 </h2>
-                                <p className="text-sm text-gray-400 group-hover:text-zinc-900 transition-colors max-w-sm">
+                                <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
                                     The survival of the machine. The election of Msgr. Reilly, the New Orleans export, and the institutional efforts to outlast the scandal.
                                 </p>
                             </div>

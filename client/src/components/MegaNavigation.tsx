@@ -174,6 +174,8 @@ export default function MegaNavigation() {
             <Link href="/vault"><a className="hover:text-zinc-900 transition-colors">Raw Evidence Index</a></Link>
             <Link href="/vault/documents"><a className="hover:text-zinc-900 transition-colors">Document Library</a></Link>
             <Link href="/vault/bankruptcy"><a className="hover:text-zinc-900 transition-colors">The Bankruptcy Playbook</a></Link>
+            <Link href="/vault/active-case-dossiers"><a className="hover:text-zinc-900 transition-colors">Active Case Dossiers</a></Link>
+            <Link href="/vault/intelligence"><a className="hover:text-zinc-900 transition-colors">Research & Intelligence</a></Link>
           </div>
         </div>
       )}
