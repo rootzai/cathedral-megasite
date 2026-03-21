@@ -36,7 +36,7 @@ const badgeStyles: Record<Badge, string> = {
   emeritus: "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]",
   nyre: "badge-nyre",
   epstein: "bg-purple-950/30 text-purple-400 border border-purple-800/40",
-  sanctioned: "bg-zinc-100/40 text-zinc-700 border border-red-800/50 font-bold animate-pulse",
+  sanctioned: "bg-red-950/20 text-red-100 border border-red-800/50 font-bold animate-pulse",
 };
 
 export function PersonCard({ person, index = 0, onBadgeClick }: {

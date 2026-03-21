@@ -108,7 +108,7 @@ export function Search({ onClose }: SearchProps) {
     <div className="fixed inset-0 bg-white/90 z-50 flex items-start justify-center pt-20 px-4">
       <div className="w-full max-w-3xl bg-zinc-100 rounded-lg shadow-2xl border-2 border-zinc-300">
         <div className="flex items-center gap-3 p-4 border-b border-zinc-300">
-          <SearchIcon className="w-5 h-5 text-zinc-700" />
+          <SearchIcon className="w-5 h-5 text-zinc-900" />
           <input
             ref={inputRef}
             type="text"
@@ -121,17 +121,17 @@ export function Search({ onClose }: SearchProps) {
             onClick={onClose}
             className="p-1 hover:bg-zinc-200 rounded transition-colors"
           >
-            <X className="w-5 h-5 text-zinc-600" />
+            <X className="w-5 h-5 text-zinc-800" />
           </button>
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto">
           {query.length < 2 ? (
-            <div className="p-8 text-center text-zinc-600">
+            <div className="p-8 text-center text-zinc-800 font-medium">
               Type at least 2 characters to search
             </div>
           ) : results.length === 0 ? (
-            <div className="p-8 text-center text-zinc-600">
+            <div className="p-8 text-center text-zinc-800 font-medium">
               No results found for "{query}"
             </div>
           ) : (
@@ -151,14 +151,14 @@ export function Search({ onClose }: SearchProps) {
                   className="w-full p-4 text-left hover:bg-zinc-200 transition-colors"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold text-zinc-700">{result.act}</span>
-                    <span className="text-xs text-zinc-600">•</span>
-                    <span className="text-xs text-zinc-600">{result.section}</span>
+                    <span className="text-xs font-bold text-zinc-900">{result.act}</span>
+                    <span className="text-xs text-zinc-800">•</span>
+                    <span className="text-xs text-zinc-800 font-medium">{result.section}</span>
                   </div>
                   <h4 className="font-bold text-zinc-900 mb-1">
                     {highlightText(result.title, query)}
                   </h4>
-                  <p className="text-sm text-zinc-600">
+                  <p className="text-sm text-zinc-800 leading-relaxed">
                     {highlightText(result.snippet, query)}
                   </p>
                 </button>

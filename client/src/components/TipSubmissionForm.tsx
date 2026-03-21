@@ -155,7 +155,7 @@ export function TipSubmissionForm() {
           type="checkbox"
           id="anonymous"
           {...register('anonymous')}
-          className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-zinc-800 focus:ring-red-600"
+          className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-red-600 focus:ring-red-600"
         />
         <label htmlFor="anonymous" className="text-gray-200 font-semibold cursor-pointer">
           Submit Anonymously (no contact information required)
@@ -173,10 +173,10 @@ export function TipSubmissionForm() {
               type="text"
               id="name"
               {...register('name')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none"
               placeholder="Your name"
             />
-            {errors.name && <p className="text-zinc-700 text-xs mt-1">{errors.name.message}</p>}
+            {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-300">
@@ -186,7 +186,7 @@ export function TipSubmissionForm() {
               type="email"
               id="email"
               {...register('email')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none"
               placeholder="your@email.com"
             />
             {errors.email && <p className="text-zinc-700 text-xs mt-1">{errors.email.message}</p>}
@@ -197,7 +197,7 @@ export function TipSubmissionForm() {
       {/* Subject */}
       <div>
         <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-gray-300">
-          Subject <span className="text-zinc-700">*</span>
+          Subject <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -212,13 +212,13 @@ export function TipSubmissionForm() {
       {/* Message */}
       <div>
         <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-300">
-          Your Tip <span className="text-zinc-700">*</span>
+          Your Tip <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
           rows={8}
           {...register('message')}
-          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none resize-none"
+          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none resize-none"
           placeholder="Provide as much detail as possible. Include dates, names, locations, and any supporting information."
         />
         {errors.message && <p className="text-zinc-700 text-xs mt-1">{errors.message.message}</p>}
@@ -230,8 +230,8 @@ export function TipSubmissionForm() {
           Attach Documents (Optional)
         </label>
         <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-zinc-300 transition-colors">
-          <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-          <p className="text-gray-400 mb-2">Upload supporting documents, images, or evidence</p>
+          <Upload className="w-8 h-8 text-zinc-100 mx-auto mb-2" />
+          <p className="text-zinc-100 font-medium mb-2">Upload supporting documents, images, or evidence</p>
           <input
             type="file"
             multiple
@@ -260,7 +260,7 @@ export function TipSubmissionForm() {
                 <button
                   type="button"
                   onClick={() => removeFile(index)}
-                  className="text-zinc-700 hover:text-red-400 ml-2"
+                  className="text-zinc-300 hover:text-red-400 ml-2"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -309,7 +309,7 @@ export function TipSubmissionForm() {
         </Button>
       </div>
 
-      <p className="text-xs text-gray-400 text-center">
+      <p className="text-xs text-zinc-200 text-center font-medium">
         By submitting, you acknowledge that your information will be handled according to our privacy practices described above.
       </p>
     </form>
