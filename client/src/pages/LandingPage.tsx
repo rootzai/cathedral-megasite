@@ -164,9 +164,9 @@ export default function LandingPage() {
             >
               <div className="max-w-7xl w-full py-12">
                 <div className="text-center mb-16">
-                  <h2 className="font-heading text-6xl text-gold mb-2 uppercase tracking-tighter">The Triptych of Exposure</h2>
+                  <h2 className="font-heading text-6xl text-zinc-300 mb-2 uppercase tracking-tighter">The Triptych of Exposure</h2>
                   <p className="text-zinc-500 font-serif italic text-lg uppercase tracking-widest">Site Architecture & Narrative Logic</p>
-                  <div className="h-px w-32 bg-red-600/50 mx-auto mt-6" />
+                  <div className="h-px w-32 bg-zinc-800 mx-auto mt-6" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 mb-16">
