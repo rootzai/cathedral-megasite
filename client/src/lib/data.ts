@@ -98,35 +98,35 @@ export const RINGS: Ring[] = [
   {
     id: 1,
     name: "Inner Sanctum",
-    route: "/evidence/ring-1",
+    route: "/origin/root",
     description: "The primary repository of the 24,000 unsealed pages. This is the bedrock of the forensic archive, containing the original Latham Report and suppressed witness transcripts.",
     breach: false
   },
   {
     id: 2,
     name: "The Chancery",
-    route: "/evidence/ring-2",
+    route: "/origin/network",
     description: "The ecclesiastical chain of command. Mapping how the Archdiocese of Newark (RCAN) used canon law and internal transfers to 'launder' personnel files across parish lines.",
     breach: false
   },
   {
     id: 3,
     name: "The Moat",
-    route: "/evidence/ring-3",
+    route: "/coverup/financial",
     description: "The financial and fiduciary layer. Documenting how the Board of Regents used 'Corporation Sole' status to shield assets while ignoring red flags from the LaSala Task Force.",
     breach: true
   },
   {
     id: 4,
     name: "The Legal Cloak",
-    route: "/evidence/ring-4",
+    route: "/coverup/legal",
     description: "The defensive architecture. A network of Christie-era law firms and political allies coordinating discovery withholding and legal threats against whistleblowers.",
     breach: false
   },
   {
     id: 5,
     name: "The Public Narrative",
-    route: "/evidence/ring-5",
+    route: "/breach/whistleblowers",
     description: "The propaganda machine. Analyzing the PR strategies and 'shadow compliance channels' used to maintain a facade of transparency while suppressing the Latham findings.",
     breach: false
   },

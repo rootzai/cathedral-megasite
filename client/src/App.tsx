@@ -32,10 +32,6 @@ function PageLayout({ component: Component, theme = "dark" }: { component: React
 
 const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
-  "/endgame": "/evidence",
-  "/expose": "/evidence",
-  "/vault": "/evidence",
-  "/ruling": "/evidence/ring-1", // Rule 1: Inner Sanctum
   "/ledger": "/evidence",
   "/headline-news": "/breach"
 };
@@ -66,10 +62,7 @@ function Router() {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.2em] font-bold">Unsealing Archives...</div>}>
       <Switch>
-        {/* Tier 2: THE EVIDENCE (Prioritized forensic paths) */}
-        <Route path="/evidence/ring-:id">
-          <PageLayout component={EvidenceHub} />
-        </Route>
+        {/* Tier 2: THE EVIDENCE */}
         <Route path="/evidence">
           <PageLayout component={EvidenceHub} />
         </Route>
@@ -79,7 +72,7 @@ function Router() {
           <PageLayout component={RedesignedHome} />
         </Route>
 
-        {/* Tier 3: THE BREACH */}
+        {/* Tier 3: THE BREACH (BreachHub landing — sub-routes handled by ExposeRoutes below) */}
         <Route path="/breach">
           <PageLayout component={BreachHub} />
         </Route>
@@ -101,7 +94,7 @@ function Router() {
         {VaultRoutes}
 
         {/* Catch-all and Redirects */}
-        <Route path="/:rest*">
+        <Route>
           <RedirectHandler />
           <NotFound />
         </Route>
