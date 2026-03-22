@@ -183,7 +183,7 @@ export default function PowerAxis() {
                                 <div className="mt-6 pt-4 border-t border-red-900/30">
                                     <span className="text-[9px] font-black text-red-500 uppercase tracking-[0.2em] block mb-1">
                                         {item.callout.title}
-                                    </li>
+                                    </span>
                                     <p className="text-xs font-bold text-white mb-1">{item.callout.name}</p>
                                     <p className="text-[10px] text-gray-400 mb-2 italic">"{item.callout.details}"</p>
                                     <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-950/40 border border-red-500/30 rounded text-[9px] font-bold text-red-400">
