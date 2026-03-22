@@ -194,7 +194,7 @@ export default function HeadlineNews() {
 
                         <div className="space-y-6">
                             <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_map_overview.png")}>
-                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Blueprint · Act I-IV</p>
+                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Blueprint · Act I-V</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_map_overview.png"
@@ -206,13 +206,13 @@ export default function HeadlineNews() {
                                     </div>
                                 </div>
                                 <div className="flex justify-between items-center mt-2">
-                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Narrative Flow</p>
+                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Comprehensive Narrative Flow</p>
                                     <a href="/assets/site_map_overview.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Map</a>
                                 </div>
                             </div>
 
                             <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_wireframe_detail.png")}>
-                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Wireframe Detail · The Breach</p>
+                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Detail · The Breach (Expanded)</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_wireframe_detail.png"
@@ -224,7 +224,7 @@ export default function HeadlineNews() {
                                     </div>
                                 </div>
                                 <div className="flex justify-between items-center mt-2">
-                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Forensic Detail</p>
+                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Clever Architecture</p>
                                     <a href="/assets/site_wireframe_detail.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Detail</a>
                                 </div>
                             </div>
