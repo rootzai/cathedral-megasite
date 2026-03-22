@@ -86,6 +86,59 @@ export const KEY_DATES = [
   { date: "Early 2026", event: "Recent dismissal of the Nyre case nearly two years after it was filed and with no evidence presented." }
 ];
 
+export interface Ring {
+  id: number;
+  name: string;
+  route: string;
+  description: string;
+  breach: boolean;
+}
+
+export const RINGS: Ring[] = [
+  {
+    id: 1,
+    name: "Inner Sanctum",
+    route: "/evidence/ring-1",
+    description: "The primary repository of the 24,000 unsealed pages. This is the bedrock of the forensic archive, containing the original Latham Report and suppressed witness transcripts.",
+    breach: false
+  },
+  {
+    id: 2,
+    name: "The Chancery",
+    route: "/evidence/ring-2",
+    description: "The ecclesiastical chain of command. Mapping how the Archdiocese of Newark (RCAN) used canon law and internal transfers to 'launder' personnel files across parish lines.",
+    breach: false
+  },
+  {
+    id: 3,
+    name: "The Moat",
+    route: "/evidence/ring-3",
+    description: "The financial and fiduciary layer. Documenting how the Board of Regents used 'Corporation Sole' status to shield assets while ignoring red flags from the LaSala Task Force.",
+    breach: true
+  },
+  {
+    id: 4,
+    name: "The Legal Cloak",
+    route: "/evidence/ring-4",
+    description: "The defensive architecture. A network of Christie-era law firms and political allies coordinating discovery withholding and legal threats against whistleblowers.",
+    breach: false
+  },
+  {
+    id: 5,
+    name: "The Public Narrative",
+    route: "/evidence/ring-5",
+    description: "The propaganda machine. Analyzing the PR strategies and 'shadow compliance channels' used to maintain a facade of transparency while suppressing the Latham findings.",
+    breach: false
+  },
+  {
+    id: 6,
+    name: "The Breach",
+    route: "/breach",
+    description: "Point of institutional failure. The Mark Crawford litigation where the Shield finally collapsed under the weight of falsified records and refused settlements.",
+    breach: true
+  }
+];
+
 export const boardOfTrustees: BoardSection = {
   id: "trustees",
   title: "Board of Trustees",

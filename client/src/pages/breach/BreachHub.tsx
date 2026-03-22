@@ -42,21 +42,29 @@ export default function BreachHub() {
                         </div>
 
                         <div className="lg:w-1/2 bg-[#111116] border border-[#1a1a22] p-12">
-                            <h3 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-8">Case File: 15-CRA-2005</h3>
+                            <h3 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-8 font-mono">Case File: 15-CRA-2005 // THE BREACH</h3>
                             <div className="space-y-8 mb-12">
                                 <div>
-                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2">Primary Plaintiff</span>
-                                    <span className="text-2xl font-bold text-white">Mark Crawford</span>
+                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">Primary Plaintiff</span>
+                                    <span className="text-2xl font-bold text-white uppercase tracking-tight">Mark Crawford</span>
                                 </div>
                                 <div>
-                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2">Subject Matter</span>
-                                    <span className="text-lg text-[#bbb]">Fabrication of internal registries to bypass statute of limitations. Refusal of $108K settlement aimed at preventing discovery.</span>
+                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">Forensic Opening</span>
+                                    <span className="text-lg text-[#bbb] leading-relaxed">
+                                        The Breach occurred when internal archdiocesan records were found to have <span className="text-white font-bold underline decoration-[#8b1a1a]">falsifiedCrawford's age</span> to bypass the statute of limitations. This discrepancy, discovered during the 2005 litigation, represents the first structural crack in the Shield's legal defense.
+                                    </span>
+                                </div>
+                                <div>
+                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">The Refused Silence</span>
+                                    <span className="text-lg text-[#bbb] leading-relaxed">
+                                        The institution attempted to pay Crawford <span className="text-[#8b1a1a] font-bold">$108,000</span> to sign a permanent non-disclosure agreement. Crawford's refusal allowed the discovery of the "Ring 3" financial moat and the Latham Report's existence.
+                                    </span>
                                 </div>
                             </div>
 
                             <Link href="/breach/documents">
-                                <a className="block w-full text-center bg-white text-black py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:text-white transition-all">
-                                    Access Case Documents
+                                <a className="block w-full text-center bg-[#8b1a1a] text-white py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black transition-all shadow-xl shadow-red-900/20">
+                                    Access Unsealed Documents
                                 </a>
                             </Link>
                         </div>

@@ -1,4 +1,5 @@
-import React from "react";
+import { useState, useRef } from "react";
+import InvestigativeModal from "./InvestigativeModal";
 import { motion } from "framer-motion";
 import { Shield, ArrowRight, AlertCircle, CheckCircle2, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -85,8 +86,10 @@ const POWER_AXIS_DATA = [
 ];
 
 export default function PowerAxis() {
+    const [selectedLevel, setSelectedLevel] = useState<typeof POWER_AXIS_DATA[0] | null>(null);
+
     return (
-        <div className="relative w-full min-h-[700px] py-12 px-4 bg-[#0a0a0c] overflow-hidden rounded-2xl border border-white/5 shadow-3xl">
+        <div className="relative w-full py-16 px-4 bg-[#0a0a0c] overflow-hidden rounded-2xl border border-white/5 shadow-3xl">
             {/* Background Texture/Grid */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
@@ -158,50 +161,60 @@ export default function PowerAxis() {
                         )}
                     >
                         {/* Level Indicator */}
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border border-white/10 flex items-center justify-center text-[10px] font-bold text-gray-500 group-hover:text-white group-hover:border-[#8b1a1a] transition-colors">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-black border border-white/10 flex items-center justify-center text-xs font-bold text-gray-400 group-hover:text-white group-hover:border-[#8b1a1a] transition-colors">
                             {item.level}
                         </div>
 
                         {/* Content */}
-                        <div className="mt-4">
-                            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-0.5 line-clamp-1">
+                        <div className="mt-6">
+                            <h4 className="text-base font-bold text-white uppercase tracking-wider mb-1 line-clamp-1">
                                 {item.title}
                             </h4>
-                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-4">
+                            <p className="text-xs text-[#8b1a1a] font-bold uppercase tracking-widest mb-6">
                                 {item.subtitle}
                             </p>
 
-                            <ul className="space-y-2 mb-6">
-                                {item.stats.map((stat, i) => (
-                                    <li key={i} className="text-[11px] text-gray-400 leading-relaxed list-disc list-inside marker:text-[#8b1a1a]">
+                            <ul className="space-y-3 mb-8">
+                                {item.stats.slice(0, 3).map((stat, i) => (
+                                    <li key={i} className="text-sm text-gray-400 leading-relaxed list-disc list-inside marker:text-[#8b1a1a]">
                                         {stat}
                                     </li>
                                 ))}
+                                {item.stats.length > 3 && (
+                                    <li className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold mt-2">
+                                        + {item.stats.length - 3} More Data Points
+                                    </li>
+                                )}
                             </ul>
 
                             {item.callout && (
-                                <div className="mt-6 pt-4 border-t border-red-900/30">
-                                    <span className="text-[9px] font-black text-red-500 uppercase tracking-[0.2em] block mb-1">
+                                <div className="mt-8 pt-6 border-t border-red-900/30">
+                                    <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
                                         {item.callout.title}
                                     </span>
-                                    <p className="text-xs font-bold text-white mb-1">{item.callout.name}</p>
-                                    <p className="text-[10px] text-gray-400 mb-2 italic">"{item.callout.details}"</p>
-                                    <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-950/40 border border-red-500/30 rounded text-[9px] font-bold text-red-400">
-                                        <span className="w-1 h-1 rounded-full bg-red-500 animate-pulse" />
+                                    <p className="text-sm font-bold text-white mb-2">{item.callout.name}</p>
+                                    <p className="text-xs text-gray-500 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-[10px] font-bold text-red-400">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                                         {item.callout.status}
                                     </div>
                                 </div>
                             )}
+
+                            <button
+                                onClick={() => setSelectedLevel(item)}
+                                className="mt-8 w-full py-3 border border-[#1a1a22] text-[10px] font-bold uppercase tracking-[0.2em] text-[#555] hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-all"
+                            >
+                                Deep Dive Investigation
+                            </button>
                         </div>
 
                         {/* Bottom Status */}
-                        <div className="absolute bottom-4 left-6 right-6">
-                            <div className="border-t border-white/5 pt-3 flex items-center justify-between">
-                                <span className="text-[9px] font-mono text-gray-600 uppercase tracking-widest">Shield Status</span>
-                                <span className={cn("text-[9px] font-bold uppercase tracking-wider", item.accent)}>
-                                    {item.shieldStatus}
-                                </span>
-                            </div>
+                        <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+                            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Shield Status</span>
+                            <span className={cn("text-[10px] font-bold uppercase tracking-wider", item.accent)}>
+                                {item.shieldStatus}
+                            </span>
                         </div>
 
                         {/* Target Highlight for Level 5 */}
@@ -223,25 +236,78 @@ export default function PowerAxis() {
                 ))}
             </div>
 
+            {/* Modal Detail View */}
+            <InvestigativeModal
+                isOpen={!!selectedLevel}
+                onClose={() => setSelectedLevel(null)}
+                title={selectedLevel?.title || ""}
+                subtitle={`${selectedLevel?.subtitle} // Structural Role Analysis`}
+            >
+                {selectedLevel && (
+                    <div className="space-y-12 pb-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div>
+                                <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-6 font-mono">Forensic Audit Log</h4>
+                                <ul className="space-y-4">
+                                    {selectedLevel.stats.map((stat, i) => (
+                                        <li key={i} className="text-lg text-[#ccc] leading-relaxed border-l-2 border-[#8b1a1a]/30 pl-6">
+                                            {stat}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-[#0a0a0c] border border-[#1a1a22] p-8">
+                                <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-6 font-mono">Structural Integrity</h4>
+                                <div className="space-y-6">
+                                    <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
+                                        <span className="text-zinc-500 uppercase text-xs font-bold tracking-widest">Shield Status</span>
+                                        <span className={cn("text-sm font-black uppercase tracking-widest", selectedLevel.accent)}>{selectedLevel.shieldStatus}</span>
+                                    </div>
+                                    <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
+                                        <span className="text-zinc-500 uppercase text-xs font-bold tracking-widest">Axis Level</span>
+                                        <span className="text-white font-mono text-sm">{selectedLevel.level} / 5</span>
+                                    </div>
+                                    {selectedLevel.callout && (
+                                        <div className="pt-6">
+                                            <span className="text-red-500 uppercase text-[10px] font-black tracking-[0.4em] block mb-4">Active Breach Investigation</span>
+                                            <div className="p-6 bg-red-950/20 border border-red-900/40 rounded">
+                                                <p className="text-white font-bold text-lg mb-2">{selectedLevel.callout.name}</p>
+                                                <p className="text-zinc-400 italic text-sm leading-relaxed mb-4">"{selectedLevel.callout.details}"</p>
+                                                <div className="inline-flex items-center gap-3 text-red-400 text-xs font-bold">
+                                                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                                    {selectedLevel.callout.status}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </InvestigativeModal>
+
             {/* Bottom Labeling */}
-            <div className="absolute bottom-10 left-10 z-10">
+            <div className="relative mt-20 px-8">
                 <div className="flex flex-col">
-                    <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.5em] mb-1">Exhibit 22.1</span>
-                    <h3 className="text-3xl font-serif text-white italic">The Displacement Curve</h3>
-                    <p className="text-[11px] text-gray-500 max-w-sm mt-2">
-                        How 40 years of victims were systematically converted into 'administrative anomalies' through the axis of power.
+                    <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] mb-2">Exhibit 22.1</span>
+                    <h3 className="text-4xl font-serif text-white italic">The Displacement Curve</h3>
+                    <p className="text-sm text-gray-500 max-w-xl mt-4 leading-relaxed">
+                        How 40 years of victims were systematically converted into 'administrative anomalies' through the axis of power. The scale ascends from local parish failures to international diplomatic immunity.
                     </p>
                 </div>
             </div>
 
             {/* Forensic Metadata Branding */}
-            <div className="absolute bottom-10 right-10 z-10 text-right opacity-30 group-hover:opacity-100 transition-opacity">
-                <span className="text-[9px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
-                    SODOM HALL &mdash; THE POWER AXIS v2.0
-                </span>
-                <span className="text-[8px] font-mono text-gray-700 uppercase block mt-1">
-                    High-Fidelity Forensic Reconstruction // CID-8842-X
-                </span>
+            <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
+                <div className="text-right">
+                    <span className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
+                        SODOM HALL &mdash; THE POWER AXIS v2.0
+                    </span>
+                    <span className="text-[9px] font-mono text-gray-700 uppercase block mt-1">
+                        High-Fidelity Forensic Reconstruction // CID-8842-X
+                    </span>
+                </div>
             </div>
         </div>
     );

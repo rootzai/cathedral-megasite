@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { RINGS } from "@/components/ShieldDiagram";
+import { RINGS } from "@/lib/data";
 import EvidenceSubNavigation from "@/components/EvidenceSubNavigation";
 
 export default function EvidenceHub() {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InvestigativeModal from "./InvestigativeModal";
 
 interface Node {
   id: string;
@@ -21,6 +22,8 @@ interface Connection {
 
 export default function NetworkDiagram() {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [selectedNode, setSelectedNode] = useState<Node | null>(null);
+  const [isFullViewOpen, setIsFullViewOpen] = useState(false);
 
   const nodes: Node[] = [
     // Seton Hall Board (including RCAN members with dual roles)
@@ -37,7 +40,7 @@ export default function NetworkDiagram() {
     { id: "lasala", name: "Joe Lasala", role: "Regent", group: "board", dualRole: "Regent during scandal, complicit in electing Reilly" },
     { id: "murray", name: "Don Murray", role: "Regent", group: "board", dualRole: "Regent during scandal, complicit in electing Reilly" },
     { id: "mccarrick", name: "Theodore McCarrick", role: "Archbishop (deceased, defrocked)", group: "board", dualRole: "Former RCAN" },
-    
+
     // Law Firms (standardized format: attorney name, firm name, represented SHU)
     { id: "porrino", name: "Chris Porrino", firm: "Lowenstein Sandler", role: "Marino's personal counsel", group: "law", christieConnection: true, representedSHU: false },
     { id: "scrivo", name: "Tom Scrivo", firm: "O'Toole Scrivo", role: "Represented SHU", group: "law", christieConnection: true, representedSHU: true },
@@ -51,7 +54,7 @@ export default function NetworkDiagram() {
     { id: "archer", name: "Patrick Papalia", firm: "Archer & Greiner", role: "Represented SHU", group: "law", representedSHU: true },
     { id: "mcomber", name: "Armen McOmber", firm: "McOmber & McOmber", role: "Represents Victims", group: "law", representedSHU: false, representsVictims: true },
     { id: "baldante", name: "John Baldante", firm: "Baldante Rubinstein", role: "Represents Victims", group: "law", representedSHU: false, representsVictims: true },
-    
+
     // Victims
     { id: "capadona", name: "Kim Capadona", role: "General Counsel (victim)", group: "victims" },
     { id: "mcmonagle", name: "Donna McMonagle", role: "CFO (victim)", group: "victims" },
@@ -69,7 +72,7 @@ export default function NetworkDiagram() {
     { from: "marino", to: "scrivo", label: "hired O'Toole Scrivo for SHU defense" },
     { from: "porrino", to: "scrivo", label: "Christie administration colleagues" },
     { from: "pat-christie", to: "marino", label: "Board colleagues" },
-    
+
     // Board-Law Firm Connections
     { from: "marino", to: "nyre", label: "harassed/bullied" },
     { from: "marino", to: "linares", label: "leaked report to Judge Linares" },
@@ -79,20 +82,20 @@ export default function NetworkDiagram() {
     { from: "marino", to: "archer", label: "hired Archer & Greiner for defense" },
     { from: "marino", to: "carella", label: "hired Carella Byrne for defense" },
     { from: "marino", to: "mcomber", label: "hired McOmber & McOmber for defense" },
-    
+
     // Law Firm Network
     { from: "scrivo", to: "linares", label: "document concealment coordination" },
     { from: "stio", to: "masherelli", label: "logbook erasure coordination" },
     { from: "masherelli", to: "flood", label: "erasure → resignation" },
     { from: "agnifilo", to: "porrino", label: "Perry Law coordination" },
     { from: "gibbons", to: "tobin", label: "investigated Tobin's cooperation" },
-    
+
     // RCAN Network (dual roles)
     { from: "tobin", to: "reilly", label: "protected from consequences" },
     { from: "tobin", to: "lorenzo", label: "recommended to Pope for elevation" },
     { from: "reilly", to: "lorenzo", label: "seminary colleagues since 1987" },
     { from: "reilly", to: "nyre", label: "replaced as President" },
-    
+
     // Harassment Victims
     { from: "marino", to: "capadona", label: "sexually harassed" },
     { from: "marino", to: "mcmonagle", label: "sexually harassed" },
@@ -106,9 +109,9 @@ export default function NetworkDiagram() {
   };
 
   const groupLabels = {
-    board: "Seton Hall Board & RCAN",
-    law: "Law Firms",
-    victims: "Harassment Victims",
+    board: "Institutional Shield // Board & RCAN",
+    law: "The Defensive Architecture // Law Firms",
+    victims: "The Breach Points // Harassment Victims",
   };
 
   const handleNodeClick = (node: Node) => {
@@ -125,19 +128,27 @@ export default function NetworkDiagram() {
   return (
     <div className="my-12 p-8 bg-gray-900/50 border-2 border-gray-700 rounded-lg">
       <h3 className="text-2xl font-bold mb-6 text-center">The Network: Key Players & Connections</h3>
-      
+
       {/* Legend */}
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
-        {(Object.keys(groupLabels) as Array<keyof typeof groupLabels>).map((group) => (
-          <div key={group} className="flex items-center gap-2">
-            <div className={`w-4 h-4 rounded ${groupColors[group].bg} ${groupColors[group].border} border-2`} />
-            <span className="text-sm">{groupLabels[group]}</span>
+      <div className="flex flex-wrap justify-between items-center gap-6 mb-12 bg-black/40 p-6 rounded-lg border border-white/5 shadow-inner">
+        <div className="flex flex-wrap gap-6">
+          {(Object.keys(groupLabels) as Array<keyof typeof groupLabels>).map((group) => (
+            <div key={group} className="flex items-center gap-3">
+              <div className={`w-5 h-5 rounded ${groupColors[group].bg} ${groupColors[group].border} border-2`} />
+              <span className="text-sm font-bold uppercase tracking-widest text-zinc-400">{groupLabels[group].split(' // ')[0]}</span>
+            </div>
+          ))}
+          <div className="flex items-center gap-3">
+            <div className="w-5 h-5 rounded bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+            <span className="text-sm font-bold uppercase tracking-widest text-zinc-400">Christie Network</span>
           </div>
-        ))}
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded bg-blue-500" />
-          <span className="text-sm">Christie Connection</span>
         </div>
+        <button
+          onClick={() => setIsFullViewOpen(true)}
+          className="px-6 py-3 border border-red-900/40 text-[10px] font-bold uppercase tracking-[0.3em] text-[#8b1a1a] hover:bg-[#8b1a1a] hover:text-white transition-all rounded"
+        >
+          High-Fidelity Map View
+        </button>
       </div>
 
       {/* Network Visualization */}
@@ -146,7 +157,7 @@ export default function NetworkDiagram() {
           const groupNodes = nodes.filter((n) => n.group === group);
           return (
             <div key={group} className="space-y-3">
-              <h4 className={`text-sm font-bold text-center ${groupColors[group].text}`}>
+              <h4 className={`text-base font-black text-center uppercase tracking-[0.2em] mb-4 ${groupColors[group].text}`}>
                 {groupLabels[group]}
               </h4>
               {groupNodes.map((node) => {
@@ -154,11 +165,11 @@ export default function NetworkDiagram() {
                 const isConnected = hoveredNode && connections.some(
                   (c) => (c.from === hoveredNode && c.to === node.id) || (c.to === hoveredNode && c.from === node.id)
                 );
-                
+
                 const nodeConnections = connections.filter(
                   (c) => c.from === node.id || c.to === node.id
                 );
-                
+
                 return (
                   <div
                     key={node.id}
@@ -171,61 +182,46 @@ export default function NetworkDiagram() {
                     `}
                     onMouseEnter={() => setHoveredNode(node.id)}
                     onMouseLeave={() => setHoveredNode(null)}
-                    onClick={() => handleNodeClick(node)}
+                    onClick={() => {
+                      setSelectedNode(node);
+                      handleNodeClick(node);
+                    }}
                   >
                     {node.christieConnection && (
                       <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold" title="Christie Connection">
                         C
                       </div>
                     )}
-                    
+
                     {/* Lawyer tiles: show firm name prominently, then attorney name */}
                     {node.firm ? (
                       <>
-                        <div className={`font-bold text-sm ${
-                          node.representsVictims ? "text-green-300" : "text-yellow-200"
-                        }`}>{node.firm}</div>
-                        <div className="text-xs text-gray-300 mt-1">{node.name}</div>
+                        <div className={`font-bold text-base ${node.representsVictims ? "text-green-300" : "text-yellow-200"
+                          }`}>{node.firm}</div>
+                        <div className="text-sm text-gray-200 mt-1 font-bold">{node.name}</div>
                         <div className="text-xs text-gray-400 mt-1">{node.role}</div>
                         {node.representedSHU === false && !node.representsVictims && (
-                          <div className="text-xs text-orange-400 mt-1 italic">Personal counsel (not SHU)</div>
+                          <div className="text-[10px] text-orange-400 mt-2 italic font-mono uppercase">Personal counsel</div>
                         )}
                       </>
                     ) : (
                       <>
-                        <div className="font-bold text-sm">{node.name}</div>
-                        <div className="text-xs text-gray-400 mt-1">{node.role}</div>
+                        <div className="font-bold text-base text-white">{node.name}</div>
+                        <div className="text-xs text-gray-400 mt-1 font-medium">{node.role}</div>
                         {node.dualRole && (
-                          <div className="text-xs text-purple-400 mt-1 italic">{node.dualRole}</div>
+                          <div className="text-[10px] text-purple-400 mt-2 italic border-t border-purple-900/30 pt-1">{node.dualRole}</div>
                         )}
                       </>
                     )}
-                    
-                    {node.section && (
-                      <div className="text-xs text-blue-400 mt-1">→ View Profile</div>
+
+                    {node.section && !node.christieConnection && (
+                      <div className="text-[10px] text-blue-400 mt-2 font-black uppercase tracking-widest">→ Profile Access</div>
                     )}
-                    
-                    {/* Inline tooltip showing connections on hover */}
-                    {isHovered && nodeConnections.length > 0 && (
-                      <div className={`absolute top-0 z-50 w-64 bg-gray-900 border-2 border-gray-600 rounded-lg p-3 shadow-2xl ${
-                        group === "victims" ? "right-full mr-4" : "left-full ml-4"
-                      }`}>
-                        <div className="font-bold text-sm mb-2 text-zinc-900">Connections:</div>
-                        <div className="space-y-1 max-h-48 overflow-y-auto">
-                          {nodeConnections.map((conn) => {
-                            const otherNodeId = conn.from === node.id ? conn.to : conn.from;
-                            const otherNode = nodes.find((n) => n.id === otherNodeId);
-                            const direction = conn.from === node.id ? "→" : "←";
-                            
-                            return (
-                              <div key={getConnectionKey(conn)} className="text-xs">
-                                <span className="text-gray-400">{direction}</span>{" "}
-                                <span className="font-bold text-gray-200">{otherNode?.name}</span>
-                                <div className="text-gray-400 ml-3">{conn.label}</div>
-                              </div>
-                            );
-                          })}
-                        </div>
+
+                    {/* Hover indicator pulse (Replacing the old tooltip) */}
+                    {isHovered && (
+                      <div className="absolute top-0 right-0 p-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
                       </div>
                     )}
                   </div>
@@ -238,11 +234,67 @@ export default function NetworkDiagram() {
 
 
 
-      <div className="mt-6 text-center text-sm text-gray-400">
-        <p>Hover over nodes to see their connections in a tooltip.</p>
-        <p className="mt-2">Blue "C" badge indicates Christie administration connection.</p>
-        <p className="mt-2"><span className="text-yellow-200">Yellow</span> law firms represented Seton Hall. <span className="text-green-300">Green</span> law firms represent victims.</p>
+      {/* Node Analysis Modal */}
+      <InvestigativeModal
+        isOpen={!!selectedNode}
+        onClose={() => setSelectedNode(null)}
+        title={selectedNode?.name || ""}
+        subtitle={selectedNode?.firm ? `${selectedNode.firm} // ${selectedNode.role}` : `${selectedNode?.role} // Forensic Profile`}
+      >
+        {selectedNode && (
+          <div className="space-y-8">
+            <div className="p-6 bg-black border border-[#8b1a1a]/20 rounded-lg">
+              <h4 className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-[0.4em] mb-4">Network Connections</h4>
+              <div className="grid gap-4">
+                {connections.filter(c => c.from === selectedNode.id || c.to === selectedNode.id).map(conn => {
+                  const otherId = conn.from === selectedNode.id ? conn.to : conn.from;
+                  const other = nodes.find(n => n.id === otherId);
+                  return (
+                    <div key={getConnectionKey(conn)} className="flex items-start gap-4 p-4 border border-zinc-900 bg-zinc-900/30 rounded">
+                      <div className={`w-3 h-3 rounded-full mt-1.5 ${groupColors[other?.group || 'board'].bg}`} />
+                      <div>
+                        <p className="text-white font-bold text-lg">{other?.name}</p>
+                        <p className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-widest mt-1">{conn.label}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+      </InvestigativeModal>
+
+      {/* Full Network Map Modal */}
+      <InvestigativeModal
+        isOpen={isFullViewOpen}
+        onClose={() => setIsFullViewOpen(false)}
+        title="The Labyrinth"
+        subtitle="RCAN-SHU Institutional Power Grid // Full Density Capture"
+      >
+        <div className="relative aspect-video bg-black rounded border border-[#1a1a22] overflow-hidden flex items-center justify-center p-20 text-center">
+          <div>
+            <div className="w-24 h-24 border-4 border-[#8b1a1a]/20 border-t-[#8b1a1a] rounded-full animate-slow-spin mx-auto mb-8" />
+            <h4 className="text-2xl font-bold text-white uppercase tracking-widest mb-4">Generating High-Fidelity Graph</h4>
+            <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em]">Rendering Interactive Sovereignty Links...</p>
+            <p className="mt-8 text-zinc-600 italic">"The complexity of the network is the primary defense against accountability."</p>
+          </div>
+        </div>
+      </InvestigativeModal>
+
+      <div className="mt-8 pt-8 border-t border-white/5 text-center text-xs text-zinc-600 font-mono tracking-widest uppercase">
+        <div className="flex justify-center gap-12">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-blue-500" /> Christie Connection
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-yellow-500" /> Defense Counsel
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-500" /> Victim Advocacy
+          </div>
+        </div>
       </div>
-    </div>
+    </div >
   );
 }

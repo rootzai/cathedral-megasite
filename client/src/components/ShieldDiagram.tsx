@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import InvestigativeModal from "./InvestigativeModal";
 
-export const RINGS = []; // Keeping empty export to avoid breaking imports in other files if needed
+import { RINGS } from "@/lib/data";
 
 interface ShieldDiagramProps {
     activeRing?: number | null;
@@ -8,9 +9,14 @@ interface ShieldDiagramProps {
 }
 
 export default function ShieldDiagram({ activeRing, setActiveRing }: ShieldDiagramProps) {
+    const [isNavModalOpen, setIsNavModalOpen] = useState(false);
+
     return (
         <div className="relative w-full max-w-[680px] mx-auto group">
-            <div className="relative overflow-hidden rounded-xl border border-[#8b1a1a]/30 shadow-2xl shadow-red-900/20 bg-black/40 backdrop-blur-sm">
+            <div
+                className="relative overflow-hidden rounded-xl border border-[#8b1a1a]/30 shadow-2xl shadow-red-900/20 bg-black/40 backdrop-blur-sm cursor-zoom-in"
+                onClick={() => setIsNavModalOpen(true)}
+            >
                 <img
                     src="/assets/shield-diagram-slide.jpeg"
                     alt="The Shield of Sodom Hall - Forensic Architecture"
@@ -32,6 +38,26 @@ export default function ShieldDiagram({ activeRing, setActiveRing }: ShieldDiagr
                     Verification: High-Fidelity // v2.0
                 </div>
             </div>
+            <InvestigativeModal
+                isOpen={isNavModalOpen}
+                onClose={() => setIsNavModalOpen(false)}
+                title="The Shield of Sodom Hall"
+                subtitle="Forensic Architecture // Structural Accountability Analysis"
+            >
+                <div className="relative bg-black rounded-lg overflow-hidden border border-[#8b1a1a]/20">
+                    <img
+                        src="/assets/shield-diagram-slide.jpeg"
+                        alt="High-Fidelity Shield Diagram"
+                        className="w-full h-auto"
+                    />
+                    <div className="p-8 bg-[#0d0d10] border-t border-[#1a1a22]">
+                        <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-4 font-mono">Archive Note // v2.0</h4>
+                        <p className="text-sm text-[#888] leading-relaxed italic">
+                            "This mapping illustrates the redundant layers of institutional protection. Each ring must be systematically unsealed to reach the core truth of the 2019-2025 investigative period."
+                        </p>
+                    </div>
+                </div>
+            </InvestigativeModal>
         </div>
     );
 }

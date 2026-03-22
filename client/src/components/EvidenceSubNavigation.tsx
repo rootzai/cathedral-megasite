@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
-import { RINGS } from "./ShieldDiagram";
+import { RINGS } from "@/lib/data";
 
 export default function EvidenceSubNavigation() {
     const [location] = useLocation();

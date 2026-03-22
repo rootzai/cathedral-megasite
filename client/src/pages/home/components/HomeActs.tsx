@@ -30,10 +30,13 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
 // Tooltip Component for 8th-grade explanations
 function Term({ word, definition }: { word: string; definition: string }) {
   return (
-    <span className="group relative inline-block border-b border-dashed border-zinc-500 cursor-help text-zinc-800">
+    <span className="group relative inline-block border-b-2 border-dashed border-[#8b1a1a]/50 cursor-help text-[#8b1a1a] font-bold">
       {word}
-      <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-zinc-200 text-zinc-800 text-sm rounded shadow-xl border border-zinc-300 pointer-events-none z-50 text-left font-sans font-normal leading-relaxed">
-        <strong>What does this mean?</strong><br />{definition}
+      <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-72 p-6 bg-zinc-900 text-white text-sm rounded-lg shadow-2xl border border-[#8b1a1a]/40 pointer-events-none z-[100] text-left font-sans font-normal leading-relaxed ring-1 ring-white/10">
+        <span className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-[0.3em] block mb-3 border-b border-white/10 pb-2">Forensic Definition</span>
+        <strong className="text-white block mb-2 text-base tracking-tight">What does this mean?</strong>
+        <p className="text-zinc-300 text-sm leading-relaxed">{definition}</p>
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-zinc-900" />
       </span>
     </span>
   );
