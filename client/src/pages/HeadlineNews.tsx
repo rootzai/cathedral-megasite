@@ -146,15 +146,15 @@ export default function HeadlineNews() {
                                     <FileText size={14} /> Level 03 · Full Forensic Report
                                 </div>
                                 <button
-                                    onClick={() => downloadText("fletch_full_report.txt", summaries.detailed)}
+                                    onClick={() => downloadText("fletch_full_report.txt", summaries.detailed || "")}
                                     className="text-zinc-500 hover:text-red-700 transition-colors flex items-center gap-1 text-xs uppercase font-bold tracking-widest"
                                 >
                                     Download <Download size={14} />
                                 </button>
                             </div>
                             <div className="font-serif text-lg leading-relaxed text-zinc-900 mt-8 border-t-4 border-zinc-900 pt-8">
-                                {summaries.detailed.split('\n\n').map((paragraph, idx) => {
-                                    if (!paragraph.trim()) return null;
+                                {(summaries.detailed || "").split('\n\n').map((paragraph, idx) => {
+                                    if (!paragraph || !paragraph.trim()) return null;
 
                                     // Make Roman numeral headings stand out
                                     if (/^[A-ZIVX]+\.\s/.test(paragraph)) {
