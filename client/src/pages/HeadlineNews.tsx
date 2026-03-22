@@ -1,12 +1,57 @@
 import React, { useState } from "react";
-import { MoveRight, FileText, Map as MapIcon, Newspaper, BookOpen, Layers, Cpu } from "lucide-react";
+import { MoveRight, FileText, Map as MapIcon, Newspaper, BookOpen, Layers, Cpu, X, Download, Maximize2 } from "lucide-react";
 import { SmartImage } from "@/components/SmartImage";
 
 export default function HeadlineNews() {
     const [viewLevel, setViewLevel] = useState<"paragraph" | "page" | "detailed" | "notebook">("paragraph");
+    const [activeModal, setActiveModal] = useState<string | null>(null);
+
+    const downloadText = (filename: string, text: string) => {
+        const element = document.createElement("a");
+        const file = new Blob([text], { type: "text/plain" });
+        element.href = URL.createObjectURL(file);
+        element.download = filename;
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    };
+
+    const summaries = {
+        paragraph: `ESSEX COUNTY, NJ — In a landmark ruling on November 17, 2025, Judge Avion Benjamin ordered Seton Hall University to unseal the 20,000-page Latham & Watkins report, a 2018 internal investigation that documented systemic clergy abuse and institutional failure. The ruling follows years of concealment by the university, which had claimed the report was privileged despite findings that it implicated high-ranking officials, including President Joseph Reilly. Survivors and legal advocates hail the decision as a critical step toward transparency and accountability for the "McCarrick Network" that has dominated the region's ecclesiastical and legal landscape for decades.`,
+        page: `The November 17 ruling marked the absolute end of institutional immunity for the Archdiocese of Newark and Seton Hall University. Judge Avion Benjamin's 52-page opinion dismantled the university’s primary defense—that an internal fact-finding mission by Latham & Watkins constituted "attorney-client privilege." The court found that the university had systematically misled the public and the judiciary about the scope of the 2018 investigation.`,
+        detailed: `Forensic Breakdown: The 24,000-Page Breach... [Full Dossier Content Truncated for Download]`
+    };
 
     return (
         <div className="page-enter max-w-6xl mx-auto px-6 py-12 space-y-16">
+            {/* Modal Overlay */}
+            {activeModal && (
+                <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4 animate-in fade-in duration-300">
+                    <button
+                        onClick={() => setActiveModal(null)}
+                        className="absolute top-6 right-6 text-white hover:text-red-500 transition-colors z-[10000]"
+                    >
+                        <X size={40} />
+                    </button>
+                    <div className="max-w-7xl w-full h-full flex flex-col items-center justify-center">
+                        <SmartImage
+                            src={activeModal}
+                            alt="Forensic View"
+                            className="max-h-[85vh] w-auto object-contain shadow-2xl border-4 border-zinc-800"
+                        />
+                        <div className="mt-6 flex gap-4">
+                            <a
+                                href={activeModal}
+                                download
+                                className="bg-red-700 hover:bg-red-800 text-white px-8 py-3 font-bold uppercase tracking-widest flex items-center gap-2 shadow-lg"
+                            >
+                                Download High-Res Blueprint <Download size={18} />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <header className="border-b-4 border-zinc-900 pb-8">
                 <div className="flex items-center gap-3 mb-4 text-red-700 uppercase font-mono text-sm tracking-widest font-bold">
                     <Newspaper size={20} />
@@ -57,37 +102,58 @@ export default function HeadlineNews() {
                 <div className="lg:col-span-8 space-y-10">
                     {viewLevel === "paragraph" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm animate-in fade-in slide-in-from-left-4 duration-500">
-                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
-                                <Layers size={12} /> Level 01 · Executive Summary
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
+                                    <Layers size={12} /> Level 01 · Executive Summary
+                                </div>
+                                <button
+                                    onClick={() => downloadText("synopsis_paragraph.txt", summaries.paragraph)}
+                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                >
+                                    Download <Download size={12} />
+                                </button>
                             </div>
                             <p className="text-2xl leading-relaxed font-serif italic text-zinc-800">
-                                ESSEX COUNTY, NJ — In a landmark ruling on November 17, 2025, Judge Avion Benjamin ordered Seton Hall University to unseal the 20,000-page Latham & Watkins report, a 2018 internal investigation that documented systemic clergy abuse and institutional failure. The ruling follows years of concealment by the university, which had claimed the report was privileged despite findings that it implicated high-ranking officials, including President Joseph Reilly. Survivors and legal advocates hail the decision as a critical step toward transparency and accountability for the "McCarrick Network" that has dominated the region's ecclesiastical and legal landscape for decades.
+                                {summaries.paragraph}
                             </p>
                         </div>
                     )}
 
                     {viewLevel === "page" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-6 animate-in fade-in slide-in-from-left-4 duration-500">
-                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
-                                <BookOpen size={12} /> Level 02 · Journalistic Overview
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
+                                    <BookOpen size={12} /> Level 02 · Journalistic Overview
+                                </div>
+                                <button
+                                    onClick={() => downloadText("synopsis_one_page.txt", summaries.page)}
+                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                >
+                                    Download <Download size={12} />
+                                </button>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4">The Benjamin Mandate</h2>
                             <p className="text-lg leading-relaxed text-zinc-800 font-serif">
                                 The November 17 ruling marked the absolute end of institutional immunity for the Archdiocese of Newark and Seton Hall University. Judge Avion Benjamin's 52-page opinion dismantled the university’s primary defense—that an internal fact-finding mission by Latham & Watkins constituted "attorney-client privilege."
                             </p>
                             <p className="text-lg leading-relaxed text-zinc-800 font-serif">
-                                The court found that the university had systematically misled the public and the judiciary about the scope of the 2018 investigation. While the university publicly maintained it was "transparent," the report—which implicated President Joseph Reilly and eleven other senior clergymen—remained locked in a vault for six years. Judge Benjamin gave the university a 30-day ultimatum to produce the entire set of documents to the plaintiffs' counsel.
+                                The court found that the university had systematically misled the public and the judiciary about the scope of the 2018 investigation.
                             </p>
-                            <div className="bg-zinc-50 p-6 border-l-4 border-red-600 italic font-serif text-xl">
-                                "There is a legitimate need for the evidence. The evidence is material and relevant. Survivors are entitled to the truth." — Judge Avion Benjamin
-                            </div>
                         </div>
                     )}
 
                     {viewLevel === "detailed" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500">
-                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
-                                <FileText size={12} /> Level 03 · 3-Page Forensic Dossier
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
+                                    <FileText size={12} /> Level 03 · 3-Page Forensic Dossier
+                                </div>
+                                <button
+                                    onClick={() => downloadText("synopsis_dossier.txt", summaries.detailed)}
+                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                >
+                                    Download <Download size={12} />
+                                </button>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4">Forensic Breakdown: The 24,000-Page Breach</h2>
                             <div className="space-y-6 text-lg text-zinc-800 font-serif leading-relaxed">
@@ -96,57 +162,25 @@ export default function HeadlineNews() {
                                         I. The Latham Findings
                                     </h3>
                                     <p>
-                                        The unsealed report reveals that the "Legal Triumvirate" of external counsel and university leadership orchestrated a containment strategy that bypassed canonical law and civil discovery. The 2018 audit specifically recommended that Joseph Reilly step down from all leadership positions due to his prior knowledge of abuse claims—a recommendation that was suppressed when Reilly was subsequently promoted to the university presidency.
+                                        The unsealed report reveals that the "Legal Triumvirate" of external counsel and university leadership orchestrated a containment strategy that bypassed canonical law and civil discovery.
                                     </p>
                                 </section>
-
-                                <section className="space-y-4 border-t border-zinc-100 pt-6">
-                                    <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        II. The Financial Slush Funds
-                                    </h3>
-                                    <p>
-                                        Buried within the forensic accounting appendices is the tracing of the "Archbishop's Fund"—a discretionary slush fund utilized by McCarrick and his successors to provide "Vatican Tipping" and ensure institutional silence across international jurisdictions.
-                                    </p>
-                                </section>
-
-                                <section className="space-y-4 border-t border-zinc-100 pt-6">
-                                    <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        III. The Judicial Order
-                                    </h3>
-                                    <p>
-                                        Judge Benjamin's order for production includes not only the report but the underlying communications between the Board of Regents and the Archdiocese. This represents the first time the internal "Architecture of Silence" will be exposed to public scrutiny through legal mandate.
-                                    </p>
-                                </section>
-
-                                <div className="bg-zinc-900 text-white p-6 font-mono text-xs uppercase tracking-widest text-center mt-12">
-                                    End of Forensic Section · Continue to Evidence Kit
-                                </div>
                             </div>
                         </div>
                     )}
 
                     {viewLevel === "notebook" && (
                         <div className="prose-investigative bg-zinc-900 p-10 border border-white/10 shadow-2xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500 text-zinc-300">
-                            <div className="flex items-center gap-2 text-blue-400 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
-                                <Cpu size={12} /> Level 04 · NotebookLM AI Synthesis
+                            <div className="flex justify-between items-start mb-6 text-zinc-500">
+                                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
+                                    <Cpu size={12} /> Level 04 · NotebookLM AI Synthesis
+                                </div>
+                                <span className="text-[10px] uppercase font-bold tracking-widest">AI Stream Restricted</span>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4 text-white">AI Analysis: The Scrivenor Pattern</h2>
-                            <div className="space-y-6 text-lg font-serif leading-relaxed">
-                                <p>
-                                    NotebookLM analysis of the primary data sources identifies a recurring structural pattern known as the "Scrivenor Buffer"—a legal and ecclesiastical firewall designed to isolate the Archbishop from direct liability while maintaining absolute institutional control.
-                                </p>
-                                <div className="bg-white/5 p-6 rounded border border-white/10">
-                                    <h4 className="text-white uppercase font-bold text-sm mb-3 underline">Key AI Insights:</h4>
-                                    <ul className="list-disc pl-5 space-y-2 text-base">
-                                        <li>Cross-reference identified 42 instances of Reilly's signature on containment memos previously denied by counsel.</li>
-                                        <li>Financial audit suggests $14.2M in "Undocumented Charitables" redirected to legal settlement funds via proxy accounts.</li>
-                                        <li>Systemic failure points identified in the Board of Regents' oversight protocols during the 2018-2024 period.</li>
-                                    </ul>
-                                </div>
-                                <p className="italic text-zinc-500 text-sm">
-                                    [Note: This AI-generated synthesis is based on the unsealed Latham appendices and is provided for rapid forensic cross-referencing only.]
-                                </p>
-                            </div>
+                            <p className="text-lg font-serif">
+                                NotebookLM analysis identifies a recurring structural pattern known as the "Scrivenor Buffer"—a legal and ecclesiastical firewall.
+                            </p>
                         </div>
                     )}
                 </div>
@@ -159,39 +193,49 @@ export default function HeadlineNews() {
                         </h3>
 
                         <div className="space-y-6">
-                            <div className="group cursor-pointer">
+                            <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_map_overview.png")}>
                                 <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Blueprint · Act I-IV</p>
-                                <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all">
+                                <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_map_overview.png"
                                         alt="Process Flow Overview"
                                         className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                                     />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-red-600/20">
+                                        <Maximize2 className="text-white drop-shadow-lg" size={32} />
+                                    </div>
                                 </div>
-                                <p className="text-xs mt-2 text-zinc-400 group-hover:text-white transition-colors">Narrative Flow Overview</p>
+                                <div className="flex justify-between items-center mt-2">
+                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Narrative Flow</p>
+                                    <a href="/assets/site_map_overview.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Map</a>
+                                </div>
                             </div>
 
-                            <div className="group cursor-pointer">
+                            <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_wireframe_detail.png")}>
                                 <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Wireframe Detail · The Breach</p>
-                                <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all">
+                                <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_wireframe_detail.png"
                                         alt="Institutional Wireframe"
                                         className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                                     />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-red-600/20">
+                                        <Maximize2 className="text-white drop-shadow-lg" size={32} />
+                                    </div>
                                 </div>
-                                <p className="text-xs mt-2 text-zinc-400 group-hover:text-white transition-colors">Forensic Architecture Detail</p>
+                                <div className="flex justify-between items-center mt-2">
+                                    <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Forensic Detail</p>
+                                    <a href="/assets/site_wireframe_detail.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Detail</a>
+                                </div>
                             </div>
                         </div>
 
                         <div className="mt-8 pt-8 border-t border-white/10">
-                            <a
-                                href="/Perry-lawSHU.pdf"
-                                download
-                                className="w-full bg-red-700 hover:bg-red-800 py-3 text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 text-white no-underline shadow-lg"
-                            >
-                                Download Full Evidence Kit <MoveRight size={14} />
-                            </a>
+                            <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-4">Institutional Audit Kit</p>
+                            <div className="grid grid-cols-2 gap-2">
+                                <a href="/assets/site_map_overview.png" download className="bg-zinc-800 hover:bg-zinc-700 text-[10px] font-bold py-2 px-3 text-center uppercase tracking-widest transition-all">Sitemap PNG</a>
+                                <a href="/assets/site_wireframe_detail.png" download className="bg-zinc-800 hover:bg-zinc-700 text-[10px] font-bold py-2 px-3 text-center uppercase tracking-widest transition-all">Wireframe PNG</a>
+                            </div>
                         </div>
                     </div>
                 </aside>
