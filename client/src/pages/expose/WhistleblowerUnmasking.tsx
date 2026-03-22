@@ -12,7 +12,7 @@ export default function WhistleblowerUnmasking() {
           The Unmasking <br />
           <span className="text-zinc-800">Campaign</span>
         </h1>
-        <p className="text-2xl font-serif italic text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-2xl font-serif italic text-zinc-700 leading-relaxed max-w-3xl">
           How a criminal grand jury was weaponized to identify a civil whistleblower—and the 18-day retaliation clock that followed a presidential installation.
         </p>
       </header>
@@ -22,7 +22,7 @@ export default function WhistleblowerUnmasking() {
         <div className="lg:col-span-12 prose-investigative max-w-none">
           <h2 className="section-heading mb-12">The Retaliation Clock</h2>
 
-          <div className="columns-1 md:columns-2 gap-12 space-y-8 text-lg leading-relaxed text-muted-foreground font-serif">
+          <div className="columns-1 md:columns-2 gap-12 space-y-8 text-lg leading-relaxed text-zinc-800 font-serif">
             <p className="first-letter:text-6xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-foreground">
               O
               n July 1, 2024, Joseph Reilly was installed as the President of Seton Hall University.

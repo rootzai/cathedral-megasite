@@ -28,7 +28,7 @@ export default function FinancialTooltip({ value, breakdown }: FinancialTooltipP
           <div className="space-y-2">
             <p className="font-serif font-bold text-sm border-b border-border pb-1 mb-2">Valuation Breakdown</p>
             {breakdown.map((item, index) => (
-              <div key={index} className="flex justify-between text-xs gap-4">
+              <div key={index} className="flex justify-between text-sm gap-4">
                 <span className="text-muted-foreground">{item.label}:</span>
                 <span className="font-mono font-bold">{item.amount}</span>
               </div>

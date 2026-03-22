@@ -44,8 +44,8 @@ export function HomeHero() {
             <header className="bg-zinc-50 text-zinc-900 py-10 sm:py-16 md:py-20 border-b border-zinc-300 relative overflow-hidden">
                 <div className="container mx-auto px-3 sm:px-4 relative z-10">
                     <div className="flex flex-wrap justify-end items-center gap-2 sm:gap-4 mb-4">
-                        <a href="/documents" className="text-gray-300 hover:text-zinc-900 transition-colors text-sm font-semibold">Documents</a>
-                        <a href="/about" className="text-gray-300 hover:text-zinc-900 transition-colors text-sm font-semibold">About</a>
+                        <a href="/documents" className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-semibold">Documents</a>
+                        <a href="/about" className="text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-semibold">About</a>
                         <button
                             onClick={() => setIsSearchOpen(true)}
                             className="flex items-center gap-2 px-4 py-2 bg-zinc-100 border border-zinc-300 hover:bg-zinc-200 rounded transition-colors"
@@ -77,10 +77,10 @@ export function HomeHero() {
                             <p className="text-lg sm:text-xl md:text-2xl font-bold text-zinc-900 mb-4 sm:mb-6 leading-tight">
                                 The Cathedral stands unsealed.
                             </p>
-                            <p className="text-gray-300 leading-relaxed">
+                            <p className="text-zinc-600 leading-relaxed">
                                 As of May 2026, the institutional memory of New Jersey's Catholic political elite is no longer protected by privilege. Judge Avion Benjamin's unsealing order has fundamentally breached the ancestral walls, exposing the "Closed Loop" of legal and judicial fraud that has protected the McCarrick network for four decades.
                             </p>
-                            <p className="text-gray-300 mt-4">
+                            <p className="text-zinc-600 mt-4">
                                 This is the Forensic Dossier. The identities of the "twelve clergymen" are now public record. The following acts map the structural collapse of the silence.
                             </p>
                         </div>

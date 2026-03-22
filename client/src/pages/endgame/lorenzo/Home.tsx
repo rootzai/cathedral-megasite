@@ -63,10 +63,21 @@ export default function Home() {
                         <p>
                             For the next thirty years, Lorenzo was the "Public Face" of the Delbarton
                             School, an elite laboratory of influence where the children of the East
-                            Coast’s power brokers were educated beneath the shadow of a silent Abbey.
+                            Coast’s power brokers—including the sons of the **Christies**, the **Marinos**,
+                            and the **Nyres**—were educated beneath the shadow of a silent Abbey.
                             As Prior—the second-in-command—he oversaw the living arrangements of monks
                             who would later be named as some of the state's most prolific predators.
                         </p>
+
+                        <div className="bg-zinc-100 p-6 border border-zinc-300 my-8">
+                            <h4 className="font-heading text-lg mb-4 text-zinc-900 uppercase tracking-widest">Heritage of Influence</h4>
+                            <p className="text-sm text-zinc-700 leading-relaxed">
+                                Delbarton’s athletic and social prestige was managed under Lorenzo’s tenure.
+                                The school produced legends like **Anthony Volpe**, while NFL great **Nick Mangold** walked the sidelines as a coach.
+                                Olympic stars like **Jack Alexy** further cemented the school's "untouchable" status.
+                                This concentration of celebrity and political power provided the ultimate horizontal shield for the Abbey's vertical silence.
+                            </p>
+                        </div>
 
                         <blockquote className="border-l-4 border-destructive pl-8 py-4 my-10 bg-destructive/5 not-italic text-foreground">
                             <p className="text-2xl font-bold leading-tight mb-4">

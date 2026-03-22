@@ -17,7 +17,7 @@ export default function MegaNavigation() {
     const isLinkActive = isActive(path);
 
     return `
-      px-2 lg:px-4 py-3 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-all text-center
+      px-2 lg:px-4 py-3 text-xs lg:text-sm font-bold uppercase tracking-wider transition-all text-center
       ${isLinkActive
         ? 'bg-red-600 text-zinc-900'
         : 'text-gray-300 hover:bg-red-600/20 hover:text-zinc-900'}
@@ -38,7 +38,7 @@ export default function MegaNavigation() {
       <div className="bg-red-700 h-6 flex items-center overflow-hidden whitespace-nowrap border-b border-red-800">
         <div className="flex animate-ticker py-1">
           {[...newsItems, ...newsItems].map((item, idx) => (
-            <span key={idx} className="inline-block px-10 text-[10px] font-mono font-bold text-white uppercase tracking-wider">
+            <span key={idx} className="inline-block px-10 text-xs font-mono font-bold text-white uppercase tracking-wider">
               {item}
             </span>
           ))}
@@ -46,7 +46,7 @@ export default function MegaNavigation() {
       </div>
 
       {/* RAINN Crisis Resource Banner */}
-      <div className="bg-zinc-100 border-b border-zinc-300 py-1 px-4 flex items-center justify-center gap-2 text-[10px] sm:text-xs">
+      <div className="bg-zinc-100 border-b border-zinc-300 py-1 px-4 flex items-center justify-center gap-2 text-xs sm:text-xs">
         <span className="text-zinc-700 font-mono uppercase tracking-wider">If you or someone you know needs help:</span>
         <a
           href="https://www.rainn.org"
@@ -81,10 +81,31 @@ export default function MegaNavigation() {
               </a>
             </Link>
 
-            <Link href="/origin"><a className={navLinkClass('/origin')}>THE ORIGIN</a></Link>
+            {/* Chapter and Verse Dropdown */}
+            <div
+              className="relative h-full flex items-center"
+              onMouseEnter={() => setOpenDropdown('chapter-and-verse')}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={`${navLinkClass('/origin')} flex items-center gap-1`}>
+                CHAPTER & VERSE
+                <svg className={`w-3 h-3 transition-transform ${openDropdown === 'chapter-and-verse' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {openDropdown === 'chapter-and-verse' && (
+                <div className="absolute top-full left-0 w-64 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <Link href="/origin"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700 border-b border-zinc-100">0.0 THE HUB (PORTAL)</a></Link>
+                  <Link href="/origin/martin"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.1 THE FOUNDING TEMPLATE</a></Link>
+                  <Link href="/origin/beach-house"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.2 THE BEACH HOUSE</a></Link>
+                  <Link href="/origin/network"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.3 THE LABYRINTH</a></Link>
+                  <Link href="/origin/explosion"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.4 THE EXPLOSION</a></Link>
+                </div>
+              )}
+            </div>
+
             <Link href="/coverup"><a className={navLinkClass('/coverup')}>THE COVER-UP</a></Link>
             <Link href="/breach"><a className={navLinkClass('/breach')}>THE BREACH</a></Link>
             <Link href="/succession"><a className={navLinkClass('/succession')}>THE SUCCESSION</a></Link>
+            <Link href="/headline-news"><a className={navLinkClass('/headline-news')}>HEADLINE NEWS</a></Link>
             <Link href="/opinion"><a className={navLinkClass('/opinion')}>OPINION</a></Link>
 
             {/* Intelligence Dropdown */}
@@ -99,8 +120,8 @@ export default function MegaNavigation() {
               </button>
               {openDropdown === 'intelligence' && (
                 <div className="absolute top-full left-0 w-48 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <Link href="/ledger"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE LEDGER</a></Link>
-                  <Link href="/vault"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE VAULT</a></Link>
+                  <Link href="/ledger"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE LEDGER</a></Link>
+                  <Link href="/vault"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE VAULT</a></Link>
                 </div>
               )}
             </div>
@@ -117,16 +138,16 @@ export default function MegaNavigation() {
               </button>
               {openDropdown === 'resources' && (
                 <div className="absolute top-full right-0 w-48 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <Link href="/the-record"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE RECORD</a></Link>
-                  <Link href="/whistleblowers"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">WHISTLEBLOWERS</a></Link>
-                  <Link href="/about"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">ABOUT</a></Link>
-                  <Link href="/corrections"><a className="block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">CORRECTIONS</a></Link>
+                  <Link href="/the-record"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">THE RECORD</a></Link>
+                  <Link href="/whistleblowers"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">WHISTLEBLOWERS</a></Link>
+                  <Link href="/about"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">ABOUT</a></Link>
+                  <Link href="/corrections"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">CORRECTIONS</a></Link>
                 </div>
               )}
             </div>
 
             <Link href="/about#tips">
-              <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all shadow-md">
+              <a className="ml-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all shadow-md">
                 SUBMIT A TIP
               </a>
             </Link>
@@ -163,11 +184,11 @@ export default function MegaNavigation() {
               <Link href="/succession"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE SUCCESSION</a></Link>
               <Link href="/opinion"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">OPINION</a></Link>
 
-              <div className="pt-2 pb-1 px-4 text-[10px] font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Intelligence</div>
+              <div className="pt-2 pb-1 px-4 text-xs font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Intelligence</div>
               <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
               <Link href="/vault"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE VAULT</a></Link>
 
-              <div className="pt-2 pb-1 px-4 text-[10px] font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Resources</div>
+              <div className="pt-2 pb-1 px-4 text-xs font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Resources</div>
               <Link href="/the-record"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE RECORD</a></Link>
               <Link href="/whistleblowers"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">WHISTLEBLOWERS</a></Link>
               <Link href="/about"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">ABOUT</a></Link>
@@ -182,12 +203,12 @@ export default function MegaNavigation() {
       {location.startsWith('/ledger') && (
         <div className="bg-zinc-100 border-t border-zinc-300 animate-in slide-in-from-top-2 duration-300">
           <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6">
-            <a href="#filter" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Who Knew</a>
-            <a href="#regents" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Regents</a>
-            <a href="#trustees" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Trustees</a>
-            <a href="#visitors" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Visitors</a>
-            <a href="#lawyers" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Lawyers</a>
-            <a href="#timeline" className="text-[10px] font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Timeline</a>
+            <a href="#filter" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Who Knew</a>
+            <a href="#regents" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Regents</a>
+            <a href="#trustees" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Trustees</a>
+            <a href="#visitors" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Visitors</a>
+            <a href="#lawyers" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Lawyers</a>
+            <a href="#timeline" className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-zinc-900 transition-colors">Timeline</a>
           </div>
         </div>
       )}
@@ -196,10 +217,10 @@ export default function MegaNavigation() {
       {location.startsWith('/opinion') && (
         <div className="bg-[#f0ede4] border-t border-black/10 animate-in slide-in-from-top-2 duration-300">
           <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-6">
-            <Link href="/opinion/noonan"><a className="text-[10px] font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">O'Shaughnessy</a></Link>
-            <Link href="/opinion/cannon"><a className="text-[10px] font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Fairchild</a></Link>
-            <Link href="/opinion/matthews"><a className="text-[10px] font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Vance</a></Link>
-            <Link href="/opinion/stephens"><a className="text-[10px] font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Roth</a></Link>
+            <Link href="/opinion/noonan"><a className="text-xs font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">O'Shaughnessy</a></Link>
+            <Link href="/opinion/cannon"><a className="text-xs font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Fairchild</a></Link>
+            <Link href="/opinion/matthews"><a className="text-xs font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Vance</a></Link>
+            <Link href="/opinion/stephens"><a className="text-xs font-bold uppercase tracking-widest text-black/60 hover:text-red-700 transition-colors">Roth</a></Link>
           </div>
         </div>
       )}
@@ -218,7 +239,7 @@ export default function MegaNavigation() {
       )}
 
       {/* Jurisdictional Counter / Who's Watching */}
-      <div className="bg-zinc-900 text-[11px] text-zinc-400 py-2.5 px-4 text-center border-t border-white/5">
+      <div className="bg-zinc-900 text-xs text-zinc-400 py-3 px-4 text-center border-t border-white/5">
         <span className="uppercase tracking-[0.2em]">Live Traffic Monitor:</span>
         <span className="ml-2 text-red-700 font-bold tabular-nums">4,812 Access Points</span>
         <span className="mx-2 opacity-30">|</span>

@@ -21,7 +21,7 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         {title}
       </button>
-      {isOpen && <div className="prose prose-invert prose-lg max-w-none">{children}</div>}
+      {isOpen && <div className="prose prose-lg max-w-none text-zinc-800">{children}</div>}
     </div>
   );
 }
@@ -119,7 +119,7 @@ export function HomeActs() {
               <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-zinc-900">The Reckoning of May</h3>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
 
-              <div className="prose prose-invert prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12">
+              <div className="prose prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
 The discovery deadline has passed. 24,000 pages of previously suppressed records—Title IX logs, witness rosters, and Board Risk Committee minutes—are now in the hands of investigators.
 
@@ -141,7 +141,7 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
                   <a className="px-8 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-900 font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-zinc-900/50">Review Exhibits</a>
                 </Link>
                 <Link href="/breach">
-                  <a className="px-8 py-4 border border-zinc-300 hover:border-zinc-300 text-gray-400 hover:text-zinc-900 transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
+                  <a className="px-8 py-4 border border-zinc-300 hover:border-zinc-300 text-zinc-500 hover:text-zinc-900 transition-all uppercase tracking-widest text-sm">The Benjamin Order</a>
                 </Link>
               </div>
 
@@ -157,7 +157,7 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Vault Opens</h3>
               <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
-              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12">
+              <div className="prose prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
 **Breaking News: Judge Avion Benjamin orders production of the Latham Report.**
 

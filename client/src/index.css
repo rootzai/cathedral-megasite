@@ -58,6 +58,28 @@
   --color-endgame-dark: oklch(0.15 0.02 140);
   --color-bankruptcy-rust: oklch(0.4 0.15 45);
   --color-epstein-teal: oklch(0.4 0.12 180);
+
+  /* Specific Investigation Tokens */
+  --color-ink: oklch(0.15 0.02 65);
+  --color-ink-mid: oklch(0.3 0.02 65);
+  --color-blood: oklch(0.45 0.25 25);
+  --color-gold: oklch(0.7 0.15 85);
+  --color-parchment: #faf6ee;
+
+  /* Global Typography Bumps for Legibility */
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 3.75rem;
+  --font-size-6xl: 4.5rem;
+  --font-size-7xl: 6rem;
+  --font-size-8xl: 8rem;
+  --font-size-9xl: 10rem;
 }
 
 :root {
@@ -223,7 +245,7 @@
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.15 0.02 20);
     --muted: oklch(0.95 0.01 85);
-    --muted-foreground: oklch(0.7 0.04 20);
+    --muted-foreground: oklch(0.45 0.04 20);
     --border: oklch(0 0 0 / 15%);
 
     /* Hardcoded Legibility Tokens */

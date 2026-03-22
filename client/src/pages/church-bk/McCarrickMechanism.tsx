@@ -28,7 +28,7 @@ export default function McCarrickMechanism() {
           August 27, 2019: The Vault Closes
         </h2>
 
-        <div className="prose-investigative text-lg leading-relaxed text-parchment/80 font-serif space-y-6">
+        <div className="prose-investigative text-lg leading-relaxed text-zinc-800 font-serif space-y-6">
           <p>
             The room was silent. Thirty-five members of the Seton Hall Board of Regents sat in
             executive session, listening to the findings of the Latham Report. It was a
@@ -126,7 +126,7 @@ export default function McCarrickMechanism() {
         </div>
       </section>
 
-      <div className="evidence-box bg-zinc-800 text-zinc-900 p-12 rounded-none shadow-2xl">
+      <div className="evidence-box bg-zinc-800 text-parchment p-12 rounded-none shadow-2xl">
         <div className="exhibit-label text-zinc-900/60 mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Statement · The Mechanism</div>
         <p className="text-2xl leading-relaxed italic mb-6 font-serif">
           "The fundraising was the shield. The money didn't just buy influence; it bought immunity."

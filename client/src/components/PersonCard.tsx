@@ -66,7 +66,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
           </h4>
           <p className="font-label text-sm text-gold-dim mt-0.5">{person.role}</p>
         </div>
-        <span className="text-[10px] font-label text-white/60 whitespace-nowrap mt-0.5">
+        <span className="text-xs font-label text-white/60 whitespace-nowrap mt-0.5">
           {person.tenure}
         </span>
       </div>
@@ -82,7 +82,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
                     onBadgeClick?.(badge);
                   }}
                   className={cn(
-                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-label transition-transform hover:scale-110 active:scale-95",
+                    "inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-xs font-label transition-transform hover:scale-110 active:scale-95",
                     badgeStyles[badge]
                   )}
                 >
@@ -99,7 +99,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
                                     "Nyre Case"}
                 </button>
               </TooltipTrigger>
-              <TooltipContent className="bg-white border border-red-900 text-[10px] font-mono uppercase tracking-widest px-3 py-1.5 z-[100]">
+              <TooltipContent className="bg-white border border-red-900 text-sm font-mono uppercase tracking-widest px-3 py-1.5 z-[100]">
                 {BADGE_LABELS[badge]}
               </TooltipContent>
             </Tooltip>

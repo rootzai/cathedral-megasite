@@ -3,6 +3,7 @@ import { Route } from "wouter";
 import { BreachLayout, CoverUpLayout, OriginLayout, SuccessionLayout } from "../components/UnifiedSectionLayouts";
 import TheyKnew from "../pages/TheyKnew";
 import LorenzoHome from "../pages/endgame/lorenzo/Home";
+const HeadlineNews = React.lazy(() => import("../pages/HeadlineNews"));
 
 // Church BK
 const ChurchBKActiveCaseDossiers = React.lazy(() => import("../pages/church-bk/ActiveCaseDossiers"));
@@ -58,6 +59,9 @@ export const ExposeRoutes = [
     <Route key="e19" path={"/succession/cases"}><SuccessionLayout><ChurchBKActiveCaseDossiers /></SuccessionLayout></Route>,
     <Route key="e20" path={"/succession/horizon"}><SuccessionLayout><ChurchBKGlobalChurchMetrics /></SuccessionLayout></Route>,
     <Route key="e21" path={"/succession/epilogue"}><SuccessionLayout><SuccessionEpilogue /></SuccessionLayout></Route>,
+
+    // HEADLINE NEWS
+    <Route key="headline-news" path={"/headline-news"}><HeadlineNews /></Route>,
 
     // Portals
     <Route key="portal" path={"/expose"}><ExposePortal /></Route>,

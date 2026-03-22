@@ -3,17 +3,37 @@ import { Link, useLocation } from "wouter";
 import { ShareButton } from "./ShareButton";
 
 const ROUTES = [
-  { path: "/origin", label: "The Origin" },
+  // THE ORIGIN
+  { path: "/origin", label: "The Origin Portal" },
+  { path: "/origin/martin", label: "The Martin Evidence" },
   { path: "/origin/beach-house", label: "The Beach House" },
-  { path: "/coverup", label: "The Cover-Up" },
+  { path: "/origin/network", label: "The McCarrick Network" },
+  { path: "/origin/explosion", label: "The McCarrick Downfall" },
+
+  // THE COVER-UP
+  { path: "/coverup", label: "The Billion-Dollar Mechanism" },
+  { path: "/coverup/complicity", label: "They Knew" },
   { path: "/coverup/legal", label: "The Legal Triumvirate" },
+  { path: "/coverup/epstein", label: "The Epstein Nexus" },
+
+  // THE BREACH
   { path: "/breach", label: "The Breach" },
-  { path: "/breach/courtroom", label: "The Benjamin Order" },
+  { path: "/breach/rabner", label: "The Rabner Dossier" },
+  { path: "/breach/forensics", label: "Forensic Overview" },
+
+  // THE SUCCESSION
   { path: "/succession", label: "The Succession" },
+  { path: "/succession/checchio", label: "The Newark Export" },
+  { path: "/succession/cases", label: "Active Case Dossiers" },
   { path: "/succession/epilogue", label: "The Millstone Epilogue" },
-  { path: "/opinion", label: "Public Opinion" },
+
+  // THE LEDGER (ENDGAME)
   { path: "/ledger", label: "The Ledger" },
-  { path: "/vault", label: "The Vault" },
+  { path: "/ledger/mccarrick", label: "McCarrick: The Full File" },
+  { path: "/ledger/reilly", label: "Joseph Reilly: The President" },
+  { path: "/ledger/lorenzo", label: "Elias Lorenzo: The King in Waiting" },
+  { path: "/ledger/checchio", label: "James Checchio: The Musical Chairs" },
+  { path: "/ledger/martin", label: "Kenneth Martin: The Chicago Link" },
 ];
 
 

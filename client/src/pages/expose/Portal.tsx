@@ -12,7 +12,7 @@ export default function ExposePortal() {
             <div className="z-10 max-w-6xl w-full space-y-12 py-12">
                 {/* Header */}
                 <div className="text-center space-y-4 animate-in fade-in duration-1000 slide-in-from-top-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 border border-red-900 bg-zinc-100/20 text-zinc-900 font-mono text-[10px] uppercase tracking-[0.3em] mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 border border-red-900 bg-zinc-100/20 text-zinc-900 font-mono text-xs uppercase tracking-[0.3em] mb-4">
                         <Lock size={12} /> Confidential Dossier · Access Level 04
                     </div>
                     <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-zinc-900">
@@ -122,33 +122,33 @@ export default function ExposePortal() {
                 <div className="mt-20 p-8 border border-zinc-300 bg-zinc-50/50 rounded-lg">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div className="space-y-4">
-                            <h3 className="text-zinc-900 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-zinc-900 font-mono text-sm uppercase tracking-widest flex items-center gap-2">
                                 <Shield size={14} /> Adversarial Audit
                             </h3>
-                            <p className="text-xs text-zinc-700 leading-relaxed font-serif">
+                            <p className="text-sm text-zinc-700 leading-relaxed font-serif">
                                 This investigation is protected by the First Amendment. We welcome legal process. Any demand letter received will be published in full.
                             </p>
-                            <Link href="/about" className="text-xs text-zinc-900 underline hover:text-zinc-700 transition-colors">View Legal Basis</Link>
+                            <Link href="/about" className="text-sm text-zinc-900 underline hover:text-zinc-700 transition-colors">View Legal Basis</Link>
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-zinc-900 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-zinc-900 font-mono text-sm uppercase tracking-widest flex items-center gap-2">
                                 <Eye size={14} /> Public Record
                             </h3>
                             <p className="text-xs text-zinc-700 leading-relaxed font-serif">
                                 Explore the verified document library including the unsealed Perry Report and the Vatican's 2020 findings.
                             </p>
-                            <Link href="/documents" className="text-xs text-zinc-900 underline hover:text-zinc-700 transition-colors">Access Archives</Link>
+                            <Link href="/documents" className="text-sm text-zinc-900 underline hover:text-zinc-700 transition-colors">Access Archives</Link>
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-zinc-900 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                            <h3 className="text-zinc-900 font-mono text-sm uppercase tracking-widest flex items-center gap-2">
                                 <AlertCircle size={14} /> Submit a Tip
                             </h3>
                             <p className="text-xs text-zinc-700 leading-relaxed font-serif">
                                 Protecting source confidentiality is our priority. Contribute to the investigation anonymously.
                             </p>
-                            <Link href="/about#tips" className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-colors">
+                            <Link href="/about#tips" className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors">
                                 Submit Secure Tip
                             </Link>
                         </div>
@@ -156,7 +156,7 @@ export default function ExposePortal() {
                 </div>
 
                 <div className="text-center pt-12 border-t border-zinc-300">
-                    <p className="text-[10px] text-zinc-800 font-mono uppercase tracking-[0.4em]">
+                    <p className="text-xs text-zinc-800 font-mono uppercase tracking-[0.4em]">
                         Sodom Hall Investigation · The Architecture of Silence · 2026
                     </p>
                 </div>

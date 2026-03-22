@@ -55,7 +55,7 @@ export default function UnifiedLayout({
                             <h1 className="font-heading text-2xl sm:text-4xl md:text-6xl text-foreground uppercase tracking-tight leading-[0.9] mb-2 md:mb-3">
                                 {title}
                             </h1>
-                            <p className="font-serif italic text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
+                            <p className="font-serif italic text-zinc-700 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
                                 {subtitle}
                             </p>
 
@@ -63,7 +63,7 @@ export default function UnifiedLayout({
 
                         <div className="flex items-center gap-2">
                             <Link href="/">
-                                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-zinc-600 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-zinc-500 hover:bg-zinc-200/50 active:scale-95 shadow-sm">
+                                <div className="font-mono text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-zinc-600 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-zinc-500 hover:bg-zinc-200/50 active:scale-95 shadow-sm">
                                     Return to Archway
                                 </div>
 
@@ -102,7 +102,7 @@ export default function UnifiedLayout({
                 {/* Desktop Left-Hand Navigation */}
                 <aside className="hidden lg:block w-64 shrink-0">
                     <div className="space-y-1 bg-background/50 border border-border/50 p-2 rounded-lg">
-                        <p className="font-mono text-[10px] text-zinc-900 uppercase tracking-[0.2em] px-4 py-3 font-bold border-b border-border mb-2">
+                        <p className="font-mono text-xs text-zinc-900 uppercase tracking-[0.2em] px-4 py-3 font-bold border-b border-border mb-2">
                             Section Index
                         </p>
                         {navItems.map((item) => {
@@ -113,15 +113,15 @@ export default function UnifiedLayout({
                                         "block py-3 px-4 rounded-md transition-all cursor-pointer group",
                                         isActive
                                             ? "bg-foreground/15 text-foreground shadow-sm ring-1 ring-foreground/20"
-                                            : "text-muted-foreground hover:bg-foreground/10 hover:text-zinc-900"
+                                            : "text-zinc-600 hover:bg-foreground/10 hover:text-zinc-900"
                                     )}>
                                         <div className="flex items-center justify-between">
                                             <span className="font-serif text-sm font-medium">{item.label}</span>
                                             {isActive && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
                                         </div>
                                         <span className={cn(
-                                            "font-mono text-[10px] tracking-widest mt-1 block",
-                                            isActive ? "text-foreground/90 font-bold" : "text-zinc-500 group-hover:text-zinc-800"
+                                            "font-mono text-xs tracking-widest mt-1 block",
+                                            isActive ? "text-foreground/90 font-bold" : "text-zinc-700 group-hover:text-zinc-900"
                                         )}>
                                             {item.id}
                                         </span>
