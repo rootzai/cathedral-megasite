@@ -71,7 +71,7 @@ export default function McCarrickNetwork() {
 
       <div className="pull-quote border-l-4 border-zinc-400 pl-8 mb-16">
         <p className="text-2xl italic text-muted-foreground font-serif leading-relaxed">
-          "McCarrick didn't just abuse seminarians. He built a machine — and the machine is still running."
+          "McCarrick didn't just abuse seminarians. He built a maze that his men are still running."
         </p>
       </div>
 

@@ -48,8 +48,8 @@ export const ExposeRoutes = [
     <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
     <Route key="e9-alias" path={"/coverup/triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
     <Route key="e9-expose" path={"/expose/legal-triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
-    <Route key="e10" path={"/coverup/epstein"}><CoverUpLayout><EpsteinNexus /></CoverUpLayout></Route>,
-    <Route key="e10-expose" path={"/expose/epstein-nexus"}><CoverUpLayout><EpsteinNexus /></CoverUpLayout></Route>,
+    <Route key="e10" path={"/coverup/epstein"}><EpsteinNexus /></Route>,
+    <Route key="e10-expose" path={"/expose/epstein-nexus"}><EpsteinNexus /></Route>,
     <Route key="e-reilly" path={"/expose/reilly-protection"}><CoverUpLayout><ReillyProtection /></CoverUpLayout></Route>,
     <Route key="e-reilly-ascent" path={"/expose/reilly-ascent"}><CoverUpLayout><ReillyProtection /></CoverUpLayout></Route>,
 
