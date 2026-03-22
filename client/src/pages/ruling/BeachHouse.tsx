@@ -3,45 +3,17 @@ import { JourneyNav } from "@/components/JourneyNav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Home, MapPin, Users, Navigation } from "lucide-react";
-import { MapView } from "@/components/Map";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function BeachHouse() {
   const [showRoute, setShowRoute] = useState(false);
-  const mapRef = useRef<google.maps.Map | null>(null);
-  const directionsRendererRef = useRef<google.maps.DirectionsRenderer | null>(null);
 
   const handleViewRoute = () => {
-    if (!mapRef.current || !window.google) return;
-
     setShowRoute(true);
-    const directionsService = new window.google.maps.DirectionsService();
-
-    if (!directionsRendererRef.current) {
-      directionsRendererRef.current = new window.google.maps.DirectionsRenderer({
-        map: mapRef.current,
-        suppressMarkers: false,
-        polylineOptions: {
-          strokeColor: "#ef4444",
-          strokeWeight: 5,
-          strokeOpacity: 0.8
-        }
-      });
-    }
-
-    directionsService.route(
-      {
-        origin: "Seton Hall University, South Orange, NJ",
-        destination: "300 Ocean Avenue, Sea Girt, NJ",
-        travelMode: window.google.maps.TravelMode.DRIVING,
-      },
-      (result: google.maps.DirectionsResult | null, status: google.maps.DirectionsStatus) => {
-        if (status === "OK" && result) {
-          directionsRendererRef.current?.setDirections(result);
-        } else {
-          console.error("Directions request failed due to " + status);
-        }
-      }
+    // Open Google Maps directions in a new tab
+    window.open(
+      "https://www.google.com/maps/dir/Seton+Hall+University,+South+Orange,+NJ/300+Ocean+Avenue,+Sea+Girt,+NJ",
+      "_blank"
     );
   };
 
@@ -69,11 +41,11 @@ export default function BeachHouse() {
 
           <div className="space-y-6">
             <div className="relative aspect-video bg-zinc-900 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
-              <MapView
-                className="w-full h-full grayscale opacity-60 mix-blend-luminosity"
-                initialCenter={{ lat: 40.1311, lng: -74.0315 }}
-                initialZoom={15}
-                onMapReady={(map) => { mapRef.current = map; }}
+              <iframe
+                title="Sea Girt Beach House Location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0400%2C40.1260%2C-74.0230%2C40.1360&layer=mapnik&marker=40.1311%2C-74.0315"
+                className="w-full h-full border-0 grayscale opacity-60"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">

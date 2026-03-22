@@ -1,4 +1,3 @@
-import { MapView } from "@/components/Map";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, MapPin } from "lucide-react";
 import { useState } from "react";
@@ -26,46 +25,6 @@ const clergyLocations: ClergyLocation[] = [
 export default function ClergyMap() {
   const [selectedLocation, setSelectedLocation] = useState<ClergyLocation | null>(null);
 
-  const handleMapReady = (map: google.maps.Map) => {
-    const bounds = new google.maps.LatLngBounds();
-    
-    clergyLocations.forEach((clergy) => {
-      const position = { lat: clergy.lat, lng: clergy.lng };
-      bounds.extend(position);
-
-      const marker = new google.maps.Marker({
-        position,
-        map,
-        title: clergy.name,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 8,
-          fillColor: "#ef4444", // destructive color
-          fillOpacity: 0.9,
-          strokeWeight: 2,
-          strokeColor: "#ffffff",
-        },
-      });
-
-      const infoWindow = new google.maps.InfoWindow({
-        content: `
-          <div style="padding: 8px; min-width: 200px;">
-            <h3 style="font-family: 'Cinzel', serif; font-weight: bold; margin-bottom: 4px;">${clergy.name}</h3>
-            <p style="font-family: 'Courier Prime', monospace; font-size: 12px; color: #666; margin-bottom: 4px;">${clergy.status}</p>
-            <p style="font-family: 'Libre Baskerville', serif; font-size: 13px;">${clergy.location}</p>
-          </div>
-        `,
-      });
-
-      marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-        setSelectedLocation(clergy);
-      });
-    });
-
-    map.fitBounds(bounds);
-  };
-
   return (
     <Card className="bg-card border border-border rounded-none overflow-hidden">
       <CardContent className="p-0">
@@ -79,16 +38,36 @@ export default function ClergyMap() {
           </div>
         </div>
         <div className="h-[400px] w-full relative">
-          <MapView 
-            onMapReady={handleMapReady}
-            className="w-full h-full"
+          <iframe
+            title="Clergy Locations - Northern New Jersey"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.45%2C40.60%2C-74.10%2C40.80&layer=mapnik"
+            className="w-full h-full border-0"
+            loading="lazy"
           />
+          {/* Location pins overlay */}
+          <div className="absolute inset-0 pointer-events-none">
+            {clergyLocations.map((clergy) => (
+              <button
+                key={clergy.id}
+                className="absolute pointer-events-auto group"
+                style={{
+                  left: `${((clergy.lng - (-74.45)) / (-74.10 - (-74.45))) * 100}%`,
+                  top: `${((40.80 - clergy.lat) / (40.80 - 40.60)) * 100}%`,
+                }}
+                onClick={() => setSelectedLocation(clergy)}
+                title={clergy.name}
+              >
+                <div className="w-3 h-3 bg-destructive rounded-full border-2 border-white shadow-lg group-hover:scale-150 transition-transform" />
+              </button>
+            ))}
+          </div>
         </div>
         {selectedLocation && (
           <div className="p-4 bg-muted/5 border-t border-border">
             <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-1">Selected Location</p>
             <p className="font-heading text-lg text-foreground">{selectedLocation.name}</p>
             <p className="font-body text-sm text-foreground/80">{selectedLocation.location}</p>
+            <p className="font-mono text-xs text-destructive uppercase mt-1">{selectedLocation.status}</p>
           </div>
         )}
       </CardContent>
