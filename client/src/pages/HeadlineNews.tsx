@@ -118,7 +118,7 @@ export default function HeadlineNews() {
                                 <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Blueprint · Act I-IV</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all">
                                     <SmartImage
-                                        src="/site_map_overview.png"
+                                        src="/assets/site_map_overview.png"
                                         alt="Process Flow Overview"
                                         className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                                     />
@@ -130,7 +130,7 @@ export default function HeadlineNews() {
                                 <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Wireframe Detail · The Breach</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all">
                                     <SmartImage
-                                        src="/site_wireframe_detail.png"
+                                        src="/assets/site_wireframe_detail.png"
                                         alt="Institutional Wireframe"
                                         className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                                     />
@@ -140,9 +140,13 @@ export default function HeadlineNews() {
                         </div>
 
                         <div className="mt-8 pt-8 border-t border-white/10">
-                            <button className="w-full bg-red-700 hover:bg-red-800 py-3 text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2">
+                            <a
+                                href="/Perry-lawSHU.pdf"
+                                download
+                                className="w-full bg-red-700 hover:bg-red-800 py-3 text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 text-white no-underline shadow-lg"
+                            >
                                 Download Full Evidence Kit <MoveRight size={14} />
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </aside>
