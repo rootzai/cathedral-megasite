@@ -65,14 +65,14 @@ export default function ExposePortal() {
                                     The Cover-Up
                                 </h2>
                                 <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
-                                    The protection of the machine. The "Legal Triumvirate," the suppression of the Latham Report, and the Christie legal network's intervention.
+                                    Six years of systematic concealment. The "Legal Triumvirate," the sealing of the Latham Report, and the Christie legal network's buffer.
                                 </p>
                             </div>
                         </div>
                     </Link>
 
                     {/* Act 3: The Breach */}
-                    <Link href="/breach/whistleblowers">
+                    <Link href="/breach/courtroom">
                         <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
                             <div className="absolute inset-0 z-0">
                                 <SmartImage
@@ -85,10 +85,10 @@ export default function ExposePortal() {
                             <div className="p-10 relative z-20 h-full flex flex-col justify-end">
                                 <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act III · 2024 - 2026</span>
                                 <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
-                                    The Breach
+                                    The Benjamin Mandate
                                 </h2>
                                 <p className="text-sm text-zinc-300 group-hover:text-white transition-colors max-w-sm leading-relaxed font-serif italic">
-                                    The collapse of the machine. Whistleblowers emerge, the Politico revelations, and the judiciary's mandate to produce 24,000 pages.
+                                    The collapse of the machine. Judge Avion Benjamin's landmark ruling unseals 24,000 pages, shattering the Architecture of Silence.
                                 </p>
                             </div>
                         </div>
