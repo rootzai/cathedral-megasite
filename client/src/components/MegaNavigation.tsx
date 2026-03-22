@@ -74,9 +74,9 @@ export default function MegaNavigation() {
             <Link href="/">
               <a className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0">
                 <SmartImage
-                  src="/assets/sodom-hall-logo.png"
+                  src="/assets/images/sh-pirate-logo.png"
                   alt="Sodom Hall Home"
-                  className="h-10 w-auto grayscale brightness-200 group-hover:brightness-100 group-hover:grayscale-0 transition-all drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
+                  className="h-10 w-auto group-hover:scale-105 transition-all drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
                 />
               </a>
             </Link>
@@ -164,9 +164,9 @@ export default function MegaNavigation() {
             <Link href="/">
               <a className="flex items-center">
                 <SmartImage
-                  src="/assets/sodom-hall-logo.png"
+                  src="/assets/images/sh-pirate-logo.png"
                   alt="Sodom Hall Home"
-                  className="h-8 w-auto grayscale brightness-200"
+                  className="h-8 w-auto"
                 />
               </a>
             </Link>

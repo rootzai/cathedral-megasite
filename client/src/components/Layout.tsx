@@ -43,9 +43,9 @@ export default function Layout({ children }: LayoutProps) {
           <Link href="/cathedral">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
               <SmartImage
-                src="/assets/sodom-hall-logo.png"
+                src="/assets/images/sh-pirate-logo.png"
                 alt="Sodom Hall Home"
-                className="h-20 w-auto grayscale brightness-200"
+                className="h-20 w-auto"
               />
             </a>
           </Link>

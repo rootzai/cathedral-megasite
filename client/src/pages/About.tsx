@@ -22,8 +22,9 @@ export default function About() {
       <header className="relative z-50 bg-zinc-50 backdrop-blur-sm border-b border-zinc-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
-            <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors">
-              {APP_TITLE}
+            <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors flex items-center gap-3">
+              <img src="/assets/images/sh-pirate-logo.png" alt="Sodom Hall Home" className="h-10 w-auto" />
+              SODOM HALL
             </a>
           </Link>
           <nav className="flex gap-6">

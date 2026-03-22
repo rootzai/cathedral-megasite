@@ -16,9 +16,7 @@ export default function PrimaryNavigation() {
         <nav className="bg-[#0a0a0c] border-b border-[#1a1a22] sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-8 h-8 rounded-full border border-[#8b1a1a] flex items-center justify-center group-hover:bg-[#8b1a1a] transition-all translate-y-[2px]">
-                        <span className="text-[#8b1a1a] group-hover:text-white font-bold text-xs uppercase leading-none">SH</span>
-                    </div>
+                    <img src="/assets/images/sh-pirate-logo.png" alt="Sodom Hall Home" className="h-10 w-auto group-hover:scale-105 transition-transform" />
                     <span className="text-[#c8bdb0] font-bold text-sm uppercase tracking-[0.3em] group-hover:text-white transition-colors pt-1">
                         SODOM HALL
                     </span>
