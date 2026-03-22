@@ -15,12 +15,12 @@ import { Link } from 'wouter';
 
 export default function LandingPage() {
   const pillars = [
-    { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'How the abuse and cover-up started, and why no one spoke up.', icon: Factory },
-    { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'How powerful people and organizations worked together to hide the truth.', icon: Shield },
-    { id: 'III', title: 'THE BREACH', path: '/expose/epstein-pivot', desc: 'THE OCTOBER PIVOT: How the seminary probe and Jeffrey Epstein collided.', icon: Zap },
-    { id: 'IV', title: 'THE RECORD', path: '/the-record', desc: 'A living fact-check of the evidence. Zero factual disputes to date.', icon: FileText },
-    { id: 'V', title: 'WHISTLEBLOWERS', path: '/whistleblowers', desc: 'The consequences of courage. A timeline of institutional retaliation.', icon: Users },
-    { id: 'VI', title: 'THE VAULT', path: '/vault', desc: 'Confidential Legal Findings part of the Rabner filings.', icon: Archive }
+    { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'The 1980s construction of the McCarrick machine and the early warnings ignored.', icon: Factory },
+    { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'How the legal triumvirate engineered six years of systematic concealment.', icon: Shield },
+    { id: 'III', title: 'BENJAMIN MANDATE', path: '/breach', desc: 'The landmark ruling that shattered the silence and unsealed 24,000 pages.', icon: Zap },
+    { id: 'IV', title: 'THE SUCCESSION', path: '/succession', desc: 'The 2024 installation of the old guard to preserve the institutional machine.', icon: Crown },
+    { id: 'V', title: 'THE RECORD', path: '/the-record', desc: 'A living fact-check of the evidence. Zero factual disputes to date.', icon: FileText },
+    { id: 'VI', title: 'THE VAULT', path: '/vault', desc: 'Confidential Legal Findings and the full Rabner forensic dossier.', icon: Archive }
   ];
 
   return (
