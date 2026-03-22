@@ -103,14 +103,14 @@ export default function HeadlineNews() {
                     {viewLevel === "paragraph" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm animate-in fade-in slide-in-from-left-4 duration-500">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
-                                    <Layers size={12} /> Level 01 · Executive Summary
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-sm uppercase tracking-[0.2em]">
+                                    <Layers size={14} /> Level 01 · Executive Summary
                                 </div>
                                 <button
                                     onClick={() => downloadText("synopsis_paragraph.txt", summaries.paragraph)}
-                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                    className="text-zinc-500 hover:text-red-700 transition-colors flex items-center gap-1 text-xs uppercase font-bold tracking-widest"
                                 >
-                                    Download <Download size={12} />
+                                    Download <Download size={14} />
                                 </button>
                             </div>
                             <p className="text-2xl leading-relaxed font-serif italic text-zinc-800">
@@ -122,14 +122,14 @@ export default function HeadlineNews() {
                     {viewLevel === "page" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-6 animate-in fade-in slide-in-from-left-4 duration-500">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
-                                    <BookOpen size={12} /> Level 02 · Journalistic Overview
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-sm uppercase tracking-[0.2em]">
+                                    <BookOpen size={14} /> Level 02 · Journalistic Overview
                                 </div>
                                 <button
                                     onClick={() => downloadText("synopsis_one_page.txt", summaries.page)}
-                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                    className="text-zinc-500 hover:text-red-700 transition-colors flex items-center gap-1 text-xs uppercase font-bold tracking-widest"
                                 >
-                                    Download <Download size={12} />
+                                    Download <Download size={14} />
                                 </button>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4">The Benjamin Mandate</h2>
@@ -146,14 +146,14 @@ export default function HeadlineNews() {
                     {viewLevel === "detailed" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
-                                    <FileText size={12} /> Level 03 · Forensic Dossier
+                                <div className="flex items-center gap-2 text-red-700 font-mono text-sm uppercase tracking-[0.2em]">
+                                    <FileText size={14} /> Level 03 · Forensic Dossier
                                 </div>
                                 <button
                                     onClick={() => downloadText("synopsis_dossier.txt", summaries.detailed)}
-                                    className="text-zinc-400 hover:text-red-700 transition-colors flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest"
+                                    className="text-zinc-500 hover:text-red-700 transition-colors flex items-center gap-1 text-xs uppercase font-bold tracking-widest"
                                 >
-                                    Download <Download size={12} />
+                                    Download <Download size={14} />
                                 </button>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4 border-b pb-2">Forensic Breakdown: The 24k Breach</h2>
@@ -176,8 +176,8 @@ export default function HeadlineNews() {
                     {viewLevel === "notebook" && (
                         <div className="prose-investigative bg-zinc-900 p-10 border border-white/10 shadow-2xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500 text-zinc-300">
                             <div className="flex justify-between items-start mb-6 text-zinc-500">
-                                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
-                                    <Cpu size={12} /> Level 04 · NotebookLM AI Synthesis
+                                <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-[0.2em] text-zinc-300">
+                                    <Cpu size={14} /> Level 04 · NotebookLM AI Synthesis
                                 </div>
                                 <span className="text-[10px] uppercase font-bold tracking-widest animate-pulse text-red-500">Analysis Active</span>
                             </div>
@@ -218,7 +218,7 @@ export default function HeadlineNews() {
 
                         <div className="space-y-6">
                             <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_map_overview.png")}>
-                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Blueprint · Act I-V</p>
+                                <p className="text-xs uppercase tracking-widest text-zinc-400 mb-2">Forensic Blueprint · Act I-V</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_map_overview.png"
@@ -231,12 +231,12 @@ export default function HeadlineNews() {
                                 </div>
                                 <div className="flex justify-between items-center mt-2">
                                     <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Comprehensive Narrative Flow</p>
-                                    <a href="/assets/site_map_overview.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Map</a>
+                                    <a href="/assets/site_map_overview.png" download onClick={(e) => e.stopPropagation()} className="text-xs text-zinc-500 hover:text-red-500 font-bold tracking-widest uppercase">Save Map</a>
                                 </div>
                             </div>
 
                             <div className="group cursor-pointer relative overflow-hidden" onClick={() => setActiveModal("/assets/site_wireframe_detail.png")}>
-                                <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2">Forensic Detail · The Breach (Expanded)</p>
+                                <p className="text-xs uppercase tracking-widest text-zinc-400 mb-2">Forensic Detail · The Breach (Expanded)</p>
                                 <div className="aspect-video bg-zinc-800 border border-white/10 rounded-sm overflow-hidden group-hover:border-red-500 transition-all relative">
                                     <SmartImage
                                         src="/assets/site_wireframe_detail.png"
@@ -249,7 +249,7 @@ export default function HeadlineNews() {
                                 </div>
                                 <div className="flex justify-between items-center mt-2">
                                     <p className="text-xs text-zinc-400 group-hover:text-white transition-colors uppercase tracking-widest">Clever Architecture</p>
-                                    <a href="/assets/site_wireframe_detail.png" download onClick={(e) => e.stopPropagation()} className="text-[10px] text-zinc-600 hover:text-red-500 font-bold tracking-widest uppercase">Save Detail</a>
+                                    <a href="/assets/site_wireframe_detail.png" download onClick={(e) => e.stopPropagation()} className="text-xs text-zinc-500 hover:text-red-500 font-bold tracking-widest uppercase">Save Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -257,8 +257,8 @@ export default function HeadlineNews() {
                         <div className="mt-8 pt-8 border-t border-white/10">
                             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-4">Institutional Audit Kit</p>
                             <div className="grid grid-cols-2 gap-2">
-                                <a href="/assets/site_map_overview.png" download className="bg-zinc-800 hover:bg-zinc-700 text-[10px] font-bold py-2 px-3 text-center uppercase tracking-widest transition-all">Sitemap PNG</a>
-                                <a href="/assets/site_wireframe_detail.png" download className="bg-zinc-800 hover:bg-zinc-700 text-[10px] font-bold py-2 px-3 text-center uppercase tracking-widest transition-all">Wireframe PNG</a>
+                                <a href="/assets/site_map_overview.png" download className="bg-zinc-800 hover:bg-zinc-700 text-xs font-bold py-2.5 px-3 text-center uppercase tracking-widest transition-all">Sitemap PNG</a>
+                                <a href="/assets/site_wireframe_detail.png" download className="bg-zinc-800 hover:bg-zinc-700 text-xs font-bold py-2.5 px-3 text-center uppercase tracking-widest transition-all">Wireframe PNG</a>
                             </div>
                         </div>
                     </div>

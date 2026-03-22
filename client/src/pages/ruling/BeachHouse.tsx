@@ -77,15 +77,15 @@ export default function BeachHouse() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-white/60">
+                <div className="font-mono text-xs uppercase tracking-widest text-white">
                   Coordinates: 40.1311° N, 74.0315° W
                 </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className={`gap-2 font-mono text-[10px] uppercase tracking-widest transition-all ${showRoute
+                  className={`gap-2 font-mono text-xs uppercase tracking-widest transition-all ${showRoute
                     ? "bg-destructive text-white border-destructive"
-                    : "bg-white/10 border-white/20 text-white hover:bg-destructive hover:border-destructive"
+                    : "bg-white/20 border-white/40 text-white hover:bg-destructive hover:border-destructive"
                     }`}
                   onClick={handleViewRoute}
                 >
@@ -159,7 +159,7 @@ export default function BeachHouse() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-6 border border-border bg-white/40 flex flex-col justify-between aspect-square group">
-            <span className="font-mono text-[10px] text-muted-foreground uppercase">Room A</span>
+            <span className="font-mono text-xs text-zinc-600 uppercase">Room A</span>
             <div className="text-center">
               <Users className="w-6 h-6 text-destructive/40 mx-auto mb-3 group-hover:text-destructive transition-colors" />
               <div className="font-heading text-sm text-foreground">The Archbishop</div>
@@ -168,7 +168,7 @@ export default function BeachHouse() {
           </div>
 
           <div className="p-6 border border-border bg-white/40 flex flex-col justify-between aspect-square group">
-            <span className="font-mono text-[10px] text-muted-foreground uppercase">Room B</span>
+            <span className="font-mono text-xs text-zinc-600 uppercase">Room B</span>
             <div className="text-center">
               <Users className="w-6 h-6 text-muted-foreground/20 mx-auto mb-3" />
               <div className="font-heading text-sm text-muted-foreground/60 tracking-widest">SECRETARY</div>
@@ -181,7 +181,7 @@ export default function BeachHouse() {
               <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
             </div>
             <div className="flex justify-between items-start mb-6">
-              <span className="font-mono text-[10px] text-destructive uppercase tracking-widest">Room C: "The Overflow"</span>
+              <span className="font-mono text-xs text-destructive uppercase tracking-widest">Room C: "The Overflow"</span>
               <div className="h-px flex-1 bg-destructive/20 mx-4 mt-2" />
             </div>
             <div className="flex justify-center gap-4 mb-8">
@@ -226,11 +226,11 @@ export default function BeachHouse() {
             <Card key={i} className="bg-zinc-50 border-border group hover:border-destructive/50 transition-all duration-500 shadow-xl rounded-none">
               <CardContent className="p-8 space-y-6">
                 <div className="flex justify-between items-start">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-destructive">{vignette.context}</div>
-                  <Users className="w-4 h-4 text-muted-foreground group-hover:text-destructive transition-colors" />
+                  <div className="font-mono text-xs uppercase tracking-widest text-destructive">{vignette.context}</div>
+                  <Users className="w-4 h-4 text-zinc-600 group-hover:text-destructive transition-colors" />
                 </div>
                 <h4 className="font-heading text-2xl text-foreground group-hover:text-destructive transition-colors">{vignette.name}</h4>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-b border-border pb-4">{vignette.role}</div>
+                <div className="font-mono text-xs uppercase tracking-widest text-zinc-600 border-b border-border pb-4">{vignette.role}</div>
                 <p className="font-serif text-base leading-relaxed text-muted-foreground italic">"{vignette.narrative}"</p>
               </CardContent>
             </Card>
