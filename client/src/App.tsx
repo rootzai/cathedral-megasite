@@ -1,148 +1,114 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import React, { Suspense } from "react";
-import { Route, Switch } from "wouter";
+import React, { Suspense, useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import MegaNavigation from "./components/MegaNavigation";
+import PrimaryNavigation from "./components/PrimaryNavigation";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
-// Modular Routes
+// New Redesigned Pages
+const RedesignedHome = React.lazy(() => import("./pages/RedesignedHome"));
+const EvidenceHub = React.lazy(() => import("./pages/evidence/EvidenceHub"));
+const BreachHub = React.lazy(() => import("./pages/breach/BreachHub"));
+
+// Legacy Core Pages (Will be mapped to folders)
+const About = React.lazy(() => import("./pages/About"));
+const Corrections = React.lazy(() => import("./pages/Corrections"));
+const CathedralHome = React.lazy(() => import("./pages/Home"));
+
+// Modular Routes (To be integrated into IA)
 import { EndgameRoutes } from "./routes/EndgameRouter";
 import { VaultRoutes } from "./routes/VaultRouter";
 import { ExposeRoutes } from "./routes/ExposeRouter";
 
-// Cathedral (Sodom Hall) Pages
-const About = React.lazy(() => import("./pages/About"));
-const Dedication = React.lazy(() => import("./pages/Dedication"));
-const Documents = React.lazy(() => import("./pages/Documents"));
-const CathedralHome = React.lazy(() => import("./pages/Home"));
-const LandingPage = React.lazy(() => import("./pages/LandingPage"));
-const TheyKnew = React.lazy(() => import("./pages/TheyKnew"));
-const Corrections = React.lazy(() => import("./pages/Corrections"));
-const InstitutionalParallels = React.lazy(() => import("./pages/InstitutionalParallels"));
-
-// Ruling Pages
-const RulingAnalysis = React.lazy(() => import("./pages/ruling/Analysis"));
-const CorporateVeil = React.lazy(() => import("./pages/ruling/CorporateVeil"));
-const DirtyDozen = React.lazy(() => import("./pages/ruling/DirtyDozen"));
-const RulingEvidence = React.lazy(() => import("./pages/ruling/Evidence"));
-const RulingHome = React.lazy(() => import("./pages/ruling/Home"));
-const Reilly = React.lazy(() => import("./pages/ruling/Reilly"));
-const SanctionPlea = React.lazy(() => import("./pages/ruling/SanctionPlea"));
-const SheeranMcCarrick = React.lazy(() => import("./pages/ruling/SheeranMcCarrick"));
-const RulingTimeline = React.lazy(() => import("./pages/ruling/Timeline"));
-const TobinHypocrisy = React.lazy(() => import("./pages/ruling/TobinHypocrisy"));
-
-// Opinions Pages
-const OpinionsHub = React.lazy(() => import("./pages/opinions/Hub"));
-const NoonanEssay = React.lazy(() => import("./pages/opinions/Noonan"));
-const CannonEssay = React.lazy(() => import("./pages/opinions/Cannon"));
-const MatthewsEssay = React.lazy(() => import("./pages/opinions/Matthews"));
-const StephensEssay = React.lazy(() => import("./pages/opinions/Stephens"));
-
-// Epstein Pages
-import EpsteinLayout from "./components/EpsteinLayout";
-const EpsteinHome = React.lazy(() => import("./pages/epstein/Home"));
-const EpsteinRuemmlerPivot = React.lazy(() => import("./pages/expose/EpsteinRuemmlerPivot"));
-
-// New Evidence & Investigative Pages
-const LegalFindings = React.lazy(() => import("./pages/vault/LegalFindings"));
-const WhistleblowerTimeline = React.lazy(() => import("./pages/WhistleblowerTimeline"));
-const TheRecord = React.lazy(() => import("./pages/TheRecord"));
-
-
-// Section Layouts
-import RulingLayout from "./components/Layout";
-
-import "./index.css";
-
-function PageLayout({ component: Component, theme = "theme-cathedral" }: { component: React.ComponentType; theme?: string }) {
+function PageLayout({ component: Component, theme = "dark" }: { component: React.ComponentType; theme?: string }) {
   return (
-    <div className={`${theme} min-h-screen bg-background text-foreground transition-colors duration-500`}>
+    <div className={`theme-${theme} min-h-screen bg-background text-foreground transition-colors duration-500`}>
       <Component />
     </div>
   );
 }
 
-function RulingPageLayout({ component: Component }: { component: React.ComponentType }) {
-  return (
-    <div className="theme-ruling min-h-screen bg-background text-foreground transition-colors duration-500">
-      <RulingLayout>
-        <Component />
-      </RulingLayout>
-    </div>
-  );
-}
+const REDIRECT_MAP: Record<string, string> = {
+  "/cathedral": "/evidence",
+  "/endgame": "/evidence",
+  "/expose": "/evidence",
+  "/vault": "/evidence",
+  "/ruling": "/evidence/ring-1", // Rule 1: Inner Sanctum
+  "/ledger": "/evidence",
+  "/headline-news": "/breach"
+};
 
-function EpsteinPageLayout({ component: Component }: { component: React.ComponentType }) {
-  return (
-    <div className="theme-epstein min-h-screen bg-background text-foreground transition-colors duration-500">
-      <EpsteinLayout>
-        <Component />
-      </EpsteinLayout>
-    </div>
-  );
+function RedirectHandler() {
+  const [location, setLocation] = useLocation();
+
+  useEffect(() => {
+    // Check for exact matches
+    if (REDIRECT_MAP[location]) {
+      setLocation(REDIRECT_MAP[location]);
+      return;
+    }
+
+    // Check for pattern matches (e.g., /ledger/* -> /evidence)
+    for (const [key, value] of Object.entries(REDIRECT_MAP)) {
+      if (location.startsWith(key)) {
+        setLocation(value);
+        return;
+      }
+    }
+  }, [location, setLocation]);
+
+  return null;
 }
 
 function Router() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-background text-primary animate-pulse">Entering the Archives...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.2em] font-bold">Unsealing Archives...</div>}>
+      <RedirectHandler />
       <Switch>
-        {/* Landing Page - Public Hub */}
-        <Route path={"/"}><PageLayout component={LandingPage} /></Route>
+        {/* Tier 1: THE SHIELD (Homepage) */}
+        <Route path="/">
+          <PageLayout component={RedesignedHome} />
+        </Route>
 
+        {/* Tier 2: THE EVIDENCE */}
+        <Route path="/evidence">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/ring-:id">
+          {/* This would ideally route to specific ring pages, but for now acts as Evidence Hub */}
+          <PageLayout component={EvidenceHub} />
+        </Route>
+
+        {/* Tier 3: THE BREACH */}
+        <Route path="/breach">
+          <PageLayout component={BreachHub} />
+        </Route>
+
+        {/* ACADEMY & ABOUT */}
+        <Route path="/academy">
+          <PageLayout component={CathedralHome} />
+        </Route>
+        <Route path="/about">
+          <PageLayout component={About} />
+        </Route>
+        <Route path="/corrections">
+          <PageLayout component={Corrections} />
+        </Route>
+
+        {/* Integrated Modular Routes (For deep linking until physical migration) */}
         {ExposeRoutes}
         {EndgameRoutes}
         {VaultRoutes}
 
-        {/* -------------------------------------------
-            THE RULING
-        ------------------------------------------- */}
-        <Route path={"/ruling"}><RulingPageLayout component={RulingHome} /></Route>
-        <Route path={"/ruling/evidence"}><RulingPageLayout component={RulingEvidence} /></Route>
-        <Route path={"/ruling/analysis"}><RulingPageLayout component={RulingAnalysis} /></Route>
-        <Route path={"/ruling/corporate-veil"}><RulingPageLayout component={CorporateVeil} /></Route>
-        <Route path={"/ruling/dirty-dozen"}><RulingPageLayout component={DirtyDozen} /></Route>
-        <Route path={"/ruling/reilly"}><RulingPageLayout component={Reilly} /></Route>
-        <Route path={"/ruling/sanction-plea"}><RulingPageLayout component={SanctionPlea} /></Route>
-        <Route path={"/ruling/sheeran-mccarrick"}><RulingPageLayout component={SheeranMcCarrick} /></Route>
-        <Route path={"/ruling/tobin-hypocrisy"}><RulingPageLayout component={TobinHypocrisy} /></Route>
-
-        {/* -------------------------------------------
-            THE OPINION SECTION (Act 5)
-        ------------------------------------------- */}
-        <Route path={"/opinion"}><PageLayout component={OpinionsHub} theme="theme-opinion" /></Route>
-        <Route path={"/opinion/noonan"}><PageLayout component={NoonanEssay} theme="theme-opinion" /></Route>
-        <Route path={"/opinion/cannon"}><PageLayout component={CannonEssay} theme="theme-opinion" /></Route>
-        <Route path={"/opinion/matthews"}><PageLayout component={MatthewsEssay} theme="theme-opinion" /></Route>
-        <Route path={"/opinion/stephens"}><PageLayout component={StephensEssay} theme="theme-opinion" /></Route>
-
-        {/* -------------------------------------------
-            EPSTEIN
-        ------------------------------------------- */}
-        <Route path={"/epstein"}><EpsteinPageLayout component={EpsteinHome} /></Route>
-        <Route path={"/expose/epstein-pivot"}><EpsteinPageLayout component={EpsteinRuemmlerPivot} /></Route>
-
-        {/* -------------------------------------------
-            STRATEGIC PAGES
-        ------------------------------------------- */}
-        <Route path={"/corrections"}><Corrections /></Route>
-        <Route path={"/about"}><PageLayout component={About} /></Route>
-        <Route path={"/parallels"}><InstitutionalParallels /></Route>
-        <Route path={"/the-record"}><PageLayout component={TheRecord} /></Route>
-        <Route path={"/whistleblowers"}><PageLayout component={WhistleblowerTimeline} /></Route>
-        <Route path={"/vault/findings"}><PageLayout component={LegalFindings} /></Route>
-
-
-        {/* Home fallback routes */}
-        <Route path={"/cathedral"}><PageLayout component={CathedralHome} /></Route>
-        <Route path={"/cathedral*"}><PageLayout component={CathedralHome} /></Route>
-
-        <Route path={"/404"} component={NotFound} />
-        <Route component={NotFound} />
+        {/* Catch-all and Redirects */}
+        <Route>
+          <RedirectHandler />
+          <NotFound />
+        </Route>
       </Switch>
-    </Suspense >
+    </Suspense>
   );
 }
 
@@ -152,8 +118,8 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <div className="flex flex-col min-h-screen">
-            <MegaNavigation />
+          <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
+            <PrimaryNavigation />
             <Router />
           </div>
         </TooltipProvider>
