@@ -17,9 +17,9 @@ export default function HeadlineNews() {
     };
 
     const summaries = {
-        paragraph: `ESSEX COUNTY, NJ — In a landmark ruling on November 17, 2025, Judge Avion Benjamin ordered Seton Hall University to unseal the 20,000-page Latham & Watkins report, a 2018 internal investigation that documented systemic clergy abuse and institutional failure. The ruling follows years of concealment by the university, which had claimed the report was privileged despite findings that it implicated high-ranking officials, including President Joseph Reilly. Survivors and legal advocates hail the decision as a critical step toward transparency and accountability for the "McCarrick Network" that has dominated the region's ecclesiastical and legal landscape for decades.`,
-        page: `The November 17 ruling marked the absolute end of institutional immunity for the Archdiocese of Newark and Seton Hall University. Judge Avion Benjamin's 52-page opinion dismantled the university’s primary defense—that an internal fact-finding mission by Latham & Watkins constituted "attorney-client privilege." The court found that the university had systematically misled the public and the judiciary about the scope of the 2018 investigation.`,
-        detailed: `Forensic Breakdown: The 24,000-Page Breach... [Full Dossier Content Truncated for Download]`
+        paragraph: `The Cathedral Megasite is a 24,000-page forensic breach documenting the collapse of institutional immunity at Seton Hall University and the Archdiocese of Newark. Following the landmark November 2025 Benjamin Ruling, which unsealed the Latham Report, this platform serves as the public repository for the "McCarrick Network" investigation. It exposes the systemic failure of the "Legal Triumvirate," the implementation of the "Scrivenor Pattern" of containment, and the multi-decade strategy used to shield high-ranking officials from accountability for clerical and financial misconduct.`,
+        page: `The November 17 ruling by Judge Avion Benjamin marked a seismic shift in the legal landscape of New Jersey. By dismantling the "attorney-client privilege" defense used to bury the 2018 Latham & Watkins investigation, the court effectively ended five decades of institutional concealment. This journalistic overview traces the narrative arc from the "Origin" of the McCarrick legacy to the "Succession" of current leadership, highlighting the pivotal role of whistleblower testimony in breaching the university’s internal firewall.\n\nThe site is structured as a chronological investigation, guiding users through the forensic evidence that links the "Dirty Dozen" officials to a coordinated cover-up. From the beach houses of the Jersey shore to the corporate halls of South Orange, the trail of evidence reveals a pattern of financial malpractice and systemic abuse that was documented, then hidden, then finally unmasked by the court.`,
+        detailed: `FORENSIC DOSSIER: THE 24,000-PAGE BREACH\n\nI. THE BENJAMIN MANDATE\nAnalysis of the 52-page opinion that unsealed 20,000 pages of "privileged" discovery. The court found that Seton Hall University waived privilege by publicly asserting the "thoroughness" of an investigation they simultaneously sought to hide.\n\nII. THE MCCARRICK NETWORK\nMapping the reach of institutional influence from the Vatican to the Newark Chancery. This section details how Theodore McCarrick leveraged his position to create a culture of silence, supported by the "Legal Triumvirate"—a triad of external counsel, university regents, and diocesan officials.\n\nIII. THE SCRIVENOR PATTERN\nAn exploration of the legal architecture used to "buffer" internal investigations from external discovery. The "Scrivenor Buffer" identifies the specific legal maneuvers used to sanitize reports before they were briefed to the Board of Regents.\n\nIV. THE VAULT\nA comprehensive inventory of forensic intelligence, including the Church Bankruptcy filings (Church-BK) and the secondary "Shadow Ledger." This level provides the raw data that substantiates the narrative of institutional failure documented in the preceding levels.`
     };
 
     return (
@@ -133,12 +133,13 @@ export default function HeadlineNews() {
                                 </button>
                             </div>
                             <h2 className="text-3xl font-black uppercase mb-4">The Benjamin Mandate</h2>
-                            <p className="text-lg leading-relaxed text-zinc-800 font-serif">
-                                The November 17 ruling marked the absolute end of institutional immunity for the Archdiocese of Newark and Seton Hall University. Judge Avion Benjamin's 52-page opinion dismantled the university’s primary defense—that an internal fact-finding mission by Latham & Watkins constituted "attorney-client privilege."
-                            </p>
-                            <p className="text-lg leading-relaxed text-zinc-800 font-serif">
-                                The court found that the university had systematically misled the public and the judiciary about the scope of the 2018 investigation.
-                            </p>
+                            <div className="space-y-4">
+                                {summaries.page.split('\n\n').map((para, i) => (
+                                    <p key={i} className="text-lg leading-relaxed text-zinc-800 font-serif">
+                                        {para}
+                                    </p>
+                                ))}
+                            </div>
                         </div>
                     )}
 
@@ -146,7 +147,7 @@ export default function HeadlineNews() {
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500">
                             <div className="flex justify-between items-start mb-6">
                                 <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em]">
-                                    <FileText size={12} /> Level 03 · 3-Page Forensic Dossier
+                                    <FileText size={12} /> Level 03 · Forensic Dossier
                                 </div>
                                 <button
                                     onClick={() => downloadText("synopsis_dossier.txt", summaries.detailed)}
@@ -155,16 +156,19 @@ export default function HeadlineNews() {
                                     Download <Download size={12} />
                                 </button>
                             </div>
-                            <h2 className="text-3xl font-black uppercase mb-4">Forensic Breakdown: The 24,000-Page Breach</h2>
-                            <div className="space-y-6 text-lg text-zinc-800 font-serif leading-relaxed">
-                                <section className="space-y-4">
-                                    <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        I. The Latham Findings
-                                    </h3>
-                                    <p>
-                                        The unsealed report reveals that the "Legal Triumvirate" of external counsel and university leadership orchestrated a containment strategy that bypassed canonical law and civil discovery.
-                                    </p>
-                                </section>
+                            <h2 className="text-3xl font-black uppercase mb-4 border-b pb-2">Forensic Breakdown: The 24k Breach</h2>
+                            <div className="space-y-8 text-lg text-zinc-800 font-serif leading-relaxed">
+                                {summaries.detailed.split('\n\n').filter(s => s.trim().length > 0 && !s.includes('FORENSIC DOSSIER')).map((section, i) => {
+                                    const lines = section.split('\n');
+                                    return (
+                                        <section key={i} className="space-y-4">
+                                            <h3 className="text-xl font-bold uppercase tracking-tight text-red-700">
+                                                {lines[0]}
+                                            </h3>
+                                            <p>{lines.slice(1).join(' ')}</p>
+                                        </section>
+                                    );
+                                })}
                             </div>
                         </div>
                     )}
@@ -175,12 +179,32 @@ export default function HeadlineNews() {
                                 <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
                                     <Cpu size={12} /> Level 04 · NotebookLM AI Synthesis
                                 </div>
-                                <span className="text-[10px] uppercase font-bold tracking-widest">AI Stream Restricted</span>
+                                <span className="text-[10px] uppercase font-bold tracking-widest animate-pulse text-red-500">Analysis Active</span>
                             </div>
-                            <h2 className="text-3xl font-black uppercase mb-4 text-white">AI Analysis: The Scrivenor Pattern</h2>
-                            <p className="text-lg font-serif">
-                                NotebookLM analysis identifies a recurring structural pattern known as the "Scrivenor Buffer"—a legal and ecclesiastical firewall.
-                            </p>
+                            <h2 className="text-3xl font-black uppercase mb-4 text-white">Pattern Recognition: The Scrivenor Effect</h2>
+                            <div className="space-y-6 font-serif">
+                                <p className="text-lg leading-relaxed border-l-2 border-red-500 pl-6 italic bg-white/5 py-4">
+                                    "NotebookLM analysis identifies a recurring structural pattern known as the 'Scrivenor Buffer'—a legal and ecclesiastical firewall designed to prioritize 'Continuity of Presence' over 'Institutional Integrity'."
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                                    <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                                        <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Finding 01</h4>
+                                        <p className="text-sm">High-frequency "Triumvirate" communications detected during litigation spikes between 2018-2024.</p>
+                                    </div>
+                                    <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                                        <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Finding 02</h4>
+                                        <p className="text-sm">Systematic "Shadowing" of incriminating records into the secondary Shadow Ledger.</p>
+                                    </div>
+                                    <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                                        <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Finding 03</h4>
+                                        <p className="text-sm">Strategic "Plea to Pity" narrative leveraged during the 2025 Benjamin court proceedings.</p>
+                                    </div>
+                                    <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                                        <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Conclusion</h4>
+                                        <p className="text-sm">The "Breach" is irreversible. Forensic breadcrumbs now exist across decentralized public archives.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
