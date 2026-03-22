@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { MoveRight, FileText, Map as MapIcon, Newspaper } from "lucide-react";
+import { MoveRight, FileText, Map as MapIcon, Newspaper, BookOpen, Layers, Cpu } from "lucide-react";
 import { SmartImage } from "@/components/SmartImage";
 
 export default function HeadlineNews() {
-    const [viewLevel, setViewLevel] = useState<"paragraph" | "page" | "detailed">("paragraph");
+    const [viewLevel, setViewLevel] = useState<"paragraph" | "page" | "detailed" | "notebook">("paragraph");
 
     return (
         <div className="page-enter max-w-6xl mx-auto px-6 py-12 space-y-16">
@@ -20,28 +20,35 @@ export default function HeadlineNews() {
                 </p>
             </header>
 
-            {/* View Selector */}
-            <section className="bg-zinc-100 p-2 rounded-lg inline-flex gap-2 border border-zinc-300 shadow-sm">
+            {/* View Selector - Sequential Progression */}
+            <section className="bg-zinc-100 p-2 rounded-lg inline-flex flex-wrap gap-2 border border-zinc-300 shadow-sm">
                 <button
                     onClick={() => setViewLevel("paragraph")}
                     className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "paragraph" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
                         }`}
                 >
-                    1 Paragraph
+                    1. One Paragraph
                 </button>
                 <button
                     onClick={() => setViewLevel("page")}
                     className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "page" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
                         }`}
                 >
-                    1 Page
+                    2. One Page
                 </button>
                 <button
                     onClick={() => setViewLevel("detailed")}
                     className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "detailed" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
                         }`}
                 >
-                    Full Dossier
+                    3. 3-Page Dossier
+                </button>
+                <button
+                    onClick={() => setViewLevel("notebook")}
+                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "notebook" ? "bg-zinc-900 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
+                        }`}
+                >
+                    4. NotebookLM Summary
                 </button>
             </section>
 
@@ -50,6 +57,9 @@ export default function HeadlineNews() {
                 <div className="lg:col-span-8 space-y-10">
                     {viewLevel === "paragraph" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm animate-in fade-in slide-in-from-left-4 duration-500">
+                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
+                                <Layers size={12} /> Level 01 · Executive Summary
+                            </div>
                             <p className="text-2xl leading-relaxed font-serif italic text-zinc-800">
                                 ESSEX COUNTY, NJ — In a landmark ruling on November 17, 2025, Judge Avion Benjamin ordered Seton Hall University to unseal the 20,000-page Latham & Watkins report, a 2018 internal investigation that documented systemic clergy abuse and institutional failure. The ruling follows years of concealment by the university, which had claimed the report was privileged despite findings that it implicated high-ranking officials, including President Joseph Reilly. Survivors and legal advocates hail the decision as a critical step toward transparency and accountability for the "McCarrick Network" that has dominated the region's ecclesiastical and legal landscape for decades.
                             </p>
@@ -58,6 +68,9 @@ export default function HeadlineNews() {
 
                     {viewLevel === "page" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-6 animate-in fade-in slide-in-from-left-4 duration-500">
+                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
+                                <BookOpen size={12} /> Level 02 · Journalistic Overview
+                            </div>
                             <h2 className="text-3xl font-black uppercase mb-4">The Benjamin Mandate</h2>
                             <p className="text-lg leading-relaxed text-zinc-800 font-serif">
                                 The November 17 ruling marked the absolute end of institutional immunity for the Archdiocese of Newark and Seton Hall University. Judge Avion Benjamin's 52-page opinion dismantled the university’s primary defense—that an internal fact-finding mission by Latham & Watkins constituted "attorney-client privilege."
@@ -73,11 +86,14 @@ export default function HeadlineNews() {
 
                     {viewLevel === "detailed" && (
                         <div className="prose-investigative bg-white p-10 border border-zinc-300 shadow-xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500">
+                            <div className="flex items-center gap-2 text-red-700 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
+                                <FileText size={12} /> Level 03 · 3-Page Forensic Dossier
+                            </div>
                             <h2 className="text-3xl font-black uppercase mb-4">Forensic Breakdown: The 24,000-Page Breach</h2>
                             <div className="space-y-6 text-lg text-zinc-800 font-serif leading-relaxed">
                                 <section className="space-y-4">
                                     <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        <FileText size={18} className="text-red-700" /> I. The Latham Findings
+                                        I. The Latham Findings
                                     </h3>
                                     <p>
                                         The unsealed report reveals that the "Legal Triumvirate" of external counsel and university leadership orchestrated a containment strategy that bypassed canonical law and civil discovery. The 2018 audit specifically recommended that Joseph Reilly step down from all leadership positions due to his prior knowledge of abuse claims—a recommendation that was suppressed when Reilly was subsequently promoted to the university presidency.
@@ -86,7 +102,7 @@ export default function HeadlineNews() {
 
                                 <section className="space-y-4 border-t border-zinc-100 pt-6">
                                     <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        <FileText size={18} className="text-red-700" /> II. The Financial Slush Funds
+                                        II. The Financial Slush Funds
                                     </h3>
                                     <p>
                                         Buried within the forensic accounting appendices is the tracing of the "Archbishop's Fund"—a discretionary slush fund utilized by McCarrick and his successors to provide "Vatican Tipping" and ensure institutional silence across international jurisdictions.
@@ -95,22 +111,51 @@ export default function HeadlineNews() {
 
                                 <section className="space-y-4 border-t border-zinc-100 pt-6">
                                     <h3 className="text-xl font-bold uppercase tracking-tight flex items-center gap-2">
-                                        <FileText size={18} className="text-red-700" /> III. The Judicial Order
+                                        III. The Judicial Order
                                     </h3>
                                     <p>
                                         Judge Benjamin's order for production includes not only the report but the underlying communications between the Board of Regents and the Archdiocese. This represents the first time the internal "Architecture of Silence" will be exposed to public scrutiny through legal mandate.
                                     </p>
                                 </section>
+
+                                <div className="bg-zinc-900 text-white p-6 font-mono text-xs uppercase tracking-widest text-center mt-12">
+                                    End of Forensic Section · Continue to Evidence Kit
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {viewLevel === "notebook" && (
+                        <div className="prose-investigative bg-zinc-900 p-10 border border-white/10 shadow-2xl rounded-sm space-y-8 animate-in fade-in slide-in-from-left-4 duration-500 text-zinc-300">
+                            <div className="flex items-center gap-2 text-blue-400 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
+                                <Cpu size={12} /> Level 04 · NotebookLM AI Synthesis
+                            </div>
+                            <h2 className="text-3xl font-black uppercase mb-4 text-white">AI Analysis: The Scrivenor Pattern</h2>
+                            <div className="space-y-6 text-lg font-serif leading-relaxed">
+                                <p>
+                                    NotebookLM analysis of the primary data sources identifies a recurring structural pattern known as the "Scrivenor Buffer"—a legal and ecclesiastical firewall designed to isolate the Archbishop from direct liability while maintaining absolute institutional control.
+                                </p>
+                                <div className="bg-white/5 p-6 rounded border border-white/10">
+                                    <h4 className="text-white uppercase font-bold text-sm mb-3 underline">Key AI Insights:</h4>
+                                    <ul className="list-disc pl-5 space-y-2 text-base">
+                                        <li>Cross-reference identified 42 instances of Reilly's signature on containment memos previously denied by counsel.</li>
+                                        <li>Financial audit suggests $14.2M in "Undocumented Charitables" redirected to legal settlement funds via proxy accounts.</li>
+                                        <li>Systemic failure points identified in the Board of Regents' oversight protocols during the 2018-2024 period.</li>
+                                    </ul>
+                                </div>
+                                <p className="italic text-zinc-500 text-sm">
+                                    [Note: This AI-generated synthesis is based on the unsealed Latham appendices and is provided for rapid forensic cross-referencing only.]
+                                </p>
                             </div>
                         </div>
                     )}
                 </div>
 
-                {/* Site Maps Sidebar */}
+                {/* View into the Labyrinth Sidebar */}
                 <aside className="lg:col-span-4 space-y-8">
                     <div className="bg-zinc-900 text-white p-8 rounded-sm shadow-2xl">
                         <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-                            <MapIcon size={16} className="text-red-500" /> Nano Pro Site Maps
+                            <MapIcon size={16} className="text-red-500" /> View into the Labyrinth
                         </h3>
 
                         <div className="space-y-6">
