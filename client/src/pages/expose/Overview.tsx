@@ -7,53 +7,81 @@ import { Link } from "wouter";
 
 const sections = [
   {
-    path: "/origin/martin",
+    path: "/expose",
     section: "I",
-    title: "The Origin: Kenneth Martin",
-    desc: "The internal 1980s warnings at the Newark seminary that exposed the start of the McCarrick 'nephews' network.",
-    color: "var(--blood)",
+    title: "The Overview",
+    desc: "The 24,000-page Latham Report that was buried in a SCIF for six years until the Judge Benjamin mandate.",
+    color: "var(--gold)",
   },
   {
     path: "/origin/network",
     section: "II",
-    title: "Act I: The McCarrick Machine",
-    desc: "Mapping the forty-year construction of a global network built on institutional silence and systemic grooming.",
+    title: "The McCarrick Network",
+    desc: "How one archbishop built an interlocking system of church, state, and organized crime that outlasted his defrocking.",
     color: "var(--blood)",
   },
   {
-    path: "/coverup/financial",
+    path: "/expose/reilly-protection",
     section: "III",
-    title: "Act II: The Cover-Up (2018-2024)",
-    desc: "Six years of systematic concealment, from the sealing of the Latham Report to the financial shielding of diocesan assets.",
+    title: "Reilly's Ascent",
+    desc: "McCarrick's 1994 secretary — who admitted visiting the Sea Girt beach house — became Seton Hall's president in 2024.",
     color: "var(--blood)",
   },
   {
-    path: "/coverup/legal",
+    path: "/expose/nyre-dismissal",
     section: "IV",
-    title: "The Legal Triumvirate",
-    desc: "The Christie administration legal network and the outside counsel who built a firewall around the hierarchy.",
+    title: "The Nyre Dismissal",
+    desc: "A February 19, 2026 ruling that resolved disputed facts on a motion to dismiss — crediting a report commissioned by the accused.",
+    color: "var(--blood)",
+  },
+  {
+    path: "/expose/legal-triumvirate",
+    section: "V",
+    title: "The Christie Administration Legal Network",
+    desc: "Scrivo, Porrino, and Ruemmler — three alumni who built New Jersey's judiciary and now deploy it to protect the institution.",
     color: "var(--gold)",
   },
   {
-    path: "/breach/courtroom",
-    section: "V",
-    title: "Act III: The Benjamin Mandate",
-    desc: "The landmark November 2025 ruling by Judge Avion Benjamin that shattered the secrecy and unsealed 24,000 pages.",
+    path: "/expose/epstein-nexus",
+    section: "VI",
+    title: "The Epstein Nexus",
+    desc: "The lead investigator was in intimate contact with Jeffrey Epstein while his money was simultaneously flowing into the university.",
+    color: "var(--blood)",
+  },
+  {
+    path: "/origin/martin",
+    section: "VII",
+    title: "Father Kenneth Martin",
+    desc: "The internal 1980s warnings at the Newark seminary that exposed the start of the McCarrick 'nephews' network.",
+    color: "var(--blood)",
+  },
+  {
+    path: "/succession/checchio",
+    section: "VIII",
+    title: "Checchio & New Orleans",
+    desc: "The calculus of relocation: how key figures from the Newark/Metuchen axis are exported to southern outposts.",
+    color: "var(--blood)",
+  },
+  {
+    path: "/breach/rabner",
+    section: "IX",
+    title: "The Rabner Dossier",
+    desc: "19 verified exhibits of corruption submitted to the Chief Justice, documenting the breach of the Architecture of Silence.",
     color: "var(--gold)",
   },
   {
     path: "/breach/whistleblowers",
-    section: "VI",
-    title: "The Breach: Unmasking Campaign",
-    desc: "The retaliation against the whistleblowers who breached the 'Architecture of Silence' to liberate the truth.",
+    section: "X",
+    title: "Subpoena of a Journalist",
+    desc: "A criminal grand jury subpoena to Google, 18 days after Reilly's installation — weaponizing prosecutorial power to silence truth.",
     color: "var(--blood)",
   },
   {
-    path: "/succession/regime",
-    section: "VII",
-    title: "Act IV: The Succession",
-    desc: "The survival of the machine through the 2024 installation of McCarrick's secretary to the university presidency.",
-    color: "var(--blood)",
+    path: "/expose/appeal-grounds",
+    section: "XI",
+    title: "Grounds for Appeal",
+    desc: "The seven reversible errors in the Nyre dismissal that provide the path forward for appellate review and accountability.",
+    color: "var(--gold)",
   },
 ];
 
@@ -100,7 +128,7 @@ export default function Overview() {
             style={{ borderTop: "1px solid #2e2416", fontFamily: "'Lora', serif", color: "#a8a29e" }}
           >
             <span><strong style={{ color: "var(--gold)" }}>19</strong> Verified Exhibits</span>
-            <span><strong style={{ color: "var(--gold)" }}>7</strong> Sections</span>
+            <span><strong style={{ color: "var(--gold)" }}>11</strong> Sections</span>
             <span><strong style={{ color: "var(--gold)" }}>12</strong> Clergymen Named in Latham Report</span>
             <span><strong style={{ color: "var(--gold)" }}>6</strong> Years the Report Was Sealed</span>
           </div>

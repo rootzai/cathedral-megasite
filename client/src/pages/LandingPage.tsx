@@ -15,12 +15,12 @@ import { Link } from 'wouter';
 
 export default function LandingPage() {
   const pillars = [
-    { id: 'I', title: 'THE ORIGIN', path: '/origin', desc: 'The 1980s construction of the McCarrick machine and the early warnings ignored.', icon: Factory },
-    { id: 'II', title: 'THE COVER-UP', path: '/coverup', desc: 'How the legal triumvirate engineered six years of systematic concealment.', icon: Shield },
-    { id: 'III', title: 'BENJAMIN MANDATE', path: '/breach', desc: 'The landmark ruling that shattered the silence and unsealed 24,000 pages.', icon: Zap },
-    { id: 'IV', title: 'THE SUCCESSION', path: '/succession', desc: 'The 2024 installation of the old guard to preserve the institutional machine.', icon: Crown },
-    { id: 'V', title: 'THE RECORD', path: '/the-record', desc: 'A living fact-check of the evidence. Zero factual disputes to date.', icon: FileText },
-    { id: 'VI', title: 'THE VAULT', path: '/vault', desc: 'Confidential Legal Findings and the full Rabner forensic dossier.', icon: Archive }
+    { id: 'I', title: 'THE ORIGIN', path: '/origin/martin', desc: 'The 1980s warnings at the Newark seminary and the grooming of the "nephews" network.', icon: Factory },
+    { id: 'II', title: 'THE COVER-UP', path: '/coverup/financial', desc: 'Six years of systematic concealment: How a 24,000-page report was buried in a SCIF.', icon: Shield },
+    { id: 'III', title: 'EPSTEIN NEXUS', path: '/expose/epstein-nexus', desc: 'The lead investigator was in intimate contact with Jeffrey Epstein during the probe.', icon: Zap },
+    { id: 'IV', title: 'THE SUCCESSION', path: '/succession/regime', desc: 'The 2024 installation of the old guard to preserve the institutional machine.', icon: Crown },
+    { id: 'X', title: 'THE SUBPOENA', path: '/breach/whistleblowers', desc: 'The fabricated crime: A grand jury subpoena to Google to silence a whistleblower.', icon: FileText },
+    { id: 'XI', title: 'THE MANDATE', path: '/breach/courtroom', desc: 'Judge Avion Benjamin\'s landmark ruling that shattered the Architecture of Silence.', icon: Archive }
   ];
 
   return (

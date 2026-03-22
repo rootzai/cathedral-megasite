@@ -18,17 +18,17 @@ import { Link, useLocation } from "wouter";
 import "../pages/expose/expose.css";
 
 const navItems = [
-    { path: "/expose", label: "Overview", subtitle: "The House McCarrick Built", icon: BookOpen, section: "I" },
-    { path: "/expose/mccarrick-network", label: "The McCarrick Network", subtitle: "Church, State & the Mob", icon: Network, section: "II" },
-    { path: "/expose/reilly-protection", label: "Reilly's Ascent", subtitle: "Secretary to President", icon: Church, section: "III" },
-    { path: "/expose/nyre-dismissal", label: "The Nyre Dismissal", subtitle: "Feb. 19, 2026 Ruling", icon: Gavel, section: "IV" },
-    { path: "/expose/legal-triumvirate", label: "The Christie Administration Legal Network", subtitle: "Scrivo, Porrino & Ruemmler", icon: Scale, section: "V" },
-    { path: "/expose/epstein-nexus", label: "The Epstein Nexus", subtitle: "Ruemmler & Financial Ties", icon: Link2, section: "VI" },
-    { path: "/expose/kenneth-martin", label: "Father Kenneth Martin", subtitle: "The Founding Template", icon: Skull, section: "VII" },
-    { path: "/expose/checchio-new-orleans", label: "Checchio & New Orleans", subtitle: "Musical Chairs", icon: Users, section: "VIII" },
-    { path: "/expose/rabner-exhibits", label: "The Rabner Dossier", subtitle: "19 Exhibits of Corruption", icon: FileText, section: "IX" },
-    { path: "/expose/whistleblower-unmasking", label: "Subpoena of a Journalist", subtitle: "Use of a Grand Jury Subpoena", icon: Eye, section: "X" },
-    { path: "/expose/appeal-grounds", label: "Grounds for Appeal", subtitle: "Seven Reversible Errors", icon: Shield, section: "XI" },
+    { path: "/expose", label: "I. The Overview", subtitle: "The Architecture of Silence", icon: BookOpen, section: "I" },
+    { path: "/expose/mccarrick-network", label: "II. McCarrick Network", subtitle: "Church, State & the Mob", icon: Network, section: "II" },
+    { path: "/expose/reilly-protection", label: "III. Reilly's Ascent", subtitle: "Secretary to President", icon: Church, section: "III" },
+    { path: "/expose/nyre-dismissal", label: "IV. The Nyre Dismissal", subtitle: "Feb. 19, 2026 Ruling", icon: Gavel, section: "IV" },
+    { path: "/expose/legal-triumvirate", label: "V. The Legal Triumvirate", subtitle: "Scrivo, Porrino & Ruemmler", icon: Scale, section: "V" },
+    { path: "/expose/epstein-nexus", label: "VI. The Epstein Nexus", subtitle: "The Lead Investigator", icon: Link2, section: "VI" },
+    { path: "/expose/kenneth-martin", label: "VII. Kenneth Martin", subtitle: "The Founding Template", icon: Skull, section: "VII" },
+    { path: "/expose/checchio-new-orleans", label: "VIII. Checchio & NOLA", subtitle: "The Calculus of Relocation", icon: Users, section: "VIII" },
+    { path: "/expose/rabner-exhibits", label: "IX. The Rabner Dossier", subtitle: "19 Forensic Exhibits", icon: FileText, section: "IX" },
+    { path: "/expose/whistleblower-unmasking", label: "X. The Subpoena", subtitle: "The Fabricated Crime", icon: Eye, section: "X" },
+    { path: "/expose/appeal-grounds", label: "XI. Grounds for Appeal", subtitle: "Seven Reversible Errors", icon: Shield, section: "XI" },
 ];
 
 export default function ExposeLayout({ children }: { children: React.ReactNode }) {
