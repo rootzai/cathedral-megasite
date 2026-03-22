@@ -45,7 +45,7 @@ export default function WhistleblowerUnmasking() {
               <p className="text-2xl font-bold leading-tight mb-4">
                 "The message was not legal. It was institutional: we know who you are, and we will find you."
               </p>
-              <footer className="font-mono text-xs uppercase tracking-widest opacity-60">
+              <footer className="font-mono text-sm uppercase tracking-widest text-zinc-500">
                 — Evidence of Institutional Warfare
               </footer>
             </blockquote>
@@ -67,7 +67,7 @@ export default function WhistleblowerUnmasking() {
 
         <header className="mb-12 text-center">
           <h3 className="font-heading text-3xl mb-2">Timeline of Retaliation</h3>
-          <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Cross-Jurisdictional Suppression · 2024-2026</p>
+          <p className="font-mono text-sm text-zinc-600 uppercase tracking-widest">Cross-Jurisdictional Suppression · 2024-2026</p>
         </header>
 
         <div className="space-y-8 relative">
@@ -77,8 +77,8 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-zinc-800 group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Day 18: The First Strike</h4>
-                <span className="font-mono text-[10px] text-zinc-800">JULY 18, 2024</span>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-sm">Day 18: The First Strike</h4>
+                <span className="font-mono text-xs text-zinc-800">JULY 18, 2024</span>
               </div>
               <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Grand jury subpoena issued to Google. The network bypasses civil discovery
@@ -91,8 +91,8 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-gold group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">The Manufactured Predicate</h4>
-                <span className="font-mono text-[10px] text-gold">OCT 2024</span>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-sm">The Manufactured Predicate</h4>
+                <span className="font-mono text-xs text-gold">OCT 2024</span>
               </div>
               <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Archdiocese bulletin publishes claims of "solicitation," providing the thin
@@ -105,8 +105,8 @@ export default function WhistleblowerUnmasking() {
             <div className="absolute left-5 top-1.5 w-3 h-3 rounded-full bg-zinc-800 group-hover:scale-150 transition-transform" />
             <div className="bg-zinc-100/50 p-6 border border-border rounded-sm">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Transcontinental Escalation</h4>
-                <span className="font-mono text-[10px] text-zinc-800">NOV 20, 2025</span>
+                <h4 className="font-bold text-zinc-900 uppercase tracking-widest text-sm">Transcontinental Escalation</h4>
+                <span className="font-mono text-xs text-zinc-800">NOV 20, 2025</span>
               </div>
               <p className="text-sm text-zinc-600 leading-relaxed font-serif">
                 Exactly one year later, despite the California court disposing of the matter,
@@ -143,15 +143,15 @@ export default function WhistleblowerUnmasking() {
           </div>
           <div className="space-y-4">
             <div className="border-b border-border pb-4">
-              <p className="font-mono text-[10px] uppercase text-gold mb-1">N.J.S.A. 2A:84A-21</p>
-              <p className="text-sm font-serif text-muted-foreground">"Protects the gathering and dissemination of news from compelled disclosure."</p>
+              <p className="font-mono text-sm uppercase text-gold mb-1">N.J.S.A. 2A:84A-21</p>
+              <p className="text-base font-serif text-zinc-700">"Protects the gathering and dissemination of news from compelled disclosure."</p>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase text-gold mb-1">Cal. Const. Art. I, § 2(b)</p>
-              <p className="text-sm font-serif text-muted-foreground">"Absolute immunity for journalists refusing to disclose sources."</p>
+              <p className="font-mono text-sm uppercase text-gold mb-1">Cal. Const. Art. I, § 2(b)</p>
+              <p className="text-base font-serif text-zinc-700">"Absolute immunity for journalists refusing to disclose sources."</p>
             </div>
           </div>
-          <p className="text-xs text-muted-foreground italic font-serif leading-relaxed">
+          <p className="text-sm text-zinc-500 italic font-serif leading-relaxed">
             The use of a grand jury to bypass these constitutional protections sets a
             dangerous precedent: that any institution with enough political pull can
             unmask its critics by simply calling them "suspects."
@@ -159,7 +159,7 @@ export default function WhistleblowerUnmasking() {
         </div>
       </section>
 
-      <div className="evidence-box bg-zinc-50 text-parchment p-12 rounded-sm shadow-2xl relative">
+      <div className="evidence-box bg-zinc-100/80 text-zinc-900 p-12 rounded-sm shadow-2xl relative border border-zinc-200">
         <div className="absolute inset-0 bg-zinc-800/5 flex items-center justify-center pointer-events-none">
           <Lock className="w-64 h-64 opacity-5 rotate-12" />
         </div>
@@ -167,7 +167,7 @@ export default function WhistleblowerUnmasking() {
         <p className="text-2xl leading-relaxed italic mb-8 font-serif">
           "The unmasking was not about discovery; it was about exposure."
         </p>
-        <p className="text-sm leading-relaxed opacity-80 font-serif max-w-2xl">
+        <p className="text-sm leading-relaxed font-serif max-w-2xl text-zinc-800">
           The campaign against the *cardinaltobin* account represents the most
           aggressive use of state power in the history of the McCarrick scandal.
           By pursuing a journalist across state lines for the "crime" of warning

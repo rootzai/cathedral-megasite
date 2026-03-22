@@ -317,19 +317,19 @@ export default function TheyKnew() {
               className="p-8 rounded-sm border-2 border-[oklch(0.45_0.18_25/40%)] bg-[oklch(0.1_0.005_285)]"
             >
               <div className="flex items-center gap-3 mb-3">
-                <AlertTriangle className="w-6 h-6 text-zinc-800" />
-                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-zinc-800">
+                <AlertTriangle className="w-6 h-6 text-destructive" />
+                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-parchment">
                   {njagConnection.title}
                 </h3>
               </div>
-              <p className="text-base text-white/70 leading-relaxed mb-8">
+              <p className="text-base text-zinc-400 leading-relaxed mb-8">
                 {njagConnection.description}
               </p>
               <div className="space-y-5">
                 {njagConnection.people.map((person) => (
                   <div key={person.name} className="border-l-2 border-[oklch(0.45_0.18_25/30%)] pl-5">
                     <div className="flex items-center gap-2">
-                      <User className="w-4 h-4 text-zinc-800 shrink-0" />
+                      <User className="w-4 h-4 text-zinc-400 shrink-0" />
                       <span className="font-heading text-base tracking-wide text-parchment">{person.name}</span>
                     </div>
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>
