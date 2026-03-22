@@ -1,317 +1,69 @@
-import { Button } from '@/components/ui/button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { AlertCircle, CheckCircle, Send, Upload, X } from 'lucide-react';
-import { useMemo, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-const tipSchema = z.object({
-  name: z.string().optional(),
-  email: z.string().email().optional().or(z.literal('')),
-  subject: z.string().min(1, "Subject is required"),
-  message: z.string().min(1, "Message is required"),
-  anonymous: z.boolean(),
-  honeypot: z.string().optional(),
-});
-
-type TipFormValues = z.infer<typeof tipSchema>;
+import { Lock, Mail, Phone, AlertCircle } from 'lucide-react';
 
 export function TipSubmissionForm() {
-  const tipEndpoint = useMemo(
-    () => import.meta.env.VITE_TIP_FORM_ENDPOINT?.trim() ?? '',
-    []
-  );
-  const submissionEnabled = Boolean(tipEndpoint);
-  const [files, setFiles] = useState<File[]>([]);
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<TipFormValues>({
-    resolver: zodResolver(tipSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-      anonymous: false,
-      honeypot: '',
-    },
-  });
-
-  const isAnonymous = watch('anonymous');
-
-  const onSubmit = async (data: TipFormValues) => {
-    setErrorMessage(null);
-
-    // Check honeypot (bots will fill this hidden field)
-    if (data.honeypot) {
-      // Spam detected — silently reject
-      return;
-    }
-
-    if (!submissionEnabled) {
-      setStatus('error');
-      setErrorMessage('Secure tip submission is temporarily unavailable. Please use the Signal or ProtonMail options listed below.');
-      return;
-    }
-
-    setStatus('submitting');
-
-    try {
-      // Create FormData for file uploads
-      const submitData = new FormData();
-
-      if (!data.anonymous) {
-        submitData.append('name', data.name || '');
-        submitData.append('email', data.email || '');
-      }
-
-      submitData.append('subject', data.subject);
-      submitData.append('message', data.message);
-      submitData.append('anonymous', data.anonymous.toString());
-      submitData.append('timestamp', new Date().toISOString());
-
-      // Add files
-      files.forEach((file, index) => {
-        submitData.append(`file_${index}`, file);
-      });
-
-      const response = await fetch(tipEndpoint, {
-        method: 'POST',
-        body: submitData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        reset();
-        setFiles([]);
-      } else {
-        throw new Error(`Submission failed with status ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : 'Submission failed. Please try again or use an alternate contact method.'
-      );
-      setStatus('error');
-    }
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files);
-      setFiles(prev => [...prev, ...newFiles]);
-    }
-  };
-
-  const removeFile = (index: number) => {
-    setFiles(prev => prev.filter((_, i) => i !== index));
-  };
-
-  if (status === 'success') {
-    return (
-      <div className="p-8 bg-green-900/20 border border-green-600 rounded-lg text-center">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-2 text-green-400">Tip Submitted Successfully</h3>
-        <p className="text-gray-300 mb-6">
-          Thank you for your submission. We will review your information carefully and follow up if needed.
-        </p>
-        <Button
-          onClick={() => setStatus('idle')}
-          variant="outline"
-          className="bg-transparent"
-        >
-          Submit Another Tip
-        </Button>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6 bg-gray-800/30 border border-gray-700 rounded-lg">
+    <div className="space-y-6">
       {/* Privacy Notice */}
-      <div className="p-4 bg-blue-900/20 border border-blue-600 rounded-lg text-sm">
+      <div className="p-4 bg-blue-900/20 border border-blue-600 rounded-lg text-sm mb-6">
         <p className="text-blue-300">
-          <strong>Privacy Notice:</strong> Your information is transmitted securely and will be kept confidential.
-          We do not share source information with third parties. Check "Anonymous Submission" below if you prefer not to provide contact details.
+          <strong>Security Notice:</strong> To ensure the highest level of source protection, we do not use web-based submission forms which can leave digital traces. Please use one of the direct, encrypted contact methods below.
         </p>
       </div>
 
-      {!submissionEnabled && (
-        <div className="flex items-center gap-3 p-4 bg-orange-900/30 border border-orange-600 rounded-lg text-sm text-orange-100">
-          <AlertCircle className="w-5 h-5 text-orange-300" />
-          Secure web submissions are temporarily disabled. Please use the Signal or ProtonMail options listed below until this encrypted form is re-enabled.
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      {/* Anonymous Toggle */}
-      <div className="flex items-center gap-3 p-4 bg-gray-700/30 rounded-lg">
-        <input
-          type="checkbox"
-          id="anonymous"
-          {...register('anonymous')}
-          className="w-5 h-5 rounded border-gray-600 bg-gray-700 text-red-600 focus:ring-red-600"
-        />
-        <label htmlFor="anonymous" className="text-gray-200 font-semibold cursor-pointer">
-          Submit Anonymously (no contact information required)
-        </label>
-      </div>
-
-      {/* Contact Information (hidden if anonymous) */}
-      {!isAnonymous && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-300">
-              Name (Optional)
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register('name')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none"
-              placeholder="Your name"
-            />
-            {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
+        {/* Signal */}
+        <div className="p-6 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-green-500/50 transition-colors">
+          <div className="flex items-center gap-3 mb-4">
+            <Lock className="w-6 h-6 text-green-500" />
+            <h3 className="text-xl font-bold text-gray-200">Signal (Encrypted)</h3>
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-300">
-              Email (Optional)
-            </label>
-            <input
-              type="email"
-              id="email"
-              {...register('email')}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none"
-              placeholder="your@email.com"
-            />
-            {errors.email && <p className="text-zinc-700 text-xs mt-1">{errors.email.message}</p>}
+          <p className="text-sm text-gray-400 mb-4">
+            For maximum security and anonymity, contact us via the Signal encrypted messaging app. Messages can be set to auto-delete.
+          </p>
+          <div className="bg-gray-900 p-3 rounded text-center font-mono text-lg text-green-400 border border-gray-800">
+            +1 (201) 555-0199
           </div>
         </div>
-      )}
 
-      {/* Subject */}
-      <div>
-        <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-gray-300">
-          Subject <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          id="subject"
-          {...register('subject')}
-          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-zinc-900 focus:border-zinc-300 focus:outline-none"
-          placeholder="Brief description of your tip"
-        />
-        {errors.subject && <p className="text-zinc-700 text-xs mt-1">{errors.subject.message}</p>}
-      </div>
-
-      {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-300">
-          Your Tip <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          rows={8}
-          {...register('message')}
-          className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-zinc-300 focus:outline-none resize-none"
-          placeholder="Provide as much detail as possible. Include dates, names, locations, and any supporting information."
-        />
-        {errors.message && <p className="text-zinc-700 text-xs mt-1">{errors.message.message}</p>}
-      </div>
-
-      {/* File Upload */}
-      <div>
-        <label className="block text-sm font-semibold mb-2 text-gray-300">
-          Attach Documents (Optional)
-        </label>
-        <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-zinc-300 transition-colors">
-          <Upload className="w-8 h-8 text-zinc-100 mx-auto mb-2" />
-          <p className="text-zinc-100 font-medium mb-2">Upload supporting documents, images, or evidence</p>
-          <input
-            type="file"
-            multiple
-            onChange={handleFileChange}
-            className="hidden"
-            id="file-upload"
-            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
-          />
-          <label
-            htmlFor="file-upload"
-            className="inline-block px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg cursor-pointer transition-colors"
-          >
-            Choose Files
-          </label>
+        {/* ProtonMail */}
+        <div className="p-6 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-blue-500/50 transition-colors">
+          <div className="flex items-center gap-3 mb-4">
+            <Mail className="w-6 h-6 text-blue-500" />
+            <h3 className="text-xl font-bold text-gray-200">ProtonMail</h3>
+          </div>
+          <p className="text-sm text-gray-400 mb-4">
+            For transmitting documents securely. If you use a ProtonMail account to email us, the contents remain end-to-end encrypted.
+          </p>
+          <a href="mailto:tips.sodomhall@proton.me" className="block w-full bg-blue-900/30 hover:bg-blue-800/50 border border-blue-800/50 text-blue-300 text-center py-3 rounded font-bold transition-colors">
+            tips.sodomhall@proton.me
+          </a>
         </div>
 
-        {/* File List */}
-        {files.length > 0 && (
-          <div className="mt-4 space-y-2">
-            {files.map((file, index) => (
-              <div
-                key={`${file.name}-${file.lastModified}`}
-                className="flex items-center justify-between p-3 bg-gray-700 rounded-lg"
-              >
-                <span className="text-sm text-gray-300 truncate">{file.name}</span>
-                <button
-                  type="button"
-                  onClick={() => removeFile(index)}
-                  className="text-zinc-300 hover:text-red-400 ml-2"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-            ))}
+        {/* RAINN Hotline */}
+        <div className="p-6 bg-red-950/20 border border-red-900/50 rounded-lg md:col-span-2">
+          <div className="flex justify-between items-start mb-4">
+            <div className="flex items-center gap-3">
+              <Phone className="w-6 h-6 text-red-500" />
+              <h3 className="text-xl font-bold text-gray-200">Survivor Support (RAINN)</h3>
+            </div>
+            {/* Using a text badge instead of external image to prevent broken links */}
+            <span className="bg-white text-zinc-900 font-black text-xs px-2 py-1 rounded tracking-widest hidden sm:inline-block">RAINN</span>
           </div>
-        )}
-      </div>
-
-      {/* Honeypot (hidden from users, catches bots) */}
-      <input
-        type="text"
-        {...register('honeypot')}
-        style={{ display: 'none' }}
-        tabIndex={-1}
-        autoComplete="off"
-      />
-
-      {/* Submit Button */}
-      <div>
-        {status === 'error' && (
-          <div className="mb-4 p-4 bg-zinc-200/50 border border-zinc-300 rounded-lg flex items-center gap-3">
-            <AlertCircle className="w-5 h-5 text-zinc-700 flex-shrink-0" />
-            <p className="text-red-300">
-              {errorMessage ?? 'Submission failed. Please try again or use one of the alternative contact methods above.'}
-            </p>
+          <p className="text-sm text-gray-300 mb-4">
+            If you or someone you know has been affected by sexual assault, help is available 24/7. The Rape, Abuse & Incest National Network (RAINN) provides free, confidential support.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="tel:8006564673" className="flex items-center justify-center gap-2 bg-red-900/40 hover:bg-red-800/60 border border-red-800/50 text-red-300 py-3 rounded font-bold transition-colors">
+              <Phone className="w-4 h-4" /> 800-656-HOPE
+            </a>
+            <a href="https://online.rainn.org" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-red-900/40 hover:bg-red-800/60 border border-red-800/50 text-red-300 py-3 rounded font-bold transition-colors">
+              <AlertCircle className="w-4 h-4" /> Chat Online (rainn.org)
+            </a>
           </div>
-        )}
+        </div>
 
-        <Button
-          type="submit"
-          disabled={status === 'submitting' || !submissionEnabled}
-          className="w-full bg-red-600 hover:bg-red-700 text-zinc-900 font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
-        >
-          {status === 'submitting' ? (
-            <>
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              Submitting Securely...
-            </>
-          ) : (
-            <>
-              <Send className="w-5 h-5" />
-              Submit Tip Securely
-            </>
-          )}
-        </Button>
       </div>
-
-      <p className="text-xs text-zinc-200 text-center font-medium">
-        By submitting, you acknowledge that your information will be handled according to our privacy practices described above.
-      </p>
-    </form>
+    </div>
   );
 }

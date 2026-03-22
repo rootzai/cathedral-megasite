@@ -1,9 +1,21 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { APP_TITLE } from "@/const";
 import { Shield, Lock, Mail, AlertCircle } from "lucide-react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
+import { useEffect } from "react";
 
 export default function About() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location]);
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
       {/* Header */}
@@ -143,37 +155,10 @@ export default function About() {
           <section id="tips">
             <h2 className="text-3xl font-bold mb-4">Submit a Tip</h2>
             <p className="mb-6">
-              We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct. Your submission can be anonymous.
+              We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct.
             </p>
 
             <TipSubmissionForm />
-
-            <div className="mt-8 p-6 bg-gray-800/50 border border-gray-700 rounded-lg">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-green-500" />
-                Alternative Secure Contact Methods
-              </h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <Lock className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>Signal:</strong> For maximum security, contact us via Signal encrypted messaging. Request our Signal number through the form above.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>ProtonMail:</strong> For encrypted email communication, use our ProtonMail address (request via form above).
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong>Anonymous Tips:</strong> You can submit tips without providing any contact information. We cannot follow up with you, but we will investigate credible information.
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
         </div>
 
