@@ -81,6 +81,8 @@ export default function MegaNavigation() {
               </a>
             </Link>
 
+            <Link href="/headline-news"><a className={navLinkClass('/headline-news')}>HEADLINE NEWS</a></Link>
+
             {/* Chapter and Verse Dropdown */}
             <div
               className="relative h-full flex items-center"
@@ -92,20 +94,22 @@ export default function MegaNavigation() {
                 <svg className={`w-3 h-3 transition-transform ${openDropdown === 'chapter-and-verse' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {openDropdown === 'chapter-and-verse' && (
-                <div className="absolute top-full left-0 w-64 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <Link href="/origin"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700 border-b border-zinc-100">0.0 THE HUB (PORTAL)</a></Link>
+                <div className="absolute top-full left-0 w-72 bg-white border-2 border-zinc-300 shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-4 py-1 text-[10px] font-black text-red-700 uppercase tracking-[0.2em] border-b border-zinc-100 mb-1">Act I: The Origin</div>
+                  <Link href="/origin"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700">0.0 THE HUB (PORTAL)</a></Link>
                   <Link href="/origin/martin"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.1 THE FOUNDING TEMPLATE</a></Link>
                   <Link href="/origin/beach-house"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.2 THE BEACH HOUSE</a></Link>
                   <Link href="/origin/network"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.3 THE LABYRINTH</a></Link>
-                  <Link href="/origin/explosion"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700">1.4 THE EXPLOSION</a></Link>
+                  <Link href="/origin/explosion"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-800 hover:bg-red-600/10 hover:text-red-700 pb-2">1.4 THE EXPLOSION</a></Link>
+
+                  <div className="px-4 py-1 text-[10px] font-black text-red-700 uppercase tracking-[0.2em] border-y border-zinc-100 my-1">Forensic Acts</div>
+                  <Link href="/coverup"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700">ACT II: THE COVER-UP</a></Link>
+                  <Link href="/breach"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700">ACT III: THE BREACH</a></Link>
+                  <Link href="/succession"><a className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:bg-red-600/10 hover:text-red-700">ACT IV: THE SUCCESSION</a></Link>
                 </div>
               )}
             </div>
 
-            <Link href="/coverup"><a className={navLinkClass('/coverup')}>THE COVER-UP</a></Link>
-            <Link href="/breach"><a className={navLinkClass('/breach')}>THE BREACH</a></Link>
-            <Link href="/succession"><a className={navLinkClass('/succession')}>THE SUCCESSION</a></Link>
-            <Link href="/headline-news"><a className={navLinkClass('/headline-news')}>HEADLINE NEWS</a></Link>
             <Link href="/opinion"><a className={navLinkClass('/opinion')}>OPINION</a></Link>
 
             {/* Intelligence Dropdown */}
@@ -178,11 +182,15 @@ export default function MegaNavigation() {
 
           {mobileMenuOpen && (
             <div className="pb-3 space-y-1">
-              <Link href="/origin"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE ORIGIN</a></Link>
-              <Link href="/coverup"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE COVER-UP</a></Link>
-              <Link href="/breach"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE BREACH</a></Link>
-              <Link href="/succession"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE SUCCESSION</a></Link>
-              <Link href="/opinion"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">OPINION</a></Link>
+              <Link href="/headline-news"><a className="block px-4 py-2 text-zinc-900 border-b border-zinc-100 font-bold text-red-700">HEADLINE NEWS</a></Link>
+
+              <div className="pt-2 pb-1 px-4 text-xs font-bold text-zinc-500 uppercase tracking-widest">Chapter & Verse</div>
+              <Link href="/origin"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20 pl-8 text-sm">ACT I: THE ORIGIN</a></Link>
+              <Link href="/coverup"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20 pl-8 text-sm">ACT II: THE COVER-UP</a></Link>
+              <Link href="/breach"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20 pl-8 text-sm">ACT III: THE BREACH</a></Link>
+              <Link href="/succession"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20 pl-8 text-sm">ACT IV: THE SUCCESSION</a></Link>
+
+              <Link href="/opinion"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20 border-t border-zinc-100 mt-2">OPINION</a></Link>
 
               <div className="pt-2 pb-1 px-4 text-xs font-bold text-red-700 uppercase tracking-widest border-t border-zinc-200 mt-2">Intelligence</div>
               <Link href="/ledger"><a className="block px-4 py-2 text-zinc-900 hover:bg-red-600/20">THE LEDGER</a></Link>
