@@ -24,7 +24,6 @@ const InstitutionalParallels = React.lazy(() => import("./pages/InstitutionalPar
 
 // Ruling Pages
 const RulingAnalysis = React.lazy(() => import("./pages/ruling/Analysis"));
-const BeachHouse = React.lazy(() => import("./pages/ruling/BeachHouse"));
 const CorporateVeil = React.lazy(() => import("./pages/ruling/CorporateVeil"));
 const DirtyDozen = React.lazy(() => import("./pages/ruling/DirtyDozen"));
 const RulingEvidence = React.lazy(() => import("./pages/ruling/Evidence"));

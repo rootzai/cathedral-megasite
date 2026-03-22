@@ -1,9 +1,50 @@
+/// <reference types="@types/google.maps" />
 import { JourneyNav } from "@/components/JourneyNav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Home, MapPin, Users } from "lucide-react";
+import { AlertTriangle, Home, MapPin, Users, Navigation } from "lucide-react";
+import { MapView } from "@/components/Map";
+import { useState, useRef } from "react";
 
 export default function BeachHouse() {
+  const [showRoute, setShowRoute] = useState(false);
+  const mapRef = useRef<google.maps.Map | null>(null);
+  const directionsRendererRef = useRef<google.maps.DirectionsRenderer | null>(null);
+
+  const handleViewRoute = () => {
+    if (!mapRef.current || !window.google) return;
+
+    setShowRoute(true);
+    const directionsService = new window.google.maps.DirectionsService();
+
+    if (!directionsRendererRef.current) {
+      directionsRendererRef.current = new window.google.maps.DirectionsRenderer({
+        map: mapRef.current,
+        suppressMarkers: false,
+        polylineOptions: {
+          strokeColor: "#ef4444",
+          strokeWeight: 5,
+          strokeOpacity: 0.8
+        }
+      });
+    }
+
+    directionsService.route(
+      {
+        origin: "Seton Hall University, South Orange, NJ",
+        destination: "300 Ocean Avenue, Sea Girt, NJ",
+        travelMode: window.google.maps.TravelMode.DRIVING,
+      },
+      (result: google.maps.DirectionsResult | null, status: google.maps.DirectionsStatus) => {
+        if (status === "OK" && result) {
+          directionsRendererRef.current?.setDirections(result);
+        } else {
+          console.error("Directions request failed due to " + status);
+        }
+      }
+    );
+  };
+
   return (
     <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20">
 
@@ -27,27 +68,29 @@ export default function BeachHouse() {
           </div>
 
           <div className="space-y-6">
-            <div className="relative aspect-video bg-zinc-50 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
-              <iframe
-                title="The Beach House Map"
-                className="w-full h-full border-0 absolute inset-0 opacity-40 mix-blend-screen"
-                loading="lazy"
-                allowFullScreen
-                src="https://maps.google.com/maps?q=300%20Ocean%20Avenue,%20Sea%20Girt,%20NJ&t=k&z=17&ie=UTF8&iwloc=&output=embed"
-              ></iframe>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+            <div className="relative aspect-video bg-zinc-900 rounded-sm border border-border overflow-hidden grayscale contrast-125 group shadow-2xl">
+              <MapView
+                className="w-full h-full grayscale opacity-60 mix-blend-luminosity"
+                initialCenter={{ lat: 40.1311, lng: -74.0315 }}
+                initialZoom={15}
+                onMapReady={(map) => { mapRef.current = map; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-900/60">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-white/60">
                   Coordinates: 40.1311° N, 74.0315° W
                 </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 font-mono text-[10px] uppercase tracking-widest bg-white/50 border-destructive/50 text-zinc-900 hover:bg-destructive hover:text-zinc-900 transition-all"
-                  onClick={() => window.open("https://www.google.com/maps/dir/Seton+Hall+University/300+Ocean+Ave,+Sea+Girt,+NJ", "_blank")}
+                  className={`gap-2 font-mono text-[10px] uppercase tracking-widest transition-all ${showRoute
+                    ? "bg-destructive text-white border-destructive"
+                    : "bg-white/10 border-white/20 text-white hover:bg-destructive hover:border-destructive"
+                    }`}
+                  onClick={handleViewRoute}
                 >
-                  <MapPin className="w-3 h-3" />
-                  View Route
+                  <Navigation className={`w-3 h-3 ${showRoute ? "animate-pulse" : ""}`} />
+                  {showRoute ? "Route Active" : "View Route"}
                 </Button>
               </div>
             </div>
