@@ -43,7 +43,7 @@ const sections = [
   },
   {
     path: "/expose/whistleblower-unmasking",
-    section: "X",
+    section: "VII",
     title: "Subpoena of a Journalist",
     desc: "A criminal grand jury subpoena to Google, 18 days after Reilly's installation — weaponizing prosecutorial power to silence a civil whistleblower.",
     color: "var(--blood)",
@@ -63,40 +63,39 @@ export default function Overview() {
       >
         <div className="absolute top-6 right-8">
           <Link href="/">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-sidebar-dim hover:text-sidebar-gold cursor-pointer transition-colors border border-[#2e2416] px-3 py-1.5 rounded-full">
-              <ArrowRight size={10} className="rotate-180" /> Return to Archway
+            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#a8a29e] hover:text-white cursor-pointer transition-colors border border-[#2e2416] px-4 py-2 rounded-full">
+              <ArrowRight size={14} className="rotate-180" /> Return to Archway
             </div>
           </Link>
         </div>
         <div className="max-w-4xl mx-auto">
-
           <div
-            className="text-xs tracking-widest uppercase mb-4 font-semibold"
-            style={{ color: "var(--sidebar-dim)", fontFamily: "'Playfair Display', serif", letterSpacing: "0.18em" }}
+            className="text-sm tracking-widest uppercase mb-4 font-semibold"
+            style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", letterSpacing: "0.18em" }}
           >
             Forensic Analysis · February 2026 · New Jersey
           </div>
           <h1
-            className="text-5xl font-black leading-tight mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", color: "var(--sidebar-gold)" }}
+            className="text-5xl md:text-7xl font-black leading-tight mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", color: "#faf6ee" }}
           >
             The Architecture<br />of Silence
           </h1>
           <p
-            className="text-xl leading-relaxed max-w-2xl"
-            style={{ color: "var(--sidebar-text)", fontFamily: "'Lora', serif" }}
+            className="text-xl md:text-2xl leading-relaxed max-w-2xl bg-black/20 p-4 rounded"
+            style={{ color: "#d1d5db", fontFamily: "'Lora', serif" }}
           >
             Institutional protectionism in the ecclesiastical and legal networks of New Jersey.
             How the house that McCarrick built has grown stronger since his departure.
           </p>
           <div
-            className="mt-6 pt-5 flex flex-wrap gap-6 text-sm"
-            style={{ borderTop: "1px solid #2e2416", fontFamily: "'Lora', serif", color: "var(--sidebar-dim)" }}
+            className="mt-6 pt-5 flex flex-wrap gap-8 text-sm"
+            style={{ borderTop: "1px solid #2e2416", fontFamily: "'Lora', serif", color: "#a8a29e" }}
           >
-            <span><strong style={{ color: "var(--sidebar-gold)" }}>19</strong> Verified Exhibits</span>
-            <span><strong style={{ color: "var(--sidebar-gold)" }}>11</strong> Sections</span>
-            <span><strong style={{ color: "var(--sidebar-gold)" }}>12</strong> Clergymen Named in Latham Report</span>
-            <span><strong style={{ color: "var(--sidebar-gold)" }}>6</strong> Years the Report Was Sealed</span>
+            <span><strong style={{ color: "var(--gold)" }}>19</strong> Verified Exhibits</span>
+            <span><strong style={{ color: "var(--gold)" }}>7</strong> Sections</span>
+            <span><strong style={{ color: "var(--gold)" }}>12</strong> Clergymen Named in Latham Report</span>
+            <span><strong style={{ color: "var(--gold)" }}>6</strong> Years the Report Was Sealed</span>
           </div>
         </div>
       </div>
