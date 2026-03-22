@@ -12,15 +12,17 @@ export default function EvidenceSubNavigation() {
                     SELECT RING
                 </span>
                 {RINGS.map((ring) => (
-                    <Link key={ring.id} href={ring.route}>
-                        <a className={`
+                    <Link
+                        key={ring.id}
+                        href={ring.route}
+                        className={`
               text-[10px] font-bold uppercase tracking-[0.2em] transition-all py-1
               ${location === ring.route
                                 ? "text-[#8b1a1a] border-b border-[#8b1a1a]"
                                 : "text-[#888] hover:text-[#c8bdb0]"}
-            `}>
-                            {ring.breach ? `★ RING ${ring.id}` : `RING ${ring.id}`}
-                        </a>
+            `}
+                    >
+                        {ring.breach ? `★ RING ${ring.id}` : `RING ${ring.id}`}
                     </Link>
                 ))}
             </div>

@@ -302,7 +302,7 @@ export default function PowerAxis() {
             <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
                 <div className="text-right">
                     <span className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
-                        SODOM HALL &mdash; THE POWER AXIS v2.0
+                        SODOM HALL &mdash; THE POWER AXIS
                     </span>
                     <span className="text-[9px] font-mono text-gray-700 uppercase block mt-1">
                         High-Fidelity Forensic Reconstruction // CID-8842-X

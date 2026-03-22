@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "wouter";
-import ShieldDiagram, { RINGS } from "@/components/ShieldDiagram";
+import ShieldDiagram from "@/components/ShieldDiagram";
+import { RINGS } from "@/lib/data";
 import PowerAxis from "@/components/PowerAxis";
 import { SmartImage } from "@/components/SmartImage";
 

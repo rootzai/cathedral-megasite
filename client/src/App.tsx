@@ -9,7 +9,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 // New Redesigned Pages
 const RedesignedHome = React.lazy(() => import("./pages/RedesignedHome"));
-const EvidenceHub = React.lazy(() => import("./pages/evidence/EvidenceHub"));
+import EvidenceHub from "./pages/evidence/EvidenceHub";
 const BreachHub = React.lazy(() => import("./pages/breach/BreachHub"));
 
 // Legacy Core Pages (Will be mapped to folders)
@@ -65,20 +65,18 @@ function RedirectHandler() {
 function Router() {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.2em] font-bold">Unsealing Archives...</div>}>
-      <RedirectHandler />
       <Switch>
-        {/* Tier 1: THE SHIELD (Homepage) */}
-        <Route path="/">
-          <PageLayout component={RedesignedHome} />
+        {/* Tier 2: THE EVIDENCE (Prioritized forensic paths) */}
+        <Route path="/evidence/ring-:id">
+          <PageLayout component={EvidenceHub} />
         </Route>
-
-        {/* Tier 2: THE EVIDENCE */}
         <Route path="/evidence">
           <PageLayout component={EvidenceHub} />
         </Route>
-        <Route path="/evidence/ring-:id">
-          {/* This would ideally route to specific ring pages, but for now acts as Evidence Hub */}
-          <PageLayout component={EvidenceHub} />
+
+        {/* Tier 1: THE SHIELD (Homepage) */}
+        <Route path="/">
+          <PageLayout component={RedesignedHome} />
         </Route>
 
         {/* Tier 3: THE BREACH */}
@@ -103,7 +101,7 @@ function Router() {
         {VaultRoutes}
 
         {/* Catch-all and Redirects */}
-        <Route>
+        <Route path="/:rest*">
           <RedirectHandler />
           <NotFound />
         </Route>

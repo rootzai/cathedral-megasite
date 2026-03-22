@@ -284,7 +284,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter open" id="ch-payments">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">01.A</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Three Checks</div>
@@ -351,7 +351,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-pattern">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">01.B</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">Epstein's University Playbook</div>
@@ -395,7 +395,7 @@ export default function EpsteinHome() {
           <p className="section-intro">In 2018, Seton Hall's outside counsel Gibbons P.C. retained Latham &amp; Watkins to conduct what it called an "independent, unrestricted review" of Cardinal Theodore McCarrick's conduct at the university. The lead attorney was Kathryn Ruemmler. At the same time, she was exchanging gifts, personal visits, and over 100 emails with Jeffrey Epstein — and was named as a backup executor in his will.</p>
 
           <div className="chapter open" id="ch-ruemmler-bio">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">02.A</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">Who Is Kathryn Ruemmler?</div>
@@ -411,7 +411,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ruemmler-epstein">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">02.B</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Epstein Relationship: Emails, Gifts, and "Uncle Jeffrey"</div>
@@ -438,7 +438,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ruemmler-emails">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">02.C</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Email Evidence: Exhibits from the DOJ Files</div>
@@ -472,7 +472,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ruemmler-report">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">02.D</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Suppressed Report</div>
@@ -507,7 +507,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ruemmler-presentation">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">03.E</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">Presenting the Findings: August 2019, the Board, and the SCIF</div>
@@ -784,7 +784,7 @@ export default function EpsteinHome() {
           <p className="section-intro">While Epstein's money was flowing into SHU and Ruemmler was conducting her compromised review, Seton Hall's law school was simultaneously experiencing a decade-long, $1.3 million embezzlement scheme. The overlap in personnel, timing, and institutional dysfunction raises questions that have not been publicly addressed.</p>
 
           <div className="chapter open" id="ch-embezzlement">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">04.A</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The DeAlmeida Embezzlement: $1.3 Million Over a Decade</div>
@@ -804,7 +804,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-admissions">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">04.B</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Admissions Question: Was It the Law School?</div>
@@ -824,7 +824,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-marino-role">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">04.C</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">Kevin Marino: Board Chairman, Benefactor, and the Unanswered Question</div>
@@ -854,7 +854,7 @@ export default function EpsteinHome() {
           <p className="section-intro">In February 2025, Cardinal Joseph Tobin ordered a new independent review of the Latham &amp; Watkins report and the circumstances surrounding Monsignor Reilly's appointment as SHU president. The firm retained: Ropes &amp; Gray LLP — the same firm that produced the landmark 2018 report on USA Gymnastics and the Larry Nassar scandal. The question is whether this review will be any more independent than the one it is reviewing.</p>
 
           <div className="chapter open" id="ch-ropes-mandate">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">05.A</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">Why Ropes &amp; Gray Was Retained</div>
@@ -872,7 +872,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ropes-team">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">05.B</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Ropes &amp; Gray Team</div>
@@ -964,7 +964,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-ropes-scope">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">05.C</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">What the Review Must Now Address</div>
@@ -998,7 +998,7 @@ export default function EpsteinHome() {
           <p className="section-intro">The three Deutsche Bank checks signed by Darren Indyke are what the DOJ files show. But Epstein's financial architecture was deliberately opaque. The question of whether additional money reached Seton Hall through other means is not paranoia &mdash; it is a legitimate investigative question grounded in how Epstein actually operated.</p>
 
           <div className="chapter open" id="ch-channels-indyke">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">07.A</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">What the DOJ Files Actually Show</div>
@@ -1016,7 +1016,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-channels-methods">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">07.B</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">How Epstein Moved Money Beyond the Obvious</div>
@@ -1046,7 +1046,7 @@ export default function EpsteinHome() {
           </div>
 
           <div className="chapter" id="ch-channels-marino">
-            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter').classList.toggle('open'); }}>
+            <div className="chapter-header" onClick={(e) => { e.currentTarget.closest('.chapter')?.classList.toggle('open'); }}>
               <span className="chapter-num">07.C</span>
               <div className="chapter-title-block">
                 <div className="chapter-title">The Marino Question: A Defense Attorney of Epstein's Caliber</div>
@@ -1207,7 +1207,7 @@ export default function EpsteinHome() {
 ══════════════════════════════════════════════════════════ */}
 
       {/* RUEMMLER MODAL */}
-      <div className="modal-overlay" id="modal-ruemmler" onClick={(e) => { if (e.target.id === 'modal-ruemmler') closeModal('modal-ruemmler'); }}>
+      <div className="modal-overlay" id="modal-ruemmler" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-ruemmler') closeModal('modal-ruemmler'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1232,7 +1232,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* MARINO MODAL */}
-      <div className="modal-overlay" id="modal-marino" onClick={(e) => { if (e.target.id === 'modal-marino') closeModal('modal-marino'); }}>
+      <div className="modal-overlay" id="modal-marino" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-marino') closeModal('modal-marino'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1257,7 +1257,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* BOOZANG MODAL */}
-      <div className="modal-overlay" id="modal-boozang" onClick={(e) => { if (e.target.id === 'modal-boozang') closeModal('modal-boozang'); }}>
+      <div className="modal-overlay" id="modal-boozang" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-boozang') closeModal('modal-boozang'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1280,7 +1280,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* DEALMEIDA MODAL */}
-      <div className="modal-overlay" id="modal-dealmeida" onClick={(e) => { if (e.target.id === 'modal-dealmeida') closeModal('modal-dealmeida'); }}>
+      <div className="modal-overlay" id="modal-dealmeida" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-dealmeida') closeModal('modal-dealmeida'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1303,7 +1303,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* INDYKE MODAL */}
-      <div className="modal-overlay" id="modal-indyke" onClick={(e) => { if (e.target.id === 'modal-indyke') closeModal('modal-indyke'); }}>
+      <div className="modal-overlay" id="modal-indyke" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-indyke') closeModal('modal-indyke'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1328,7 +1328,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* BELLER MODAL */}
-      <div className="modal-overlay" id="modal-beller" onClick={(e) => { if (e.target.id === 'modal-beller') closeModal('modal-beller'); }}>
+      <div className="modal-overlay" id="modal-beller" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-beller') closeModal('modal-beller'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1351,7 +1351,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* LASALA MODAL */}
-      <div className="modal-overlay" id="modal-lasala" onClick={(e) => { if (e.target.id === 'modal-lasala') closeModal('modal-lasala'); }}>
+      <div className="modal-overlay" id="modal-lasala" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-lasala') closeModal('modal-lasala'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1374,7 +1374,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* AMALFE MODAL */}
-      <div className="modal-overlay" id="modal-amalfe" onClick={(e) => { if (e.target.id === 'modal-amalfe') closeModal('modal-amalfe'); }}>
+      <div className="modal-overlay" id="modal-amalfe" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-amalfe') closeModal('modal-amalfe'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1397,7 +1397,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* McMAHON MODAL */}
-      <div className="modal-overlay" id="modal-mcmahon" onClick={(e) => { if (e.target.id === 'modal-mcmahon') closeModal('modal-mcmahon'); }}>
+      <div className="modal-overlay" id="modal-mcmahon" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-mcmahon') closeModal('modal-mcmahon'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1418,7 +1418,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* CHECCHIO MODAL */}
-      <div className="modal-overlay" id="modal-checchio" onClick={(e) => { if (e.target.id === 'modal-checchio') closeModal('modal-checchio'); }}>
+      <div className="modal-overlay" id="modal-checchio" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-checchio') closeModal('modal-checchio'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1439,7 +1439,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* D'ALESSANDRO MODAL */}
-      <div className="modal-overlay" id="modal-dalessandro" onClick={(e) => { if (e.target.id === 'modal-dalessandro') closeModal('modal-dalessandro'); }}>
+      <div className="modal-overlay" id="modal-dalessandro" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-dalessandro') closeModal('modal-dalessandro'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1460,7 +1460,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* McPHEE MODAL */}
-      <div className="modal-overlay" id="modal-mcphee" onClick={(e) => { if (e.target.id === 'modal-mcphee') closeModal('modal-mcphee'); }}>
+      <div className="modal-overlay" id="modal-mcphee" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-mcphee') closeModal('modal-mcphee'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1481,7 +1481,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* DOWDEN MODAL */}
-      <div className="modal-overlay" id="modal-dowden" onClick={(e) => { if (e.target.id === 'modal-dowden') closeModal('modal-dowden'); }}>
+      <div className="modal-overlay" id="modal-dowden" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-dowden') closeModal('modal-dowden'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1502,7 +1502,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* GUGEL MODAL */}
-      <div className="modal-overlay" id="modal-gugel" onClick={(e) => { if (e.target.id === 'modal-gugel') closeModal('modal-gugel'); }}>
+      <div className="modal-overlay" id="modal-gugel" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-gugel') closeModal('modal-gugel'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1521,7 +1521,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* BISK MODAL */}
-      <div className="modal-overlay" id="modal-bisk" onClick={(e) => { if (e.target.id === 'modal-bisk') closeModal('modal-bisk'); }}>
+      <div className="modal-overlay" id="modal-bisk" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-bisk') closeModal('modal-bisk'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>
@@ -1540,7 +1540,7 @@ export default function EpsteinHome() {
       </div>
 
       {/* NYRE MODAL */}
-      <div className="modal-overlay" id="modal-nyre" onClick={(e) => { if (e.target.id === 'modal-nyre') closeModal('modal-nyre'); }}>
+      <div className="modal-overlay" id="modal-nyre" onClick={(e) => { if ((e.target as HTMLElement).id === 'modal-nyre') closeModal('modal-nyre'); }}>
         <div className="modal">
           <div className="modal-header">
             <div>

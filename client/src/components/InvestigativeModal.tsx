@@ -62,7 +62,7 @@ export default function InvestigativeModal({ isOpen, onClose, title, subtitle, c
                         <div className="w-1.5 h-1.5 rounded-full bg-[#8b1a1a] animate-pulse" />
                         <span className="text-[#333] font-mono text-[8px] uppercase tracking-widest">Verification: Forensic Integrity // High-Fidelity Capture</span>
                     </div>
-                    <span className="text-[#333] font-mono text-[8px] uppercase tracking-widest">v2.0 // RCAN-SHU // 2026</span>
+                    <span className="text-zinc-500 font-mono text-[11px] font-bold uppercase tracking-[0.3em]">RCAN-SHU // Investigative Record // 2026</span>
                 </div>
             </div>
         </div>
