@@ -923,18 +923,6 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
               <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12 font-medium italic">August 27, 2019 — The Executive Disclosure</p>
 
               <div className="prose prose-xl max-w-none mb-8 text-zinc-800 font-serif leading-relaxed">
-
-              <div className="mt-12 flex flex-wrap gap-4">
-                <Link href="/vault">
-                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Examine The Origin</a>
-                </Link>
-                <Link href="/breach">
-                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors">Forensic Report</a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
                 <Streamdown>{`
 In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
 
@@ -1007,11 +995,20 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
 "Bury the news." Completely ignore the twelve clergymen and only announce that McCarrick was guilty. Hope no one is paying attention. The material went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
 `}</Streamdown>
               </CollapsibleSection>
-            </div >
-          </div >
-        </section >
 
-      </main >
-    </div >
+              <div className="mt-12 flex flex-wrap gap-4">
+                <Link href="/vault">
+                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Examine The Origin</a>
+                </Link>
+                <Link href="/breach">
+                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors">Forensic Report</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
   );
 }
