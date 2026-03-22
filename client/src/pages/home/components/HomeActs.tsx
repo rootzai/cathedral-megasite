@@ -117,7 +117,7 @@ export function HomeActs() {
 
               <h2 className="text-zinc-600 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
               <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-zinc-900">The Reckoning of May</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 font-light">May 18, 2026 — The Final Deadline</p>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12 font-medium">May 18, 2026 — The Final Deadline</p>
 
               <div className="prose prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
@@ -150,12 +150,22 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
         </section>
 
         {/* SECTION VIII - THE VAULT OPENS (Nov 12, 2025) */}
-        <section id="section-viii" className="py-12 sm:py-16 md:py-24 bg-zinc-50 border-y border-zinc-300/50">
-          <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-l-4 border-zinc-300 shadow-xl">
-              <h2 className="text-zinc-600 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
+        <section id="section-viii" className="py-16 sm:py-24 md:py-32 bg-zinc-50 border-y border-zinc-300/50 relative">
+          <div className="container mx-auto max-w-6xl px-3 sm:px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-zinc-300" />
+              <span className="font-mono text-zinc-500 font-bold tracking-[0.3em]">SUPREME COURT PRODUCTION</span>
+              <div className="h-px flex-1 bg-zinc-300" />
+            </div>
+
+            <div className="bg-zinc-50 border-2 sm:border-4 border-zinc-300 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/40">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-6xl sm:text-9xl font-bold text-zinc-900/5 select-none tracking-tighter">VIII</span>
+              </div>
+
+              <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Vault Opens</h3>
-              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-600 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
               <div className="prose prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
@@ -170,7 +180,7 @@ After six years of litigation, the veil is pierced. The court finds that the "de
 - **Exhibits 1-19**: The first wave of unsealed records showing McCarrick's "nephew" roster.
 - <div className="my-8 bg-zinc-100 border border-zinc-300 p-4 rounded-md">
               <strong className="text-zinc-900 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Sanctioned"</strong>
-              <p className="text-zinc-600 text-sm mt-0">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
+              <p className="text-zinc-600 text-sm mt-0 font-medium">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
             </div>
 **The Scrivo Sanction**: Court records regarding the withholding of 22,000 internal documents.
 `}</Streamdown>
@@ -184,20 +194,40 @@ After six years of litigation, the veil is pierced. The court finds that the "de
 The investigation revealed that for years, University counsel had maintained Two sets of records: one for the public, and one for the vault. The Perry Law Report—commissioned to whitewash the scandal—was leaked to Marino just days before the scheduled disclosure.
 `}</Streamdown>
               </CollapsibleSection>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+                <Link href="/vault">
+                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Examine The Vault</a>
+                </Link>
+                <Link href="/breach">
+                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors">Forensic Briefing</a>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* SECTION IX - THE RABNER DOSSIER (Feb 13, 2026) */}
-        <section id="section-ix" className="py-12 sm:py-16 md:py-24 bg-zinc-50 border-y border-zinc-300/50">
-          <div className="container mx-auto max-w-5xl px-3 sm:px-4">
-            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-r-4 border-zinc-300 text-right shadow-xl">
-              <h2 className="text-zinc-600 font-bold text-base sm:text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Rabner Dossier</h3>
-              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
+        <section id="section-ix" className="py-16 sm:py-24 md:py-32 bg-zinc-50 border-y border-zinc-300/50 relative">
+          <div className="container mx-auto max-w-6xl px-3 sm:px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-zinc-300" />
+              <span className="font-mono text-zinc-500 font-bold tracking-[0.3em]">JUDICIAL REFERRAL</span>
+              <div className="h-px flex-1 bg-zinc-300" />
+            </div>
 
-              <div className="prose prose-invert prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-left bg-zinc-100/50 p-4 sm:p-6 md:p-8 rounded border border-zinc-300">
-                <Streamdown>{`
+            <div className="bg-zinc-50 border-2 sm:border-4 border-zinc-300 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/40">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-6xl sm:text-9xl font-bold text-zinc-900/5 select-none tracking-tighter">IX</span>
+              </div>
+
+              <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Rabner Dossier</h3>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-600 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
+
+              <div className="prose prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-zinc-800 font-serif leading-relaxed">
+                <div className="bg-zinc-200/30 p-6 sm:p-10 md:p-12 rounded border border-zinc-300 shadow-inner text-zinc-900">
+                  <Streamdown>{`
 **A Criminal Referral to the Chief Justice.**
 
 Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stuart Rabner. The dossier documents how O'Toole Scrivo and Lowenstein Sandler built New Jersey's judiciary—appointing over 75 sitting judges—and then deployed that network to protect Seton Hall from civil and criminal accountability.
@@ -207,13 +237,17 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
 - Misapplication of the religious exemption in NJLAD.
 - Material breach of the Nyre release agreement.
 `}</Streamdown>
-              </div>
-              <div className="flex justify-end">
-                <Link href="/breach">
-                  <a className="px-6 py-3 border border-zinc-300 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 font-bold transition-all uppercase tracking-widest text-xs">Examine The Referral</a>
-                </Link>
+                </div>
               </div>
 
+              <div className="mt-12 flex flex-wrap gap-4 justify-end">
+                <Link href="/breach">
+                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Examine The Referral</a>
+                </Link>
+                <Link href="/vault">
+                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors">Associated Evidence</a>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -229,7 +263,7 @@ Evidence of "Closed Loop" legal fraud has been submitted to NJ Chief Justice Stu
             <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION VI</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Succession</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12">2027 — Who Inherits the Cathedral?</p>
 
               <div className="prose prose-invert prose-xl max-w-none mb-8">
                 <Streamdown>{`
@@ -338,7 +372,7 @@ The millstone is rising. The answer is coming.
             <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg border-2 sm:border-4 border-zinc-300">
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION V</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Rome Knew</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12">2020-2025 — The Vatican Connection</p>
 
               <div className="prose prose-invert prose-xl max-w-none mb-8">
                 <Streamdown>{`
@@ -690,17 +724,24 @@ The same network that ran New Jersey's government became the architects of Seton
 
 
         {/* SECTION II - THE LABYRINTH */}
-        <section
-          id="section-ii"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION II</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Labyrinth</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">How the Network Was Built (1987-2020)</p>
+        <section id="section-ii" className="py-16 sm:py-24 md:py-32 bg-zinc-50 border-y border-zinc-300/50 relative">
+          <div className="container mx-auto max-w-6xl px-3 sm:px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-zinc-300" />
+              <span className="font-mono text-zinc-500 font-bold tracking-[0.3em]">THE McCARRICK NETWORK</span>
+              <div className="h-px flex-1 bg-zinc-300" />
+            </div>
 
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
+            <div className="bg-zinc-50 border-2 sm:border-4 border-zinc-300 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/40">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-6xl sm:text-9xl font-bold text-zinc-900/5 select-none tracking-tighter">II</span>
+              </div>
+
+              <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION II</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight text-zinc-900">The Labyrinth</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12 font-medium italic">Architecture of Silence (1987-2020)</p>
+
+              <div className="prose prose-xl max-w-none mb-8 text-zinc-800 font-serif leading-relaxed">
                 <Streamdown>{`
 In 1986, Theodore McCarrick became the Archbishop of Newark. His first act was to shape the future of his Archdiocese. In 1987, two men graduated from Seton Hall seminaries: **Joseph Reilly** and **Elias Lorenzo**. McCarrick ordained them together. McCarrick immediately placed them—like twins—sending Reilly to Seton Hall Prep and Lorenzo to Delbarton.
 
@@ -850,22 +891,50 @@ Twenty-five years after protecting McCarrick, Cardinal Tobin would not just prot
 **The cycle of protection became a cycle of promotion.**
 `}</Streamdown>
               </CollapsibleSection>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+                <Link href="/vault">
+                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Review Network Audit</a>
+                </Link>
+                <Link href="/breach">
+                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors"> McCarrick Timeline</a>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* SECTION I - THE VAULT */}
-        <section
-          id="section-i"
-          className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative bg-cover bg-center bg-blend-overlay bg-zinc-50"
-        >
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="bg-zinc-50 p-6 sm:p-8 md:p-12 rounded-lg">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-zinc-600">SECTION I</h2>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">The Vault</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12">August 27, 2019</p>
+        <section id="section-i" className="py-16 sm:py-24 md:py-32 bg-zinc-50 border-y border-zinc-300/50 relative">
+          <div className="container mx-auto max-w-6xl px-3 sm:px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-zinc-300" />
+              <span className="font-mono text-zinc-500 font-bold tracking-[0.3em]">THE ORIGIN</span>
+              <div className="h-px flex-1 bg-zinc-300" />
+            </div>
 
-              <div className="prose prose-invert prose-xl max-w-none mb-8">
+            <div className="bg-zinc-50 border-2 sm:border-4 border-zinc-300 p-6 sm:p-10 md:p-16 rounded-lg relative overflow-hidden group shadow-2xl shadow-zinc-900/40">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="text-6xl sm:text-9xl font-bold text-zinc-900/5 select-none tracking-tighter">I</span>
+              </div>
+
+              <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION I</h2>
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight text-zinc-900">The Vault</h3>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12 font-medium italic">August 27, 2019 — The Executive Disclosure</p>
+
+              <div className="prose prose-xl max-w-none mb-8 text-zinc-800 font-serif leading-relaxed">
+
+              <div className="mt-12 flex flex-wrap gap-4">
+                <Link href="/vault">
+                  <a className="px-8 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-zinc-700 transition-colors">Examine The Origin</a>
+                </Link>
+                <Link href="/breach">
+                  <a className="px-8 py-3 border border-zinc-300 text-zinc-600 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors">Forensic Report</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
                 <Streamdown>{`
 In a closed executive session, the Board of Regents for Seton Hall University receives the findings of the Latham Report. Thirty-five regents are present. They hear a list of twelve priests named for enabling or concealing abuse.
 
@@ -938,11 +1007,11 @@ The Board unanimously voted to accept the plan requiring all the men to be remov
 "Bury the news." Completely ignore the twelve clergymen and only announce that McCarrick was guilty. Hope no one is paying attention. The material went into a Vault or SCIF "Secured Confidential Information Facility" where regents could sign in and review. This lasted for two weeks in September. Then the letters went out to the punished 12 clergymen, amid rancor and complaints of unfairness.
 `}</Streamdown>
               </CollapsibleSection>
-            </div>
-          </div>
-        </section>
+            </div >
+          </div >
+        </section >
 
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "wouter";
 import ShieldDiagram, { RINGS } from "@/components/ShieldDiagram";
+import PowerAxis from "@/components/PowerAxis";
 import { SmartImage } from "@/components/SmartImage";
 
 export default function RedesignedHome() {
@@ -49,18 +50,8 @@ export default function RedesignedHome() {
                         "We were told the shield was for our protection. In reality, it was a distribution manifest for institutional inertia."
                     </p>
                 </div>
-                <div className="max-w-5xl mx-auto relative h-[600px] bg-[#0a0a0c] border border-[#1a1a22] mb-12 flex items-center justify-center overflow-hidden rounded-xl shadow-2xl shadow-red-900/20">
-                    <SmartImage
-                        src="/assets/power-axis-slide.jpeg"
-                        alt="The Power Axis v2.0 - Mapping the Institutional Vertical"
-                        className="w-full h-full object-cover opacity-90 transition-opacity duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent opacity-80" />
-                    <div className="absolute bottom-12 left-12 right-12 text-left">
-                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] block mb-2">Exhibit 22.1</span>
-                        <h3 className="text-2xl font-bold text-white mb-2">The Displacement Curve</h3>
-                        <p className="text-sm text-[#888] max-w-lg">How 40 years of victims were systematically converted into 'administrative anomalies' through the axis of power.</p>
-                    </div>
+                <div className="max-w-7xl mx-auto mb-12">
+                    <PowerAxis />
                 </div>
             </section>
 
