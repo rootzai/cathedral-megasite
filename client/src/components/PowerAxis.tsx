@@ -103,14 +103,24 @@ export default function PowerAxis() {
                 >
                     The Power Axis
                 </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-[#8b1a1a] font-serif italic text-lg md:text-xl"
-                >
-                    The shield scales vertically &mdash; from Martin to McCarrick to Ruemmler to Epstein
-                </motion.p>
+                <div className="flex flex-col gap-4">
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-[#8b1a1a] font-serif italic text-lg md:text-xl"
+                    >
+                        The shield scales vertically &mdash; from Martin to McCarrick to Ruemmler to Epstein
+                    </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-[#666] italic leading-relaxed max-w-3xl mx-auto"
+                    >
+                        "We were told the shield was for our protection. In reality, it was a distribution manifest for institutional inertia."
+                    </motion.p>
+                </div>
             </div>
 
             {/* The Power Beam SVG */}
