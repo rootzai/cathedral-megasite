@@ -7,78 +7,77 @@ import { cn } from "@/lib/utils";
 const POWER_AXIS_DATA = [
     {
         level: 1,
-        title: "FR. KENNETH MARTIN",
-        subtitle: "PARISH PRIEST",
+        title: "THE PREDATOR",
+        subtitle: "The Genesis of the Scandal",
         stats: [
-            "1983 first report.",
-            "2001 arrested.",
-            "Laicized 2008.",
-            "9 new lawsuits filed 2020.",
-            "Active 2026 trials."
+            "Fr. Kenneth Martin: A 40-year career of documented abuse.",
+            "1983: The first internal report is officially suppressed.",
+            "2001: Arrested after two decades of institutional protection.",
+            "2026: Civil trials finally unseal the 'Predator Files'."
         ],
         callout: {
-            title: "VICTIM CALLOUT",
-            name: "Mark Crawford",
-            details: "Age falsified 15 > 16. Refused $108K.",
-            status: "BREACH IN PROGRESS"
+            title: "CASE STUDY",
+            name: "The Crawford Breach",
+            details: "Mark Crawford's age was falsified by the Diocese to claim the statute of limitations had passed.",
+            status: "DOCUMENTED FRAUD"
         },
-        shieldStatus: "EXPOSED",
+        shieldStatus: "LOCAL FAILURE",
         bgClass: "border-red-900/50 bg-red-950/10 shadow-red-900/10",
         accent: "text-red-500"
     },
     {
         level: 2,
-        title: "BISHOP / DIOCESAN",
-        subtitle: "REGIONAL HUB",
+        title: "THE ARCHITECTS",
+        subtitle: "The Infrastructure of Silence",
         stats: [
-            "Full 6-ring shield.",
-            "Chapter 11 filing.",
-            "A&M playbook.",
-            "432 active lawsuits."
+            "Regional Chancellors design the 'A&M Playbook'.",
+            "Chapter 11: A legal maneuver used to seal 24,000 pages of evidence.",
+            "Internal registries used to 'launder' personnel files between parishes.",
+            "Total concealment of 432 active lawsuits."
         ],
-        shieldStatus: "FRACTURED",
+        shieldStatus: "STRUCTURAL WALL",
         bgClass: "border-gray-800/50 bg-gray-900/10 shadow-gray-900/10",
         accent: "text-gray-400"
     },
     {
         level: 3,
-        title: "ARCHBISHOP MCCARRICK",
-        subtitle: "NEWARK / REGIONAL",
+        title: "THE POWER CENTER",
+        subtitle: "The Newark Machine",
         stats: [
-            "Most powerful Catholic in NJ.",
-            "\"Nephew culture\".",
-            "Sea Girt beach house.",
-            "1995 papal Mass."
+            "Archbishop McCarrick builds a system of absolute loyalty.",
+            "The 'Nephew Culture': Spiritual grooming as a prerequisite for promotion.",
+            "Sea Girt: An oceanfront retreat turned into a grooming facility.",
+            "Whistleblowers silenced through ecclesiastical threats."
         ],
-        shieldStatus: "BREACHED",
+        shieldStatus: "REGIONAL EMBARGO",
         bgClass: "border-red-900/50 bg-red-950/10 shadow-red-900/10",
         accent: "text-red-500"
     },
     {
         level: 4,
-        title: "CARDINAL MCCARRICK",
-        subtitle: "NATIONAL / VATICAN",
+        title: "THE DIPLOMAT",
+        subtitle: "The Global Shield",
         stats: [
-            "Vatican diplomatic channel.",
-            "Defrocked 2019.",
-            "Seton Hall nexus: Latham Report.",
-            "SCIF -> Tobin -> Ruemmler."
+            "McCarrick ascends to the Vatican's innermost diplomatic circle.",
+            "The Latham Report: A forensic unmasking buried for six years.",
+            "Vatican channels used to bypass US legal reporting requirements.",
+            "Institutional survival prioritized over child safety."
         ],
-        shieldStatus: "BREACHED",
+        shieldStatus: "SYSTEMIC COVER-UP",
         bgClass: "border-red-900/50 bg-red-950/10 shadow-red-900/10",
         accent: "text-red-500"
     },
     {
         level: 5,
-        title: "ELITE IMMUNITY",
-        subtitle: "NETWORK CONVERGENCE",
+        title: "FINAL IMMUNITY",
+        subtitle: "The Network Convergence",
         stats: [
-            "Kathryn Ruemmler (WH Counsel).",
-            "Epstein intimate contact.",
-            "Presented sealed report 2019.",
-            "Epstein/Seton Hall nexus."
+            "Kathryn Ruemmler (WH Counsel) and Vatican lawyers manage the optics.",
+            "The Epstein Nexus: A convergence of elite networks to preserve the regime.",
+            "The 2024 Succession: Installing the old guard to maintain the seal.",
+            "The 'Cathedral' is unsealed through the 2026 Breach."
         ],
-        shieldStatus: "INTACT",
+        shieldStatus: "TOTAL PROTECTION",
         bgClass: "border-red-500/30 bg-red-950/20 shadow-red-500/10",
         accent: "text-red-400",
         isTarget: true
@@ -101,7 +100,7 @@ export default function PowerAxis() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-4xl md:text-5xl font-bold text-white uppercase tracking-[0.3em] mb-4"
                 >
-                    The Power Axis
+                    The Architecture of Protection
                 </motion.h2>
                 <div className="flex flex-col gap-4">
                     <motion.p
@@ -110,7 +109,7 @@ export default function PowerAxis() {
                         transition={{ delay: 0.2 }}
                         className="text-[#8b1a1a] font-serif italic text-lg md:text-xl"
                     >
-                        The shield scales vertically &mdash; from Martin to McCarrick to Ruemmler to Epstein
+                        Tracking the escalation from individual abuse to global institutional immunity.
                     </motion.p>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -300,10 +299,10 @@ export default function PowerAxis() {
             {/* Bottom Labeling */}
             <div className="relative mt-20 px-8">
                 <div className="flex flex-col">
-                    <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] mb-2">Exhibit 22.1</span>
+                    <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] mb-2">Forensic Analysis 22.1</span>
                     <h3 className="text-4xl font-serif text-white italic">The Displacement Curve</h3>
                     <p className="text-sm text-gray-500 max-w-xl mt-4 leading-relaxed">
-                        How 40 years of victims were systematically converted into 'administrative anomalies' through the axis of power. The scale ascends from local parish failures to international diplomatic immunity.
+                        A mapping of systemic failure: How thousands of victims were converted into 'administrative anomalies' through several layers of institutional protection. This curve tracks the journey from local negligence to global diplomatic immunity.
                     </p>
                 </div>
             </div>
@@ -312,10 +311,10 @@ export default function PowerAxis() {
             <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
                 <div className="text-right">
                     <span className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
-                        SODOM HALL &mdash; THE POWER AXIS
+                        SODOM HALL // CASE FILE: THE ARCHITECTURE OF PROTECTION
                     </span>
                     <span className="text-[9px] font-mono text-gray-700 uppercase block mt-1">
-                        High-Fidelity Forensic Reconstruction // CID-8842-X
+                        UNSEALED RECORD // FORENSIC RECONSTRUCTION 2026
                     </span>
                 </div>
             </div>
