@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { 
+    FolderDown, 
+    ShieldAlert, 
+    Archive, 
+    Search, 
+    Shield, 
+    ArrowRight, 
+    AlertCircle, 
+    CheckCircle2, 
+    XCircle 
+} from "lucide-react";
 import ShieldDiagram from "@/components/ShieldDiagram";
 import { RINGS } from "@/lib/data";
 import PowerAxis from "@/components/PowerAxis";
@@ -57,50 +69,73 @@ export default function RedesignedHome() {
 
             {/* SECTION 2: THE POWER AXIS (SCROLL TIMELINE) */}
             <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#0d0d10]">
-
                 <div className="max-w-7xl mx-auto mb-12">
                     <PowerAxis />
                 </div>
             </section>
 
-            {/* SECTION 3: THE CRAWFORD NARRATIVE */}
+            {/* SECTION 3: THE HUBRIS (THE MAIN EVENT) */}
             <section className="py-24 px-6 border-b border-[#1a1a22]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
                     <div className="prose prose-invert prose-crimson">
-                        <h2 className="text-3xl font-bold text-white uppercase tracking-[0.2em] mb-10">THE BREACH: Mark Crawford</h2>
+                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] mb-4 block">Institutional Hubris</span>
+                        <h2 className="text-3xl font-bold text-white uppercase tracking-[0.2em] mb-10">THE HUBRIS: The Presidency of Monsignor Reilly</h2>
                         <p className="text-lg leading-relaxed mb-6">
-                            Mark Crawford is the reason the Shield is failing. Unlike the hundred of survivors before him,
-                            Crawford's evidence exists across multiple rings—including Ring 3, the Financial Moat.
+                            They didn't just hide him. They promoted him. The ultimate hubris of the "Shield" was the appointment of Msgr. Reilly as President of Seton Hall University—positioning an architect of silence at the head of a major institution as if no one would ever look inside the briefcase.
                         </p>
                         <p className="text-lg leading-relaxed mb-8">
-                            In 2005, the institution attempted to pay Crawford $108,000 to sign a non-disclosure agreement.
-                            <strong> He refused.</strong> Not only did he refuse, but he uncovered the institution's fatal error:
-                            they had falsified his age in their internal registries to claim the statute of limitations had passed.
+                            It was the "hands in the cookie jar" moment. While Reilly maintained the facade of elite normalcy, a critical "Side Show" was occurring in the basement. <strong>Mark Crawford</strong>, a survivor who refused to be bought, recovered the forensic proof: the blatant falsification of internal age registries to weaponize the statute of limitations.
                         </p>
                         <Link href="/breach">
                             <a className="inline-block border-b-2 border-[#8b1a1a] pb-1 text-sm font-bold uppercase tracking-[0.2em] text-[#8b1a1a] hover:text-white hover:border-white transition-all">
-                                Read the Crawford Deposition →
+                                Examine the Hubris Registry →
                             </a>
                         </Link>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 h-fit">
-                        <div className="bg-[#111116] border border-[#1a1a22] p-6">
-                            <span className="text-[#8b1a1a] text-[10px] font-bold block mb-2">CASE ID</span>
-                            <span className="text-xl font-bold text-white uppercase tabular-nums">15-CRA-2005</span>
+                    <div className="grid grid-cols-2 gap-4 h-fit relative">
+                        {/* THE HUBRIS SIDEBAR (AUDIT LOG) */}
+                        <div className="absolute -left-32 top-0 bottom-0 w-24 hidden xl:flex flex-col gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
+                            <div className="h-full border-l border-[#8b1a1a]/30 flex flex-col justify-between py-4">
+                                <span className="text-[8px] font-mono text-[#8b1a1a] uppercase rotate-90 whitespace-nowrap -ml-4">Audit Trace SHU-2005</span>
+                                <div className="flex flex-col gap-2 pl-4">
+                                    <div className="w-1 h-8 bg-[#8b1a1a]/40" />
+                                    <div className="w-1 h-12 bg-white/20" />
+                                    <div className="w-1 h-4 bg-red-600" />
+                                </div>
+                                <span className="text-[8px] font-mono text-[#444] uppercase rotate-90 whitespace-nowrap -ml-4">Terminal End</span>
+                            </div>
                         </div>
-                        <div className="bg-[#111116] border border-[#1a1a22] p-6">
-                            <span className="text-[#8b1a1a] text-[10px] font-bold block mb-2">STATUS</span>
-                            <span className="text-xl font-bold text-[#8b1a1a] uppercase animate-pulse">BREACHING</span>
+
+                        <div className="bg-[#111116] border border-[#1a1a22] p-6 relative group overflow-hidden text-left">
+                            <div className="absolute inset-0 bg-red-900/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <span className="text-[#8b1a1a] text-[10px] font-bold block mb-2 font-mono">CASE ID // HUBRIS-SHU</span>
+                            <span className="text-xl font-bold text-white uppercase tabular-nums">PRESIDENCY-05</span>
                         </div>
-                        <div className="col-span-2 bg-[#111116] border border-[#1a1a22] p-6 relative overflow-hidden group">
-                            <SmartImage
-                                src="/assets/power-axis-1.png"
-                                alt="Forensic Evidence"
-                                className="w-full h-auto opacity-30 group-hover:opacity-100 transition-opacity duration-700"
-                            />
-                            <div className="absolute top-6 left-6 right-6">
-                                <span className="text-[#8b1a1a] text-[10px] font-bold block mb-2">EVIDENCE SCAN</span>
-                                <span className="text-xs text-[#666] font-mono italic block uppercase">Ring 3 Correspondence — November 2005</span>
+                        <div className="bg-[#111116] border border-[#1a1a22] p-6 text-left">
+                            <span className="text-zinc-600 text-[10px] font-bold block mb-2 font-mono">STATUS</span>
+                            <span className="text-xl font-bold text-red-600 uppercase animate-pulse">INTERNAL BREACH</span>
+                        </div>
+                        <div className="col-span-2 bg-[#111116] border border-[#1a1a22] p-8 relative overflow-hidden group min-h-[300px] flex flex-col justify-end text-left">
+                            {/* Forensic Document Fragments (Simulated via overlay) */}
+                            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none">
+                                <div className="absolute top-10 left-10 w-32 h-40 bg-white/10 rotate-3 border border-white/20" />
+                                <div className="absolute bottom-10 right-10 w-40 h-32 bg-white/10 -rotate-2 border border-white/20" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-32 bg-[#8b1a1a]/10 border border-[#8b1a1a]/30" />
+                            </div>
+
+                            <div className="relative z-10">
+                                <span className="text-[#8b1a1a] text-[10px] font-black block mb-2 tracking-[0.3em]">FORENSIC EVIDENCE SCAN</span>
+                                <span className="text-xs text-[#666] font-mono italic block uppercase mb-4">Seton Hall Nexus // Registry Age Override — 2005</span>
+                                <div className="space-y-2">
+                                    <div className="w-full h-1 bg-[#8b1a1a]/20 rounded-full overflow-hidden">
+                                        <motion.div
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: "100%" }}
+                                            transition={{ duration: 2, repeat: Infinity }}
+                                            className="h-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
+                                    </div>
+                                    <p className="text-[10px] font-mono text-zinc-500 uppercase">Scanning Ring 3 Financial Moat... [VALIDATED]</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,12 +151,13 @@ export default function RedesignedHome() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { term: "Laundered", def: "The process of moving an abuser between parishes without informing local authorities, using 'clean' personnel files." },
-                            { term: "Corporation Sole", def: "A legal entity where all assets are owned by one individual (the Bishop), shielding the institution from individual parish liability." },
-                            { term: "The Vault", def: "A collection of 24,000 unsealed pages detailing the internal knowledge of the cover-up from 1960–2020." },
-                            { term: "The Breach", def: "A specific forensic opening where institutional documentation contradicts public statements or legal filings." }
+                            { term: "Laundered", icon: FolderDown, def: "The process of moving an abuser between parishes without informing local authorities, using 'clean' personnel files." },
+                            { term: "Corporation Sole", icon: ShieldAlert, def: "A legal entity where all assets are owned by one individual (the Bishop), shielding the institution from individual parish liability." },
+                            { term: "The Vault", icon: Archive, def: "A collection of 24,000 unsealed pages detailing the internal knowledge of the cover-up from 1960–2020." },
+                            { term: "The Breach", icon: Search, def: "A specific forensic opening where institutional documentation contradicts public statements or legal filings." }
                         ].map((item, i) => (
-                            <div key={i} className="p-8 border border-[#1a1a22] bg-[#0a0a0c] hover:border-[#8b1a1a]/50 transition-colors">
+                            <div key={i} className="p-8 border border-[#1a1a22] bg-[#0a0a0c] hover:border-[#8b1a1a]/50 transition-all group text-left">
+                                <item.icon className="w-5 h-5 text-[#8b1a1a] mb-6 group-hover:scale-110 transition-transform" />
                                 <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] block mb-4">{item.term}</span>
                                 <p className="text-sm text-[#888] leading-relaxed italic">"{item.def}"</p>
                             </div>
