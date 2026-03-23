@@ -28,4 +28,14 @@ test.describe('Cathedral Megasite Critical Path', () => {
         await expect(page.locator('text=Endgame')).toBeVisible();
         await expect(page.locator('text=An unexpected error occurred')).not.toBeVisible();
     });
+
+    test('McCarrick Network Map (Situation Room) loads', async ({ page }) => {
+        await page.goto('/network');
+
+        await expect(page.locator('text=The McCarrick Network Map')).toBeVisible();
+        await expect(page.locator('text=An unexpected error occurred')).not.toBeVisible();
+        
+        // Check for node visualization
+        await expect(page.locator('text=Cardinal McCarrick')).toBeVisible();
+    });
 });
