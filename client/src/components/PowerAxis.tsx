@@ -63,7 +63,7 @@ const POWER_AXIS_DATA = [
             "Vatican channels used to bypass US legal reporting requirements.",
             "Institutional survival prioritized over child safety."
         ],
-        shieldStatus: "SYSTEMIC COVER-UP",
+        shieldStatus: "METHODICAL COVER-UP",
         bgClass: "border-red-900/50 bg-red-950/10 shadow-red-900/10",
         accent: "text-red-500"
     },
@@ -115,7 +115,7 @@ export default function PowerAxis() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="text-[#666] italic leading-relaxed max-w-3xl mx-auto"
+                        className="text-zinc-400 italic leading-relaxed max-w-3xl mx-auto"
                     >
                         "We were told the shield was for our protection. In reality, it was a distribution manifest for institutional inertia."
                     </motion.p>
@@ -219,8 +219,8 @@ export default function PowerAxis() {
                         </div>
 
                         {/* Bottom Status */}
-                        <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
-                            <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Shield Status</span>
+                        <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between font-mono">
+                            <span className="text-xs text-zinc-400 uppercase tracking-widest">Shield Status</span>
                             <span className={cn("text-xs font-bold uppercase tracking-wider", item.accent)}>
                                 {item.shieldStatus}
                             </span>
@@ -269,7 +269,7 @@ export default function PowerAxis() {
                                 <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-6 font-mono">Structural Integrity</h4>
                                 <div className="space-y-6">
                                     <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
-                                        <span className="text-zinc-500 uppercase text-xs font-bold tracking-widest">Shield Status</span>
+                                        <span className="text-zinc-400 uppercase text-xs font-bold tracking-widest">Shield Status</span>
                                         <span className={cn("text-sm font-black uppercase tracking-widest", selectedLevel.accent)}>{selectedLevel.shieldStatus}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
@@ -301,19 +301,19 @@ export default function PowerAxis() {
                 <div className="flex flex-col">
                     <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] mb-2">Forensic Analysis 22.1</span>
                     <h3 className="text-4xl font-serif text-white italic">The Displacement Curve</h3>
-                    <p className="text-sm text-gray-500 max-w-xl mt-4 leading-relaxed">
-                        A mapping of systemic failure: How thousands of victims were converted into 'administrative anomalies' through several layers of institutional protection. This curve tracks the journey from local negligence to global diplomatic immunity.
+                    <p className="text-sm text-zinc-400 max-w-xl mt-4 leading-relaxed font-medium">
+                        A mapping of methodical failure: How thousands of victims were converted into 'administrative anomalies' through several layers of institutional protection. This curve tracks the journey from local negligence to global diplomatic immunity.
                     </p>
                 </div>
             </div>
 
             {/* Forensic Metadata Branding */}
-            <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
+            <div className="mt-12 px-8 flex justify-end opacity-80 group-hover:opacity-100 transition-opacity">
                 <div className="text-right">
-                    <span className="text-xs font-mono text-gray-400 uppercase tracking-[0.3em] block">
+                    <span className="text-xs font-mono text-zinc-400 uppercase tracking-[0.3em] block">
                         SODOM HALL // CASE FILE: THE ARCHITECTURE OF PROTECTION
                     </span>
-                    <span className="text-xs font-mono text-gray-500 uppercase block mt-1">
+                    <span className="text-xs font-mono text-zinc-500 uppercase block mt-1">
                         UNSEALED RECORD // FORENSIC RECONSTRUCTION 2026
                     </span>
                 </div>

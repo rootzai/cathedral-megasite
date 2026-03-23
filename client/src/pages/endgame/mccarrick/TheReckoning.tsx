@@ -90,7 +90,7 @@ export default function TheReckoning() {
                 The 2020 <strong>McCarrick Report</strong> was an unprecedented act of transparency, admitting that Pope John Paul II was deceived and others failed to act. In response, Pope Francis issued <em>Vos Estis Lux Mundi</em>, establishing new laws for holding bishops accountable.
               </p>
               <p>
-                However, systemic flaws remain. The "pass the trash" mentality, clericalism, and the lack of independent lay oversight continue to plague the institution.
+                However, methodical flaws remain. The "pass the trash" mentality, clericalism, and the lack of independent lay oversight continue to plague the institution.
               </p>
             </div>
             <div className="bg-card border border-border p-6">

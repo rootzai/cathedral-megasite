@@ -32,7 +32,7 @@ export default function Analysis() {
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
           </div>
 
-          <h2 className="font-heading text-3xl text-foreground mb-6">Systemic Failure</h2>
+          <h2 className="font-heading text-3xl text-foreground mb-6">methodical Failure</h2>
           <p className="font-body text-lg text-foreground/80 leading-relaxed mb-6">
             The Benjamin Ruling is not just a legal victory; it is an indictment of a decades-long strategy of containment. The "Dirty Dozen" were not rogue actors. They were the operating system of the Archdiocese of Newark and Seton Hall University.
           </p>

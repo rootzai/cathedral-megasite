@@ -15,8 +15,8 @@ import { Link } from 'wouter';
 
 export default function LandingPage() {
   const pillars = [
-    { id: 'I', title: 'THE ORIGIN', path: '/origin/martin', desc: 'The 1980s warnings at the Newark seminary and the grooming of the "nephews" network.', icon: Factory },
-    { id: 'II', title: 'THE COVER-UP', path: '/coverup/financial', desc: 'Six years of systematic concealment: How a 24,000-page report was buried in a SCIF.', icon: Shield },
+    { id: 'I', title: 'THE ORIGIN', path: '/origin/martin', desc: 'The 1980s warnings at the Newark seminaries and the grooming of the "nephews" network.', icon: Factory },
+    { id: 'II', title: 'THE COVER-UP', path: '/coverup/financial', desc: 'The organized and methodical coverup of priest sex abuse at scale.', icon: Shield },
     { id: 'III', title: 'EPSTEIN NEXUS', path: '/expose/epstein-nexus', desc: 'The lead investigator was in intimate contact with Jeffrey Epstein during the probe.', icon: Zap },
     { id: 'IV', title: 'THE SUCCESSION', path: '/succession/regime', desc: 'The 2024 installation of the old guard to preserve the institutional machine.', icon: Crown },
     { id: 'X', title: 'THE SUBPOENA', path: '/breach/whistleblowers', desc: 'The fabricated crime: A grand jury subpoena to Google to silence a whistleblower.', icon: FileText },

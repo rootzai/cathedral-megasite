@@ -22,7 +22,7 @@ export default function ForensicIntelligence() {
                 <h1 className="text-4xl font-serif font-bold mb-4">Research & Intelligence Index</h1>
                 <p className="text-zinc-600 max-w-2xl leading-relaxed">
                     A consolidated repository of institutional research, financial modeling, and stakeholder analysis
-                    mapping the systemic infrastructure of the Sodom Hall investigation.
+                    mapping the methodical infrastructure of the Sodom Hall investigation.
                 </p>
             </header>
 

@@ -53,7 +53,7 @@ export default function Background() {
               <ul className="space-y-4 font-mono text-xs">
                 <li className="grid grid-cols-[80px_1fr] gap-4">
                   <span className="font-bold text-destructive">2002</span>
-                  <span>Boston Globe "Spotlight" investigation reveals systemic cover-up.</span>
+                  <span>Boston Globe "Spotlight" investigation reveals methodical cover-up.</span>
                 </li>
                 <li className="grid grid-cols-[80px_1fr] gap-4">
                   <span className="font-bold text-destructive">2002</span>

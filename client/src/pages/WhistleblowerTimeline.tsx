@@ -54,7 +54,7 @@ export default function WhistleblowerTimeline() {
             year: "2023",
             name: "Kelli Nyre",
             role: "University Community Member",
-            action: "Documented sexual harassment and systemic abuse patterns.",
+            action: "Documented sexual harassment and methodical abuse patterns.",
             consequence: "Institutional denial and documented complaints ignored.",
             level: "official" as const,
             source: "Official Complaint Logs"

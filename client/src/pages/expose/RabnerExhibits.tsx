@@ -49,7 +49,7 @@ export default function RabnerExhibits() {
       </p>
 
       <div className="pull-quote">
-        "Chief Justice Rabner received 19 exhibits documenting systemic corruption in the OAE, the Essex County judiciary, and the ecclesiastical governance of Seton Hall University."
+        "Chief Justice Rabner received 19 exhibits documenting methodical corruption in the OAE, the Essex County judiciary, and the ecclesiastical governance of Seton Hall University."
       </div>
 
       <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>

@@ -68,7 +68,7 @@ function RedirectHandler() {
 
 function Router() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.4em] font-black text-2xl">Accessing Systemic Records...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.4em] font-black text-2xl">Unsealing Forensic Records...</div>}>
       <Switch>
         {/* Tier 2: THE EVIDENCE */}
         <Route path="/evidence">

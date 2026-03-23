@@ -17,7 +17,7 @@ export default function BreachHub() {
                             The <span className="text-[#8b1a1a]">Breach</span>
                         </h1>
                         <p className="text-2xl text-white/90 leading-relaxed font-light mb-12">
-                            A systemic collapse occurs when institutional arrogance meets forensic reality. 
+                            A methodical collapse occurs when institutional arrogance meets forensic reality. 
                             The Breach is the forensic entry point—the moment the Shield shattered, unsealing the 24,000 withheld pages of the <span className="text-[#8b1a1a] font-bold">House That McCarrick Built</span>.
                         </p>
                     </div>

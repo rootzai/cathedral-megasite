@@ -41,7 +41,7 @@ export default function InvestigativeModal({ isOpen, onClose, title, subtitle, c
                     <div>
                         <span className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-[0.4em] block mb-1">Investigation // Deep Dive</span>
                         <h2 className="text-2xl font-bold text-white uppercase tracking-tight">{title}</h2>
-                        {subtitle && <p className="text-xs text-[#555] italic mt-1">{subtitle}</p>}
+                        {subtitle && <p className="text-xs text-zinc-400 italic mt-1 font-medium">{subtitle}</p>}
                     </div>
                     <button
                         onClick={onClose}
@@ -62,7 +62,7 @@ export default function InvestigativeModal({ isOpen, onClose, title, subtitle, c
                         <div className="w-1.5 h-1.5 rounded-full bg-[#8b1a1a] animate-pulse" />
                         <span className="text-[#333] font-mono text-[8px] uppercase tracking-widest">Verification: Forensic Integrity // High-Fidelity Capture</span>
                     </div>
-                    <span className="text-zinc-500 font-mono text-[11px] font-bold uppercase tracking-[0.3em]">RCAN-SHU // Investigative Record // 2026</span>
+                    <span className="text-zinc-400 font-mono text-[11px] font-bold uppercase tracking-[0.3em]">RCAN-SHU // Investigative Record // 2026</span>
                 </div>
             </div>
         </div>

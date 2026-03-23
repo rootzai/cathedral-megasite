@@ -64,7 +64,7 @@ export default function McCarrickNetwork() {
                         <g key={i}>
                             <motion.path
                                 d={`M ${source.x} ${source.y} L ${target.x} ${target.y}`}
-                                stroke={isHighlighted ? "#8b1a1a" : "#333"}
+                                stroke={isHighlighted ? "#8b1a1a" : "#444"}
                                 strokeWidth={isHighlighted ? 3 : 1}
                                 fill="none"
                                 initial={{ pathLength: 0, opacity: 0 }}
@@ -150,11 +150,11 @@ export default function McCarrickNetwork() {
                         </p>
                         <div className="space-y-4">
                             <div className="bg-white/5 p-4 border border-white/10">
-                                <span className="text-xs text-white/40 uppercase block mb-1">Status</span>
-                                <span className="text-sm text-white font-bold uppercase">Systemic Agent</span>
+                                <span className="text-xs text-zinc-400 uppercase block mb-1">Status</span>
+                                <span className="text-sm text-white font-bold uppercase">Institutional Agent</span>
                             </div>
                             <div className="bg-white/5 p-4 border border-white/10">
-                                <span className="text-xs text-white/40 uppercase block mb-1">Connection Strength</span>
+                                <span className="text-xs text-zinc-400 uppercase block mb-1">Connection Strength</span>
                                 <span className="text-sm text-[#8b1a1a] font-bold uppercase">High-Fidelity</span>
                             </div>
                         </div>

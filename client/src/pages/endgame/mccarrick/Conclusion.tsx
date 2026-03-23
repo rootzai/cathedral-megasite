@@ -14,7 +14,7 @@ export default function Conclusion() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 space-y-8 font-serif text-lg leading-relaxed">
             <p>
-              The Theodore McCarrick scandal is a dark chapter in the history of the Catholic Church, but it also serves as a turning point. The exposure of his crimes and the subsequent investigations have forced the Church to confront its systemic failures and implement necessary reforms.
+              The Theodore McCarrick scandal is a dark chapter in the history of the Catholic Church, but it also serves as a turning point. The exposure of his crimes and the subsequent investigations have forced the Church to confront its methodical failures and implement necessary reforms.
             </p>
             <p>
               While justice for many survivors remains elusive, the laicization of a cardinal and the publication of the McCarrick Report represent significant steps toward accountability. The path forward requires continued vigilance, a commitment to transparency, and an unwavering dedication to protecting the vulnerable.

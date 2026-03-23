@@ -444,15 +444,15 @@
   }
 
   .badge-tobin {
-    background-color: oklch(0.4 0.15 280 / 20%);
-    color: oklch(0.65 0.15 280);
-    border: 1px solid oklch(0.4 0.15 280 / 40%);
+    background-color: oklch(0.4 0.15 280 / 25%);
+    color: oklch(0.8 0.12 280);
+    border: 1px solid oklch(0.6 0.15 280 / 40%);
   }
 
   .badge-christie {
-    background-color: oklch(0.35 0.12 150 / 20%);
-    color: oklch(0.6 0.12 150);
-    border: 1px solid oklch(0.35 0.12 150 / 40%);
+    background-color: oklch(0.35 0.12 150 / 25%);
+    color: oklch(0.75 0.12 150);
+    border: 1px solid oklch(0.5 0.12 150 / 40%);
   }
 
   .badge-nyre {

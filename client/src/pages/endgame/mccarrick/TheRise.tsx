@@ -17,7 +17,7 @@ export default function TheRise() {
           <div className="lg:col-span-8 space-y-6 text-lg leading-relaxed font-serif">
             <p>
               <span className="font-bold first-letter:text-5xl first-letter:font-display first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">T</span>
-              he American Catholic Church’s abuse crisis first gained national attention in 2002, but the seeds were sown decades earlier. Amidst this systemic failure rose Theodore McCarrick, a charismatic cleric whose ascent from a New York priest to a Washington Cardinal was fueled by ambition, fundraising prowess, and a "cult of personality."
+              he American Catholic Church’s abuse crisis first gained national attention in 2002, but the seeds were sown decades earlier. Amidst this methodical failure rose Theodore McCarrick, a charismatic cleric whose ascent from a New York priest to a Washington Cardinal was fueled by ambition, fundraising prowess, and a "cult of personality."
             </p>
             <p>
               Born in 1930 and ordained in 1958, McCarrick quickly gained a reputation as an intelligent and ambitious networker. His early career in education and administration paved the way for a rapid rise through the hierarchy: Auxiliary Bishop of New York (1977), Bishop of Metuchen (1981), Archbishop of Newark (1986), and finally Archbishop of Washington D.C. (2000) and Cardinal (2001).
@@ -84,7 +84,7 @@ export default function TheRise() {
                   </div>
                 </div>
               </ImageModal>
-              <p className="font-mono text-xs text-muted-foreground">Fig 1.2: Systemic Corruption</p>
+              <p className="font-mono text-xs text-muted-foreground">Fig 1.2: methodical Corruption</p>
             </div>
 
             {/* Image 3: Stang of Regents */}

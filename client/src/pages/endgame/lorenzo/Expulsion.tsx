@@ -25,7 +25,7 @@ export default function Expulsion() {
                     <div className="space-y-4">
                         <h4 className="font-mono text-sm uppercase tracking-widest text-muted-foreground">The Early Pattern</h4>
                         <p className="font-body text-muted-foreground leading-relaxed">
-                            At the time of his eviction, he was a seminarian alongside Mark Crawford. The mechanism of the ecclesiastical system at work was clear: expulsion merely relocated the issue rather than addressing it systemically.
+                            At the time of his eviction, he was a seminarian alongside Mark Crawford. The mechanism of the ecclesiastical system at work was clear: expulsion merely relocated the issue rather than addressing it methodicalally.
                         </p>
                     </div>
                 </div>

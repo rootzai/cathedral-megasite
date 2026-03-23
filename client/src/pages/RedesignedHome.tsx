@@ -51,8 +51,8 @@ export default function RedesignedHome() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-7xl md:text-[10rem] font-black text-white uppercase tracking-tighter leading-none mb-12"
                     >
-                        ARCHITECTURE OF<br />
-                        <span className="text-[#8b1a1a]">SYSTEMIC ROT</span>
+                        THE HOUSE THAT<br />
+                        <span className="text-[#8b1a1a]">MCCARRICK BUILT</span>
                     </motion.h1>
 
                     <motion.p 
@@ -62,9 +62,9 @@ export default function RedesignedHome() {
                         className="max-w-5xl mx-auto text-xl md:text-3xl text-white font-light mb-16 px-4"
                     >
                         Seton Hall, the Newark Archdiocese, and the State of New Jersey: <br className="hidden md:block" />
-                        A triangular machine of silence that protected the powerful <span className="text-[#8b1a1a] font-bold underline decoration-red-900/40">from the seminary to the halls of Rome.</span>
+                        A triangular machine of silence that protected the powerful <span className="text-[#8b1a1a] font-bold underline decoration-red-900/40">from the seminaries to the halls of Rome.</span>
                         <span className="text-white/70 text-base md:text-xl block mt-6 italic font-serif">
-                             The unmasking of the corruption that buried the 24,000-page Latham Report.
+                             The unmasking of the organized and methodical coverup of priest sex abuse at scale.
                         </span>
                     </motion.p>
 
@@ -154,7 +154,7 @@ export default function RedesignedHome() {
 
                             <div className="relative z-10">
                                 <span className="text-[#8b1a1a] text-[10px] font-black block mb-2 tracking-[0.3em]">FORENSIC EVIDENCE SCAN</span>
-                                <span className="text-xs text-[#666] font-mono italic block uppercase mb-4">Seton Hall Nexus // Registry Age Override — 2005</span>
+                                <span className="text-xs text-zinc-400 font-mono italic block uppercase mb-4">Seton Hall Nexus // Registry Age Override — 2005</span>
                                 <div className="space-y-2">
                                     <div className="w-full h-1 bg-[#8b1a1a]/20 rounded-full overflow-hidden">
                                         <motion.div
@@ -163,7 +163,7 @@ export default function RedesignedHome() {
                                             transition={{ duration: 2, repeat: Infinity }}
                                             className="h-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
                                     </div>
-                                    <p className="text-[10px] font-mono text-zinc-500 uppercase">Scanning Ring 3 Financial Moat... [VALIDATED]</p>
+                                    <p className="text-[10px] font-mono text-zinc-400 uppercase">Scanning Ring 3 Financial Moat... [VALIDATED]</p>
                                 </div>
                             </div>
                         </div>
@@ -298,8 +298,8 @@ export default function RedesignedHome() {
             {/* FOOTER */}
             <footer className="py-16 px-6 bg-[#0a0a0c] border-t border-[#1a1a22] text-center">
                 <div className="max-w-7xl mx-auto">
-                    <span className="text-[10px] font-bold text-[#333] uppercase tracking-[0.5em] block mb-8">Archbishop of Newark v. Multiple Claimants (2025)</span>
-                    <div className="flex justify-center gap-12 text-[10px] font-bold text-[#555] uppercase tracking-[0.2em]">
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.5em] block mb-8">Archbishop of Newark v. Multiple Claimants (2025)</span>
+                    <div className="flex justify-center gap-12 text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em]">
                         <Link href="/about"><a className="hover:text-white">Imprint</a></Link>
                         <Link href="/corrections"><a className="hover:text-white">Corrections</a></Link>
                         <Link href="/academy"><a className="hover:text-white">Curriculum</a></Link>

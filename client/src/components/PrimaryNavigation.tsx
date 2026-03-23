@@ -8,7 +8,7 @@ export default function PrimaryNavigation() {
         const isActive = location === path || (path !== "/" && location.startsWith(path));
         return `
       px-4 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all
-      ${isActive ? "text-white border-b-2 border-[#8b1a1a]" : "text-[#555] hover:text-[#c8bdb0]"}
+      ${isActive ? "text-white border-b-2 border-[#8b1a1a]" : "text-zinc-400 hover:text-white"}
     `;
     };
 
@@ -34,7 +34,7 @@ export default function PrimaryNavigation() {
 
                 </div>
 
-                <Link href="/about#tips" className="hidden lg:block bg-[#8b1a1a] px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#a51d1d] transition-colors">
+                <Link href="/about#tips" className="hidden lg:block bg-[#8b1a1a] px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-[#a51d1d] transition-colors">
                     SUBMIT A TIP
                 </Link>
             </div>

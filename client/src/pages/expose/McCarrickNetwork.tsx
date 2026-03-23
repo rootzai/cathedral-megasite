@@ -1,6 +1,6 @@
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — The McCarrick Network
-   Church, State & the Mob — NJ Systemic Corruption
+   Church, State & the Mob — NJ methodical Corruption
    ============================================================ */
 import { PersonCard } from "@/components/PersonCard";
 import { type Person, type Badge, boardOfTrustees, boardOfRegents, shuLawyers, investigativeFirms } from "@/lib/data";

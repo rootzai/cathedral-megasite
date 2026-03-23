@@ -13,7 +13,7 @@ export default function Analysis() {
 
         <div className="prose prose-lg max-w-none font-serif">
           <p className="lead text-xl font-bold">
-            The McCarrick case is not an anomaly; it is a symptom of systemic flaws within the Catholic Church's governance structure.
+            The McCarrick case is not an anomaly; it is a symptom of methodical flaws within the Catholic Church's governance structure.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export default function Analysis() {
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-display font-bold text-2xl uppercase border-b-4 border-destructive pb-2 inline-block">Systemic Failures</h3>
+            <h3 className="font-display font-bold text-2xl uppercase border-b-4 border-destructive pb-2 inline-block">methodical Failures</h3>
             <ul className="space-y-4 font-serif text-lg">
               <li className="flex gap-4">
                 <span className="font-mono font-bold text-destructive">01</span>

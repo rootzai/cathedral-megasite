@@ -41,7 +41,7 @@ export default function MatthewsEssay() {
                     they suggest that the problem is individual and theological. But from
                     a governance perspective—the kind we teach at Harvard or practice in
                     the complex regulatory environments of the West—the problem in Newark
-                    is much simpler, and much more systemic. It is a "Governance Gap."
+                    is much simpler, and much more methodical. It is a "Governance Gap."
                 </p>
 
                 <p>
@@ -66,7 +66,7 @@ export default function MatthewsEssay() {
                 <p>
                     The 24,000 pages of suppressed evidence represent a catastrophic
                     breakdown of oversight. In any other billion-dollar entity, a board
-                    that received formal reports of systemic misconduct and chose to seal
+                    that received formal reports of methodical misconduct and chose to seal
                     the data would face immediate derivative suits and federal
                     investigations. But in the Newark See, this behavior is framed as
                     "Ecclesiastical Prudence."
