@@ -17,6 +17,7 @@ const Noonan = React.lazy(() => import("./pages/opinions/Noonan"));
 const Cannon = React.lazy(() => import("./pages/opinions/Cannon"));
 const Matthews = React.lazy(() => import("./pages/opinions/Matthews"));
 const Stephens = React.lazy(() => import("./pages/opinions/Stephens"));
+const NetworkView = React.lazy(() => import("./pages/NetworkView"));
 
 
 // Legacy Core Pages (Will be mapped to folders)
@@ -113,6 +114,9 @@ function Router() {
         </Route>
         <Route path="/ledger">
           <PageLayout component={TheyKnew} />
+        </Route>
+        <Route path="/network">
+          <PageLayout component={NetworkView} />
         </Route>
 
 

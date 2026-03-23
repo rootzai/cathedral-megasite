@@ -24,7 +24,7 @@ export default function PrimaryNavigation() {
 
                 <div className="hidden md:flex items-center">
                      <Link href="/" className={navItemClass("/")}>THE SHIELD</Link>
-                    <Link href="/evidence" className={navItemClass("/evidence")}>THE EVIDENCE</Link>
+                    <Link href="/evidence" className={navItemClass("/evidence")}>DOCUMENTS</Link>
                     <Link href="/breach" className={navItemClass("/breach")}>
                         THE BREACH
                         <span className="ml-2 w-2 h-2 rounded-full bg-[#8b1a1a] inline-block animate-pulse" />

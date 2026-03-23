@@ -10,7 +10,11 @@ import {
     ArrowRight, 
     AlertCircle, 
     CheckCircle2, 
-    XCircle 
+    XCircle,
+    FileX,
+    ChevronRight,
+    Gavel,
+    Activity
 } from "lucide-react";
 import ShieldDiagram from "@/components/ShieldDiagram";
 import { RINGS } from "@/lib/data";
@@ -24,21 +28,46 @@ export default function RedesignedHome() {
             {/* BRAND NEW TRIPTYCH PORTAL */}
             <TriptychPortal />
 
-            {/* SECTION 1: THE SHIELD (HERO) */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center p-6 border-b border-[#1a1a22] overflow-hidden">
-                {/* Ambient glow behind the shield */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-red-900/10 rounded-full blur-[120px]" />
-                </div>
+            {/* HERO SECTION */}
+            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden border-b border-[#1a1a22]">
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="absolute inset-0 bg-[url('/assets/images/cathedral-blueprint.jpg')] bg-cover bg-fixed opacity-30 grayscale contrast-125"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/80 via-[#0a0a0c]/40 to-[#0a0a0c]" />
+                
+                <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+                    <motion.span 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-[#8b1a1a] font-bold text-xs md:text-sm uppercase tracking-[0.5em] mb-8 block font-mono"
+                    >
+                        Intelligence Dossier // Unsealed Archives
+                    </motion.span>
+                    
+                    <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-7xl md:text-[10rem] font-black text-white uppercase tracking-tighter leading-[0.8] mb-12"
+                    >
+                        The House<br />
+                        <span className="text-white/20 text-3xl md:text-5xl font-light normal-case block my-4">That</span>
+                        <span className="text-[#8b1a1a]">McCarrick Built</span>
+                    </motion.h1>
 
-                <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center mt-20">
-                    <span className="text-[#8b1a1a] font-bold text-[10px] md:text-xs uppercase tracking-[0.5em] mb-6 block animate-fade-in drop-shadow-[0_0_10px_rgba(139,26,26,0.5)]">
-                        The Architecture of Concealment
-                    </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-12 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 30px rgba(0,0,0,0.8)" }}>
-                        The Shield of <br className="md:hidden" />
-                        <span className="text-[#8b1a1a]">Sodom Hall</span>
-                    </h1>
+                    <motion.p 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="max-w-4xl mx-auto text-xl md:text-3xl text-white/90 leading-tight font-light mb-16 px-4"
+                    >
+                        An unmasking of the <span className="text-[#8b1a1a] font-bold uppercase tracking-widest text-lg md:text-2xl block mt-4">Architecture of Protection</span>
+                        <span className="text-white/40 text-sm md:text-lg block mt-2 italic font-mono uppercase tracking-[0.2em]">
+                            Built by Marino, Porrino, & Scrivo // Sealed for 24,000 Pages
+                        </span>
+                    </motion.p>
+
 
                     {/* Altar Presentation of the Shield */}
                     <div className="w-full max-w-[900px] mx-auto relative mb-16">
@@ -142,7 +171,107 @@ export default function RedesignedHome() {
                 </div>
             </section>
 
-            {/* SECTION 4: THE VOCABULARY */}
+            {/* SECTION 4: THE MATRIX OF COMPLICITY */}
+            <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#050507] relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none opacity-20">
+                    <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#8b1a1a] to-transparent" />
+                    <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#8b1a1a] to-transparent" />
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-24">
+                        <motion.span 
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[1em] block mb-6"
+                        >
+                            The Enforcers
+                        </motion.span>
+                        <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+                            Matrix of <br className="md:hidden" />
+                            <span className="text-[#8b1a1a]">Complicity</span>
+                        </h2>
+                        <p className="text-[#666] text-lg md:text-xl max-w-3xl mx-auto font-light">
+                            "Did you order the Code Red?" — The coordination between personal defense and institutional cleanup. 
+                            Three architects, one wall of silence.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1a22] border border-[#1a1a22]">
+                        {[
+                            { 
+                                name: "Kevin H. Marino", 
+                                role: "The Board Enforcer", 
+                                bio: "Chairman of the Board who directed the purging of Title IX logs and orchestrated the internal whitewash.",
+                                highlight: "Purged Logs",
+                                link: "/ledger#marino"
+                            },
+                            { 
+                                name: "Christopher S. Porrino", 
+                                role: "The State Hitman", 
+                                bio: "Former NJ AG and Marino's personal lawyer. Coordinated the grand jury subpoena to unmask whistleblowers.",
+                                highlight: "Grand Jury Subpoena",
+                                link: "/ledger#porrino"
+                            },
+                            { 
+                                name: "Thomas P. Scrivo", 
+                                role: "The Institutional Cleaner", 
+                                bio: "Former Christie Chief Counsel. Expert in metadata concealment. Blocked whistleblowers from testifying to the Cardinal.",
+                                highlight: "Metadata Specialist",
+                                link: "/ledger#scrivo"
+                            }
+                        ].map((villain, i) => (
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                className="bg-[#0a0a0c] p-12 hover:bg-[#0d0d10] transition-colors group relative overflow-hidden"
+                            >
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+                                    <FileX className="w-8 h-8 text-[#8b1a1a]" />
+                                </div>
+                                <span className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-widest block mb-4">Dossier Entry #{334 + i}</span>
+                                <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-2 leading-none group-hover:text-[#8b1a1a] transition-colors">
+                                    {villain.name}
+                                </h3>
+                                <p className="text-[#8b1a1a] text-xs font-bold uppercase tracking-widest mb-8">{villain.role}</p>
+                                <div className="space-y-6 mb-12">
+                                    <p className="text-[#666] text-sm leading-relaxed font-light italic">
+                                        "{villain.bio}"
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+                                        <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-widest">Target Intel: {villain.highlight}</span>
+                                    </div>
+                                </div>
+                                <Link href={villain.link}>
+                                    <a className="inline-flex items-center gap-2 text-white font-bold text-[10px] uppercase tracking-[0.3em] hover:gap-4 transition-all">
+                                        Examine Evidence <ChevronRight className="w-3 h-3 text-[#8b1a1a]" />
+                                    </a>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="mt-24 p-12 border border-[#1a1a22] bg-red-950/5 text-center">
+                        <p className="text-[#8b1a1a] font-mono text-sm uppercase tracking-widest mb-4">Coordinated Maneuver Detected</p>
+                        <h4 className="text-2xl font-black text-white uppercase tracking-tighter mb-4 italic">"The Six-Day Gap"</h4>
+                        <p className="text-zinc-500 max-w-2xl mx-auto text-sm leading-relaxed mb-6">
+                            December 11: Porrino threatens whistleblower. <br/>
+                            December 17: Scrivo sends identical threat naming the whistleblower by identity obtained via secret subpoena. <br/>
+                            <span className="text-white mt-4 block">Coordination: 100% // Complicity: Absolute</span>
+                        </p>
+                        <Link href="/network">
+                            <a className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b1a1a] text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all group">
+                                <Activity className="w-4 h-4 animate-pulse" /> Launch Intelligence Map
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 5: THE VOCABULARY */}
             <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#0d0d10]">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
@@ -153,8 +282,8 @@ export default function RedesignedHome() {
                         {[
                             { term: "Laundered", icon: FolderDown, def: "The process of moving an abuser between parishes without informing local authorities, using 'clean' personnel files." },
                             { term: "Corporation Sole", icon: ShieldAlert, def: "A legal entity where all assets are owned by one individual (the Bishop), shielding the institution from individual parish liability." },
-                            { term: "The Vault", icon: Archive, def: "The unsealed archives of the cover-up of the cover-up—a multi-generational forensic record extending far beyond any single report." },
-                            { term: "The Breach", icon: Search, def: "A specific forensic opening where institutional documentation contradicts public statements or legal filings." }
+                            { term: "The Vault", icon: Archive, def: "The unsealed-but-withheld 24,000 pages of the Latham Report. The document that wasn't there." },
+                            { term: "The Code Red", icon: Gavel, def: "A coordinated multi-firm legal maneuver designed to unmask and silence whistleblowers through fabricated criminal fraud claims." }
                         ].map((item, i) => (
                             <div key={i} className="p-8 border border-[#1a1a22] bg-[#0a0a0c] hover:border-[#8b1a1a]/50 transition-all group text-left">
                                 <item.icon className="w-5 h-5 text-[#8b1a1a] mb-6 group-hover:scale-110 transition-transform" />

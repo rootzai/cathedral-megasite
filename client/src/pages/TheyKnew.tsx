@@ -87,18 +87,18 @@ export default function TheyKnew() {
             SodomHall.com Presents
           </p>
 
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold leading-tight mb-4">
-            Seton Hall
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-9xl tracking-[0.2em] text-gold leading-tight mb-4 uppercase">
+            THE LEDGER
           </h1>
-          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-wider text-parchment leading-tight mb-8">
-            The Boards & The Lawyers
+          <h2 className="font-heading text-xl md:text-3xl lg:text-4xl tracking-[0.1em] text-parchment leading-tight mb-8 italic">
+            The Administrative Architecture of The House That McCarrick Built
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-8" />
           <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-3xl mx-auto">
-            A comprehensive reference of every individual who served on Seton Hall University's three governing boards from 2016 to 2026 — and the lawyers who defended the indefensible.
+            A forensic index of every individual and entity complicit in the design, maintenance, and defense of the Architecture of Protection.
           </p>
-          <p className="text-base md:text-lg text-white/80 mt-6 italic bg-background/50 backdrop-blur-sm p-4 inline-block rounded-sm">
-            Who heard the Latham Report. Who voted for Reilly. Who received the Cardinal's letters.
+          <p className="text-sm md:text-base text-white/60 mt-8 tracking-[0.2em] uppercase font-mono">
+            Log-Purgers // Metadata Specialists // State Hitmen // Whistleblower Targets
           </p>
         </motion.div>
       </header>

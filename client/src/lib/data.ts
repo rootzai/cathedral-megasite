@@ -99,7 +99,7 @@ export const RINGS: Ring[] = [
     id: 1,
     name: "Inner Sanctum",
     route: "/origin/root",
-    description: "The primary repository of the 24,000 unsealed pages. This is the bedrock of the forensic archive, containing the original Latham Report and suppressed witness transcripts.",
+    description: "The primary repository of the 24,000 unsealed—but still withheld—pages. This is the bedrock of the forensic archive, containing the original Latham Report and proof of institutional suppression.",
     breach: false
   },
   {
@@ -219,10 +219,10 @@ export const boardOfRegents: BoardSection = {
   leadership: [
     {
       name: "Kevin H. Marino",
-      role: "Chair (2019–2023)",
+      role: "The Board Enforcer // Chair (2019–2023)",
       tenure: "Regent prior to 2019",
       badges: ["latham", "reilly", "christie"],
-      note: "Chairman of Marino, Tortorella & Boyle. Presided over the board that received LaSala's recommendations and chose to promote Reilly anyway. Former colleague of LaSala at Robinson, Wayne, Riccio & LaSala.",
+      note: "Chairman of Marino, Tortorella & Boyle. Directed the May 2023 erasure of Title IX abuse logs. Personally represented by Porrino in the coordination to unmask whistleblowers. Resigned Dec 2023 to settle harassment complaints.",
     },
     {
       name: "Henry F. D'Alessandro",
@@ -405,8 +405,8 @@ export const shuLawyers: LawyerFirm[] = [
     attorneys: [
       {
         name: "Thomas P. Scrivo",
-        title: "Managing Partner",
-        note: "Former Chief Counsel to Gov. Christie. Former Chair of SHU Law Board of Visitors. Fellow, American College of Trial Lawyers. Blocked Nyre from cooperating with Ropes & Gray.",
+        title: "The Institutional Cleaner",
+        note: "Former Chief Counsel to Gov. Christie. Vetted 75+ NJ judges. Specialist in metadata concealment. Twice blocked whistleblowers from testifying to Ropes & Gray. Orchestrated the 'Code Red' coordination.",
         badges: ["christie", "sanctioned", "latham", "reilly"] as Badge[]
       },
       {
@@ -448,8 +448,8 @@ export const shuLawyers: LawyerFirm[] = [
     attorneys: [
       {
         name: "Christopher S. Porrino",
-        title: "Partner",
-        note: "Former NJ Attorney General (2016–2018) under Christie. Sits on SHU Law Board of Visitors. Accused of coordinating legal threats against whistleblowers. Wrote op-ed endorsing Davenport as AG.",
+        title: "The State Hitman",
+        note: "Former NJ Attorney General. Personal attorney to Kevin Marino. Coordinated the secret Google grand jury subpoena via manufactured fraud claims in parish bulletins to unmask journalists.",
         badges: ["christie", "latham"] as Badge[]
       },
     ],
@@ -473,8 +473,8 @@ export const investigativeFirms: LawyerFirm[] = [
     attorneys: [
       {
         name: "Kathryn Ruemmler",
-        title: "Former Global Co-Chair, White Collar Defense",
-        note: "Former White House Counsel to President Obama. In frequent contact with Jeffrey Epstein during the investigation (100+ emails). Received gifts from Epstein. Resigned from Goldman Sachs Feb 2026 over Epstein ties.",
+        title: "The Epstein Liaison",
+        note: "Former White House Counsel. Conducted the investigation while in frequent intimate contact with Jeffrey Epstein (100+ emails/visits). Received Hermès gifts from Epstein. Delivered the report that was immediately sealed.",
         badges: ["latham", "epstein"] as Badge[]
       },
       { name: "Jonathan Su", title: "Partner, White Collar Defense", note: "Described the investigation as 'one of the most unique and challenging of his career.' Both Su and Ruemmler presented findings to the Seton Hall board on Aug 27, 2019." },
@@ -592,3 +592,43 @@ export function getUniqueMembers(members: (Person & { board: string })[]): (Pers
   });
   return Array.from(map.values());
 }
+
+/* ===== NETWORK DATA: THE McCARRICK MIND MAP ===== */
+export interface NetworkNode {
+  id: string;
+  name: string;
+  group: 'clergy' | 'board' | 'legal' | 'nexus' | 'evidence';
+  type: 'root' | 'node' | 'nexus';
+  connection?: string;
+  note?: string;
+}
+
+export interface NetworkLink {
+  source: string;
+  target: string;
+  type: 'primary' | 'secondary' | 'coordinated';
+  label?: string;
+}
+
+export const networkData: { nodes: NetworkNode[], links: NetworkLink[] } = {
+  nodes: [
+    { id: 'mccarrick', name: 'Cardinal McCarrick', group: 'clergy', type: 'root', note: 'The central hub of the Architecture of Protection.' },
+    { id: 'reilly', name: 'Msgr. Joseph Reilly', group: 'clergy', type: 'node', connection: 'The Secretary', note: 'McCarrick\'s former secretary, installed as SHU President in 2024.' },
+    { id: 'marino', name: 'Kevin Marino', group: 'board', type: 'node', connection: 'The Enforcer', note: 'Board of Regents Chair who directed the log purge.' },
+    { id: 'porrino', name: 'Chris Porrino', group: 'legal', type: 'node', connection: 'The Hitman', note: 'Coordinated the Google subpoena and whistle-blower unmasking.' },
+    { id: 'scrivo', name: 'Tom Scrivo', group: 'legal', type: 'node', connection: 'The Cleaner', note: 'Institutional cleaner who suppressed the Latham Report metadata.' },
+    { id: 'ruemmler', name: 'Kathryn Ruemmler', group: 'nexus', type: 'node', connection: 'The Epstein Liaison', note: 'White House Counsel / Vatican strategy connection.' },
+    { id: 'tobin', name: 'Cardinal Tobin', group: 'clergy', type: 'node', connection: 'The Successor', note: 'Archbishop of Newark who presided over the "Shield" maintenance.' },
+    { id: 'latham', name: '24,000 Pages', group: 'evidence', type: 'nexus', connection: 'The Target', note: 'The unsealed-but-withheld Latham Report.' }
+  ],
+  links: [
+    { source: 'mccarrick', target: 'reilly', type: 'primary', label: 'Mentor // Secretary' },
+    { source: 'mccarrick', target: 'marino', type: 'primary', label: 'Board Protection' },
+    { source: 'reilly', target: 'latham', type: 'primary', label: 'Direct Suppression' },
+    { source: 'marino', target: 'porrino', type: 'coordinated', label: 'Code Red Defense' },
+    { source: 'porrino', target: 'scrivo', type: 'coordinated', label: 'Metadata Concealment' },
+    { source: 'ruemmler', target: 'mccarrick', type: 'secondary', label: 'Global Defense' },
+    { source: 'tobin', target: 'reilly', type: 'primary', label: 'Appointment' },
+    { source: 'marino', target: 'latham', type: 'primary', label: 'Burial' }
+  ]
+};

@@ -14,13 +14,18 @@ export default function EvidenceHub() {
                         <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">
                             Institutional Immunity
                         </span>
-                        <h1 className="text-5xl font-bold text-white uppercase tracking-[0.1em] mb-8">
-                            The Unsealed Archives
+                        <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-none">
+                            DOCUMENTS
                         </h1>
-                        <div className="max-w-2xl mx-auto">
-                            <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
-                                A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
-                                Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
+                        <div className="flex justify-center gap-4 mb-12">
+                            <span className="bg-[#8b1a1a] text-white text-[10px] font-bold px-4 py-2 uppercase tracking-[0.3em] animate-pulse">
+                                24,000 Pages: Unsealed — but Withheld
+                            </span>
+                        </div>
+                        <div className="max-w-3xl mx-auto">
+                            <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12 italic">
+                                "The unsealing of the 24,000 pages by Judge Avion Benjamin was a forensic victory, 
+                                but the files remain withheld by the university's legal architects. This repository maps the paths of suppression."
                             </p>
                         </div>
                     </div>
