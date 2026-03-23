@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 const POWER_AXIS_DATA = [
     {
         level: 1,
-        title: "THE PREDATOR",
+        title: "THE FRONT LINE",
         subtitle: "The Genesis of the Scandal",
         stats: [
-            "Fr. Kenneth Martin: A 40-year career of documented abuse.",
+            "The Predator Node: Documented abuse spanning four decades.",
             "1983: The first internal report is officially suppressed.",
-            "2001: Arrested after two decades of institutional protection.",
-            "2026: Civil trials finally unseal the 'Predator Files'."
+            "Structural Enablers: Local parish failures provide the initial layer of concealment.",
+            "2026: Civil trials finally unseal the original 'Front Line' files."
         ],
         callout: {
             title: "CASE STUDY",
@@ -31,7 +31,7 @@ const POWER_AXIS_DATA = [
         subtitle: "The Infrastructure of Silence",
         stats: [
             "Regional Chancellors design the 'A&M Playbook'.",
-            "Chapter 11: A legal maneuver used to seal 24,000 pages of evidence.",
+            "The Unsealed Archives: A forensic record of the original failure and the subsequent cover-up.",
             "Internal registries used to 'launder' personnel files between parishes.",
             "Total concealment of 432 active lawsuits."
         ],
@@ -59,7 +59,7 @@ const POWER_AXIS_DATA = [
         subtitle: "The Global Shield",
         stats: [
             "McCarrick ascends to the Vatican's innermost diplomatic circle.",
-            "The Latham Report: A forensic unmasking buried for six years.",
+            "The Cover-up of the Cover-up: Systematic suppression of the unsealed archives.",
             "Vatican channels used to bypass US legal reporting requirements.",
             "Institutional survival prioritized over child safety."
         ],

@@ -12,15 +12,17 @@ export default function EvidenceHub() {
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
                         <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">
-                            The Repository of Documented Truth
+                            Institutional Immunity
                         </span>
                         <h1 className="text-5xl font-bold text-white uppercase tracking-[0.1em] mb-8">
-                            The Evidence
+                            The Unsealed Archives
                         </h1>
-                        <p className="text-xl text-[#888] leading-relaxed max-w-3xl">
-                            Access the 24,000 pages of unsealed evidence, organized by the six rings of the Shield.
-                            Search by ring to understand how each layer of the architecture functioned to protect the abuser.
-                        </p>
+                        <div className="max-w-2xl mx-auto">
+                            <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
+                                A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
+                                Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

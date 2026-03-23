@@ -48,7 +48,7 @@ export default function RedesignedHome() {
 
                     <div className="max-w-2xl mx-auto">
                         <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
-                            A forensic mapping of the six structural layers that protected Kenneth Martin for 40 years.
+                            A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
                             Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -153,7 +153,7 @@ export default function RedesignedHome() {
                         {[
                             { term: "Laundered", icon: FolderDown, def: "The process of moving an abuser between parishes without informing local authorities, using 'clean' personnel files." },
                             { term: "Corporation Sole", icon: ShieldAlert, def: "A legal entity where all assets are owned by one individual (the Bishop), shielding the institution from individual parish liability." },
-                            { term: "The Vault", icon: Archive, def: "A collection of 24,000 unsealed pages detailing the internal knowledge of the cover-up from 1960–2020." },
+                            { term: "The Vault", icon: Archive, def: "The unsealed archives of the cover-up of the cover-up—a multi-generational forensic record extending far beyond any single report." },
                             { term: "The Breach", icon: Search, def: "A specific forensic opening where institutional documentation contradicts public statements or legal filings." }
                         ].map((item, i) => (
                             <div key={i} className="p-8 border border-[#1a1a22] bg-[#0a0a0c] hover:border-[#8b1a1a]/50 transition-all group text-left">
