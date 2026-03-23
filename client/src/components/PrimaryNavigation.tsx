@@ -23,14 +23,15 @@ export default function PrimaryNavigation() {
                 </Link>
 
                 <div className="hidden md:flex items-center">
-                    <Link href="/" className={navItemClass("/")}>THE SHIELD</Link>
+                     <Link href="/" className={navItemClass("/")}>THE SHIELD</Link>
                     <Link href="/evidence" className={navItemClass("/evidence")}>THE EVIDENCE</Link>
                     <Link href="/breach" className={navItemClass("/breach")}>
                         THE BREACH
                         <span className="ml-2 w-2 h-2 rounded-full bg-[#8b1a1a] inline-block animate-pulse" />
                     </Link>
-                    <Link href="/academy" className={navItemClass("/academy")}>ACADEMY</Link>
-                    <Link href="/about" className={navItemClass("/about")}>ABOUT</Link>
+                    <Link href="/opinion" className={navItemClass("/opinion")}>OPINIONS</Link>
+                    <Link href="/ledger" className={navItemClass("/ledger")}>THE LEDGER</Link>
+
                 </div>
 
                 <Link href="/about#tips" className="hidden lg:block bg-[#8b1a1a] px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#a51d1d] transition-colors">

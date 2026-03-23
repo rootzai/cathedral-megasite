@@ -11,6 +11,13 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 const RedesignedHome = React.lazy(() => import("./pages/RedesignedHome"));
 import EvidenceHub from "./pages/evidence/EvidenceHub";
 const BreachHub = React.lazy(() => import("./pages/breach/BreachHub"));
+const TheyKnew = React.lazy(() => import("./pages/TheyKnew"));
+const OpinionsHub = React.lazy(() => import("./pages/opinions/Hub"));
+const Noonan = React.lazy(() => import("./pages/opinions/Noonan"));
+const Cannon = React.lazy(() => import("./pages/opinions/Cannon"));
+const Matthews = React.lazy(() => import("./pages/opinions/Matthews"));
+const Stephens = React.lazy(() => import("./pages/opinions/Stephens"));
+
 
 // Legacy Core Pages (Will be mapped to folders)
 const About = React.lazy(() => import("./pages/About"));
@@ -87,6 +94,27 @@ function Router() {
         <Route path="/corrections">
           <PageLayout component={Corrections} />
         </Route>
+
+        {/* OPINIONS & LEDGER */}
+        <Route path="/opinion">
+          <PageLayout component={OpinionsHub} />
+        </Route>
+        <Route path="/opinion/noonan">
+          <PageLayout component={Noonan} />
+        </Route>
+        <Route path="/opinion/cannon">
+          <PageLayout component={Cannon} />
+        </Route>
+        <Route path="/opinion/matthews">
+          <PageLayout component={Matthews} />
+        </Route>
+        <Route path="/opinion/stephens">
+          <PageLayout component={Stephens} />
+        </Route>
+        <Route path="/ledger">
+          <PageLayout component={TheyKnew} />
+        </Route>
+
 
         {/* Integrated Modular Routes (For deep linking until physical migration) */}
         {ExposeRoutes}
