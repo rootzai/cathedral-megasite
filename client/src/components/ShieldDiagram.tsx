@@ -34,7 +34,7 @@ export default function ShieldDiagram({ activeRing, setActiveRing }: ShieldDiagr
                     <div className="w-2.5 h-2.5 rounded-full bg-[#8b1a1a] animate-pulse" />
                     <span className="text-[#8b1a1a] font-mono text-xs font-black uppercase tracking-[0.4em]">Live Archive Signal</span>
                 </div>
-                <div className="text-[11px] font-mono text-zinc-400 font-bold uppercase tracking-widest border-l border-zinc-800 pl-4">
+                <div className="text-xs font-mono text-zinc-300 font-bold uppercase tracking-widest border-l border-zinc-800 pl-4">
                     Verification: High-Fidelity
                 </div>
             </div>
@@ -52,7 +52,7 @@ export default function ShieldDiagram({ activeRing, setActiveRing }: ShieldDiagr
                     />
                     <div className="p-8 bg-[#0d0d10] border-t border-[#1a1a22]">
                         <h4 className="text-[#8b1a1a] font-bold text-sm uppercase tracking-[0.4em] mb-4 font-mono border-b border-[#8b1a1a]/20 pb-2">Archive Note // Forensic Record</h4>
-                        <p className="text-sm text-[#888] leading-relaxed italic">
+                        <p className="text-sm text-[#bbb] leading-relaxed italic">
                             "This mapping illustrates the redundant layers of institutional protection. Each ring must be systematically unsealed to reach the core truth of the 2019-2025 investigative period."
                         </p>
                     </div>

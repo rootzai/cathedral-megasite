@@ -110,13 +110,13 @@ export default function McCarrickNetwork() {
                         }}
                     >
                         <div className={`w-16 h-16 rounded-full bg-black border-2 flex items-center justify-center transition-all ${NODE_GLOW[node.group]}`}>
-                            <Icon className={`w-8 h-8 ${isHovered ? 'text-white' : 'text-white/60'}`} />
+                            <Icon className={`w-8 h-8 ${isHovered ? 'text-white' : 'text-white/90'}`} />
                         </div>
-                        <span className={`mt-3 text-[10px] font-bold uppercase tracking-widest text-center max-w-[100px] leading-tight transition-colors ${isHovered ? 'text-white' : 'text-white/40'}`}>
+                        <span className={`mt-3 text-xs font-bold uppercase tracking-widest text-center max-w-[120px] leading-tight transition-colors ${isHovered ? 'text-white' : 'text-white/70'}`}>
                             {node.name}
                         </span>
                         {node.connection && (
-                            <span className="text-[8px] text-[#8b1a1a] font-bold uppercase tracking-tighter mt-1">
+                            <span className="text-xs text-[#8b1a1a] font-black uppercase tracking-tighter mt-1 bg-black/40 px-1">
                                 {node.connection}
                             </span>
                         )}
@@ -139,23 +139,23 @@ export default function McCarrickNetwork() {
                         >
                             ✕
                         </button>
-                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] block mb-6">
+                        <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em] block mb-6">
                             Forensic Dossier // {selectedNode.group}
                         </span>
                         <h3 className="text-2xl font-bold text-white uppercase tracking-tighter mb-4 leading-tight">
                             {selectedNode.name}
                         </h3>
-                        <p className="text-sm text-white/80 leading-relaxed italic mb-8 border-l-2 border-[#8b1a1a] pl-4">
+                        <p className="text-base text-white leading-relaxed italic mb-8 border-l-2 border-[#8b1a1a] pl-4">
                             "{selectedNode.note}"
                         </p>
                         <div className="space-y-4">
                             <div className="bg-white/5 p-4 border border-white/10">
-                                <span className="text-[8px] text-white/40 uppercase block mb-1">Status</span>
-                                <span className="text-[10px] text-white font-bold uppercase">Institutional Agent</span>
+                                <span className="text-xs text-white/40 uppercase block mb-1">Status</span>
+                                <span className="text-sm text-white font-bold uppercase">Systemic Agent</span>
                             </div>
                             <div className="bg-white/5 p-4 border border-white/10">
-                                <span className="text-[8px] text-white/40 uppercase block mb-1">Connection Strength</span>
-                                <span className="text-[10px] text-[#8b1a1a] font-bold uppercase">High-Fidelity</span>
+                                <span className="text-xs text-white/40 uppercase block mb-1">Connection Strength</span>
+                                <span className="text-sm text-[#8b1a1a] font-bold uppercase">High-Fidelity</span>
                             </div>
                         </div>
                     </motion.div>

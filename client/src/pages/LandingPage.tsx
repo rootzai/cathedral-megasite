@@ -157,10 +157,10 @@ export default function LandingPage() {
               {pillars.map((p) => (
                 <Link key={p.id} href={p.path}>
                   <a className="group relative bg-zinc-100 border border-zinc-300 hover:border-zinc-600 p-6 rounded-lg transition-all duration-300 flex flex-col items-center text-center">
-                    <span className="text-zinc-600 font-mono text-[10px] block mb-4 tracking-[0.3em]">SECTION {p.id}</span>
-                    <p.icon className="w-8 h-8 text-zinc-600 mb-4 group-hover:text-zinc-800 transition-colors" />
-                    <h3 className="text-sm font-bold text-zinc-900 mb-2 uppercase tracking-widest">{p.title}</h3>
-                    <p className="text-xs text-zinc-600 font-serif italic leading-relaxed">
+                    <span className="text-zinc-400 font-mono text-xs block mb-4 tracking-[0.3em]">SECTION {p.id}</span>
+                    <p.icon className="w-8 h-8 text-zinc-400 mb-4 group-hover:text-zinc-200 transition-colors" />
+                    <h3 className="text-sm font-bold text-zinc-100 mb-2 uppercase tracking-widest">{p.title}</h3>
+                    <p className="text-sm text-zinc-300 font-serif italic leading-relaxed">
                       {p.desc}
                     </p>
                     {/* Tooltip hint indicator */}
@@ -172,7 +172,7 @@ export default function LandingPage() {
               ))}
             </div>
 
-            <div className="mt-8 text-center text-[10px] text-zinc-600 uppercase tracking-[0.5em] font-mono">
+            <div className="mt-8 text-center text-xs text-zinc-500 uppercase tracking-[0.5em] font-mono">
               SodomHall.com — An Investigation into Institutional Betrayal
             </div>
           </div>

@@ -190,7 +190,7 @@ export default function PowerAxis() {
                                     </li>
                                 ))}
                                 {item.stats.length > 3 && (
-                                    <li className="text-[10px] text-[#8b1a1a] uppercase tracking-widest font-bold mt-2 opacity-60">
+                                    <li className="text-xs text-[#8b1a1a] uppercase tracking-widest font-bold mt-2 opacity-80">
                                         + more data points
                                     </li>
                                 )}
@@ -198,12 +198,12 @@ export default function PowerAxis() {
 
                             {item.callout && (
                                 <div className="mt-8 pt-6 border-t border-red-900/30">
-                                    <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
+                                    <span className="text-xs font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
                                         {item.callout.title}
                                     </span>
                                     <p className="text-sm font-bold text-white mb-2">{item.callout.name}</p>
-                                    <p className="text-xs text-gray-500 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-[10px] font-bold text-red-400">
+                                    <p className="text-xs text-gray-400 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-xs font-bold text-red-400">
                                         <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                                         {item.callout.status}
                                     </div>
@@ -212,7 +212,7 @@ export default function PowerAxis() {
 
                             <button
                                 onClick={() => setSelectedLevel(item)}
-                                className="mt-8 w-full py-3 border border-[#1a1a22] text-[10px] font-bold uppercase tracking-[0.2em] text-[#555] hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-all"
+                                className="mt-8 w-full py-3 border border-[#1a1a22] text-xs font-bold uppercase tracking-[0.2em] text-[#888] hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-all"
                             >
                                 Deep Dive Investigation
                             </button>
@@ -220,8 +220,8 @@ export default function PowerAxis() {
 
                         {/* Bottom Status */}
                         <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
-                            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Shield Status</span>
-                            <span className={cn("text-[10px] font-bold uppercase tracking-wider", item.accent)}>
+                            <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Shield Status</span>
+                            <span className={cn("text-xs font-bold uppercase tracking-wider", item.accent)}>
                                 {item.shieldStatus}
                             </span>
                         </div>
@@ -236,7 +236,7 @@ export default function PowerAxis() {
                                         <AlertCircle className="w-6 h-6 text-white/80" />
                                     </div>
                                 </div>
-                                <div className="text-[8px] font-mono text-red-500/60 uppercase whitespace-nowrap rotate-90 ml-20 mt-4">
+                                <div className="text-xs font-mono text-red-500 uppercase whitespace-nowrap rotate-90 ml-20 mt-4">
                                     Elite Node Lock
                                 </div>
                             </div>
@@ -310,10 +310,10 @@ export default function PowerAxis() {
             {/* Forensic Metadata Branding */}
             <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
                 <div className="text-right">
-                    <span className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-[0.3em] block">
                         SODOM HALL // CASE FILE: THE ARCHITECTURE OF PROTECTION
                     </span>
-                    <span className="text-[9px] font-mono text-gray-700 uppercase block mt-1">
+                    <span className="text-xs font-mono text-gray-500 uppercase block mt-1">
                         UNSEALED RECORD // FORENSIC RECONSTRUCTION 2026
                     </span>
                 </div>

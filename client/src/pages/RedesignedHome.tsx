@@ -49,22 +49,22 @@ export default function RedesignedHome() {
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-7xl md:text-[10rem] font-black text-white uppercase tracking-tighter leading-[0.8] mb-12"
+                        className="text-7xl md:text-[10rem] font-black text-white uppercase tracking-tighter leading-none mb-12"
                     >
-                        The House<br />
-                        <span className="text-white/20 text-3xl md:text-5xl font-light normal-case block my-4">That</span>
-                        <span className="text-[#8b1a1a]">McCarrick Built</span>
+                        ARCHITECTURE OF<br />
+                        <span className="text-[#8b1a1a]">SYSTEMIC ROT</span>
                     </motion.h1>
 
                     <motion.p 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="max-w-4xl mx-auto text-xl md:text-3xl text-white/90 leading-tight font-light mb-16 px-4"
+                        transition={{ delay: 0.1 }}
+                        className="max-w-5xl mx-auto text-xl md:text-3xl text-white font-light mb-16 px-4"
                     >
-                        An unmasking of the <span className="text-[#8b1a1a] font-bold uppercase tracking-widest text-lg md:text-2xl block mt-4">Architecture of Protection</span>
-                        <span className="text-white/40 text-sm md:text-lg block mt-2 italic font-mono uppercase tracking-[0.2em]">
-                            Built by Marino, Porrino, & Scrivo // Sealed for 24,000 Pages
+                        Seton Hall, the Newark Archdiocese, and the State of New Jersey: <br className="hidden md:block" />
+                        A triangular machine of silence that protected the powerful <span className="text-[#8b1a1a] font-bold underline decoration-red-900/40">from the seminary to the halls of Rome.</span>
+                        <span className="text-white/70 text-base md:text-xl block mt-6 italic font-serif">
+                             The unmasking of the corruption that buried the 24,000-page Latham Report.
                         </span>
                     </motion.p>
 
@@ -76,7 +76,7 @@ export default function RedesignedHome() {
                     </div>
 
                     <div className="max-w-2xl mx-auto">
-                        <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
+                        <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed mb-12">
                             A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
                             Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
                         </p>
@@ -87,7 +87,7 @@ export default function RedesignedHome() {
                                 </a>
                             </Link>
                             <Link href="/breach">
-                                <a className="w-full sm:w-auto border border-[#1a1a22] bg-black/50 backdrop-blur text-[#888] px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:border-[#8b1a1a] hover:text-white transition-all">
+                                <a className="w-full sm:w-auto border border-[#1a1a22] bg-black/50 backdrop-blur text-zinc-400 px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:border-[#8b1a1a] hover:text-white transition-all">
                                     Active Litigation
                                 </a>
                             </Link>
@@ -107,7 +107,7 @@ export default function RedesignedHome() {
             <section className="py-24 px-6 border-b border-[#1a1a22]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
                     <div className="prose prose-invert prose-crimson">
-                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] mb-4 block">Institutional Hubris</span>
+                        <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">Institutional Hubris</span>
                         <h2 className="text-3xl font-bold text-white uppercase tracking-[0.2em] mb-10">THE HUBRIS: The Presidency of Monsignor Reilly</h2>
                         <p className="text-lg leading-relaxed mb-6">
                             They didn't just hide him. They promoted him. The ultimate hubris of the "Shield" was the appointment of Msgr. Reilly as President of Seton Hall University—positioning an architect of silence at the head of a major institution as if no one would ever look inside the briefcase.
@@ -125,13 +125,13 @@ export default function RedesignedHome() {
                         {/* THE HUBRIS SIDEBAR (AUDIT LOG) */}
                         <div className="absolute -left-32 top-0 bottom-0 w-24 hidden xl:flex flex-col gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
                             <div className="h-full border-l border-[#8b1a1a]/30 flex flex-col justify-between py-4">
-                                <span className="text-[8px] font-mono text-[#8b1a1a] uppercase rotate-90 whitespace-nowrap -ml-4">Audit Trace SHU-2005</span>
+                                <span className="text-xs font-mono text-[#8b1a1a] uppercase rotate-90 whitespace-nowrap -ml-4">Audit Trace SHU-2005</span>
                                 <div className="flex flex-col gap-2 pl-4">
-                                    <div className="w-1 h-8 bg-[#8b1a1a]/40" />
-                                    <div className="w-1 h-12 bg-white/20" />
+                                    <div className="w-1 h-8 bg-[#8b1a1a]/60" />
+                                    <div className="w-1 h-12 bg-white/40" />
                                     <div className="w-1 h-4 bg-red-600" />
                                 </div>
-                                <span className="text-[8px] font-mono text-[#444] uppercase rotate-90 whitespace-nowrap -ml-4">Terminal End</span>
+                                <span className="text-xs font-mono text-[#888] uppercase rotate-90 whitespace-nowrap -ml-4">Terminal End</span>
                             </div>
                         </div>
 
@@ -231,22 +231,22 @@ export default function RedesignedHome() {
                                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
                                     <FileX className="w-8 h-8 text-[#8b1a1a]" />
                                 </div>
-                                <span className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-widest block mb-4">Dossier Entry #{334 + i}</span>
+                                <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-widest block mb-4">Dossier Entry #{334 + i}</span>
                                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-2 leading-none group-hover:text-[#8b1a1a] transition-colors">
                                     {villain.name}
                                 </h3>
-                                <p className="text-[#8b1a1a] text-xs font-bold uppercase tracking-widest mb-8">{villain.role}</p>
+                                <p className="text-[#8b1a1a] text-sm font-bold uppercase tracking-widest mb-8">{villain.role}</p>
                                 <div className="space-y-6 mb-12">
-                                    <p className="text-[#666] text-sm leading-relaxed font-light italic">
+                                    <p className="text-[#bbb] text-base leading-relaxed font-light italic">
                                         "{villain.bio}"
                                     </p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-                                        <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-widest">Target Intel: {villain.highlight}</span>
+                                        <span className="text-xs text-zinc-300 font-mono uppercase tracking-widest">Target Intel: {villain.highlight}</span>
                                     </div>
                                 </div>
                                 <Link href={villain.link}>
-                                    <a className="inline-flex items-center gap-2 text-white font-bold text-[10px] uppercase tracking-[0.3em] hover:gap-4 transition-all">
+                                    <a className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-[0.3em] hover:gap-4 transition-all">
                                         Examine Evidence <ChevronRight className="w-3 h-3 text-[#8b1a1a]" />
                                     </a>
                                 </Link>
@@ -257,10 +257,10 @@ export default function RedesignedHome() {
                     <div className="mt-24 p-12 border border-[#1a1a22] bg-red-950/5 text-center">
                         <p className="text-[#8b1a1a] font-mono text-sm uppercase tracking-widest mb-4">Coordinated Maneuver Detected</p>
                         <h4 className="text-2xl font-black text-white uppercase tracking-tighter mb-4 italic">"The Six-Day Gap"</h4>
-                        <p className="text-zinc-500 max-w-2xl mx-auto text-sm leading-relaxed mb-6">
+                        <p className="text-zinc-400 max-w-2xl mx-auto text-base leading-relaxed mb-6">
                             December 11: Porrino threatens whistleblower. <br/>
                             December 17: Scrivo sends identical threat naming the whistleblower by identity obtained via secret subpoena. <br/>
-                            <span className="text-white mt-4 block">Coordination: 100% // Complicity: Absolute</span>
+                            <span className="text-white mt-4 block font-bold uppercase tracking-widest text-sm">Coordination: 100% // Complicity: Absolute</span>
                         </p>
                         <Link href="/network">
                             <a className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b1a1a] text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all group">

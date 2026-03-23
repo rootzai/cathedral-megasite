@@ -10,7 +10,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
             const timer = setTimeout(() => {
                 setIsUnmounted(true);
                 if (onComplete) onComplete();
-            }, 5000); 
+            }, 1200); 
             return () => clearTimeout(timer);
         }
     }, [isOpen, onComplete]);
@@ -25,7 +25,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
             {/* Left Door */}
             <div
                 className={cn(
-                    "absolute top-0 bottom-0 left-0 w-1/2 bg-black overflow-hidden transition-transform duration-[3000ms] ease-[cubic-bezier(0.7, 0, 0.3, 1)] z-20",
+                    "absolute top-0 bottom-0 left-0 w-1/2 bg-black overflow-hidden transition-transform duration-[700ms] ease-[cubic-bezier(0.7, 0, 0.3, 1)] z-20",
                     isOpen ? "-translate-x-full" : "translate-x-0"
                 )}
             >
@@ -44,7 +44,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
             {/* Right Door */}
             <div
                 className={cn(
-                    "absolute top-0 bottom-0 right-0 w-1/2 bg-black overflow-hidden transition-transform duration-[3000ms] ease-[cubic-bezier(0.7, 0, 0.3, 1)] z-20",
+                    "absolute top-0 bottom-0 right-0 w-1/2 bg-black overflow-hidden transition-transform duration-[700ms] ease-[cubic-bezier(0.7, 0, 0.3, 1)] z-20",
                     isOpen ? "translate-x-full" : "translate-x-0"
                 )}
             >
@@ -63,7 +63,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
             {/* The Seal / Trigger Area */}
             <div
                 className={cn(
-                    "absolute z-30 flex flex-col items-center justify-center transition-all duration-[1500ms]",
+                    "absolute z-30 flex flex-col items-center justify-center transition-all duration-[600ms]",
                     isOpen ? "opacity-0 scale-150 blur-md pointer-events-none" : "opacity-100 scale-100"
                 )}
             >
