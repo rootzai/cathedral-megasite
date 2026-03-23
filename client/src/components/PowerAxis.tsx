@@ -190,8 +190,8 @@ export default function PowerAxis() {
                                     </li>
                                 ))}
                                 {item.stats.length > 3 && (
-                                    <li className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold mt-2">
-                                        + {item.stats.length - 3} More Data Points
+                                    <li className="text-[10px] text-[#8b1a1a] uppercase tracking-widest font-bold mt-2 opacity-60">
+                                        + more data points
                                     </li>
                                 )}
                             </ul>
