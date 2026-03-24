@@ -30,6 +30,7 @@ export default function PrimaryNavigation() {
                         <span className="ml-2 w-2 h-2 rounded-full bg-[#8b1a1a] inline-block animate-pulse" />
                     </Link>
                     <Link href="/opinion" className={navItemClass("/opinion")}>OPINIONS</Link>
+                    <Link href="/ruling" className={navItemClass("/ruling")}>THE RULING</Link>
                     <Link href="/ledger" className={navItemClass("/ledger")}>THE LEDGER</Link>
 
                 </div>

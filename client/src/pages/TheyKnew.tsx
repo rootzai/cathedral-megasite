@@ -90,7 +90,7 @@ export default function TheyKnew() {
           <h1 className="font-heading text-5xl md:text-7xl lg:text-9xl tracking-[0.2em] text-gold leading-tight mb-4 uppercase">
             THE LEDGER
           </h1>
-          <h2 className="font-heading text-xl md:text-3xl lg:text-4xl tracking-[0.1em] text-parchment leading-tight mb-8 italic">
+          <h2 className="font-heading text-lg md:text-xl lg:text-2xl tracking-[0.1em] text-parchment leading-tight mb-8 italic">
             The Administrative Architecture of The House That McCarrick Built
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-8" />

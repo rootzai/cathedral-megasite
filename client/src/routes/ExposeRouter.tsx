@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "wouter";
-import { BreachLayout, CoverUpLayout, OriginLayout, SuccessionLayout } from "../components/UnifiedSectionLayouts";
+import { BreachLayout, CoverUpLayout, OriginLayout, SuccessionLayout, RulingLayout } from "../components/UnifiedSectionLayouts";
 import TheyKnew from "../pages/TheyKnew";
 import LorenzoHome from "../pages/endgame/lorenzo/Home";
 const HeadlineNews = React.lazy(() => import("../pages/HeadlineNews"));
@@ -11,8 +11,17 @@ const ChurchBKGlobalChurchMetrics = React.lazy(() => import("../pages/church-bk/
 const ChurchBKMcCarrickMechanism = React.lazy(() => import("../pages/church-bk/McCarrickMechanism"));
 
 // Ruling
+const RulingHome = React.lazy(() => import("../pages/ruling/Home"));
 const BeachHouse = React.lazy(() => import("../pages/ruling/BeachHouse"));
 const RulingTimeline = React.lazy(() => import("../pages/ruling/Timeline"));
+const RulingDirtyDozen = React.lazy(() => import("../pages/ruling/DirtyDozen"));
+const RulingTobinHypocrisy = React.lazy(() => import("../pages/ruling/TobinHypocrisy"));
+const RulingAnalysis = React.lazy(() => import("../pages/ruling/Analysis"));
+const RulingReilly = React.lazy(() => import("../pages/ruling/Reilly"));
+const RulingCorporateVeil = React.lazy(() => import("../pages/ruling/CorporateVeil"));
+const RulingSanctionPlea = React.lazy(() => import("../pages/ruling/SanctionPlea"));
+const RulingSheeranMcCarrick = React.lazy(() => import("../pages/ruling/SheeranMcCarrick"));
+const RulingEvidence = React.lazy(() => import("../pages/ruling/Evidence"));
 
 // Expose
 const CheckchioNewOrleans = React.lazy(() => import("../pages/expose/CheckchioNewOrleans"));
@@ -77,5 +86,16 @@ export const ExposeRoutes = [
 
     // Portals
     <Route key="portal" path={"/expose"}><ExposePortal /></Route>,
-    <Route key="origin-root" path={"/origin"}><ExposePortal /></Route>
+    <Route key="origin-root" path={"/origin"}><ExposePortal /></Route>,
+
+    // THE RULING
+    <Route key="r1" path={"/ruling"}><RulingLayout><RulingHome /></RulingLayout></Route>,
+    <Route key="r2" path={"/ruling/dirty-dozen"}><RulingLayout><RulingDirtyDozen /></RulingLayout></Route>,
+    <Route key="r3" path={"/ruling/tobin-hypocrisy"}><RulingLayout><RulingTobinHypocrisy /></RulingLayout></Route>,
+    <Route key="r4" path={"/ruling/analysis"}><RulingLayout><RulingAnalysis /></RulingLayout></Route>,
+    <Route key="r5" path={"/ruling/reilly"}><RulingLayout><RulingReilly /></RulingLayout></Route>,
+    <Route key="r6" path={"/ruling/corporate-veil"}><RulingLayout><RulingCorporateVeil /></RulingLayout></Route>,
+    <Route key="r7" path={"/ruling/sanction-plea"}><RulingLayout><RulingSanctionPlea /></RulingLayout></Route>,
+    <Route key="r8" path={"/ruling/sheeran-mccarrick"}><RulingLayout><RulingSheeranMcCarrick /></RulingLayout></Route>,
+    <Route key="r9" path={"/ruling/evidence"}><RulingLayout><RulingEvidence /></RulingLayout></Route>
 ];

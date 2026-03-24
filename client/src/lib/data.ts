@@ -136,6 +136,13 @@ export const RINGS: Ring[] = [
     route: "/breach",
     description: "Point of institutional failure. The Mark Crawford litigation where the Shield finally collapsed under the weight of falsified records and refused settlements.",
     breach: true
+  },
+  {
+    id: 7,
+    name: "The Ruling",
+    route: "/ruling",
+    description: "The judicial reckoning. Analyzing the court orders, unsealed reports, and the final logic that collapsed the Architecture of Protection.",
+    breach: true
   }
 ];
 

@@ -90,3 +90,24 @@ export function SuccessionLayout({ children }: { children: React.ReactNode }) {
         </UnifiedLayout>
     );
 }
+// --- THE RULING (Act 5 / Bridge) ---
+const rulingNavItems = [
+    { id: "5.1", label: "The Benjamin Ruling", path: "/ruling" },
+    { id: "5.2", label: "The Dirty Dozen", path: "/ruling/dirty-dozen" },
+    { id: "5.3", label: "Evidence Analysis", path: "/ruling/analysis" },
+    { id: "5.4", label: "The Corporate Veil", path: "/ruling/corporate-veil" },
+];
+
+export function RulingLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <UnifiedLayout
+            title="The Ruling"
+            subtitle="The Discovery of Truth (2025 - Present)"
+            caseFile="05-RULING"
+            themeClass="theme-cathedral"
+            navItems={rulingNavItems}
+        >
+            {children}
+        </UnifiedLayout>
+    );
+}

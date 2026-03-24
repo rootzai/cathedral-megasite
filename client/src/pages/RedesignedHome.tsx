@@ -115,11 +115,34 @@ export default function RedesignedHome() {
                         <p className="text-lg leading-relaxed mb-8">
                             It was the "hands in the cookie jar" moment. While Reilly maintained the facade of elite normalcy, a critical "Side Show" was occurring in the basement. <strong>Mark Crawford</strong>, a survivor who refused to be bought, recovered the forensic proof: the blatant falsification of internal age registries to weaponize the statute of limitations.
                         </p>
-                        <Link href="/breach">
-                            <a className="inline-block border-b-2 border-[#8b1a1a] pb-1 text-sm font-bold uppercase tracking-[0.2em] text-[#8b1a1a] hover:text-white hover:border-white transition-all">
-                                Examine the Hubris Registry →
-                            </a>
-                        </Link>
+                        <div className="flex flex-col gap-6">
+                            <Link href="/breach">
+                                <a className="inline-block border-b-2 border-[#8b1a1a] pb-1 text-sm font-bold uppercase tracking-[0.2em] text-[#8b1a1a] hover:text-white hover:border-white transition-all w-fit">
+                                    Examine the Hubris Registry →
+                                </a>
+                            </Link>
+
+                            <motion.div 
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                className="mt-8 p-6 bg-red-950/10 border border-[#8b1a1a]/20 rounded-sm relative group overflow-hidden"
+                            >
+                                <div className="absolute top-0 right-0 p-3 opacity-20">
+                                    <AlertCircle className="w-5 h-5 text-[#8b1a1a]" />
+                                </div>
+                                <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-widest block mb-2">Primary Intel // Politico</span>
+                                <h4 className="text-white font-bold text-lg mb-2">"He knew of sex abuse allegations on campus. Now he's university president."</h4>
+                                <p className="text-zinc-400 text-sm italic mb-4">"It's almost too hard to believe that this has already been out." — Dec 21, 2024</p>
+                                <a 
+                                    href="https://www.politico.com/news/2024/12/21/joseph-reilly-seton-hall-university-president-sex-abuse-00195526" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-[#8b1a1a] transition-colors"
+                                >
+                                    Read Full Investigation <ChevronRight className="w-3 h-3" />
+                                </a>
+                            </motion.div>
+                        </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4 h-fit relative">
                         {/* THE HUBRIS SIDEBAR (AUDIT LOG) */}
@@ -171,105 +194,6 @@ export default function RedesignedHome() {
                 </div>
             </section>
 
-            {/* SECTION 4: THE MATRIX OF COMPLICITY */}
-            <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#050507] relative overflow-hidden">
-                <div className="absolute inset-0 pointer-events-none opacity-20">
-                    <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#8b1a1a] to-transparent" />
-                    <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#8b1a1a] to-transparent" />
-                </div>
-
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center mb-24">
-                        <motion.span 
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[1em] block mb-6"
-                        >
-                            The Enforcers
-                        </motion.span>
-                        <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
-                            Matrix of <br className="md:hidden" />
-                            <span className="text-[#8b1a1a]">Complicity</span>
-                        </h2>
-                        <p className="text-[#666] text-lg md:text-xl max-w-3xl mx-auto font-light">
-                            "Did you order the Code Red?" — The coordination between personal defense and institutional cleanup. 
-                            Three architects, one wall of silence.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1a22] border border-[#1a1a22]">
-                        {[
-                            { 
-                                name: "Kevin H. Marino", 
-                                role: "The Board Enforcer", 
-                                bio: "Chairman of the Board who directed the purging of Title IX logs and orchestrated the internal whitewash.",
-                                highlight: "Purged Logs",
-                                link: "/ledger#marino"
-                            },
-                            { 
-                                name: "Christopher S. Porrino", 
-                                role: "The State Hitman", 
-                                bio: "Former NJ AG and Marino's personal lawyer. Coordinated the grand jury subpoena to unmask whistleblowers.",
-                                highlight: "Grand Jury Subpoena",
-                                link: "/ledger#porrino"
-                            },
-                            { 
-                                name: "Thomas P. Scrivo", 
-                                role: "The Institutional Cleaner", 
-                                bio: "Former Christie Chief Counsel. Expert in metadata concealment. Blocked whistleblowers from testifying to the Cardinal.",
-                                highlight: "Metadata Specialist",
-                                link: "/ledger#scrivo"
-                            }
-                        ].map((villain, i) => (
-                            <motion.div 
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-[#0a0a0c] p-12 hover:bg-[#0d0d10] transition-colors group relative overflow-hidden"
-                            >
-                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
-                                    <FileX className="w-8 h-8 text-[#8b1a1a]" />
-                                </div>
-                                <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-widest block mb-4">Dossier Entry #{334 + i}</span>
-                                <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-2 leading-none group-hover:text-[#8b1a1a] transition-colors">
-                                    {villain.name}
-                                </h3>
-                                <p className="text-[#8b1a1a] text-sm font-bold uppercase tracking-widest mb-8">{villain.role}</p>
-                                <div className="space-y-6 mb-12">
-                                    <p className="text-[#bbb] text-base leading-relaxed font-light italic">
-                                        "{villain.bio}"
-                                    </p>
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-                                        <span className="text-xs text-zinc-300 font-mono uppercase tracking-widest">Target Intel: {villain.highlight}</span>
-                                    </div>
-                                </div>
-                                <Link href={villain.link}>
-                                    <a className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-[0.3em] hover:gap-4 transition-all">
-                                        Examine Evidence <ChevronRight className="w-3 h-3 text-[#8b1a1a]" />
-                                    </a>
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    <div className="mt-24 p-12 border border-[#1a1a22] bg-red-950/5 text-center">
-                        <p className="text-[#8b1a1a] font-mono text-sm uppercase tracking-widest mb-4">Coordinated Maneuver Detected</p>
-                        <h4 className="text-2xl font-black text-white uppercase tracking-tighter mb-4 italic">"The Six-Day Gap"</h4>
-                        <p className="text-zinc-400 max-w-2xl mx-auto text-base leading-relaxed mb-6">
-                            December 11: Porrino threatens whistleblower. <br/>
-                            December 17: Scrivo sends identical threat naming the whistleblower by identity obtained via secret subpoena. <br/>
-                            <span className="text-white mt-4 block font-bold uppercase tracking-widest text-sm">Coordination: 100% // Complicity: Absolute</span>
-                        </p>
-                        <Link href="/network">
-                            <a className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b1a1a] text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all group">
-                                <Activity className="w-4 h-4 animate-pulse" /> Launch Intelligence Map
-                            </a>
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             {/* SECTION 5: THE VOCABULARY */}
             <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#0d0d10]">

@@ -1575,7 +1575,7 @@ export default function EpsteinHome() {
           <nav className="footer-nav">
             <a href="/">Home</a>
             <a href="/expose/nyre-dismissal">The Nyre Dismissal</a>
-            <a href="/endgame/mccarrick">The McCarrick Scandal</a>
+            <a href="/ledger/mccarrick">The McCarrick Scandal</a>
             <a href="/epstein">The Epstein Connection</a>
             <a href="/">Contact</a>
           </nav>

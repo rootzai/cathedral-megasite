@@ -93,7 +93,7 @@ export default function Home() {
     </div>
 
     <div className="flex justify-end mt-12">
-      <Link asChild>
+      <Link href="/ledger/mccarrick/background" asChild>
         <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
           Proceed to Section 02 <span className="ml-2">→</span>
         </Button>

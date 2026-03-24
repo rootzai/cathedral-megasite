@@ -145,12 +145,12 @@ export default function TheRise() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/assets/mccarrick" asChild>
+          <Link href="/ledger/mccarrick" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Home
             </Button>
           </Link>
-          <Link href="/assets/mccarrick/regime" asChild>
+          <Link href="/ledger/mccarrick/the-regime" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Act II: The Regime <span className="ml-2">→</span>
             </Button>

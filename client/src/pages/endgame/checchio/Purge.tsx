@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
@@ -195,6 +197,19 @@ export default function Purge() {
               </blockquote>
               <p className="text-right text-sm font-mono mt-4 text-gray-500">- Source close to the investigation</p>
             </div>
+          </div>
+
+          <div className="flex justify-between mt-12 pt-8 border-t border-border">
+            <Link href="/ledger/checchio" asChild>
+              <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
+                <span className="mr-2">←</span> Previous
+              </Button>
+            </Link>
+            <Link href="/ledger/checchio/status" asChild>
+              <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
+                Proceed to Section 06 <span className="ml-2">→</span>
+              </Button>
+            </Link>
           </div>
       </div>);
 }
