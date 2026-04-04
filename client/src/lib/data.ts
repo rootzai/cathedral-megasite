@@ -98,38 +98,38 @@ export interface Ring {
 export const RINGS: Ring[] = [
   {
     id: 1,
-    name: "Secret Archives",
-    route: "/origin/root",
-    description: "Ring 1: The Inner Sanctum. The 24,000-page Latham Archive and the specific exhibits submitted to Chief Justice Rabner. The truth finally unsealed by Judge Avion Benjamin.",
-    breach: false
+    name: "SECRET ARCHIVES",
+    route: "/ledger",
+    description: "The inner sanctum containing the 24,000-page Latham Report and the $628k slush fund records.",
+    breach: true
   },
   {
     id: 2,
-    name: "Legal Fortress",
-    route: "/origin/network",
-    description: "Ring 2: The Chancery. The Newark/Vatican nexus. Mapping the 'personnel laundering' used to move predators and the 1995 Meadowlands anointing.",
+    name: "LEGAL FORTRESS",
+    route: "/coverup/legal",
+    description: "The secondary barrier comprised of high-level canonical privilege claims and NDA-backed silos.",
     breach: false
   },
   {
     id: 3,
-    name: "Legal Apparatus",
-    route: "/coverup/legal",
-    description: "Ring 3: The Legal Wall. The Christie-era law firms (Scrivo, Porrino, O'Toole) and the coordination of legal threats against whistleblowers and journalists.",
+    name: "LEGAL APPARATUS",
+    route: "/coverup/triumvirate",
+    description: "The operational machinery (Gibbons, Latham, NJ Govt) used to process and neutralize discovery threats.",
     breach: false
   },
   {
     id: 4,
-    name: "The Outer Walls",
-    route: "/coverup/financial",
-    description: "Ring 4: Institutional Failure. The Board of Regents, the SCIF concealment, and the 'Fiduciary Buffer' used to shield the Archdiocese from liability.",
-    breach: true
+    name: "THE OUTER WALLS",
+    route: "/expose/big-lie",
+    description: "The institutional facade (Seton Hall University, RCAN) that presents the public-facing 'Architecture of Protection'.",
+    breach: false
   },
   {
     id: 5,
-    name: "Victims & Survivors",
-    route: "/breach/whistleblowers",
-    description: "Ring 5: The Point of Impact. Establishing the human cost—from Kenneth Martin to the 450+ plaintiffs in the active litigation.",
-    breach: true
+    name: "VICTIMS & SURVIVORS",
+    route: "/endgame/mccarrick",
+    description: "The outermost layer of the system, comprising those whose silence was purchased and whose voices were suppressed.",
+    breach: false
   }
 ];
 

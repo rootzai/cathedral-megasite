@@ -14,7 +14,7 @@ import {
     Clock,
     Cross
 } from "lucide-react";
-import ShieldDiagram from "@/components/ShieldDiagram";
+import ShieldHub from "@/components/ShieldHub";
 import { RINGS } from "@/lib/data";
 import PowerAxis from "@/components/PowerAxis";
 import { SmartImage } from "@/components/SmartImage";
@@ -39,14 +39,13 @@ export default function RedesignedHome() {
                         The Architecture of Concealment
                     </span>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-12 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 30px rgba(0,0,0,0.8)" }}>
-                        The Shield of <br className="md:hidden" />
-                        <span className="text-[#8b1a1a]">Sodom Hall</span>
+                        The House That <br className="md:hidden" />
+                        <span className="text-[#8b1a1a]">McCarrick Built</span>
                     </h1>
 
                     {/* Altar Presentation of the Shield */}
-                    <div className="w-full max-w-[900px] mx-auto relative mb-16">
-                        <div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-[50px] border border-white/5 shadow-2xl scale-[1.02] -z-10" />
-                        <ShieldDiagram />
+                    <div className="w-full max-w-[1000px] mx-auto relative mb-16">
+                        <ShieldHub />
                     </div>
 
                     <div className="max-w-2xl mx-auto">
