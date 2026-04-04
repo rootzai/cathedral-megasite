@@ -1,3 +1,5 @@
+// Vercel Deployment Trigger: 2026-04-04T12:55:00-07:00
+// Architectural Restoration v4.3 - Definitive Sync
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
