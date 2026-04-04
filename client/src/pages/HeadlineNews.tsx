@@ -70,28 +70,28 @@ export default function HeadlineNews() {
             <section className="bg-zinc-100 p-2 rounded-lg inline-flex flex-wrap gap-2 border border-zinc-300 shadow-sm">
                 <button
                     onClick={() => setViewLevel("paragraph")}
-                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "paragraph" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
+                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "paragraph" ? "bg-red-600 text-white shadow-md" : "text-zinc-400 hover:bg-zinc-200"
                         }`}
                 >
                     1. One Paragraph
                 </button>
                 <button
                     onClick={() => setViewLevel("page")}
-                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "page" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
+                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "page" ? "bg-red-600 text-white shadow-md" : "text-zinc-400 hover:bg-zinc-200"
                         }`}
                 >
                     2. One Page
                 </button>
                 <button
                     onClick={() => setViewLevel("detailed")}
-                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "detailed" ? "bg-red-600 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
+                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "detailed" ? "bg-red-600 text-white shadow-md" : "text-zinc-400 hover:bg-zinc-200"
                         }`}
                 >
                     3. Full Forensic Report
                 </button>
                 <button
                     onClick={() => setViewLevel("notebook")}
-                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "notebook" ? "bg-zinc-900 text-white shadow-md" : "text-zinc-600 hover:bg-zinc-200"
+                    className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all ${viewLevel === "notebook" ? "bg-zinc-900 text-white shadow-md" : "text-zinc-400 hover:bg-zinc-200"
                         }`}
                 >
                     4. NotebookLM Summary
@@ -168,7 +168,7 @@ export default function HeadlineNews() {
 
                                     // Subheadline
                                     if (idx === 1) {
-                                        return <p key={idx} className="text-xl md:text-2xl font-serif italic text-zinc-600 mb-6">{paragraph}</p>;
+                                        return <p key={idx} className="text-xl md:text-2xl font-serif italic text-zinc-200 mb-6">{paragraph}</p>;
                                     }
 
                                     // Byline

@@ -73,9 +73,9 @@ export default function RedesignedHome() {
                             <ShieldHub />
                         </DialogContent>
                     </Dialog>
-
+                    
                     <div className="max-w-2xl mx-auto">
-                        <p className="text-lg md:text-xl text-zinc-500 leading-relaxed mb-12 font-serif italic">
+                        <p className="text-lg md:text-xl text-zinc-300 leading-relaxed mb-12 font-serif italic">
                             "The Architecture of Silence is constructed in concentric layers. To find the source, one must penetrate the five rings of institutional barrier."
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -84,43 +84,11 @@ export default function RedesignedHome() {
                                     Enter the Archives
                                 </a>
                             </Link>
-                            <Link href="/breach">
-                                <a className="w-full sm:w-auto border border-[#1a1a22] bg-black/50 backdrop-blur text-[#888] px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:border-[#8b1a1a] hover:text-white transition-all">
-                                    Active Litigation
+                            <Link href="/governance">
+                                <a className="w-full sm:w-auto border border-[#8b1a1a] text-red-500 px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:text-white transition-all shadow-[0_0_15px_rgba(139,26,26,0.2)]">
+                                    Governance Hierarchy
                                 </a>
                             </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* NEW: THE 5-RING FORENSIC SUMMARY */}
-            <section className="py-24 px-6 border-b border-[#1a1a22] bg-black/40">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-                        <div className="border-l-2 border-[#8b1a1a] pl-8">
-                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                                <Shield className="w-4 h-4" /> RING I: CANONICAL SHELL
-                            </h3>
-                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
-                                The use of ecclesiastical immunity to shield 24,000 pages of the Latham Report from civil discovery.
-                            </p>
-                        </div>
-                        <div className="border-l-2 border-[#8b1a1a] pl-8">
-                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                                <Clock className="w-4 h-4" /> THE 18-DAY CLOCK
-                            </h3>
-                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
-                                Exactly 18 days after Reilly's installation, the unmasking of whistleblowers began.
-                            </p>
-                        </div>
-                        <div className="border-l-2 border-[#8b1a1a] pl-8">
-                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                                <Cross className="w-4 h-4" /> THE $600K SLUSH FUND
-                            </h3>
-                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
-                                Forensic tracing of the "Archbishop's Fund" used to ensure curial silence.
-                            </p>
                         </div>
                     </div>
                 </div>

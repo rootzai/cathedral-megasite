@@ -57,7 +57,7 @@ export default function LegalFindings() {
                     <Scale className="text-red-700" size={40} />
                     <h1 className="text-5xl font-serif italic font-bold">Confidential Legal Findings</h1>
                 </div>
-                <p className="text-xl text-zinc-600 max-w-3xl leading-relaxed font-serif">
+                <p className="text-xl text-zinc-300 max-w-3xl leading-relaxed font-serif">
                     This executive summary catalogs the formal legal findings and documentary evidence submitted as part of the **Rabner Filings**.
                     These 35 exhibits represent the forensic reality that institutions have attempted to bury.
                 </p>
@@ -69,7 +69,7 @@ export default function LegalFindings() {
                         <ShieldCheck className="text-red-700" size={24} />
                         The Rabner Submission
                     </h2>
-                    <p className="text-zinc-600 mb-6 leading-relaxed text-sm">
+                    <p className="text-zinc-300 mb-6 leading-relaxed text-sm">
                         Totaling 35 exhibits across two formal submissions to Chief Justice Rabner,
                         these filings represent the evidentiary core of the Sodom Hall investigation.
                         They bridge the gap between institutional "opinion" and verifiable "fact."
@@ -102,7 +102,7 @@ export default function LegalFindings() {
                                         <span className="font-mono text-xs text-red-700 font-bold">{item.id}</span>
                                         <h4 className="text-xl font-serif">{item.title}</h4>
                                     </div>
-                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">{item.description}</p>
+                                    <p className="text-zinc-200 text-sm leading-relaxed mb-4">{item.description}</p>
                                     <div className="flex items-center gap-4">
                                         <ConfidenceIndicator level={item.level} />
                                         <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-400 uppercase tracking-widest border px-2 py-0.5 rounded-full">
@@ -123,7 +123,7 @@ export default function LegalFindings() {
             </section>
 
             <footer className="mt-20 pt-12 border-t border-zinc-200">
-                <p className="text-zinc-500 text-xs italic text-center">
+                <p className="text-zinc-300 text-xs italic text-center">
                     Access to original PDFs is restricted to verified legal and oversight bodies.
                     To request a confidential review, use the Signal tip line on the About page.
                 </p>

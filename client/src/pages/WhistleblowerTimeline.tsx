@@ -68,7 +68,7 @@ export default function WhistleblowerTimeline() {
                     <ShieldAlert className="text-red-700" size={32} />
                     <h1 className="text-4xl font-serif">Whistleblower Retaliation Timeline</h1>
                 </div>
-                <p className="text-xl text-zinc-600 max-w-4xl italic leading-relaxed">
+                <p className="text-xl text-zinc-300 max-w-4xl italic leading-relaxed">
                     The following is a consolidated record of the individuals who chose courage over complicity —
                     and the price they were made to pay by a legal apparatus that weaponizes institutional silence.
                 </p>
@@ -101,7 +101,7 @@ export default function WhistleblowerTimeline() {
                                             <AlertCircle size={14} />
                                             Action
                                         </h3>
-                                        <p className="text-zinc-600 text-sm leading-relaxed">{person.action}</p>
+                                        <p className="text-zinc-300 text-sm leading-relaxed">{person.action}</p>
                                     </div>
                                     <div className="bg-red-50/50 p-4 border-l-2 border-red-200">
                                         <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-900 mb-2 flex items-center gap-2">

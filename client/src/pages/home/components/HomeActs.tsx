@@ -16,7 +16,7 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
     <div className="mb-8 border-l-4 border-zinc-300 pl-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-xl font-bold mb-4 hover:text-zinc-600 transition-colors w-full text-left"
+        className="flex items-center gap-2 text-xl font-bold mb-4 text-zinc-400 hover:text-white transition-colors w-full text-left"
       >
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         {title}
@@ -73,9 +73,9 @@ export function HomeActs() {
           Toggle Reading View
         </button>
         <nav className="flex flex-col gap-4 text-sm font-serif">
-          <a href="#executive-summary" className="text-zinc-600 hover:text-zinc-900 transition-colors">Executive Summary (TL;DR)</a>
+          <a href="#executive-summary" className="text-zinc-300 hover:text-white transition-colors">Executive Summary (TL;DR)</a>
           {toc.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="text-zinc-600 hover:text-zinc-800 transition-colors">
+            <a key={item.id} href={`#${item.id}`} className="text-zinc-300 hover:text-white transition-colors">
               {item.title}
             </a>
           ))}
@@ -109,7 +109,7 @@ export function HomeActs() {
           <div className="container mx-auto max-w-6xl px-3 sm:px-4">
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-red-900/30" />
-              <span className="font-mono text-zinc-600 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
+              <span className="font-mono text-zinc-400 font-bold tracking-[0.3em]">PRIMARY LEAD</span>
               <div className="h-px flex-1 bg-red-900/30" />
             </div>
 
@@ -118,9 +118,9 @@ export function HomeActs() {
                 <span className="text-6xl sm:text-9xl font-bold text-red-900/10 select-none">VII</span>
               </div>
 
-              <h2 className="text-zinc-600 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
+              <h2 className="text-zinc-300 font-bold text-lg sm:text-xl mb-4 font-mono tracking-widest">SECTION VII</h2>
               <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-8 tracking-tighter text-zinc-900">The Reckoning of May</h3>
-              <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 mb-8 sm:mb-12 font-medium">May 18, 2026 — The Final Deadline</p>
+              <p className="text-lg sm:text-xl md:text-2xl text-zinc-200 mb-8 sm:mb-12 font-medium">May 18, 2026 — The Final Deadline</p>
 
               <div className="prose prose-lg sm:prose-xl md:prose-2xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
@@ -132,7 +132,7 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
 **The Production Includes:**
 1. <div className="my-8 bg-zinc-100 border border-zinc-300 p-4 rounded-md">
               <strong className="text-zinc-900 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Closed Loop"</strong>
-              <p className="text-zinc-600 text-sm mt-0">A "Closed Loop" means that the people investigating a crime are the exact same people who committed or covered up the crime. They keep the investigation "in the family" so the police never find out.</p>
+              <p className="text-zinc-300 text-sm mt-0">A "Closed Loop" means that the people investigating a crime are the exact same people who committed or covered up the crime. They keep the investigation "in the family" so the police never find out.</p>
             </div>
 **The Scrivo Connection**: Exhibits proving direct coordination between University Counsel and the Archdiocese.
 2. **The 100% Disclosure**: Full, unredacted identities of the seminarians and the "twelve clergymen."
@@ -168,7 +168,7 @@ For 40 years, the "Architecture of Silence" held. It was built by McCarrick, mai
 
               <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION VIII</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Vault Opens</h3>
-              <p className="text-base sm:text-lg md:text-xl text-zinc-600 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-12 italic font-serif">November 12, 2025 — Superior Court of New Jersey</p>
 
               <div className="prose prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-zinc-800">
                 <Streamdown>{`
@@ -183,7 +183,7 @@ After six years of litigation, the veil is pierced. The court finds that the "de
 - **Exhibits 1-19**: The first wave of unsealed records showing McCarrick's "nephew" roster.
 - <div className="my-8 bg-zinc-100 border border-zinc-300 p-4 rounded-md">
               <strong className="text-zinc-900 text-sm uppercase tracking-widest block mb-2">💡 Plain English Explanation: "Sanctioned"</strong>
-              <p className="text-zinc-600 text-sm mt-0 font-medium">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
+              <p className="text-zinc-300 text-sm mt-0 font-medium">When a judge "sanctions" a lawyer, it means the lawyer is being officially punished for breaking the rules—like lying to the court or hiding evidence.</p>
             </div>
 **The Scrivo Sanction**: Court records regarding the withholding of 22,000 internal documents.
 `}</Streamdown>
@@ -226,7 +226,7 @@ The investigation revealed that for years, University counsel had maintained Two
 
               <h2 className="text-zinc-500 font-bold text-lg mb-2 font-mono tracking-widest uppercase">SECTION IX</h2>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-zinc-900">The Rabner Dossier</h3>
-              <p className="text-base sm:text-lg md:text-xl text-zinc-600 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-12 italic font-serif">February 13, 2026 — Supreme Court Referral</p>
 
               <div className="prose prose-lg sm:prose-xl max-w-none mb-8 sm:mb-12 text-zinc-800 font-serif leading-relaxed">
                 <div className="bg-zinc-200/30 p-6 sm:p-10 md:p-12 rounded border border-zinc-300 shadow-inner text-zinc-900">

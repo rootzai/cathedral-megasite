@@ -22,19 +22,19 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
           {firm.firm}
         </h3>
       </div>
-      <p className="font-label text-xs text-gold-dim ml-6 mb-4">{firm.role}</p>
+      <p className="font-label text-[11px] text-gold ml-6 mb-4 uppercase tracking-widest">{firm.role}</p>
 
       {/* Attorneys */}
-      <div className="space-y-3 ml-2">
+      <div className="space-y-4 ml-2">
         {firm.attorneys.map((attorney) => (
-          <div key={attorney.name} className="border-l-2 border-cathedral-gold/25 pl-4">
+          <div key={attorney.name} className="border-l-2 border-cathedral-gold/40 pl-4">
             <div className="flex items-center gap-2">
-              <User className="w-3 h-3 text-gold-dim shrink-0" />
-              <span className="font-heading text-sm tracking-wide text-parchment">{attorney.name}</span>
+              <User className="w-3 h-3 text-gold shrink-0" />
+              <span className="font-heading text-base tracking-wide text-white font-bold">{attorney.name}</span>
             </div>
-            <p className="text-[11px] font-label text-gold-dim ml-5">{attorney.title}</p>
+            <p className="text-[11px] font-label text-gold/80 ml-5 uppercase tracking-wider">{attorney.title}</p>
             {attorney.note && (
-              <p className="text-xs text-white/70 leading-relaxed italic ml-5 mt-1">
+              <p className="text-xs text-zinc-100 leading-relaxed italic ml-5 mt-1">
                 {attorney.note}
               </p>
             )}
@@ -43,7 +43,7 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
       </div>
 
       {/* Firm Description */}
-      <p className="text-sm text-white/80 leading-relaxed mt-4 pt-3 border-t border-cathedral-gold/10">
+      <p className="text-sm text-zinc-200 leading-relaxed mt-4 pt-3 border-t border-cathedral-gold/20">
         {firm.description}
       </p>
     </motion.div>

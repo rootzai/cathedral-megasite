@@ -54,7 +54,7 @@ export default function TheRecord() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                     <div>
                         <h1 className="text-4xl font-serif mb-2">The Record</h1>
-                        <p className="text-zinc-500 uppercase tracking-widest text-xs font-bold">A Living Fact-Check Dashboard</p>
+                        <p className="text-zinc-300 uppercase tracking-widest text-xs font-bold">A Living Fact-Check Dashboard</p>
                     </div>
                     <div className="flex items-center gap-4">
                         <button className="bg-zinc-900 text-white px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-red-700 transition-all border border-zinc-800 shadow-xl group">
@@ -65,7 +65,7 @@ export default function TheRecord() {
                             <CheckCircle2 size={16} />
                             <span className="text-xs font-bold uppercase tracking-widest">0 Factual Disputes</span>
                         </div>
-                        <div className="bg-zinc-100 text-zinc-500 px-4 py-2 rounded-sm border border-zinc-200 flex items-center gap-2">
+                        <div className="bg-zinc-100 text-zinc-600 px-4 py-2 rounded-sm border border-zinc-200 flex items-center gap-2">
                             <span className="text-xs font-bold uppercase tracking-widest tabular-nums italic">Last Verified: Oct 21, 2025</span>
                         </div>
                     </div>

@@ -8,9 +8,12 @@ const PERPETRATORS = [
   "Theodore McCarrick",
   "Fr. Kenneth Martin",
   "Teresina DeAlmeida",
-  "Kevin Marino",
-  "Chris Porrino",
-  "Tom Scrivo",
+  "Kevin Marino (Counsel)",
+  "Chris Porrino (Counsel)",
+  "Tom Scrivo (Counsel)",
+  "Stio (Counsel)",
+  "Linares (Counsel)",
+  "Papalia (Counsel)",
   "Joseph Reilly",
   "The Dirty Dozen",
   "Cardinal Tobin"
@@ -26,7 +29,7 @@ export default function ShieldHub() {
         <h2 className="text-[#d4af37] font-serif text-3xl md:text-4xl tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
           THE SHIELD DIAGRAM: ARCHITECTURE OF PROTECTION
         </h2>
-        <p className="text-zinc-600 font-mono text-[10px] tracking-[0.4em] uppercase">SODOM HALL // ECCLESIASTICAL NOIR</p>
+        <p className="text-zinc-400 font-mono text-[10px] tracking-[0.4em] uppercase">SODOM HALL // ECCLESIASTICAL NOIR</p>
       </div>
 
       <div className="p-12 lg:p-20">
@@ -58,7 +61,7 @@ export default function ShieldHub() {
                     width: `${size}%`,
                     height: `${size}%`,
                     zIndex: 10 + (5 - ringId),
-                    boxShadow: isHovered ? `0 0 50px ${ringId < 3 ? 'rgba(139, 26, 26, 0.4)' : 'rgba(212, 175, 55, 0.2)'}` : 'none'
+                    boxShadow: isHovered ? `0 0 50px ${ringId < 3 ? 'rgba(239, 68, 68, 0.4)' : 'rgba(212, 175, 55, 0.2)'}` : 'none'
                   }}
                   animate={{
                     scale: isHovered ? 1.02 : 1,
@@ -66,7 +69,7 @@ export default function ShieldHub() {
                   }}
                 >
                   <div className="absolute top-4 w-full text-center">
-                    <p className={`font-mono text-[9px] font-black uppercase tracking-[0.2em] ${isHovered ? 'text-white' : 'text-zinc-700'}`}>
+                    <p className={`font-mono text-[9px] font-black uppercase tracking-[0.2em] ${isHovered ? 'text-white' : 'text-zinc-400'}`}>
                       RING {ringId}: {ring?.name}
                     </p>
                   </div>
@@ -92,16 +95,16 @@ export default function ShieldHub() {
 
             {/* BREACH POINT ARROW */}
             <div className="absolute bottom-[20%] left-[15%] flex flex-col items-center z-40 transform -rotate-[35deg]">
-               <div className="bg-red-600/20 border border-red-600 p-2 rounded-full animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                  <span className="font-mono text-[9px] font-black text-red-600 uppercase">BREACH POINT</span>
+               <div className="bg-red-600/40 border border-red-500 p-2 rounded-full animate-pulse shadow-[0_0_30px_rgba(239,68,68,0.6)]">
+                  <span className="font-mono text-[9px] font-black text-white uppercase">BREACH POINT</span>
                </div>
                <div className="w-1 h-24 bg-gradient-to-t from-red-600 to-transparent" />
-               <span className="absolute -bottom-8 font-mono text-[8px] text-red-700 rotate-[35deg] whitespace-nowrap font-black">AG OFFICE // SUBPOENA</span>
+               <span className="absolute -bottom-8 font-mono text-[9px] text-red-500 rotate-[35deg] whitespace-nowrap font-black">AG OFFICE // SUBPOENA</span>
             </div>
 
             {/* OUTER ENTITIES */}
-            <div className="absolute top-0 -left-12 opacity-40 font-mono text-[8px] text-zinc-600 tracking-widest hidden lg:block">MARK CRAWFORD // SNAP</div>
-            <div className="absolute bottom-0 -right-12 opacity-40 font-mono text-[8px] text-zinc-600 tracking-widest hidden lg:block">NJ MEDIA // NATIONAL PRESS</div>
+            <div className="absolute top-0 -left-12 opacity-60 font-mono text-[8px] text-zinc-400 tracking-widest hidden lg:block">MARK CRAWFORD // SNAP</div>
+            <div className="absolute bottom-0 -right-12 opacity-60 font-mono text-[8px] text-zinc-400 tracking-widest hidden lg:block">NJ MEDIA // NATIONAL PRESS</div>
           </div>
 
           {/* Informational Panel */}
@@ -130,16 +133,17 @@ export default function ShieldHub() {
                     </div>
                     
                     <div className="space-y-4">
-                      <p className="text-zinc-400 leading-relaxed font-serif text-lg italic">
+                      <p className="text-zinc-300 leading-relaxed font-serif text-lg italic">
                         {RINGS.find(r => r.id === hoveredRing)?.description}
                       </p>
                       
                       <div className="pt-6 border-t border-zinc-800">
-                         <h4 className="font-mono text-[10px] text-zinc-600 uppercase mb-4 tracking-widest">Structural Entities:</h4>
+                         <h4 className="font-mono text-[10px] text-zinc-400 uppercase mb-4 tracking-widest">Structural Entities:</h4>
                          <div className="flex flex-wrap gap-2">
-                           {hoveredRing === 1 && PERPETRATORS.slice(0, 4).map(p => <span key={p} className="px-2 py-1 bg-red-900/10 border border-red-900/30 text-red-500 text-[9px] uppercase">{p}</span>)}
-                           {hoveredRing === 4 && ["Seton Hall University", "RCAN", "Latham Archive"].map(p => <span key={p} className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-zinc-500 text-[9px] uppercase">{p}</span>)}
-                           {hoveredRing === 5 && ["Survivors Network", "Snap", "Whistleblowers"].map(p => <span key={p} className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-zinc-500 text-[9px] uppercase">{p}</span>)}
+                           {hoveredRing === 1 && PERPETRATORS.slice(0, 4).map(p => <span key={p} className="px-2 py-1 bg-red-900/30 border border-red-600/50 text-red-400 text-[9px] uppercase font-bold">{p}</span>)}
+                           {hoveredRing === 3 && PERPETRATORS.filter(p => p.includes("Counsel")).map(p => <span key={p} className="px-2 py-1 bg-zinc-800 border border-[#d4af37]/40 text-[#d4af37] text-[9px] uppercase font-bold">{p}</span>)}
+                           {hoveredRing === 4 && ["Seton Hall University", "RCAN", "Latham Archive"].map(p => <span key={p} className="px-2 py-1 bg-zinc-800 border border-zinc-600 text-zinc-300 text-[9px] uppercase font-bold">{p}</span>)}
+                           {hoveredRing === 5 && ["Survivors Network", "Snap", "Whistleblowers"].map(p => <span key={p} className="px-2 py-1 bg-zinc-800 border border-zinc-600 text-zinc-300 text-[9px] uppercase font-bold">{p}</span>)}
                          </div>
                       </div>
                     </div>
@@ -155,10 +159,10 @@ export default function ShieldHub() {
                     </Link>
                   </div>
                 ) : (
-                  <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
-                    <Shield className="w-20 h-20 text-[#8b1a1a] mb-8 animate-pulse shadow-[0_0_30px_#8b1a1a]" />
+                  <div className="h-full flex flex-col items-center justify-center text-center opacity-60">
+                    <Shield className="w-20 h-20 text-red-600 mb-8 animate-pulse shadow-[0_0_40px_rgba(220,38,38,0.5)]" />
                     <h4 className="font-serif text-2xl text-white uppercase tracking-[0.2em] mb-4">Architecture of Silence</h4>
-                    <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest leading-relaxed">
+                    <p className="font-mono text-[11px] text-zinc-300 uppercase tracking-widest leading-relaxed">
                       Select a ring to unmask the barrier.<br />
                       Authenticated Forensic Stream [ES-99-B]
                     </p>

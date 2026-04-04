@@ -61,12 +61,12 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <div className="flex-1">
-          <h4 className={`font-heading text-sm tracking-wider leading-tight ${isFlagged ? "text-gold" : "text-parchment"}`}>
+          <h4 className={`font-heading text-sm tracking-wider leading-tight ${isFlagged ? "text-gold" : "text-white font-bold"}`}>
             {person.name}
           </h4>
-          <p className="font-label text-sm text-gold-dim mt-0.5">{person.role}</p>
+          <p className="font-label text-xs text-gold mt-0.5">{person.role}</p>
         </div>
-        <span className="text-xs font-label text-white/60 whitespace-nowrap mt-0.5">
+        <span className="text-xs font-label text-zinc-300 whitespace-nowrap mt-0.5">
           {person.tenure}
         </span>
       </div>
@@ -108,7 +108,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
       )}
 
       {hasNote && (
-        <p className="text-sm text-white/70 leading-relaxed italic border-l-2 border-cathedral-gold/20 pl-3 mt-2">
+        <p className="text-sm text-zinc-200 leading-relaxed italic border-l-2 border-cathedral-gold/50 pl-3 mt-2">
           {person.note}
         </p>
       )}
