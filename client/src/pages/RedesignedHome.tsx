@@ -10,13 +10,16 @@ import {
     ArrowRight, 
     AlertCircle, 
     CheckCircle2, 
-    XCircle 
+    XCircle,
+    Clock,
+    Cross
 } from "lucide-react";
 import ShieldDiagram from "@/components/ShieldDiagram";
 import { RINGS } from "@/lib/data";
 import PowerAxis from "@/components/PowerAxis";
 import { SmartImage } from "@/components/SmartImage";
 import TriptychPortal from "@/components/TriptychPortal";
+import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
 
 export default function RedesignedHome() {
     return (
@@ -62,6 +65,38 @@ export default function RedesignedHome() {
                                     Active Litigation
                                 </a>
                             </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW: THE 5-RING FORENSIC SUMMARY */}
+            <section className="py-24 px-6 border-b border-[#1a1a22] bg-black/40">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                        <div className="border-l-2 border-[#8b1a1a] pl-8">
+                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
+                                <Shield className="w-4 h-4" /> RING I: CANONICAL SHELL
+                            </h3>
+                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
+                                The use of ecclesiastical immunity to shield 24,000 pages of the Latham Report from civil discovery.
+                            </p>
+                        </div>
+                        <div className="border-l-2 border-[#8b1a1a] pl-8">
+                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
+                                <Clock className="w-4 h-4" /> THE 18-DAY CLOCK
+                            </h3>
+                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
+                                Exactly 18 days after Reilly's installation, the unmasking of whistleblowers began.
+                            </p>
+                        </div>
+                        <div className="border-l-2 border-[#8b1a1a] pl-8">
+                            <h3 className="text-[#8b1a1a] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
+                                <Cross className="w-4 h-4" /> THE $600K SLUSH FUND
+                            </h3>
+                            <p className="text-sm leading-relaxed text-zinc-500 font-serif italic">
+                                Forensic tracing of the "Archbishop's Fund" used to ensure curial silence.
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+import { JourneyNav } from "@/components/JourneyNav";
+
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — The Founding Template
    Parchment theme — investigative broadsheet
@@ -170,9 +172,9 @@ export default function KennethMartin() {
           of its worst elements by simply internalizing them. By making the abuser the secretary, the
           institution ensured that the most dangerous knowledge was held by the most compromised people.
           This is the foundation of the Origin: a labyrinth built not to seek the truth, but to bury it
-          beneath layers of tactical promotion and strategic silence.
-        </p>
-      </div>
+      <section className="border-t border-zinc-200 pt-12">
+        <JourneyNav />
+      </section>
     </div>
   );
 }

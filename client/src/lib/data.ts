@@ -26,6 +26,7 @@ export interface BoardSection {
   leadership: Person[];
   exOfficio: Person[];
   members: Person[];
+  cabinet?: Person[]; 
   clergy?: Person[];
 }
 
@@ -97,44 +98,37 @@ export interface Ring {
 export const RINGS: Ring[] = [
   {
     id: 1,
-    name: "Inner Sanctum",
+    name: "Secret Archives",
     route: "/origin/root",
-    description: "The primary repository of the 24,000 unsealed pages. This is the bedrock of the forensic archive, containing the original Latham Report and suppressed witness transcripts.",
+    description: "Ring 1: The Inner Sanctum. The 24,000-page Latham Archive and the specific exhibits submitted to Chief Justice Rabner. The truth finally unsealed by Judge Avion Benjamin.",
     breach: false
   },
   {
     id: 2,
-    name: "The Chancery",
+    name: "Legal Fortress",
     route: "/origin/network",
-    description: "The ecclesiastical chain of command. Mapping how the Archdiocese of Newark (RCAN) used canon law and internal transfers to 'launder' personnel files across parish lines.",
+    description: "Ring 2: The Chancery. The Newark/Vatican nexus. Mapping the 'personnel laundering' used to move predators and the 1995 Meadowlands anointing.",
     breach: false
   },
   {
     id: 3,
-    name: "The Moat",
-    route: "/coverup/financial",
-    description: "The financial and fiduciary layer. Documenting how the Board of Regents used 'Corporation Sole' status to shield assets while ignoring red flags from the LaSala Task Force.",
-    breach: true
+    name: "Legal Apparatus",
+    route: "/coverup/legal",
+    description: "Ring 3: The Legal Wall. The Christie-era law firms (Scrivo, Porrino, O'Toole) and the coordination of legal threats against whistleblowers and journalists.",
+    breach: false
   },
   {
     id: 4,
-    name: "The Legal Cloak",
-    route: "/coverup/legal",
-    description: "The defensive architecture. A network of Christie-era law firms and political allies coordinating discovery withholding and legal threats against whistleblowers.",
-    breach: false
+    name: "The Outer Walls",
+    route: "/coverup/financial",
+    description: "Ring 4: Institutional Failure. The Board of Regents, the SCIF concealment, and the 'Fiduciary Buffer' used to shield the Archdiocese from liability.",
+    breach: true
   },
   {
     id: 5,
-    name: "The Public Narrative",
+    name: "Victims & Survivors",
     route: "/breach/whistleblowers",
-    description: "The propaganda machine. Analyzing the PR strategies and 'shadow compliance channels' used to maintain a facade of transparency while suppressing the Latham findings.",
-    breach: false
-  },
-  {
-    id: 6,
-    name: "The Breach",
-    route: "/breach",
-    description: "Point of institutional failure. The Mark Crawford litigation where the Shield finally collapsed under the weight of falsified records and refused settlements.",
+    description: "Ring 5: The Point of Impact. Establishing the human cost—from Kenneth Martin to the 450+ plaintiffs in the active litigation.",
     breach: true
   }
 ];
@@ -292,12 +286,12 @@ export const boardOfRegents: BoardSection = {
     },
   ],
   members: [
-    { name: "Robert S. Basso", role: "Regent", tenure: "Active 2020s", badges: ["reilly"], note: "Provided sworn certification in 2024 Perry Law investigation." },
-    { name: "Mark Benjamin", role: "Regent", tenure: "Appointed 2017", badges: ["latham", "reilly"] },
-    { name: "Edward Cerny", role: "Regent", tenure: "Appointed 2017", badges: ["latham", "reilly", "nyre"], note: "Not a Monsignor. Named defendant in Nyre v. Seton Hall (2024)." },
-    { name: "Mary Pat Christie", role: "Regent", tenure: "Appointed 2022", badges: ["reilly", "christie", "resigned"], note: "Wife of Gov. Chris Christie. Left Board July 2025 amid scandal." },
-    { name: "James Edward Collins", role: "Regent", tenure: "Active", badges: ["reilly", "nyre"], note: "Named defendant in Nyre v. Seton Hall (2024)." },
-    { name: "Patrick A. Cozza", role: "Regent", tenure: "Active", badges: ["reilly"] },
+    { name: "Hank E. D'Alessandro", role: "Chairman, Board of Regents", tenure: "Active", badges: ["reilly"], note: "Named in the authoritative governance hierarchy as Operational Board Chairman." },
+    { name: "Kevin H. Marino", role: "Chairman (2019-2023)", tenure: "Active", badges: ["reilly", "latham"], note: "Chairman of Marino, Tortorella & Boyle. Presided over the Board that received LaSala's recommendations." },
+    { name: "Joe LaSala", role: "Regent / Task Force", tenure: "Active", badges: ["reilly", "latham"], note: "Served on the LaSala Task Force which examined the McCarrick legacy." },
+    { name: "Mike Lucciola", role: "Regent", tenure: "Active", badges: ["reilly"], note: "Operational Board member identified in 2026 hierarchy." },
+    { name: "Bishop James F. Checchio", role: "Regent / Task Force", tenure: "Active", badges: ["clergy", "latham"], note: "Bishop of Metuchen. Served on institutional task force." },
+    { name: "Mary Pat Christie", role: "Regent", tenure: "2022–2025", badges: ["reilly", "christie", "resigned"], note: "Wife of Gov. Chris Christie. Resigned July 2025 amid 'Latham Archive' unsealing." },
     { name: "Ryan K. Duffy", role: "Regent", tenure: "Appointed 2015", badges: ["latham", "reilly"] },
     { name: "Bonnie Evans", role: "Regent", tenure: "Appointed 2022", badges: ["reilly"] },
     { name: "Brian Fitzpatrick", role: "Regent", tenure: "Appointed 2022", badges: ["reilly"] },
@@ -592,3 +586,88 @@ export function getUniqueMembers(members: (Person & { board: string })[]): (Pers
   });
   return Array.from(map.values());
 }
+
+export const universityCabinet: Person[] = [
+  {
+    name: "Msgr. Joseph R. Reilly",
+    role: "President",
+    tenure: "2024–Present",
+    badges: ["reilly", "clergy"],
+    note: "Installed despite removal recommendation from LaSala Task Force."
+  },
+  {
+    name: "Celin Kay",
+    role: "VP Mission & Ministry / Chief of Staff",
+    tenure: "Active",
+    badges: ["reilly", "clergy"],
+  },
+  {
+    name: "Dr. Erik J. Spitzmueller",
+    role: "Provost / Chief Academic Officer",
+    tenure: "Active",
+    badges: ["reilly"],
+  },
+  {
+    name: "General Counsel",
+    role: "Legal Department Head",
+    tenure: "Active",
+    badges: ["reilly"],
+    note: "Primary liaison for Scrivo/Porrino coordination."
+  },
+  {
+    name: "Donna McMonagle",
+    role: "VP of Finance / Chief Financial Officer",
+    tenure: "Active",
+    badges: ["reilly"],
+    note: "Named in unredacted Perry Report without consent."
+  }
+];
+
+export const seminaryLeadership: Person[] = [
+  {
+    name: "Msgr. Joseph R. Reilly",
+    role: "Former Rector, ICS",
+    tenure: "1994–2002",
+    badges: ["clergy", "reilly"],
+    note: "Seminary leadership during the core period of the 'Architecture of Silence'."
+  },
+  {
+    name: "ICS Rector/Dean",
+    role: "Seminary Head",
+    tenure: "Active",
+    badges: ["clergy"],
+  },
+  {
+    name: "St. Andrew's Rector",
+    role: "Seminary Head",
+    tenure: "Active",
+    badges: ["clergy"],
+  }
+];
+
+export const forensicDataPoints = [
+  {
+    id: "FD-SHU-001",
+    date: "July 18, 2024",
+    metric: "Google Subpoena Served",
+    value: "18 Days",
+    label: "Succession Clock",
+    narrative: "Exactly 18 days after Reilly's installation, a grand jury subpoena was served to Google to unmask whistleblowers."
+  },
+  {
+    id: "FD-SHU-002",
+    date: "August 27, 2019",
+    metric: "SCIF Manifest",
+    value: "24,000 Pgs",
+    label: "Latham Archive",
+    narrative: "The Latham Report was moved to a Secured Confidential Information Facility (SCIF) following the Regents' vote."
+  },
+  {
+    id: "FD-SHU-003",
+    date: "Dec 2023",
+    metric: "Papal Slush Fund",
+    value: "$628,400",
+    label: "Traced Gifts",
+    narrative: "Forensic tracing identified $628,400 in direct checks from the Archbishop's Fund to Vatican officials."
+  }
+];

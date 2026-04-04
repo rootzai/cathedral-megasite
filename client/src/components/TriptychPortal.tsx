@@ -73,8 +73,8 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
                 >
                     <div className="absolute inset-0 bg-red-900/40 blur-[60px] rounded-full w-56 h-56 group-hover:bg-red-600/60 transition-colors duration-1000" />
 
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 border-2 border-red-900/60 bg-black/80 backdrop-blur-xl rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(139,26,26,0.6)] group-hover:scale-110 group-hover:border-red-600 transition-all duration-700 relative z-20">
-                        <img src="/assets/images/sh-pirate-logo.png" className="w-10 sm:w-12 opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 border-2 border-red-900/60 bg-black/80 backdrop-blur-xl rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(139,26,26,0.6)] group-hover:scale-110 group-hover:border-white transition-all duration-700 relative z-20 overflow-hidden">
+                        <img src="/assets/images/redemtoris_eye.png" className="w-full h-full object-cover scale-110 opacity-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700" />
                     </div>
 
                     <span className="mt-8 text-[10px] sm:text-xs font-bold text-[#faf6ee] uppercase tracking-[0.5em] group-hover:text-white transition-colors duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] bg-black/40 px-4 py-1 backdrop-blur-sm">

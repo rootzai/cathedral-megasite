@@ -7,7 +7,11 @@
  * Structure: Vertical descent through institutional power.
  */
 
+import { useState } from "react";
+import ShieldHub from "@/components/ShieldHub";
+import GovernanceHierarchy from "@/components/GovernanceHierarchy";
 import { BoardSection } from "@/components/BoardSection";
+import { JourneyNav } from "@/components/JourneyNav";
 import { FilterPanel } from "@/components/FilterPanel";
 import { FirmCard } from "@/components/FirmCard";
 import { GothicDivider } from "@/components/GothicDivider";
@@ -39,10 +43,6 @@ import {
   Shield,
   User
 } from "lucide-react";
-
-
-
-import { useState } from "react";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/hero-cathedral-gtrH4ddunz7PPhnoSpqctQ.webp";
 const LAWYERS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030244666/CvqcMXDjVdcgGoExeh6MSb/lawyers-section-bg-ifkQhGphyaJc4dbtuowvcN.webp";
@@ -94,14 +94,39 @@ export default function TheyKnew() {
             The Boards & The Lawyers
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-8" />
-          <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-3xl mx-auto">
-            A comprehensive reference of every individual who served on Seton Hall University's three governing boards from 2016 to 2026 — and the lawyers who defended the indefensible.
+          <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-4xl mx-auto mb-10">
+            The "Big Lie" of Seton Hall is not a single event; it is a multi-generational architecture of institutional silence. 
+            This dossier exposes the 303 individuals—from the Canonical Trustees to the Operational Regents—who 
+            maintained the "Wall of Immunity" while the Latham Archive was buried in a SCIF.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
+            <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">
+              <h3 className="font-heading text-gold text-lg mb-3">ACT I: THE CANONICAL SHIELD</h3>
+              <p className="text-sm text-parchment/70 leading-relaxed font-serif">
+                How the Board of Trustees (Layer 1) created a legal black hole, housing 24,000 pages of the 
+                Latham Report within an ecclesiastical vault that they claimed was beyond the reach of civil discovery.
+              </p>
+            </div>
+            <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">
+              <h3 className="font-heading text-gold text-lg mb-3">ACT II: THE OPERATIONAL ATTRITION</h3>
+              <p className="text-sm text-parchment/70 leading-relaxed font-serif">
+                The role of the Board of Regents (Layer 2) in weaponizing the university's $1.2B government spigot 
+                to fund the attrition of survivors and the unmasking of whistleblowers.
+              </p>
+            </div>
+          </div>
           <p className="text-base md:text-lg text-white/80 mt-6 italic bg-background/50 backdrop-blur-sm p-4 inline-block rounded-sm">
-            Who heard the Latham Report. Who voted for Reilly. Who received the Cardinal's letters.
+            "They didn't just hide the truth; they built a hierarchy to house the lie."
           </p>
         </motion.div>
       </header>
+
+      {/* ===== SHIELD HUB — "The Concentric Descent" ===== */}
+      <section className="bg-background relative -mt-20 z-20 pb-20">
+        <div className="container">
+          <ShieldHub />
+        </div>
+      </section>
 
       {/* ===== BADGE LEGEND ===== */}
       <section className="py-10 border-b border-[oklch(0.75_0.12_85/10%)]">
@@ -142,6 +167,15 @@ export default function TheyKnew() {
 
       {/* ===== FILTER PANEL — "Who Knew What" ===== */}
       <FilterPanel activeFilter={activeFilter} onFilterChange={handleFilterChange} />
+
+      <GothicDivider />
+
+      {/* ===== GOVERNANCE HIERARCHY — "The 5-Level Descent" ===== */}
+      <section className="py-20 bg-[oklch(0.06_0.01_285)]">
+        <div className="container">
+          <GovernanceHierarchy />
+        </div>
+      </section>
 
       <GothicDivider />
 
@@ -378,6 +412,7 @@ export default function TheyKnew() {
       {/* ===== FOOTER ===== */}
       <footer className="py-12 border-t border-[oklch(0.75_0.12_85/10%)]">
         <div className="container text-center">
+          <JourneyNav />
           <GothicDivider />
           <p className="font-heading text-base tracking-[0.2em] text-gold-dim mt-6">
             SodomHall.com — Seton Hall University

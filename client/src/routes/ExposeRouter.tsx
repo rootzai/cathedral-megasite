@@ -27,6 +27,7 @@ const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const SuccessionEpilogue = React.lazy(() => import("../pages/SuccessionEpilogue"));
 const ReillyProtection = React.lazy(() => import("../pages/expose/ReillyProtection"));
 const AppealGrounds = React.lazy(() => import("../pages/expose/AppealGrounds"));
+const BigLie = React.lazy(() => import("../pages/expose/BigLie"));
 
 // Endgame
 const McCarrickDownfall = React.lazy(() => import("../pages/endgame/mccarrick/Downfall"));
@@ -43,6 +44,7 @@ export const ExposeRoutes = [
 
     // THE COVER-UP (Act 2)
     <Route key="e6" path={"/coverup"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
+    <Route key="e6-auth" path={"/coverup/big-lie"}><BigLie /></Route>,
     <Route key="e7" path={"/coverup/financial"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
     <Route key="e8" path={"/coverup/complicity"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
     <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,

@@ -13,6 +13,7 @@ const ROUTES = [
   // THE COVER-UP
   { path: "/coverup", label: "The Billion-Dollar Mechanism" },
   { path: "/coverup/complicity", label: "They Knew" },
+  { path: "/coverup/big-lie", label: "The Big Lie: Governance Hierarchy" },
   { path: "/coverup/legal", label: "The Legal Triumvirate" },
   { path: "/coverup/epstein", label: "The Epstein Nexus" },
 

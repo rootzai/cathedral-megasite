@@ -1,3 +1,7 @@
+import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
+import { JourneyNav } from "@/components/JourneyNav";
+import { AlertCircle, Clock, ShieldAlert } from "lucide-react";
+
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — Reilly's Ascent
    Bright parchment theme — investigative broadsheet
@@ -46,6 +50,25 @@ export default function ReillyProtection() {
           role required near-constant proximity — to claim only a single visit strains credulity and
           challenges the narrative of Reilly's innocence that the university has carefully cultivated.
         </p>
+
+        <div className="bg-red-50 border-2 border-red-900 p-8 my-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Clock className="w-24 h-24 text-red-900" />
+          </div>
+          <h3 className="text-red-900 font-black uppercase tracking-tighter text-2xl mb-4 flex items-center gap-3">
+             <AlertCircle className="w-8 h-8" /> THE 18-DAY CLOCK: THE UNMASKING
+          </h3>
+          <p className="text-red-900/80 font-serif text-lg leading-relaxed mb-6">
+            On July 1, 2024, Monsignor Joseph Reilly was installed as President. Exactly 18 days later, 
+            on July 18, 2024, the institution unmasked its true intent. A grand jury subpoena was 
+            served to Google—not to investigate the decades of abuse at the beach house, but to identify 
+            the anonymous whistleblower account that had spent months warning the Regents about the 
+            Reilly succession.
+          </p>
+          <div className="bg-white/50 p-4 border border-red-200">
+            <Level3EvidenceStream />
+          </div>
+        </div>
       </div>
 
       {/* The Latham Report findings */}
@@ -176,7 +199,7 @@ export default function ReillyProtection() {
         </p>
       </div>
 
-      <div className="evidence-box">
+      <div className="evidence-box mb-16">
         <div className="exhibit-label">The Latham Report — Six Years of Suppression</div>
         <p className="text-sm leading-relaxed" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
           The 2019 Latham Report was presented to the Board on August 27, 2019 — 17 days after Jeffrey
@@ -186,6 +209,10 @@ export default function ReillyProtection() {
           Judge Avion Benjamin for his role in withholding it. The report was finally ordered produced
           in November 2025 — six years after it documented, in 24,000 pages, what the institution already knew.
         </p>
+      </div>
+
+      <div className="border-t border-zinc-200 pt-12">
+        <JourneyNav />
       </div>
     </div>
   );

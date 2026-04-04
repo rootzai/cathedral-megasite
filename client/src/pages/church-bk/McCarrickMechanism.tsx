@@ -1,5 +1,6 @@
 import { JourneyNav } from "@/components/JourneyNav";
-import { Briefcase, Landmark, Network } from "lucide-react";
+import { Briefcase, Landmark, Network, ShieldAlert, FileText } from "lucide-react";
+import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
 
 
 export default function McCarrickMechanism() {
@@ -136,6 +137,18 @@ export default function McCarrickMechanism() {
           Latham Report, the Regents weren't just protecting twelve priests; they were protecting the
           billion-dollar pipelines that those priests managed. To admit to the mechanism was to admit
           that the Church’s survival was predicated on the silence of its victims.
+        </p>
+      </div>
+
+      <div className="bg-zinc-900 border border-gold/20 p-8 my-16 shadow-3xl">
+        <div className="flex items-center gap-3 mb-6 text-gold">
+          <ShieldAlert className="w-6 h-6" />
+          <h3 className="uppercase tracking-[0.3em] font-bold text-sm">Forensic Data Stream // Section IV: The Papal Foundation Slush Fund</h3>
+        </div>
+        <Level3EvidenceStream />
+        <p className="mt-6 text-xs text-zinc-500 font-mono leading-relaxed text-center">
+          METRIC: Individual $2,500 "gratuity" checks identified in unredacted Vatican Report Annex. <br />
+          TOTAL TRACED: $628,400 directed to officials overseeing the Congregation for Bishops.
         </p>
       </div>
 
