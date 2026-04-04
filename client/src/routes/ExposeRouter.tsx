@@ -19,7 +19,7 @@ const CheckchioNewOrleans = React.lazy(() => import("../pages/expose/CheckchioNe
 const EpsteinNexus = React.lazy(() => import("../pages/expose/EpsteinNexus"));
 const EpsteinRuemmlerPivot = React.lazy(() => import("../pages/expose/EpsteinRuemmlerPivot"));
 const KennethMartinexpose = React.lazy(() => import("../pages/expose/KennethMartin"));
-const LegalTrumvirate = React.lazy(() => import("../pages/expose/LegalTrumvirate"));
+const LegalTriumvirate = React.lazy(() => import("../pages/expose/LegalTriumvirate"));
 const McCarrickNetworkexpose = React.lazy(() => import("../pages/expose/McCarrickNetwork"));
 const NyreDismissal = React.lazy(() => import("../pages/expose/NyreDismissal"));
 const Overview = React.lazy(() => import("../pages/expose/Overview"));
@@ -58,9 +58,9 @@ export const ExposeRoutes = [
     <Route key="e6-auth" path={"/coverup/big-lie"}><BigLie /></Route>,
     <Route key="e7" path={"/coverup/financial"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
     <Route key="e8" path={"/coverup/complicity"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
-    <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
-    <Route key="e9-alias" path={"/coverup/triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
-    <Route key="e9-expose" path={"/expose/legal-triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
+    <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTriumvirate /></CoverUpLayout></Route>,
+    <Route key="e9-alias" path={"/coverup/triumvirate"}><CoverUpLayout><LegalTriumvirate /></CoverUpLayout></Route>,
+    <Route key="e9-expose" path={"/expose/legal-triumvirate"}><CoverUpLayout><LegalTriumvirate /></CoverUpLayout></Route>,
     <Route key="e10" path={"/coverup/epstein"}><EpsteinNexus /></Route>,
     <Route key="e10-expose" path={"/expose/epstein-nexus"}><EpsteinNexus /></Route>,
     <Route key="e10-pivot" path={"/expose/epstein-pivot"}><CoverUpLayout><EpsteinRuemmlerPivot /></CoverUpLayout></Route>,

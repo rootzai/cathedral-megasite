@@ -157,6 +157,71 @@ export default function LegalTrumvirate() {
             </div>
           </div>
         </section>
+        {/* Marino Profile */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-12">
+            <div className="h-px bg-zinc-200 mb-16" />
+          </div>
+          <div className="lg:col-span-5">
+             <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
+                <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: ESX-L-8762-19</h4>
+                <div className="text-3xl font-black mb-1">Kevin Marino</div>
+                <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">Architect of Privilege</div>
+                <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  <div>Firm: MARINO, TORTORELLA & BOYLE</div>
+                  <div>Role: General Counsel / Board Liaison</div>
+                </div>
+             </div>
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-600 mb-2 font-mono">Profile 04: The Lead Counsel</h3>
+            <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Kevin Marino</h2>
+            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-300 pl-8">
+              "The mastermind behind the 'Shield' strategy. By classifying forensic audits as work-product, he ensured that evidence of institutional knowledge never reached the public domain."
+            </div>
+            <div className="grid grid-cols-1 gap-6 text-base text-muted-foreground font-serif">
+              <p>
+                Kevin Marino served as the outside general counsel who coordinated the university's defense during the most critical phases of the McCarrick litigation. His approach was defined by an aggressive use of the attorney-client privilege doctrine to seal nearly 24,000 pages of investigative data.
+              </p>
+              <p>
+                In 2025, discovery revealed that Marino's firm was the central hub through which all "sensitive" institutional findings were filtered before being presented—in redacted form—to the Board of Regents.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The Perimeter Profile */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-12">
+            <div className="h-px bg-zinc-200 mb-16" />
+          </div>
+          <div className="lg:col-span-5">
+             <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
+                <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: Newark Chancery Archive</h4>
+                <div className="text-3xl font-black mb-1">Stio · Linares · Papalia</div>
+                <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">The Operational Perimeter</div>
+                <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  <div>Network: The Newark Shield</div>
+                  <div>Capacity: Operational Enforcers</div>
+                </div>
+             </div>
+          </div>
+          <div className="lg:col-span-7">
+            <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-600 mb-2 font-mono">Profile 05: The Enforcers</h3>
+            <h2 className="text-4xl font-black mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Stio, Linares, & Papalia</h2>
+            <div className="prose-investigative text-lg text-muted-foreground font-serif italic mb-8 border-l-4 border-zinc-300 pl-8">
+              "The operational backbone of the Legal Wall. These attorneys managed the day-to-day suppression of documents across the Essex County court system."
+            </div>
+            <div className="grid grid-cols-1 gap-6 text-base text-muted-foreground font-serif">
+              <p>
+                Representing the boots-on-the-ground legal effort, the teams led by Stio, Linares, and Papalia were responsible for the technical execution of the discovery freeze. Their names appear consistently in the 2025 logs as the primary objectors to the release of the "Twelve Names."
+              </p>
+              <p>
+                Their coordinated motion strategy in Essex County created a three-year delay in the unsealing of the Latham and Rabner exhibits, shielding the institution during the height of its financial reconfiguration.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* Forensic Findings Box */}

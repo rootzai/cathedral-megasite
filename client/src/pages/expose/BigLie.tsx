@@ -88,7 +88,7 @@ export default function BigLie() {
             <div className="p-6 border border-white/5 bg-white/2 rounded-sm text-center group hover:border-gold/30 transition-all">
               <Scale className="w-8 h-8 text-gold mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-2">Layer 2: Operational Shield</h4>
-              <p className="text-[11px] text-zinc-500 leading-relaxed uppercase">Weaponizing the legal apparatus (Marino/Porrino) to destroy whistleblowers.</p>
+              <p className="text-[11px] text-zinc-500 leading-relaxed uppercase">Weaponizing the legal apparatus (Marino/Porrino) and the Newark Perimeter (Stio/Linares/Papalia) to suppress discovery.</p>
             </div>
             <div className="p-6 border border-white/5 bg-white/2 rounded-sm text-center group hover:border-gold/30 transition-all">
               <AlertTriangle className="w-8 h-8 text-gold mx-auto mb-4 group-hover:scale-110 transition-transform" />
