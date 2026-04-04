@@ -20,8 +20,11 @@ import PowerAxis from "@/components/PowerAxis";
 import { SmartImage } from "@/components/SmartImage";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function RedesignedHome() {
+    const [isShieldOpen, setIsShieldOpen] = useState(false);
+
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif overflow-x-hidden">
             {/* BRAND NEW TRIPTYCH PORTAL */}
@@ -38,20 +41,42 @@ export default function RedesignedHome() {
                     <span className="text-[#8b1a1a] font-bold text-[10px] md:text-xs uppercase tracking-[0.5em] mb-6 block animate-fade-in drop-shadow-[0_0_10px_rgba(139,26,26,0.5)]">
                         The Architecture of Concealment
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-12 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 30px rgba(0,0,0,0.8)" }}>
-                        The House That <br className="md:hidden" />
+                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black mb-8 text-white leading-[0.85] tracking-tighter" style={{ textShadow: "0 10px 30px rgba(0,0,0,0.8)" }}>
+                        The House That <br />
                         <span className="text-[#8b1a1a]">McCarrick Built</span>
                     </h1>
 
-                    {/* Altar Presentation of the Shield */}
-                    <div className="w-full max-w-[1000px] mx-auto relative mb-16">
-                        <ShieldHub />
-                    </div>
+                    <p className="text-[#888] font-serif text-lg md:text-xl uppercase tracking-[0.3em] mb-12 opacity-80">
+                       Authentic Forensic Record // Sodom Hall
+                    </p>
+
+                    {/* Altar Presentation of the Shield - Click to Open Modal */}
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <div className="w-full max-w-[600px] mx-auto relative mb-16 cursor-pointer group">
+                                <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[40px] rounded-full group-hover:bg-[#8b1a1a]/20 transition-all" />
+                                <div className="relative border border-white/10 p-1 bg-black/40 backdrop-blur-sm rounded-[40px]">
+                                    <img 
+                                        src="/assets/images/shield-diagram-slide.jpeg" 
+                                        alt="Click to Inspect the Shield" 
+                                        className="w-full h-auto rounded-[35px] border border-white/5 group-hover:scale-[1.02] transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 rounded-[35px]">
+                                        <div className="bg-red-900 text-white px-6 py-3 font-mono text-xs uppercase tracking-[0.4em] shadow-[0_0_20px_#8b1a1a]">
+                                            Inspect Architecture
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-[95vw] w-[1400px] bg-black border-[#8b1a1a]/30 p-0 text-white overflow-hidden shadow-[0_0_100px_rgba(139,26,26,0.2)]">
+                            <ShieldHub />
+                        </DialogContent>
+                    </Dialog>
 
                     <div className="max-w-2xl mx-auto">
-                        <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
-                            A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
-                            Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
+                        <p className="text-lg md:text-xl text-zinc-500 leading-relaxed mb-12 font-serif italic">
+                            "The Architecture of Silence is constructed in concentric layers. To find the source, one must penetrate the five rings of institutional barrier."
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <Link href="/evidence">
