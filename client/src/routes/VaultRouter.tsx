@@ -40,6 +40,14 @@ export const VaultRoutes = [
     <Route key="v3" path={"/vault/finances"}><ChurchBKPageLayout component={ChurchBKDiocesanFinance} /></Route>,
     <Route key="v4" path={"/vault/the-corporate-veil"}><ChurchBKPageLayout component={ChurchBKTheCorporateVeil} /></Route>,
     <Route key="v5" path={"/vault/active-case-dossiers"}><ChurchBKPageLayout component={ChurchBKActiveCaseDossiers} /></Route>,
+    <Route key="v6" path={"/vault/creditor-committee"}><ChurchBKPageLayout component={ChurchBKCreditorCommitteePortal} /></Route>,
+    <Route key="v7" path={"/vault/institutional-structure"}><ChurchBKPageLayout component={ChurchBKInstitutionalStructure} /></Route>,
+    <Route key="v8" path={"/vault/forensic-model"}><ChurchBKPageLayout component={ChurchBKFinancialModel} /></Route>,
+    <Route key="v9" path={"/vault/stakeholder-analysis"}><ChurchBKPageLayout component={ChurchBKStakeholderAnalysis} /></Route>,
+    <Route key="v10" path={"/vault/the-cardinalate"}><ChurchBKPageLayout component={ChurchBKTheCardinalate} /></Route>,
+    <Route key="v11" path={"/vault/global-growth"}><ChurchBKPageLayout component={ChurchBKGlobalGrowth} /></Route>,
+    <Route key="v12" path={"/vault/sacramental-data"}><ChurchBKPageLayout component={ChurchBKSacramentalData} /></Route>,
+    <Route key="v14" path={"/vault/clergy-metrics"}><ChurchBKPageLayout component={ChurchBKClergyMetrics} /></Route>,
     <Route key="v-intel" path={"/vault/intelligence"}><ChurchBKPageLayout component={ForensicIntelligence} /></Route>,
     <Route key="v13" path={"/church-bk*"}><ChurchBKPageLayout component={ChurchBKDocumentLibrary} /></Route>
 ];

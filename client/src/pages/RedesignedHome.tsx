@@ -21,6 +21,7 @@ import { SmartImage } from "@/components/SmartImage";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import ForensicSiteMap from "@/components/ForensicSiteMap";
 
 export default function RedesignedHome() {
     const [isShieldOpen, setIsShieldOpen] = useState(false);
@@ -46,8 +47,8 @@ export default function RedesignedHome() {
                         <span className="text-[#8b1a1a]">McCarrick Built</span>
                     </h1>
 
-                    <p className="text-[#888] font-serif text-lg md:text-xl uppercase tracking-[0.3em] mb-12 opacity-80">
-                       Authentic Forensic Record // Sodom Hall
+                    <p className="text-[10px] font-bold text-white uppercase tracking-[0.5em] mb-12">
+                        Authentic Forensic Record // Sodom Hall
                     </p>
 
                     {/* Altar Presentation of the Shield - Click to Open Modal */}
@@ -57,19 +58,19 @@ export default function RedesignedHome() {
                                 <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[40px] rounded-full group-hover:bg-[#8b1a1a]/20 transition-all" />
                                 <div className="relative border border-white/10 p-1 bg-black/40 backdrop-blur-sm rounded-[40px]">
                                     <img 
-                                        src="/assets/images/shield-diagram-slide.jpeg" 
+                                        src="/assets/shield-diagram-slide.jpeg" 
                                         alt="Click to Inspect the Shield" 
                                         className="w-full h-auto rounded-[35px] border border-white/5 group-hover:scale-[1.02] transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 rounded-[35px]">
                                         <div className="bg-red-900 text-white px-6 py-3 font-mono text-xs uppercase tracking-[0.4em] shadow-[0_0_20px_#8b1a1a]">
-                                            Inspect Architecture
+                                            Open Shield Hub
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-[1400px] bg-black border-[#8b1a1a]/30 p-0 text-white overflow-hidden shadow-[0_0_100px_rgba(139,26,26,0.2)]">
+                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[95vh] bg-black border-[#8b1a1a]/30 p-0 text-white overflow-y-auto shadow-[0_0_100px_rgba(139,26,26,0.2)] duration-75">
                             <ShieldHub />
                         </DialogContent>
                     </Dialog>
@@ -85,8 +86,8 @@ export default function RedesignedHome() {
                                 </a>
                             </Link>
                             <Link href="/governance">
-                                <a className="w-full sm:w-auto border border-[#8b1a1a] text-red-500 px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:text-white transition-all shadow-[0_0_15px_rgba(139,26,26,0.2)]">
-                                    Governance Hierarchy
+                                <a className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:border-[#8b1a1a] hover:shadow-[0_0_20px_rgba(139,26,26,0.4)] transition-all">
+                                    Active Litigation
                                 </a>
                             </Link>
                         </div>
@@ -169,28 +170,9 @@ export default function RedesignedHome() {
                 </div>
             </section>
 
-            {/* SECTION 4: THE VOCABULARY */}
-            <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#0d0d10]">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-white uppercase tracking-[0.2em] mb-6">Category Vocabulary</h2>
-                        <p className="text-[#666] max-w-2xl mx-auto">To understand the shield, you must speak the language of its architects. Every euphemism was a brick in the wall.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            { term: "Laundered", icon: FolderDown, def: "The process of moving an abuser between parishes without informing local authorities, using 'clean' personnel files." },
-                            { term: "Corporation Sole", icon: ShieldAlert, def: "A legal entity where all assets are owned by one individual (the Bishop), shielding the institution from individual parish liability." },
-                            { term: "The Vault", icon: Archive, def: "The unsealed archives of the cover-up of the cover-up—a multi-generational forensic record extending far beyond any single report." },
-                            { term: "The Breach", icon: Search, def: "A specific forensic opening where institutional documentation contradicts public statements or legal filings." }
-                        ].map((item, i) => (
-                            <div key={i} className="p-8 border border-[#1a1a22] bg-[#0a0a0c] hover:border-[#8b1a1a]/50 transition-all group text-left">
-                                <item.icon className="w-5 h-5 text-[#8b1a1a] mb-6 group-hover:scale-110 transition-transform" />
-                                <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] block mb-4">{item.term}</span>
-                                <p className="text-sm text-[#888] leading-relaxed italic">"{item.def}"</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            {/* SECTION 4: THE SITE MAP */}
+            <section id="sitemap">
+                <ForensicSiteMap />
             </section>
 
             {/* FOOTER */}

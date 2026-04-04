@@ -22,7 +22,9 @@ const Stephens = React.lazy(() => import("./pages/opinions/Stephens"));
 // Legacy Core Pages (Will be mapped to folders)
 const About = React.lazy(() => import("./pages/About"));
 const Corrections = React.lazy(() => import("./pages/Corrections"));
+const Dedication = React.lazy(() => import("./pages/Dedication"));
 const CathedralHome = React.lazy(() => import("./pages/Home"));
+const TheRecord = React.lazy(() => import("./pages/TheRecord"));
 
 // Modular Routes (To be integrated into IA)
 import { EndgameRoutes } from "./routes/EndgameRouter";
@@ -90,6 +92,12 @@ function Router() {
         </Route>
         <Route path="/about">
           <PageLayout component={About} />
+        </Route>
+        <Route path="/dedication">
+          <PageLayout component={Dedication} />
+        </Route>
+        <Route path="/the-record">
+          <PageLayout component={TheRecord} />
         </Route>
         <Route path="/corrections">
           <PageLayout component={Corrections} />

@@ -17,9 +17,11 @@ const RulingTimeline = React.lazy(() => import("../pages/ruling/Timeline"));
 // Expose
 const CheckchioNewOrleans = React.lazy(() => import("../pages/expose/CheckchioNewOrleans"));
 const EpsteinNexus = React.lazy(() => import("../pages/expose/EpsteinNexus"));
+const EpsteinRuemmlerPivot = React.lazy(() => import("../pages/expose/EpsteinRuemmlerPivot"));
 const KennethMartinexpose = React.lazy(() => import("../pages/expose/KennethMartin"));
 const LegalTrumvirate = React.lazy(() => import("../pages/expose/LegalTrumvirate"));
 const McCarrickNetworkexpose = React.lazy(() => import("../pages/expose/McCarrickNetwork"));
+const NyreDismissal = React.lazy(() => import("../pages/expose/NyreDismissal"));
 const Overview = React.lazy(() => import("../pages/expose/Overview"));
 const RabnerExhibits = React.lazy(() => import("../pages/expose/RabnerExhibits"));
 const WhistleblowerUnmasking = React.lazy(() => import("../pages/expose/WhistleblowerUnmasking"));
@@ -28,6 +30,15 @@ const SuccessionEpilogue = React.lazy(() => import("../pages/SuccessionEpilogue"
 const ReillyProtection = React.lazy(() => import("../pages/expose/ReillyProtection"));
 const AppealGrounds = React.lazy(() => import("../pages/expose/AppealGrounds"));
 const BigLie = React.lazy(() => import("../pages/expose/BigLie"));
+
+// Ruling (Expansion)
+const RulingAnalysis = React.lazy(() => import("../pages/ruling/Analysis"));
+const RulingCorporateVeil = React.lazy(() => import("../pages/ruling/CorporateVeil"));
+const RulingDirtyDozen = React.lazy(() => import("../pages/ruling/DirtyDozen"));
+const RulingEvidence = React.lazy(() => import("../pages/ruling/Evidence"));
+const RulingSanctionPlea = React.lazy(() => import("../pages/ruling/SanctionPlea"));
+const RulingSheeranMcCarrick = React.lazy(() => import("../pages/ruling/SheeranMcCarrick"));
+const RulingTobinHypocrisy = React.lazy(() => import("../pages/ruling/TobinHypocrisy"));
 
 // Endgame
 const McCarrickDownfall = React.lazy(() => import("../pages/endgame/mccarrick/Downfall"));
@@ -52,6 +63,7 @@ export const ExposeRoutes = [
     <Route key="e9-expose" path={"/expose/legal-triumvirate"}><CoverUpLayout><LegalTrumvirate /></CoverUpLayout></Route>,
     <Route key="e10" path={"/coverup/epstein"}><EpsteinNexus /></Route>,
     <Route key="e10-expose" path={"/expose/epstein-nexus"}><EpsteinNexus /></Route>,
+    <Route key="e10-pivot" path={"/expose/epstein-pivot"}><CoverUpLayout><EpsteinRuemmlerPivot /></CoverUpLayout></Route>,
     <Route key="e-reilly" path={"/expose/reilly-protection"}><CoverUpLayout><ReillyProtection /></CoverUpLayout></Route>,
     <Route key="e-reilly-ascent" path={"/expose/reilly-ascent"}><CoverUpLayout><ReillyProtection /></CoverUpLayout></Route>,
 
@@ -59,11 +71,18 @@ export const ExposeRoutes = [
     <Route key="e11" path={"/breach"}><BreachLayout><WhistleblowerUnmasking /></BreachLayout></Route>,
     <Route key="e12" path={"/breach/whistleblowers"}><BreachLayout><WhistleblowerUnmasking /></BreachLayout></Route>,
     <Route key="e13" path={"/breach/courtroom"}><BreachLayout><RulingTimeline /></BreachLayout></Route>,
+    <Route key="e13-analysis" path={"/breach/analysis"}><BreachLayout><RulingAnalysis /></BreachLayout></Route>,
+    <Route key="e13-dirty" path={"/breach/dirty-dozen"}><BreachLayout><RulingDirtyDozen /></BreachLayout></Route>,
+    <Route key="e13-sanctions" path={"/breach/sanction-plea"}><BreachLayout><RulingSanctionPlea /></BreachLayout></Route>,
+    <Route key="e13-tobin" path={"/breach/tobin-hypocrisy"}><BreachLayout><RulingTobinHypocrisy /></BreachLayout></Route>,
+    <Route key="e13-sheeran" path={"/breach/sheeran-mccarrick"}><BreachLayout><RulingSheeranMcCarrick /></BreachLayout></Route>,
+    <Route key="e13-veil" path={"/breach/corporate-veil"}><BreachLayout><RulingCorporateVeil /></BreachLayout></Route>,
+    <Route key="e13-evidence" path={"/breach/evidence-meta"}><BreachLayout><RulingEvidence /></BreachLayout></Route>,
     <Route key="e14" path={"/breach/rabner"}><BreachLayout><RabnerExhibits /></BreachLayout></Route>,
     <Route key="e14-expose" path={"/expose/rabner-exhibits"}><BreachLayout><RabnerExhibits /></BreachLayout></Route>,
     <Route key="e15" path={"/breach/forensics"}><BreachLayout><Overview /></BreachLayout></Route>,
     <Route key="e-appeal" path={"/expose/appeal-grounds"}><BreachLayout><AppealGrounds /></BreachLayout></Route>,
-    <Route key="e-nyre" path={"/expose/nyre-dismissal"}><CoverUpLayout><Overview /></CoverUpLayout></Route>,
+    <Route key="e-nyre" path={"/expose/nyre-dismissal"}><CoverUpLayout><NyreDismissal /></CoverUpLayout></Route>,
 
     // THE SUCCESSION (Act 4)
     <Route key="e16" path={"/succession"}><SuccessionLayout><LorenzoHome /></SuccessionLayout></Route>,
