@@ -100,7 +100,7 @@ export default function PatrickWall() {
             <p className="text-zinc-400 font-serif text-lg italic leading-relaxed">
                 Patrick Wall provides operational intelligence for plaintiff firms seeking to penetrate the bankruptcy shield.
             </p>
-            <Link href="/about#tips">
+            <Link href="/tips">
                 <a className="bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-[10px] shadow-[0_0_40px_rgba(139,26,26,0.5)]">
                     Contact The Intelligence Cell
                 </a>

@@ -66,17 +66,17 @@
   --color-gold: oklch(0.7 0.15 85);
   --color-parchment: #faf6ee;
 
-  /* Global Typography Bumps for Legibility */
-  --font-size-xs: 14px;
-  --font-size-sm: 18px;
-  --font-size-base: 22px;
-  --font-size-lg: 26px;
-  --font-size-xl: 32px;
-  --font-size-2xl: 40px;
-  --font-size-3xl: 56px;
-  --font-size-4xl: 72px;
-  --font-size-5xl: 96px;
-  --font-size-6xl: 120px;
+  /* Global Typography Bumps for Legibility (+4px Scale) */
+  --font-size-xs: 18px;
+  --font-size-sm: 22px;
+  --font-size-base: 26px;
+  --font-size-lg: 30px;
+  --font-size-xl: 36px;
+  --font-size-2xl: 44px;
+  --font-size-3xl: 60px;
+  --font-size-4xl: 76px;
+  --font-size-5xl: 100px;
+  --font-size-6xl: 124px;
 }
 
 :root {
@@ -574,12 +574,13 @@
   .bg-zinc-900,
   .bg-zinc-800,
   .bg-black,
+  .bg-red-950,
   .bg-cathedral-dark,
   .bg-cathedral-light,
   .bg-cathedral-accent,
   .bg-ink {
-    --foreground: oklch(0.95 0.01 85) !important;
-    --muted-foreground: oklch(0.7 0.01 85) !important;
+    --foreground: oklch(0.98 0.01 85) !important;
+    --muted-foreground: oklch(0.8 0.05 85) !important;
     color: var(--foreground) !important;
   }
 

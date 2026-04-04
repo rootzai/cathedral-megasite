@@ -7,17 +7,17 @@ import { cn } from "@/lib/utils";
 const POWER_AXIS_DATA = [
     {
         level: 1,
-        title: "THE FRONT LINE",
-        subtitle: "The Genesis of the Scandal",
+        title: "MARTIN / CRAWFORD",
+        subtitle: "The Original Breach (1987)",
         stats: [
-            "The Predator Node: Documented abuse spanning four decades.",
-            "1983: The first internal report is officially suppressed.",
-            "Structural Enablers: Local parish failures provide the initial layer of concealment.",
+            "The $108,000 Refusal: The behavioral model for the Full Victim Class.",
+            "One victim. One lie about a birthday. One thread that unravels the architecture.",
+            "1989: McCarrick photographed with abuser Kenneth Martin at Christmas party.",
             "2026: Civil trials finally unseal the original 'Front Line' files."
         ],
         callout: {
             title: "CASE STUDY",
-            name: "The Crawford Breach",
+            name: "The 1987 Forensic Report",
             details: "Mark Crawford's age was falsified by the Diocese to claim the statute of limitations had passed.",
             status: "DOCUMENTED FRAUD"
         },

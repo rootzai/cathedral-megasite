@@ -18,6 +18,8 @@ const CathedralHome = React.lazy(() => import("@/pages/Home"));
 const TheRecord = React.lazy(() => import("@/pages/TheRecord"));
 const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion"));
 const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall"));
+const Tips = React.lazy(() => import("@/pages/Tips"));
+const Briefing = React.lazy(() => import("@/pages/Briefing"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 // Modular Routers
@@ -108,6 +110,12 @@ export function CoreRouter() {
         <Route path="/corrections">
           <PageLayout component={Corrections} />
         </Route>
+        <Route path="/tips">
+          <PageLayout component={Tips} />
+        </Route>
+        <Route path="/briefing">
+          <PageLayout component={Briefing} />
+        </Route>
 
         {/* THE REWRITE (OPINIONS) */}
         <Route path="/opinion">
@@ -130,14 +138,16 @@ export function CoreRouter() {
           <PageLayout component={TheyKnew} />
         </Route>
 
-        {/* Integrated Modular Routes */}
-        {ExposeRoutes}
-        {EndgameRoutes}
-        {VaultRoutes}
+        {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}
+        {ExposeRoutes.map(route => route)}
+        {EndgameRoutes.map(route => route)}
+        {VaultRoutes.map(route => route)}
 
         {/* Catch-all and Redirects */}
+        <Route path="/governance">
+            <RedirectHandler /> {/* Will map to /shield via REDIRECT_MAP fallback if not handled */}
+        </Route>
         <Route>
-          <RedirectHandler />
           <PageLayout component={NotFound} />
         </Route>
       </Switch>

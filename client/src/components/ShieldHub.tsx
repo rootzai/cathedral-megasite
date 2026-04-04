@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { Shield, ChevronRight, Lock, Unlock, Activity, Database, Users, AlertCircle } from "lucide-react";
+import { Shield, Lock, Activity, Database } from "lucide-react";
 import { useState } from "react";
 import { FORENSIC_RINGS, PERPETRATORS } from "@/lib/registry";
+import ShieldDiagram from "./ShieldDiagram";
 
 export default function ShieldHub() {
   const [hoveredRing, setHoveredRing] = useState<number | null>(null);
@@ -25,15 +26,13 @@ export default function ShieldHub() {
           
           {/* 1:1 INTERACTIVE SHIELD INTERFACE */}
           <div className="lg:col-span-7 relative aspect-square bg-black border border-white/5 rounded-xl overflow-hidden group">
-            {/* The definitive high-fidelity asset from Step 3426 */}
-            <img 
-                src="/assets/shield-high-fidelity.png" 
-                alt="The Shield Diagram: Architecture of Protection" 
-                className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:brightness-110 transition-all duration-700"
-            />
+            {/* NEW GOTHIC MACHINERY COMPONENT v5.3 */}
+            <div className="absolute inset-0 z-10">
+                <ShieldDiagram />
+            </div>
 
             {/* Interactive SVG Overlay (Hit-zones for Definitive Rings) */}
-            <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-20 overflow-visible">
+            <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-20 overflow-visible opacity-0 hover:opacity-10 transition-opacity">
                 {/* RINGS 1-5 Mapped to the actual image nodes */}
                 {FORENSIC_RINGS.map((ring) => {
                     // Coordinates centered slightly below geometric center to match the graphic
@@ -104,6 +103,23 @@ export default function ShieldHub() {
                                      ))}
                                 </div>
                             </div>
+
+                            {/* v5.3 ADVOCATE PHOTO INTEGRATION */}
+                            {hoveredRing === 1 && (
+                                <div className="mt-4 border border-white/10 p-2 bg-black/60 group animate-in fade-in slide-in-from-top-2 duration-500">
+                                    <div className="relative aspect-video overflow-hidden">
+                                        <img 
+                                            src="/assets/WhatsAppImage2025-10-11at11.40.16_e2ac3ebb.jpg" 
+                                            alt="The Advocate Photo" 
+                                            className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" 
+                                        />
+                                    </div>
+                                    <p className="text-[8px] font-mono text-zinc-500 mt-2 uppercase tracking-widest leading-relaxed">
+                                        <strong className="text-red-900 italic">Forensic Anchor:</strong> McCarrick & Martin at Christmas Party. 
+                                        <span className="block opacity-60">Relative to 1987 Crawford Report (Dec 1989).</span>
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <Link href={FORENSIC_RINGS.find(r => r.id === hoveredRing)?.route || '#'}>

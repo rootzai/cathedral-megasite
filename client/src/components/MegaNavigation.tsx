@@ -34,11 +34,11 @@ export default function MegaNavigation() {
   return (
     <nav className="bg-black border-b border-red-900/30 relative z-50">
       {/* 1. RAINN Crisis Resource Banner (Now Secondary) */}
-      <div className="bg-[#050505] border-b border-white/5 py-1.5 px-4 flex items-center justify-center gap-3 text-[9px]">
-        <span className="text-zinc-600 font-mono uppercase tracking-widest italic">Confidential Survivor Support:</span>
-        <a href="https://www.rainn.org" target="_blank" rel="noopener noreferrer" className="font-bold text-zinc-400 hover:text-red-600 transition-colors uppercase tracking-widest">RAINN.org</a>
-        <span className="text-zinc-800">|</span>
-        <a href="tel:1-800-656-4673" className="font-bold text-red-600 hover:text-red-500 transition-colors tracking-widest">1-800-656-HOPE</a>
+      <div className="bg-[#050505] border-b border-white/5 py-2.5 px-4 flex items-center justify-center gap-3 text-[11px]">
+        <span className="text-zinc-400 font-mono uppercase tracking-widest italic">Confidential Survivor Support:</span>
+        <a href="https://www.rainn.org" target="_blank" rel="noopener noreferrer" className="font-bold text-zinc-100 hover:text-red-600 transition-colors uppercase tracking-widest underline decoration-red-900/40 underline-offset-4">RAINN.org</a>
+        <span className="text-zinc-700">|</span>
+        <a href="tel:1-800-656-4673" className="font-bold text-red-600 hover:text-red-500 transition-colors tracking-[0.2em] bg-red-900/5 px-2 py-0.5 rounded">1-800-656-HOPE</a>
       </div>
 
       {/* 2. Primary Navigation Tier */}
@@ -62,7 +62,7 @@ export default function MegaNavigation() {
             <Link href="/power-axis"><a className={navLinkClass('/power-axis')}>THE POWER AXIS</a></Link>
             <Link href="/breach"><a className={navLinkClass('/breach')}>THE BREACH</a></Link>
 
-            <Link href="/about#tips">
+            <Link href="/tips">
               <a className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]">
                 PENETRATE SHIELD
               </a>
@@ -97,7 +97,7 @@ export default function MegaNavigation() {
                <Link href="/shield"><a className="block px-4 py-3 text-red-600 font-black tracking-widest text-xs border-b border-white/5">THE SHIELD</a></Link>
                <Link href="/conversion"><a className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE CONVERSION</a></Link>
                <Link href="/breach"><a className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE BREACH</a></Link>
-               <Link href="/about#tips"><a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</a></Link>
+               <Link href="/tips"><a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</a></Link>
             </div>
           )}
         </div>
@@ -108,10 +108,10 @@ export default function MegaNavigation() {
         <div className="flex animate-ticker items-center py-1">
           {[...newsItems, ...newsItems].map((item, idx) => (
             <div key={idx} className="flex items-center px-12">
-              <span className={`text-[8px] font-bold px-2 py-0.5 mr-2 rounded ${item.type === 'BREAKING' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-zinc-400'}`}>
+              <span className={`text-[10px] font-bold px-3 py-1 mr-3 rounded border ${item.type === 'BREAKING' ? 'bg-red-900 text-white border-red-600' : 'bg-zinc-900 text-zinc-100 border-white/10'}`}>
                 {item.type}
               </span>
-              <span className="text-[10px] font-mono text-zinc-300 uppercase tracking-widest">{item.text}</span>
+              <span className="text-xs font-mono text-zinc-100 uppercase tracking-widest font-medium">{item.text}</span>
             </div>
           ))}
         </div>
@@ -129,11 +129,14 @@ export default function MegaNavigation() {
       )}
 
       {/* Jurisdictional Counter / Who's Watching */}
-      <div className="bg-[#050505] text-[9px] text-zinc-600 py-2.5 px-4 text-center border-t border-white/5 font-mono uppercase tracking-widest">
+      <div className="bg-[#050505] text-[11px] text-zinc-400 py-3 px-4 text-center border-t border-white/5 font-mono uppercase tracking-[0.3em]">
+        <span className="opacity-40">Founding Collaborator:</span>
+        <span className="ml-2 text-zinc-200">Patrick Wall</span>
+        <span className="mx-6 opacity-20">|</span>
         <span>Live Trace:</span>
-        <span className="ml-2 text-red-900 font-bold">4,812 Access Points</span>
-        <span className="mx-4 opacity-10">|</span>
-        <span className="text-zinc-700">Jurisdictions: Vatican City, Newark, DC, Geneva</span>
+        <span className="ml-2 text-red-500 font-black shadow-[0_0_10px_rgba(220,38,38,0.4)]">4,812 Access Points</span>
+        <span className="mx-6 opacity-20">|</span>
+        <span className="text-zinc-200">Jurisdictions: Vatican City, Newark, DC, Geneva</span>
       </div>
     </nav>
   );

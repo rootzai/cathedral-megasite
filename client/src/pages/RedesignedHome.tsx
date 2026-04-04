@@ -27,7 +27,7 @@ export default function RedesignedHome() {
             <section className="relative min-h-screen flex flex-col items-center justify-center p-6 border-b border-red-900/20 overflow-hidden">
                 {/* Visual Anchor: The Advocate Photo Background (Subtle) */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none grayscale">
-                    <img src="/assets/images/advocate-photo.jpg" alt="" className="w-full h-full object-cover" />
+                    <img src="/assets/WhatsAppImage2025-10-11at11.40.16_e2ac3ebb.jpg" alt="" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c]" />
                 </div>
 
@@ -39,7 +39,7 @@ export default function RedesignedHome() {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-black mb-8 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 40px rgba(0,0,0,0.9)" }}>
+                    <h1 className="text-5xl md:text-8xl lg:text-[8rem] font-black mb-8 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 40px rgba(0,0,0,0.9)" }}>
                         The Case of <br />
                         <span className="text-red-900">Mark Crawford</span>
                     </h1>
@@ -57,13 +57,13 @@ export default function RedesignedHome() {
 
                     {/* ACTION CTAs (CATEGORY VOCABULARY) */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl">
-                        <Link href="/evidence">
-                            <a className="group w-full sm:w-auto bg-red-900 hover:bg-red-600 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-[0_0_30px_rgba(139,26,26,0.5)] flex items-center justify-center gap-3">
+                        <Link href="/shield">
+                            <a className="group w-full sm:w-auto bg-red-900 hover:bg-red-600 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-[0_0_30px_rgba(139,26,26,0.5)] flex items-center justify-center gap-3 text-center">
                                 MAP THE SHIELD <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </Link>
                         <Link href="/breach">
-                            <a className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-white/30 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3">
+                            <a className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-white/30 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3 text-center">
                                 FIND THE BREACH POINT <Search className="w-4 h-4" />
                             </a>
                         </Link>
@@ -77,8 +77,8 @@ export default function RedesignedHome() {
                     <div className="relative group">
                         <div className="absolute inset-0 bg-red-900/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="relative border border-white/10 p-2 bg-zinc-900/40">
-                             <img src="/assets/images/advocate-photo.jpg" alt="The Advocate Photo" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000" />
-                             <div className="absolute top-4 left-4 bg-black/80 text-white text-[8px] font-mono px-3 py-1 uppercase tracking-widest border border-white/10">Evidence SHU-99</div>
+                             <img src="/assets/WhatsAppImage2025-10-11at11.40.16_e2ac3ebb.jpg" alt="The Advocate Photo" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000" />
+                             <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] font-mono px-3 py-1 uppercase tracking-widest border border-white/10">Evidence SHU-99</div>
                         </div>
                         <div className="mt-6 p-6 border-l-2 border-red-900 bg-black/40">
                             <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest leading-relaxed">
@@ -89,13 +89,16 @@ export default function RedesignedHome() {
                     </div>
                     <div className="space-y-8">
                         <span className="text-red-800 font-black text-[9px] uppercase tracking-[0.5em] block">The Forensic Answer</span>
-                        <h2 className="text-4xl md:text-6xl font-black text-white leading-none uppercase tracking-tighter">THE REWRITE: <br /><span className="text-red-900">The Gratuitous Fraud</span></h2>
-                        <p className="text-lg text-zinc-400 font-serif leading-relaxed italic">
-                            How do you get through the shield? You find where they lied. To stop Crawford's 2005 lawsuit, the Church falsified internal age registries to claim the statute of limitations had passed—even though they knew the exact year of his birth.
+                        <h2 className="text-4xl md:text-6xl font-black text-white leading-none uppercase tracking-tighter">THE REWRITE</h2>
+                        <p className="text-xl text-white font-serif italic border-l-4 border-red-900 pl-6 py-2">
+                            "A survivor who refused to be bought."
                         </p>
-                        <Link href="/opinion">
+                        <p className="text-lg text-zinc-400 font-serif leading-relaxed">
+                            How do you get through the shield? You identify the lie. In 2004, the institution attempted to stop Mark Crawford with a $108,000 settlement. <strong className="text-white">He refused.</strong> To stop his 2005 lawsuit, they falsified internal age registries to claim the statute of limitations had passed—even though they knew the exact year of his birth.
+                        </p>
+                        <Link href="/coverup/big-lie">
                             <a className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                                EXAMINE THE REWRITE MECHANISM
+                                EXAMINE THE DISINFORMATION AUDIT
                             </a>
                         </Link>
                     </div>
@@ -129,24 +132,24 @@ export default function RedesignedHome() {
                                 </div>
                             </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[92vh] bg-black border-red-900/30 p-0 text-white overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
+                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[92vh] bg-black border-red-900/30 p-0 text-white shadow-[0_0_100px_rgba(0,0,0,1)] overflow-y-auto">
                             <ShieldHub />
                         </DialogContent>
                     </Dialog>
                 </div>
             </section>
 
-            {/* SECTION 4: THE CONVERSION (PATRICK WALL INTEL) */}
+            {/* SECTION 4: THE CONVERSION (CRAWFORD & PATRICK WALL) */}
             <section className="py-24 px-6 bg-[#030303] border-b border-red-900/10">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
                     <div className="lg:col-span-4 space-y-6">
                         <div className="w-16 h-1 bg-red-900" />
                         <h3 className="text-3xl font-black text-white uppercase tracking-tighter">THE CONVERSION</h3>
                         <p className="text-sm text-zinc-500 font-mono uppercase tracking-widest leading-loose">
-                            The core methodology of the Church index: Turning "human suffering" into "institutional process."
+                            Turning "Human Suffering" into "Institutional Process."
                         </p>
                         <div className="p-6 border border-zinc-900 bg-black/40">
-                             <span className="text-red-700 font-black text-[9px] uppercase mb-4 block">Insider Intelligence</span>
+                             <span className="text-red-700 font-black text-[9px] uppercase mb-4 block">Founding Collaborator</span>
                              <p className="text-lg text-white font-serif italic mb-6">"I didn't just watch the machine. I helped build the parts."</p>
                              <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">— PATRICK WALL</span>
                         </div>
@@ -154,13 +157,13 @@ export default function RedesignedHome() {
                     <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-[#080808] border border-white/5 p-8 hover:border-red-900/30 transition-all group">
                             <Activity className="w-6 h-6 text-red-900 mb-6 group-hover:animate-pulse" />
-                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The $108k Trap</h4>
-                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose">The specific financial mechanism used to convert an actionable lawsuit into a silenced NDA.</p>
+                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The Crawford Pivot</h4>
+                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose">The specific behavioral model for refusal. One victim. One lie about a birthday. One thread that unravels the architecture.</p>
                         </div>
                         <div className="bg-[#080808] border border-white/5 p-8 hover:border-red-900/30 transition-all group">
                             <Database className="w-6 h-6 text-red-900 mb-6 group-hover:animate-pulse" />
-                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The Playbook</h4>
-                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose"> Verbatim documentation of the A&M legal strategy used across 43 diocesan bankruptcies.</p>
+                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The $108k Refusal</h4>
+                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose">The financial threshold where the 'Rewrite' was deployed to stop a high-fidelity breach point.</p>
                         </div>
                     </div>
                 </div>
