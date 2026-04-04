@@ -49,55 +49,60 @@ export default function ShieldHub() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
           
           {/* 1:1 INTERACTIVE SHIELD INTERFACE */}
-          <div className="lg:col-span-7 relative aspect-square bg-[#0a0a0c] border border-white/5 rounded-full overflow-hidden group">
-            {/* The actual drawing asset */}
+          <div className="lg:col-span-7 relative aspect-square bg-[#0a0a0c] border border-white/5 rounded-xl overflow-hidden group">
+            {/* The actual high-fidelity blueprint asset */}
             <img 
-                src="/assets/shield-diagram-slide.jpeg" 
-                alt="Architecture of Protection" 
-                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-1000"
+                src="/assets/shield-high-fidelity.png" 
+                alt="Architecture of Protection - High Fidelity Blueprint" 
+                className="absolute inset-0 w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-1000"
             />
 
-            {/* Interactive SVG Overlay (Hit-zones) */}
+            {/* Interactive SVG Overlay (Hit-zones for Blueprint Nodes) */}
             <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-20 overflow-visible">
-                {/* Rings rendered inside-out to handle hover overlap correctly */}
-                {[5, 4, 3, 2, 1].map((ringId) => {
-                    const ring = RING_MAP.find(r => r.id === ringId)!;
-                    const isHovered = hoveredRing === ringId;
-                    
-                    return (
-                        <circle
-                            key={ringId}
-                            cx="50"
-                            cy="50"
-                            r={ring.radius / 2}
-                            fill={isHovered ? ring.color : "transparent"}
-                            stroke={isHovered ? "rgba(255,255,255,0.2)" : "transparent"}
-                            strokeWidth="0.5"
-                            className="cursor-pointer transition-all duration-300"
-                            onMouseEnter={() => setHoveredRing(ringId)}
-                            onMouseLeave={() => setHoveredRing(null)}
-                            style={{ pointerEvents: 'auto' }}
-                        />
-                    );
-                })}
-
-                {/* Specific Annotations to match the drawing vibes */}
-                {hoveredRing && (
-                    <motion.text
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        x="50"
-                        y={50 - (RING_MAP.find(r => r.id === hoveredRing)!.radius / 2) - 2}
-                        textAnchor="middle"
-                        className="fill-white font-mono text-[2.5px] uppercase tracking-widest font-black"
-                    >
-                        DETECTING BREACH IN RING {hoveredRing}...
-                    </motion.text>
-                )}
+                {/* SETON HALL / ACADEMIC SHIELD */}
+                <circle
+                    cx="30" cy="30" r="8"
+                    fill="transparent"
+                    className="cursor-pointer hover:fill-red-900/20 transition-all"
+                    onMouseEnter={() => setHoveredRing(4)}
+                    onMouseLeave={() => setHoveredRing(null)}
+                />
+                {/* ROME / VATICAN NEXUS */}
+                <circle
+                    cx="35" cy="70" r="8"
+                    fill="transparent"
+                    className="cursor-pointer hover:fill-red-900/20 transition-all"
+                    onMouseEnter={() => setHoveredRing(5)}
+                    onMouseLeave={() => setHoveredRing(null)}
+                />
+                {/* PERPETRATORS / THE CORE */}
+                <circle
+                    cx="50" cy="50" r="10"
+                    fill="transparent"
+                    className="cursor-pointer hover:fill-red-900/20 transition-all border-2 border-red-600"
+                    onMouseEnter={() => setHoveredRing(1)}
+                    onMouseLeave={() => setHoveredRing(null)}
+                />
+                {/* LEGAL FIRMS / SHIELD */}
+                <circle
+                    cx="65" cy="70" r="8"
+                    fill="transparent"
+                    className="cursor-pointer hover:fill-red-900/20 transition-all"
+                    onMouseEnter={() => setHoveredRing(3)}
+                    onMouseLeave={() => setHoveredRing(null)}
+                />
+                {/* AG OFFICE / MEDIA */}
+                <circle
+                    cx="70" cy="30" r="8"
+                    fill="transparent"
+                    className="cursor-pointer hover:fill-red-900/20 transition-all"
+                    onMouseEnter={() => setHoveredRing(2)}
+                    onMouseLeave={() => setHoveredRing(null)}
+                />
             </svg>
 
-            {/* Ambient Pulse beneath the core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-red-600/40 rounded-full blur-[15px] animate-pulse pointer-events-none" />
+            {/* Ambient Pulse beneath the perpetrators core */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-red-600/20 rounded-full blur-[20px] animate-pulse pointer-events-none" />
           </div>
 
           {/* Forensic Informational Panel */}

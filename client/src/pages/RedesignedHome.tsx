@@ -58,7 +58,7 @@ export default function RedesignedHome() {
                                 <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[40px] rounded-full group-hover:bg-[#8b1a1a]/20 transition-all" />
                                 <div className="relative border border-white/10 p-1 bg-black/40 backdrop-blur-sm rounded-[40px]">
                                     <img 
-                                        src="/assets/shield-diagram-slide.jpeg" 
+                                        src="/assets/shield-high-fidelity.png" 
                                         alt="Click to Inspect the Shield" 
                                         className="w-full h-auto rounded-[35px] border border-white/5 group-hover:scale-[1.02] transition-transform duration-700"
                                     />
