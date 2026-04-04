@@ -5,18 +5,19 @@ import { forensicDataPoints } from "@/lib/data";
 interface DataPoint {
   label: string;
   value: string;
-  status: string;
+  metric: string;
+  status?: string;
 }
 
 export function Level3EvidenceStream() {
-  const dataPoints: DataPoint[] = (forensicDataPoints as DataPoint[]) || [
-    { label: "Target Account", value: "cardinaltobin@gmail.com", status: "UNMASKED" },
-    { label: "Subpoena Date", value: "July 18, 2024", status: "VERIFIED" },
-    { label: "Latham Archive", value: "24,000 Pages", status: "COMPELLED" },
-    { label: "Slush Fund Checks", value: "$600,000", status: "TRACED" },
-    { label: "Board Vote", value: "August 27, 2019", status: "SCIF RECORDED" },
-    { label: "Settlement Refusal", value: "$108,000", status: "DOCUMENTED" }
-  ];
+  const data: any[] = forensicDataPoints;
+  const dataPoints: DataPoint[] = data.map(d => ({
+    label: d.label,
+    value: d.value,
+    metric: d.metric,
+    status: d.metric.includes("Served") ? "VERIFIED" : 
+            d.metric.includes("Slush") ? "TRACED" : "RECORDED"
+  }));
 
   return (
     <div className="bg-[#050505] border border-gold/10 p-6 rounded-sm font-mono text-[10px] overflow-hidden relative">
