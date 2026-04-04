@@ -49,60 +49,38 @@ export default function ShieldHub() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
           
           {/* 1:1 INTERACTIVE SHIELD INTERFACE */}
-          <div className="lg:col-span-7 relative aspect-square bg-[#0a0a0c] border border-white/5 rounded-xl overflow-hidden group">
-            {/* The actual high-fidelity blueprint asset */}
+          <div className="lg:col-span-7 relative aspect-square bg-black border border-white/5 rounded-xl overflow-hidden group">
+            {/* The definitive high-fidelity asset from Step 3426 */}
             <img 
                 src="/assets/shield-high-fidelity.png" 
-                alt="Architecture of Protection - High Fidelity Blueprint" 
-                className="absolute inset-0 w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-1000"
+                alt="The Shield Diagram: Architecture of Protection" 
+                className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:brightness-110 transition-all duration-700"
             />
 
-            {/* Interactive SVG Overlay (Hit-zones for Blueprint Nodes) */}
+            {/* Interactive SVG Overlay (Hit-zones for Definitive Rings) */}
             <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-20 overflow-visible">
-                {/* SETON HALL / ACADEMIC SHIELD */}
-                <circle
-                    cx="30" cy="30" r="8"
-                    fill="transparent"
-                    className="cursor-pointer hover:fill-red-900/20 transition-all"
-                    onMouseEnter={() => setHoveredRing(4)}
-                    onMouseLeave={() => setHoveredRing(null)}
-                />
-                {/* ROME / VATICAN NEXUS */}
-                <circle
-                    cx="35" cy="70" r="8"
-                    fill="transparent"
-                    className="cursor-pointer hover:fill-red-900/20 transition-all"
-                    onMouseEnter={() => setHoveredRing(5)}
-                    onMouseLeave={() => setHoveredRing(null)}
-                />
-                {/* PERPETRATORS / THE CORE */}
-                <circle
-                    cx="50" cy="50" r="10"
-                    fill="transparent"
-                    className="cursor-pointer hover:fill-red-900/20 transition-all border-2 border-red-600"
-                    onMouseEnter={() => setHoveredRing(1)}
-                    onMouseLeave={() => setHoveredRing(null)}
-                />
-                {/* LEGAL FIRMS / SHIELD */}
-                <circle
-                    cx="65" cy="70" r="8"
-                    fill="transparent"
-                    className="cursor-pointer hover:fill-red-900/20 transition-all"
-                    onMouseEnter={() => setHoveredRing(3)}
-                    onMouseLeave={() => setHoveredRing(null)}
-                />
-                {/* AG OFFICE / MEDIA */}
-                <circle
-                    cx="70" cy="30" r="8"
-                    fill="transparent"
-                    className="cursor-pointer hover:fill-red-900/20 transition-all"
-                    onMouseEnter={() => setHoveredRing(2)}
-                    onMouseLeave={() => setHoveredRing(null)}
-                />
+                {/* RINGS 1-5 Mapped to the actual image nodes */}
+                {[5, 4, 3, 2, 1].map((ringId) => {
+                    // Coordinates centered slightly below geometric center to match the graphic
+                    const radiuses = { 1: 12, 2: 24, 3: 36, 4: 48, 5: 60 };
+                    return (
+                        <circle
+                            key={ringId}
+                            cx="50"
+                            cy="55"
+                            r={radiuses[ringId as keyof typeof radiuses] / 2}
+                            fill="transparent"
+                            className="cursor-pointer hover:fill-red-900/10 transition-all"
+                            onMouseEnter={() => setHoveredRing(ringId)}
+                            onMouseLeave={() => setHoveredRing(null)}
+                            style={{ pointerEvents: 'auto' }}
+                        />
+                    );
+                })}
             </svg>
 
             {/* Ambient Pulse beneath the perpetrators core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-red-600/20 rounded-full blur-[20px] animate-pulse pointer-events-none" />
+            <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-red-600/10 rounded-full blur-[25px] animate-pulse pointer-events-none" />
           </div>
 
           {/* Forensic Informational Panel */}
