@@ -163,18 +163,31 @@ export default function SanctionPlea() {
           <section className="space-y-6">
             <h2 className="font-heading text-3xl text-foreground flex items-center gap-2">
               <FileWarning className="w-6 h-6 text-destructive" />
-              The Sanction Must Fit
+              the technical legal wall
             </h2>
-            <div className="bg-card border border-border p-6 space-y-4">
-              <p className="font-body text-zinc-900">
-                Tom Scrivo is not just any lawyer. He knew better.
+            <div className="bg-card border border-border p-8 space-y-6">
+              <p className="font-body text-zinc-900 leading-relaxed">
+                The concealment was not a solo effort by Scrivo. It was a coordinated, multi-firm perimeter known internally as the **"Technical Legal Wall."**
               </p>
-              <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Former Chief Counsel to Gov. Chris Christie</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Chair of NJ Economic Development Authority</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Partner at prominent NJ law firm</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-destructive rounded-full" /> Seton Hall Law School Graduate</li>
-              </ul>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <h4 className="font-heading text-lg text-destructive uppercase tracking-wide">Kevin Marino</h4>
+                  <p className="text-xs text-muted-foreground font-mono">MARINO, TORTORELLA & BOYLE</p>
+                  <p className="text-sm text-zinc-800 italic">"The Lead Architect of Privilege. Masterminded the strategy of classifying institutional audits as protected work product."</p>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-heading text-lg text-destructive uppercase tracking-wide">The Newark Perimeter</h4>
+                  <p className="text-xs text-muted-foreground font-mono">STIO // LINARES // PAPALIA</p>
+                  <p className="text-sm text-zinc-800 italic">"The operational enforcers. Managed the day-to-day suppression of discovery requests across Newark and Essex County."</p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border/50">
+                <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest leading-loose">
+                  * All names derived from the 2025 Essex County discovery log ESX-L-8762-19.
+                </p>
+              </div>
             </div>
           </section>
         </div>
