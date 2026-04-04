@@ -54,33 +54,55 @@ const RINGS: Ring[] = [
 ];
 
 // Nodes spread evenly across the full 360°, avoiding 340–20° (top, where ring labels sit)
-// Left side: 200–330°, Right side: 30–160°, Bottom: 160–200°
+// Ring structure:
+// Ring 1 — FALSIFIERS: named individuals (core list in CoreSection, not nodes)
+// Ring 2 — LEGAL FORTRESS: law firms & legal entities directly shielding the core
+// Ring 3 — LEGAL APPARATUS: broader institutional legal machinery
+// Ring 4 — OUTER WALLS: major institutional shields (church, university, government)
+// Ring 5 — VICTIMS & SURVIVORS: individuals and advocacy orgs on the outside
 const NODES: NodeDef[] = [
-  // ── Ring 5 (outermost) — 11 nodes spread 30°–330° ──
-  { id: "kelli-nyre",     label: "Kelli Nyre",               angle: 42,  ring: 5, icon: "person" },
-  { id: "national-media", label: "NATIONAL MEDIA",           angle: 68,  ring: 5, isMedia: true, icon: "media" },
-  { id: "lara-mck",       label: "Lara McKeever",            sublabel: "and Sisters", angle: 84, ring: 5, icon: "person" },
-  { id: "bishops-acc",    label: "BishopsAccountability.org",angle: 116, ring: 5, icon: "org" },
-  { id: "congress",       label: "Congress",                 angle: 144, ring: 5, icon: "govt" },
-  { id: "victims-bottom", label: "VICTIMS",                  angle: 178, ring: 5, isVictim: true, icon: "victim-crowd" },
-  { id: "victims-law",    label: "Victims Law Firms",        angle: 208, ring: 5, icon: "legal" },
-  { id: "snap",           label: "SNAP",                     angle: 232, ring: 5, icon: "org" },
-  { id: "joe-nyre",       label: "Joe Nyre",                 angle: 256, ring: 5, icon: "person" },
-  { id: "nj-media",       label: "NJ MEDIA",                 angle: 282, ring: 5, isMedia: true, icon: "media" },
-  { id: "mark-crawford",  label: "Mark Crawford",            angle: 310, ring: 5, icon: "person" },
 
-  // ── Ring 4 — spread across quadrants ──
-  // Seton Hall Univ at 70°, SHU Legal Firms at 40° — separated by 30°
-  { id: "shu-univ",  label: "Seton Hall",  sublabel: "University",          angle: 72,  ring: 4, icon: "church" },
-  { id: "usccb",     label: "USCCB",       sublabel: "(Catholic Bishops)",   angle: 88,  ring: 4, icon: "church" },
-  { id: "rcan",      label: "RCAN",        sublabel: "(Newark Archdiocese)", angle: 258, ring: 4, icon: "church" },
-  { id: "nj-govt",   label: "NJ Govt",                                       angle: 298, ring: 4, icon: "govt" },
+  // ── Ring 5 — Victims, advocates, journalists, whistleblowers ──
+  { id: "kelli-nyre",     label: "Kelli Nyre",               angle: 35,  ring: 5 },
+  { id: "national-media", label: "NATIONAL MEDIA",           angle: 60,  ring: 5, isMedia: true },
+  { id: "lara-mck",       label: "Lara McKeever",            sublabel: "and Sisters", angle: 82, ring: 5 },
+  { id: "bishops-acc",    label: "BishopsAccountability",    angle: 108, ring: 5 },
+  { id: "congress",       label: "Congress",                 angle: 132, ring: 5 },
+  { id: "victims-bottom", label: "VICTIMS",                  angle: 178, ring: 5, isVictim: true },
+  { id: "victims-law",    label: "Victims Law Firms",        angle: 205, ring: 5 },
+  { id: "snap",           label: "SNAP",                     angle: 228, ring: 5 },
+  { id: "joe-nyre",       label: "Joe Nyre",                 angle: 252, ring: 5 },
+  { id: "nj-media",       label: "NJ MEDIA",                 angle: 278, ring: 5, isMedia: true },
+  { id: "mark-crawford",  label: "Mark Crawford",            angle: 298, ring: 5 },
+  { id: "mccomber",       label: "McOmber McOmber",          sublabel: "(Victims Atty)", angle: 155, ring: 5 },
 
-  // ── Ring 3 — spread to avoid overlap with Ring 4 labels and Breach Point (220°) ──
-  { id: "shu-legal",  label: "SHU Legal Firms",       angle: 42,  ring: 3, icon: "legal" },
-  { id: "seton-law",  label: "Seton Hall Law School",  angle: 148, ring: 3, icon: "legal" },
-  { id: "rome",       label: "Rome (Vatican)",          angle: 175, ring: 3, icon: "church" },
-  { id: "ag-office",  label: "AG Office",               angle: 245, ring: 3, icon: "govt" },
+  // ── Ring 4 — Outer Walls: major institutional shields ──
+  { id: "shu-univ",       label: "Seton Hall",      sublabel: "University",          angle: 50,  ring: 4 },
+  { id: "usccb",          label: "USCCB",           sublabel: "(Catholic Bishops)",   angle: 90,  ring: 4 },
+  { id: "vatican-state",  label: "Holy See",        sublabel: "(Vatican State)",      angle: 148, ring: 4 },
+  { id: "nj-governor",    label: "NJ Governor",     sublabel: "Office",               angle: 170, ring: 4 },
+  { id: "nj-legislature", label: "NJ Legislature",                                    angle: 193, ring: 4 },
+  { id: "rcan",           label: "RCAN",            sublabel: "(Newark Archdiocese)", angle: 212, ring: 4 },
+  { id: "shu-board",      label: "Seton Hall Board",                                    angle: 325, ring: 4 },
+  { id: "delbarton",      label: "Delbarton School",                                   angle: 335, ring: 4 },
+
+  // ── Ring 3 — Legal Apparatus: the institutional legal machinery ──
+  { id: "gibbons-pc",     label: "Gibbons P.C.",                                angle: 30,  ring: 3 },
+  { id: "latham",         label: "Latham & Watkins",                            angle: 72,  ring: 3 },
+  { id: "ropes-gray",     label: "Ropes & Gray",                                angle: 112, ring: 3 },
+  { id: "seton-law",      label: "Seton Hall Law School",                       angle: 162, ring: 3 },
+  { id: "rome",           label: "Rome (Vatican)",                              angle: 218, ring: 3 },
+  { id: "ag-office",      label: "AG Office",                                   angle: 228, ring: 3 },
+  { id: "nj-courts",      label: "NJ Courts",                                   angle: 285, ring: 3 },
+  { id: "lowenstein",     label: "Lowenstein",                                  angle: 300, ring: 3 },
+  { id: "troutman",        label: "Troutman Pepper",                             angle: 318, ring: 3 },
+  { id: "usccb-legal",    label: "USCCB Legal",    sublabel: "Counsel",         angle: 12,  ring: 3 },
+
+  // ── Ring 2 — Legal Fortress: direct legal shield around the core ──
+  { id: "shu-legal",      label: "SHU Legal Firms",                             angle: 36,  ring: 2 },
+  { id: "christie-ag",    label: "Christie's",     sublabel: "Legal Mafia",     angle: 75, ring: 2 },
+  { id: "canon-law",      label: "Canon Law",      sublabel: "Tribunal",        angle: 235, ring: 2 },
+  { id: "secret-archives-legal", label: "Archdiocese", sublabel: "Legal Counsel", angle: 300, ring: 2 },
 ];
 
 function degToRad(deg: number) {
@@ -304,20 +326,31 @@ export default function ShieldDiagram() {
   const [size, setSize] = useState(700);
   const [rotations, setRotations] = useState<number[]>([0, 0, 0, 0, 0]);
   // Per-node orbital offsets — each node drifts at its own speed within its ring band
-  const [nodeAngles, setNodeAngles] = useState<Record<string, number>>(() =>
-    Object.fromEntries(NODES.map((n, i) => [n.id, 0]))
-  );
+  const [nodeAngles, setNodeAngles] = useState<Record<string, number>>(() => ({
+    ...Object.fromEntries(NODES.map((n) => [n.id, 0])),
+    // ambient symbols per ring
+    ...Object.fromEntries([0,1,2,3,4,5,6,7].map((i) => [`ambient-${i}`, 0])),
+  }));
   // Per-node orbital speed (degrees/sec) — wide variance: 0.4 to 12 deg/sec
   // Inner ring nodes move faster; outer ring nodes move slower
   // Directions alternate per node for visual chaos
-  const NODE_SPEEDS = Object.fromEntries(
-    NODES.map((n, i) => {
-      const ringFactor = n.ring === 1 ? 3.5 : n.ring === 2 ? 2.8 : n.ring === 3 ? 1.8 : n.ring === 4 ? 1.0 : 0.5;
-      const variance = [0.4, 1.2, 2.5, 4.0, 6.5, 9.0, 12.0][i % 7];
-      const dir = (i % 3 === 0 ? 1 : i % 3 === 1 ? -1 : (i % 2 === 0 ? 1 : -1));
-      return [n.id, dir * variance * ringFactor];
-    })
-  );
+  const AMBIENT_SPEEDS: Record<string, number> = {
+    "ambient-0": 4,  "ambient-1": -3,  // ring 5
+    "ambient-2": -6, "ambient-3": 5,   // ring 4
+    "ambient-4": 8,  "ambient-5": -7,  // ring 3
+    "ambient-6": -12,"ambient-7": 10,  // ring 2
+  };
+  const NODE_SPEEDS = {
+    ...Object.fromEntries(
+      NODES.map((n, i) => {
+        const ringFactor = n.ring === 1 ? 3.5 : n.ring === 2 ? 2.8 : n.ring === 3 ? 1.8 : n.ring === 4 ? 1.0 : 0.5;
+        const variance = [0.4, 1.2, 2.5, 4.0, 6.5, 9.0, 12.0][i % 7];
+        const dir = (i % 3 === 0 ? 1 : i % 3 === 1 ? -1 : (i % 2 === 0 ? 1 : -1));
+        return [n.id, dir * variance * ringFactor];
+      })
+    ),
+    ...AMBIENT_SPEEDS,
+  };
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   const lastTimeRef = useRef<number>(0);
@@ -542,7 +575,7 @@ export default function ShieldDiagram() {
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#c9a84c"
                 fontSize={fs(0.024)} fontFamily="'Cinzel', serif"
-                letterSpacing="0.1em" fontWeight="700" filter="url(#gGold)">
+                letterSpacing="0.10em" fontWeight="700" filter="url(#gGold)">
                 THE OUTER WALLS
               </text>
             </g>
@@ -551,6 +584,7 @@ export default function ShieldDiagram() {
 
         {/* Ring 3 */}
         {(() => {
+          // Title centered in Ring 3 band (original position)
           const bandMidY = cy - (radii[2] + radii[3]) / 2;
           const numY = bandMidY - fs(0.020) * 0.75;
           const titleY = bandMidY + fs(0.020) * 0.45;
@@ -612,7 +646,40 @@ export default function ShieldDiagram() {
         {/* ═══ PERPETRATORS CORE ═══ */}
         <CoreSection cx={cx} cy={cy} radius={radii[4]} size={size} />
 
-        {/* ═══ NODES ═══ */}
+        {/* ═══ AMBIENT RING SYMBOLS — 1-2 per ring, orbiting slowly ═══ */}
+        {[
+          // Ring 5: person + media icon
+          { ring: 5, icon: "person" as const, baseAngle: 0,   speed: 4  },
+          { ring: 5, icon: "media"  as const, baseAngle: 180, speed: -3 },
+          // Ring 4: church cross + govt dome
+          { ring: 4, icon: "church" as const, baseAngle: 45,  speed: -6 },
+          { ring: 4, icon: "govt"   as const, baseAngle: 225, speed: 5  },
+          // Ring 3: scales of justice + scroll
+          { ring: 3, icon: "legal"  as const, baseAngle: 90,  speed: 8  },
+          { ring: 3, icon: "org"    as const, baseAngle: 270, speed: -7 },
+          // Ring 2: scales + church
+          { ring: 2, icon: "legal"  as const, baseAngle: 135, speed: -12 },
+          { ring: 2, icon: "church" as const, baseAngle: 315, speed: 10  },
+        ].map((sym, i) => {
+          const ringIndex = RINGS.findIndex((r) => r.id === sym.ring);
+          const innerRingIndex = ringIndex + 1;
+          const outerR = radii[ringIndex];
+          const innerR = innerRingIndex < radii.length ? radii[innerRingIndex] : 0;
+          const nodeR = (outerR + innerR) / 2;
+          // Use a shared ambient angle that advances with time
+          const ambientAngle = sym.baseAngle + (nodeAngles[`ambient-${i}`] ?? 0);
+          const pos = polarToXY(ambientAngle, nodeR, cx, cy);
+          const s = size * 0.009; // ambient decorative — one tick smaller than before
+          const color = "#7a5c1e";
+          const fakeNode: NodeDef = { id: `ambient-${i}`, label: "", angle: sym.baseAngle, ring: sym.ring as any, icon: sym.icon };
+          return (
+            <g key={`ambient-${i}`} style={{ pointerEvents: "none" }} opacity="0.35">
+              <NodeIconRenderer node={fakeNode} pos={pos} s={s} hovered={false} />
+            </g>
+          );
+        })}
+
+        {/* ═══ NODES — labels only, no per-node icons ═══ */}
         {NODES.map((node) => {
           const ringIndex = RINGS.findIndex((r) => r.id === node.ring);
           const innerRingIndex = ringIndex + 1;
@@ -620,32 +687,24 @@ export default function ShieldDiagram() {
           const innerR = innerRingIndex < radii.length ? radii[innerRingIndex] : 0;
           const nodeR = (outerR + innerR) / 2;
 
-          // Label stays at original angle — anchored
           const labelPos = polarToXY(node.angle, nodeR, cx, cy);
-          // Icon orbits: base angle + accumulated orbital offset
-          const orbitAngle = node.angle + (nodeAngles[node.id] ?? 0);
-          const iconPos = polarToXY(orbitAngle, nodeR, cx, cy);
-
           const isHovered = hoveredNode === node.id;
-
-          // icon scale: compact, proportionate to ring band width
-          const iconS = size * 0.007;
 
           return (
             <g key={node.id} style={{ cursor: "pointer" }}
               onMouseEnter={() => setHoveredNode(node.id)}
               onMouseLeave={() => setHoveredNode(null)}>
-              {isHovered && (
-                <circle cx={iconPos.x} cy={iconPos.y} r={iconS * 4}
-                  fill="none" stroke="#f0c060" strokeWidth="1" opacity="0.4" filter="url(#gGold)" />
-              )}
-              <NodeIconRenderer node={node} pos={iconPos} s={iconS} hovered={isHovered} />
+              {/* Small dot marker at label anchor */}
+              <circle cx={labelPos.x} cy={labelPos.y} r={size * 0.004}
+                fill={isHovered ? "#f0c060" : "#c9a84c"} opacity={isHovered ? 0.9 : 0.5}
+                filter={isHovered ? "url(#gGold)" : undefined} />
               <NodeLabel
                 x={labelPos.x} y={labelPos.y}
                 label={node.label}
                 sublabel={node.sublabel}
                 angle={node.angle}
                 size={size}
+                ring={node.ring}
                 isHovered={isHovered}
                 isMedia={node.isMedia}
                 iconS={0}
@@ -668,12 +727,13 @@ export default function ShieldDiagram() {
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function NodeLabel({ x, y, label, sublabel, angle, size, isHovered, isMedia, iconS }: {
+function NodeLabel({ x, y, label, sublabel, angle, size, ring, isHovered, isMedia, iconS }: {
   x: number; y: number; label: string; sublabel?: string; angle: number; size: number;
-  isHovered: boolean; isMedia?: boolean; iconS?: number;
+  ring?: number; isHovered: boolean; isMedia?: boolean; iconS?: number;
 }) {
-  // Use Cormorant Garamond for node labels — elegant, readable, not distracting
-  const fs = Math.max(size * 0.018, 8);
+  // Scale font by ring: ring 2 (innermost) gets smaller text, ring 5 (outermost) gets larger
+  const ringFactor = ring === 2 ? 0.013 : ring === 3 ? 0.015 : 0.016;
+  const fs = Math.max(size * ringFactor, 7);
   // gap accounts for icon height so label clears the icon
   const gap = (iconS ?? 0) * 5.5 + 4;
 
@@ -705,9 +765,9 @@ function NodeLabel({ x, y, label, sublabel, angle, size, isHovered, isMedia, ico
         {label}
       </text>
       {sublabel && (
-        <text x={x + dx} y={y + dy + fs + 1}
+        <text x={x + dx} y={y + dy + fs * 1.3}
           textAnchor={anchor} fill={fill}
-          fontSize={fs * 0.85} fontFamily="'Cormorant Garamond', serif" fontStyle="italic" opacity="0.8"
+          fontSize={fs * 0.82} fontFamily="'Cormorant Garamond', serif" fontStyle="italic" opacity="0.75"
           style={{ transition: "fill 0.2s ease" }}>
           {sublabel}
         </text>
@@ -720,9 +780,9 @@ function CoreSection({ cx, cy, radius, size }: { cx: number; cy: number; radius:
   // Clean inner core: SECRET ARCHIVES at top (rendered outside, in ring label section)
   // PERPETRATORS label just below that, then names in a tight centered list
   const innerR = radius * 0.72;
-  // Font size scaled to fit all names inside the circle
-  const fs = Math.max(size * 0.013, 6.5);
-  const lineH = fs * 1.38;
+  // Font size scaled to fit 11 names inside the circle — tighter spacing
+  const fs = Math.max(size * 0.012, 6);
+  const lineH = fs * 1.28;
 
   const names = [
     "Theodore McCarrick \u2018Uncle Ted\u2019",
@@ -730,22 +790,19 @@ function CoreSection({ cx, cy, radius, size }: { cx: number; cy: number; radius:
     "Fr. Kenneth Martin",
     "Hank D\u2019Alessandro",
     "Kevin Marino",
-    "Chris Porrino (NJ AG)",
+    "Chris Porrino",
     "Tom Scrivo",
     "The Dirty Dozen",
     "Cardinal Tobin",
+    "Chris Christie",
+    "Elias Lorenzo Bishop",
+    "Bishop Checchio",
   ];
 
-  const blockH = names.length * lineH;
-
-  // Layout from top of inner circle:
-  // - SECRET ARCHIVES label is rendered outside (ring label section) at cy - innerR * 0.82
-  // - FALSIFIERS label: cy - innerR * 0.68 (moved up closer to SECRET ARCHIVES)
-  // - thin rule: cy - innerR * 0.52
-  // - names start immediately after rule
-  const perpY = cy - innerR * 0.68;
-  const ruleY = cy - innerR * 0.52;
-  const namesStartY = ruleY + fs * 1.3;
+  // Layout: FALSIFIERS at top of core, names tightly packed below
+  const perpY = cy - innerR * 0.88;
+  const underlineY = perpY + fs * 1.15;
+  const namesStartY = underlineY + fs * 0.9;
 
   return (
     <g>
@@ -753,36 +810,50 @@ function CoreSection({ cx, cy, radius, size }: { cx: number; cy: number; radius:
       <circle cx={cx} cy={cy} r={innerR} fill="rgba(40,0,0,0.80)" />
       <circle cx={cx} cy={cy} r={innerR} fill="none" stroke="#cc1111" strokeWidth="1.2" opacity="0.5" />
 
-      {/* FALSIFIERS label */}
+      {/* FALSIFIERS label — bright gold, readable */}
       <text x={cx} y={perpY}
-        textAnchor="middle" fill="#cc1111"
+        textAnchor="middle" fill="#f0c060"
         fontSize={fs * 1.05} fontFamily="'Cinzel', serif"
-        letterSpacing="0.1em" fontWeight="700" filter="url(#gCrimson)">
+        letterSpacing="0.12em" fontWeight="700" filter="url(#gGold)">
         FALSIFIERS
       </text>
 
-      {/* Thin rule */}
+      {/* Underline rule directly below FALSIFIERS */}
       <line
-        x1={cx - innerR * 0.5} y1={ruleY}
-        x2={cx + innerR * 0.5} y2={ruleY}
-        stroke="#7a5c1e" strokeWidth="0.5" opacity="0.3" />
+        x1={cx - innerR * 0.52} y1={underlineY}
+        x2={cx + innerR * 0.52} y2={underlineY}
+        stroke="#f0c060" strokeWidth="0.8" opacity="0.55" />
 
-      {/* Names */}
-      {names.map((name, i) => (
-        <text key={name}
-          x={cx} y={namesStartY + i * lineH}
-          textAnchor="middle" fill="#e0cdb0"
-          fontSize={fs} fontFamily="'Cormorant Garamond', serif"
-          opacity="0.88">
-          {name}
-        </text>
-      ))}
+      {/* Names — tight below underline */}
+      {names.map((name, i) => {
+        const isBold = [
+          "Theodore McCarrick \u2018Uncle Ted\u2019",
+          "Msgr Joseph Reilly",
+          "Fr. Kenneth Martin",
+          "Cardinal Tobin",
+          "Elias Lorenzo Bishop",
+          "Bishop Checchio",
+          "The Dirty Dozen",
+        ].includes(name);
+        return (
+          <text key={name}
+            x={cx} y={namesStartY + i * lineH}
+            textAnchor="middle"
+            fill={isBold ? "#f0c060" : "#e0cdb0"}
+            fontSize={isBold ? fs * 1.05 : fs}
+            fontFamily="'Cormorant Garamond', serif"
+            fontWeight={isBold ? "700" : "400"}
+            opacity="0.95">
+            {name}
+          </text>
+        );
+      })}
     </g>
   );
 }
 
 function BreachPoint({ cx, cy, radii, size }: { cx: number; cy: number; radii: number[]; size: number }) {
-  const angle = 220;
+  const angle = 127;
   const r = (radii[2] + radii[3]) / 2;
   const pos = polarToXY(angle, r, cx, cy);
   const arrowEnd = polarToXY(angle, radii[3] * 0.55, cx, cy);
@@ -800,14 +871,14 @@ function BreachPoint({ cx, cy, radii, size }: { cx: number; cy: number; radii: n
         <animate attributeName="opacity" values="0.5;0.95;0.5" dur="2.2s" repeatCount="indefinite" />
       </circle>
       <circle cx={pos.x} cy={pos.y} r={5} fill="#ff6b00" opacity="0.9" />
-      <text x={pos.x - 30} y={pos.y}
-        textAnchor="end" fill="#ff6b00"
+      <text x={pos.x + 30} y={pos.y}
+        textAnchor="start" fill="#ff6b00"
         fontSize={fs * 0.9} fontFamily="'Cinzel', serif"
         fontWeight="700" letterSpacing="0.05em" filter="url(#gCrimson)">
         BREACH
       </text>
-      <text x={pos.x - 30} y={pos.y + fs + 2}
-        textAnchor="end" fill="#ff6b00"
+      <text x={pos.x + 30} y={pos.y + fs + 2}
+        textAnchor="start" fill="#ff6b00"
         fontSize={fs * 0.9} fontFamily="'Cinzel', serif"
         fontWeight="700" letterSpacing="0.05em" filter="url(#gCrimson)">
         POINT
