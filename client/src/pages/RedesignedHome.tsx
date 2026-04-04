@@ -2,188 +2,181 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { 
-    FolderDown, 
-    ShieldAlert, 
-    Archive, 
-    Search, 
     Shield, 
     ArrowRight, 
     AlertCircle, 
-    CheckCircle2, 
-    XCircle,
-    Clock,
-    Cross
+    Search,
+    Lock,
+    Eye,
+    Activity,
+    Database,
+    Zap
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
-import { RINGS } from "@/lib/data";
 import PowerAxis from "@/components/PowerAxis";
-import { SmartImage } from "@/components/SmartImage";
 import TriptychPortal from "@/components/TriptychPortal";
-import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import ForensicSiteMap from "@/components/ForensicSiteMap";
 
 export default function RedesignedHome() {
-    const [isShieldOpen, setIsShieldOpen] = useState(false);
-
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif overflow-x-hidden">
             {/* BRAND NEW TRIPTYCH PORTAL */}
             <TriptychPortal />
 
-            {/* SECTION 1: THE SHIELD (HERO) */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center p-6 border-b border-[#1a1a22] overflow-hidden">
-                {/* Ambient glow behind the shield */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-red-900/10 rounded-full blur-[120px]" />
+            {/* SECTION 1: THE BREACH STARTS HERE (HERO) */}
+            <section className="relative min-h-screen flex flex-col items-center justify-center p-6 border-b border-red-900/20 overflow-hidden">
+                {/* Visual Anchor: The Advocate Photo Background (Subtle) */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none grayscale">
+                    <img src="/assets/images/advocate-photo.jpg" alt="" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c]" />
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center mt-20">
-                    <span className="text-[#8b1a1a] font-bold text-[10px] md:text-xs uppercase tracking-[0.5em] mb-6 block animate-fade-in drop-shadow-[0_0_10px_rgba(139,26,26,0.5)]">
-                        The Architecture of Concealment
-                    </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black mb-8 text-white leading-[0.85] tracking-tighter" style={{ textShadow: "0 10px 30px rgba(0,0,0,0.8)" }}>
-                        The House That <br />
-                        <span className="text-[#8b1a1a]">McCarrick Built</span>
+                <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">
+                    <div className="flex items-center gap-2 mb-8 animate-fade-in">
+                        <Zap className="w-4 h-4 text-red-600 fill-red-600" />
+                        <span className="text-red-700 font-bold text-[9px] md:text-[10px] uppercase tracking-[0.6em] block">
+                            Historical Record SH-2025 // THE BREACH STARTS HERE
+                        </span>
+                    </div>
+
+                    <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-black mb-8 text-white leading-none tracking-tighter" style={{ textShadow: "0 10px 40px rgba(0,0,0,0.9)" }}>
+                        The Case of <br />
+                        <span className="text-red-900">Mark Crawford</span>
                     </h1>
 
-                    <p className="text-[10px] font-bold text-white uppercase tracking-[0.5em] mb-12">
-                        Authentic Forensic Record // Sodom Hall
-                    </p>
+                    <div className="max-w-3xl mx-auto mb-16">
+                        <p className="text-xl md:text-2xl text-white leading-relaxed font-serif italic mb-6">
+                            "The breach isn't a theory. It's a single biography. It's a survivor who refused to be bought, and an age registry that was falsified to stop him."
+                        </p>
+                        <p className="text-sm md:text-md text-zinc-500 font-mono uppercase tracking-widest leading-loose">
+                            Mark Crawford reported his abuse to Cardinal McCarrick in 1987. <br />
+                            McCarrick promised a 'fair hearing'. Two years later, McCarrick was <br />
+                            photographed at a Christmas party with Crawford's abuser.
+                        </p>
+                    </div>
 
-                    {/* Altar Presentation of the Shield - Click to Open Modal */}
+                    {/* ACTION CTAs (CATEGORY VOCABULARY) */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl">
+                        <Link href="/evidence">
+                            <a className="group w-full sm:w-auto bg-red-900 hover:bg-red-600 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-[0_0_30px_rgba(139,26,26,0.5)] flex items-center justify-center gap-3">
+                                MAP THE SHIELD <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </a>
+                        </Link>
+                        <Link href="/breach">
+                            <a className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-white/30 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3">
+                                FIND THE BREACH POINT <Search className="w-4 h-4" />
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 2: THE ADVOCATE PHOTO (FORENSIC PROOF) */}
+            <section className="py-24 px-6 bg-[#050505] border-y border-red-900/10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-red-900/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="relative border border-white/10 p-2 bg-zinc-900/40">
+                             <img src="/assets/images/advocate-photo.jpg" alt="The Advocate Photo" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000" />
+                             <div className="absolute top-4 left-4 bg-black/80 text-white text-[8px] font-mono px-3 py-1 uppercase tracking-widest border border-white/10">Evidence SHU-99</div>
+                        </div>
+                        <div className="mt-6 p-6 border-l-2 border-red-900 bg-black/40">
+                            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest leading-relaxed">
+                                <strong>ITEM 1.1:</strong> The Advocate Photo. McCarrick (Right) and Kenneth Martin (Left) at a children's Christmas party. 
+                                <span className="text-red-700 block mt-1 underline">Date: Dec 1989 — Two years after Crawford's report to McCarrick.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="space-y-8">
+                        <span className="text-red-800 font-black text-[9px] uppercase tracking-[0.5em] block">The Forensic Answer</span>
+                        <h2 className="text-4xl md:text-6xl font-black text-white leading-none uppercase tracking-tighter">THE REWRITE: <br /><span className="text-red-900">The Gratuitous Fraud</span></h2>
+                        <p className="text-lg text-zinc-400 font-serif leading-relaxed italic">
+                            How do you get through the shield? You find where they lied. To stop Crawford's 2005 lawsuit, the Church falsified internal age registries to claim the statute of limitations had passed—even though they knew the exact year of his birth.
+                        </p>
+                        <Link href="/opinion">
+                            <a className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                                EXAMINE THE REWRITE MECHANISM
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 3: THE SHIELD (INTERACTIVE ARCHITECTURE) */}
+            <section className="py-24 px-6 border-b border-[#1a1a22]">
+                <div className="max-w-7xl mx-auto flex flex-col items-center">
+                    <div className="text-center mb-20 space-y-4">
+                        <span className="text-red-900 font-black text-[10px] uppercase tracking-[0.5em]">Forensic Mapping</span>
+                        <h2 className="text-4xl font-bold text-white uppercase tracking-[0.2em]">Architecture of Protection</h2>
+                        <p className="text-zinc-500 font-mono text-[9px] uppercase tracking-widest leading-relaxed">Select a layer to identify the individual and map the breach.</p>
+                    </div>
+
                     <Dialog>
                         <DialogTrigger asChild>
-                            <div className="w-full max-w-[600px] mx-auto relative mb-16 cursor-pointer group">
-                                <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[40px] rounded-full group-hover:bg-[#8b1a1a]/20 transition-all" />
-                                <div className="relative border border-white/10 p-1 bg-black/40 backdrop-blur-sm rounded-[40px]">
+                            <div className="w-full max-w-4xl relative cursor-pointer group">
+                                <div className="absolute inset-0 bg-red-900/5 blur-[80px] rounded-full group-hover:bg-red-900/10 transition-all" />
+                                <div className="relative border border-white/5 p-4 bg-black/40 backdrop-blur-xl rounded-[40px]">
                                     <img 
                                         src="/assets/shield-high-fidelity.png" 
-                                        alt="Click to Inspect the Shield" 
-                                        className="w-full h-auto rounded-[35px] border border-white/5 group-hover:scale-[1.02] transition-transform duration-700"
+                                        alt="Interactive Shield Map" 
+                                        className="w-full h-auto brightness-75 group-hover:brightness-100 transition-all duration-700" 
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 rounded-[35px]">
-                                        <div className="bg-red-900 text-white px-6 py-3 font-mono text-xs uppercase tracking-[0.4em] shadow-[0_0_20px_#8b1a1a]">
-                                            Open Shield Hub
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="bg-red-900/90 text-white px-10 py-5 font-black text-[10px] uppercase tracking-[0.4em] shadow-[0_0_50px_rgba(139,26,26,0.8)] opacity-0 group-hover:opacity-100 transition-all">
+                                            PENETRATE HUB
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[95vh] bg-black border-[#8b1a1a]/30 p-0 text-white overflow-y-auto shadow-[0_0_100px_rgba(139,26,26,0.2)] duration-75">
+                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[92vh] bg-black border-red-900/30 p-0 text-white overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
                             <ShieldHub />
                         </DialogContent>
                     </Dialog>
-                    
-                    <div className="max-w-2xl mx-auto">
-                        <p className="text-lg md:text-xl text-zinc-300 leading-relaxed mb-12 font-serif italic">
-                            "The Architecture of Silence is constructed in concentric layers. To find the source, one must penetrate the five rings of institutional barrier."
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link href="/evidence">
-                                <a className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:border-[#8b1a1a] hover:shadow-[0_0_20px_rgba(139,26,26,0.4)] transition-all">
-                                    Enter the Archives
-                                </a>
-                            </Link>
-                            <Link href="/governance">
-                                <a className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#8b1a1a] hover:border-[#8b1a1a] hover:shadow-[0_0_20px_rgba(139,26,26,0.4)] transition-all">
-                                    Active Litigation
-                                </a>
-                            </Link>
-                        </div>
-                    </div>
                 </div>
             </section>
 
-            {/* SECTION 2: THE POWER AXIS (SCROLL TIMELINE) */}
-            <section className="py-24 px-6 border-b border-[#1a1a22] bg-[#0d0d10]">
-                <div className="max-w-7xl mx-auto mb-12">
-                    <PowerAxis />
-                </div>
-            </section>
-
-            {/* SECTION 3: THE HUBRIS (THE MAIN EVENT) */}
-            <section className="py-24 px-6 border-b border-[#1a1a22]">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-                    <div className="prose prose-invert prose-crimson">
-                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] mb-4 block">Institutional Hubris</span>
-                        <h2 className="text-3xl font-bold text-white uppercase tracking-[0.2em] mb-10">THE HUBRIS: The Presidency of Monsignor Reilly</h2>
-                        <p className="text-lg leading-relaxed mb-6">
-                            They didn't just hide him. They promoted him. The ultimate hubris of the "Shield" was the appointment of Msgr. Reilly as President of Seton Hall University—positioning an architect of silence at the head of a major institution as if no one would ever look inside the briefcase.
+            {/* SECTION 4: THE CONVERSION (PATRICK WALL INTEL) */}
+            <section className="py-24 px-6 bg-[#030303] border-b border-red-900/10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+                    <div className="lg:col-span-4 space-y-6">
+                        <div className="w-16 h-1 bg-red-900" />
+                        <h3 className="text-3xl font-black text-white uppercase tracking-tighter">THE CONVERSION</h3>
+                        <p className="text-sm text-zinc-500 font-mono uppercase tracking-widest leading-loose">
+                            The core methodology of the Church index: Turning "human suffering" into "institutional process."
                         </p>
-                        <p className="text-lg leading-relaxed mb-8">
-                            It was the "hands in the cookie jar" moment. While Reilly maintained the facade of elite normalcy, a critical "Side Show" was occurring in the basement. <strong>Mark Crawford</strong>, a survivor who refused to be bought, recovered the forensic proof: the blatant falsification of internal age registries to weaponize the statute of limitations.
-                        </p>
-                        <Link href="/breach">
-                            <a className="inline-block border-b-2 border-[#8b1a1a] pb-1 text-sm font-bold uppercase tracking-[0.2em] text-[#8b1a1a] hover:text-white hover:border-white transition-all">
-                                Examine the Hubris Registry →
-                            </a>
-                        </Link>
+                        <div className="p-6 border border-zinc-900 bg-black/40">
+                             <span className="text-red-700 font-black text-[9px] uppercase mb-4 block">Insider Intelligence</span>
+                             <p className="text-lg text-white font-serif italic mb-6">"I didn't just watch the machine. I helped build the parts."</p>
+                             <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">— PATRICK WALL</span>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 h-fit relative">
-                        {/* THE HUBRIS SIDEBAR (AUDIT LOG) */}
-                        <div className="absolute -left-32 top-0 bottom-0 w-24 hidden xl:flex flex-col gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
-                            <div className="h-full border-l border-[#8b1a1a]/30 flex flex-col justify-between py-4">
-                                <span className="text-[8px] font-mono text-[#8b1a1a] uppercase rotate-90 whitespace-nowrap -ml-4">Audit Trace SHU-2005</span>
-                                <div className="flex flex-col gap-2 pl-4">
-                                    <div className="w-1 h-8 bg-[#8b1a1a]/40" />
-                                    <div className="w-1 h-12 bg-white/20" />
-                                    <div className="w-1 h-4 bg-red-600" />
-                                </div>
-                                <span className="text-[8px] font-mono text-[#444] uppercase rotate-90 whitespace-nowrap -ml-4">Terminal End</span>
-                            </div>
+                    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="bg-[#080808] border border-white/5 p-8 hover:border-red-900/30 transition-all group">
+                            <Activity className="w-6 h-6 text-red-900 mb-6 group-hover:animate-pulse" />
+                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The $108k Trap</h4>
+                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose">The specific financial mechanism used to convert an actionable lawsuit into a silenced NDA.</p>
                         </div>
-
-                        <div className="bg-[#111116] border border-[#1a1a22] p-6 relative group overflow-hidden text-left">
-                            <div className="absolute inset-0 bg-red-900/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <span className="text-[#8b1a1a] text-[10px] font-bold block mb-2 font-mono">CASE ID // HUBRIS-SHU</span>
-                            <span className="text-xl font-bold text-white uppercase tabular-nums">PRESIDENCY-05</span>
-                        </div>
-                        <div className="bg-[#111116] border border-[#1a1a22] p-6 text-left">
-                            <span className="text-zinc-600 text-[10px] font-bold block mb-2 font-mono">STATUS</span>
-                            <span className="text-xl font-bold text-red-600 uppercase animate-pulse">INTERNAL BREACH</span>
-                        </div>
-                        <div className="col-span-2 bg-[#111116] border border-[#1a1a22] p-8 relative overflow-hidden group min-h-[300px] flex flex-col justify-end text-left">
-                            {/* Forensic Document Fragments (Simulated via overlay) */}
-                            <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none">
-                                <div className="absolute top-10 left-10 w-32 h-40 bg-white/10 rotate-3 border border-white/20" />
-                                <div className="absolute bottom-10 right-10 w-40 h-32 bg-white/10 -rotate-2 border border-white/20" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-32 bg-[#8b1a1a]/10 border border-[#8b1a1a]/30" />
-                            </div>
-
-                            <div className="relative z-10">
-                                <span className="text-[#8b1a1a] text-[10px] font-black block mb-2 tracking-[0.3em]">FORENSIC EVIDENCE SCAN</span>
-                                <span className="text-xs text-[#666] font-mono italic block uppercase mb-4">Seton Hall Nexus // Registry Age Override — 2005</span>
-                                <div className="space-y-2">
-                                    <div className="w-full h-1 bg-[#8b1a1a]/20 rounded-full overflow-hidden">
-                                        <motion.div
-                                            initial={{ width: 0 }}
-                                            whileInView={{ width: "100%" }}
-                                            transition={{ duration: 2, repeat: Infinity }}
-                                            className="h-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
-                                    </div>
-                                    <p className="text-[10px] font-mono text-zinc-500 uppercase">Scanning Ring 3 Financial Moat... [VALIDATED]</p>
-                                </div>
-                            </div>
+                        <div className="bg-[#080808] border border-white/5 p-8 hover:border-red-900/30 transition-all group">
+                            <Database className="w-6 h-6 text-red-900 mb-6 group-hover:animate-pulse" />
+                            <h4 className="text-xl font-bold text-white uppercase mb-4 tracking-widest">The Playbook</h4>
+                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest leading-loose"> Verbatim documentation of the A&M legal strategy used across 43 diocesan bankruptcies.</p>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* SECTION 4: THE SITE MAP */}
-            <section id="sitemap">
-                <ForensicSiteMap />
             </section>
 
             {/* FOOTER */}
-            <footer className="py-16 px-6 bg-[#0a0a0c] border-t border-[#1a1a22] text-center">
-                <div className="max-w-7xl mx-auto">
-                    <span className="text-[10px] font-bold text-[#333] uppercase tracking-[0.5em] block mb-8">Archbishop of Newark v. Multiple Claimants (2025)</span>
-                    <div className="flex justify-center gap-12 text-[10px] font-bold text-[#555] uppercase tracking-[0.2em]">
-                        <Link href="/about"><a className="hover:text-white">Imprint</a></Link>
-                        <Link href="/corrections"><a className="hover:text-white">Corrections</a></Link>
-                        <Link href="/academy"><a className="hover:text-white">Curriculum</a></Link>
+            <footer className="py-20 px-6 bg-black border-t border-white/5">
+                <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center">
+                    <span className="text-[9px] font-bold text-zinc-800 uppercase tracking-[0.8em]">Ecclesiastical Record // Sodom Hall // 2025</span>
+                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[10px] font-black text-zinc-600 uppercase tracking-widest">
+                        <Link href="/about"><a className="hover:text-red-500 transition-colors italic leading-none">The Imprint</a></Link>
+                        <Link href="/evidence"><a className="hover:text-red-500 transition-colors italic leading-none">The Shield</a></Link>
+                        <Link href="/breach"><a className="hover:text-red-500 transition-colors italic leading-none">The Breach</a></Link>
+                        <Link href="/opinion"><a className="hover:text-red-500 transition-colors italic leading-none">The Rewrite</a></Link>
                     </div>
+                    <p className="text-zinc-800 text-[8px] font-mono uppercase tracking-widest">Authorized Forensic Compilation SH-001</p>
                 </div>
             </footer>
         </div>

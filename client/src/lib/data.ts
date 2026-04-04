@@ -87,51 +87,8 @@ export const KEY_DATES = [
   { date: "Early 2026", event: "Recent dismissal of the Nyre case nearly two years after it was filed and with no evidence presented." }
 ];
 
-export interface Ring {
-  id: number;
-  name: string;
-  route: string;
-  description: string;
-  breach: boolean;
-}
-
-export const RINGS: Ring[] = [
-  {
-    id: 1,
-    name: "SECRET ARCHIVES",
-    route: "/ledger",
-    description: "The inner sanctum containing the 24,000-page Latham Report and the $628k slush fund records.",
-    breach: true
-  },
-  {
-    id: 2,
-    name: "LEGAL FORTRESS",
-    route: "/coverup/legal",
-    description: "The secondary barrier comprised of high-level canonical privilege claims and NDA-backed silos.",
-    breach: false
-  },
-  {
-    id: 3,
-    name: "LEGAL APPARATUS",
-    route: "/coverup/triumvirate",
-    description: "The operational machinery (Gibbons, Latham, NJ Govt) used to process and neutralize discovery threats.",
-    breach: false
-  },
-  {
-    id: 4,
-    name: "THE OUTER WALLS",
-    route: "/expose/big-lie",
-    description: "The institutional facade (Seton Hall University, RCAN) that presents the public-facing 'Architecture of Protection'.",
-    breach: false
-  },
-  {
-    id: 5,
-    name: "VICTIMS & SURVIVORS",
-    route: "/endgame/mccarrick",
-    description: "The outermost layer of the system, comprising those whose silence was purchased and whose voices were suppressed.",
-    breach: false
-  }
-];
+import { FORENSIC_RINGS as RINGS } from "./registry";
+export { RINGS };
 
 export const boardOfTrustees: BoardSection = {
   id: "trustees",
