@@ -145,15 +145,34 @@ export default function ShieldHub({
                         </Link>
                     </div>
                 ) : (
-                    <div className="flex flex-col items-center justify-center text-center space-y-8">
+                    <div className="flex flex-col items-center justify-center text-center space-y-8 py-4">
                         <div className="p-6 bg-red-950/20 rounded-full border border-red-900/30">
-                            <Lock className="w-12 h-12 text-red-600 animate-pulse" />
+                            <Database className="w-12 h-12 text-red-600 animate-pulse" />
                         </div>
-                        <div className="space-y-4">
-                            <h4 className="text-2xl text-white font-serif tracking-widest uppercase">Select Layer to Scan</h4>
-                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-[0.3em] leading-loose">
-                                Inspect the concentric architecture of protection.<br />
-                                Historical record ES-99 // Active.
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <h4 className="text-3xl text-white font-serif tracking-widest uppercase">Global Forensic Summary</h4>
+                                <div className="w-24 h-px bg-red-900 mx-auto" />
+                            </div>
+                            
+                            <div className="space-y-4 max-w-sm mx-auto">
+                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Discovery Status</span>
+                                    <span className="text-red-500 font-mono text-xs uppercase font-bold">Unsealing Active</span>
+                                </div>
+                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Documents Processed</span>
+                                    <span className="text-white font-mono text-xs uppercase font-bold">24,312 / 24,312</span>
+                                </div>
+                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Forensic Target</span>
+                                    <span className="text-white font-mono text-xs uppercase font-bold">T. McCarrick</span>
+                                </div>
+                            </div>
+
+                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-[0.3em] leading-loose max-w-md mx-auto">
+                                Analysis indicates a 50-year triangular architecture of protection between the RCAN, Seton Hall, and the NJ State Government. <br />
+                                <span className="text-red-900 italic">Select a concentric layer to scan specific shielding mechanisms.</span>
                             </p>
                         </div>
                     </div>
