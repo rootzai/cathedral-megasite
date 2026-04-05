@@ -2,6 +2,7 @@ import React from 'react';
 import { ConfidenceIndicator } from "@/components/ConfidenceIndicator";
 import { Users, AlertCircle, ShieldAlert, Heart, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { JourneyNav } from "@/components/JourneyNav";
 
 export default function WhistleblowerTimeline() {
     const whistleblowers = [
@@ -131,6 +132,10 @@ export default function WhistleblowerTimeline() {
                     </a>
                 </Link>
             </section>
+
+            <div className="mt-20 border-t border-zinc-100 pt-10">
+                <JourneyNav />
+            </div>
         </div>
     );
 }

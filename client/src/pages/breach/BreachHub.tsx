@@ -1,74 +1,156 @@
 import React from "react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { 
+    AlertCircle, 
+    Gavel, 
+    Scale, 
+    ShieldCheck, 
+    Zap, 
+    Search,
+    ArrowRight,
+    FileWarning,
+    Calendar
+} from "lucide-react";
+
+const LITIGATION_EVENTS = [
+    { 
+        date: "MAY 28, 2026", 
+        title: "SANCTION HEARING", 
+        desc: "California Superior Court. The institution's motion to unmask the journalist.",
+        status: "CRITICAL",
+        color: "bg-[#8b1a1a]"
+    },
+    { 
+        date: "MAY 18, 2026", 
+        title: "LATHAM UNSEALING", 
+        desc: "The anticipated production of 24,000 pages of privileged board logs.",
+        status: "UPCOMING",
+        color: "bg-[#8b6914]"
+    },
+    { 
+        date: "SEPT 2005", 
+        title: "THE DISCOVERY", 
+        desc: "Mark Crawford identifies the falsified birthday in internal registries.",
+        status: "RECORDED",
+        color: "bg-zinc-800"
+    }
+];
 
 export default function BreachHub() {
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif">
-            <section className="py-20 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col lg:flex-row gap-16 items-start">
-                        <div className="lg:w-1/2">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-2 h-2 rounded-full bg-[#8b1a1a] animate-pulse" />
-                                <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em]">
-                                    Active Litigation Tracker
-                                </span>
+        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant">
+            {/* HERO: THE BREACH POINT */}
+            <section className="py-24 px-6 border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-[120px] opacity-20" />
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="flex items-center gap-4 mb-8">
+                        <Zap className="w-4 h-4 text-[#8b1a1a] fill-[#8b1a1a]" />
+                        <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACTIVE LITIGATION // COLLISION FRAME</span>
+                    </div>
+                    <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-12">
+                        THE <span className="text-[#8b1a1a]">BREACH</span> POINT
+                    </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <p className="text-2xl text-zinc-400 font-serif italic leading-relaxed">
+                            "The Shield is not a static wall; it is a legal fiction that requires constant maintenance. On May 28, that maintenance fails."
+                        </p>
+                        <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-6">
+                            <span className="text-[10px] font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
+                            <div className="flex items-end gap-2">
+                                <span className="text-5xl font-black text-white font-cinzel tracking-tighter">MAY 28</span>
+                                <span className="text-[#8b1a1a] font-black text-xs uppercase mb-1">Sanction Hearing</span>
                             </div>
-                            <h1 className="text-6xl font-bold text-white uppercase tracking-[0.1em] mb-10 leading-tight">
-                                The <span className="text-[#8b1a1a]">Breach</span>
-                            </h1>
-                            <p className="text-xl text-[#888] leading-relaxed mb-12">
-                                Real-time updates on the Mark Crawford v. Archdiocese of Newark case.
-                                Where the Shield finally broke under the weight of documented financial fraud and falsified records.
-                            </p>
-
-                            <div className="space-y-6">
-                                {[
-                                    { date: "MAR 2026", title: "Newark Superior Court — Hearing on Falsified Records", status: "PENDING" },
-                                    { date: "JAN 2026", title: "Ring 3 Financial Discovery Unsealed", status: "COMPLETED" },
-                                    { date: "OCT 2025", title: "Mark Crawford Deposition Completed", status: "COMPLETED" },
-                                ].map((event, i) => (
-                                    <div key={i} className="flex gap-6 p-6 border border-[#1a1a22] bg-[#111116] items-center">
-                                        <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.2em] tabular-nums">{event.date}</span>
-                                        <div className="flex-1">
-                                            <h4 className="text-white font-bold text-sm uppercase tracking-wide">{event.title}</h4>
-                                        </div>
-                                        <span className={`text-[10px] font-bold px-2 py-1 rounded-sm ${event.status === 'PENDING' ? 'bg-[#8b1a1a] text-white' : 'bg-[#1a1a22] text-[#555]'}`}>
-                                            {event.status}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="lg:w-1/2 bg-[#111116] border border-[#1a1a22] p-12">
-                            <h3 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-8 font-mono">Case File: 15-CRA-2005 // THE BREACH</h3>
-                            <div className="space-y-8 mb-12">
-                                <div>
-                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">Primary Plaintiff</span>
-                                    <span className="text-2xl font-bold text-white uppercase tracking-tight">Mark Crawford</span>
-                                </div>
-                                <div>
-                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">Forensic Opening</span>
-                                    <span className="text-lg text-[#bbb] leading-relaxed">
-                                        The Breach occurred when internal archdiocesan records were found to have <span className="text-white font-bold underline decoration-[#8b1a1a]">falsifiedCrawford's age</span> to bypass the statute of limitations. This discrepancy, discovered during the 2005 litigation, represents the first structural crack in the Shield's legal defense.
-                                    </span>
-                                </div>
-                                <div>
-                                    <span className="text-[10px] text-[#555] uppercase font-bold block mb-2 font-mono">The Refused Silence</span>
-                                    <span className="text-lg text-[#bbb] leading-relaxed">
-                                        The institution attempted to pay Crawford <span className="text-[#8b1a1a] font-bold">$108,000</span> to sign a permanent non-disclosure agreement. Crawford's refusal allowed the discovery of the "Ring 3" financial moat and the Latham Report's existence.
-                                    </span>
-                                </div>
-                            </div>
-
-                            <Link href="/vault/documents" className="block w-full text-center bg-[#8b1a1a] text-white py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black transition-all shadow-xl shadow-red-900/20">
-                                Access Unsealed Documents
-                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* THE COLLISION TIMELINE */}
+            <section className="py-24 px-6 bg-[#070709]">
+                <div className="max-w-5xl mx-auto space-y-12">
+                    <div className="space-y-4">
+                        <h2 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest">THE COLLISION</h2>
+                        <div className="h-px w-24 bg-[#8b1a1a]" />
+                    </div>
+                    <div className="space-y-4">
+                        {LITIGATION_EVENTS.map((event, i) => (
+                            <div key={i} className="group relative flex flex-col md:flex-row gap-8 p-10 bg-[#0D0D10] border border-white/5 hover:border-[#8b1a1a]/40 transition-all duration-500">
+                                <div className="md:w-48">
+                                    <span className="text-2xl font-black font-cinzel text-white">{event.date}</span>
+                                </div>
+                                <div className="flex-1 space-y-2">
+                                    <div className="flex items-center gap-3">
+                                        <h4 className="text-lg font-black font-cinzel text-white uppercase tracking-widest">{event.title}</h4>
+                                        <span className={`text-[10px] font-black px-2 py-0.5 rounded-sm ${event.color} text-white`}>
+                                            {event.status}
+                                        </span>
+                                    </div>
+                                    <p className="text-zinc-500 font-serif italic">{event.desc}</p>
+                                </div>
+                                <div className="absolute top-1/2 right-10 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <ArrowRight className="w-5 h-5 text-[#8b1a1a]" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* THE SLAPP SHIELD ANALYSIS */}
+            <section className="py-32 px-6 border-b border-white/5">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div className="space-y-10">
+                        <div className="space-y-4">
+                            <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Judicial Conflict</span>
+                            <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE SLAPP SHIELD</h2>
+                        </div>
+                        <p className="text-xl text-zinc-400 font-serif italic leading-relaxed">
+                            The institution's strategy: Deploying New Jersey "Grand Jury Privilege" to bypass California "Anti-SLAPP" and "Shield Law" protections.
+                        </p>
+                        <div className="space-y-6">
+                            <div className="flex gap-6 p-6 bg-[#0D0D10] border border-white/5">
+                                <Scale className="w-6 h-6 text-[#8b1a1a]" />
+                                <div>
+                                    <h4 className="text-white font-black font-cinzel uppercase text-sm mb-2">The Conflict of Laws</h4>
+                                    <p className="text-xs text-zinc-500 font-serif leading-relaxed">
+                                        Can a New Jersey grand jury subpoena—issued under a false criminal predicate—be used to strip a journalist of residency-based constitutional protections in California?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-[#111116] border border-white/10 p-12 space-y-12 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#8b1a1a]/10 blur-[60px]" />
+                        <div className="space-y-6">
+                            <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-tighter">THE FORENSIC TRIGGERS</h3>
+                            <div className="space-y-8">
+                                <div className="space-y-2 border-l-2 border-[#8b1a1a] pl-6">
+                                    <span className="text-[10px] font-black text-white uppercase tracking-widest font-courier">The September Email</span>
+                                    <p className="text-sm text-zinc-500 font-serif italic"> coordination between Goldman and the board to suppress the Latham report before Reilly's install.</p>
+                                </div>
+                                <div className="space-y-2 border-l-2 border-[#8b1a1a] pl-6">
+                                    <span className="text-[10px] font-black text-white uppercase tracking-widest font-courier">The Goldman Resignation</span>
+                                    <p className="text-sm text-zinc-500 font-serif italic">Evidence of the internal revolt against the 'Big Lie' strategy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <Link href="/vault">
+                            <a className="inline-flex items-center gap-3 bg-[#8b1a1a] text-white px-8 py-4 font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition-all">
+                                Open The Vault <Search className="w-4 h-4" />
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* FOOTER */}
+            <footer className="py-24 px-6 border-t border-white/5 text-center">
+                   <div className="max-w-4xl mx-auto space-y-8">
+                        <div className="w-12 h-1 bg-[#8b1a1a] mx-auto" />
+                        <p className="text-zinc-600 font-courier text-[10px] uppercase tracking-[0.4em]">Authorized Reconstruction // SH-2026 // Active Breach</p>
+                   </div>
+            </footer>
         </div>
     );
 }

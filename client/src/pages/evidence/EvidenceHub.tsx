@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "wouter";
 import { RINGS } from "@/lib/data";
 import EvidenceSubNavigation from "@/components/EvidenceSubNavigation";
+import { JourneyNav } from "@/components/JourneyNav";
+import { ArrowRight } from "lucide-react";
 
 export default function EvidenceHub() {
     return (
@@ -53,6 +55,27 @@ export default function EvidenceHub() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section className="py-20 border-t border-white/5 bg-black/50">
+                <div className="max-w-7xl mx-auto px-6 text-center">
+                    <h2 className="text-3xl font-bold text-white mb-8 uppercase tracking-widest">Ready to Begin?</h2>
+                    <p className="text-zinc-500 mb-12 max-w-2xl mx-auto italic">
+                        The investigation starts at the core. Enter Ring 1 to uncover the secrets of the Latham Archive.
+                    </p>
+                    <Link href="/origin/martin">
+                        <a className="inline-flex items-center gap-4 bg-[#8b1a1a] text-white px-12 py-5 rounded-sm font-black uppercase tracking-[0.3em] hover:bg-[#a11e1e] transition-all shadow-[0_0_30px_rgba(139,26,26,0.2)]">
+                            Begin Act I: The Origin
+                            <ArrowRight className="w-5 h-5" />
+                        </a>
+                    </Link>
+                </div>
+            </section>
+
+            <section className="pb-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <JourneyNav />
                 </div>
             </section>
         </div>

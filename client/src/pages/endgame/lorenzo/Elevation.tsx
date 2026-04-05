@@ -62,12 +62,16 @@ export default function Elevation() {
                 </div>
 
                 <div className="flex justify-between mt-12 pt-8 border-t border-border">
-                    <Link href="/endgame/lorenzo/rehabilitation" asChild>
+                    <Link href="/ledger/lorenzo/rehabilitation" asChild>
                         <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
                             <span className="mr-2">←</span> Previous
                         </Button>
                     </Link>
-                    <div className="flex-1" />
+                    <Link href="/ledger" asChild>
+                        <Button variant="ghost" className="ml-auto font-mono uppercase tracking-widest hover:bg-transparent hover:text-destructive transition-colors">
+                            Return to Ledger
+                        </Button>
+                    </Link>
                 </div>
             </div>);
 }

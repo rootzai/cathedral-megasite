@@ -6,7 +6,7 @@ import { Link } from "wouter";
 export default function Legal() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
-          number="08" 
+          number="09" 
           title="Legal Actions" 
           subtitle="Civil Lawsuits, Criminal Charges, and Posthumous Developments"
         />
@@ -88,7 +88,6 @@ export default function Legal() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
                 />
-                {/* Note: PBS video embed might need specific handling, using iframe for now */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <span className="bg-white/50 text-zinc-900 px-2 py-1 font-mono text-xs">PBS NEWSHOUR ARCHIVE</span>
                 </div>
@@ -102,14 +101,14 @@ export default function Legal() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link  asChild>
+          <Link href="/ledger/mccarrick/mechanisms" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link  asChild>
+          <Link href="/ledger/mccarrick/responses" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-              Proceed to Section 09 <span className="ml-2">→</span>
+              Proceed to Section 10 <span className="ml-2">→</span>
             </Button>
           </Link>
         </div>

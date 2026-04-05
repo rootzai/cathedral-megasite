@@ -35,6 +35,12 @@ const ROUTES = [
   { path: "/ledger/lorenzo", label: "Elias Lorenzo: The King in Waiting" },
   { path: "/ledger/checchio", label: "James Checchio: The Musical Chairs" },
   { path: "/ledger/martin", label: "Kenneth Martin: The Chicago Link" },
+
+  // DEEP DIVES & RECORDS
+  { path: "/the-record", label: "The Record: Fact-Check Dashboard" },
+  { path: "/briefing", label: "The Cathedral Dossier: Briefing" },
+  { path: "/timeline", label: "Whistleblower Retaliation Timeline" },
+  { path: "/documents", label: "The Document Repository" },
 ];
 
 

@@ -1,4 +1,5 @@
 import { Shield, FileText, AlertCircle, TrendingDown, Users, Scale } from "lucide-react";
+import { JourneyNav } from "@/components/JourneyNav";
 
 export default function BriefingPage() {
     return (
@@ -105,6 +106,10 @@ export default function BriefingPage() {
                     </div>
                 </div>
             </div>
+
+            <section className="max-w-4xl mx-auto pt-20 border-t border-zinc-100">
+                <JourneyNav />
+            </section>
 
             {/* Print-only CSS */}
             <style dangerouslySetInnerHTML={{ __html: `

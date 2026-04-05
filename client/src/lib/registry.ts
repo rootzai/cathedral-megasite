@@ -18,6 +18,7 @@ export interface ShieldRing {
     radius: number; // For SVG mapping
     route: string;
     color: string;
+    breach?: boolean;
 }
 
 export const PERPETRATORS: ForensicActor[] = [
@@ -41,7 +42,8 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         description: "The inner sanctum containing the 24,000-page Latham Report and the $628k slush fund records.", 
         radius: 12, 
         route: "#act-i",
-        color: "rgba(255, 0, 0, 0.2)"
+        color: "rgba(255, 0, 0, 0.2)",
+        breach: true
     },
     { 
         id: 2, 
@@ -49,7 +51,8 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         description: "The secondary barrier comprised of high-level canonical privilege claims and NDA-backed silos.", 
         radius: 24, 
         route: "#act-ii",
-        color: "rgba(255, 0, 0, 0.15)"
+        color: "rgba(255, 0, 0, 0.15)",
+        breach: true
     },
     { 
         id: 3, 

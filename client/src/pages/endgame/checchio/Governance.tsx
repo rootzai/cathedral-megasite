@@ -65,12 +65,12 @@ export default function Governance() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link  asChild>
+          <Link href="/ledger/checchio/ascent" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link  asChild>
+          <Link href="/ledger/checchio/purge" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Section 05 <span className="ml-2">→</span>
             </Button>

@@ -36,7 +36,7 @@ export default function Home() {
       >
         <div className="relative h-[500px] w-full overflow-hidden border border-zinc-300 group cursor-zoom-in bg-zinc-950">
           <img
-            src="/C:/Users/ES.WIN10PRO2-DEMO/.gemini/antigravity/brain/817358e6-1b29-4b9c-b134-33250bf3b24f/checchio_musical_chairs_portrait_1774138518217.png"
+            src="/assets/images/checchio_portrait.jpg"
             alt="Bishop James Francis Checchio"
             className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-1000 grayscale active:grayscale-0"
           />
@@ -77,7 +77,7 @@ export default function Home() {
     </div>
 
     <div className="flex justify-end mt-12 pt-8 border-t border-border">
-      <Link href="/endgame/checchio/formation" asChild>
+      <Link href="/ledger/checchio/formation" asChild>
         <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
           Proceed to Section 02 <span className="ml-2">→</span>
         </Button>

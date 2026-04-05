@@ -27,7 +27,7 @@ export default function Portal() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           {/* McCarrick Dossier Card */}
-          <Link href="/endgame/mccarrick">
+          <Link href="/ledger/mccarrick">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
@@ -48,7 +48,7 @@ export default function Portal() {
           </Link>
 
           {/* Checchio Dossier Card */}
-          <Link href="/endgame/checchio">
+          <Link href="/ledger/checchio">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
@@ -69,7 +69,7 @@ export default function Portal() {
           </Link>
 
           {/* Reilly Dossier Card */}
-          <Link href="/endgame/reilly">
+          <Link href="/ledger/reilly">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
@@ -90,7 +90,7 @@ export default function Portal() {
           </Link>
 
           {/* Martin Dossier Card */}
-          <Link href="/endgame/martin">
+          <Link href="/ledger/martin">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage
@@ -111,7 +111,7 @@ export default function Portal() {
           </Link>
 
           {/* Lorenzo Dossier Card */}
-          <Link href="/endgame/lorenzo">
+          <Link href="/ledger/lorenzo">
             <div className="group cursor-pointer relative h-[400px] border border-gray-800 hover:border-destructive transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors duration-500 z-10"></div>
               <SmartImage

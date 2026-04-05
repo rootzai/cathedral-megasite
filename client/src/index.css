@@ -26,168 +26,69 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Cathedral Design System */
-  --color-cathedral-gold: oklch(0.75 0.12 85);
-  --color-cathedral-dark: oklch(0.1 0.005 285);
-  --color-cathedral-darker: oklch(0.08 0.005 285);
-  --color-cathedral-light: oklch(0.15 0.005 285);
-  --color-cathedral-accent: oklch(0.06 0.005 285);
-
-  /* Section Theme Tokens */
-  --color-ruling-blue: oklch(0.3 0.1 240);
-  --color-ruling-gold: oklch(0.75 0.15 85);
-  --color-theyknew-purple: oklch(0.25 0.1 290);
-  --color-theyknew-silver: oklch(0.8 0.02 290);
-  --color-expose-bg: oklch(0.98 0.01 85);
-  --color-expose-accent: oklch(0.25 0.05 20);
-  --color-endgame-green: oklch(0.7 0.2 140);
-  --color-endgame-dark: oklch(0.15 0.02 140);
-  --color-bankruptcy-rust: oklch(0.4 0.15 45);
-  --color-epstein-teal: oklch(0.4 0.12 180);
-
-  /* Specific Investigation Tokens */
-  --color-ink: oklch(0.15 0.02 65);
-  --color-ink-mid: oklch(0.3 0.02 65);
-  --color-blood: oklch(0.45 0.25 25);
-  --color-gold: oklch(0.7 0.15 85);
-  --color-parchment: #faf6ee;
-
-  /* Global Typography Bumps for Legibility (+4px Scale) */
-  --font-size-xs: 18px;
-  --font-size-sm: 22px;
-  --font-size-base: 26px;
-  --font-size-lg: 30px;
-  --font-size-xl: 36px;
-  --font-size-2xl: 44px;
-  --font-size-3xl: 60px;
-  --font-size-4xl: 76px;
-  --font-size-5xl: 100px;
-  --font-size-6xl: 124px;
+  /* Sodom Hall v3.0 Tokens */
+  --color-crimson: #8B1A1A;
+  --color-parchment: #C8BDB0;
+  --color-gold: #8B6914;
+  --color-method-blue: #1A3A5C;
+  --color-easter-purple: #3A1A5C;
+  --color-dark-foundation: #0A0A0C;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.3 0.01 65);
-  /* High Contrast */
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --background: #0A0A0C;
+  --foreground: #C8BDB0;
+  --primary: #8B1A1A;
+  --primary-foreground: #ffffff;
+  --card: #0D0D10;
+  --card-foreground: #C8BDB0;
+  --popover: #0D0D10;
+  --popover-foreground: #C8BDB0;
+  --secondary: #16161D;
+  --secondary-foreground: #C8BDB0;
+  --muted: #111116;
+  --muted-foreground: #666666;
+  --accent: #8B1A1A;
+  --accent-foreground: #ffffff;
+  --border: #1A1A22;
+  --input: #1A1A22;
+  --ring: #8B1A1A;
 
-  /* Investigation Tokens - Light Mode */
-  --ink: oklch(0.15 0.02 65);
-  --ink-mid: oklch(0.3 0.02 65);
-  --blood: oklch(0.45 0.25 25);
-  --gold: oklch(0.7 0.15 85);
-  --gold-dim: oklch(0.7 0.15 85 / 50%);
-  --parchment: #faf6ee;
-
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* Investigation Tokens */
+  --ink: #C8BDB0;
+  --ink-mid: #888888;
+  --blood: #8B1A1A;
+  --gold: #8B6914;
+  --parchment: #C8BDB0;
 }
 
 .dark {
-  --primary: #8b1a1a;
-  --primary-foreground: #ffffff;
-  --sidebar-primary: #8b1a1a;
-  --sidebar-primary-foreground: #ffffff;
-  --background: #0a0a0c;
-  --foreground: #c8bdb0;
-  --card: #111116;
-  --card-foreground: #c8bdb0;
-  --popover: #0d0d10;
-  --popover-foreground: #c8bdb0;
-  --secondary: #1a1a22;
-  --secondary-foreground: #cbd5e1;
-  --muted: #111116;
-  --muted-foreground: #94a3b8;
-  /* High Contrast */
-  --accent: #8b1a1a;
-  --accent-foreground: #ffffff;
-
-  /* Investigation Tokens - Dark Mode */
-  --ink: #c8bdb0;
-  --ink-mid: #a89b8c;
-  --blood: #8b1a1a;
-  --gold: #8b6914;
-  --gold-dim: rgba(139, 105, 20, 0.5);
-  --parchment: #c8bdb0;
-
-  --destructive: #8b1a1a;
-  --destructive-foreground: #ffffff;
-  --border: #1a1a22;
-  --input: #1a1a22;
-  --ring: #8b1a1a;
-  --chart-1: #8b1a1a;
-  --chart-2: #c44444;
-  --chart-3: #8b6914;
-  --chart-4: #555555;
-  --chart-5: #333333;
-  --sidebar: #0d0d10;
-  --sidebar-foreground: #c8bdb0;
-  --sidebar-accent: #1a1a22;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1a1a22;
-  --sidebar-ring: #8b1a1a;
+  --background: #0A0A0C;
+  --foreground: #C8BDB0;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: Georgia, 'Times New Roman', serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cormorant Garamond', serif;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 700;
+  /* Typography Hierarchy v3.0 */
+  h1, h2, h3, h4, .font-cinzel {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-courier {
+    font-family: 'Courier Prime', monospace;
   }
 
   button:not(:disabled),
@@ -201,6 +102,7 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+}
 
   /* Section Themes */
   .theme-opinion {

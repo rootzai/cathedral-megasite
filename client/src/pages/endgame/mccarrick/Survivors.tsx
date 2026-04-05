@@ -6,7 +6,7 @@ import { Link } from "wouter";
 export default function Survivors() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
         <SectionHeader 
-          number="09" 
+          number="06" 
           title="Survivor Testimonies" 
           subtitle="The Human Toll and Calls for Justice"
         />
@@ -36,7 +36,7 @@ export default function Survivors() {
             </p>
           </div>
 
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             <div className="border border-border p-4 bg-card">
               <div className="aspect-[4/3] bg-muted relative overflow-hidden mb-4 grayscale contrast-125">
                 <img 
@@ -74,14 +74,14 @@ export default function Survivors() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link  asChild>
+          <Link href="/ledger/mccarrick/warnings" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link  asChild>
+          <Link href="/ledger/mccarrick/seton-hall" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-              Proceed to Section 10 <span className="ml-2">→</span>
+              Proceed to Section 07 <span className="ml-2">→</span>
             </Button>
           </Link>
         </div>

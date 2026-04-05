@@ -72,10 +72,10 @@ const POWER_AXIS_DATA = [
         title: "FINAL IMMUNITY",
         subtitle: "The Network Convergence",
         stats: [
-            "Kathryn Ruemmler (WH Counsel) and Vatican lawyers manage the optics.",
-            "The Epstein Nexus: A convergence of elite networks to preserve the regime.",
-            "The 2024 Succession: Installing the old guard to maintain the seal.",
-            "The 'Cathedral' is unsealed through the 2026 Breach."
+            "Kathryn Ruemmler (WH Counsel) manages the 200,000 document embargo.",
+            "The Goldman Resignation: Forensic proof of the board's knowledge of the Latham Report.",
+            "The September Email: Internal coordination documenting the 'Big Lie' strategy.",
+            "The Epstein Nexus: A convergence of elite networks to preserve the regime."
         ],
         shieldStatus: "TOTAL PROTECTION",
         bgClass: "border-red-500/30 bg-red-950/20 shadow-red-500/10",

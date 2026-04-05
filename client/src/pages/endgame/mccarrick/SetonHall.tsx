@@ -7,7 +7,7 @@ export default function SetonHall() {
   return (
     <div className="space-y-12 animate-in fade-in duration-700">
       <SectionHeader 
-        number="05" 
+        number="07" 
         title="The Seton Hall Connection" 
         subtitle="The 'Culture of Fear' and the Beach House"
       />
@@ -122,13 +122,17 @@ export default function SetonHall() {
         </div>
       </div>
 
-      <div className="flex justify-between pt-12 border-t border-border">
-        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-zinc-900 transition-colors" asChild>
-          <Link >← 04. Network</Link>
-        </Button>
-        <Button variant="outline" className="font-mono uppercase tracking-widest hover:bg-destructive hover:text-zinc-900 transition-colors" asChild>
-          <Link >06. Warnings →</Link>
-        </Button>
+      <div className="flex justify-between mt-12 pt-8 border-t border-border">
+        <Link href="/ledger/mccarrick/survivors" asChild>
+          <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
+            <span className="mr-2">←</span> Previous
+          </Button>
+        </Link>
+        <Link href="/ledger/mccarrick/mechanisms" asChild>
+          <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
+            Proceed to Section 08 <span className="ml-2">→</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );

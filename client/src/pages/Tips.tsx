@@ -1,55 +1,64 @@
+import React from "react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
-import { Shield, Lock, AlertCircle, Search } from "lucide-react";
+import { Shield, Lock, AlertCircle, Search, Zap, Send } from "lucide-react";
 
 export default function TipsPage() {
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-white pt-24 pb-20 px-6">
+        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pt-32 pb-24 px-6 font-cormorant border-b border-white/5">
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
-                <div className="mb-12 border-b border-red-900/30 pb-10">
-                    <div className="flex items-center gap-3 mb-4">
-                        <Shield className="w-6 h-6 text-red-600" />
-                        <span className="font-mono text-xs text-red-600 uppercase tracking-[0.5em]">Forensic Signal // Whistleblower Portal</span>
+                <div className="mb-16 border-b border-[#8b1a1a]/30 pb-12 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-3xl" />
+                    <div className="relative z-10 space-y-6">
+                        <div className="flex items-center gap-4 mb-4">
+                            <Zap className="w-5 h-5 text-[#8b1a1a] fill-[#8b1a1a]" />
+                            <span className="font-courier text-[10px] text-[#8b1a1a] font-black uppercase tracking-[0.6em]">FORENSIC SIGNAL // SH-TIP-CORE</span>
+                        </div>
+                        <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter leading-none">
+                            SUBMIT <span className="text-[#8b1a1a]">INTELLIGENCE</span>
+                        </h1>
+                        <p className="max-w-2xl text-xl md:text-2xl font-serif italic text-zinc-500 leading-relaxed">
+                            "Secure, anonymous transmission of forensic data regarding institutional immunity, the 'Big Lie' strategy, and the Perry Law sham."
+                        </p>
                     </div>
-                    <h1 className="text-5xl font-serif uppercase tracking-wider mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        Submit Intelligence
-                    </h1>
-                    <p className="text-zinc-400 font-serif text-lg italic leading-relaxed">
-                        Secure, encrypted channel for transmitting evidence regarding institutional cover-up, settlement fraud (The Rewrite), and clerical networks.
-                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-12">
+                <div className="grid grid-cols-1 gap-20">
                     {/* The Form */}
-                    <TipSubmissionForm />
+                    <div className="relative">
+                        <div className="absolute -inset-4 bg-gradient-to-b from-[#8b1a1a]/10 to-transparent blur-2xl opacity-50" />
+                        <div className="relative bg-[#0D0D10] border border-white/5 p-1 px-1">
+                            <TipSubmissionForm />
+                        </div>
+                    </div>
 
                     {/* Safety Protocols */}
-                    <div className="bg-red-950/5 border border-white/5 p-8 rounded-lg space-y-6">
-                        <div className="flex items-center gap-2 mb-2">
-                            <Lock className="w-4 h-4 text-zinc-500" />
-                            <h4 className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Forensic Safety Protocols</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#070709] border border-white/5 p-12">
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-3">
+                                <Lock className="w-5 h-5 text-[#8b1a1a]" />
+                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">Protocol Alpha</h4>
+                            </div>
+                            <p className="text-sm text-zinc-600 font-serif leading-relaxed italic">
+                                Use a personal device and non-logging VPN. Do not utilize institutional networks (SHU/RCAN) for transmission.
+                            </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="space-y-3">
-                                <h5 className="text-red-900 font-bold text-xs uppercase tracking-widest">1. Technical Hygiene</h5>
-                                <p className="text-[10px] text-zinc-600 font-mono leading-loose uppercase">
-                                    Do not use employer-issued devices or networks. Access this portal via Tor or a non-logging VPN on a personal device.
-                                </p>
+                        <div className="space-y-6 md:border-l md:border-white/5 md:pl-12">
+                            <div className="flex items-center gap-3">
+                                <Shield className="w-5 h-5 text-[#8b1a1a]" />
+                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">Protocol Beta</h4>
                             </div>
-                            <div className="space-y-3">
-                                <h5 className="text-red-900 font-bold text-xs uppercase tracking-widest">2. Document Integrity</h5>
-                                <p className="text-[10px] text-zinc-600 font-mono leading-loose uppercase">
-                                    Avoid printing or photographing documents on devices that store metadata or serial numbers. Use the Signal channel for raw evidence scans.
-                                </p>
-                            </div>
+                            <p className="text-sm text-zinc-600 font-serif leading-relaxed italic">
+                                Scrub all digital metadata from documents before upload. Physical scans should be made in high-contrast grayscale.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 {/* Footer Disclaimer */}
-                <div className="mt-20 pt-10 border-t border-white/5 text-center">
-                    <p className="text-[9px] font-mono text-zinc-700 uppercase tracking-[0.4em]">
-                        Archival ID: SH-TIP-CORE // All signals are monitored for forensic authenticity.
+                <div className="mt-32 pt-12 border-t border-white/5 text-center">
+                    <p className="text-[10px] font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
+                         SH-2026 // AUTHORIZED RECONSTRUCTION // THE TRUTH HAS NO STATUTE
                     </p>
                 </div>
             </div>

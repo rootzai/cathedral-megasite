@@ -19,7 +19,8 @@ const TheRecord = React.lazy(() => import("@/pages/TheRecord"));
 const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion"));
 const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall"));
 const Tips = React.lazy(() => import("@/pages/Tips"));
-const Briefing = React.lazy(() => import("@/pages/Briefing"));
+const TheMethod = React.lazy(() => import("@/pages/TheMethod"));
+const TheNursery = React.lazy(() => import("@/pages/TheNursery"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 // Modular Routers
@@ -36,10 +37,10 @@ function PageLayout({ component: Component, theme = "dark" }: { component: React
 }
 
 const REDIRECT_MAP: Record<string, string> = {
-  "/cathedral": "/shield",
-  "/ledger": "/shield",
-  "/evidence": "/shield",
-  "/headline-news": "/breach"
+  "/cathedral": "/evidence",
+  "/shield": "/",
+  "/headline-news": "/breach",
+  "/expose": "/evidence/legal"
 };
 
 function RedirectHandler() {
@@ -74,8 +75,26 @@ export function CoreRouter() {
           <PageLayout component={RedesignedHome} />
         </Route>
 
-        {/* Tier 2: THE SHIELD */}
-        <Route path="/shield">
+        {/* Tier 2: THE EVIDENCE */}
+        <Route path="/evidence">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/origin">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/machine">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/board">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/legal">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/present">
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/victims">
           <PageLayout component={EvidenceHub} />
         </Route>
 
@@ -84,20 +103,15 @@ export function CoreRouter() {
           <PageLayout component={BreachHub} />
         </Route>
 
-        {/* Tier 4: THE CONVERSION */}
-        <Route path="/conversion">
-          <PageLayout component={TheConversion} />
+        {/* Tier 6: THE METHOD & THE NURSERY */}
+        <Route path="/method">
+          <PageLayout component={TheMethod} />
         </Route>
-
-        {/* Tier 5: THE POWER AXIS (INTELLIGENCE) */}
-        <Route path="/power-axis">
-          <PageLayout component={PatrickWall} />
+        <Route path="/easter">
+          <PageLayout component={TheNursery} />
         </Route>
 
         {/* ACADEMY & ABOUT */}
-        <Route path="/academy">
-          <PageLayout component={CathedralHome} />
-        </Route>
         <Route path="/about">
           <PageLayout component={About} />
         </Route>
@@ -112,9 +126,6 @@ export function CoreRouter() {
         </Route>
         <Route path="/tips">
           <PageLayout component={Tips} />
-        </Route>
-        <Route path="/briefing">
-          <PageLayout component={Briefing} />
         </Route>
 
         {/* THE REWRITE (OPINIONS) */}

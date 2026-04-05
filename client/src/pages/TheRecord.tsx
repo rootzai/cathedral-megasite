@@ -1,6 +1,7 @@
 import React from 'react';
 import { ConfidenceIndicator } from "@/components/ConfidenceIndicator";
 import { CheckCircle2, XCircle, Search, Filter, AlertCircle, FileText, FileDown } from "lucide-react";
+import { JourneyNav } from "@/components/JourneyNav";
 
 export default function TheRecord() {
     const facts = [
@@ -149,6 +150,10 @@ export default function TheRecord() {
                 <p>Total evidentiary markers: 78</p>
                 <p>Last verified: October 21, 2025</p>
             </footer>
+
+            <div className="mt-20 border-t border-zinc-100 pt-10">
+                <JourneyNav />
+            </div>
         </div>
     );
 }

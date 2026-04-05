@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import React from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
-import MegaNavigation from "./components/MegaNavigation";
+import PrimaryNavigation from "./components/PrimaryNavigation";
+import LiveStatusBar from "./components/LiveStatusBar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CoreRouter } from "./routes/CoreRouter";
 
@@ -21,7 +22,8 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
-            <MegaNavigation />
+            <PrimaryNavigation />
+            <LiveStatusBar />
             <CoreRouter />
           </div>
         </TooltipProvider>

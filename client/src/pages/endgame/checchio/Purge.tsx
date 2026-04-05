@@ -2,6 +2,8 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Purge() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -196,5 +198,17 @@ export default function Purge() {
               <p className="text-right text-sm font-mono mt-4 text-gray-500">- Source close to the investigation</p>
             </div>
           </div>
+        <div className="flex justify-between mt-12 pt-8 border-t border-border">
+          <Link href="/ledger/checchio/governance" asChild>
+            <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
+              <span className="mr-2">←</span> Previous
+            </Button>
+          </Link>
+          <Link href="/ledger/checchio/controversies" asChild>
+            <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
+              Proceed to Section 06 <span className="ml-2">→</span>
+            </Button>
+          </Link>
+        </div>
       </div>);
 }
