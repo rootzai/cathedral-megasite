@@ -58,8 +58,8 @@ export default function Home() {
           </ImageModal>
           <div className="font-mono text-xs space-y-2">
             <div className="flex justify-between border-b border-border pb-1">
-              <span className="text-muted-foreground">SUBJECT</span>
-              <span className="font-bold">MCCARRICK, THEODORE E.</span>
+              <span className="text-muted-foreground mr-6">SUBJECT</span>
+              <span className="font-bold text-[#8B1A1A]">MCCARRICK, THEODORE E.</span>
             </div>
             <div className="flex justify-between border-b border-border pb-1">
               <span className="text-muted-foreground">DOB</span>

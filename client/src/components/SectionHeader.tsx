@@ -25,7 +25,7 @@ export default function SectionHeader({ number, title, subtitle, className, deco
         </h2>
       </div>
       {subtitle && (
-        <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed font-light">
+        <p className="text-xl leading-relaxed italic" style={{ color: '#C8BDB0', fontFamily: "'Lora', serif" }}>
           {subtitle}
         </p>
       )}
