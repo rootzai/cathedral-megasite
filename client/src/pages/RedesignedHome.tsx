@@ -16,7 +16,7 @@ import ShieldHub from "@/components/ShieldHub";
 import PowerAxis from "@/components/PowerAxis";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { HomeActs } from "./home/components/HomeActs";
+import HomeActs from "./home/components/HomeActs";
 import { FORENSIC_RINGS } from "@/lib/registry";
 
 export default function RedesignedHome() {
