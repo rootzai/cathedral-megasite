@@ -83,8 +83,9 @@ export default function RedesignedHome() {
                             THE HOUSE THAT <br />
                             <span className="text-[#8b1a1a]">McCARRICK</span> BUILT
                         </h1>
-                        <p className="max-w-4xl mx-auto text-xl md:text-2xl font-serif italic text-[#c8bdb0]/60 leading-relaxed">
-                            "For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects. The vault opens May 18, 2026."
+                        <p className="max-w-5xl mx-auto text-xl md:text-2xl font-serif italic text-[#c8bdb0]/80 leading-relaxed space-y-6">
+                            <span>"For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects."</span>
+                            <span className="block pt-8 text-[#8b1a1a] font-cinzel font-black tracking-[0.2em] uppercase text-3xl">The vault opens May 18, 2026.</span>
                         </p>
                     </motion.div>
 
@@ -133,28 +134,43 @@ export default function RedesignedHome() {
                     <div className="flex flex-col items-center gap-6">
                         <div className="flex items-center gap-3 text-zinc-500 hover:text-red-600 transition-colors cursor-pointer group">
                             <Search className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                            <span className="text-xs font-courier uppercase tracking-[0.3em] font-bold">Identify individual ring positions</span>
                         </div>
-                        <div className="w-16 h-1 bg-[#8b1a1a]" />
-                        <h2 className="text-4xl md:text-6xl font-black font-cinzel text-white uppercase tracking-tighter">
-                            Crawford's Lifeline
-                        </h2>
-                    </div>
-
-                    <div className="space-y-8">
-                        <p className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                            Mark Crawford. Age 13. Bayonne, New Jersey.
+                    <motion.div 
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        className="space-y-8"
+                    >
+                        <div className="space-y-2">
+                             <h2 className="text-[#d4af37] font-serif text-5xl tracking-tight leading-none uppercase">The Crawford Thread</h2>
+                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em] font-bold">Case Study: Institutional Mechanics</p>
+                        </div>
+                        <div className="w-24 h-px bg-red-900 mx-auto" />
+                        <p className="text-xl text-white font-serif leading-[1.6]">
+                            Mark Crawford. Age 13. Bayonne, New Jersey. 
                         </p>
-                        <p className="text-xl text-zinc-400 leading-relaxed font-serif italic">
-                            The falsified birthday. The refused $108,000. The refusal of the Conversion.
-                            This is the category thesis in one biography.
-                        </p>
+                        <div className="text-xl text-zinc-400 leading-relaxed font-serif italic space-y-6">
+                            <p>
+                                When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Shortly thereafter, Martin became Archbishop Theodore McCarrick's personal secretary, serving at the Archbishop’s pleasure. 
+                            </p>
+                            <p>
+                                When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood and said the statute of limitations had expired, refused to pay the $108,000 settlement their own mediator had awarded him. When Crawford asked for a written acknowledgment that the abuse happened and that Martin would never have access to children again, they refused to oblige him.
+                            </p>
+                            <p className="border-l-2 border-red-900 pl-6 py-2">
+                                Catholics call that acknowledgment a Conversion. <span className="text-[#8b1a1a]">Metuchen refused it.</span>
+                            </p>
+                            <p>
+                                Fifteen became sixteen on paper, one falsified digit, and a man who had been abused as a child was turned away without money, without acknowledgment, and without the Church's most basic gesture of accountability.
+                            </p>
+                            <p className="text-white not-italic font-bold">
+                                What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources.
+                            </p>
+                        </div>
                         <Link href="/evidence/origin">
                             <a className="inline-flex items-center gap-3 text-[#8b1a1a] font-courier font-black tracking-[0.3em] uppercase text-xs group hover:text-white transition-colors">
                                 Follow the lifeline <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                             </a>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 

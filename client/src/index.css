@@ -75,6 +75,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem; /* Sitewide Upshift 18px */
   }
 
   /* Typography Hierarchy v3.0 */
@@ -259,28 +260,28 @@
 
   .prose h2 {
     color: var(--color-foreground);
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 3rem; /* 48px */
+    line-height: 1.1;
     font-weight: 800;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
     letter-spacing: -0.025em;
   }
 
   .prose h3 {
     color: var(--color-foreground);
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2rem; /* 32px */
+    line-height: 1.2;
     font-weight: 700;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   .prose p {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     line-height: 1.8;
-    font-size: 1.0625rem;
+    font-size: 1.25rem; /* 20px */
   }
 
   .prose strong {

@@ -39,43 +39,43 @@ export const FORENSIC_RINGS: ShieldRing[] = [
     { 
         id: 1, 
         name: "SECRET ARCHIVES", 
-        description: "The inner sanctum containing the 24,000-page Latham Report and the $628k slush fund records.", 
+        description: "The core investigative target: a subterranean repository of 24,000 buried documents, including the definitive Latham Report on clerical predation and the $628,000 'unreachable' slush fund used to incentivize silence.", 
         radius: 12, 
-        route: "#act-i",
+        route: "/vault",
         color: "rgba(255, 0, 0, 0.2)",
         breach: true
     },
     { 
         id: 2, 
         name: "LEGAL FORTRESS", 
-        description: "The secondary barrier comprised of high-level canonical privilege claims and NDA-backed silos.", 
+        description: "The primary protective silo: a complex network of canonical privilege claims and NDA-backed non-disclosure mechanisms designed to spike discovery and isolate high-value clerical assets from civilian legal process.", 
         radius: 24, 
-        route: "#act-ii",
+        route: "/breach",
         color: "rgba(255, 0, 0, 0.15)",
         breach: true
     },
     { 
         id: 3, 
         name: "LEGAL APPARATUS", 
-        description: "The operational machinery (Gibbons, Latham, NJ Govt) used to process and neutralize discovery threats.", 
+        description: "The operational machine: corporate legal entities and 'white-shoe' firms (Gibbons, Latham) leveraged to weaponize the NJ Court system, falsify administrative timelines, and neutralize whistleblowers via sanctioned litigation.", 
         radius: 36, 
-        route: "#act-ii",
+        route: "/ledger",
         color: "rgba(212, 175, 55, 0.1)"
     },
     { 
         id: 4, 
         name: "THE OUTER WALLS", 
-        description: "The institutional facade (Seton Hall University, RCAN) that presents the public-facing 'Architecture of Protection'.", 
+        description: "The institutional facade: the Newark Archdiocese (RCAN) and Seton Hall University. This layer presents the public-facing 'Architecture of Protection' while facilitating the movement of clergy through the triangular system of silence.", 
         radius: 48, 
-        route: "#act-iii",
+        route: "/evidence/machine",
         color: "rgba(255, 255, 255, 0.05)"
     },
     { 
         id: 5, 
         name: "VICTIMS & SURVIVORS", 
-        description: "The outermost layer of the system, comprising those whose silence was suppressed and whose voices were scrubbed.", 
+        description: "The outermost layer: individuals and advocacy networks whose testimony was methodically scrubbed from the official record to preserve the institutional shielding. This is the origin point of the breach.", 
         radius: 60, 
-        route: "#act-0",
+        route: "/evidence/victims",
         color: "rgba(255, 255, 255, 0.02)"
     }
 ];

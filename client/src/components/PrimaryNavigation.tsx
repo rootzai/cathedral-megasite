@@ -23,7 +23,7 @@ export default function PrimaryNavigation() {
           <div className="w-8 h-8 bg-[#8b1a1a] rounded-sm flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
             <span className="text-white font-black text-xs">SH</span>
           </div>
-          <span className="text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-sm md:text-base hidden sm:block">
+          <span className="text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-base md:text-lg hidden sm:block">
             SODOM HALL
           </span>
         </a>
@@ -36,7 +36,7 @@ export default function PrimaryNavigation() {
           return (
             <Link key={item.href} href={item.href}>
               <a className={cn(
-                "group relative flex items-center gap-2 py-2 text-[10px] font-black tracking-[0.2em] transition-all duration-300",
+                "group relative flex items-center gap-2 py-2 text-xs font-black tracking-[0.2em] transition-all duration-300",
                 isActive ? "text-[#8b1a1a]" : "text-[#c8bdb0]/60 hover:text-[#c8bdb0]"
               )}>
                 <item.icon className={cn("w-3 h-3 translate-y-[-1px]", isActive ? "text-[#8b1a1a]" : "text-zinc-600 group-hover:text-zinc-400")} />
@@ -57,8 +57,8 @@ export default function PrimaryNavigation() {
       {/* Submit Tip Button */}
       <Link href="/tips">
         <a className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-5 py-2.5 rounded-sm flex items-center gap-2.5 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
-          <Send className="w-3.5 h-3.5" />
-          <span className="text-[10px] font-black tracking-[0.3em] uppercase">Submit a Tip</span>
+          <Send className="w-4 h-4" />
+          <span className="text-xs font-black tracking-[0.3em] uppercase">Submit a Tip</span>
           <motion.div 
             animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
             transition={{ duration: 2, repeat: Infinity }}

@@ -25,7 +25,7 @@ export default function ShieldHub({
               ARCHITECTURE OF PROTECTION
             </h2>
         </div>
-        <p className="text-zinc-500 font-mono text-[10px] tracking-[0.6em] uppercase">SODOM HALL // FORENSIC REGISTRY</p>
+        <p className="text-zinc-500 font-mono text-xs tracking-[0.6em] uppercase">SODOM HALL // FORENSIC REGISTRY</p>
       </div>
 
       <div className="p-8 lg:p-12">
@@ -93,7 +93,7 @@ export default function ShieldHub({
                         <div>
                             <div className="flex items-center gap-2 mb-4">
                                 <Database className="w-4 h-4 text-red-600" />
-                                <span className="font-mono text-[10px] text-red-600 uppercase tracking-[0.4em]">Forensic Dossier // Level {hoveredRing}</span>
+                                <span className="font-mono text-xs text-red-600 uppercase tracking-[0.4em]">Forensic Dossier // Level {hoveredRing}</span>
                             </div>
                             <h3 className="text-4xl text-white font-serif uppercase tracking-wider mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
                                 {FORENSIC_RINGS.find(r => r.id === hoveredRing)?.name}
@@ -107,7 +107,7 @@ export default function ShieldHub({
                             </p>
 
                             <div className="space-y-3">
-                                <h4 className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">Identified Entities:</h4>
+                                <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Identified Entities:</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {PERPETRATORS.filter(p => {
                                          if (hoveredRing === 1) return p.tags.includes("core");
@@ -115,7 +115,7 @@ export default function ShieldHub({
                                          if (hoveredRing === 2) return p.tags.includes("machine");
                                          return false;
                                      }).map(actor => (
-                                         <span key={actor.id} className="bg-red-900/10 text-red-500 border border-red-900/30 px-2 py-1 text-[8px] font-mono uppercase tracking-widest">{actor.name}</span>
+                                         <span key={actor.id} className="bg-red-900/10 text-red-500 border border-red-900/30 px-3 py-1.5 text-xs font-mono uppercase tracking-widest">{actor.name}</span>
                                      ))}
                                 </div>
                             </div>
@@ -130,7 +130,7 @@ export default function ShieldHub({
                                             className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" 
                                         />
                                     </div>
-                                    <p className="text-[8px] font-mono text-zinc-500 mt-2 uppercase tracking-widest leading-relaxed">
+                                    <p className="text-xs font-mono text-zinc-500 mt-3 uppercase tracking-widest leading-relaxed">
                                         <strong className="text-red-900 italic">Forensic Anchor:</strong> McCarrick & Martin at Christmas Party. 
                                         <span className="block opacity-60">Relative to 1987 Crawford Report (Dec 1989).</span>
                                     </p>
@@ -168,17 +168,17 @@ export default function ShieldHub({
       <div className="bg-[#050505] border-t border-white/5 p-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start">
             <span className="text-white font-serif italic text-3xl" style={{ fontFamily: "Georgia, serif" }}>Sodom Hall</span>
-            <span className="text-zinc-600 font-mono text-[8px] uppercase tracking-[0.6em]">Ecclesiastical Noir</span>
+            <span className="text-zinc-600 font-mono text-xs uppercase tracking-[0.6em]">Ecclesiastical Noir</span>
         </div>
         
         <div className="flex items-center gap-8 border-l border-zinc-900 pl-8 hidden md:flex">
             <div className="text-center">
-                <span className="block text-[8px] font-mono text-red-900 uppercase tracking-widest mb-1">Target Identity</span>
-                <span className="text-zinc-400 font-mono text-[9px] uppercase font-bold">Theodore McCarrick</span>
+                <span className="block text-xs font-mono text-red-900 uppercase tracking-widest mb-1">Target Identity</span>
+                <span className="text-zinc-400 font-mono text-xs uppercase font-bold">Theodore McCarrick</span>
             </div>
             <div className="text-center">
-                <span className="block text-[8px] font-mono text-zinc-600 uppercase tracking-widest mb-1">Forensic State</span>
-                <span className="text-green-900/80 font-mono text-[9px] uppercase font-bold animate-pulse">Unseal Active</span>
+                <span className="block text-xs font-mono text-zinc-600 uppercase tracking-widest mb-1">Forensic State</span>
+                <span className="text-green-900/80 font-mono text-xs uppercase font-bold animate-pulse">Unseal Active</span>
             </div>
         </div>
       </div>

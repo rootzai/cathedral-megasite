@@ -135,9 +135,10 @@ export default function LandingPage() {
 
         <div className="title-block">
           <h1 className="title-overlay">Sodom Hall</h1>
-          <p className="subtitle-overlay !text-xs !tracking-[0.2em] !italic !normal-case max-w-2xl mx-auto opacity-70">
-            For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects. The vault opens May 18, 2026.
-          </p>
+          <div className="subtitle-overlay !text-sm !tracking-[0.2em] !italic !normal-case max-w-2xl mx-auto opacity-70 space-y-8">
+            <p>For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects.</p>
+            <p className="block pt-6 text-red-600 font-black tracking-widest uppercase">The vault opens May 18, 2026.</p>
+          </div>
         </div>
 
         {/* NEW FORENSIC NEWS ALERT v6.1 */}

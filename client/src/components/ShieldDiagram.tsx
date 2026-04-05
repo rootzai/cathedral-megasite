@@ -556,11 +556,11 @@ export default function ShieldDiagram({
           return (
             <g>
               <text x={cx} y={numY} textAnchor="middle" fill="#7a5c1e"
-                fontSize={fs(0.013)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
+                fontSize={fs(0.020)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
                 RING 5
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#c9a84c"
-                fontSize={fs(0.026)} fontFamily="'Cinzel', serif"
+                fontSize={fs(0.040)} fontFamily="'Cinzel', serif"
                 letterSpacing="0.1em" fontWeight="700" filter="url(#gGold)">
                 VICTIMS &amp; SURVIVORS
               </text>
@@ -576,11 +576,11 @@ export default function ShieldDiagram({
           return (
             <g>
               <text x={cx} y={numY} textAnchor="middle" fill="#7a5c1e"
-                fontSize={fs(0.013)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
+                fontSize={fs(0.020)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
                 RING 4
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#c9a84c"
-                fontSize={fs(0.024)} fontFamily="'Cinzel', serif"
+                fontSize={fs(0.038)} fontFamily="'Cinzel', serif"
                 letterSpacing="0.10em" fontWeight="700" filter="url(#gGold)">
                 THE OUTER WALLS
               </text>
@@ -597,11 +597,11 @@ export default function ShieldDiagram({
           return (
             <g>
               <text x={cx} y={numY} textAnchor="middle" fill="#7a5c1e"
-                fontSize={fs(0.013)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
+                fontSize={fs(0.020)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
                 RING 3
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#ff7777"
-                fontSize={fs(0.022)} fontFamily="'Cinzel', serif"
+                fontSize={fs(0.036)} fontFamily="'Cinzel', serif"
                 letterSpacing="0.08em" fontWeight="700" filter="url(#gCrimson)">
                 LEGAL APPARATUS
               </text>
@@ -617,11 +617,11 @@ export default function ShieldDiagram({
           return (
             <g>
               <text x={cx} y={numY} textAnchor="middle" fill="#7a5c1e"
-                fontSize={fs(0.013)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
+                fontSize={fs(0.020)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
                 RING 2
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#ff5555"
-                fontSize={fs(0.020)} fontFamily="'Cinzel', serif"
+                fontSize={fs(0.034)} fontFamily="'Cinzel', serif"
                 letterSpacing="0.06em" fontWeight="700" filter="url(#gCrimson)">
                 LEGAL FORTRESS
               </text>
@@ -637,11 +637,11 @@ export default function ShieldDiagram({
           return (
             <g>
               <text x={cx} y={numY} textAnchor="middle" fill="#7a5c1e"
-                fontSize={fs(0.013)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
+                fontSize={fs(0.020)} fontFamily="'Cinzel', serif" letterSpacing="0.18em" opacity="0.55">
                 RING 1
               </text>
               <text x={cx} y={titleY} textAnchor="middle" fill="#c9a84c"
-                fontSize={fs(0.020)} fontFamily="'Cinzel', serif"
+                fontSize={fs(0.032)} fontFamily="'Cinzel', serif"
                 letterSpacing="0.06em" fontWeight="700" filter="url(#gGold)">
                 SECRET ARCHIVES
               </text>
@@ -739,7 +739,7 @@ function NodeLabel({ x, y, label, sublabel, angle, size, ring, isHovered, isMedi
   ring?: number; isHovered: boolean; isMedia?: boolean; iconS?: number;
 }) {
   // Scale font by ring: ring 2 (innermost) gets smaller text, ring 5 (outermost) gets larger
-  const ringFactor = ring === 2 ? 0.013 : ring === 3 ? 0.015 : 0.016;
+  const ringFactor = ring === 2 ? 0.020 : ring === 3 ? 0.022 : 0.024;
   const fs = Math.max(size * ringFactor, 7);
   // gap accounts for icon height so label clears the icon
   const gap = (iconS ?? 0) * 5.5 + 4;
