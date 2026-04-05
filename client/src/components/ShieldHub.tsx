@@ -5,8 +5,15 @@ import { useState } from "react";
 import { FORENSIC_RINGS, PERPETRATORS } from "@/lib/registry";
 import ShieldDiagram from "./ShieldDiagram";
 
-export default function ShieldHub() {
+export default function ShieldHub({ 
+  onNodeClick, 
+  onRingClick 
+}: { 
+  onNodeClick?: (nodeId: string) => void;
+  onRingClick?: (ringId: number) => void;
+}) {
   const [hoveredRing, setHoveredRing] = useState<number | null>(null);
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   return (
     <div className="relative w-full max-w-7xl mx-auto bg-black border border-red-900/40 shadow-[0_0_100px_rgba(139,26,26,0.3)] overflow-hidden">
@@ -28,7 +35,16 @@ export default function ShieldHub() {
           <div className="lg:col-span-7 relative aspect-square bg-black border border-white/5 rounded-xl overflow-hidden group">
             {/* NEW GOTHIC MACHINERY COMPONENT v5.3 */}
             <div className="absolute inset-0 z-10">
-                <ShieldDiagram />
+                <ShieldDiagram 
+                onRingClick={(id) => {
+                  setHoveredRing(id);
+                  if (onRingClick) onRingClick(id);
+                }}
+                onNodeClick={(id) => {
+                  setHoveredNode(id);
+                  if (onNodeClick) onNodeClick(id);
+                }}
+              />
             </div>
 
             {/* Interactive SVG Overlay (Hit-zones for Definitive Rings) */}

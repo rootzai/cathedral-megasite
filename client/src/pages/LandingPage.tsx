@@ -135,12 +135,29 @@ export default function LandingPage() {
 
         <div className="title-block">
           <h1 className="title-overlay">Sodom Hall</h1>
-          <p className="subtitle-overlay">The Architecture of Silence</p>
+          <p className="subtitle-overlay animate-pulse">The Inevitability of Downfall</p>
+        </div>
+
+        {/* NEW FORENSIC NEWS ALERT v6.1 */}
+        <div className="z-20 max-w-lg mx-auto bg-red-950/40 border border-red-900/50 p-4 mb-8 backdrop-blur-md">
+            <div className="flex items-center gap-3 mb-2">
+                <Zap className="w-4 h-4 text-red-600 animate-bounce" />
+                <span className="text-red-500 font-mono text-[10px] uppercase tracking-[0.4em]">Forensic Alert // FEB 17, 2025</span>
+            </div>
+            <p className="text-[#faf6ee] font-serif italic text-sm leading-relaxed">
+                "Politico reveals the failure of NJ Bishop transparency. The institutional shield is failing. The downfall is not a prediction; it is an inevitability."
+            </p>
+            <div className="mt-4 flex items-center justify-between border-t border-red-900/30 pt-2">
+                <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Source: Politico / BishopAccountability.org</span>
+                <Link href="/evidence/politico-report">
+                    <span className="text-[9px] font-mono text-red-500 uppercase tracking-widest cursor-pointer hover:underline flex items-center gap-1">Examine Report <ChevronRight className="w-3 h-3" /></span>
+                </Link>
+            </div>
         </div>
 
         <Link href="/cathedral">
-          <a className="enter-btn">
-            Access The Investigation
+          <a className="enter-btn group bg-white/5 border border-white/10 hover:bg-white/10 transition-all px-12 py-6 rounded-none">
+            Witness The Descent
           </a>
         </Link>
 

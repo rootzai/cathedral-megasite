@@ -46,26 +46,22 @@ export default function MegaNavigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between h-16">
           <div className="flex items-center justify-between w-full h-full">
-            <Link href="/">
-              <a className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0">
+            <Link href="/" className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0 font-bold uppercase tracking-[0.2em] transition-all text-center">
                 <SmartImage
                   src="/assets/images/sh-pirate-logo.png"
                   alt="Sodom Hall Home"
                   className="h-10 w-auto group-hover:scale-110 transition-all brightness-150 drop-shadow-[0_0_15px_rgba(139,26,26,0.6)]"
                 />
-              </a>
             </Link>
 
-            <Link href="/shield"><a className={navLinkClass('/shield')}>THE SHIELD</a></Link>
-            <Link href="/conversion"><a className={navLinkClass('/conversion')}>THE CONVERSION</a></Link>
-            <Link href="/opinion"><a className={navLinkClass('/opinion')}>THE REWRITE</a></Link>
-            <Link href="/power-axis"><a className={navLinkClass('/power-axis')}>THE POWER AXIS</a></Link>
-            <Link href="/breach"><a className={navLinkClass('/breach')}>THE BREACH</a></Link>
+            <Link href="/shield" className={navLinkClass('/shield')}>THE SHIELD</Link>
+            <Link href="/conversion" className={navLinkClass('/conversion')}>THE CONVERSION</Link>
+            <Link href="/opinion" className={navLinkClass('/opinion')}>THE REWRITE</Link>
+            <Link href="/power-axis" className={navLinkClass('/power-axis')}>THE POWER AXIS</Link>
+            <Link href="/breach" className={navLinkClass('/breach')}>THE BREACH</Link>
 
-            <Link href="/tips">
-              <a className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]">
+            <Link href="/tips" className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center">
                 PENETRATE SHIELD
-              </a>
             </Link>
           </div>
         </div>
@@ -73,14 +69,12 @@ export default function MegaNavigation() {
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="flex items-center justify-between py-3">
-            <Link href="/">
-              <a className="flex items-center">
+            <Link href="/" className="flex items-center">
                 <SmartImage
                   src="/assets/images/sh-pirate-logo.png"
                   alt="Sodom Hall Home"
                   className="h-8 w-auto brightness-150"
                 />
-              </a>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -94,10 +88,10 @@ export default function MegaNavigation() {
 
           {mobileMenuOpen && (
             <div className="pb-6 space-y-2 animate-in fade-in duration-300">
-               <Link href="/shield"><a className="block px-4 py-3 text-red-600 font-black tracking-widest text-xs border-b border-white/5">THE SHIELD</a></Link>
-               <Link href="/conversion"><a className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE CONVERSION</a></Link>
-               <Link href="/breach"><a className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE BREACH</a></Link>
-               <Link href="/tips"><a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</a></Link>
+               <Link href="/shield" className="block px-4 py-3 text-red-600 font-black tracking-widest text-xs border-b border-white/5">THE SHIELD</Link>
+               <Link href="/conversion" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE CONVERSION</Link>
+               <Link href="/breach" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE BREACH</Link>
+               <Link href="/tips" className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</Link>
             </div>
           )}
         </div>

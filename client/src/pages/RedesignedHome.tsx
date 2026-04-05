@@ -16,14 +16,66 @@ import ShieldHub from "@/components/ShieldHub";
 import PowerAxis from "@/components/PowerAxis";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { HomeActs } from "./home/components/HomeActs";
+import { FORENSIC_RINGS } from "@/lib/registry";
 
 export default function RedesignedHome() {
+    const scrollToAct = (actId: string) => {
+        const element = document.getElementById(actId.replace("#", ""));
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif overflow-x-hidden">
             {/* BRAND NEW TRIPTYCH PORTAL */}
             <TriptychPortal />
 
-            {/* SECTION 1: THE BREACH STARTS HERE (HERO) */}
+            {/* SECTION 1: THE INEVITABILITY (2025 NEWS CYCLE) */}
+            <section className="relative py-24 px-6 bg-[#070709] border-b border-red-900/30">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div className="space-y-8">
+                        <div className="flex items-center gap-2">
+                            <Activity className="w-5 h-5 text-red-600 animate-pulse" />
+                            <span className="text-red-700 font-bold text-[10px] uppercase tracking-[0.6em]">Forensic Alert // FEB 2025</span>
+                        </div>
+                        <h2 className="text-5xl md:text-7xl font-black text-white leading-none uppercase tracking-tighter">
+                            THE <span className="text-red-900">INEVITABILITY</span> <br />
+                            OF DOWNFALL
+                        </h2>
+                        <p className="text-xl text-zinc-400 font-serif italic border-l-4 border-red-900 pl-6 py-2">
+                            "The institutional shield is failing. The silence has been priced in, but the truth is now unavoidable."
+                        </p>
+                        <div className="space-y-4 text-lg text-zinc-500 font-serif leading-relaxed">
+                            <p>
+                                In Feb 2025, <strong className="text-white italic">Politico</strong> and <strong className="text-white">BishopAccountability.org</strong> released the definitive report on the failure of NJ Bishop transparency. It confirms the "Talent Moat" was built to stall, not to solve.
+                            </p>
+                            <div className="bg-red-950/20 border-l-2 border-red-900 p-4 font-mono text-[11px] text-zinc-400 uppercase tracking-widest leading-loose">
+                                <span className="text-red-500 font-black">Forensic Proof:</span> Cardinal Tobin sits as BOTH Chair of the Board of Trustees and President of the Board of Regents. He holds plenary authority over the institution that buried the Latham Report.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-red-900/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="relative border border-white/10 p-4 bg-black/40 backdrop-blur-xl">
+                            <img 
+                                src="/assets/seton-hall-hierarchy.png" 
+                                alt="Institutional Control Hierarchy" 
+                                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000" 
+                            />
+                            <div className="absolute top-8 left-8 bg-red-900 text-white text-[10px] font-mono px-3 py-1 uppercase tracking-widest shadow-2xl">
+                                Exhibit: TOBIN'S PLENARY POWER
+                            </div>
+                        </div>
+                        <p className="mt-4 text-[9px] font-mono text-zinc-600 uppercase tracking-widest text-center">
+                            Documented Hierarchy: There is no distance between the Archbishop and the University President.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 2: THE BREACH STARTS HERE (HERO / FLASHBACK) */}
             <section className="relative min-h-screen flex flex-col items-center justify-center p-6 border-b border-red-900/20 overflow-hidden">
                 {/* Visual Anchor: The Advocate Photo Background (Subtle) */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none grayscale">
@@ -57,15 +109,11 @@ export default function RedesignedHome() {
 
                     {/* ACTION CTAs (CATEGORY VOCABULARY) */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl">
-                        <Link href="/shield">
-                            <a className="group w-full sm:w-auto bg-red-900 hover:bg-red-600 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-[0_0_30px_rgba(139,26,26,0.5)] flex items-center justify-center gap-3 text-center">
+                        <Link href="/shield" className="group w-full sm:w-auto bg-red-900 hover:bg-red-600 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-[0_0_30px_rgba(139,26,26,0.5)] flex items-center justify-center gap-3 text-center">
                                 MAP THE SHIELD <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </a>
                         </Link>
-                        <Link href="/breach">
-                            <a className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-white/30 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3 text-center">
+                        <Link href="/breach" className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-white/30 text-white px-10 py-5 font-black uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3 text-center">
                                 FIND THE BREACH POINT <Search className="w-4 h-4" />
-                            </a>
                         </Link>
                     </div>
                 </div>
@@ -96,10 +144,8 @@ export default function RedesignedHome() {
                         <p className="text-lg text-zinc-400 font-serif leading-relaxed">
                             How do you get through the shield? You identify the lie. In 2004, the institution attempted to stop Mark Crawford with a $108,000 settlement. <strong className="text-white">He refused.</strong> To stop his 2005 lawsuit, they falsified internal age registries to claim the statute of limitations had passed—even though they knew the exact year of his birth.
                         </p>
-                        <Link href="/coverup/big-lie">
-                            <a className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                        <Link href="/coverup/big-lie" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
                                 EXAMINE THE DISINFORMATION AUDIT
-                            </a>
                         </Link>
                     </div>
                 </div>
@@ -114,28 +160,16 @@ export default function RedesignedHome() {
                         <p className="text-zinc-500 font-mono text-[9px] uppercase tracking-widest leading-relaxed">Select a layer to identify the individual and map the breach.</p>
                     </div>
 
-                    <Dialog>
-                        <DialogTrigger asChild>
-                            <div className="w-full max-w-4xl relative cursor-pointer group">
-                                <div className="absolute inset-0 bg-red-900/5 blur-[80px] rounded-full group-hover:bg-red-900/10 transition-all" />
-                                <div className="relative border border-white/5 p-4 bg-black/40 backdrop-blur-xl rounded-[40px]">
-                                    <img 
-                                        src="/assets/shield-high-fidelity.png" 
-                                        alt="Interactive Shield Map" 
-                                        className="w-full h-auto brightness-75 group-hover:brightness-100 transition-all duration-700" 
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="bg-red-900/90 text-white px-10 py-5 font-black text-[10px] uppercase tracking-[0.4em] shadow-[0_0_50px_rgba(139,26,26,0.8)] opacity-0 group-hover:opacity-100 transition-all">
-                                            PENETRATE HUB
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-[1400px] max-h-[92vh] bg-black border-red-900/30 p-0 text-white shadow-[0_0_100px_rgba(0,0,0,1)] overflow-y-auto">
-                            <ShieldHub />
-                        </DialogContent>
-                    </Dialog>
+                    <div className="w-full">
+                        <ShieldHub 
+                            onRingClick={(id) => {
+                                const ring = FORENSIC_RINGS.find(r => r.id === id);
+                                if (ring && ring.route.startsWith("#")) {
+                                    scrollToAct(ring.route);
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -169,15 +203,20 @@ export default function RedesignedHome() {
                 </div>
             </section>
 
+            {/* THE CHRONOLOGY (5 ACTS) */}
+            <section className="bg-black">
+                <HomeActs />
+            </section>
+
             {/* FOOTER */}
             <footer className="py-20 px-6 bg-black border-t border-white/5">
                 <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center">
                     <span className="text-[9px] font-bold text-zinc-800 uppercase tracking-[0.8em]">Ecclesiastical Record // Sodom Hall // 2025</span>
                     <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[10px] font-black text-zinc-600 uppercase tracking-widest">
-                        <Link href="/about"><a className="hover:text-red-500 transition-colors italic leading-none">The Imprint</a></Link>
-                        <Link href="/evidence"><a className="hover:text-red-500 transition-colors italic leading-none">The Shield</a></Link>
-                        <Link href="/breach"><a className="hover:text-red-500 transition-colors italic leading-none">The Breach</a></Link>
-                        <Link href="/opinion"><a className="hover:text-red-500 transition-colors italic leading-none">The Rewrite</a></Link>
+                        <button onClick={() => scrollToAct("#act-0")} className="hover:text-red-500 transition-colors italic leading-none uppercase">The Inevitability</button>
+                        <button onClick={() => scrollToAct("#act-i")} className="hover:text-red-500 transition-colors italic leading-none uppercase">The Origin</button>
+                        <button onClick={() => scrollToAct("#act-iii")} className="hover:text-red-500 transition-colors italic leading-none uppercase">The Breach</button>
+                        <Link href="/about" className="hover:text-red-500 transition-colors italic leading-none">The Imprint</Link>
                     </div>
                     <p className="text-zinc-800 text-[8px] font-mono uppercase tracking-widest">Authorized Forensic Compilation SH-001</p>
                 </div>

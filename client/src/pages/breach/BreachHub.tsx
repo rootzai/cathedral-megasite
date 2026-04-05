@@ -62,10 +62,8 @@ export default function BreachHub() {
                                 </div>
                             </div>
 
-                            <Link href="/breach/documents">
-                                <a className="block w-full text-center bg-[#8b1a1a] text-white py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black transition-all shadow-xl shadow-red-900/20">
-                                    Access Unsealed Documents
-                                </a>
+                            <Link href="/vault/documents" className="block w-full text-center bg-[#8b1a1a] text-white py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black transition-all shadow-xl shadow-red-900/20">
+                                Access Unsealed Documents
                             </Link>
                         </div>
                     </div>

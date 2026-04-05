@@ -40,7 +40,7 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         name: "SECRET ARCHIVES", 
         description: "The inner sanctum containing the 24,000-page Latham Report and the $628k slush fund records.", 
         radius: 12, 
-        route: "/ledger",
+        route: "#act-i",
         color: "rgba(255, 0, 0, 0.2)"
     },
     { 
@@ -48,7 +48,7 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         name: "LEGAL FORTRESS", 
         description: "The secondary barrier comprised of high-level canonical privilege claims and NDA-backed silos.", 
         radius: 24, 
-        route: "/coverup/legal",
+        route: "#act-ii",
         color: "rgba(255, 0, 0, 0.15)"
     },
     { 
@@ -56,7 +56,7 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         name: "LEGAL APPARATUS", 
         description: "The operational machinery (Gibbons, Latham, NJ Govt) used to process and neutralize discovery threats.", 
         radius: 36, 
-        route: "/coverup/triumvirate",
+        route: "#act-ii",
         color: "rgba(212, 175, 55, 0.1)"
     },
     { 
@@ -64,15 +64,15 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         name: "THE OUTER WALLS", 
         description: "The institutional facade (Seton Hall University, RCAN) that presents the public-facing 'Architecture of Protection'.", 
         radius: 48, 
-        route: "/expose/big-lie",
+        route: "#act-iii",
         color: "rgba(255, 255, 255, 0.05)"
     },
     { 
         id: 5, 
         name: "VICTIMS & SURVIVORS", 
-        description: "The outermost layer of the system, comprising those whose silence was purchased and whose voices were suppressed.", 
+        description: "The outermost layer of the system, comprising those whose silence was suppressed and whose voices were scrubbed.", 
         radius: 60, 
-        route: "/endgame/mccarrick",
+        route: "#act-0",
         color: "rgba(255, 255, 255, 0.02)"
     }
 ];

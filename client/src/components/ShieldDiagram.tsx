@@ -321,7 +321,13 @@ function Spire({ x, y, size }: { x: number; y: number; size: number }) {
   );
 }
 
-export default function ShieldDiagram() {
+export default function ShieldDiagram({ 
+  onNodeClick, 
+  onRingClick 
+}: { 
+  onNodeClick?: (nodeId: string) => void;
+  onRingClick?: (ringId: number) => void;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState(700);
   const [rotations, setRotations] = useState<number[]>([0, 0, 0, 0, 0]);
@@ -476,11 +482,11 @@ export default function ShieldDiagram() {
         </defs>
 
         {/* ═══ RING FILLS ═══ */}
-        <circle cx={cx} cy={cy} r={radii[0]} fill="url(#bg5)" />
-        <circle cx={cx} cy={cy} r={radii[1]} fill="url(#bg4)" />
-        <circle cx={cx} cy={cy} r={radii[2]} fill="url(#bg3)" />
-        <circle cx={cx} cy={cy} r={radii[3]} fill="url(#bg2)" />
-        <circle cx={cx} cy={cy} r={radii[4]} fill="url(#bg1)" />
+        <circle cx={cx} cy={cy} r={radii[0]} fill="url(#bg5)" onClick={() => onRingClick?.(5)} className="cursor-pointer" />
+        <circle cx={cx} cy={cy} r={radii[1]} fill="url(#bg4)" onClick={() => onRingClick?.(4)} className="cursor-pointer" />
+        <circle cx={cx} cy={cy} r={radii[2]} fill="url(#bg3)" onClick={() => onRingClick?.(3)} className="cursor-pointer" />
+        <circle cx={cx} cy={cy} r={radii[3]} fill="url(#bg2)" onClick={() => onRingClick?.(2)} className="cursor-pointer" />
+        <circle cx={cx} cy={cy} r={radii[4]} fill="url(#bg1)" onClick={() => onRingClick?.(1)} className="cursor-pointer" />
         {/* Core glow */}
         <circle cx={cx} cy={cy} r={radii[4] * 1.4} fill="url(#coreGlow)" opacity="0.6">
           <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3.5s" repeatCount="indefinite" />
@@ -692,6 +698,7 @@ export default function ShieldDiagram() {
 
           return (
             <g key={node.id} style={{ cursor: "pointer" }}
+              onClick={() => onNodeClick?.(node.id)}
               onMouseEnter={() => setHoveredNode(node.id)}
               onMouseLeave={() => setHoveredNode(null)}>
               {/* Small dot marker at label anchor */}
