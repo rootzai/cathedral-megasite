@@ -83,8 +83,8 @@ export default function RedesignedHome() {
                             THE HOUSE THAT <br />
                             <span className="text-[#8b1a1a]">McCARRICK</span> BUILT
                         </h1>
-                        <p className="max-w-3xl mx-auto text-xl md:text-2xl font-serif italic text-zinc-500 leading-relaxed">
-                            "Seton Hall, the Newark Archdiocese, and the State of New Jersey: a triangular machine of silence that protected the powerful from the seminaries to the halls of Rome."
+                        <p className="max-w-4xl mx-auto text-xl md:text-2xl font-serif italic text-[#c8bdb0]/60 leading-relaxed">
+                            "For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects. The vault opens May 18, 2026."
                         </p>
                     </motion.div>
 
