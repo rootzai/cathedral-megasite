@@ -6,6 +6,7 @@ import PrimaryNavigation from "./components/PrimaryNavigation";
 import LiveStatusBar from "./components/LiveStatusBar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CoreRouter } from "./routes/CoreRouter";
+import { ScrollManager } from "./components/ScrollManager";
 
 /**
  * CATHEDRAL MEGASITE: THE TEMPLE (App.tsx)
@@ -21,6 +22,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+          <ScrollManager />
           <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
             <PrimaryNavigation />
             <LiveStatusBar />
