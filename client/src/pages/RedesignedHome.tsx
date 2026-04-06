@@ -126,7 +126,7 @@ export default function RedesignedHome() {
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-4"
                     >
-                        <h1 className="text-6xl md:text-[7rem] font-black font-cinzel leading-none tracking-tighter text-white">
+                        <h1 className="text-5xl md:text-[5.5rem] font-black font-cinzel leading-none tracking-tighter text-white">
                             THE HOUSE THAT <br />
                             <span className="text-[#8b1a1a]">McCARRICK</span> BUILT
                         </h1>
