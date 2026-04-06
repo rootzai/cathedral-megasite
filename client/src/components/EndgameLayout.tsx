@@ -94,9 +94,9 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           <Link href="/">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
               <SmartImage
-                src="/assets/sodom-hall-logo.png"
+                src="/assets/images/colored-pirate-logo.png"
                 alt="Sodom Hall Home"
-                className="h-12 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all"
+                className="w-16 h-auto transition-transform group-hover:scale-105"
               />
             </a>
           </Link>

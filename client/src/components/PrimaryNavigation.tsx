@@ -17,14 +17,14 @@ export default function PrimaryNavigation() {
   const [location] = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#0a0a0c]/95 backdrop-blur-md border-b border-white/5 py-3 px-6 md:px-12 flex items-center justify-between">
+    <nav className="relative z-50 w-full bg-[#0a0a0c] border-b border-white/5 py-4 px-6 md:px-12 flex items-center justify-between">
       {/* Brand */}
       <Link href="/">
         <a className="flex items-center gap-3 group">
           <img 
-            src="/assets/sodom-hall-logo.png" 
+            src="/assets/images/colored-pirate-logo.png" 
             alt="Sodom Hall Pirate Logo" 
-            className="w-10 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all duration-300 group-hover:scale-110 object-contain" 
+            className="w-12 h-auto transition-all duration-300 group-hover:scale-110 object-contain drop-shadow-[0_0_10px_rgba(139,26,26,0.3)]" 
           />
           <span className="text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-base md:text-lg hidden sm:block">
             SODOM HALL

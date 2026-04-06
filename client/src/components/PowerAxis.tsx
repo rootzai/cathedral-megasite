@@ -107,7 +107,7 @@ export default function PowerAxis() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-[#8b1a1a] font-serif italic text-lg md:text-xl"
+                        className="text-[#8b1a1a] font-serif italic text-xl md:text-2xl"
                     >
                         Tracking the escalation from individual abuse to global institutional immunity.
                     </motion.p>
@@ -115,7 +115,7 @@ export default function PowerAxis() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="text-[#666] italic leading-relaxed max-w-3xl mx-auto"
+                        className="text-[#c8bdb0]/90 text-lg italic leading-relaxed max-w-4xl mx-auto"
                     >
                         "We were told the shield was for our protection. In reality, it was a distribution manifest for institutional inertia."
                     </motion.p>
@@ -183,14 +183,14 @@ export default function PowerAxis() {
                                 {item.subtitle}
                             </p>
 
-                            <ul className="space-y-3 mb-8">
+                            <ul className="space-y-4 mb-8">
                                 {item.stats.slice(0, 3).map((stat, i) => (
-                                    <li key={i} className="text-sm text-gray-400 leading-relaxed list-disc list-inside marker:text-[#8b1a1a]">
+                                    <li key={i} className="text-base text-[#c8bdb0]/90 leading-relaxed list-disc list-inside marker:text-[#8b1a1a]">
                                         {stat}
                                     </li>
                                 ))}
                                 {item.stats.length > 3 && (
-                                    <li className="text-[10px] text-[#8b1a1a] uppercase tracking-widest font-bold mt-2 opacity-60">
+                                    <li className="text-xs text-[#8b1a1a] uppercase tracking-widest font-bold mt-3 opacity-90">
                                         + more data points
                                     </li>
                                 )}
@@ -198,12 +198,12 @@ export default function PowerAxis() {
 
                             {item.callout && (
                                 <div className="mt-8 pt-6 border-t border-red-900/30">
-                                    <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
+                                    <span className="text-xs font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
                                         {item.callout.title}
                                     </span>
-                                    <p className="text-sm font-bold text-white mb-2">{item.callout.name}</p>
-                                    <p className="text-xs text-gray-500 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-[10px] font-bold text-red-400">
+                                    <p className="text-base font-bold text-white mb-2">{item.callout.name}</p>
+                                    <p className="text-sm text-[#c8bdb0]/80 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-xs font-bold text-red-400">
                                         <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                                         {item.callout.status}
                                     </div>
@@ -278,10 +278,10 @@ export default function PowerAxis() {
                                     </div>
                                     {selectedLevel.callout && (
                                         <div className="pt-6">
-                                            <span className="text-red-500 uppercase text-[10px] font-black tracking-[0.4em] block mb-4">Active Breach Investigation</span>
+                                            <span className="text-red-500 uppercase text-xs font-black tracking-[0.4em] block mb-4">Active Breach Investigation</span>
                                             <div className="p-6 bg-red-950/20 border border-red-900/40 rounded">
-                                                <p className="text-white font-bold text-lg mb-2">{selectedLevel.callout.name}</p>
-                                                <p className="text-zinc-400 italic text-sm leading-relaxed mb-4">"{selectedLevel.callout.details}"</p>
+                                                <p className="text-white font-bold text-xl mb-3">{selectedLevel.callout.name}</p>
+                                                <p className="text-[#c8bdb0]/90 italic text-base leading-relaxed mb-6">"{selectedLevel.callout.details}"</p>
                                                 <div className="inline-flex items-center gap-3 text-red-400 text-xs font-bold">
                                                     <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                                                     {selectedLevel.callout.status}
@@ -299,21 +299,21 @@ export default function PowerAxis() {
             {/* Bottom Labeling */}
             <div className="relative mt-20 px-8">
                 <div className="flex flex-col">
-                    <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] mb-2">Forensic Analysis 22.1</span>
-                    <h3 className="text-4xl font-serif text-white italic">The Displacement Curve</h3>
-                    <p className="text-sm text-gray-500 max-w-xl mt-4 leading-relaxed">
+                    <span className="text-[#8b1a1a] font-bold text-sm uppercase tracking-[0.5em] mb-3">Forensic Analysis 22.1</span>
+                    <h3 className="text-5xl font-serif text-white italic">The Displacement Curve</h3>
+                    <p className="text-lg text-[#c8bdb0]/80 max-w-4xl mt-6 leading-relaxed">
                         A mapping of systemic failure: How thousands of victims were converted into 'administrative anomalies' through several layers of institutional protection. This curve tracks the journey from local negligence to global diplomatic immunity.
                     </p>
                 </div>
             </div>
 
             {/* Forensic Metadata Branding */}
-            <div className="mt-12 px-8 flex justify-end opacity-40 group-hover:opacity-100 transition-opacity">
+            <div className="mt-12 px-8 flex justify-end opacity-80 group-hover:opacity-100 transition-opacity">
                 <div className="text-right">
-                    <span className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.3em] block">
+                    <span className="text-xs font-mono text-[#c8bdb0]/70 uppercase tracking-[0.3em] block">
                         SODOM HALL // CASE FILE: THE ARCHITECTURE OF PROTECTION
                     </span>
-                    <span className="text-[9px] font-mono text-gray-700 uppercase block mt-1">
+                    <span className="text-[12px] font-mono text-[#c8bdb0]/50 uppercase block mt-2">
                         UNSEALED RECORD // FORENSIC RECONSTRUCTION 2026
                     </span>
                 </div>
