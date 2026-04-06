@@ -547,4 +547,3 @@ section[id], [id] {
   .bg-ink .text-foreground {
     color: var(--foreground) !important;
   }
-}
