@@ -34,11 +34,10 @@ export default function ShieldHub({
           {/* 1:1 INTERACTIVE SHIELD INTERFACE */}
           <div className="lg:col-span-7 relative aspect-square bg-black border border-white/5 rounded-xl overflow-hidden group">
             {/* NEW GOTHIC MACHINERY COMPONENT v5.3 */}
-            <div className="absolute inset-0 z-10">
+            <div className="absolute inset-0 z-10 pointer-events-auto">
                 <ShieldDiagram 
-                onRingClick={(id) => {
+                onRingHover={(id) => {
                   setHoveredRing(id);
-                  if (onRingClick) onRingClick(id);
                 }}
                 onNodeClick={(id) => {
                   setHoveredNode(id);
@@ -46,27 +45,6 @@ export default function ShieldHub({
                 }}
               />
             </div>
-
-            {/* Interactive SVG Overlay (Hit-zones for Definitive Rings) */}
-            <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-20 overflow-visible opacity-0 hover:opacity-10 transition-opacity">
-                {/* RINGS 1-5 Mapped to the actual image nodes */}
-                {FORENSIC_RINGS.map((ring) => {
-                    // Coordinates centered slightly below geometric center to match the graphic
-                    return (
-                        <circle
-                            key={ring.id}
-                            cx="50"
-                            cy="55"
-                            r={ring.radius / 2}
-                            fill="transparent"
-                            className="cursor-pointer hover:fill-red-900/10 transition-all"
-                            onMouseEnter={() => setHoveredRing(ring.id)}
-                            onMouseLeave={() => setHoveredRing(null)}
-                            style={{ pointerEvents: 'auto' }}
-                        />
-                    );
-                })}
-            </svg>
 
             {/* Ambient Pulse beneath the perpetrators core */}
             <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-red-600/10 rounded-full blur-[25px] animate-pulse pointer-events-none" />

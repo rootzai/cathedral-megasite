@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Shield, FileText, AlertCircle, BookOpen, Database, Send } from "lucide-react";
+import { Shield, FileText, AlertCircle, BookOpen, Database, Send, Key } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "THE BREACH", icon: AlertCircle, href: "/breach" },
   { label: "THE LEDGER", icon: BookOpen, href: "/ledger" },
   { label: "THE VAULT", icon: Database, href: "/vault" },
+  { label: "THE NURSERY", icon: Key, href: "/easter" },
 ];
 
 export default function PrimaryNavigation() {

@@ -107,10 +107,10 @@ function polarToXY(angle: number, radius: number, cx: number, cy: number) {
 }
 
 export default function ShieldDiagram({ 
-  onNodeClick 
+  onNodeClick, onRingHover
 }: { 
   onNodeClick?: (nodeId: string) => void;
-  onRingClick?: (ringId: number) => void;
+  onRingHover?: (ringId: number | null) => void;
 }) {
   const [, setLocation] = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -246,7 +246,9 @@ export default function ShieldDiagram({
             key={i} cx={cx} cy={cy} r={r} 
             fill="url(#grad1)" stroke="#c9a84c" strokeWidth="1" 
             opacity={clickedNode ? 0.05 : 0.25} 
-            className="transition-opacity duration-300"
+            className="transition-opacity duration-300 cursor-pointer pointer-events-auto hover:opacity-80"
+            onMouseEnter={() => onRingHover && onRingHover(RINGS[i].id)}
+            onMouseLeave={() => onRingHover && onRingHover(null)}
           />
         ))}
 
