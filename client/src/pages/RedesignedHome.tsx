@@ -136,41 +136,11 @@ export default function RedesignedHome() {
                         </p>
                     </motion.div>
 
-                    <div className="w-full flex justify-center">
-                        <Dialog>
-                            <DialogTrigger asChild>
-                                <button className="group relative cursor-pointer outline-none">
-                                    <div className="absolute inset-0 bg-[#8b1a1a]/20 blur-[100px] rounded-full group-hover:bg-[#8b1a1a]/40 transition-all duration-1000" />
-                                    <ShieldHub onRingClick={() => {}} />
-                                    <div className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
-                                        <div className="flex items-center gap-3 px-4 py-2 bg-red-950/20 border border-red-900/40 rounded-full backdrop-blur-sm shadow-[0_0_20px_rgba(139,26,26,0.2)]">
-                                            <Search className="w-5 h-5 text-red-600" />
-                                            <span className="text-xs font-courier uppercase tracking-[0.4em] text-[#d4af37] font-bold">
-                                                Identify Ring Positions
-                                            </span>
-                                        </div>
-                                    </div>
-                                </button>
-                            </DialogTrigger>
-                            <DialogContent className="max-w-4xl bg-black/95 border-red-900/50 backdrop-blur-3xl text-white">
-                                <div className="p-8 space-y-6">
-                                    <h2 className="text-3xl font-cinzel text-red-600">Shield Hierarchy Registry</h2>
-                                    <p className="text-zinc-400 font-serif italic">Select a concentric layer to scan the associated institutions and perpetrators.</p>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                                        <div className="p-4 border border-white/10 bg-zinc-900/50">
-                                            <span className="text-[10px] text-red-600 font-mono block mb-2 uppercase tracking-widest">Level 01</span>
-                                            <h3 className="text-xl font-serif">The Core / Actors</h3>
-                                            <p className="text-xs text-zinc-500 mt-2">The individual perpetrators and direct facilitators of abuse.</p>
-                                        </div>
-                                        <div className="p-4 border border-white/10 bg-zinc-900/50">
-                                            <span className="text-[10px] text-red-600 font-mono block mb-2 uppercase tracking-widest">Level 02</span>
-                                            <h3 className="text-xl font-serif">The Machine</h3>
-                                            <p className="text-xs text-zinc-500 mt-2">Administrative entities providing logistical cover and transfers.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </DialogContent>
-                        </Dialog>
+                    <div className="w-full flex justify-center mt-12 relative">
+                        <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[100px] rounded-full pointer-events-none" />
+                        <div className="relative z-10 w-full flex justify-center">
+                            <ShieldHub onRingClick={() => {}} />
+                        </div>
                     </div>
                 </div>
             </section>
