@@ -148,9 +148,9 @@ export default function ExposePortal() {
                             <p className="text-xs text-zinc-700 leading-relaxed font-serif">
                                 Protecting source confidentiality is our priority. Contribute to the investigation anonymously.
                             </p>
-                            <Link href="/about#tips" className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors">
+                            <a href="mailto:tips@sodomhall.com" className="inline-block bg-red-600 hover:bg-red-700 text-zinc-900 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors">
                                 Submit Secure Tip
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

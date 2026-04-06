@@ -55,8 +55,7 @@ export default function PrimaryNavigation() {
       </div>
 
       {/* Submit Tip Button */}
-      <Link href="/tips">
-        <a className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-5 py-2.5 rounded-sm flex items-center gap-2.5 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
+      <a href="mailto:tips@sodomhall.com" className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-5 py-2.5 rounded-sm flex items-center gap-2.5 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
           <Send className="w-4 h-4" />
           <span className="text-xs font-black tracking-[0.3em] uppercase">Submit a Tip</span>
           <motion.div 
@@ -65,7 +64,6 @@ export default function PrimaryNavigation() {
             className="absolute right-3 w-1.5 h-1.5 bg-white rounded-full"
           />
         </a>
-      </Link>
     </nav>
   );
 }

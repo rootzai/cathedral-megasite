@@ -147,11 +147,9 @@ export default function InstitutionalParallels() {
                             <FileDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
                             Download Forensic Briefing (PDF)
                         </button>
-                        <Link href="/about#tips">
-                            <a className="text-zinc-500 hover:text-white text-[10px] font-bold uppercase tracking-widest border border-zinc-800 px-6 py-3 transition-colors">
+                        <a href="mailto:tips@sodomhall.com" className="text-zinc-500 hover:text-white text-[10px] font-bold uppercase tracking-widest border border-zinc-800 px-6 py-3 transition-colors">
                                 Submit More Evidence
-                            </a>
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto" />

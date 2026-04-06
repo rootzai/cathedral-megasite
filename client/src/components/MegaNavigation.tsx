@@ -28,7 +28,7 @@ export default function MegaNavigation() {
     { type: "BREAKING", text: "October 2025 Jury Awards $5M in Delbarton Abuse Case" },
     { type: "DOCUMENTED", text: "LATHAM REPORT: 24,000 Pages of Evidence Unsealed by Court Order" },
     { type: "DOCUMENTED", text: "FORENSIC AUDIT: McCarrick 'Archbishop's Fund' Slush Fund Revealed" },
-    { type: "BREAKING", text: "REGIME CHANGE: Bishop Elias Lorenzo Positioned as Successor to Tobin" }
+    { type: "BREAKING", text: "COURT ORDER: Seton Hall v. Dei Journo — California Hearing Set for May 28, 2026, Dept. C23 Santa Ana." }
   ];
 
   return (
@@ -60,9 +60,9 @@ export default function MegaNavigation() {
             <Link href="/power-axis" className={navLinkClass('/power-axis')}>THE POWER AXIS</Link>
             <Link href="/breach" className={navLinkClass('/breach')}>THE BREACH</Link>
 
-            <Link href="/tips" className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center">
+            <a href="mailto:tips@sodomhall.com" className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center">
                 PENETRATE SHIELD
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ export default function MegaNavigation() {
                <Link href="/shield" className="block px-4 py-3 text-red-600 font-black tracking-widest text-xs border-b border-white/5">THE SHIELD</Link>
                <Link href="/conversion" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE CONVERSION</Link>
                <Link href="/breach" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE BREACH</Link>
-               <Link href="/tips" className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</Link>
+               <a href="mailto:tips@sodomhall.com" className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">PENETRATE SHIELD</a>
             </div>
           )}
         </div>
@@ -122,16 +122,7 @@ export default function MegaNavigation() {
         </div>
       )}
 
-      {/* Jurisdictional Counter / Who's Watching */}
-      <div className="bg-[#050505] text-[11px] text-zinc-400 py-3 px-4 text-center border-t border-white/5 font-mono uppercase tracking-[0.3em]">
-        <span className="opacity-40">Founding Collaborator:</span>
-        <span className="ml-2 text-zinc-200">Patrick Wall</span>
-        <span className="mx-6 opacity-20">|</span>
-        <span>Live Trace:</span>
-        <span className="ml-2 text-red-500 font-black shadow-[0_0_10px_rgba(220,38,38,0.4)]">4,812 Access Points</span>
-        <span className="mx-6 opacity-20">|</span>
-        <span className="text-zinc-200">Jurisdictions: Vatican City, Newark, DC, Geneva</span>
-      </div>
+
     </nav>
   );
 }

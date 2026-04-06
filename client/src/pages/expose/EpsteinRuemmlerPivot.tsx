@@ -131,12 +131,10 @@ export default function EpsteinRuemmlerPivot() {
                         SodomHall.com performed the forensic audit of the DOJ Epstein releases
                         against the Seton Hall institutional timeline to reveal the truth."
                     </p>
-                    <Link href="/about#tips">
-                        <a className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-all group">
+                    <a href="mailto:tips@sodomhall.com" className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-all group">
                             Submit More Evidence
                             <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                        </a>
-                    </Link>
+                    </a>
                 </div>
             </section>
         </div>

@@ -18,7 +18,7 @@ export default function Home() {
           "The Catholic Church isn’t cleaning up its sex-abuse scandal. They are franchising it."
         </p>
         <p>
-          In an explosive 2024 article titled **"Exporting the Cover-Up: How the Church is spreading New Jersey’s rot to New Orleans,"** Senator Joseph Vitale and Eric Spitz identified Bishop James Checchio as a primary agent of institutional preservation.
+          In an explosive 2024 article titled **"Exporting the Cover-Up: How the Church is spreading New Jersey’s rot to New Orleans,"** Senator Joseph Vitale and Dei Journo identified Bishop James Checchio as a primary agent of institutional preservation.
         </p>
         <p>
           Known as a "steady hand," Checchio's move to New Orleans is not a reformist mission—it is a strategic export. As the article states, "Checchio knows exactly how they bury the truth in New Jersey because he was trained on how to hold the shovel."

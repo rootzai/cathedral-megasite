@@ -16,23 +16,23 @@ import {
 const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
-        title: "SANCTION HEARING", 
-        desc: "California Superior Court. The institution's motion to unmask the journalist.",
-        status: "CRITICAL",
+        title: "Seton Hall v. Dei Journo", 
+        desc: "OC Superior Court. The institution's motion to unmask the journalist.",
+        status: "HEARING",
         color: "bg-[#8b1a1a]"
     },
     { 
         date: "MAY 18, 2026", 
-        title: "LATHAM UNSEALING", 
-        desc: "The anticipated production of 24,000 pages of privileged board logs.",
-        status: "UPCOMING",
+        title: "McCloskey v. RCAN", 
+        desc: "ESX-L-8762-19. Production of the 24,000-page Latham Archive ordered.",
+        status: "PRODUCTION",
         color: "bg-[#8b6914]"
     },
     { 
-        date: "SEPT 2005", 
-        title: "THE DISCOVERY", 
-        desc: "Mark Crawford identifies the falsified birthday in internal registries.",
-        status: "RECORDED",
+        date: "MAR 12, 2026", 
+        title: "Emergency Stay Denial", 
+        desc: "Appellate Division denies RCAN's emergency stay to block Latham unsealing.",
+        status: "DENIED",
         color: "bg-zinc-800"
     }
 ];

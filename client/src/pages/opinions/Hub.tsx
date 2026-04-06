@@ -5,6 +5,7 @@ const columnists = [
     {
         name: "Maureen O'Shaughnessy",
         title: "The Catholic Loyalist",
+        topic: "INSTITUTION",
         persona: "Former speechwriter; 68; Catholic; Traditionalist.",
         essayTitle: "The Cracked Cathedral",
         path: "/opinion/noonan",
@@ -14,6 +15,7 @@ const columnists = [
     {
         name: "Sterling 'Skip' Fairchild",
         title: "The Beltway Insider",
+        topic: "POLITICS",
         persona: "Pulitzer-winning biographer; 65; Catholic; Political Historian.",
         essayTitle: "The Jersey Regency",
         path: "/opinion/cannon",
@@ -23,6 +25,7 @@ const columnists = [
     {
         name: "Aristhide 'Ari' Vance",
         title: "The Policy Intellectual",
+        topic: "GOVERNANCE",
         persona: "Harvard-trained; 55; Catholic; Governance Expert.",
         essayTitle: "The Governance Gap",
         path: "/opinion/matthews",
@@ -32,6 +35,7 @@ const columnists = [
     {
         name: "Ephraim 'Eph' Roth",
         title: "The Moral Contrarian",
+        topic: "HISTORY",
         persona: "Essaysist and foreign correspondent; 45; Jewish.",
         essayTitle: "The Moral Hazard of Omertà",
         path: "/opinion/stephens",
@@ -80,9 +84,12 @@ export default function OpinionsHub() {
                                 <div className="font-serif text-2xl italic leading-relaxed text-muted-foreground/80">
                                     "{col.teaser}"
                                 </div>
-                                <div className="pt-4 flex items-center gap-2">
-                                    <div className="font-heading text-lg font-bold uppercase">{col.name}</div>
-                                    <span className="text-muted-foreground font-serif">· {col.persona}</span>
+                                <div className="pt-4 flex flex-col gap-1">
+                                    <div className="flex items-center gap-2">
+                                        <div className="font-heading text-lg font-bold uppercase">{col.name}</div>
+                                        <span className="text-muted-foreground font-serif">· {col.persona}</span>
+                                    </div>
+                                    <div className="font-mono text-[10px] uppercase font-bold tracking-widest text-red-700">{col.topic}</div>
                                 </div>
                             </div>
                         </div>
