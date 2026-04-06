@@ -38,14 +38,14 @@ export default function Layout({ children }: LayoutProps) {
         <BoschOwl className="absolute bottom-[5%] right-[10%] w-32 h-32 text-muted-foreground" opacity={0.03} />
       </div>
       {/* Sidebar Navigation - Dossier Style */}
-      <aside className="w-64 fixed top-[56px] bottom-0 border-r border-border bg-sidebar hidden lg:flex flex-col z-40 overflow-y-auto">
+      <aside className="w-64 sticky top-0 h-screen border-r border-border bg-sidebar hidden lg:flex flex-col z-40 overflow-y-auto">
         <div className="p-4 border-b border-border flex flex-col items-center">
           <Link href="/cathedral">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
-              <SmartImage
+              <img
                 src="/assets/images/colored-pirate-logo.png"
                 alt="Sodom Hall Home"
-                className="w-20 h-auto transition-transform group-hover:scale-105"
+                className="w-20 h-auto object-contain transition-transform group-hover:scale-105"
               />
             </a>
           </Link>
@@ -106,8 +106,8 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 lg:ml-64 min-h-screen relative">
-        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
+      <main className="flex-1 w-full overflow-hidden min-h-screen relative z-10 bg-background/50 backdrop-blur-[2px]">
+        <div className="container py-12 lg:py-16 max-w-4xl mx-auto mt-16 md:mt-24 lg:mt-0 relative z-20">
           {children}
         </div>
       </main>

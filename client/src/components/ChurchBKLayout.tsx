@@ -65,10 +65,10 @@ export default function Layout({ children }: LayoutProps) {
       <div className="p-6">
         <Link href="/">
           <div className="flex items-center gap-3 mb-2 cursor-pointer group">
-            <SmartImage
+            <img
               src="/assets/images/colored-pirate-logo.png"
               alt="Sodom Hall"
-              className="w-12 h-auto group-hover:scale-105 transition-all"
+              className="w-12 h-auto object-contain group-hover:scale-105 transition-all"
             />
             <h1 className="font-serif font-bold text-2xl tracking-tight leading-none text-foreground group-hover:text-accent transition-colors">
               THE<br />VAULT
@@ -138,7 +138,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background flex font-sans text-foreground">
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-64 fixed top-[56px] bottom-0 z-40 bg-sidebar border-r border-sidebar-border overflow-y-auto">
+      <aside className="hidden md:block w-64 sticky top-0 h-screen z-40 bg-sidebar border-r border-sidebar-border overflow-y-auto">
         <NavContent />
       </aside>
 
@@ -191,7 +191,7 @@ export default function Layout({ children }: LayoutProps) {
       </CommandDialog>
 
       {/* Main Content */}
-      <main className="flex-1 md:ml-64 min-h-screen flex flex-col">
+      <main className="flex-1 min-h-screen flex flex-col w-full overflow-hidden">
         <div className="flex-1 container max-w-5xl py-8 md:py-12 px-4 md:px-8 animate-in fade-in duration-500">
           {children}
         </div>

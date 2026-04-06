@@ -48,44 +48,44 @@ export default function LegalFindings() {
     ];
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-20 text-[#c8bdb0] font-cormorant">
+        <div className="max-w-6xl mx-auto px-4 py-20 text-foreground font-cormorant">
             <header className="mb-16">
-                <div className="inline-block px-3 py-1 mb-4 bg-[#8b1a1a] text-white text-[10px] font-black font-courier uppercase tracking-[0.4em]">
+                <div className="inline-block px-3 py-1 mb-4 bg-primary text-primary-foreground text-[10px] font-black font-courier uppercase tracking-[0.4em]">
                     The Vault: Raw Evidence Depository
                 </div>
                 <div className="flex items-center gap-4 mb-6">
-                    <Scale className="text-[#8b1a1a] w-10 h-10" />
-                    <h1 className="text-5xl font-black font-cinzel tracking-tighter uppercase text-white">Confidential Legal Findings</h1>
+                    <Scale className="text-primary w-10 h-10" />
+                    <h1 className="text-5xl font-black font-cinzel tracking-tighter uppercase text-foreground">Confidential Legal Findings</h1>
                 </div>
-                <p className="text-xl text-zinc-400 max-w-3xl leading-relaxed font-serif italic">
+                <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-serif italic">
                     This executive summary catalogs the formal legal findings and documentary evidence submitted as part of the **Rabner Filings**.
                     These 35 exhibits represent the forensic reality that institutions have attempted to bury.
                 </p>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                <div className="bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/30 transition-colors">
-                    <h2 className="text-2xl font-black font-cinzel text-white mb-4 flex items-center gap-3 tracking-widest uppercase">
-                        <ShieldCheck className="text-[#8b1a1a] w-6 h-6" />
+                <div className="bg-card text-card-foreground border border-border p-8 hover:border-primary/30 transition-colors">
+                    <h2 className="text-2xl font-black font-cinzel text-foreground mb-4 flex items-center gap-3 tracking-widest uppercase">
+                        <ShieldCheck className="text-primary w-6 h-6" />
                         The Rabner Submission
                     </h2>
-                    <p className="text-zinc-500 mb-8 leading-relaxed font-serif italic">
+                    <p className="text-muted-foreground mb-8 leading-relaxed font-serif italic">
                         Totaling 35 exhibits across two formal submissions to Chief Justice Rabner,
                         these filings represent the evidentiary core of the Sodom Hall investigation.
                         They bridge the gap between institutional "opinion" and verifiable "fact."
                     </p>
                     <div className="flex gap-4">
-                        <button className="bg-[#8b1a1a] hover:bg-white hover:text-black text-white px-6 py-3 text-[10px] font-black uppercase tracking-[0.4em] transition-all flex items-center gap-3">
+                        <button className="bg-primary hover:bg-foreground hover:text-background text-primary-foreground px-6 py-3 text-[10px] font-black uppercase tracking-[0.4em] transition-all flex items-center gap-3">
                             <FileDown size={14} />
                             Download Summary PDF
                         </button>
                     </div>
                 </div>
 
-                <div className="bg-[#111116] border border-[#8b1a1a]/20 p-8 flex flex-col justify-center relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#8b1a1a]/10 blur-[50px] pointer-events-none" />
-                    <p className="text-[#8b1a1a] font-black font-courier text-[10px] uppercase tracking-[0.4em] mb-4 relative z-10">Notice to Counsel</p>
-                    <p className="text-zinc-400 text-lg italic leading-relaxed font-serif relative z-10">
+                <div className="bg-muted text-muted-foreground border border-primary/20 p-8 flex flex-col justify-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] pointer-events-none" />
+                    <p className="text-primary font-black font-courier text-[10px] uppercase tracking-[0.4em] mb-4 relative z-10">Notice to Counsel</p>
+                    <p className="text-muted-foreground text-lg italic leading-relaxed font-serif relative z-10">
                         "These findings represent the forensic reality that institutions have attempted to bury through
                         seal orders and retaliation. The truth is no longer a matter of discovery; it is a matter of record."
                     </p>
@@ -93,10 +93,10 @@ export default function LegalFindings() {
             </div>
 
             <section>
-                <h3 className="text-[10px] font-black font-courier uppercase tracking-[0.4em] text-zinc-600 mb-8 pb-4 border-b border-white/5">Document Index</h3>
+                <h3 className="text-[10px] font-black font-courier uppercase tracking-[0.4em] text-muted-foreground mb-8 pb-4 border-b border-border">Document Index</h3>
                 <div className="space-y-4">
                     {findings.map((item) => (
-                        <div key={item.id} className="group bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/40 transition-all duration-300">
+                        <div key={item.id} className="group bg-card text-card-foreground border border-border p-8 hover:border-primary/40 transition-all duration-300">
                             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                                 <div className="flex-1">
                                     <div className="flex items-center gap-4 mb-3">

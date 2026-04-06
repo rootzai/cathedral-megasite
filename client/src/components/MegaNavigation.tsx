@@ -47,10 +47,10 @@ export default function MegaNavigation() {
         <div className="hidden md:flex items-center justify-between h-16">
           <div className="flex items-center justify-between w-full h-full">
             <Link href="/" className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0 font-bold uppercase tracking-[0.2em] transition-all text-center">
-                <SmartImage
+                <img
                   src="/assets/images/colored-pirate-logo.png"
                   alt="Sodom Hall Home"
-                  className="w-12 h-auto group-hover:scale-110 transition-all"
+                  className="w-12 h-auto object-contain group-hover:scale-110 transition-all"
                 />
             </Link>
 
