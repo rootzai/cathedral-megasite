@@ -48,9 +48,9 @@ export default function MegaNavigation() {
           <div className="flex items-center justify-between w-full h-full">
             <Link href="/" className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0 font-bold uppercase tracking-[0.2em] transition-all text-center">
                 <SmartImage
-                  src="/assets/images/sh-pirate-logo.png"
+                  src="/assets/sodom-hall-logo.png"
                   alt="Sodom Hall Home"
-                  className="h-10 w-auto group-hover:scale-110 transition-all brightness-150 drop-shadow-[0_0_15px_rgba(139,26,26,0.6)]"
+                  className="h-8 w-auto group-hover:scale-110 transition-all grayscale brightness-200 hover:brightness-100 hover:grayscale-0 drop-shadow-[0_0_15px_rgba(139,26,26,0.6)]"
                 />
             </Link>
 

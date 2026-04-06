@@ -22,9 +22,9 @@ export default function PrimaryNavigation() {
       <Link href="/">
         <a className="flex items-center gap-3 group">
           <img 
-            src="/assets/images/sh-pirate-logo.png" 
+            src="/assets/sodom-hall-logo.png" 
             alt="Sodom Hall Pirate Logo" 
-            className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110" 
+            className="w-10 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all duration-300 group-hover:scale-110 object-contain" 
           />
           <span className="text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-base md:text-lg hidden sm:block">
             SODOM HALL

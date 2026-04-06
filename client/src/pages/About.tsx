@@ -23,7 +23,7 @@ export default function About() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors flex items-center gap-3">
-              <img src="/assets/images/sh-pirate-logo.png" alt="Sodom Hall Home" className="h-10 w-auto" />
+              <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all" />
               SODOM HALL
             </a>
           </Link>

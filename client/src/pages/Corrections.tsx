@@ -8,7 +8,7 @@ export default function Corrections() {
                 <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">
                         <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors flex items-center gap-3">
-                            <img src="/assets/images/sh-pirate-logo.png" alt="Sodom Hall Home" className="h-10 w-auto" />
+                            <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all" />
                             SODOM HALL
                         </a>
                     </Link>

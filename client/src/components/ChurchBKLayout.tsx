@@ -66,9 +66,9 @@ export default function Layout({ children }: LayoutProps) {
         <Link href="/">
           <div className="flex items-center gap-3 mb-2 cursor-pointer group">
             <SmartImage
-              src="/assets/images/sh-pirate-logo.png"
+              src="/assets/sodom-hall-logo.png"
               alt="Sodom Hall"
-              className="h-12 w-auto group-hover:scale-105 transition-transform shadow-[0_0_10px_rgba(220,38,38,0.2)]"
+              className="h-10 w-auto group-hover:scale-105 transition-all grayscale brightness-200 hover:brightness-100 hover:grayscale-0 shadow-[0_0_10px_rgba(220,38,38,0.2)]"
             />
             <h1 className="font-serif font-bold text-2xl tracking-tight leading-none text-foreground group-hover:text-accent transition-colors">
               THE<br />VAULT
