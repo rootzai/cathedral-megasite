@@ -120,22 +120,13 @@ export default function ShieldHub({
                                 </div>
                             </div>
 
-                            {/* v5.3 ADVOCATE PHOTO INTEGRATION */}
-                            {hoveredRing === 1 && (
-                                <div className="mt-4 border border-white/10 p-2 bg-black/60 group animate-in fade-in slide-in-from-top-2 duration-500">
-                                    <div className="relative aspect-video overflow-hidden">
-                                        <img 
-                                            src="/assets/WhatsAppImage2025-10-11at11.40.16_e2ac3ebb.jpg" 
-                                            alt="The Advocate Photo" 
-                                            className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" 
-                                        />
-                                    </div>
-                                    <p className="text-xs font-mono text-zinc-500 mt-3 uppercase tracking-widest leading-relaxed">
-                                        <strong className="text-red-900 italic">Forensic Anchor:</strong> McCarrick & Martin at Christmas Party. 
-                                        <span className="block opacity-60">Relative to 1987 Crawford Report (Dec 1989).</span>
-                                    </p>
-                                </div>
-                            )}
+                            {/* v5.3 FORTHCOMING NARRATIVE INTEGRATION */}
+                            <div className="mt-4 border border-red-900/20 p-4 bg-red-950/10 animate-in fade-in slide-in-from-top-2 duration-500">
+                                <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest leading-relaxed">
+                                    <strong className="text-red-900 italic">Forensic Anchor:</strong> Narrative under refinement. 
+                                    <span className="block opacity-60">Cross-referencing Latham Archive with 2020 Vatican Report findings.</span>
+                                </p>
+                            </div>
                         </div>
 
                         <Link href={FORENSIC_RINGS.find(r => r.id === hoveredRing)?.route || '#'}>

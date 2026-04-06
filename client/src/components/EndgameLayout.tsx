@@ -1,6 +1,7 @@
 import { SmartImage } from "@/components/SmartImage";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
+import { JourneyNav } from "./JourneyNav";
 
 
 interface EndgameLayoutProps {
@@ -213,6 +214,10 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
       <main className="flex-1 lg:ml-64 min-h-screen relative">
         <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
           {children}
+          
+          <div className="mt-20">
+            <JourneyNav />
+          </div>
         </div>
       </main>
     </div>

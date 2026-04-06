@@ -19,6 +19,7 @@ export interface ShieldRing {
     route: string;
     color: string;
     breach?: boolean;
+    act?: string;
 }
 
 export const PERPETRATORS: ForensicActor[] = [
@@ -48,33 +49,36 @@ export const FORENSIC_RINGS: ShieldRing[] = [
     { 
         id: 2, 
         name: "LEGAL FORTRESS", 
-        description: "The primary protective silo: a complex network of canonical privilege claims and NDA-backed non-disclosure mechanisms designed to spike discovery and isolate high-value clerical assets from civilian legal process.", 
-        radius: 24, 
-        route: "/breach",
+        description: "The 'Labyrinth' of institutional silence: A decades-long structural defense involving the Newark Export and the 50-year triangular architecture of protection.", 
+        radius: 75, 
+        route: "/ledger/mccarrick/network",
         color: "rgba(255, 0, 0, 0.15)",
-        breach: true
+        breach: true,
+        act: "ACT II"
     },
     { 
         id: 3, 
         name: "LEGAL APPARATUS", 
-        description: "The operational machine: corporate legal entities and 'white-shoe' firms (Gibbons, Latham) leveraged to weaponize the NJ Court system, falsify administrative timelines, and neutralize whistleblowers via sanctioned litigation.", 
-        radius: 36, 
-        route: "/ledger",
-        color: "rgba(212, 175, 55, 0.1)"
+        description: "The Scrivo-O'Toole mechanism: Forensic analysis of the 'Sanction Plea' and the strategic withholding of 3,500+ documents from NJ Court discovery.", 
+        radius: 100, 
+        route: "/ledger/mccarrick/mechanisms",
+        color: "rgba(212, 175, 55, 0.1)",
+        act: "ACT III"
     },
     { 
         id: 4, 
         name: "THE OUTER WALLS", 
-        description: "The institutional facade: the Newark Archdiocese (RCAN) and Seton Hall University. This layer presents the public-facing 'Architecture of Protection' while facilitating the movement of clergy through the triangular system of silence.", 
-        radius: 48, 
-        route: "/evidence/machine",
-        color: "rgba(255, 255, 255, 0.05)"
+        description: "The Succession: Mapping the Newark-Metuchen bridge and the institutional musical chairs that sanitized the 'Architecture of Protection' for 2026.", 
+        radius: 125, 
+        route: "/ledger/checchio",
+        color: "rgba(255, 255, 255, 0.05)",
+        act: "ACT VI"
     },
     { 
         id: 5, 
         name: "VICTIMS & SURVIVORS", 
-        description: "The outermost layer: individuals and advocacy networks whose testimony was methodically scrubbed from the official record to preserve the institutional shielding. This is the origin point of the breach.", 
-        radius: 60, 
+        description: "The Human Core: Direct witness testimony and the 450+ survivors currently challenging the structural immunity in the Essex County Superior Court.", 
+        radius: 155, 
         route: "/evidence/victims",
         color: "rgba(255, 255, 255, 0.02)"
     }

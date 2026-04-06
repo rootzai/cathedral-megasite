@@ -21,6 +21,7 @@ const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall"))
 const Tips = React.lazy(() => import("@/pages/Tips"));
 const TheMethod = React.lazy(() => import("@/pages/TheMethod"));
 const TheNursery = React.lazy(() => import("@/pages/TheNursery"));
+const HumptyCaseStudy = React.lazy(() => import("@/pages/easter/HumptyCaseStudy"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 // Modular Routers
@@ -40,7 +41,13 @@ const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
   "/shield": "/",
   "/headline-news": "/breach",
-  "/expose": "/evidence/legal"
+  "/expose": "/evidence/legal",
+  "/documents": "/vault/documents",
+  "/timeline": "/breach/courtroom",
+  "/briefing": "/breach",
+  "/ruling": "/breach",
+  "/cathedral-bk": "/vault/bankruptcy",
+  "/method": "/methodology"
 };
 
 function RedirectHandler() {
@@ -109,6 +116,9 @@ export function CoreRouter() {
         </Route>
         <Route path="/easter">
           <PageLayout component={TheNursery} />
+        </Route>
+        <Route path="/easter/case-study">
+          <PageLayout component={HumptyCaseStudy} />
         </Route>
 
         {/* ACADEMY & ABOUT */}

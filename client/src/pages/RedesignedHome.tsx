@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "wouter";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "wouter";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
     Shield, 
     ArrowRight, 
@@ -67,8 +67,55 @@ const SECTION_CARDS = [
 ];
 
 export default function RedesignedHome() {
+    const [, setLocation] = useLocation();
+    const [isGlitching, setIsGlitching] = useState(false);
+    const [konamiProgress, setKonamiProgress] = useState<string[]>([]);
+    
+    // KONAMI CODE: UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT B A
+    const KONAMI_CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const nextKey = e.key;
+            const updated = [...konamiProgress, nextKey];
+            
+            // Check if input matches so far
+            if (KONAMI_CODE[updated.length - 1] === nextKey) {
+                if (updated.length === KONAMI_CODE.length) {
+                    // CODE SUCCESS
+                    setIsGlitching(true);
+                    setTimeout(() => {
+                        setLocation("/easter");
+                    }, 1200);
+                    setKonamiProgress([]);
+                } else {
+                    setKonamiProgress(updated);
+                }
+            } else {
+                setKonamiProgress([]);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [konamiProgress, setLocation]);
+
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant overflow-x-hidden">
+        <div className={`min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant overflow-x-hidden ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
+            <AnimatePresence>
+                {isGlitching && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[200] bg-red-950/20 backdrop-blur-md flex flex-col items-center justify-center pointer-events-none"
+                    >
+                        <h2 className="text-white font-cinzel text-4xl tracking-[2em] uppercase animate-bounce">THE VAULT IS COMPROMISED</h2>
+                        <div className="w-full h-1 bg-red-600 animate-ping mt-8" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <TriptychPortal />
 
             {/* HERO SECTION: THE HOUSE THAT McCARRICK BUILT */}

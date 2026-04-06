@@ -19,6 +19,8 @@ const ROUTES = [
 
   // THE BREACH
   { path: "/breach", label: "The Breach" },
+  { path: "/breach/whistleblowers", label: "The Whistleblowers" },
+  { path: "/breach/courtroom", label: "The Courtroom (Timeline)" },
   { path: "/breach/rabner", label: "The Rabner Dossier" },
   { path: "/breach/forensics", label: "Forensic Overview" },
 
@@ -30,19 +32,47 @@ const ROUTES = [
 
   // THE LEDGER (ENDGAME)
   { path: "/ledger", label: "The Ledger" },
-  { path: "/ledger/mccarrick", label: "McCarrick: The Full File" },
+  { path: "/ledger/mccarrick", label: "McCarrick: Introduction" },
+  { path: "/ledger/mccarrick/background", label: "McCarrick: Background" },
+  { path: "/ledger/mccarrick/profile", label: "McCarrick: Profile" },
+  { path: "/ledger/mccarrick/the-rise", label: "McCarrick: The Rise" },
+  { path: "/ledger/mccarrick/the-regime", label: "McCarrick: The Regime" },
+  { path: "/ledger/mccarrick/network", label: "Act II: The Labyrinth" },
+  { path: "/ledger/mccarrick/warnings", label: "McCarrick: Warnings Ignored" },
+  { path: "/ledger/mccarrick/mechanisms", label: "Act III: The Mechanisms" },
+  { path: "/ledger/mccarrick/seton-hall", label: "McCarrick: Seton Hall" },
+  { path: "/ledger/mccarrick/downfall", label: "McCarrick: Downfall" },
+  { path: "/ledger/mccarrick/the-reckoning", label: "McCarrick: The Reckoning" },
+  { path: "/ledger/mccarrick/legal", label: "McCarrick: Legal Actions" },
+  { path: "/ledger/mccarrick/survivors", label: "Ring 5: The Survivors" },
+  { path: "/ledger/mccarrick/responses", label: "McCarrick: Responses" },
+  { path: "/ledger/mccarrick/analysis", label: "McCarrick: Analysis" },
+  { path: "/ledger/mccarrick/conclusion", label: "McCarrick: Conclusion" },
+
+  { path: "/ledger/checchio", label: "Act VI: The Succession" },
+  { path: "/ledger/checchio/formation", label: "Checchio: Formation" },
+  { path: "/ledger/checchio/ascent", label: "Checchio: The Ascent" },
+  { path: "/ledger/checchio/governance", label: "Checchio: Governance" },
+  { path: "/ledger/checchio/controversies", label: "Checchio: Controversies" },
+  { path: "/ledger/checchio/purge", label: "Checchio: The Purge" },
+  { path: "/ledger/checchio/status", label: "Checchio: Status" },
+
+  { path: "/ledger/martin", label: "Act I: Kenneth Martin" },
+  { path: "/ledger/martin/crimes", label: "Martin: The Crimes" },
+  { path: "/ledger/martin/launder", label: "Martin: The Launder" },
+  { path: "/ledger/martin/chicago", label: "Martin: Complicity" },
+
+  { path: "/ledger/lorenzo", label: "Elias Lorenzo: Introduction" },
+  { path: "/ledger/lorenzo/expulsion", label: "Lorenzo: Expulsion" },
+  { path: "/ledger/lorenzo/rehabilitation", label: "Lorenzo: Rehabilitation" },
+  { path: "/ledger/lorenzo/elevation", label: "Lorenzo: Elevation" },
+
   { path: "/ledger/reilly", label: "Joseph Reilly: The President" },
-  { path: "/ledger/lorenzo", label: "Elias Lorenzo: The King in Waiting" },
-  { path: "/ledger/checchio", label: "James Checchio: The Musical Chairs" },
-  { path: "/ledger/martin", label: "Kenneth Martin: The Chicago Link" },
 
   // DEEP DIVES & RECORDS
+  { path: "/vault/documents", label: "The Document Repository" },
   { path: "/the-record", label: "The Record: Fact-Check Dashboard" },
-  { path: "/briefing", label: "The Cathedral Dossier: Briefing" },
-  { path: "/timeline", label: "Whistleblower Retaliation Timeline" },
-  { path: "/documents", label: "The Document Repository" },
 ];
-
 
 export function JourneyNav() {
   const [location] = useLocation();
@@ -75,7 +105,7 @@ export function JourneyNav() {
             </a>
           </Link>
         ) : (
-          <div /> // Spacer
+          <div />
         )}
 
         {nextRoute ? (
@@ -91,7 +121,7 @@ export function JourneyNav() {
             </a>
           </Link>
         ) : (
-          <div /> // Spacer
+          <div />
         )}
       </div>
     </div>

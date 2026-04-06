@@ -72,11 +72,35 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.125rem; /* Sitewide Upshift 18px */
+  :root {
+  /* v5.0 Master Typography Shift: Scaling UP for Investigative Broadside Legibility */
+  font-size: 112.5%; /* Raised from 100% (16px) to 18px base */
+  --base-size: 1.125rem;
+  --prose-size: 1.25rem; /* ~20px for body prose */
+  --header-size: 3.5rem;
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Cinzel", serif;
+  --font-mono: "Fira Code", monospace;
+  
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: 125%; /* 20px base on desktop */
   }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--base-size);
+  color: var(--foreground);
+  background-color: var(--background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
   /* Typography Hierarchy v3.0 */
   h1, h2, h3, h4, .font-cinzel {
@@ -485,6 +509,22 @@
     --muted-foreground: oklch(0.8 0.05 85) !important;
     color: var(--foreground) !important;
   }
+}
+
+/* Ensure anchor links have enough margin for sticky headers */
+section[id], [id] {
+  scroll-margin-top: 80px;
+}
+
+/* Landing Highlight for Shield Destinations */
+@keyframes landingHighlight {
+  0% { background-color: rgba(240, 192, 96, 0.4); box-shadow: 0 0 40px rgba(240, 192, 96, 0.3); }
+  100% { background-color: transparent; box-shadow: 0 0 0 transparent; }
+}
+
+:target {
+  animation: landingHighlight 1.5s ease-out forwards;
+}
 
   .bg-zinc-950 .text-muted-foreground,
   .bg-zinc-900 .text-muted-foreground,

@@ -119,7 +119,7 @@ export default function HomeActs() {
                 <div className="bg-[#0D0D10] border border-white/5 p-8">
                   <h4 className="text-white font-black font-cinzel uppercase tracking-widest mb-4">The Advocate Photo</h4>
                   <p className="text-sm text-zinc-500 font-serif leading-relaxed italic">
-                    Evidence SHU-99. The objective record of institutional collaboration. McCarrick's 'fair hearing' was the first disinformation campaign.
+                    Forensic Exhibit SHU-Latham. The objective record of institutional collaboration. McCarrick's 'fair hearing' was the first disinformation campaign, now unmasked by the Latham Archive.
                   </p>
                 </div>
               </div>
