@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import "./HumptyCaseStudy.css";
-import { heroImageBase64 } from "./humptyImage";
+import { humptyImage as heroImageBase64 } from "./humptyImage";
 
 export default function HumptyCaseStudy() {
   const [foundEggs, setFoundEggs] = useState<Set<number>>(new Set());
