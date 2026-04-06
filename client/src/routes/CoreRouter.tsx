@@ -22,6 +22,8 @@ const Tips = React.lazy(() => import("@/pages/Tips"));
 const TheMethod = React.lazy(() => import("@/pages/TheMethod"));
 const TheNursery = React.lazy(() => import("@/pages/TheNursery"));
 const HumptyCaseStudy = React.lazy(() => import("@/pages/easter/HumptyCaseStudy"));
+const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
+const DeiJournoEasterEgg = React.lazy(() => import("../pages/DeiJournoEasterEgg"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 // Modular Routers
@@ -163,6 +165,11 @@ export function CoreRouter() {
         {ExposeRoutes.map(route => route)}
         {EndgameRoutes.map(route => route)}
         {VaultRoutes.map(route => route)}
+
+        {/* Easter Egg / 404 Unmasking */}
+        <Route path="/deijourno">
+            <DeiJournoEasterEgg />
+        </Route>
 
         {/* Catch-all and Redirects */}
         <Route path="/governance">
