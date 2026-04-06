@@ -36,20 +36,20 @@ export default function LiveStatusBar() {
   }, []);
 
   return (
-    <div className="w-full bg-[#8b1a1a]/10 border-b border-[#8b1a1a]/20 py-1.5 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 overflow-hidden">
+    <div className="w-full bg-[#8b1a1a]/10 border-b border-[#8b1a1a]/20 py-2.5 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 overflow-hidden">
       <div className="flex items-center gap-6 divide-x divide-[#8b1a1a]/30">
         {EVENTS.map((event) => (
           <div key={event.id} className="flex items-center gap-3 pl-6 first:pl-0">
-             <span className="text-xs font-black tracking-[0.2em] text-[#c8bdb0]/80 uppercase whitespace-nowrap">
+             <span className="text-sm md:text-base font-black tracking-widest md:tracking-[0.2em] text-[#e0e0e0] uppercase whitespace-nowrap">
                {event.label}
              </span>
-             <div className="flex items-center gap-2 min-w-[90px]">
+             <div className="flex items-center gap-2 min-w-[100px]">
                <motion.div 
                  animate={{ opacity: [1, 0.4, 1] }}
                  transition={{ duration: 1.5, repeat: Infinity }}
-                 className="w-1.5 h-1.5 bg-[#8b1a1a] rounded-full shadow-[0_0_5px_#8b1a1a]"
+                 className="w-2 h-2 bg-[#dc2626] rounded-full shadow-[0_0_8px_#dc2626]"
                />
-               <span className="text-sm font-mono text-[#8b1a1a] font-bold">
+               <span className="text-base md:text-lg font-mono text-[#dc2626] font-bold">
                  {timeLeft[event.id] || "--:--:--"}
                </span>
              </div>
@@ -59,8 +59,8 @@ export default function LiveStatusBar() {
 
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-gold-500/50" />
-          <span className="text-xs font-black tracking-[0.2em] text-[#c9a227]/90 uppercase whitespace-nowrap">
+          <ShieldCheck className="w-5 h-5 text-[#c9a227]" />
+          <span className="text-sm md:text-base font-black tracking-widest md:tracking-[0.2em] text-[#c9a227] uppercase whitespace-nowrap">
             Congressional Subpoena Request: <span className="text-white">PENDING</span>
           </span>
         </div>
