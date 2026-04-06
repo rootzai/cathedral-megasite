@@ -49,7 +49,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
 
   return (
     <motion.div
-      id={person.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}
+      id={person.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}

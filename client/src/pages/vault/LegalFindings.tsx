@@ -48,43 +48,44 @@ export default function LegalFindings() {
     ];
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-20">
+        <div className="max-w-6xl mx-auto px-4 py-20 text-[#c8bdb0] font-cormorant">
             <header className="mb-16">
-                <div className="inline-block px-3 py-1 mb-4 bg-red-700 text-white text-xs font-bold uppercase tracking-widest">
+                <div className="inline-block px-3 py-1 mb-4 bg-[#8b1a1a] text-white text-[10px] font-black font-courier uppercase tracking-[0.4em]">
                     The Vault: Raw Evidence Depository
                 </div>
-                <div className="flex items-center gap-3 mb-6">
-                    <Scale className="text-red-700" size={40} />
-                    <h1 className="text-5xl font-serif italic font-bold">Confidential Legal Findings</h1>
+                <div className="flex items-center gap-4 mb-6">
+                    <Scale className="text-[#8b1a1a] w-10 h-10" />
+                    <h1 className="text-5xl font-black font-cinzel tracking-tighter uppercase text-white">Confidential Legal Findings</h1>
                 </div>
-                <p className="text-xl text-zinc-300 max-w-3xl leading-relaxed font-serif">
+                <p className="text-xl text-zinc-400 max-w-3xl leading-relaxed font-serif italic">
                     This executive summary catalogs the formal legal findings and documentary evidence submitted as part of the **Rabner Filings**.
                     These 35 exhibits represent the forensic reality that institutions have attempted to bury.
                 </p>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                <div className="bg-zinc-50 border border-zinc-200 p-8 rounded-lg">
-                    <h2 className="text-2xl font-serif mb-4 flex items-center gap-2">
-                        <ShieldCheck className="text-red-700" size={24} />
+                <div className="bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/30 transition-colors">
+                    <h2 className="text-2xl font-black font-cinzel text-white mb-4 flex items-center gap-3 tracking-widest uppercase">
+                        <ShieldCheck className="text-[#8b1a1a] w-6 h-6" />
                         The Rabner Submission
                     </h2>
-                    <p className="text-zinc-300 mb-6 leading-relaxed text-sm">
+                    <p className="text-zinc-500 mb-8 leading-relaxed font-serif italic">
                         Totaling 35 exhibits across two formal submissions to Chief Justice Rabner,
                         these filings represent the evidentiary core of the Sodom Hall investigation.
                         They bridge the gap between institutional "opinion" and verifiable "fact."
                     </p>
                     <div className="flex gap-4">
-                        <button className="bg-zinc-900 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-red-700 transition-colors flex items-center gap-2">
+                        <button className="bg-[#8b1a1a] hover:bg-white hover:text-black text-white px-6 py-3 text-[10px] font-black uppercase tracking-[0.4em] transition-all flex items-center gap-3">
                             <FileDown size={14} />
                             Download Summary PDF
                         </button>
                     </div>
                 </div>
 
-                <div className="bg-red-50 border border-red-100 p-8 rounded-lg flex flex-col justify-center">
-                    <p className="text-red-900/70 font-mono text-[10px] uppercase tracking-[0.2em] mb-2">Notice to Counsel</p>
-                    <p className="text-red-900 text-sm italic leading-relaxed">
+                <div className="bg-[#111116] border border-[#8b1a1a]/20 p-8 flex flex-col justify-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#8b1a1a]/10 blur-[50px] pointer-events-none" />
+                    <p className="text-[#8b1a1a] font-black font-courier text-[10px] uppercase tracking-[0.4em] mb-4 relative z-10">Notice to Counsel</p>
+                    <p className="text-zinc-400 text-lg italic leading-relaxed font-serif relative z-10">
                         "These findings represent the forensic reality that institutions have attempted to bury through
                         seal orders and retaliation. The truth is no longer a matter of discovery; it is a matter of record."
                     </p>
@@ -92,27 +93,27 @@ export default function LegalFindings() {
             </div>
 
             <section>
-                <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400 mb-8 pb-4 border-b">Document Index</h3>
+                <h3 className="text-[10px] font-black font-courier uppercase tracking-[0.4em] text-zinc-600 mb-8 pb-4 border-b border-white/5">Document Index</h3>
                 <div className="space-y-4">
                     {findings.map((item) => (
-                        <div key={item.id} className="group bg-white border border-zinc-200 p-6 hover:border-red-600/30 transition-all shadow-sm hover:shadow-md">
-                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                        <div key={item.id} className="group bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/40 transition-all duration-300">
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                                 <div className="flex-1">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <span className="font-mono text-xs text-red-700 font-bold">{item.id}</span>
-                                        <h4 className="text-xl font-serif">{item.title}</h4>
+                                    <div className="flex items-center gap-4 mb-3">
+                                        <span className="font-courier text-[10px] text-[#8b1a1a] font-black tracking-widest">{item.id}</span>
+                                        <h4 className="text-2xl font-black font-cinzel text-white tracking-widest">{item.title}</h4>
                                     </div>
-                                    <p className="text-zinc-200 text-sm leading-relaxed mb-4">{item.description}</p>
-                                    <div className="flex items-center gap-4">
+                                    <p className="text-zinc-500 font-serif leading-relaxed italic mb-6 max-w-2xl">{item.description}</p>
+                                    <div className="flex items-center gap-6">
                                         <ConfidenceIndicator level={item.level} />
-                                        <span className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-400 uppercase tracking-widest border px-2 py-0.5 rounded-full">
+                                        <span className="flex items-center gap-2 text-[10px] font-black font-courier text-zinc-600 uppercase tracking-[0.3em] border border-white/5 px-3 py-1.5 rounded-sm">
                                             <FileText size={12} />
                                             {item.exhibits} Exhibits
                                         </span>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <div className="px-3 py-1 bg-zinc-100 text-zinc-500 text-[10px] font-bold uppercase tracking-widest rounded tabular-nums">
+                                    <div className="px-4 py-2 bg-white/5 text-zinc-400 text-[10px] font-black font-courier uppercase tracking-[0.4em] rounded-sm">
                                         {item.status}
                                     </div>
                                 </div>
@@ -122,10 +123,10 @@ export default function LegalFindings() {
                 </div>
             </section>
 
-            <footer className="mt-20 pt-12 border-t border-zinc-200">
-                <p className="text-zinc-300 text-xs italic text-center">
+            <footer className="mt-24 pt-12 border-t border-white/5">
+                <p className="text-zinc-600 text-[10px] font-black font-courier tracking-[0.4em] uppercase text-center max-w-2xl mx-auto">
                     Access to original PDFs is restricted to verified legal and oversight bodies.
-                    To request a confidential review, use the Signal tip line on the About page.
+                    To request a confidential review, use the secure tip line.
                 </p>
             </footer>
         </div>

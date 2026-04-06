@@ -21,9 +21,11 @@ export default function PrimaryNavigation() {
       {/* Brand */}
       <Link href="/">
         <a className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-[#8b1a1a] rounded-sm flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-            <span className="text-white font-black text-xs">SH</span>
-          </div>
+          <img 
+            src="/assets/images/sh-pirate-logo.png" 
+            alt="Sodom Hall Pirate Logo" 
+            className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110" 
+          />
           <span className="text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-base md:text-lg hidden sm:block">
             SODOM HALL
           </span>
@@ -56,15 +58,17 @@ export default function PrimaryNavigation() {
       </div>
 
       {/* Submit Tip Button */}
-      <a href="mailto:tips@sodomhall.com" className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-5 py-2.5 rounded-sm flex items-center gap-2.5 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
-          <Send className="w-4 h-4" />
-          <span className="text-xs font-black tracking-[0.3em] uppercase">Submit a Tip</span>
-          <motion.div 
-            animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="absolute right-3 w-1.5 h-1.5 bg-white rounded-full"
-          />
-        </a>
+      <Link href="/tips">
+        <a className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-5 py-2.5 rounded-sm flex items-center gap-2.5 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
+            <Send className="w-4 h-4" />
+            <span className="text-xs font-black tracking-[0.3em] uppercase">Submit a Tip</span>
+            <motion.div 
+              animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute right-3 w-1.5 h-1.5 bg-white rounded-full"
+            />
+          </a>
+      </Link>
     </nav>
   );
 }

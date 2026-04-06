@@ -8,8 +8,8 @@ export function TipSubmissionForm() {
     e.preventDefault();
     setStatus('submitting');
     
-    // FORMSPREE ENDPOINT (Actionable for v5.1)
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqakvzvj"; // Placeholder to be replaced by user's production ID
+    // LIVE PRODUCTION ENDPOINT
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqakvzvj";
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());

@@ -125,10 +125,12 @@ export default function WhistleblowerTimeline() {
                     If you are an insider with evidence of retaliation, your identity can be protected.
                     Use the secure tips line to share your story without fear.
                 </p>
-                <a href="mailto:tips@sodomhall.com" className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-all">
+                <Link href="/tips">
+                    <a className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-all">
                         SUBMIT SECURE TESTIMONY
                         <ArrowRight size={16} />
-                </a>
+                    </a>
+                </Link>
             </section>
 
             <div className="mt-20 border-t border-zinc-100 pt-10">

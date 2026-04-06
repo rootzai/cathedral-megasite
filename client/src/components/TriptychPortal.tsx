@@ -3,10 +3,13 @@ import { cn } from "@/lib/utils";
 
 export default function TriptychPortal({ onComplete }: { onComplete?: () => void }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [isUnmounted, setIsUnmounted] = useState(false);
+    const [isUnmounted, setIsUnmounted] = useState(() => {
+        return sessionStorage.getItem('triptych_seen') === 'true';
+    });
 
     useEffect(() => {
         if (isOpen) {
+            sessionStorage.setItem('triptych_seen', 'true');
             const timer = setTimeout(() => {
                 setIsUnmounted(true);
                 if (onComplete) onComplete();

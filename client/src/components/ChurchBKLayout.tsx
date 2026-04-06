@@ -138,7 +138,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background flex font-sans text-foreground">
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-64 fixed inset-y-0 z-50">
+      <aside className="hidden md:block w-64 fixed top-[56px] bottom-0 z-40 bg-sidebar border-r border-sidebar-border overflow-y-auto">
         <NavContent />
       </aside>
 

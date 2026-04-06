@@ -584,7 +584,7 @@ export default function HumptyCaseStudy() {
 
         {/* RETURN LINK */}
         <div className="mt-16 text-center">
-            <Link href="/easter">
+            <Link href="/">
                 <a className="inline-flex items-center gap-3 text-[10px] font-courier text-zinc-500 uppercase tracking-[0.4em] hover:text-[#c0392b] transition-colors">
                     <ArrowLeft className="w-4 h-4" /> Exit Case Study
                 </a>

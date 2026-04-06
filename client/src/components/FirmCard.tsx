@@ -27,7 +27,7 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
       {/* Attorneys */}
       <div className="space-y-4 ml-2">
         {firm.attorneys.map((attorney) => (
-          <div key={attorney.name} id={attorney.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')} className="border-l-2 border-cathedral-gold/40 pl-4">
+          <div key={attorney.name} id={attorney.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')} className="border-l-2 border-cathedral-gold/40 pl-4">
             <div className="flex items-center gap-2">
               <User className="w-3 h-3 text-gold shrink-0" />
               <span className="font-heading text-base tracking-wide text-white font-bold">{attorney.name}</span>

@@ -98,7 +98,7 @@ export default function SanctionPlea() {
           </div>
 
           <div className="bg-secondary/20 border border-destructive/30 p-8 rounded-lg text-center max-w-4xl mx-auto">
-            <p className="font-heading text-2xl text-zinc-900 leading-relaxed">
+            <p className="font-heading text-2xl text-white leading-relaxed">
               "You cannot have it both ways. You cannot claim something is privileged AND sue someone for disclosing it. That's not legal strategy—that's fraud on the court."
             </p>
           </div>
@@ -116,31 +116,31 @@ export default function SanctionPlea() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-white/10 bg-[#0D0D10] hover:bg-destructive/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">R. 1:4-8 and R. 4:23</div>
-              <h3 className="font-heading text-xl text-zinc-900">Monetary Sanctions</h3>
-              <p className="font-body text-sm text-muted-foreground">
+              <h3 className="font-heading text-xl text-white">Monetary Sanctions</h3>
+              <p className="font-body text-sm text-zinc-400">
                 For willful failure to comply with discovery obligations.
               </p>
-              <p className="font-mono text-xs text-gray-500 italic">Abtrax Pharms., Inc. v. Elkins-Sinn, Inc. (1995)</p>
+              <p className="font-mono text-xs text-zinc-500 italic">Abtrax Pharms., Inc. v. Elkins-Sinn, Inc. (1995)</p>
             </div>
 
-            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-white/10 bg-[#0D0D10] hover:bg-destructive/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">Adverse Inference</div>
-              <h3 className="font-heading text-xl text-zinc-900">Evidentiary Penalty</h3>
-              <p className="font-body text-sm text-muted-foreground">
+              <h3 className="font-heading text-xl text-white">Evidentiary Penalty</h3>
+              <p className="font-body text-sm text-zinc-400">
                 When a party destroys or conceals evidence.
               </p>
-              <p className="font-mono text-xs text-gray-500 italic">Rosenblit v. Zimmerman (2001)</p>
+              <p className="font-mono text-xs text-zinc-500 italic">Rosenblit v. Zimmerman (2001)</p>
             </div>
 
-            <div className="space-y-4 p-6 border border-border bg-white/50 hover:bg-secondary/10 transition-colors">
+            <div className="space-y-4 p-6 border border-white/10 bg-[#0D0D10] hover:bg-destructive/10 transition-colors">
               <div className="font-mono text-xs text-destructive uppercase tracking-widest">Dismissal or Default</div>
-              <h3 className="font-heading text-xl text-zinc-900">Egregious Violations</h3>
-              <p className="font-body text-sm text-muted-foreground">
+              <h3 className="font-heading text-xl text-white">Egregious Violations</h3>
+              <p className="font-body text-sm text-zinc-400">
                 For severe and intentional discovery abuse.
               </p>
-              <p className="font-mono text-xs text-gray-500 italic">Abouzahr v. Matera Concrete Prods., Inc. (1997)</p>
+              <p className="font-mono text-xs text-zinc-500 italic">Abouzahr v. Matera Concrete Prods., Inc. (1997)</p>
             </div>
           </div>
         </section>
@@ -152,10 +152,10 @@ export default function SanctionPlea() {
               <ShieldAlert className="w-6 h-6 text-destructive" />
               Bad Faith Litigation
             </h2>
-            <p className="font-body text-muted-foreground leading-relaxed">
+            <p className="font-body text-zinc-400 leading-relaxed">
               The lawsuit against Joe Nyre was not just discovery abuse—it was bad faith litigation designed to intimidate a whistleblower and chill future disclosures.
             </p>
-            <p className="font-body text-muted-foreground leading-relaxed">
+            <p className="font-body text-zinc-400 leading-relaxed">
               New Jersey recognizes that abuse of process claims lie when legal proceedings are used for an improper purpose (LoBiondo v. Schwartz, 2009). Suing a whistleblower for disclosing the very documents you're hiding in discovery is textbook abuse of process.
             </p>
           </section>
@@ -165,26 +165,26 @@ export default function SanctionPlea() {
               <FileWarning className="w-6 h-6 text-destructive" />
               the technical legal wall
             </h2>
-            <div className="bg-card border border-border p-8 space-y-6">
-              <p className="font-body text-zinc-900 leading-relaxed">
+            <div className="bg-[#0D0D10] border border-white/10 p-8 space-y-6">
+              <p className="font-body text-white leading-relaxed">
                 The concealment was not a solo effort by Scrivo. It was a coordinated, multi-firm perimeter known internally as the **"Technical Legal Wall."**
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <h4 className="font-heading text-lg text-destructive uppercase tracking-wide">Kevin Marino</h4>
-                  <p className="text-xs text-muted-foreground font-mono">MARINO, TORTORELLA & BOYLE</p>
-                  <p className="text-sm text-zinc-800 italic">"The Lead Architect of Privilege. Masterminded the strategy of classifying institutional audits as protected work product."</p>
+                  <p className="text-xs text-zinc-500 font-mono">MARINO, TORTORELLA & BOYLE</p>
+                  <p className="text-sm text-zinc-400 italic">"The Lead Architect of Privilege. Masterminded the strategy of classifying institutional audits as protected work product."</p>
                 </div>
                 <div className="space-y-2">
                   <h4 className="font-heading text-lg text-destructive uppercase tracking-wide">The Newark Perimeter</h4>
-                  <p className="text-xs text-muted-foreground font-mono">STIO // LINARES // PAPALIA</p>
-                  <p className="text-sm text-zinc-800 italic">"The operational enforcers. Managed the day-to-day suppression of discovery requests across Newark and Essex County."</p>
+                  <p className="text-xs text-zinc-500 font-mono">STIO // LINARES // PAPALIA</p>
+                  <p className="text-sm text-zinc-400 italic">"The operational enforcers. Managed the day-to-day suppression of discovery requests across Newark and Essex County."</p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-border/50">
-                <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest leading-loose">
+              <div className="pt-4 border-t border-white/10">
+                <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest leading-loose">
                   * All names derived from the 2025 Essex County discovery log ESX-L-8762-19.
                 </p>
               </div>
@@ -195,8 +195,8 @@ export default function SanctionPlea() {
         {/* The Demand Section */}
         <section className="bg-destructive/5 border border-destructive/20 p-8 md:p-12 rounded-lg space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="font-heading text-4xl text-zinc-900">For the Record</h2>
-            <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="font-heading text-4xl text-white">For the Record</h2>
+            <p className="font-body text-xl text-zinc-400 max-w-3xl mx-auto">
               Tom Scrivo is a creep. Not because of his legal tactics—though those are reprehensible—but because he used the law as a weapon against abuse survivors.
             </p>
           </div>
@@ -204,29 +204,29 @@ export default function SanctionPlea() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="p-4">
               <div className="font-heading text-2xl text-destructive mb-2">Monetary</div>
-              <p className="font-mono text-sm text-gray-400">Pay survivors' attorney fees for all discovery motions related to the Latham Report.</p>
+              <p className="font-mono text-sm text-zinc-400">Pay survivors' attorney fees for all discovery motions related to the Latham Report.</p>
             </div>
             <div className="p-4 border-x border-destructive/20">
               <div className="font-heading text-2xl text-destructive mb-2">Professional</div>
-              <p className="font-mono text-sm text-gray-400">Referral to the Office of Attorney Ethics for investigation.</p>
+              <p className="font-mono text-sm text-zinc-400">Referral to the Office of Attorney Ethics for investigation.</p>
             </div>
             <div className="p-4">
               <div className="font-heading text-2xl text-destructive mb-2">Evidentiary</div>
-              <p className="font-mono text-sm text-gray-400">Adverse inference that concealed documents contain evidence of complicity.</p>
+              <p className="font-mono text-sm text-zinc-400">Adverse inference that concealed documents contain evidence of complicity.</p>
             </div>
           </div>
 
           <Separator className="bg-destructive/30" />
 
           <div className="text-center space-y-6">
-            <p className="font-heading text-2xl text-zinc-900">
+            <p className="font-heading text-2xl text-white">
               "Sanction Tom Scrivo. Make it hurt. Make it public."
             </p>
-            <p className="font-body text-muted-foreground">
+            <p className="font-body text-zinc-400">
               Make it a warning to every lawyer who thinks they can hide evidence of abuse behind privilege claims while simultaneously weaponizing the courts against survivors.
             </p>
             <div className="inline-block border-b-2 border-destructive pb-1">
-              <span className="font-heading text-3xl text-zinc-900 uppercase tracking-widest">Justice Demands It</span>
+              <span className="font-heading text-3xl text-white uppercase tracking-widest">Justice Demands It</span>
             </div>
           </div>
         </section>

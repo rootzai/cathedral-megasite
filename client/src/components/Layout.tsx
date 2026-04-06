@@ -38,7 +38,7 @@ export default function Layout({ children }: LayoutProps) {
         <BoschOwl className="absolute bottom-[5%] right-[10%] w-32 h-32 text-muted-foreground" opacity={0.03} />
       </div>
       {/* Sidebar Navigation - Dossier Style */}
-      <aside className="w-64 fixed h-full border-r border-border bg-sidebar hidden lg:flex flex-col z-50">
+      <aside className="w-64 fixed top-[56px] bottom-0 border-r border-border bg-sidebar hidden lg:flex flex-col z-40 overflow-y-auto">
         <div className="p-4 border-b border-border flex flex-col items-center">
           <Link href="/cathedral">
             <a className="mb-4 block hover:opacity-80 transition-opacity">

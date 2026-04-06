@@ -16,7 +16,7 @@ import {
 const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
-        title: "Seton Hall v. Dei Journo", 
+        title: "Seton Hall v. Spitz", 
         desc: "OC Superior Court. The institution's motion to unmask the journalist.",
         status: "HEARING",
         color: "bg-[#8b1a1a]"

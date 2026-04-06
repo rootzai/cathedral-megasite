@@ -27,7 +27,7 @@ export default function StephensEssay() {
                     </h1>
                     <div className="pt-4 flex flex-col items-center">
                         <span className="font-heading text-xl font-bold uppercase">Ephraim "Eph" Roth</span>
-                        <span className="text-muted-foreground font-serif italic text-lg">Special to the Cathedral Megasite · October 2026</span>
+                        <span className="text-muted-foreground font-serif italic text-lg">Special to the Cathedral Megasite · April 2026</span>
                     </div>
                 </div>
             </header>

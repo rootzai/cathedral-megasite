@@ -50,7 +50,7 @@ const NODES: NodeDef[] = [
   { id: "snap",           label: "SNAP",                     angle: 228, ring: 5, destination: "https://www.snapnetwork.org", destinationType: 'external' },
   { id: "joe-nyre",       label: "Joe Nyre",                 angle: 252, ring: 5, destination: "/expose/nyre-dismissal", destinationType: 'internal' },
   { id: "nj-media",       label: "NJ MEDIA",                 angle: 278, ring: 5, isMedia: true, destination: "/opinion", destinationType: 'internal' },
-  { id: "mark-crawford",  label: "Mark Crawford",            angle: 298, ring: 5, destination: "/easter/case-study", destinationType: 'internal' },
+  { id: "mark-crawford",  label: "Mark Crawford",            angle: 298, ring: 5, destination: "/evidence/origin", destinationType: 'internal' },
   { id: "mccomber",       label: "McOmber McOmber",          sublabel: "(Victims Atty)", angle: 155, ring: 5, destination: "https://www.mcombermcumber.com", destinationType: 'external' },
 
   // Ring 4
@@ -61,7 +61,7 @@ const NODES: NodeDef[] = [
   { id: "nj-legislature", label: "NJ Legislature",                                    angle: 193, ring: 4, destination: "https://www.njleg.state.nj.us", destinationType: 'external' },
   { id: "rcan",           label: "RCAN",            sublabel: "(Newark Archdiocese)", angle: 212, ring: 4, destination: "/church-bk/institutional-structure", destinationType: 'internal' },
   { id: "shu-board",      label: "Seton Hall Board",                                    angle: 325, ring: 4, destination: "/ledger#regents", destinationType: 'internal' },
-  { id: "delbarton",      label: "Delbarton School",                                   angle: 335, ring: 4, destination: "/easter/case-study", destinationType: 'internal' },
+  { id: "delbarton",      label: "Delbarton School",                                   angle: 335, ring: 4, destination: "/ledger/lorenzo", destinationType: 'internal' },
 
   // Ring 3
   { id: "gibbons-pc",     label: "Gibbons P.C.",                                angle: 30,  ring: 3, destination: "/ledger#gibbons", destinationType: 'internal' },
@@ -86,12 +86,12 @@ const CORE_NAMES: Record<string, string> = {
   "Theodore McCarrick": "/ledger/mccarrick",
   "Msgr Joseph Reilly": "/ledger/reilly",
   "Fr. Kenneth Martin": "/ledger/martin",
-  "Hank D'Allesandro": "/ledger#henry-f-dalessandro",
+  "Hank D'Allesandro": "/ledger#henry-f-d-alessandro",
   "Kevin Marino": "/ledger#kevin-h-marino",
   "Chris Porrino": "/ledger#christopher-s-porrino",
   "Tom Scrivo": "/ledger#thomas-p-scrivo",
   "The Dirty Dozen": "/ledger#regents",
-  "Cardinal Tobin": "/ledger#cardinal-joseph-w-tobin-c-ss-r-",
+  "Cardinal Tobin": "/ledger#cardinal-joseph-w-tobin-c-ss-r",
   "Chris Christie": "/ledger#christopher-j-christie",
   "Elias Lorenzo Bishop": "/ledger/lorenzo",
   "Bishop Checchio": "/ledger/checchio"
@@ -178,6 +178,13 @@ export default function ShieldDiagram({
 
     setTimeout(() => {
       setLocation(node.destination);
+      if (node.destination.includes('#')) {
+        const hashId = node.destination.split('#')[1];
+        setTimeout(() => {
+          const el = document.getElementById(hashId);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 800);
+      }
     }, 600);
   };
 
@@ -191,6 +198,13 @@ export default function ShieldDiagram({
     
     setTimeout(() => {
       setLocation(dest);
+      if (dest.includes('#')) {
+        const hashId = dest.split('#')[1];
+        setTimeout(() => {
+          const el = document.getElementById(hashId);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 800);
+      }
     }, 600);
   };
 
