@@ -246,7 +246,7 @@ export default function TheyKnew() {
       <GothicDivider />
 
       {/* ===== BOARD OF TRUSTEES — "The Apostolic Chamber" ===== */}
-      <div className="container-fluid bg-[oklch(0.1_0.02_240)] border-b border-blue-900/30">
+      <div id="trustees" className="container-fluid bg-[oklch(0.1_0.02_240)] border-b border-blue-900/30">
         <div className="container">
           <BoardSection board={boardOfTrustees} onFilterChange={handleFilterChange} />
         </div>
@@ -255,7 +255,7 @@ export default function TheyKnew() {
       <GothicDivider />
 
       {/* ===== BOARD OF REGENTS — "The Hall of Governance" ===== */}
-      <div className="container-fluid bg-[oklch(0.08_0.03_15)] border-b border-red-950/30">
+      <div id="regents" className="container-fluid bg-[oklch(0.08_0.03_15)] border-b border-red-950/30">
         <div className="container">
           <BoardSection board={boardOfRegents} onFilterChange={handleFilterChange} />
         </div>
@@ -303,7 +303,7 @@ export default function TheyKnew() {
           </motion.div>
 
           {/* Seton Hall's Counsel */}
-          <div className="mb-16">
+          <div id="lawyers" className="mb-16">
             <h3 className="font-label text-sm tracking-[0.25em] text-gold-dim uppercase mb-6 flex items-center gap-2">
               <Scale className="w-5 h-5" />
               Seton Hall University — Outside Counsel
