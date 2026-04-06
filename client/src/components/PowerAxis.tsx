@@ -256,34 +256,34 @@ export default function PowerAxis() {
                     <div className="space-y-12 pb-20">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div>
-                                <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-6 font-mono">Forensic Audit Log</h4>
-                                <ul className="space-y-4">
+                                <h4 className="text-[#8b1a1a] font-bold text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-mono">Forensic Audit Log</h4>
+                                <ul className="space-y-6">
                                     {selectedLevel.stats.map((stat, i) => (
-                                        <li key={i} className="text-lg text-[#ccc] leading-relaxed border-l-2 border-[#8b1a1a]/30 pl-6">
+                                        <li key={i} className="text-xl md:text-2xl text-[#ccc] leading-relaxed border-l-2 border-[#8b1a1a]/50 pl-6 py-2">
                                             {stat}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-[#0a0a0c] border border-[#1a1a22] p-8">
-                                <h4 className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.3em] mb-6 font-mono">Structural Integrity</h4>
-                                <div className="space-y-6">
-                                    <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
-                                        <span className="text-zinc-500 uppercase text-xs font-bold tracking-widest">Shield Status</span>
-                                        <span className={cn("text-sm font-black uppercase tracking-widest", selectedLevel.accent)}>{selectedLevel.shieldStatus}</span>
+                            <div className="bg-[#0a0a0c] border border-[#1a1a22] p-8 lg:p-10">
+                                <h4 className="text-[#8b1a1a] font-bold text-sm md:text-base uppercase tracking-[0.3em] mb-8 font-mono">Structural Integrity</h4>
+                                <div className="space-y-8">
+                                    <div className="flex justify-between items-center py-5 border-b border-[#1a1a22]">
+                                        <span className="text-zinc-500 uppercase text-sm md:text-base font-bold tracking-widest">Shield Status</span>
+                                        <span className={cn("text-base md:text-lg font-black uppercase tracking-widest", selectedLevel.accent)}>{selectedLevel.shieldStatus}</span>
                                     </div>
-                                    <div className="flex justify-between items-center py-4 border-b border-[#1a1a22]">
-                                        <span className="text-zinc-500 uppercase text-xs font-bold tracking-widest">Axis Level</span>
-                                        <span className="text-white font-mono text-sm">{selectedLevel.level} / 5</span>
+                                    <div className="flex justify-between items-center py-5 border-b border-[#1a1a22]">
+                                        <span className="text-zinc-500 uppercase text-sm md:text-base font-bold tracking-widest">Axis Level</span>
+                                        <span className="text-white font-mono text-base md:text-xl font-bold">{selectedLevel.level} / 5</span>
                                     </div>
                                     {selectedLevel.callout && (
-                                        <div className="pt-6">
-                                            <span className="text-red-500 uppercase text-xs font-black tracking-[0.4em] block mb-4">Active Breach Investigation</span>
-                                            <div className="p-6 bg-red-950/20 border border-red-900/40 rounded">
-                                                <p className="text-white font-bold text-xl mb-3">{selectedLevel.callout.name}</p>
-                                                <p className="text-[#c8bdb0]/90 italic text-base leading-relaxed mb-6">"{selectedLevel.callout.details}"</p>
-                                                <div className="inline-flex items-center gap-3 text-red-400 text-xs font-bold">
-                                                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                        <div className="pt-8">
+                                            <span className="text-red-500 uppercase text-sm font-black tracking-[0.4em] block mb-5">Active Breach Investigation</span>
+                                            <div className="p-8 bg-red-950/20 border border-red-900/50 shadow-[0_0_20px_rgba(139,26,26,0.1)] rounded">
+                                                <p className="text-white font-bold text-2xl mb-4">{selectedLevel.callout.name}</p>
+                                                <p className="text-[#e8ded0]/90 italic text-lg md:text-xl leading-relaxed mb-8">"{selectedLevel.callout.details}"</p>
+                                                <div className="inline-flex items-center gap-3 text-red-500 text-sm md:text-base tracking-widest uppercase font-bold">
+                                                    <span className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_#dc2626] animate-pulse" />
                                                     {selectedLevel.callout.status}
                                                 </div>
                                             </div>

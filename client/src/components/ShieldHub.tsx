@@ -70,45 +70,45 @@ export default function ShieldHub({
                     <div className="space-y-8 animate-in fade-in zoom-in-95 duration-150">
                         <div>
                             <div className="flex items-center gap-2 mb-4">
-                                <Database className="w-4 h-4 text-red-600" />
-                                <span className="font-mono text-xs text-red-600 uppercase tracking-[0.4em]">Forensic Dossier // Level {hoveredRing}</span>
+                                <Database className="w-5 h-5 text-red-600" />
+                                <span className="font-mono text-sm md:text-base text-red-600 uppercase tracking-[0.3em]">Forensic Dossier // Level {hoveredRing}</span>
                             </div>
-                            <h3 className="text-4xl text-white font-serif uppercase tracking-wider mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+                            <h3 className="text-4xl md:text-5xl text-white font-serif uppercase tracking-wider mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
                                 {FORENSIC_RINGS.find(r => r.id === hoveredRing)?.name}
                             </h3>
-                            <div className="w-20 h-px bg-red-900" />
+                            <div className="w-20 h-1 bg-red-900" />
                         </div>
 
                         <div className="space-y-6">
-                            <p className="text-zinc-300 text-lg font-serif italic leading-relaxed">
+                            <p className="text-zinc-300 text-xl md:text-2xl font-serif italic leading-relaxed">
                                 {FORENSIC_RINGS.find(r => r.id === hoveredRing)?.description}
                             </p>
 
-                            <div className="space-y-3">
-                                <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Identified Entities:</h4>
-                                <div className="flex flex-wrap gap-2">
+                            <div className="space-y-4">
+                                <h4 className="font-mono text-sm md:text-base text-zinc-500 uppercase tracking-[0.2em] font-bold">Identified Entities:</h4>
+                                <div className="flex flex-wrap gap-3">
                                     {PERPETRATORS.filter(p => {
                                          if (hoveredRing === 1) return p.tags.includes("core");
                                          if (hoveredRing === 3) return p.tags.includes("legal-wall");
                                          if (hoveredRing === 2) return p.tags.includes("machine");
                                          return false;
                                      }).map(actor => (
-                                         <span key={actor.id} className="bg-red-900/10 text-red-500 border border-red-900/30 px-3 py-1.5 text-xs font-mono uppercase tracking-widest">{actor.name}</span>
+                                         <span key={actor.id} className="bg-red-900/10 text-red-400 border border-red-900/40 px-4 py-2 text-sm md:text-base font-bold font-mono uppercase tracking-widest">{actor.name}</span>
                                      ))}
                                 </div>
                             </div>
 
                             {/* v5.3 FORTHCOMING NARRATIVE INTEGRATION */}
-                            <div className="mt-4 border border-red-900/20 p-4 bg-red-950/10 animate-in fade-in slide-in-from-top-2 duration-500">
-                                <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest leading-relaxed">
-                                    <strong className="text-red-900 italic">Forensic Anchor:</strong> Narrative under refinement. 
-                                    <span className="block opacity-60">Cross-referencing Latham Archive with 2020 Vatican Report findings.</span>
+                            <div className="mt-6 border border-red-900/30 p-6 bg-red-950/10 animate-in fade-in slide-in-from-top-2 duration-500">
+                                <p className="text-sm md:text-base font-mono text-zinc-400 uppercase tracking-[0.2em] leading-relaxed">
+                                    <strong className="text-red-700 italic font-bold">Forensic Anchor:</strong> Narrative under refinement. 
+                                    <span className="block opacity-80 mt-2 text-zinc-500">Cross-referencing Latham Archive with 2020 Vatican Report findings.</span>
                                 </p>
                             </div>
                         </div>
 
                         <Link href={FORENSIC_RINGS.find(r => r.id === hoveredRing)?.route || '#'}>
-                            <button className="w-full mt-8 py-5 border-2 border-red-900/40 hover:border-red-600 bg-red-950/20 text-white font-mono text-xs uppercase tracking-[0.5em] transition-all hover:bg-red-600 hover:shadow-[0_0_30px_rgba(220,38,38,0.3)]">
+                            <button className="w-full mt-10 py-6 border-2 border-red-900/50 hover:border-red-500 bg-red-950/30 text-white font-mono text-base md:text-lg font-bold uppercase tracking-[0.4em] transition-all hover:bg-red-700 hover:shadow-[0_0_40px_rgba(220,38,38,0.4)]">
                                 Trace Signal
                             </button>
                         </Link>
@@ -118,30 +118,30 @@ export default function ShieldHub({
                         <div className="p-6 bg-red-950/20 rounded-full border border-red-900/30">
                             <Database className="w-12 h-12 text-red-600 animate-pulse" />
                         </div>
-                        <div className="space-y-6">
-                            <div className="space-y-2">
-                                <h4 className="text-3xl text-white font-serif tracking-widest uppercase">Global Forensic Summary</h4>
-                                <div className="w-24 h-px bg-red-900 mx-auto" />
+                        <div className="space-y-8">
+                            <div className="space-y-3">
+                                <h4 className="text-3xl md:text-4xl text-white font-serif tracking-widest uppercase mb-4">Global Forensic Summary</h4>
+                                <div className="w-32 h-1 bg-red-900 mx-auto" />
                             </div>
                             
-                            <div className="space-y-4 max-w-sm mx-auto">
-                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Discovery Status</span>
-                                    <span className="text-red-500 font-mono text-xs uppercase font-bold">Unsealing Active</span>
+                            <div className="space-y-6 max-w-lg mx-auto bg-black/40 p-6 border border-white/5">
+                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Discovery Status</span>
+                                    <span className="text-red-500 font-mono text-base md:text-lg uppercase font-black">Unsealing Active</span>
                                 </div>
-                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Documents Processed</span>
-                                    <span className="text-white font-mono text-xs uppercase font-bold">24,312 / 24,312</span>
+                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Documents Processed</span>
+                                    <span className="text-white font-mono text-base md:text-lg uppercase font-black">24,312 / 24,312</span>
                                 </div>
-                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                                    <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">Forensic Target</span>
-                                    <span className="text-white font-mono text-xs uppercase font-bold">T. McCarrick</span>
+                                <div className="flex justify-between items-center pt-1">
+                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Forensic Target</span>
+                                    <span className="text-red-400 font-mono text-base md:text-lg uppercase font-black">T. McCarrick</span>
                                 </div>
                             </div>
 
-                            <p className="text-xs text-zinc-500 font-mono uppercase tracking-[0.3em] leading-loose max-w-md mx-auto">
-                                Analysis indicates a 50-year triangular architecture of protection between the RCAN, Seton Hall, and the NJ State Government. <br />
-                                <span className="text-red-900 italic">Select a concentric layer to scan specific shielding mechanisms.</span>
+                            <p className="text-sm md:text-base text-zinc-400 font-mono uppercase tracking-[0.2em] leading-loose max-w-2xl mx-auto px-4 mt-8">
+                                Analysis indicates a 50-year triangular architecture of protection between the RCAN, Seton Hall, and the NJ State Government. <br /><br />
+                                <span className="text-red-600 font-bold border-b border-red-900/50 pb-1 italic">Select a concentric layer to scan specific shielding mechanisms.</span>
                             </p>
                         </div>
                     </div>
@@ -159,14 +159,14 @@ export default function ShieldHub({
             <span className="text-zinc-600 font-mono text-xs uppercase tracking-[0.6em]">Ecclesiastical Noir</span>
         </div>
         
-        <div className="flex items-center gap-8 border-l border-zinc-900 pl-8 hidden md:flex">
+        <div className="flex items-center gap-8 border-l border-zinc-900 pl-8 hidden lg:flex">
             <div className="text-center">
-                <span className="block text-xs font-mono text-red-900 uppercase tracking-widest mb-1">Target Identity</span>
-                <span className="text-zinc-400 font-mono text-xs uppercase font-bold">Theodore McCarrick</span>
+                <span className="block text-sm font-mono text-red-600 font-bold uppercase tracking-[0.2em] mb-1">Target Identity</span>
+                <span className="text-zinc-300 font-mono text-base md:text-lg uppercase font-black tracking-wider">Theodore McCarrick</span>
             </div>
-            <div className="text-center">
-                <span className="block text-xs font-mono text-zinc-600 uppercase tracking-widest mb-1">Forensic State</span>
-                <span className="text-green-900/80 font-mono text-xs uppercase font-bold animate-pulse">Unseal Active</span>
+            <div className="text-center ml-8">
+                <span className="block text-sm font-mono text-zinc-500 font-bold uppercase tracking-[0.2em] mb-1">Forensic State</span>
+                <span className="text-green-500 font-mono text-base md:text-lg uppercase font-black tracking-wider animate-[pulse_2s_ease-in-out_infinite]">Unseal Active</span>
             </div>
         </div>
       </div>
