@@ -211,7 +211,13 @@ export default function ShieldDiagram({
         transformOrigin: 'center'
       }}
     >
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="overflow-visible">
+      <svg 
+         width={size} 
+         height={size} 
+         viewBox={`0 0 ${size} ${size}`} 
+         className="overflow-visible"
+         onMouseLeave={() => onRingHover && onRingHover(null)}
+      >
         <defs>
           <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#780000" stopOpacity="0.8" />
@@ -248,7 +254,6 @@ export default function ShieldDiagram({
             opacity={clickedNode ? 0.05 : 0.25} 
             className="transition-opacity duration-300 cursor-pointer pointer-events-auto hover:opacity-80"
             onMouseEnter={() => onRingHover && onRingHover(RINGS[i].id)}
-            onMouseLeave={() => onRingHover && onRingHover(null)}
           />
         ))}
 
@@ -276,7 +281,7 @@ export default function ShieldDiagram({
               onMouseEnter={() => !clickedNode && setHoveredNode(node.id)} 
               onMouseLeave={() => setHoveredNode(null)}
               onClick={() => handleNodeClick(node)}
-              className="cursor-pointer transition-all duration-300"
+              className="cursor-pointer transition-all duration-300 pointer-events-auto"
               opacity={othersClicked ? 0.1 : 1}
               filter={(isClicked || isHovered) ? (isClicked ? "url(#gClick)" : "url(#gGold)") : undefined}
             >
@@ -330,7 +335,7 @@ export default function ShieldDiagram({
                  onClick={() => handleCoreClick(name)} 
                  onMouseEnter={() => !clickedNode && setHoveredNode(`core-${name}`)}
                  onMouseLeave={() => setHoveredNode(null)}
-                 className="cursor-pointer group"
+                 className="cursor-pointer group pointer-events-auto"
                 >
                   <text 
                     x={cx} y={yPos}
