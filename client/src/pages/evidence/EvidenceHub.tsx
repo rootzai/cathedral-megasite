@@ -55,6 +55,31 @@ export default function EvidenceHub() {
                             </Link>
                         ))}
                     </div>
+                    
+                    <div className="mt-16 bg-[#111116] border border-[#1a1a22] hover:border-[#8b1a1a]/50 transition-colors p-8 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b1a1a]/5 blur-[60px]" />
+                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center cursor-pointer">
+                            <div className="md:col-span-2">
+                                <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] font-mono block mb-3">
+                                    Featured Case Study
+                                </span>
+                                <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
+                                    The Architecture of Secrecy
+                                </h3>
+                                <p className="text-lg text-zinc-400 font-serif italic mb-6 leading-relaxed">
+                                    An Analysis of the Lara McKeever Case, Institutional Complicity, and the Diocese of Harrisburg Bankruptcy.
+                                </p>
+                            </div>
+                            <div className="flex md:justify-end">
+                                <Link href="/evidence/mckeever">
+                                    <a className="inline-flex items-center gap-3 bg-[#8b1a1a] text-white px-8 py-4 uppercase font-bold text-xs tracking-widest hover:bg-white hover:text-black transition-all">
+                                        Read Report <ArrowRight className="w-4 h-4" />
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
 

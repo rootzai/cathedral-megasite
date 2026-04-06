@@ -25,6 +25,7 @@ const HumptyCaseStudy = React.lazy(() => import("@/pages/easter/HumptyCaseStudy"
 const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const DeiJournoEasterEgg = React.lazy(() => import("../pages/DeiJournoEasterEgg"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
+const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy"));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -105,6 +106,9 @@ export function CoreRouter() {
         </Route>
         <Route path="/evidence/victims">
           <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/evidence/mckeever">
+          <PageLayout component={McKeeverCaseStudy} />
         </Route>
 
         {/* Tier 3: THE BREACH */}
