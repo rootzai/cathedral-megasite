@@ -122,9 +122,9 @@ export default function Network() {
               <span className="mr-2">←</span> Previous
             </Button>
           </Link>
-          <Link href="/ledger/mccarrick/warnings" asChild>
+          <Link href="/ledger/mccarrick/popes" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-              Proceed to Section 05 <span className="ml-2">→</span>
+              Proceed to Exhibit: The Popes <span className="ml-2">→</span>
             </Button>
           </Link>
         </div>

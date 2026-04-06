@@ -33,6 +33,7 @@ const McCarrickTheReckoning = React.lazy(() => import("../pages/endgame/mccarric
 const McCarrickTheRegime = React.lazy(() => import("../pages/endgame/mccarrick/TheRegime"));
 const McCarrickTheRise = React.lazy(() => import("../pages/endgame/mccarrick/TheRise"));
 const McCarrickWarnings = React.lazy(() => import("../pages/endgame/mccarrick/Warnings"));
+const McCarrickThePopes = React.lazy(() => import("../pages/endgame/mccarrick/ThePopes"));
 
 // Checchio Pages
 const CheckchioAscent = React.lazy(() => import("../pages/endgame/checchio/Ascent"));
@@ -88,6 +89,7 @@ export const EndgameRoutes = [
     <Route key="mccarrick-rise" path={"/ledger/mccarrick/the-rise"}><EndgamePageLayout component={McCarrickTheRise} /></Route>,
     <Route key="mccarrick-regime" path={"/ledger/mccarrick/the-regime"}><EndgamePageLayout component={McCarrickTheRegime} /></Route>,
     <Route key="mccarrick-network" path={"/ledger/mccarrick/network"}><EndgamePageLayout component={McCarrickNetwork} /></Route>,
+    <Route key="mccarrick-popes" path={"/ledger/mccarrick/popes"}><EndgamePageLayout component={McCarrickThePopes} /></Route>,
     <Route key="mccarrick-warn" path={"/ledger/mccarrick/warnings"}><EndgamePageLayout component={McCarrickWarnings} /></Route>,
     <Route key="mccarrick-mech" path={"/ledger/mccarrick/mechanisms"}><EndgamePageLayout component={McCarrickMechanisms} /></Route>,
     <Route key="mccarrick-seton" path={"/ledger/mccarrick/seton-hall"}><EndgamePageLayout component={McCarrickSetonHall} /></Route>,
