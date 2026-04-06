@@ -35,20 +35,20 @@ export default function EvidenceHub() {
                                         Breach Point
                                     </div>
                                 )}
-                                <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.3em] block mb-4">
+                                <span className="text-[#c22121] font-bold text-xs uppercase tracking-[0.3em] block mb-4">
                                     RING {ring.id}
                                 </span>
-                                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#8b1a1a] transition-colors uppercase tracking-wider">
+                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#c22121] transition-colors uppercase tracking-wider">
                                     {ring.name}
                                 </h3>
-                                <p className="text-sm text-[#555] leading-relaxed italic mb-8 group-hover:text-[#888]">
+                                <p className="text-base text-zinc-300 leading-relaxed italic mb-8 group-hover:text-zinc-100">
                                     "{ring.description}"
                                 </p>
                                 <div className="mt-auto pt-6 border-t border-[#1a1a22] flex items-center justify-between">
-                                    <span className="text-[10px] font-bold text-[#444] uppercase tracking-widest group-hover:text-[#8b1a1a]">
+                                    <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest group-hover:text-[#c22121]">
                                         EXPLORE ARCHIVES
                                     </span>
-                                    <svg className="w-4 h-4 text-[#444] group-hover:text-[#8b1a1a] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-zinc-400 group-hover:text-[#c22121] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </div>

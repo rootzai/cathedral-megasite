@@ -79,7 +79,7 @@ export const FORENSIC_RINGS: ShieldRing[] = [
         name: "VICTIMS & SURVIVORS", 
         description: "The Human Core: Direct witness testimony and the 450+ survivors currently challenging the structural immunity in the Essex County Superior Court.", 
         radius: 155, 
-        route: "/evidence/victims",
+        route: "/ledger/mccarrick/survivors",
         color: "rgba(255, 255, 255, 0.02)"
     }
 ];
