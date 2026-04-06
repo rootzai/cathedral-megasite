@@ -190,7 +190,7 @@ export default function PowerAxis() {
                                     </li>
                                 ))}
                                 {item.stats.length > 3 && (
-                                    <li className="text-xs text-[#8b1a1a] uppercase tracking-widest font-bold mt-3 opacity-90">
+                                    <li className="text-sm md:text-base text-red-600 uppercase tracking-widest font-black mt-4 opacity-90">
                                         + more data points
                                     </li>
                                 )}
@@ -198,13 +198,13 @@ export default function PowerAxis() {
 
                             {item.callout && (
                                 <div className="mt-8 pt-6 border-t border-red-900/30">
-                                    <span className="text-xs font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
+                                    <span className="text-sm md:text-base font-black text-red-500 uppercase tracking-[0.2em] block mb-2">
                                         {item.callout.title}
                                     </span>
-                                    <p className="text-base font-bold text-white mb-2">{item.callout.name}</p>
-                                    <p className="text-sm text-[#c8bdb0]/80 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-xs font-bold text-red-400">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                                    <p className="text-lg md:text-xl font-bold text-white mb-2">{item.callout.name}</p>
+                                    <p className="text-base text-[#c8bdb0]/80 mb-4 italic leading-relaxed">"{item.callout.details}"</p>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-950/40 border border-red-500/30 rounded text-sm md:text-base font-bold text-red-400">
+                                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                                         {item.callout.status}
                                     </div>
                                 </div>
@@ -212,16 +212,16 @@ export default function PowerAxis() {
 
                             <button
                                 onClick={() => setSelectedLevel(item)}
-                                className="mt-8 w-full py-3 border border-[#1a1a22] text-[10px] font-bold uppercase tracking-[0.2em] text-[#555] hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-all"
+                                className="mt-10 w-full py-4 border border-[#1a1a22] text-sm md:text-base font-black uppercase tracking-[0.2em] text-zinc-400 hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-all"
                             >
                                 Deep Dive Investigation
                             </button>
                         </div>
 
                         {/* Bottom Status */}
-                        <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
-                            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Shield Status</span>
-                            <span className={cn("text-[10px] font-bold uppercase tracking-wider", item.accent)}>
+                        <div className="mt-10 pt-5 border-t border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-2">
+                            <span className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest font-bold">Shield Status</span>
+                            <span className={cn("text-sm font-black uppercase tracking-widest break-words", item.accent)}>
                                 {item.shieldStatus}
                             </span>
                         </div>
@@ -236,7 +236,7 @@ export default function PowerAxis() {
                                         <AlertCircle className="w-6 h-6 text-white/80" />
                                     </div>
                                 </div>
-                                <div className="text-[8px] font-mono text-red-500/60 uppercase whitespace-nowrap rotate-90 ml-20 mt-4">
+                                <div className="text-xs font-mono text-red-500/60 font-bold uppercase tracking-widest whitespace-nowrap rotate-90 ml-20 mt-8">
                                     Elite Node Lock
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { Shield, Lock, Activity, Database } from "lucide-react";
+import { Shield, Lock, Activity, Database, Target, Fingerprint } from "lucide-react";
 import { useState } from "react";
 import { FORENSIC_RINGS, PERPETRATORS } from "@/lib/registry";
 import ShieldDiagram from "./ShieldDiagram";
@@ -14,6 +14,13 @@ export default function ShieldHub({
 }) {
   const [hoveredRing, setHoveredRing] = useState<number | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+
+  const getActorRoute = (id: string) => {
+    if (['mccarrick', 'checchio', 'reilly', 'martin', 'lorenzo'].includes(id)) {
+      return `/ledger/${id}`;
+    }
+    return `/ledger/mccarrick/network`;
+  };
 
   return (
     <div className="relative w-full max-w-7xl mx-auto bg-black border border-red-900/40 shadow-[0_0_100px_rgba(139,26,26,0.3)] overflow-hidden">
@@ -70,7 +77,7 @@ export default function ShieldHub({
                     <div className="space-y-8 animate-in fade-in zoom-in-95 duration-150">
                         <div>
                             <div className="flex items-center gap-2 mb-4">
-                                <Database className="w-5 h-5 text-red-600" />
+                                <Activity className="w-5 h-5 text-red-600" />
                                 <span className="font-mono text-sm md:text-base text-red-600 uppercase tracking-[0.3em]">Forensic Dossier // Level {hoveredRing}</span>
                             </div>
                             <h3 className="text-4xl md:text-5xl text-white font-serif uppercase tracking-wider mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -93,7 +100,9 @@ export default function ShieldHub({
                                          if (hoveredRing === 2) return p.tags.includes("machine");
                                          return false;
                                      }).map(actor => (
-                                         <span key={actor.id} className="bg-red-900/10 text-red-400 border border-red-900/40 px-4 py-2 text-sm md:text-base font-bold font-mono uppercase tracking-widest">{actor.name}</span>
+                                         <Link key={actor.id} href={getActorRoute(actor.id)}>
+                                             <span className="bg-red-900/10 hover:bg-red-600 text-red-400 hover:text-white border border-red-900/40 px-4 py-2 text-sm md:text-base font-bold font-mono uppercase tracking-widest cursor-pointer transition-colors inline-block">{actor.name}</span>
+                                         </Link>
                                      ))}
                                 </div>
                             </div>
@@ -108,41 +117,36 @@ export default function ShieldHub({
                         </div>
 
                         <Link href={FORENSIC_RINGS.find(r => r.id === hoveredRing)?.route || '#'}>
-                            <button className="w-full mt-10 py-6 border-2 border-red-900/50 hover:border-red-500 bg-red-950/30 text-white font-mono text-base md:text-lg font-bold uppercase tracking-[0.4em] transition-all hover:bg-red-700 hover:shadow-[0_0_40px_rgba(220,38,38,0.4)]">
+                            <button className="w-full mt-10 py-6 border-2 border-red-900/50 hover:border-red-500 bg-red-950/30 text-white font-mono text-base md:text-lg font-bold uppercase tracking-[0.4em] transition-all hover:bg-red-700 hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] cursor-pointer relative z-20">
                                 Trace Signal
                             </button>
                         </Link>
                     </div>
                 ) : (
                     <div className="flex flex-col items-center justify-center text-center space-y-8 py-4">
-                        <div className="p-6 bg-red-950/20 rounded-full border border-red-900/30">
-                            <Database className="w-12 h-12 text-red-600 animate-pulse" />
+                        <div className="p-8 bg-red-950/20 rounded-full border border-red-900/40 relative">
+                            {/* Inner pulse */}
+                            <div className="absolute inset-0 bg-red-600/10 rounded-full animate-ping" />
+                            <Target className="w-14 h-14 text-red-600 relative z-10" />
                         </div>
                         <div className="space-y-8">
                             <div className="space-y-3">
-                                <h4 className="text-3xl md:text-4xl text-white font-serif tracking-widest uppercase mb-4">Global Forensic Summary</h4>
+                                <h4 className="text-3xl md:text-4xl text-white font-serif tracking-widest uppercase mb-4">Forensic Operation Console</h4>
                                 <div className="w-32 h-1 bg-red-900 mx-auto" />
                             </div>
                             
-                            <div className="space-y-6 max-w-lg mx-auto bg-black/40 p-6 border border-white/5">
-                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Discovery Status</span>
-                                    <span className="text-red-500 font-mono text-base md:text-lg uppercase font-black">Unsealing Active</span>
-                                </div>
-                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Documents Processed</span>
-                                    <span className="text-white font-mono text-base md:text-lg uppercase font-black">24,312 / 24,312</span>
-                                </div>
-                                <div className="flex justify-between items-center pt-1">
-                                    <span className="text-zinc-500 font-mono text-sm md:text-base uppercase tracking-widest font-bold">Forensic Target</span>
-                                    <span className="text-red-400 font-mono text-base md:text-lg uppercase font-black">T. McCarrick</span>
-                                </div>
-                            </div>
-
-                            <p className="text-sm md:text-base text-zinc-400 font-mono uppercase tracking-[0.2em] leading-loose max-w-2xl mx-auto px-4 mt-8">
-                                Analysis indicates a 50-year triangular architecture of protection between the RCAN, Seton Hall, and the NJ State Government. <br /><br />
-                                <span className="text-red-600 font-bold border-b border-red-900/50 pb-1 italic">Select a concentric layer to scan specific shielding mechanisms.</span>
+                            <p className="text-base md:text-lg text-zinc-300 font-serif italic mx-auto">
+                                You are viewing a real-time, schematic model of the Cathedral's defensive structure. The adjacent diagram isolates the concentric layers of institutional protection surrounding Theodore McCarrick.
                             </p>
+
+                            <div className="bg-black/80 border border-red-900/30 p-6 font-mono text-sm md:text-base text-zinc-400 text-left space-y-4">
+                                <p className="mb-2"><strong className="text-red-500">HOW TO USE:</strong></p>
+                                <ul className="list-disc pl-5 space-y-3">
+                                    <li><strong className="text-white">HOVER</strong> over the rings in the diagram to inspect the mechanisms of each defensive layer.</li>
+                                    <li><strong className="text-white">CLICK</strong> an <span className="text-red-400">Identified Entity</span> appearing in the panel to instantly query their investigation dossier.</li>
+                                    <li><strong className="text-white">TRACE</strong> the signal to descend into the primary evidentiary findings.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 )}
