@@ -12,7 +12,6 @@ import {
     Database,
     Zap,
     Fingerprint,
-    Ghost,
     Send
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
@@ -56,13 +55,6 @@ const SECTION_CARDS = [
         href: "/method",
         icon: Fingerprint,
         color: "text-[#1a3a5c]"
-    },
-    {
-        title: "THE NURSERY",
-        desc: "Humpty Dumpty Had a Great Fall.",
-        href: "/easter",
-        icon: Ghost,
-        color: "text-[#3a1a5c]"
     }
 ];
 
@@ -130,12 +122,34 @@ export default function RedesignedHome() {
                             THE HOUSE THAT <br />
                             <span className="text-[#8b1a1a]">McCARRICK</span> BUILT
                         </h1>
-                        <p className="max-w-5xl mx-auto text-xl md:text-2xl font-serif italic text-[#c8bdb0]/80 leading-relaxed space-y-6">
-                            <span>"For the last half century, the RCAN architected a scheme to make priest sex abuse unreachable. They sealed investigations, falsified records, and weaponized the NJ legal system against their victims and anyone who dared to defy them. This investigation names every layer of protection the See erects."</span>
-                            <span className="block pt-8 text-[#8b1a1a] font-cinzel font-black tracking-[0.2em] uppercase text-3xl">The vault opens May 18, 2026.</span>
-                        </p>
+                        <div className="max-w-3xl mx-auto space-y-6">
+                            <p className="text-xl md:text-2xl font-serif text-[#c8bdb0]/80 leading-relaxed">
+                                Mark Crawford was thirteen years old when a priest named Kenneth Martin 
+                                began abusing him in Bayonne, New Jersey. Martin was later promoted to 
+                                personal secretary to Archbishop Theodore McCarrick. The Church falsified 
+                                Crawford's age on the settlement document — a lie they didn't need to tell, 
+                                because the statute of limitations had already run. They told it anyway.
+                            </p>
+                            <p className="text-[#c8bdb0]/60 font-serif italic text-lg leading-relaxed">
+                                That reflex — concealment applied even when concealment isn't required — is 
+                                the mechanism this investigation documents across fifty years and every ring 
+                                of the institutional shield.
+                            </p>
+                            <p className="text-[#8b1a1a] font-cinzel font-black tracking-[0.2em] uppercase text-2xl pt-4">
+                                The vault opens May 18, 2026.
+                            </p>
+                        </div>
                     </motion.div>
 
+                    <div className="text-center space-y-2 mb-8">
+                        <span className="text-[10px] font-black font-courier text-zinc-600 uppercase tracking-[0.5em]">
+                            The Architecture of Immunity
+                        </span>
+                        <p className="text-zinc-500 font-serif italic text-sm max-w-xl mx-auto">
+                            Six rings. Each one a mechanism to place distance between a victim 
+                            and the individual who harmed them. Click any ring.
+                        </p>
+                    </div>
                     <div className="w-full flex justify-center mt-12 relative">
                         <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[100px] rounded-full pointer-events-none" />
                         <div className="relative z-10 w-full flex justify-center">
@@ -159,7 +173,7 @@ export default function RedesignedHome() {
                     >
                         <div className="space-y-2">
                              <h2 className="text-[#d4af37] font-serif text-5xl tracking-tight leading-none uppercase">The Crawford Thread</h2>
-                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em] font-bold">Case Study: Institutional Mechanics</p>
+                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em] font-bold">The thread that pulls the whole architecture down</p>
                         </div>
                         <div className="w-24 h-px bg-red-900 mx-auto" />
                         <p className="text-xl text-white font-serif leading-[1.6]">
@@ -167,7 +181,8 @@ export default function RedesignedHome() {
                         </p>
                         <div className="text-xl text-zinc-400 leading-relaxed font-serif italic space-y-6">
                             <p>
-                                When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Shortly thereafter, Martin became Archbishop Theodore McCarrick's personal secretary, serving at the Archbishop’s pleasure. 
+                                When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Then Martin was promoted. Not removed — promoted. He became Archbishop Theodore McCarrick's personal secretary.
+
                             </p>
                             <p>
                                 When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood and said the statute of limitations had expired, refused to pay the $108,000 settlement their own mediator had awarded him. When Crawford asked for a written acknowledgment that the abuse happened and that Martin would never have access to children again, they refused to oblige him.
@@ -196,8 +211,11 @@ export default function RedesignedHome() {
             <section className="py-24 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto space-y-20">
                     <div className="text-center space-y-4">
-                        <span className="text-[#8b6914] font-black text-[10px] uppercase tracking-[0.6em] font-courier">Level 5 ESCALATION</span>
+                        <span className="text-[#8b6914] font-black text-[10px] uppercase tracking-[0.6em] font-courier">From Bayonne to the Vatican</span>
                         <h2 className="text-4xl md:text-6xl font-black font-cinzel text-white leading-none uppercase">THE POWER AXIS</h2>
+                        <p className="text-zinc-500 font-serif italic text-lg max-w-2xl mx-auto mt-4">
+                            A parish priest has two rings of protection. A Cardinal has six — plus the networks that converge at maximum altitude. Crawford's thread runs through every level.
+                        </p>
                     </div>
                     <PowerAxis />
                     <p className="text-center text-zinc-600 font-courier text-[10px] uppercase tracking-widest max-w-2xl mx-auto">

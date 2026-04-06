@@ -17,7 +17,7 @@ const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
         title: "Seton Hall v. Spitz", 
-        desc: "OC Superior Court. The institution's motion to unmask the journalist.",
+        desc: "OC Superior Court, Dept. C23, Santa Ana. SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.",
         status: "HEARING",
         color: "bg-[#8b1a1a]"
     },
@@ -52,9 +52,18 @@ export default function BreachHub() {
                         THE <span className="text-[#8b1a1a]">BREACH</span> POINT
                     </h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <p className="text-2xl text-zinc-400 font-serif italic leading-relaxed">
-                            "The Shield is not a static wall; it is a legal fiction that requires constant maintenance. On May 28, that maintenance fails."
-                        </p>
+                        <div className="space-y-4">
+                            <p className="text-3xl text-white font-cinzel font-black leading-tight">
+                                May 18. The Latham Report unseals.<br />
+                                May 28. They try to depose the journalist who warned them.<br />
+                                <span className="text-[#8b1a1a]">Ten days. One institution. Both moves.</span>
+                            </p>
+                            <p className="text-xl text-zinc-500 font-serif italic leading-relaxed">
+                                The same organization that sealed 24,000 pages of abuse evidence for six years 
+                                is simultaneously attempting to silence the reporter who told the Board it was coming. 
+                                That is not coincidence. It is the shield in its terminal phase.
+                            </p>
+                        </div>
                         <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-6">
                             <span className="text-[10px] font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
                             <div className="flex items-end gap-2">
