@@ -179,8 +179,8 @@ export default function TheNursery() {
 
                     <div className="pt-20">
                          <Link href="/easter/case-study">
-                            <a className="inline-flex items-center gap-3 text-[#7c3aed] font-black uppercase text-[10px] tracking-[0.5em] group hover:text-white transition-colors">
-                                Read The Case Study <ArrowRight className="w-5 h-5 group-hover:translate-x-3 transition-transform" />
+                            <a className="inline-flex items-center gap-3 text-[#7c3aed] font-black uppercase text-2xl tracking-widest group hover:text-white transition-colors border border-[#7c3aed] p-6 hover:bg-[#7c3aed]/10">
+                                READ THE HUMPTY DUMPTY CASE STUDY <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform" />
                             </a>
                          </Link>
                     </div>

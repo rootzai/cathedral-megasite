@@ -26,40 +26,48 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   /* Sodom Hall v3.0 Tokens */
   --color-crimson: #8B1A1A;
-  --color-parchment: #C8BDB0;
-  --color-gold: #8B6914;
+  --color-parchment: #F2E8D5;
+  --color-gold: #B89624;
   --color-method-blue: #1A3A5C;
   --color-easter-purple: #3A1A5C;
   --color-dark-foundation: #0A0A0C;
+
+  /* UPSCALED TYPOGRAPHY TO ENFORCE READABILITY GLOBALLY */
+  --text-xs: 12px;
+  --text-sm: 15px;
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 24px;
 }
 
 :root {
   --background: #0A0A0C;
-  --foreground: #C8BDB0;
-  --primary: #8B1A1A;
+  --foreground: #E0E0E0; /* Much brighter bone white for supreme contrast */
+  --primary: #9B1C1C; /* Slightly brighter crimson */
   --primary-foreground: #ffffff;
   --card: #0D0D10;
-  --card-foreground: #C8BDB0;
+  --card-foreground: #E0E0E0;
   --popover: #0D0D10;
-  --popover-foreground: #C8BDB0;
+  --popover-foreground: #E0E0E0;
   --secondary: #16161D;
-  --secondary-foreground: #C8BDB0;
+  --secondary-foreground: #E0E0E0;
   --muted: #111116;
-  --muted-foreground: #666666;
-  --accent: #8B1A1A;
+  --muted-foreground: #A1A1AA; /* Bumping muted contrast massively */
+  --accent: #9B1C1C;
   --accent-foreground: #ffffff;
-  --border: #1A1A22;
+  --border: #2A2A35; /* Brighter borders for visibility */
   --input: #1A1A22;
-  --ring: #8B1A1A;
+  --ring: #9B1C1C;
 
   /* Investigation Tokens */
-  --ink: #C8BDB0;
-  --ink-mid: #888888;
-  --blood: #8B1A1A;
-  --gold: #8B6914;
-  --parchment: #C8BDB0;
+  --ink: #E0E0E0;
+  --ink-mid: #A1A1AA;
+  --blood: #9B1C1C;
+  --gold: #B89624;
+  --parchment: #F2E8D5;
 }
 
 .dark {
