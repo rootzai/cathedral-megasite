@@ -23,7 +23,7 @@ export default function PatrickWall() {
             Patrick Wall
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 font-serif leading-relaxed italic max-w-2xl mx-auto">
-            "The insider who built the machine. The man who saw the gears of the 43 diocesan bankruptcies."
+            "The insider who built the machine. The man who saw the gears of the institutional shield."
           </p>
         </div>
       </section>
@@ -39,8 +39,7 @@ export default function PatrickWall() {
             </p>
             <p className="text-lg leading-relaxed text-zinc-300">
                 Because he saw it from the inside, he knows where the bodies are buried. He understands 
-                the <strong>A&M Playbook</strong>—the secret set of rules the Church uses to hide money 
-                during a bankruptcy.
+                the <strong>institutional tactics</strong>—the secret set of rules the Church uses to protect its assets.
             </p>
           </div>
           <div className="bg-[#111116] border border-white/5 p-8 flex flex-col justify-center relative overflow-hidden group">
@@ -54,20 +53,20 @@ export default function PatrickWall() {
         </div>
       </section>
 
-      {/* THE BANKRUPTCY PLAYBOOK (ACTIONABLE DATA) */}
+
       <section className="py-24 px-6 bg-[#050505]">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16">
             <BookOpen className="w-8 h-8 text-red-700 mb-4" />
-            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-widest mb-6 italic">The A&M Playbook</h2>
-            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">Forensic Dossier // Bankruptcy-Intelligence-043</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-widest mb-6 italic">The Institutional Shield</h2>
+            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">Forensic Dossier // Asset-Intelligence-043</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
                 title: "Asset Shifting", 
-                desc: "Moving money from a parish into a 'Foundation' just before filing for bankruptcy.",
+                desc: "Moving money from a parish into a 'Foundation' to ring-fence assets.",
                 icon: Database
               },
               { 
@@ -98,7 +97,7 @@ export default function PatrickWall() {
         <div className="max-w-2xl mx-auto space-y-12">
             <h2 className="text-2xl font-black text-white uppercase tracking-widest italic">Request Patrick's Advisory</h2>
             <p className="text-zinc-400 font-serif text-lg italic leading-relaxed">
-                Patrick Wall provides operational intelligence for plaintiff firms seeking to penetrate the bankruptcy shield.
+                Patrick Wall provides operational intelligence for plaintiff firms seeking to penetrate the institutional shield.
             </p>
             <Link href="/tips">
                 <a className="bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-[10px] shadow-[0_0_40px_rgba(139,26,26,0.5)]">

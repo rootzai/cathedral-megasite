@@ -44,13 +44,6 @@ const SECTION_CARDS = [
         color: "text-[#8b6914]"
     },
     {
-        title: "THE VAULT",
-        desc: "24,000 pages. Sealed for six years. Opening May 18.",
-        href: "/vault",
-        icon: Lock,
-        color: "text-[#c8bdb0]"
-    },
-    {
         title: "THE METHOD",
         desc: "How AI found the fabricated bulletins.",
         href: "/method",
@@ -103,7 +96,7 @@ export default function RedesignedHome() {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[200] bg-red-950/20 backdrop-blur-md flex flex-col items-center justify-center pointer-events-none"
                     >
-                        <h2 className="text-white font-cinzel text-4xl tracking-[2em] uppercase animate-bounce">THE VAULT IS COMPROMISED</h2>
+                        <h2 className="text-white font-cinzel text-4xl tracking-[2em] uppercase animate-bounce">SIGNAL INTERRUPTED</h2>
                         <div className="w-full h-1 bg-red-600 animate-ping mt-8" />
                     </motion.div>
                 )}
@@ -136,9 +129,7 @@ export default function RedesignedHome() {
                                 the mechanism this investigation documents across fifty years and every ring 
                                 of the institutional shield.
                             </p>
-                            <p className="text-[#8b1a1a] font-cinzel font-black tracking-[0.2em] uppercase text-2xl pt-4">
-                                The vault opens May 18, 2026.
-                            </p>
+
                         </div>
                     </motion.div>
 

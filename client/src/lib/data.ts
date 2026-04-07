@@ -470,22 +470,6 @@ export const rcanLawyers: LawyerFirm[] = [
     ],
     description: "Primary defense firm representing RCAN in the clergy abuse litigation. Multiple attorneys from this firm have appeared on recent briefs and oral arguments defending the Archdiocese.",
   },
-  {
-    firm: "Paul, Weiss, Rifkind, Wharton & Garrison LLP",
-    role: "Bankruptcy Counsel for Newark Diocese",
-    attorneys: [
-      { name: "Bankruptcy Team", title: "Restructuring Department", note: "Retained as bankruptcy counsel for the Newark Diocese. Paul Weiss is one of the most powerful law firms in the country." },
-    ],
-    description: "Retained as bankruptcy counsel that RCAN keeps threatening to bring in. Bankruptcy is a standard tactic used by dioceses to limit payouts to abuse survivors — the Camden Diocese used Cole Schotz for its Chapter 11 filing ($87.5M in 2024, additional $180M in Feb 2026).",
-  },
-  {
-    firm: "Cole Schotz P.C.",
-    role: "Bankruptcy Counsel (Camden Diocese Model)",
-    attorneys: [
-      { name: "Bankruptcy Team", title: "Bankruptcy & Corporate Restructuring", note: "Handled the Camden Diocese Chapter 11 bankruptcy — the model RCAN could follow." },
-    ],
-    description: "The firm that handled the Camden Diocese bankruptcy — the playbook RCAN keeps threatening to use. Bankruptcy is a standard tactic used by dioceses to limit payouts to abuse survivors.",
-  },
 ];
 
 export const njagConnection = {

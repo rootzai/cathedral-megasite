@@ -168,7 +168,6 @@
   .theme-ruling,
   .theme-expose,
   .theme-endgame,
-  .theme-bankruptcy,
   .theme-epstein {
     --card: oklch(0.1 0.01 20);
     --card-foreground: oklch(0.85 0.02 20);
@@ -216,10 +215,7 @@
     --accent: oklch(0.5 0.15 140);
   }
 
-  .theme-bankruptcy {
-    --primary: oklch(0.4 0.15 45);
-    --accent: oklch(0.6 0.15 45);
-  }
+
 
   .theme-epstein {
     --card: oklch(0.15 0.02 20);

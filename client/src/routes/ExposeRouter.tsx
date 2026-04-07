@@ -5,10 +5,7 @@ import TheyKnew from "../pages/TheyKnew";
 import LorenzoHome from "../pages/endgame/lorenzo/Home";
 const HeadlineNews = React.lazy(() => import("../pages/HeadlineNews"));
 
-// Church BK
-const ChurchBKActiveCaseDossiers = React.lazy(() => import("../pages/church-bk/ActiveCaseDossiers"));
-const ChurchBKGlobalChurchMetrics = React.lazy(() => import("../pages/church-bk/GlobalChurchMetrics"));
-const ChurchBKMcCarrickMechanism = React.lazy(() => import("../pages/church-bk/McCarrickMechanism"));
+
 
 // Ruling
 const BeachHouse = React.lazy(() => import("../pages/ruling/BeachHouse"));
@@ -54,9 +51,9 @@ export const ExposeRoutes = [
     <Route key="e5" path={"/origin/explosion"}><OriginLayout><McCarrickDownfall /></OriginLayout></Route>,
 
     // THE COVER-UP (Act 2)
-    <Route key="e6" path={"/coverup"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
+    <Route key="e6" path={"/coverup"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
     <Route key="e6-auth" path={"/coverup/big-lie"}><BigLie /></Route>,
-    <Route key="e7" path={"/coverup/financial"}><CoverUpLayout><ChurchBKMcCarrickMechanism /></CoverUpLayout></Route>,
+    <Route key="e7" path={"/coverup/financial"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
     <Route key="e8" path={"/coverup/complicity"}><CoverUpLayout><TheyKnew /></CoverUpLayout></Route>,
     <Route key="e9" path={"/coverup/legal"}><CoverUpLayout><LegalTriumvirate /></CoverUpLayout></Route>,
     <Route key="e9-alias" path={"/coverup/triumvirate"}><CoverUpLayout><LegalTriumvirate /></CoverUpLayout></Route>,
@@ -89,8 +86,7 @@ export const ExposeRoutes = [
     <Route key="e17" path={"/succession/regime"}><SuccessionLayout><LorenzoHome /></SuccessionLayout></Route>,
     <Route key="e18" path={"/succession/checchio"}><SuccessionLayout><CheckchioNewOrleans /></SuccessionLayout></Route>,
     <Route key="e18-expose" path={"/expose/checchio-new-orleans"}><SuccessionLayout><CheckchioNewOrleans /></SuccessionLayout></Route>,
-    <Route key="e19" path={"/succession/cases"}><SuccessionLayout><ChurchBKActiveCaseDossiers /></SuccessionLayout></Route>,
-    <Route key="e20" path={"/succession/horizon"}><SuccessionLayout><ChurchBKGlobalChurchMetrics /></SuccessionLayout></Route>,
+
     <Route key="e21" path={"/succession/epilogue"}><SuccessionLayout><SuccessionEpilogue /></SuccessionLayout></Route>,
 
     // HEADLINE NEWS

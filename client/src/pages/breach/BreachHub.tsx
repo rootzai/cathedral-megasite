@@ -144,11 +144,6 @@ export default function BreachHub() {
                                 </div>
                             </div>
                         </div>
-                        <Link href="/vault">
-                            <a className="inline-flex items-center gap-3 bg-[#8b1a1a] text-white px-8 py-4 font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition-all">
-                                Open The Vault <Search className="w-4 h-4" />
-                            </a>
-                        </Link>
                     </div>
                 </div>
             </section>

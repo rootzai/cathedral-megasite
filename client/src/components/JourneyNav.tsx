@@ -70,7 +70,6 @@ const ROUTES = [
   { path: "/ledger/reilly", label: "Joseph Reilly: The President" },
 
   // DEEP DIVES & RECORDS
-  { path: "/vault/documents", label: "The Document Repository" },
   { path: "/the-record", label: "The Record: Fact-Check Dashboard" },
 ];
 

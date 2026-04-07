@@ -333,7 +333,7 @@ export default function TheyKnew() {
           <div className="mb-16">
             <h3 className="font-label text-sm tracking-[0.25em] text-gold-dim uppercase mb-6 flex items-center gap-2">
               <Church className="w-5 h-5" />
-              RCAN (Archdiocese of Newark) — Counsel & Bankruptcy
+              RCAN (Archdiocese of Newark) — Institutional Counsel
             </h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {rcanLawyers.map((firm, i) => (

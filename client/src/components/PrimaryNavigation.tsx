@@ -10,7 +10,6 @@ const NAV_ITEMS = [
   { label: "THE EVIDENCE", icon: FileText, href: "/evidence" },
   { label: "THE BREACH", icon: AlertCircle, href: "/breach" },
   { label: "THE LEDGER", icon: BookOpen, href: "/ledger" },
-  { label: "THE VAULT", icon: Database, href: "/vault" },
   { label: "PERRY REPORT", icon: Landmark, href: "/easter" },
 ];
 

@@ -58,7 +58,6 @@ export default function MegaNavigation() {
             <Link href="/evidence" className={navLinkClass('/evidence')}>THE EVIDENCE</Link>
             <Link href="/breach" className={navLinkClass('/breach')}>THE BREACH</Link>
             <Link href="/ledger" className={navLinkClass('/ledger')}>THE LEDGER</Link>
-            <Link href="/vault" className={navLinkClass('/vault')}>THE VAULT</Link>
 
             <Link href="/tips">
                 <a className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center">
@@ -94,7 +93,6 @@ export default function MegaNavigation() {
                <Link href="/evidence" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE EVIDENCE</Link>
                <Link href="/breach" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE BREACH</Link>
                <Link href="/ledger" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE LEDGER</Link>
-               <Link href="/vault" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE VAULT</Link>
                <Link href="/tips">
                    <a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">WHISTLEBLOWER TIP LINE</a>
                </Link>

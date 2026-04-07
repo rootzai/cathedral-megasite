@@ -5,18 +5,6 @@ export const documentSchema = z.object({
     url: z.string().url().or(z.string().startsWith('/')),
 });
 
-export const bankruptcyNarrativeSchema = z.object({
-    title: z.string(),
-    filingDate: z.string(),
-    status: z.string(),
-    settlementAmount: z.string().default("TBD"),
-    narrative: z.string(),
-    keyTactics: z.array(z.string()).default([]),
-    documents: z.array(documentSchema).default([]),
-});
-
-export const bankruptcyNarrativesRecordSchema = z.record(z.string(), bankruptcyNarrativeSchema);
-
 export const wealthMapItemSchema = z.object({
     name: z.string(),
     size: z.number(),
@@ -26,8 +14,6 @@ export const wealthMapItemSchema = z.object({
 export const wealthMapSchema = z.array(wealthMapItemSchema);
 
 export type Document = z.infer<typeof documentSchema>;
-export type BankruptcyNarrative = z.infer<typeof bankruptcyNarrativeSchema>;
-export type BankruptcyNarrativesRecord = z.infer<typeof bankruptcyNarrativesRecordSchema>;
 export type WealthMapItem = z.infer<typeof wealthMapItemSchema>;
 
 /**

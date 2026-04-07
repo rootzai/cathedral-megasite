@@ -30,7 +30,7 @@ const POWER_AXIS_DATA = [
         title: "THE ARCHITECTS",
         subtitle: "The Infrastructure of Silence",
         stats: [
-            "Regional Chancellors design the 'A&M Playbook'.",
+            "Regional Chancellors design the institutional shield.",
             "The Unsealed Archives: A forensic record of the original failure and the subsequent cover-up.",
             "Internal registries used to 'launder' personnel files between parishes.",
             "Total concealment of 432 active lawsuits."

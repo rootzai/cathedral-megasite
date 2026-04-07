@@ -14,9 +14,9 @@ const ALL_STATES = [
   "DC", "GU", "PR", "VI"
 ];
 
-// Accurate bankruptcy counts based on provided data
+// Accurate settlement counts based on provided data
 // Total should be ~43 cases
-const BANKRUPTCY_COUNTS: Record<string, number> = {
+const SETTLEMENT_COUNTS: Record<string, number> = {
   "NY": 8, // Rockville Centre, Buffalo, Syracuse, Rochester, Albany, Ogdensburg, etc.
   "CA": 12, // SF, Oakland, Sacramento, San Diego, Fresno, Santa Rosa, Stockton, etc.
   "MN": 5, // St. Paul-Minneapolis, New Ulm, Winona-Rochester, Duluth, St. Cloud
@@ -78,7 +78,7 @@ export default function USMap({ onStateSelect }: USMapProps) {
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-serif flex items-center gap-2">
             <MapPin className="w-5 h-5 text-primary" />
-            Bankruptcy Filing Map
+            Settlement Filing Map
           </CardTitle>
           {selectedState && (
             <Button 
@@ -96,7 +96,7 @@ export default function USMap({ onStateSelect }: USMapProps) {
       <CardContent className="p-4">
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
           {sortedStates.map(state => {
-            const count = BANKRUPTCY_COUNTS[state] || 0;
+            const count = SETTLEMENT_COUNTS[state] || 0;
             const hasCases = count > 0;
             const isSelected = selectedState === state;
             
@@ -113,7 +113,7 @@ export default function USMap({ onStateSelect }: USMapProps) {
                       ? 'bg-destructive/10 border-destructive/30 hover:bg-destructive/20 cursor-pointer hover:scale-105 hover:shadow-sm' 
                       : 'bg-muted/30 border-transparent opacity-40 cursor-not-allowed'}
                 `}
-                title={hasCases ? `${state}: ${count} Active/Concluded Cases` : `${state}: No Bankruptcy Filings`}
+                title={hasCases ? `${state}: ${count} Active/Concluded Cases` : `${state}: No Active Filings`}
               >
                 <span className={`font-bold text-sm ${isSelected ? 'text-primary-foreground' : 'text-foreground'}`}>
                   {state}

@@ -62,21 +62,14 @@ export default function SuccessionEpilogue() {
                     Witness the <span className="text-zinc-800">Whole</span>
                 </h2>
                 <p className="text-lg text-muted-foreground font-serif max-w-2xl mx-auto italic">
-                    The narrative concludes here, but the data is eternal. Proceed to the
-                    Appendices to audit the specific names, the documented records, and the
-                    vault of evidence that the hierarchy tried to burn.
+                     The narrative concludes here, but the data is eternal. Proceed to the
+                     Appendices to audit the specific names and documented records.
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-6 justify-center pt-8">
                     <Link href="/ledger">
                         <Button variant="outline" size="lg" className="border-zinc-400 text-zinc-800 hover:bg-zinc-800 hover:text-zinc-900 font-mono uppercase tracking-[0.2em] rounded-none px-12 py-8 group transition-all duration-500">
                             Audit the Ledger
-                            <MoveRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                        </Button>
-                    </Link>
-                    <Link href="/vault">
-                        <Button variant="outline" size="lg" className="border-gold text-gold hover:bg-gold hover:text-black font-mono uppercase tracking-[0.2em] rounded-none px-12 py-8 group transition-all duration-500">
-                            Enter the Vault
                             <MoveRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </Button>
                     </Link>

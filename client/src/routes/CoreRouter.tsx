@@ -30,7 +30,6 @@ const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCase
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
-import { VaultRoutes } from "./VaultRouter";
 import { ExposeRoutes } from "./ExposeRouter";
 
 function PageLayout({ component: Component, theme = "dark" }: { component: React.ComponentType; theme?: string }) {
@@ -46,11 +45,10 @@ const REDIRECT_MAP: Record<string, string> = {
   "/shield": "/",
   "/headline-news": "/breach",
   "/expose": "/evidence/legal",
-  "/documents": "/vault/documents",
+  "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
   "/briefing": "/breach",
   "/ruling": "/breach",
-  "/cathedral-bk": "/vault/bankruptcy",
   "/method": "/methodology"
 };
 
@@ -169,7 +167,6 @@ export function CoreRouter() {
         {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}
         {ExposeRoutes.map(route => route)}
         {EndgameRoutes.map(route => route)}
-        {VaultRoutes.map(route => route)}
 
         {/* Easter Egg / 404 Unmasking */}
         <Route path="/deijourno">

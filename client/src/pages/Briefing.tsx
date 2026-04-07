@@ -50,7 +50,7 @@ export default function BriefingPage() {
                              <TrendingDown className="w-4 h-4 text-red-700" /> Financial Impact
                         </h3>
                         <p className="text-xs">
-                            Identification of "Ring 3" assets totaling $4.2B shielded from 2024 bankruptcy filings via shell entities and real estate trusts.
+                            Identification of "Ring 3" assets totaling $4.2B shielded from institutional shielding via shell entities and real estate trusts.
                         </p>
                     </div>
                     <div className="border-t border-black pt-4">
@@ -90,7 +90,7 @@ export default function BriefingPage() {
                     </h2>
                     <ul className="list-disc pl-6 space-y-4 text-sm">
                         <li><strong>Congressional Inquiry:</strong> Mandate disclosure of all internal 2004 "Rewrite" memos and registry correspondence.</li>
-                        <li><strong>DOJ Coordination:</strong> Audit the 2024 bankruptcy filings for fraudulent concealment of Ring 3 institutional assets.</li>
+                        <li><strong>DOJ Coordination:</strong> Audit the institutional disclosures for fraudulent concealment of Ring 3 institutional assets.</li>
                         <li><strong>Bilateral Action:</strong> Coordinate with the Holy See regarding the Ruemmler-directed messaging pivots of 2019.</li>
                     </ul>
                 </section>

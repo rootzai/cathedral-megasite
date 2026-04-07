@@ -87,20 +87,6 @@ const ACTS: ActSection[] = [
             { title: "Governance Status", path: "/ledger/checchio/status", description: "The current state of the Newark and Metuchen governance.", type: 'analysis' },
             { title: "Succession Epilogue", path: "/succession/epilogue", description: "Final assessment of the 2024-2025 transition.", type: 'dossier' },
         ]
-    },
-    {
-        act: "ACT V",
-        title: "The Settlement",
-        icon: <Scale className="w-5 h-5 text-red-600" />,
-        routes: [
-            { title: "Legal Findings Portal", path: "/vault/findings", description: "The definitive evidentiary archive.", type: 'legal' },
-            { title: "Bankruptcy Registry", path: "/vault/bankruptcy", description: "Records of the 2024 institutional settlement filings.", type: 'evidence' },
-            { title: "The Corporate Veil", path: "/vault/the-corporate-veil", description: "Analysis of the SHU as a 'separate entity' from RCAN.", tag: "LEGAL", type: 'legal' },
-            { title: "Financial Model", path: "/vault/forensic-model", description: "Operating budget vs. hush money allocations.", type: 'analysis' },
-            { title: "Clergy Metrics", path: "/vault/clergy-metrics", description: "Data-driven audit of personnel vs. historical allegations.", type: 'evidence' },
-            { title: "Sacramental Data", path: "/vault/sacramental-data", description: "The laundering of statistics to mask institutional decline.", type: 'analysis' },
-            { title: "Stakeholder Analysis", path: "/vault/stakeholder-analysis", description: "Mapping those who profited from the silence.", type: 'analysis' },
-        ]
     }
 ];
 
