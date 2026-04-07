@@ -67,7 +67,7 @@ export default function Ledger() {
               className="w-full bg-black/50 border border-white/10 rounded-sm py-3 pl-12 pr-4 text-white focus:outline-none focus:border-[#8b1a1a] font-mono text-sm transition-colors"
             />
           </div>
-          <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+          <p className="font-mono text-base uppercase tracking-widest text-zinc-500">
             {filteredRegents.length} INDIVIDUALS IDENTIFIED
           </p>
         </div>
@@ -75,11 +75,11 @@ export default function Ledger() {
         <div className="overflow-x-auto bg-black border border-white/5 shadow-2xl">
           <table className="w-full text-left text-sm whitespace-nowrap md:whitespace-normal">
             <thead>
-              <tr className="border-b border-white/10 text-[#8b1a1a] font-mono uppercase tracking-[0.2em] text-xs bg-[#111116]">
-                <th className="px-6 py-5">Name</th>
-                <th className="px-6 py-5">Position / Role</th>
-                <th className="px-6 py-5">Tenure Status</th>
-                <th className="px-6 py-5">Voting Record / Actions</th>
+              <tr className="border-b border-white/10 text-[#8b1a1a] font-mono uppercase tracking-[0.2em] text-base bg-[#111116]">
+                <th className="px-6 py-6">Name</th>
+                <th className="px-6 py-6">Position / Role</th>
+                <th className="px-6 py-6">Tenure Status</th>
+                <th className="px-6 py-6">Voting Record / Actions</th>
               </tr>
             </thead>
             <tbody className="text-zinc-300 divide-y divide-white/5">
@@ -96,40 +96,40 @@ export default function Ledger() {
                     key={regent.name} 
                     className="hover:bg-white/[0.02] transition-colors"
                   >
-                    <td className="px-6 py-5 align-top">
-                      <span className={`font-black font-cinzel text-lg tracking-wider ${isResigned ? 'text-zinc-600 line-through' : 'text-white'}`}>
+                    <td className="px-6 py-6 align-top">
+                      <span className={`font-black font-cinzel text-2xl tracking-wider ${isResigned ? 'text-zinc-600 line-through' : 'text-white'}`}>
                         {regent.name}
                       </span>
                     </td>
-                    <td className="px-6 py-5 align-top">
-                      <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
+                    <td className="px-6 py-6 align-top">
+                      <span className="font-mono text-lg uppercase tracking-widest text-zinc-400">
                         {regent.role}
                       </span>
                     </td>
-                    <td className="px-6 py-5 align-top">
-                      <span className={`px-2 py-1 text-[10px] font-bold uppercase tracking-widest ${isResigned ? 'bg-zinc-900 border-zinc-700 text-zinc-500' : 'bg-green-950/30 border-green-900/50 text-green-500'} border`}>
+                    <td className="px-6 py-6 align-top">
+                      <span className={`px-3 py-1.5 text-sm font-bold uppercase tracking-widest ${isResigned ? 'bg-zinc-900 border-zinc-700 text-zinc-500' : 'bg-green-950/30 border-green-900/50 text-green-500'} border`}>
                         {regent.tenure}
                       </span>
                     </td>
-                    <td className="px-6 py-5 align-top min-w-[250px] max-w-sm">
-                      <div className="flex gap-2 mb-3 flex-wrap">
+                    <td className="px-6 py-6 align-top min-w-[300px] max-w-lg">
+                      <div className="flex gap-3 mb-4 flex-wrap">
                         {votedForReilly && (
-                          <span className="bg-[#8b1a1a]/20 border border-[#8b1a1a]/50 text-[#ff4d4d] px-2 py-0.5 text-[10px] uppercase font-bold tracking-widest rounded-sm">
+                          <span className="bg-[#8b1a1a]/20 border border-[#8b1a1a]/50 text-[#ff4d4d] px-3 py-1 text-xs uppercase font-bold tracking-widest rounded-sm">
                             Voted for Reilly
                           </span>
                         )}
                         {heardLatham && (
-                          <span className="bg-blue-950/20 border border-blue-900/50 text-blue-400 px-2 py-0.5 text-[10px] uppercase font-bold tracking-widest rounded-sm">
+                          <span className="bg-blue-950/20 border border-blue-900/50 text-blue-400 px-3 py-1 text-xs uppercase font-bold tracking-widest rounded-sm">
                             Heard Latham Report
                           </span>
                         )}
                       </div>
                       {regent.note ? (
-                        <p className="text-zinc-400 font-serif italic text-sm leading-relaxed">
+                        <p className="text-zinc-400 font-serif italic text-lg leading-relaxed">
                           {regent.note}
                         </p>
                       ) : (
-                        <p className="text-zinc-600 font-mono text-xs uppercase tracking-widest">
+                        <p className="text-zinc-600 font-mono text-sm uppercase tracking-widest">
                           Record sealed / No public dissent registered
                         </p>
                       )}
