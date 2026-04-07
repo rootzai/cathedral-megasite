@@ -148,7 +148,7 @@ export default function TheRegime() {
               <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
                 <iframe 
                   className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/videoseries?list=PLg6K56Gg7i4j4J7q8y9z1k2l3m4n5o6p" 
+                  src="https://www.youtube.com/embed/gT53J-7Xv7A" 
                   title="PBS NewsHour - Former Cardinal McCarrick charged"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
