@@ -55,15 +55,15 @@ export default function TheRegime() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <ImageModal
-                    src="/assets/WheresReilly.png"
-                    alt="Reilly Rides a Stang"
-                    title="Reilly Rides a Stang"
-                    caption="The wild ride of cover-ups and complicity."
+                    src="/assets/images/stained_glass_corruption-5PSXqD5M.jpg"
+                    alt="The Corrupted Cathedral"
+                    title="The Façade of Piety"
+                    caption="The exploitation of ecclesiastical authority to shield perpetrators from civil justice."
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                       <img 
-                        src="/assets/WheresReilly.png" 
-                        alt="Reilly Rides a Stang" 
+                        src="/assets/images/stained_glass_corruption-5PSXqD5M.jpg" 
+                        alt="The Corrupted Cathedral" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
@@ -74,15 +74,15 @@ export default function TheRegime() {
                 </div>
                 <div className="space-y-2">
                   <ImageModal
-                    src="/assets/goddamnright.png"
-                    alt="Demand Action"
-                    title="Demand Action"
-                    caption="Tobin conspired to cover up Reilly's crimes!"
+                    src="/assets/images/corporate-veil-abstract.png"
+                    alt="Corporate Veil"
+                    title="The Corporate Veil"
+                    caption="The mechanisms of legal attrition used by the Board of Regents to bury the Latham Archives."
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                       <img 
-                        src="/assets/goddamnright.png" 
-                        alt="Demand Action" 
+                        src="/assets/images/corporate-veil-abstract.png" 
+                        alt="Corporate Veil" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
@@ -92,7 +92,7 @@ export default function TheRegime() {
                   </ImageModal>
                 </div>
               </div>
-              <p className="font-mono text-xs text-muted-foreground text-center">Fig 2.1: Satirical representations of the cover-up culture.</p>
+              <p className="font-mono text-xs text-muted-foreground text-center">Fig 2.1: The systemic breakdown of ethical governance.</p>
             </div>
           </div>
         </div>
