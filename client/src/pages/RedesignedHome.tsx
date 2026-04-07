@@ -219,7 +219,7 @@ export default function RedesignedHome() {
                         </p>
                     </div>
                     <PowerAxis />
-                    <p className="text-center text-zinc-600 font-courier text-[10px] uppercase tracking-widest max-w-2xl mx-auto">
+                    <p className="text-center text-red-500 font-mono text-sm md:text-lg font-bold uppercase tracking-widest max-w-4xl mx-auto py-6 px-4 bg-red-950/20 border border-red-900/30 rounded">
                         Updated 2026: Node 5 includes Ruemmler / Epstein / September email / Goldman resignation.
                     </p>
                 </div>

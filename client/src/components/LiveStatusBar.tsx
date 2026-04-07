@@ -36,14 +36,14 @@ export default function LiveStatusBar() {
   }, []);
 
   return (
-    <div className="w-full bg-[#8b1a1a]/10 border-b border-[#8b1a1a]/20 py-4 px-6 md:px-12 flex flex-col xl:flex-row items-center justify-between gap-6 overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center gap-6 xl:gap-10 md:divide-x divide-[#8b1a1a]/30">
+    <div className="w-full bg-[#0a0a0c] border-b border-[#8b1a1a]/30 py-4 px-4 xl:px-12 flex flex-col items-center justify-center gap-6">
+      <div className="flex flex-col xl:flex-row items-center gap-6 xl:gap-10 xl:divide-x divide-[#8b1a1a]/30 w-full justify-center text-center">
         {EVENTS.map((event) => (
-          <div key={event.id} className="flex flex-col sm:flex-row items-center gap-4 md:pl-6 first:pl-0">
-             <span className="text-base sm:text-lg xl:text-xl font-black tracking-[0.1em] sm:tracking-[0.2em] text-[#e0e0e0] uppercase whitespace-nowrap">
+          <div key={event.id} className="flex flex-col items-center gap-2 xl:pl-6 first:pl-0">
+             <span className="text-sm md:text-base font-black tracking-widest text-[#e0e0e0] uppercase text-center max-w-[280px] xl:max-w-none leading-tight xl:leading-normal xl:whitespace-nowrap">
                {event.label}
              </span>
-             <div className="flex items-center gap-3 min-w-[120px]">
+             <div className="flex items-center justify-center gap-3 w-full">
                <motion.div 
                  animate={{ opacity: [1, 0.4, 1] }}
                  transition={{ duration: 1.5, repeat: Infinity }}
@@ -57,10 +57,10 @@ export default function LiveStatusBar() {
         ))}
       </div>
 
-      <div className="flex items-center gap-4 pt-4 xl:pt-0 border-t xl:border-none border-[#8b1a1a]/20 w-full xl:w-auto justify-center">
-        <div className="flex items-center gap-3">
-          <ShieldCheck className="w-6 h-6 xl:w-7 xl:h-7 text-[#c9a227]" />
-          <span className="text-base sm:text-lg xl:text-xl font-black tracking-[0.1em] sm:tracking-[0.2em] text-[#c9a227] uppercase whitespace-nowrap">
+      <div className="flex flex-col xl:flex-row items-center gap-4 pt-4 border-t border-[#8b1a1a]/30 w-full justify-center max-w-4xl opacity-90">
+        <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+          <ShieldCheck className="w-5 h-5 xl:w-6 xl:h-6 text-[#c9a227]" />
+          <span className="text-xs sm:text-sm font-black tracking-widest text-[#c9a227] uppercase leading-tight xl:whitespace-nowrap">
             Congressional Subpoena Request: <span className="text-white">PENDING</span>
           </span>
         </div>

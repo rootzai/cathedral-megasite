@@ -308,12 +308,12 @@ export default function PowerAxis() {
             </div>
 
             {/* Forensic Metadata Branding */}
-            <div className="mt-12 px-8 flex justify-end opacity-80 group-hover:opacity-100 transition-opacity">
-                <div className="text-right">
-                    <span className="text-xs font-mono text-[#c8bdb0]/70 uppercase tracking-[0.3em] block">
+            <div className="mt-12 px-8 flex flex-col items-center xl:items-end opacity-90 transition-opacity space-y-3">
+                <div className="text-center xl:text-right w-full">
+                    <span className="text-sm md:text-lg font-black font-mono text-[#c8bdb0]/80 uppercase tracking-widest block mb-1">
                         SODOM HALL // CASE FILE: THE ARCHITECTURE OF PROTECTION
                     </span>
-                    <span className="text-[12px] font-mono text-[#c8bdb0]/50 uppercase block mt-2">
+                    <span className="text-xs md:text-base font-bold font-mono text-[#8b1a1a] uppercase tracking-widest block">
                         UNSEALED RECORD // FORENSIC RECONSTRUCTION 2026
                     </span>
                 </div>
