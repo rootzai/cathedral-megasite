@@ -55,14 +55,14 @@ export default function TheRegime() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <ImageModal
-                    src="/assets/Reillyrides.png"
+                    src="/assets/WheresReilly.png"
                     alt="Reilly Rides a Stang"
                     title="Reilly Rides a Stang"
                     caption="The wild ride of cover-ups and complicity."
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                       <img 
-                        src="/assets/Reillyrides.png" 
+                        src="/assets/WheresReilly.png" 
                         alt="Reilly Rides a Stang" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
@@ -74,14 +74,14 @@ export default function TheRegime() {
                 </div>
                 <div className="space-y-2">
                   <ImageModal
-                    src="/assets/demandaction.png"
+                    src="/assets/goddamnright.png"
                     alt="Demand Action"
                     title="Demand Action"
                     caption="Tobin conspired to cover up Reilly's crimes!"
                   >
                     <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
                       <img 
-                        src="/assets/demandaction.png" 
+                        src="/assets/goddamnright.png" 
                         alt="Demand Action" 
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
@@ -163,12 +163,12 @@ export default function TheRegime() {
         </div>
 
         <div className="flex justify-between mt-12 pt-8 border-t border-border">
-          <Link href="/assets/mccarrick/rise" asChild>
+          <Link href="/ledger/mccarrick/the-rise" asChild>
             <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
               <span className="mr-2">←</span> Act I: The Rise
             </Button>
           </Link>
-          <Link href="/assets/mccarrick/reckoning" asChild>
+          <Link href="/ledger/mccarrick/the-reckoning" asChild>
             <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
               Proceed to Act III: The Reckoning <span className="ml-2">→</span>
             </Button>
