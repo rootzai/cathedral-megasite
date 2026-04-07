@@ -421,7 +421,7 @@ export default function TheyKnew() {
             This reference section documents individuals who served on Seton Hall University's governing boards from 2016 to 2026 and the legal teams involved in the clergy abuse scandal. Information is sourced from university announcements, legal filings, tax documents, press releases, and news reporting.
           </p>
           <p className="text-xs text-white/50 mt-4 italic">
-            "The truth will set you free, but first it will make you miserable."
+            "The Church has had two thousand years to build the shield. The counter-infrastructure starts now."
           </p>
         </div>
       </footer>

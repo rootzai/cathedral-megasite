@@ -1,16 +1,17 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Shield, FileText, AlertCircle, BookOpen, Database, Send, Key } from "lucide-react";
+import { Shield, FileText, AlertCircle, BookOpen, Database, Send, Key, Fingerprint, Landmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "THE SHIELD", icon: Shield, href: "/" },
+  { label: "THE METHOD", icon: Fingerprint, href: "/method" },
   { label: "THE EVIDENCE", icon: FileText, href: "/evidence" },
   { label: "THE BREACH", icon: AlertCircle, href: "/breach" },
   { label: "THE LEDGER", icon: BookOpen, href: "/ledger" },
   { label: "THE VAULT", icon: Database, href: "/vault" },
-  { label: "THE NURSERY", icon: Key, href: "/easter" },
+  { label: "PERRY REPORT", icon: Landmark, href: "/easter" },
 ];
 
 export default function PrimaryNavigation() {
@@ -61,7 +62,7 @@ export default function PrimaryNavigation() {
       <Link href="/tips">
         <a className="relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-6 py-3 rounded-sm flex items-center gap-3 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)]">
             <Send className="w-5 h-5" />
-            <span className="text-sm md:text-base font-black tracking-[0.3em] uppercase">Submit a Tip</span>
+            <span className="text-sm md:text-base font-black tracking-[0.2em] uppercase">Whistleblower Tip Line</span>
             <motion.div 
               animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
               transition={{ duration: 2, repeat: Infinity }}

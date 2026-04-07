@@ -28,7 +28,7 @@ export default function MegaNavigation() {
     { type: "BREAKING", text: "October 2025 Jury Awards $5M in Delbarton Abuse Case" },
     { type: "DOCUMENTED", text: "LATHAM REPORT: 24,000 Pages of Evidence Unsealed by Court Order" },
     { type: "DOCUMENTED", text: "FORENSIC AUDIT: McCarrick 'Archbishop's Fund' Slush Fund Revealed" },
-    { type: "BREAKING", text: "COURT ORDER: Seton Hall University v. Eric Spitz, Case No. 30-2026-01555640-CU-PT-CJC — California Hearing Set for May 28, 2026, Dept. C23 Santa Ana." }
+    { type: "BREAKING", text: "COURT ORDER: Seton Hall University v. Does, Case No. 30-2026-01555640-CU-PT-CJC — California Hearing Set for May 28, 2026, Dept. C23 Santa Ana." }
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function MegaNavigation() {
 
             <Link href="/tips">
                 <a className="ml-4 border border-red-900/50 hover:bg-red-600 text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center">
-                    SUBMIT A TIP
+                    WHISTLEBLOWER TIP LINE
                 </a>
             </Link>
           </div>
@@ -96,7 +96,7 @@ export default function MegaNavigation() {
                <Link href="/ledger" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE LEDGER</Link>
                <Link href="/vault" className="block px-4 py-3 text-zinc-400 hover:text-white transition-all text-xs">THE VAULT</Link>
                <Link href="/tips">
-                   <a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">SUBMIT A TIP</a>
+                   <a className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-xs tracking-widest mt-4">WHISTLEBLOWER TIP LINE</a>
                </Link>
             </div>
           )}

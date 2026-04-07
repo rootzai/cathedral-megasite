@@ -16,8 +16,8 @@ import {
 const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
-        title: "Seton Hall v. Spitz", 
-        desc: "OC Superior Court, Dept. C23, Santa Ana. SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.",
+        title: "Seton Hall v. Does", 
+        desc: "Case No. 30-2026-01555640-CU-PT-CJC (Dept. C23, Santa Ana). SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.",
         status: "HEARING",
         color: "bg-[#8b1a1a]"
     },

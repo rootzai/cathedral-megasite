@@ -122,16 +122,7 @@ export default function LandingPage() {
         }
       `}</style>
       <div className="landing-container">
-        {/* Floating Survivor Link */}
-        <a
-          href="https://www.rainn.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="survivor-link"
-        >
-          <Info size={16} />
-          Survivor Resources Center
-        </a>
+
 
         <div className="title-block">
           <h1 className="title-overlay">Sodom Hall</h1>

@@ -6,6 +6,7 @@ const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
 const EvidenceHub = React.lazy(() => import("@/pages/evidence/EvidenceHub"));
 const BreachHub = React.lazy(() => import("@/pages/breach/BreachHub"));
 const TheyKnew = React.lazy(() => import("@/pages/TheyKnew"));
+const Ledger = React.lazy(() => import("@/pages/Ledger"));
 const OpinionsHub = React.lazy(() => import("@/pages/opinions/Hub"));
 const Noonan = React.lazy(() => import("@/pages/opinions/Noonan"));
 const Cannon = React.lazy(() => import("@/pages/opinions/Cannon"));
@@ -162,7 +163,7 @@ export function CoreRouter() {
         </Route>
 
         <Route path="/ledger">
-          <PageLayout component={TheyKnew} />
+          <PageLayout component={Ledger} />
         </Route>
 
         {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}

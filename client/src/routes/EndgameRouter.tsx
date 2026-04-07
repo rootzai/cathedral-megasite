@@ -68,7 +68,6 @@ function PageLayout({ component: Component, theme = "theme-cathedral" }: { compo
 }
 
 export const EndgameRoutes = [
-    <Route key="ledger" path={"/ledger"}><PageLayout component={TheyKnew} theme="theme-theyknew" /></Route>,
     <Route key="endgame" path={"/endgame"}><PageLayout component={TheyKnew} theme="theme-theyknew" /></Route>,
 
     <Route key="martin" path={"/ledger/martin"}><EndgamePageLayout component={MartinHome} /></Route>,

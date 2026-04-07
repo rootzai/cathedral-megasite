@@ -559,7 +559,7 @@ export const universityCabinet: Person[] = [
     badges: ["reilly", "clergy"],
   },
   {
-    name: "Dr. Erik J. Spitzmueller",
+    name: "[REDACTED]",
     role: "Provost / Chief Academic Officer",
     tenure: "Active",
     badges: ["reilly"],
