@@ -12,19 +12,32 @@ import {
     FileWarning,
     Calendar
 } from "lucide-react";
+import { Term } from "@/components/Term";
 
 const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
         title: "Seton Hall v. Does", 
-        desc: "Case No. 30-2026-01555640-CU-PT-CJC (Dept. C23, Santa Ana). SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.",
+        desc: (
+            <>
+                <a href="https://www.courtlistener.com/?q=30-2026-01555640-CU-PT-CJC" target="_blank" rel="noopener noreferrer" className="underline decoration-[#8b1a1a]/40 hover:text-[#8b1a1a] transition-colors">
+                    Case No. 30-2026-01555640-CU-PT-CJC
+                </a> (Dept. C23, Santa Ana). SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.
+            </>
+        ),
         status: "HEARING",
         color: "bg-[#8b1a1a]"
     },
     { 
         date: "MAY 18, 2026", 
         title: "McCloskey v. RCAN", 
-        desc: "ESX-L-8762-19. Production of the 24,000-page Latham Archive ordered.",
+        desc: (
+            <>
+                <a href="https://www.courtlistener.com/?q=ESX-L-8762-19" target="_blank" rel="noopener noreferrer" className="underline decoration-[#8b1a1a]/40 hover:text-[#8b1a1a] transition-colors">
+                    ESX-L-8762-19
+                </a>. Production of the 24,000-page Latham Archive ordered.
+            </>
+        ),
         status: "PRODUCTION",
         color: "bg-[#8b6914]"
     },
@@ -115,15 +128,15 @@ export default function BreachHub() {
                             <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE SLAPP SHIELD</h2>
                         </div>
                         <p className="text-xl text-zinc-400 font-serif italic leading-relaxed">
-                            The institution's strategy: Deploying New Jersey "Grand Jury Privilege" to bypass California "Anti-SLAPP" and "Shield Law" protections.
+                            The institution's strategy: Using New Jersey "{<Term id="Grand Jury Privilege">Grand Jury Privilege</Term>}" rules to try and ignore California "{<Term id="Anti-SLAPP">Anti-SLAPP</Term>}" and "{<Term id="Shield Law">Shield Law</Term>}" protections.
                         </p>
                         <div className="space-y-6">
                             <div className="flex gap-6 p-6 bg-[#0D0D10] border border-white/5">
                                 <Scale className="w-6 h-6 text-[#8b1a1a]" />
                                 <div>
-                                    <h4 className="text-white font-black font-cinzel uppercase text-sm mb-2">The Conflict of Laws</h4>
+                                    <h4 className="text-white font-black font-cinzel uppercase text-sm mb-2">The Battle of Laws</h4>
                                     <p className="text-xs text-zinc-500 font-serif leading-relaxed">
-                                        Can a New Jersey grand jury subpoena—issued under a false criminal predicate—be used to strip a journalist of residency-based constitutional protections in California?
+                                        Can a New Jersey {<Term id="Subpoena">subpoena</Term>}—issued by a grand jury—be used to force a California journalist to name their sources, even when California law says they don't have to?
                                     </p>
                                 </div>
                             </div>
@@ -148,13 +161,7 @@ export default function BreachHub() {
                 </div>
             </section>
 
-            {/* FOOTER */}
-            <footer className="py-24 px-6 border-t border-white/5 text-center">
-                   <div className="max-w-4xl mx-auto space-y-8">
-                        <div className="w-12 h-1 bg-[#8b1a1a] mx-auto" />
-                        <p className="text-zinc-600 font-courier text-[10px] uppercase tracking-[0.4em]">Authorized Reconstruction // SH-2026 // Active Breach</p>
-                   </div>
-            </footer>
+            <div className="py-24" />
         </div>
     );
 }

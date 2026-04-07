@@ -189,14 +189,9 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </nav>
 
         <div className="p-4 border-t border-border mt-auto">
-          <Link href="/">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground cursor-pointer transition-colors border border-border px-3 py-2 rounded-sm text-center mb-3">
-              Return to Archway
-            </div>
-          </Link>
-          <Link href="/ledger">
-            <div className="font-mono text-xs text-muted-foreground hover:text-foreground cursor-pointer flex items-center justify-center gap-2">
-              ← Back to Ledger
+          <Link href="/evidence">
+            <div className="font-mono text-[10px] uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-3 py-3 rounded-sm text-center font-bold">
+              ← BACK TO EVIDENCE HUB
             </div>
           </Link>
         </div>

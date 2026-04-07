@@ -63,11 +63,10 @@ export default function UnifiedLayout({
                         </div>
 
                         <div className="flex items-center gap-2">
-                            <Link href="/">
-                                <div className="font-mono text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-zinc-600 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-zinc-500 hover:bg-zinc-200/50 active:scale-95 shadow-sm">
-                                    Return to Archway
+                            <Link href="/evidence">
+                                <div className="font-mono text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground font-bold hover:text-red-500 cursor-pointer transition-all border-2 border-foreground/10 px-3 sm:px-6 py-1.5 sm:py-2 rounded-sm hover:border-red-900/50 hover:bg-red-950/20 active:scale-95 shadow-sm">
+                                    ← BACK TO EVIDENCE HUB
                                 </div>
-
                             </Link>
                         </div>
                     </div>

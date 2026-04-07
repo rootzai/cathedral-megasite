@@ -31,11 +31,11 @@ interface Ring {
 }
 
 const RINGS: Ring[] = [
-  { id: 5, label: "Victims & Survivors", radiusFraction: 1.00, rotationDuration: 200, rotationDirection:  1, tickCount: 72 },
-  { id: 4, label: "The Outer Walls",     radiusFraction: 0.78, rotationDuration: 55,  rotationDirection: -1, tickCount: 60 },
-  { id: 3, label: "Legal Apparatus",     radiusFraction: 0.59, rotationDuration: 30,  rotationDirection:  1, tickCount: 48 },
-  { id: 2, label: "Legal Fortress",      radiusFraction: 0.41, rotationDuration: 18,  rotationDirection: -1, tickCount: 36 },
-  { id: 1, label: "Secret Archives",     radiusFraction: 0.24, rotationDuration: 10,  rotationDirection:  1, tickCount: 24 },
+  { id: 5, label: "Victims & Survivors", radiusFraction: 0.92, rotationDuration: 200, rotationDirection:  1, tickCount: 72 },
+  { id: 4, label: "The Outer Walls",     radiusFraction: 0.72, rotationDuration: 55,  rotationDirection: -1, tickCount: 60 },
+  { id: 3, label: "Legal Apparatus",     radiusFraction: 0.54, rotationDuration: 30,  rotationDirection:  1, tickCount: 48 },
+  { id: 2, label: "Legal Fortress",      radiusFraction: 0.38, rotationDuration: 18,  rotationDirection: -1, tickCount: 36 },
+  { id: 1, label: "Secret Archives",     radiusFraction: 0.22, rotationDuration: 10,  rotationDirection:  1, tickCount: 24 },
 ];
 
 const NODES: NodeDef[] = [
@@ -130,7 +130,8 @@ export default function ShieldDiagram({
     setMounted(true);
     const handleResize = () => {
       if (containerRef.current) {
-        setSize(Math.min(containerRef.current.clientWidth, 960));
+        const width = containerRef.current.clientWidth;
+        setSize(width);
       }
     };
     handleResize();
@@ -226,10 +227,8 @@ export default function ShieldDiagram({
       }}
     >
       <svg 
-         width={size} 
-         height={size} 
          viewBox={`0 0 ${size} ${size}`} 
-         className="overflow-visible"
+         className="w-full h-full overflow-visible"
          onMouseLeave={() => onRingHover && onRingHover(null)}
       >
         <defs>
@@ -307,7 +306,7 @@ export default function ShieldDiagram({
               />
               <text 
                 x={pos.x + (isClicked ? 14 : 8)} y={pos.y + 4} 
-                fill="#e8d8c0" fontSize={isClicked ? "12" : "9"} 
+                fill="#e8d8c0" fontSize={isClicked ? (size < 600 ? "10" : "12") : (size < 600 ? "7" : "9")} 
                 fontFamily="Courier Prime"
                 className="pointer-events-none transition-all"
                 fontWeight={isClicked ? "bold" : "normal"}

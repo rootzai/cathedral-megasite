@@ -27,6 +27,8 @@ const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const DeiJournoEasterEgg = React.lazy(() => import("../pages/DeiJournoEasterEgg"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy"));
+const WhosWho = React.lazy(() => import("@/pages/WhosWho"));
+const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings"));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -162,6 +164,12 @@ export function CoreRouter() {
 
         <Route path="/ledger">
           <PageLayout component={Ledger} />
+        </Route>
+        <Route path="/whos-who">
+          <PageLayout component={WhosWho} />
+        </Route>
+        <Route path="/vault">
+          <PageLayout component={LegalFindings} />
         </Route>
 
         {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}

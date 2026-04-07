@@ -8,6 +8,9 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
     });
 
     useEffect(() => {
+        // Log entry point for debug (optional)
+        console.log("Portal Mounting at:", window.location.pathname);
+        
         if (isOpen) {
             sessionStorage.setItem('triptych_seen', 'true');
             const timer = setTimeout(() => {

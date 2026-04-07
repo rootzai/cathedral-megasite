@@ -4,11 +4,20 @@ import { RINGS } from "@/lib/data";
 import EvidenceSubNavigation from "@/components/EvidenceSubNavigation";
 import { JourneyNav } from "@/components/JourneyNav";
 import { ArrowRight } from "lucide-react";
+import { Term } from "@/components/Term";
+
+import { SEO } from "@/components/SEO";
 
 export default function EvidenceHub() {
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif">
+            <SEO 
+                title="The Evidence Hub" 
+                description="Explore the six structural layers of institutional immunity in the Cathedral investigation." 
+            />
             <EvidenceSubNavigation />
+
+            {/* ... rest of the section ... */}
 
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
@@ -22,7 +31,7 @@ export default function EvidenceHub() {
                         <div className="max-w-2xl mx-auto">
                             <p className="text-lg md:text-xl text-[#888] leading-relaxed mb-12">
                                 A forensic mapping of the six structural layers that enforced institutional immunity for 40 years.
-                                Each ring represents a redundant failure of accountability &mdash; from canon law to legislative capture.
+                                Each ring represents a redundant failure of accountability &mdash; from {<Term id="Canon Law">canon law</Term>} to {<Term id="Legislative Capture">legislative capture</Term>}.
                             </p>
                         </div>
                     </div>
@@ -98,11 +107,43 @@ export default function EvidenceHub() {
                 </div>
             </section>
 
-            <section className="pb-20 px-6">
-                <div className="max-w-7xl mx-auto">
+                    <div className="mt-32 mb-16">
+                        <h2 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest text-center mb-12">Suggested Journeys</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
+                                <span className="text-[10px] font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 01 // THE NEWBIE</span>
+                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
+                                <p className="text-sm text-zinc-500 italic mb-6">"I'm new. Who is involved and what happened?"</p>
+                                <div className="space-y-4">
+                                    <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE MISSION</Link>
+                                    <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE PEOPLE</Link>
+                                    <Link href="/evidence" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE LAYERS</Link>
+                                </div>
+                            </div>
+                            <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
+                                <span className="text-[10px] font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
+                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
+                                <p className="text-sm text-zinc-500 italic mb-6">"I want the records. Show me the filings."</p>
+                                <div className="space-y-4">
+                                    <Link href="/breach" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE BREACH</Link>
+                                    <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE VAULT</Link>
+                                    <Link href="/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE RECORD</Link>
+                                </div>
+                            </div>
+                            <div className="p-8 border border-[#8b1a1a]/20 bg-[#8b1a1a]/5 hover:border-[#8b1a1a]/40 transition-all">
+                                <span className="text-[10px] font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4">PATH 03 // THE ADVOCATE</span>
+                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
+                                <p className="text-sm text-zinc-500 italic mb-6">"How does this affect real survivors?"</p>
+                                <div className="space-y-4">
+                                    <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE CASE STUDY</Link>
+                                    <Link href="/origin/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE ORIGIN</Link>
+                                    <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE ACTION</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <JourneyNav />
-                </div>
-            </section>
         </div>
     );
 }

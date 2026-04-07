@@ -1,8 +1,9 @@
+import React, { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { APP_TITLE } from "@/const";
-import { Shield, Lock, Mail, AlertCircle } from "lucide-react";
+import { Shield, Lock, Mail, AlertCircle, ArrowRight, BookOpen, Search } from "lucide-react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
-import { useEffect } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function About() {
   const [location] = useLocation();
@@ -17,25 +18,29 @@ export default function About() {
     }
   }, [location]);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
+    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] selection:bg-[#8b1a1a]/30">
+      <SEO 
+        title="About The Mission" 
+        description="Learn about the independent reconstruction of institutional failure and the search for truth." 
+      />
       {/* Header */}
-      <header className="relative z-50 bg-zinc-50 backdrop-blur-sm border-b border-zinc-300">
+      <header className="relative z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors flex items-center gap-3">
-              <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all" />
-              SODOM HALL
+              <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all opacity-80" />
+              <span className="font-cinzel font-black tracking-widest text-[#c8bdb0] group-hover:text-white transition-colors">SODOM HALL</span>
             </a>
           </Link>
           <nav className="flex gap-6">
             <Link href="/">
-              <a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a>
+              <a className="text-zinc-500 hover:text-[#8b1a1a] transition-colors font-mono text-xs tracking-widest uppercase">Home</a>
             </Link>
-            <Link href="/documents">
-              <a className="text-gray-300 hover:text-zinc-900 transition-colors">Documents</a>
+            <Link href="/evidence">
+              <a className="text-zinc-500 hover:text-[#8b1a1a] transition-colors font-mono text-xs tracking-widest uppercase">Evidence</a>
             </Link>
             <Link href="/about">
-              <a className="text-zinc-900 font-bold">About</a>
+              <a className="text-white font-bold font-mono text-xs tracking-widest uppercase border-b-2 border-[#8b1a1a]">About</a>
             </Link>
           </nav>
         </div>
@@ -43,7 +48,9 @@ export default function About() {
 
       {/* Content */}
       <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-5xl font-bold mb-8 text-zinc-600">About This Investigation</h1>
+        <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-12">
+          ABOUT THE <span className="text-[#8b1a1a]">RECONSTRUCTION</span>
+        </h1>
 
         <div className="prose prose-invert prose-lg max-w-none space-y-8">
           <section>

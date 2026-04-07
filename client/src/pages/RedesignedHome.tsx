@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
 import PowerAxis from "@/components/PowerAxis";
-import TriptychPortal from "@/components/TriptychPortal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Term } from "@/components/Term";
 
@@ -101,8 +100,6 @@ export default function RedesignedHome() {
                     </motion.div>
                 )}
             </AnimatePresence>
-
-            <TriptychPortal />
 
             {/* HERO SECTION: THE HOUSE THAT McCARRICK BUILT */}
             <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 px-6 text-center border-b border-white/5">

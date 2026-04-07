@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { ArrowLeft, BookOpen, Shield, Search, FileText } from "lucide-react";
+import { Term } from "@/components/Term";
 
 export default function McKeeverCaseStudy() {
     return (
@@ -33,11 +34,11 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         The crisis of child sexual abuse within the Roman Catholic Church is defined not only by the individual acts of predatory clerics but also by the highly sophisticated institutional mechanisms utilized to conceal those acts from civil authorities and the public. The trajectory of Lara Fortney-McKeever—from a child victim of a serial predator to the Chairperson of the Official Committee of Tort Claimants in a landmark diocesan bankruptcy—serves as a comprehensive, multi-decade case study in institutional failure, aggressive legal maneuvering, and relentless survivor advocacy.
                     </p>
-                    <p className="text-lg leading-relaxed text-zinc-300">
-                        McKeever’s experiences with the Reverend Augustine Giella, a priest whose decades-long history of abuse spanned the Archdiocese of Newark and the Diocese of Harrisburg, illuminate the devastating human cost of ecclesiastical cover-ups.
+                     <p className="text-lg leading-relaxed text-zinc-300">
+                        McKeever’s experiences with the Reverend Augustine Giella, a priest whose decades-long history of abuse spanned the {<Term id="Archdiocese">Archdiocese</Term>} of Newark and the Diocese of Harrisburg, illuminate the devastating human cost of {<Term id="Ecclesiastical">ecclesiastical</Term>} cover-ups.
                     </p>
                     <p className="text-lg leading-relaxed text-zinc-300">
-                        This exhaustive report provides a definitive examination of the background of Lara McKeever and the Fortney sisters, tracing the pathological history of Augustine Giella and the systemic administrative failures detailed in the 2018 Pennsylvania Statewide Investigating Grand Jury Report. Furthermore, it analyzes the subsequent legal strategies employed by victims under the New Jersey Child Victims Act, which briefly dismantled historical legal barriers, and the defensive utilization of Chapter 11 bankruptcy by the Diocese of Harrisburg. By tracking the chronological and legal evolution of this case, this analysis deconstructs the methods by which religious institutions have historically shielded assets, mitigated liability, and silenced victims, while simultaneously documenting the evolving legal mechanisms through which survivors have forced accountability and systemic reform.
+                        This exhaustive report provides a definitive examination of the background of Lara McKeever and the Fortney sisters, tracing the pathological history of Augustine Giella and the systemic administrative failures detailed in the 2018 Pennsylvania Statewide Investigating {<Term id="Grand Jury">Grand Jury</Term>} Report. Furthermore, it analyzes the subsequent legal strategies employed by victims under the New Jersey Child Victims Act, which briefly dismantled historical legal barriers, and the defensive utilization of Chapter 11 bankruptcy by the Diocese of Harrisburg. By tracking the chronological and legal evolution of this case, this analysis deconstructs the methods by which religious institutions have historically shielded assets, mitigated liability, and silenced victims, while simultaneously documenting the evolving legal mechanisms through which survivors have forced accountability and systemic reform.
                     </p>
                     <div className="p-8 border-l-4 border-[#8b1a1a] bg-white/5 my-8">
                         <p className="text-xl text-white italic font-medium leading-relaxed">
@@ -167,25 +168,25 @@ export default function McKeeverCaseStudy() {
                 </section>
 
                 {/* Section IV */}
-                <section className="space-y-6">
+                 <section className="space-y-6">
                     <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-8 flex items-center gap-4">
-                        <span className="text-[#8b1a1a]">IV.</span> The 2018 Pennsylvania Statewide Investigating Grand Jury
+                        <span className="text-[#8b1a1a]">IV.</span> The 2018 Pennsylvania Statewide Investigating {<Term id="Grand Jury">Grand Jury</Term>}
                     </h3>
                     <p className="text-lg leading-relaxed text-zinc-300">
-                        The full scope of the cover-up was not exposed until the culmination of the 40th Statewide Investigating Grand Jury in August 2018, representing the most exhaustive investigation into church abuse in United States history.
+                        The full scope of the cover-up was not exposed until the culmination of the 40th Statewide Investigating {<Term id="Grand Jury">Grand Jury</Term>} in August 2018, representing the most exhaustive investigation into church abuse in United States history.
                     </p>
                     <p className="text-lg leading-relaxed text-zinc-300">
-                        Section VI of the Grand Jury Report, pointedly titled "Examples of Institutional Failure," explicitly highlighted the catastrophic case of Rev. Augustine Giella. The explosive release permitted the Fortney sisters to speak out publicly, breaking decades of enforced silence and transforming them into leading national advocates.
+                        Section VI of the {<Term id="Grand Jury">Grand Jury</Term>} Report, pointedly titled "Examples of Institutional Failure," explicitly highlighted the catastrophic case of Rev. Augustine Giella. The explosive release permitted the Fortney sisters to speak out publicly, breaking decades of enforced silence and transforming them into leading national advocates.
                     </p>
                 </section>
 
                 {/* Section V */}
-                <section className="space-y-6">
+                 <section className="space-y-6">
                     <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-8 flex items-center gap-4">
                         <span className="text-[#8b1a1a]">V.</span> Legislative Revival and Civil Litigation
                     </h3>
                     <p className="text-lg leading-relaxed text-zinc-300">
-                        While the 2018 report exposed historical truth, restrictive statutes of limitations paralyzed many victims. In 2019, New Jersey passed the Child Victims Act (NJCVA), executing a temporary two-year "lookback window."
+                        While the 2018 report exposed historical truth, restrictive {<Term id="Statute of Limitations">statutes of limitations</Term>} paralyzed many victims. In 2019, New Jersey passed the Child Victims Act (NJCVA), executing a temporary two-year "lookback window."
                     </p>
 
                     <div className="my-10 bg-black/30 border border-white/5 rounded-lg overflow-hidden">

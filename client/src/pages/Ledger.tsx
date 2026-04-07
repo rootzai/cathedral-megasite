@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, BookOpen, Clock, Shield, Search } from "lucide-react";
 import { boardOfRegents } from "@/lib/data";
 import { Term } from "@/components/Term";
+import { SEO } from "@/components/SEO";
 
 export default function Ledger() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,6 +29,10 @@ export default function Ledger() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif">
+      <SEO 
+        title="The Ledger" 
+        description="A historical record of institutional transactions and accountability metrics."
+      />
       {/* HEADER */}
       <div className="border-b border-white/5 relative overflow-hidden bg-black py-20">
         <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-[120px] pointer-events-none" />
@@ -46,12 +51,17 @@ export default function Ledger() {
           <h1 className="text-4xl md:text-6xl font-black font-cinzel text-white uppercase tracking-tighter leading-tight mb-4 text-shadow-blood">
             THE LEDGER
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 italic max-w-3xl leading-relaxed mb-4">
-            Names. Dates. Votes. Current positions. 
+          <p className="text-xl md:text-2xl text-zinc-400 italic max-w-3xl leading-relaxed mb-6">
+            A simple guide to the people in power.
           </p>
-          <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed">
-            This is the unabridged manifest of the officials who received the evidence, sat on the board, and ultimately voted to empower the very administration implicated by their own investigations.
-          </p>
+          <div className="max-w-3xl space-y-4 text-lg text-zinc-500 leading-relaxed bg-[#8b1a1a]/5 border-l-4 border-[#8b1a1a] p-6">
+            <p>
+              This page lists the university leaders (Regents and Trustees) who were in charge during the investigation. 
+            </p>
+            <p>
+              <strong className="text-white">Why this matters:</strong> These are the people who saw the secret abuse reports but chose to promote the current president anyway. We have listed their names, their jobs, and whether they voted to keep the secrets or reveal the truth.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -143,17 +153,7 @@ export default function Ledger() {
         </div>
       </div>
       
-      {/* Footer Sentence specific to feedback */}
-      <div className="bg-[#8b1a1a] py-12 px-6 text-center shadow-[0_0_50px_rgba(139,26,26,0.2)] mt-20 relative overflow-hidden">
-         <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase tracking-[0.2em] leading-tight mb-2">
-               The Church has had two thousand years to build the shield.
-            </h2>
-            <h2 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase tracking-[0.2em] leading-tight">
-               The counter-infrastructure starts now.
-            </h2>
-         </div>
-      </div>
+      <div className="py-12" />
     </div>
   );
 }

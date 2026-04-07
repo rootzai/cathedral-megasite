@@ -37,6 +37,58 @@ const TERM_DEFINITIONS: Record<string, { summary: string; context?: string }> = 
   "Ecclesiastical": {
     summary: "Relating to the Christian Church or its clergy.",
     context: "Seton Hall often uses 'ecclesiastical privilege' as a legal shield to claim civil courts have no jurisdiction over them."
+  },
+  "Grand Jury Privilege": {
+    summary: "A legal rule that keeps grand jury proceedings secret.",
+    context: "Seton Hall is trying to use this NJ rule to overcome California laws that protect journalists from being forced to reveal sources."
+  },
+  "Anti-SLAPP": {
+    summary: "Laws designed to stop 'Strategic Lawsuits Against Public Participation.'",
+    context: "These laws prevent powerful groups from using expensive, meritless lawsuits to silence critics or journalists."
+  },
+  "Shield Law": {
+    summary: "A law that protects journalists from being forced to reveal their anonymous sources.",
+    context: "California has a strong 'Shield Law' in its Constitution, which Seton Hall is attempting to bypass."
+  },
+  "Subpoena": {
+    summary: "A formal legal order from a court or grand jury requiring someone to give testimony or evidence.",
+    context: "Seton Hall is using 'Does' (anonymous) subpoenas to try to find out who is leaking documents to the press."
+  },
+  "Deposition": {
+    summary: "A witness's out-of-court testimony that is reduced to writing for later use in court.",
+    context: "Seton Hall wants to force a California journalist into a deposition to reveal their sources."
+  },
+  "Chancery": {
+    summary: "The administrative office or 'business headquarters' of a Catholic diocese.",
+    context: "The Newark Chancery is where the historical abuse records are kept."
+  },
+  "Vicar General": {
+    summary: "The second-highest official in a diocese, serving as the Bishop's primary deputy.",
+    context: "Several Vicars General in Newark were found to have ignored reports of McCarrick's misconduct."
+  },
+  "Statute of Limitations": {
+    summary: "A law that sets the maximum time after an event within which legal proceedings may be initiated.",
+    context: "New Jersey recently changed these laws to allow survivors of old abuse cases to finally sue the Church."
+  },
+  "Amicus": {
+    summary: "Short for 'Amicus Curiae' or 'Friend of the Court.'",
+    context: "These are outside groups that give the judge extra information to help make a decision on a case."
+  },
+  "TRO": {
+    summary: "Temporary Restraining Order.",
+    context: "A short-term court order that stops someone from doing something until a full hearing can be held."
+  },
+  "Canon Law": {
+    summary: "The internal legal system of the Catholic Church.",
+    context: "The Church often argues that Canon Law should take precedence over civil laws in matters involving clergy."
+  },
+  "Legislative Capture": {
+    summary: "A situation where a government agency or legislature acts in favor of a powerful interest group instead of the public.",
+    context: "The Church used its political influence to block changes to the Statute of Limitations for years."
+  },
+  "Grand Jury": {
+    summary: "A group of citizens empowered by law to conduct legal proceedings and investigate potential criminal conduct.",
+    context: "The 2018 Pennsylvania Grand Jury report was a turning point, exposing decades of cover-ups in six dioceses."
   }
 };
 

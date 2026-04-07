@@ -10,7 +10,6 @@ const NAV_ITEMS = [
   { label: "THE EVIDENCE", icon: FileText, href: "/evidence" },
   { label: "THE BREACH", icon: AlertCircle, href: "/breach" },
   { label: "THE LEDGER", icon: BookOpen, href: "/ledger" },
-  { label: "PERRY REPORT", icon: Landmark, href: "/easter" },
 ];
 
 export default function PrimaryNavigation() {

@@ -1,10 +1,15 @@
 import React from "react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
-import { Shield, Lock, AlertCircle, Search, Zap, Send } from "lucide-react";
+import { Shield, Lock, AlertCircle, Search, Zap, Send, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 export default function TipsPage() {
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pt-32 pb-24 px-6 font-cormorant border-b border-white/5">
+            <SEO 
+                title="Submit Intelligence" 
+                description="Securely share information regarding institutional misconduct. Protect your identity." 
+            />
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="mb-16 border-b border-[#8b1a1a]/30 pb-12 relative overflow-hidden">
@@ -37,19 +42,19 @@ export default function TipsPage() {
                         <div className="space-y-6">
                             <div className="flex items-center gap-3">
                                 <Lock className="w-5 h-5 text-[#8b1a1a]" />
-                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">Protocol Alpha</h4>
+                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">STEP 1: SECURE CONNECTION</h4>
                             </div>
                             <p className="text-sm text-zinc-600 font-serif leading-relaxed italic">
-                                Use a personal device and non-logging VPN. Do not utilize institutional networks (SHU/RCAN) for transmission.
+                                Use your own phone or computer—not a work device. If possible, use a 'VPN' to hide your location. Never use Seton Hall (SHU) or Church WiFi.
                             </p>
                         </div>
                         <div className="space-y-6 md:border-l md:border-white/5 md:pl-12">
                             <div className="flex items-center gap-3">
                                 <Shield className="w-5 h-5 text-[#8b1a1a]" />
-                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">Protocol Beta</h4>
+                                <h4 className="font-cinzel text-lg font-black text-white uppercase tracking-widest">STEP 2: CLEAN YOUR FILES</h4>
                             </div>
                             <p className="text-sm text-zinc-600 font-serif leading-relaxed italic">
-                                Scrub all digital metadata from documents before upload. Physical scans should be made in high-contrast grayscale.
+                                Remove your name or any identifying info from digital files before sending. If scanning paper, make sure the text is clear of any handwritten notes.
                             </p>
                         </div>
                     </div>

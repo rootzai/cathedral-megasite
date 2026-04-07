@@ -2,6 +2,8 @@ import React from 'react';
 import { ConfidenceIndicator } from "@/components/ConfidenceIndicator";
 import { Link } from "wouter";
 import { FileDown, ShieldCheck, Scale, FileText } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { Term } from "@/components/Term";
 
 export default function LegalFindings() {
     const findings = [
@@ -32,7 +34,7 @@ export default function LegalFindings() {
         {
             id: "RF-04",
             title: "The Paul Weiss Oct 2019 Withdrawal",
-            description: "Correspondence detailing the removal of Brad Karp/Paul Weiss and the subsequent pivot to Latham & Watkins.",
+             description: "Correspondence detailing the removal of Brad Karp/Paul Weiss and the subsequent pivot to {<Term id=\"Latham Archive\">Latham & Watkins</Term>}.",
             status: "Institutional Record",
             exhibits: 4,
             level: "official" as const
@@ -49,16 +51,29 @@ export default function LegalFindings() {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-20 text-foreground font-cormorant">
+            <SEO 
+                title="The Vault" 
+                description="Executive summary of the Rabner Filings and core documentary evidence." 
+            />
             <header className="mb-16">
                 <div className="inline-block px-3 py-1 mb-4 bg-primary text-primary-foreground text-[10px] font-black font-courier uppercase tracking-[0.4em]">
                     The Vault: Raw Evidence Depository
                 </div>
-                <div className="flex items-center gap-4 mb-6">
-                    <Scale className="text-primary w-10 h-10" />
-                    <h1 className="text-5xl font-black font-cinzel tracking-tighter uppercase text-foreground">Confidential Legal Findings</h1>
+                <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="flex items-center gap-4">
+                        <Scale className="text-primary w-10 h-10" />
+                        <h1 className="text-5xl font-black font-cinzel tracking-tighter uppercase text-foreground">Confidential Legal Findings</h1>
+                    </div>
+                    <button 
+                        onClick={() => window.print()}
+                        className="flex items-center gap-2 px-6 py-3 bg-[#8b1a1a] hover:bg-white hover:text-[#8b1a1a] text-white transition-all duration-500 font-mono text-xs font-black tracking-widest group shadow-[0_0_30px_rgba(139,26,26,0.2)]"
+                    >
+                        <FileDown className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        DOWNLOAD SUMMARY PDF
+                    </button>
                 </div>
                 <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-serif italic">
-                    This executive summary catalogs the formal legal findings and documentary evidence submitted as part of the **Rabner Filings**.
+                    This executive summary catalogs the formal legal findings and documentary evidence submitted as part of the {<Term id="Rabner Filings">Rabner Filings</Term>}.
                     These 35 exhibits represent the forensic reality that institutions have attempted to bury.
                 </p>
             </header>
@@ -74,12 +89,6 @@ export default function LegalFindings() {
                         these filings represent the evidentiary core of the Sodom Hall investigation.
                         They bridge the gap between institutional "opinion" and verifiable "fact."
                     </p>
-                    <div className="flex gap-4">
-                        <button className="bg-primary hover:bg-foreground hover:text-background text-primary-foreground px-6 py-3 text-[10px] font-black uppercase tracking-[0.4em] transition-all flex items-center gap-3">
-                            <FileDown size={14} />
-                            Download Summary PDF
-                        </button>
-                    </div>
                 </div>
 
                 <div className="bg-muted text-muted-foreground border border-primary/20 p-8 flex flex-col justify-center relative overflow-hidden">
@@ -123,12 +132,7 @@ export default function LegalFindings() {
                 </div>
             </section>
 
-            <footer className="mt-24 pt-12 border-t border-white/5">
-                <p className="text-zinc-600 text-[10px] font-black font-courier tracking-[0.4em] uppercase text-center max-w-2xl mx-auto">
-                    Access to original PDFs is restricted to verified legal and oversight bodies.
-                    To request a confidential review, use the secure tip line.
-                </p>
-            </footer>
+            <footer className="py-20" />
         </div>
     );
 }
