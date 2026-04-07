@@ -30,6 +30,7 @@ import {
 } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Term } from "@/components/Term";
 
 import {
   AlertTriangle,
@@ -97,14 +98,14 @@ export default function TheyKnew() {
           <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-4xl mx-auto mb-10">
             The "Big Lie" of Seton Hall is not a single event; it is a multi-generational architecture of institutional silence. 
             This dossier exposes the 303 individuals—from the Canonical Trustees to the Operational Regents—who 
-            maintained the "Wall of Immunity" while the Latham Archive was buried in a SCIF.
+            maintained the "Wall of Immunity" while the <Term id="Latham Archive">Latham Archive</Term> was buried in a <Term id="SCIF">SCIF</Term>.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
             <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">
               <h3 className="font-heading text-gold text-lg mb-3">ACT I: THE CANONICAL SHIELD</h3>
               <p className="text-sm text-parchment/70 leading-relaxed font-serif">
                 How the Board of Trustees (Layer 1) created a legal black hole, housing 24,000 pages of the 
-                Latham Report within an ecclesiastical vault that they claimed was beyond the reach of civil discovery.
+                <Term id="Latham Report">Latham Report</Term> within an <Term id="Ecclesiastical">ecclesiastical</Term> vault that they claimed was beyond the reach of civil discovery.
               </p>
             </div>
             <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">

@@ -18,6 +18,7 @@ import ShieldHub from "@/components/ShieldHub";
 import PowerAxis from "@/components/PowerAxis";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Term } from "@/components/Term";
 
 const SECTION_CARDS = [
     {
@@ -120,13 +121,13 @@ export default function RedesignedHome() {
                     >
                         <h1 className="text-5xl md:text-[5.5rem] font-black font-cinzel leading-none tracking-tighter text-white">
                             THE HOUSE THAT <br />
-                            <span className="text-[#8b1a1a]">McCARRICK</span> BUILT
+                            <span className="text-[#8b1a1a]"><Term id="McCarrick">McCARRICK</Term></span> BUILT
                         </h1>
                         <div className="max-w-3xl mx-auto space-y-6">
                             <p className="text-xl md:text-2xl font-serif text-[#c8bdb0]/80 leading-relaxed">
                                 Mark Crawford was thirteen years old when a priest named Kenneth Martin 
                                 began abusing him in Bayonne, New Jersey. Martin was later promoted to 
-                                personal secretary to Archbishop Theodore McCarrick. The Church falsified 
+                                personal secretary to Archbishop Theodore <Term id="McCarrick">McCarrick</Term>. The Church falsified 
                                 Crawford's age on the settlement document — a lie they didn't need to tell, 
                                 because the statute of limitations had already run. They told it anyway.
                             </p>

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, BookOpen, Clock, Shield, Search } from "lucide-react";
 import { boardOfRegents } from "@/lib/data";
+import { Term } from "@/components/Term";
 
 export default function Ledger() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -120,7 +121,7 @@ export default function Ledger() {
                         )}
                         {heardLatham && (
                           <span className="bg-blue-950/20 border border-blue-900/50 text-blue-400 px-3 py-1 text-xs uppercase font-bold tracking-widest rounded-sm">
-                            Heard Latham Report
+                            Heard <Term id="Latham Report">Latham Report</Term>
                           </span>
                         )}
                       </div>
