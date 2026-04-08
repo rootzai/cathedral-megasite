@@ -6,6 +6,14 @@ const TERM_DEFINITIONS: Record<string, { summary: string; context?: string }> = 
     summary: "A devastating 2019 internal investigation by the law firm Latham & Watkins.",
     context: "It named 12 abusive clergymen and detailed McCarrick's 'culture of fear.' Seton Hall locked it away and has fought its release for six years."
   },
+  "MOU": {
+    summary: "Memorandum of Understanding.",
+    context: "A legal agreement between a prosecutor and an individual (like Fr. Fugee) that sets strict rules for behavior to avoid criminal charges."
+  },
+  "Advocati Christi": {
+    summary: "Advocates of Christ.",
+    context: "A fellowship of Catholic lawyers and judges who integrate their faith with their legal practice in the NJ court system."
+  },
   "Michael Critchley": {
     summary: "The preeminent 'legal gladiator' for the Church in NJ.",
     context: "Architect of the 'Architecture of Protection' and lead crisis manager responsible for the 2013 Fugee de-escalation."

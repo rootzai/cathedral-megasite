@@ -2,6 +2,7 @@ import React from "react";
 import { Shield, Gavel, Scale, Landmark, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { Term } from "@/components/Term";
 
 export default function MichaelCritchley() {
     return (
@@ -46,7 +47,7 @@ export default function MichaelCritchley() {
                                     <h3 className="text-white font-cinzel uppercase tracking-widest text-xl mb-4">The Father Fugee Crisis (2013)</h3>
                                     <p className="text-sm font-mono text-zinc-500 uppercase mb-4 tracking-widest">Case Study // De-escalation Mastery</p>
                                     <p className="text-zinc-300">
-                                        When Fr. Michael Fugee violated a prosecutorial MOU by participating in youth retreats, the Archdiocese faced profound criminal exposure. Critchley successfully "managed the temperature," ensuring he was "cooperative and forthright" to prevent criminal escalation and insulate the Archbishop from indictment.
+                                        When Fr. Michael Fugee violated a prosecutorial {<Term id="MOU">MOU</Term>} by participating in youth retreats, the Archdiocese faced profound criminal exposure. Critchley successfully "managed the temperature," ensuring he was "cooperative and forthright" to prevent criminal escalation and insulate the Archbishop from indictment.
                                     </p>
                                 </div>
                             </div>
@@ -84,7 +85,7 @@ export default function MichaelCritchley() {
                                 </div>
                                 <p className="text-xl text-white italic mb-6">"Instruments of Goodness"</p>
                                 <p className="text-zinc-600 font-serif italic leading-relaxed mb-6">
-                                    Critchley's 2017 Advocati Christi Award from Bishop Serratelli formalized his status as a deeply trusted insider. In his acceptance, he invoked the legacy of St. Thomas More, framing legal defense as a "personal commitment to justice" that transcends professional duty.
+                                    Critchley's 2017 {<Term id="Advocati Christi">Advocati Christi Award</Term>} from Bishop Serratelli formalized his status as a deeply trusted insider. In his acceptance, he invoked the legacy of St. Thomas More, framing legal defense as a "personal commitment to justice" that transcends professional duty.
                                 </p>
                                 <div className="w-16 h-1 bg-red-900" />
                             </div>
