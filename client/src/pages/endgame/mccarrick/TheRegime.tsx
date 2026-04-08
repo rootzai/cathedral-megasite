@@ -51,114 +51,105 @@ export default function TheRegime() {
             </div>
 
             {/* Satirical/Visual Commentary */}
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+            <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
                   <ImageModal
-                    src="/assets/images/stained_glass_corruption-5PSXqD5M.jpg"
+                    src="/assets/images/sh_succession_cathedral.png"
                     alt="The Corrupted Cathedral"
                     title="The Façade of Piety"
                     caption="The exploitation of ecclesiastical authority to shield perpetrators from civil justice."
                   >
-                    <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
+                    <div className="aspect-square bg-zinc-900 relative overflow-hidden border-2 border-red-900 group cursor-zoom-in shadow-[0_0_30px_rgba(139,26,26,0.2)]">
                       <img 
-                        src="/assets/images/stained_glass_corruption-5PSXqD5M.jpg" 
+                        src="/assets/images/sh_succession_cathedral.png" 
                         alt="The Corrupted Cathedral" 
-                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-zinc-900 font-mono text-xs uppercase tracking-widest bg-white/70 px-2 py-1">Expand</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="text-white font-black font-cinzel text-xl uppercase tracking-tighter text-shadow-blood">THE CORRUPTED CATHEDRAL</span>
+                      </div>
+                      <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/10 transition-colors duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white font-black font-mono text-sm uppercase tracking-widest bg-red-900 px-4 py-2 shadow-2xl">EXPAND ARCHIVE</span>
                       </div>
                     </div>
                   </ImageModal>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <ImageModal
                     src="/assets/images/corporate-veil-abstract.png"
                     alt="Corporate Veil"
                     title="The Corporate Veil"
                     caption="The mechanisms of legal attrition used by the Board of Regents to bury the Latham Archives."
                   >
-                    <div className="aspect-square bg-muted relative overflow-hidden border border-border group cursor-zoom-in">
+                    <div className="aspect-square bg-zinc-900 relative overflow-hidden border-2 border-red-900 group cursor-zoom-in shadow-[0_0_30px_rgba(139,26,26,0.2)]">
                       <img 
                         src="/assets/images/corporate-veil-abstract.png" 
                         alt="Corporate Veil" 
-                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300 flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 text-zinc-900 font-mono text-xs uppercase tracking-widest bg-white/70 px-2 py-1">Expand</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="text-white font-black font-cinzel text-xl uppercase tracking-tighter text-shadow-blood">THE CORPORATE VEIL</span>
+                      </div>
+                      <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/10 transition-colors duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white font-black font-mono text-sm uppercase tracking-widest bg-red-900 px-4 py-2 shadow-2xl">EXPAND ARCHIVE</span>
                       </div>
                     </div>
                   </ImageModal>
                 </div>
               </div>
-              <p className="font-mono text-xs text-muted-foreground text-center">Fig 2.1: The systemic breakdown of ethical governance.</p>
+              <p className="font-mono text-lg font-black text-red-600 text-center uppercase tracking-widest">Fig 2.1: The systemic breakdown of ethical governance.</p>
             </div>
           </div>
         </div>
 
         {/* Mechanisms of Abuse */}
-        <div className="border-t border-border pt-12">
-          <h3 className="font-display font-bold text-3xl mb-8 uppercase">Mechanisms of Control</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-              <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">01</div>
-              <h3 className="font-display font-bold text-xl mb-3 uppercase">Clericalism</h3>
-              <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-                An exaggerated respect for the clergy that places priests and bishops above criticism, discouraging victims from coming forward.
-              </p>
-            </div>
-            <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-              <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">02</div>
-              <h3 className="font-display font-bold text-xl mb-3 uppercase">Power Dynamics</h3>
-              <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-                McCarrick held the power to ordain or end careers. This imbalance made consent impossible, even if interactions appeared "consensual."
-              </p>
-            </div>
-            <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-              <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">03</div>
-              <h3 className="font-display font-bold text-xl mb-3 uppercase">Grooming</h3>
-              <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-                By feigning paternal affection and offering special privileges, he desensitized victims and blurred professional boundaries.
-              </p>
-            </div>
+        <div className="border-t-2 border-red-900/30 pt-16">
+          <h2 className="font-cinzel font-black text-5xl text-white mb-12 uppercase tracking-tighter text-shadow-blood">Mechanisms of Control</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              { id: "01", title: "Clericalism", desc: "An exaggerated respect for the clergy that places bishops above criticism, discouraging victims from speaking." },
+              { id: "02", title: "Power Dynamics", desc: "McCarrick held absolute power to ordain or end careers, making true consent impossible." },
+              { id: "03", title: "Grooming", desc: "Feigning paternal affection and offering privileges to desensitize victims and blur boundaries." }
+            ].map((mechanism) => (
+              <div key={mechanism.id} className="bg-zinc-900/50 border-l-4 border-red-900 p-8 hover:bg-zinc-900 transition-all duration-500 group relative">
+                <div className="font-mono text-6xl font-black text-red-600 mb-6 group-hover:scale-110 origin-left transition-transform duration-500">{mechanism.id}</div>
+                <h3 className="font-cinzel font-black text-2xl text-white mb-4 uppercase tracking-widest">{mechanism.title}</h3>
+                <p className="font-serif text-lg leading-relaxed text-zinc-400 group-hover:text-white transition-colors">
+                  {mechanism.desc}
+                </p>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-red-900/5 blur-2xl group-hover:bg-red-900/10" />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Video Evidence */}
-        <div className="border-t border-border pt-12">
-          <h3 className="font-display font-bold text-3xl mb-8 uppercase">Video Evidence</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
-                <iframe 
-                  className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/8uPSR4ysAaw" 
-                  title="Cardinal McCarrick's history in DC"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                />
+        <div className="border-t-2 border-red-900/30 pt-16">
+          <h2 className="font-cinzel font-black text-5xl text-white mb-12 uppercase tracking-tighter text-shadow-blood">Forensic Video Archive</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { id: "01", title: "McCarrick's history in DC", src: "https://www.youtube.com/embed/8uPSR4ysAaw" },
+              { id: "02", title: "PBS NewsHour: McCarrick Charged", src: "https://www.youtube.com/embed/gT53J-7Xv7A" }
+            ].map((video) => (
+              <div key={video.id} className="bg-black border border-red-900/30 p-2 group hover:border-red-900 transition-all">
+                <div className="aspect-video relative overflow-hidden">
+                  <iframe 
+                    className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+                    src={video.src} 
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6 bg-zinc-900/30">
+                  <span className="font-mono text-sm font-black text-red-600 uppercase tracking-widest">EXHIBIT {video.id}</span>
+                  <h4 className="block text-white font-cinzel text-xl mt-2 uppercase tracking-tighter">{video.title}</h4>
+                </div>
               </div>
-              <div className="p-3 font-mono text-xs border-t border-border">
-                <span className="font-bold text-destructive">EVIDENCE 01</span>
-                <span className="block text-muted-foreground mt-1">Cardinal McCarrick's history in DC</span>
-              </div>
-            </div>
-            <div className="bg-card border border-border p-1">
-              <div className="aspect-video bg-white relative group cursor-pointer overflow-hidden">
-                <iframe 
-                  className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  src="https://www.youtube.com/embed/gT53J-7Xv7A" 
-                  title="PBS NewsHour - Former Cardinal McCarrick charged"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                />
-              </div>
-              <div className="p-3 font-mono text-xs border-t border-border">
-                <span className="font-bold text-destructive">EVIDENCE 02</span>
-                <span className="block text-muted-foreground mt-1">PBS NewsHour: McCarrick Charged</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
