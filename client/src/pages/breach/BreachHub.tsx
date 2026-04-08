@@ -22,7 +22,7 @@ const LITIGATION_EVENTS = [
             <>
                 <a href="https://www.courtlistener.com/?q=30-2026-01555640-CU-PT-CJC" target="_blank" rel="noopener noreferrer" className="underline decoration-[#8b1a1a]/40 hover:text-[#8b1a1a] transition-colors">
                     Case No. 30-2026-01555640-CU-PT-CJC
-                </a> (Dept. C23, Santa Ana). SHU attempts to depose the journalist who warned the Board of Regents before Reilly's installation.
+                </a> (Dept. C23, Santa Ana). SHU attempts to depose the journalist who warned the Board of Regents. Managed by the {<Term id="Michael Critchley">Critchley-Marino-Scrivo</Term>} triumvirate.
             </>
         ),
         status: "HEARING",
@@ -74,7 +74,7 @@ export default function BreachHub() {
                             <p className="text-xl text-zinc-500 font-serif italic leading-relaxed">
                                 The same organization that sealed 24,000 pages of abuse evidence for six years 
                                 is simultaneously attempting to silence the reporter who told the Board it was coming. 
-                                That is not coincidence. It is the shield in its terminal phase.
+                                This is the {<Term id="Michael Critchley">Michael Critchley</Term>} masterclass: managing the temperature to insulate the hierarchy.
                             </p>
                         </div>
                         <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-6">
@@ -131,12 +131,15 @@ export default function BreachHub() {
                             The institution's strategy: Using New Jersey "{<Term id="Grand Jury Privilege">Grand Jury Privilege</Term>}" rules to try and ignore California "{<Term id="Anti-SLAPP">Anti-SLAPP</Term>}" and "{<Term id="Shield Law">Shield Law</Term>}" protections.
                         </p>
                         <div className="space-y-6">
-                            <div className="flex gap-6 p-6 bg-[#0D0D10] border border-white/5">
+                            <div className="flex gap-6 p-6 bg-[#0D0D10] border border-white/5 relative overflow-hidden group hover:border-[#8b1a1a]/40 transition-all">
+                                <div className="absolute top-0 right-0 p-2 opacity-5 text-[#8b1a1a]">
+                                    <ShieldCheck size={80} />
+                                </div>
                                 <Scale className="w-6 h-6 text-[#8b1a1a]" />
                                 <div>
-                                    <h4 className="text-white font-black font-cinzel uppercase text-sm mb-2">The Battle of Laws</h4>
-                                    <p className="text-xs text-zinc-500 font-serif leading-relaxed">
-                                        Can a New Jersey {<Term id="Subpoena">subpoena</Term>}—issued by a grand jury—be used to force a California journalist to name their sources, even when California law says they don't have to?
+                                    <h4 className="text-white font-black font-cinzel uppercase text-sm mb-2">The Symmetry of Power</h4>
+                                    <p className="text-xs text-zinc-500 font-serif leading-relaxed italic">
+                                        Critchley arranged the 2003 dinner between the US Attorney and the State Political Boss. This nexus—secular power meeting religious protection—is why the "Architecture" has held for decades.
                                     </p>
                                 </div>
                             </div>

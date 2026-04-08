@@ -11,35 +11,27 @@ export default function Ledger() {
   
   // Get all regents who have the 'reilly' badge or active tenure.
   // The feedback highlights specifically the board members who voted for Reilly.
-  const allRegents = [
-      ...boardOfRegents.leadership,
-      ...boardOfRegents.members,
-      ...boardOfRegents.exOfficio,
-      ...(boardOfRegents.clergy || [])
+  const categories = [
+    { title: "LEADERSHIP & CHAIRS", members: boardOfRegents.leadership, icon: Shield },
+    { title: "BOARD OF REGENTS", members: boardOfRegents.members, icon: Clock },
+    { title: "ECCLESIASTICAL OVERSIGHT", members: boardOfRegents.clergy || [], icon: BookOpen },
+    { title: "EX-OFFICIO", members: boardOfRegents.exOfficio, icon: Search }
   ];
 
-  // We deduplicate just in case
-  const uniqueRegents = Array.from(new Map(allRegents.map(r => [r.name, r])).values());
-
-  const filteredRegents = uniqueRegents.filter(regent => 
-    regent.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    regent.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (regent.note && regent.note.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
-
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif">
+    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif transition-all duration-500">
       <SEO 
         title="The Ledger" 
         description="A historical record of institutional transactions and accountability metrics."
       />
+      
       {/* HEADER */}
-      <div className="border-b border-white/5 relative overflow-hidden bg-black py-20">
+      <div className="border-b border-white/5 relative overflow-hidden bg-black py-20 px-6">
         <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-[120px] pointer-events-none" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <Link href="/">
-            <a className="inline-flex items-center gap-2 mb-8 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors">
-              <ArrowLeft className="w-4 h-4" /> Return to Architecture
+            <a className="inline-flex items-center gap-2 mb-8 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return to Architecture
             </a>
           </Link>
           <div className="flex items-center gap-3 mb-6">
@@ -48,109 +40,125 @@ export default function Ledger() {
               The Definitive Record
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black font-cinzel text-white uppercase tracking-tighter leading-tight mb-4 text-shadow-blood">
+          <h1 className="text-4xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter leading-tight mb-4 text-shadow-blood">
             THE LEDGER
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 italic max-w-3xl leading-relaxed mb-6">
-            A simple guide to the people in power.
+          <p className="text-xl md:text-2xl text-zinc-400 italic max-w-3xl leading-relaxed mb-8">
+            "A record of those who saw the evidence and chose the promotion."
           </p>
-          <div className="max-w-3xl space-y-4 text-lg text-zinc-500 leading-relaxed bg-[#8b1a1a]/5 border-l-4 border-[#8b1a1a] p-6">
+          
+          <div className="max-w-3xl space-y-4 text-base text-zinc-500 leading-relaxed bg-[#8b1a1a]/5 border-l-4 border-[#8b1a1a] p-8">
             <p>
-              This page lists the university leaders (Regents and Trustees) who were in charge during the investigation. 
+              This is the forensic index of the <strong className="text-zinc-300">Seton Hall Board of Regents</strong> and University Leadership.
             </p>
             <p>
-              <strong className="text-white">Why this matters:</strong> These are the people who saw the secret abuse reports but chose to promote the current president anyway. We have listed their names, their jobs, and whether they voted to keep the secrets or reveal the truth.
+              Every individual listed below sat in governance during the concealment of the Latham Report. We have tracked their tenure, their roles, and their direct actions during the 2024 Presidential Investigation.
             </p>
           </div>
         </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-          <div className="relative w-full md:w-96">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-            <input 
-              type="text" 
-              placeholder="Search by name, role, or note..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-sm py-3 pl-12 pr-4 text-white focus:outline-none focus:border-[#8b1a1a] font-mono text-sm transition-colors"
-            />
-          </div>
-          <p className="font-mono text-base uppercase tracking-widest text-zinc-500">
-            {filteredRegents.length} INDIVIDUALS IDENTIFIED
-          </p>
+      {/* QUICK NAV & SEARCH */}
+      <div className="sticky top-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-center justify-between">
+            <nav className="flex gap-4 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto font-mono text-[10px] tracking-widest uppercase">
+                {categories.map(cat => (
+                    <a key={cat.title} href={`#${cat.title.replace(/\s+/g, '-').toLowerCase()}`} className="text-zinc-600 hover:text-white transition-colors whitespace-nowrap">
+                        {cat.title}
+                    </a>
+                ))}
+            </nav>
+            <div className="relative w-full md:w-80">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-600" />
+                <input 
+                  type="text" 
+                  placeholder="FILTER BY NAME / ACTION..." 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full bg-black border border-white/10 py-2 pl-10 pr-4 text-xs font-mono uppercase tracking-widest focus:border-[#8b1a1a] outline-none transition-all placeholder:text-zinc-800"
+                />
+            </div>
         </div>
+      </div>
 
-        <div className="overflow-x-auto bg-black border border-white/5 shadow-2xl">
-          <table className="w-full text-left text-sm whitespace-nowrap md:whitespace-normal">
-            <thead>
-              <tr className="border-b border-white/10 text-[#8b1a1a] font-mono uppercase tracking-[0.2em] text-base bg-[#111116]">
-                <th className="px-6 py-6">Name</th>
-                <th className="px-6 py-6">Position / Role</th>
-                <th className="px-6 py-6">Tenure Status</th>
-                <th className="px-6 py-6">Voting Record / Actions</th>
-              </tr>
-            </thead>
-            <tbody className="text-zinc-300 divide-y divide-white/5">
-              {filteredRegents.map((regent, i) => {
-                const votedForReilly = regent.badges?.includes("reilly");
-                const heardLatham = regent.badges?.includes("latham");
-                const isResigned = regent.badges?.includes("resigned");
+      {/* CATEGORIZED CONTENT */}
+      <div className="max-w-6xl mx-auto px-6 py-20 space-y-32">
+        {categories.map((category, catIdx) => {
+          const filtered = category.members.filter(m => 
+            m.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            m.role.toLowerCase().includes(searchTerm.toLowerCase())
+          );
 
-                return (
-                  <motion.tr 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.02 }}
-                    key={regent.name} 
-                    className="hover:bg-white/[0.02] transition-colors"
-                  >
-                    <td className="px-6 py-6 align-top">
-                      <span className={`font-black font-cinzel text-2xl tracking-wider ${isResigned ? 'text-zinc-600 line-through' : 'text-white'}`}>
-                        {regent.name}
-                      </span>
-                    </td>
-                    <td className="px-6 py-6 align-top">
-                      <span className="font-mono text-lg uppercase tracking-widest text-zinc-400">
-                        {regent.role}
-                      </span>
-                    </td>
-                    <td className="px-6 py-6 align-top">
-                      <span className={`px-3 py-1.5 text-sm font-bold uppercase tracking-widest ${isResigned ? 'bg-zinc-900 border-zinc-700 text-zinc-500' : 'bg-green-950/30 border-green-900/50 text-green-500'} border`}>
-                        {regent.tenure}
-                      </span>
-                    </td>
-                    <td className="px-6 py-6 align-top min-w-[300px] max-w-lg">
-                      <div className="flex gap-3 mb-4 flex-wrap">
+          if (filtered.length === 0 && searchTerm) return null;
+
+          const Icon = category.icon;
+
+          return (
+            <section key={category.title} id={category.title.replace(/\s+/g, '-').toLowerCase()} className="space-y-12 scroll-mt-32">
+              <div className="flex items-center gap-4">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <div className="flex items-center gap-3 px-6 py-2 bg-zinc-900/50 border border-white/5 rounded-full">
+                    <Icon className="w-4 h-4 text-[#8b1a1a]" />
+                    <h2 className="text-sm font-black font-cinzel text-white uppercase tracking-[0.3em]">{category.title}</h2>
+                </div>
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filtered.map((regent, i) => {
+                  const votedForReilly = regent.badges?.includes("reilly");
+                  const heardLatham = regent.badges?.includes("latham");
+                  const isResigned = regent.badges?.includes("resigned");
+
+                  return (
+                    <motion.div 
+                      key={regent.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      className={`p-8 border border-white/5 bg-zinc-950/30 group hover:border-[#8b1a1a]/30 transition-all relative overflow-hidden flex flex-col justify-between min-h-[320px] ${isResigned ? 'opacity-50 grayscale' : ''}`}
+                    >
+                      {/* Badge Area */}
+                      <div className="flex gap-2 mb-6 flex-wrap">
                         {votedForReilly && (
-                          <span className="bg-[#8b1a1a]/20 border border-[#8b1a1a]/50 text-[#ff4d4d] px-3 py-1 text-xs uppercase font-bold tracking-widest rounded-sm">
-                            Voted for Reilly
-                          </span>
+                          <div className="bg-[#8b1a1a]/10 border border-[#8b1a1a]/40 text-[#8b1a1a] text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                             [Voted Reilly]
+                          </div>
                         )}
                         {heardLatham && (
-                          <span className="bg-blue-950/20 border border-blue-900/50 text-blue-400 px-3 py-1 text-xs uppercase font-bold tracking-widest rounded-sm">
-                            Heard <Term id="Latham Report">Latham Report</Term>
-                          </span>
+                          <div className="bg-blue-900/10 border border-blue-900/40 text-blue-500 text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                             [Heard Latham]
+                          </div>
+                        )}
+                        {isResigned && (
+                          <div className="bg-zinc-800 border border-zinc-600 text-zinc-400 text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                             [Resigned]
+                          </div>
                         )}
                       </div>
-                      {regent.note ? (
-                        <p className="text-zinc-400 font-serif italic text-lg leading-relaxed">
-                          {regent.note}
+
+                      <div className="space-y-4">
+                        <h3 className="text-2xl font-black font-cinzel text-white tracking-widest leading-none group-hover:text-[#8b1a1a] transition-colors">{regent.name}</h3>
+                        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest leading-loose">{regent.role}</p>
+                        <hr className="border-white/5 w-12" />
+                        <p className="text-zinc-600 font-serif italic text-sm leading-relaxed line-clamp-4">
+                          {regent.note || "Forensic record sealed. No public registered dissent available for this individual."}
                         </p>
-                      ) : (
-                        <p className="text-zinc-600 font-mono text-sm uppercase tracking-widest">
-                          Record sealed / No public dissent registered
-                        </p>
-                      )}
-                    </td>
-                  </motion.tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                      </div>
+
+                      <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                        <span className="text-[10px] font-mono text-zinc-700 tracking-tighter uppercase">{regent.tenure}</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
+      </div>
       </div>
       
       <div className="py-12" />
