@@ -17,7 +17,7 @@ export default function Background() {
               The American Catholic Church’s abuse crisis first gained national attention in 2002, when investigative reporting (most prominently by <span className="italic font-bold">The Boston Globe</span>) revealed that dozens of priests had sexually abused minors and that church leaders concealed these crimes by shuffling perpetrators between parishes.
             </p>
             
-            <div className="pl-6 border-l-4 border-destructive/50 italic text-muted-foreground my-6">
+            <div className="pl-6 border-l-8 border-red-900 italic text-white my-10 bg-red-900/10 p-8 shadow-[inset_0_0_20px_rgba(139,26,26,0.2)]">
               "Subsequent investigations – including a 2018 Pennsylvania grand jury report – confirmed that cover-ups were widespread and often involved high-ranking prelates prioritizing the church’s reputation over the protection of children."
             </div>
 
@@ -25,7 +25,7 @@ export default function Background() {
               Over the past two decades, hundreds of clergy abuse lawsuits have been filed across the country, dioceses have paid out billions in settlements, and several dioceses (including in New Jersey) established compensation funds or declared bankruptcy under the weight of claims.
             </p>
 
-            <h3 className="font-display font-bold text-2xl mt-8 mb-4 uppercase">The Accountability Gap</h3>
+            <h3 className="font-cinzel font-black text-3xl mt-12 mb-6 uppercase tracking-widest text-shadow-blood">The Accountability Gap</h3>
             <p>
               Despite reforms initiated after 2002 (such as the <span className="italic">Dallas Charter</span> for the Protection of Children and Young People), these measures focused largely on priests and deacons, not on bishops. This left a significant accountability gap: bishops accused of misconduct, or of ignoring abuse by others, often answered only to the Vatican.
             </p>
@@ -35,37 +35,38 @@ export default function Background() {
             </p>
           </div>
 
-          <div className="lg:col-span-5 space-y-8">
-            <div className="relative group cursor-pointer">
-              <div className="absolute -inset-2 bg-destructive/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="lg:col-span-5 space-y-12">
+            <div className="relative group cursor-pointer border-2 border-red-900 shadow-[0_0_40px_rgba(139,26,26,0.3)]">
               <img 
                 src="/assets/images/abuse_statistics.png" 
                 alt="Abuse Statistics Chart" 
-                className="w-full border border-border grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
+                className="w-full grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-700"
               />
-              <p className="font-mono text-xs mt-2 text-muted-foreground uppercase tracking-wider">
+              <div className="absolute inset-0 bg-red-900/10 group-hover:bg-transparent" />
+              <p className="font-mono text-lg font-black mt-4 text-red-600 uppercase tracking-widest text-center">
                 Fig 2.1: Reported Allegations 2006-2012
               </p>
             </div>
 
-            <div className="bg-muted p-6 border border-border">
-              <h4 className="font-mono font-bold uppercase text-sm mb-4 border-b border-border pb-2">Timeline of Exposure</h4>
-              <ul className="space-y-4 font-mono text-xs">
-                <li className="grid grid-cols-[80px_1fr] gap-4">
-                  <span className="font-bold text-destructive">2002</span>
-                  <span>Boston Globe "Spotlight" investigation reveals systemic cover-up.</span>
+            <div className="bg-zinc-900/80 p-8 border-2 border-red-900 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 blur-3xl" />
+              <h4 className="font-cinzel font-black uppercase text-xl mb-8 border-b-2 border-red-900 pb-4 tracking-widest text-white">Timeline of Exposure</h4>
+              <ul className="space-y-6 font-mono text-sm tracking-tight text-white">
+                <li className="grid grid-cols-[100px_1fr] gap-6 items-center">
+                  <span className="font-black text-2xl text-red-600">2002</span>
+                  <span className="leading-tight">Boston Globe "Spotlight" investigation reveals systemic cover-up.</span>
                 </li>
-                <li className="grid grid-cols-[80px_1fr] gap-4">
-                  <span className="font-bold text-destructive">2002</span>
-                  <span>USCCB adopts the Dallas Charter.</span>
+                <li className="grid grid-cols-[100px_1fr] gap-6 items-center">
+                  <span className="font-black text-2xl text-red-600">2002</span>
+                  <span className="leading-tight">USCCB adopts the Dallas Charter.</span>
                 </li>
-                <li className="grid grid-cols-[80px_1fr] gap-4">
-                  <span className="font-bold text-destructive">2018</span>
-                  <span>PA Grand Jury Report names 300+ predator priests.</span>
+                <li className="grid grid-cols-[100px_1fr] gap-6 items-center">
+                  <span className="font-black text-2xl text-red-600">2018</span>
+                  <span className="leading-tight">PA Grand Jury Report names 300+ predator priests.</span>
                 </li>
-                <li className="grid grid-cols-[80px_1fr] gap-4">
-                  <span className="font-bold text-destructive">2018</span>
-                  <span>McCarrick allegations become public.</span>
+                <li className="grid grid-cols-[100px_1fr] gap-6 items-center">
+                  <span className="font-black text-2xl text-red-600">2018</span>
+                  <span className="leading-tight">McCarrick allegations become public.</span>
                 </li>
               </ul>
             </div>
