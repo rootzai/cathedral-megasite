@@ -94,6 +94,48 @@ export default function Home() {
       </div>
     </div>
 
+    {/* Madman McCarrick Dossier - Embedded */}
+    <section className="mt-16 border-2 border-destructive/50 bg-zinc-900/50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-900 via-red-600 to-red-900" />
+      <div className="p-8 space-y-6">
+        <div className="flex items-start justify-between">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/50 border border-red-800/50 text-red-500 text-xs font-mono uppercase tracking-widest mb-4">
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+              External Archive
+            </div>
+            <h3 className="font-heading text-3xl text-white mb-2">Madman McCarrick: The Secretarial Archive</h3>
+            <p className="font-body text-lg text-muted-foreground max-w-3xl">
+              An exhaustive analysis of the secretarial apparatus under Archbishop Theodore McCarrick in Newark (1986–2000). Examines how the chancery's bureaucratic machinery facilitated, concealed, and perpetuated systemic abuse.
+            </p>
+          </div>
+        </div>
+
+        <div className="border border-border rounded-lg overflow-hidden bg-black/50 shadow-2xl">
+          <div className="bg-muted/20 border-b border-border px-4 py-2 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+            </div>
+            <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+              madmansec-nuaqskqw.manus.space
+            </span>
+            <div className="w-16" />
+          </div>
+          <iframe
+            src="https://madmansec-nuaqskqw.manus.space"
+            width="100%"
+            height="700"
+            style={{ border: "none" }}
+            title="Madman McCarrick Dossier"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+          />
+        </div>
+      </div>
+    </section>
+
     <div className="flex justify-between mt-12 pt-8 border-t border-border">
       <Link href="/ledger" asChild>
         <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
