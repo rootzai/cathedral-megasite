@@ -88,23 +88,23 @@ export default function Home() {
                 <div className="space-y-6">
                     <h3 className="font-heading text-2xl text-foreground uppercase text-destructive">The Bayonne Nexus: Systematic Grooming of the Crawford Family</h3>
                     <p className="font-body text-lg text-foreground/80 leading-relaxed">
-                        Between 1977 and 1984, Martin was assigned to St. Andrew’s Parish in Bayonne, New Jersey. It was here that he executed a sophisticated grooming operation against the Crawford family, a devout household of nine children.
+                        Between 1977 and 1984, Martin was assigned to St. Andrew's Parish in Bayonne, New Jersey. It was here that he executed a sophisticated grooming operation against the Crawford family, a devout household of nine children.
                     </p>
                     <ul className="space-y-4 font-body text-lg text-foreground/80">
-                        <li><strong className="text-foreground">Inserting Himself into Trauma:</strong> Martin integrated himself into the family's life by presiding over the father’s funeral and becoming a daily fixture in their home. He cultivated a persona of hyper-orthodoxy, frequently wearing a full-length cassock to project an image of spiritual authority.</li>
-                        <li><strong className="text-foreground">The Abuse of Mark Crawford:</strong> The abuse of Mark Crawford began when he was 13 years old (c. 1978). In one documented instance, Martin took Crawford on a train trip to Colorado, where they stayed in a mountain cabin; the abuse continued and intensified upon their return to New Jersey.</li>
-                        <li><strong className="text-foreground">Expansion to Siblings:</strong> As Mark Crawford grew older and attempted to create distance by entering a seminary, Martin turned his focus to Crawford's younger brother, who eventually suffered an emotional breakdown from the trauma.</li>
-                        <li><strong className="text-foreground">The 1981 and 1983 Reports:</strong> Crawford first reported Martin’s behavior in 1981 to Father Bill Cramer, a "friend" of Martin’s from the seminary. Cramer—a fellow creep later removed for abusing two brothers himself—responded with silence and avoidance. In 1983, Crawford reported the abuse to Auxiliary Bishop Jerome Pechillo. Pechillo’s response was a masterclass in institutional gaslighting: he chastised the 15-year-old for not calling him "His Excellency," claimed Crawford was merely "angry" about his father’s death, and dismissed the allegations entirely.</li>
+                        <li><strong className="text-foreground">Grooming Begins (1977):</strong> Martin came to St. Andrew's Parish in 1977. Mark Crawford was 14 years old. The grooming began immediately, with Martin cultivating trust through spiritual guidance and inserting himself into family life.</li>
+                        <li><strong className="text-foreground">The Colorado Trip (1978):</strong> When Mark Crawford was 15, Martin took him on a train trip to Colorado, where they stayed in a mountain cabin. This is where the sexual abuse began. The abuse continued for several years upon their return to New Jersey.</li>
+                        <li><strong className="text-foreground">Expansion to Brothers:</strong> Martin went on to abuse two of Mark Crawford's younger brothers, extending his predatory reach throughout the family. The trauma cascaded through multiple generations of the Crawford children.</li>
+                        <li><strong className="text-foreground">The 1983 Report:</strong> Mark Crawford's father died in 1983. That same year, Crawford reported the abuse to Auxiliary Bishop Jerome Pechillo. Pechillo's response was a masterclass in institutional gaslighting: he chastised Crawford for not calling him "His Excellency," dismissed the allegations as anger over his father's death, and did nothing. Crawford had also informed several other clergy earlier, to no effect.</li>
                     </ul>
                 </div>
 
                 <div className="space-y-6">
                     <h3 className="font-heading text-2xl text-foreground uppercase text-destructive">The Promotion: Serving "Uncle Ted"</h3>
                     <p className="font-body text-lg text-foreground/80 leading-relaxed">
-                        The ultimate proof of the system's depravity occurred in 1992. Rather than being laicized for the Bayonne abuse, Martin was hand-picked to serve as the personal secretary to Archbishop Theodore McCarrick at the Sacred Heart Cathedral in Newark.
+                        The ultimate proof of the system's depravity occurred around 1990-1991. Rather than being laicized for the Bayonne abuse, Martin was hand-picked to serve as one of the personal secretaries to Archbishop Theodore McCarrick at the Sacred Heart Cathedral in Newark.
                     </p>
                     <p className="font-body text-lg text-foreground/80 leading-relaxed mt-4">
-                        In this role (1992–1994), Martin became the administrative gatekeeper for McCarrick’s own "nephew" grooming system. The two shared a bond of compromised silence; Martin’s history of abuse was known to the Chancery, making him the perfect accomplice for an Archbishop whose own "beach house" trips were an open secret. In 1994, the secretarial role was handed off to Joseph Reilly, ensuring that the "tight-lipped squad" maintained continuity during the critical "whitewashing" of 1995 when McCarrick hosted Pope John Paul II in Newark.
+                        In this role (c. 1991–1993), Martin became the administrative gatekeeper for McCarrick's own "nephew" grooming system. The two shared a bond of compromised silence; Martin’s history of abuse was known to the Chancery, making him the perfect accomplice for an Archbishop whose own "beach house" trips were an open secret. In 1994, the secretarial role was handed off to Joseph Reilly, ensuring that the "tight-lipped squad" maintained continuity during the critical "whitewashing" of 1995 when McCarrick hosted Pope John Paul II in Newark.
                     </p>
                 </div>
 
@@ -128,9 +128,9 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-6">
-                    <h3 className="font-heading text-2xl text-foreground uppercase border-l-4 border-destructive pl-4">The 2026 Legal Reckoning: The New Lawsuit and Deposition</h3>
+                    <h3 className="font-heading text-2xl text-foreground uppercase border-l-4 border-destructive pl-4">The 2026 Legal Reckoning: Breaking the Silence</h3>
                     <p className="font-body text-lg text-foreground/80 leading-relaxed">
-                        The indictment of Martin and his protectors has entered a new phase with a lawsuit filed in New Jersey court (Case No. 950344/20 and others). This litigation involves a man and his two brothers who were targeted by Martin, mirroring the patterns seen in the Crawford case. A critical deposition is scheduled for 2026, which aims to break the "tight-lipped" silence of the administrators who oversaw Martin’s transfers.
+                        The indictment of Martin and his protectors has entered a new phase with litigation involving survivors and their families who were targeted by Martin, mirroring the patterns seen in the Crawford case. The legal proceedings aim to break the "tight-lipped" silence of the administrators who oversaw Martin's transfers and promoted him despite credible abuse allegations.
                     </p>
                 </div>
 
@@ -147,7 +147,7 @@ export default function Home() {
                             <tr className="hover:bg-muted/20 transition-colors">
                                 <td className="p-4 font-mono text-sm font-bold text-foreground">Ken Martin</td>
                                 <td className="p-4 text-sm">Secretary to McCarrick; Serial Predator.</td>
-                                <td className="p-4 text-sm text-destructive">Sued in NJ; upcoming deposition regarding abuse of 3 brothers.</td>
+                                <td className="p-4 text-sm text-destructive">Subject of ongoing litigation in NJ.</td>
                             </tr>
                             <tr className="hover:bg-muted/20 transition-colors">
                                 <td className="p-4 font-mono text-sm font-bold text-foreground">Joseph Reilly</td>
@@ -185,7 +185,7 @@ export default function Home() {
                 <div className="space-y-6 pt-6 border-t border-border">
                     <h3 className="font-heading text-2xl text-foreground uppercase text-destructive">Conclusion: A System of Organized Concealment</h3>
                     <p className="font-body text-lg text-foreground/80 leading-relaxed">
-                        The deep dive into Kenneth Martin reveals a priest whose entire career was an exercise in institutional laundering. From Bayonne to Wilmington to Newark, Martin was never "held accountable" by the Church; he was merely shuffled and protected. As the 2026 depositions approach, the question remains whether the survivors—led by the tireless advocacy of individuals like Mark Crawford—will finally force the "tight-lipped squad" to answer for their decades of organized concealment.
+                        The deep dive into Kenneth Martin reveals a priest whose entire career was an exercise in institutional laundering. From Bayonne to Wilmington to Newark, Martin was never "held accountable" by the Church; he was merely shuffled and protected. Survivors continue to fight for justice—led by the tireless advocacy of individuals like Mark Crawford and his brothers—to force the "tight-lipped squad" to answer for their decades of organized concealment.
                     </p>
                 </div>
             </div>

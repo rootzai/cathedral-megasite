@@ -25,13 +25,16 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     { href: "/ledger/mccarrick/warnings", label: "07. WARNINGS IGNORED", id: "07" },
     { href: "/ledger/mccarrick/mechanisms", label: "08. MECHANISMS", id: "08" },
     { href: "/ledger/mccarrick/seton-hall", label: "09. SETON HALL", id: "09" },
-    { href: "/ledger/mccarrick/downfall", label: "10. DOWNFALL", id: "10" },
-    { href: "/ledger/mccarrick/the-reckoning", label: "11. THE RECKONING", id: "11" },
-    { href: "/ledger/mccarrick/legal", label: "12. LEGAL ACTIONS", id: "12" },
-    { href: "/ledger/mccarrick/survivors", label: "13. SURVIVORS", id: "13" },
-    { href: "/ledger/mccarrick/responses", label: "14. RESPONSES", id: "14" },
-    { href: "/ledger/mccarrick/analysis", label: "15. ANALYSIS", id: "15" },
-    { href: "/ledger/mccarrick/conclusion", label: "16. CONCLUSION", id: "16" },
+    { href: "/ledger/mccarrick/popes", label: "10. THE POPES", id: "10" },
+    { href: "/ledger/mccarrick/secretaries", label: "11. THE SECRETARIAT", id: "11" },
+    { href: "/ledger/mccarrick/downfall", label: "12. DOWNFALL", id: "12" },
+    { href: "/ledger/mccarrick/the-reckoning", label: "13. THE RECKONING", id: "13" },
+    { href: "/ledger/mccarrick/legal", label: "14. LEGAL ACTIONS", id: "14" },
+    { href: "/ledger/mccarrick/survivors", label: "15. SURVIVORS", id: "15" },
+    { href: "/ledger/mccarrick/responses", label: "16. RESPONSES", id: "16" },
+    { href: "/ledger/mccarrick/analysis", label: "17. ANALYSIS", id: "17" },
+    { href: "/ledger/mccarrick/conclusion", label: "18. CONCLUSION", id: "18" },
+    { href: "/ledger/mccarrick/madman", label: "19. MADMAN ARCHIVE", id: "19" },
   ];
 
   const checchioItems = [
@@ -209,7 +212,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
       <main className="flex-1 w-full overflow-hidden min-h-screen relative">
         <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
           {children}
-          
+
           <div className="mt-20">
             <JourneyNav />
           </div>
