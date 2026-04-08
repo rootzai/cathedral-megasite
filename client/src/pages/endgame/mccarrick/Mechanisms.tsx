@@ -12,29 +12,34 @@ export default function Mechanisms() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-            <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">01</div>
-            <h3 className="font-display font-bold text-xl mb-3 uppercase">Clericalism</h3>
-            <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-              An exaggerated respect for the clergy that places priests and bishops above criticism or suspicion. This culture discouraged victims from coming forward and led the laity to doubt accusations against "holy men."
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+          <div className="bg-zinc-900 border-2 border-red-900 p-10 hover:border-red-600 transition-all duration-500 group shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-4 -right-4 text-9xl font-mono font-black text-red-900/10 pointer-events-none group-hover:text-red-900/20 transition-colors">01</div>
+            <div className="font-mono text-5xl font-black text-red-600 mb-6 group-hover:scale-110 transition-transform origin-left">01</div>
+            <h3 className="font-cinzel font-black text-2xl mb-4 uppercase tracking-widest text-white">Clericalism</h3>
+            <p className="font-serif text-lg leading-relaxed text-zinc-300 group-hover:text-white transition-colors">
+              An systemic elevation of the clergy that places priests and bishops above criticism. This culture silenced victims and forced the laity to defer to "holy authority" over forensic truth.
             </p>
           </div>
 
-          <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-            <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">02</div>
-            <h3 className="font-display font-bold text-xl mb-3 uppercase">Power Dynamics</h3>
-            <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-              McCarrick used his position as a bishop to coerce seminarians. He held the power to ordain them or end their careers. This imbalance made consent impossible, even if the interactions appeared "consensual" to outsiders.
+          <div className="bg-zinc-900 border-2 border-red-900 p-10 hover:border-red-600 transition-all duration-500 group shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-4 -right-4 text-9xl font-mono font-black text-red-900/10 pointer-events-none group-hover:text-red-900/20 transition-colors">02</div>
+            <div className="font-mono text-5xl font-black text-red-600 mb-6 group-hover:scale-110 transition-transform origin-left">02</div>
+            <h3 className="font-cinzel font-black text-2xl mb-4 uppercase tracking-widest text-white">Power Dynamics</h3>
+            <p className="font-serif text-lg leading-relaxed text-zinc-300 group-hover:text-white transition-colors">
+              McCarrick used the episcopal office to coerce seminarians. He held the keys to their careers, making true consent impossible in a system built on total apostolic obedience.
             </p>
           </div>
 
-          <div className="bg-card border border-border p-6 hover:border-destructive transition-colors duration-500 group">
-            <div className="font-mono text-4xl font-bold text-destructive mb-4 opacity-50 group-hover:opacity-100">03</div>
-            <h3 className="font-display font-bold text-xl mb-3 uppercase">Grooming</h3>
-            <p className="font-serif text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
-              The "Uncle Ted" persona was a classic grooming tactic. By feigning paternal affection, buying gifts, and offering special privileges (like trips to the beach house), he desensitized victims and blurred professional boundaries.
+          <div className="bg-zinc-900 border-2 border-red-900 p-10 hover:border-red-600 transition-all duration-500 group shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-4 -right-4 text-9xl font-mono font-black text-red-900/10 pointer-events-none group-hover:text-red-900/20 transition-colors">03</div>
+            <div className="font-mono text-5xl font-black text-red-600 mb-6 group-hover:scale-110 transition-transform origin-left">03</div>
+            <h3 className="font-cinzel font-black text-2xl mb-4 uppercase tracking-widest text-white">Grooming</h3>
+            <p className="font-serif text-lg leading-relaxed text-zinc-300 group-hover:text-white transition-colors">
+              The "Uncle Ted" persona was a strategic grooming mechanism. By feigning paternal affection and offering exclusive access, he systematically desensitized victims to predatory boundary-crossing.
             </p>
           </div>
+        </div>
         </div>
 
         <div className="space-y-8 font-serif text-lg leading-relaxed border-t border-border pt-8">

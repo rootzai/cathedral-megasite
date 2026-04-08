@@ -16,22 +16,23 @@ export default function ThePopes() {
       <div className="grid grid-cols-1 mb-8">
         <div className="relative w-full border border-[#8b1a1a]/30 overflow-hidden bg-black flex flex-col group">
           {/* We assume the user places the screenshot at this path */}
-          <div className="aspect-[2/1] relative w-full overflow-hidden">
+          <div className="aspect-[2/1] relative w-full overflow-hidden border-b-4 border-red-900 shadow-2xl">
              <img
                 src="/assets/images/same-day-same-ring.png"
                 alt="McCarrick and Bergoglio elevated by John Paul II on the same day"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[10s]"
              />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-             <div className="absolute bottom-6 left-6 text-white font-cinzel text-shadow-blood">
-                <span className="bg-[#8b1a1a] text-white text-[10px] uppercase tracking-[0.4em] px-3 py-1 font-mono mb-3 inline-block">Photographic Record</span>
-                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-widest block">The Consistory of 2001</h2>
+             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
+             <div className="absolute bottom-10 left-10 text-white font-cinzel text-shadow-blood">
+                <span className="bg-red-600 text-white text-sm uppercase tracking-[0.5em] px-4 py-2 font-mono font-black mb-4 inline-block border-2 border-white shadow-2xl">FORENSIC PHOTOGRAPH</span>
+                <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter block leading-none">THE CONSISTORY OF 2001</h2>
              </div>
           </div>
-          <div className="bg-[#111116] p-6 border-t border-[#8b1a1a]/30">
-             <p className="text-[#8b1a1a] font-bold text-2xl text-center font-cinzel uppercase tracking-[0.2em] mb-2">Same Day. Same Ring. Same Rank.</p>
-             <p className="text-zinc-400 font-serif text-center max-w-3xl mx-auto italic text-sm">
-                 Theodore McCarrick and Jorge Mario Bergoglio (Pope Francis) were both elevated to the College of Cardinals by Pope John Paul II during the exact same consistory on February 21, 2001.
+          <div className="bg-zinc-900 p-10 border-t border-red-900 shadow-2xl relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-red-900/10 blur-3xl pointer-events-none" />
+             <p className="text-red-500 font-extrabold text-3xl text-center font-cinzel uppercase tracking-[0.3em] mb-4">SAME DAY. SAME RING. SAME RANK.</p>
+             <p className="text-zinc-200 font-serif text-center max-w-4xl mx-auto italic text-xl leading-relaxed">
+                 Theodore McCarrick and Jorge Mario Bergoglio (Pope Francis) were both elevated to the College of Cardinals by Pope John Paul II during the exact same consistory on February 21, 2001. Bound by the same generation of power.
              </p>
           </div>
         </div>
