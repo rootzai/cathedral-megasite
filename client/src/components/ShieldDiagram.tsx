@@ -19,6 +19,7 @@ interface NodeDef {
   icon?: NodeIcon;
   destination: string;        // URL path or external URL
   destinationType: 'internal' | 'external';
+  isRingleader?: boolean;
 }
 
 interface Ring {
@@ -68,6 +69,7 @@ const NODES: NodeDef[] = [
   { id: "latham",         label: "Latham & Watkins",                            angle: 72,  ring: 3, destination: "/ruling/evidence", destinationType: 'internal' },
   { id: "ropes-gray",     label: "Ropes & Gray",                                angle: 112, ring: 3, destination: "/ledger#lawyers", destinationType: 'internal' },
   { id: "seton-law",      label: "Seton Hall Law School",                       angle: 162, ring: 3, destination: "/ledger#visitors", destinationType: 'internal' },
+  { id: "critchley",      label: "Michael Critchley",                           angle: 195, ring: 3, destination: "/ledger/critchley", destinationType: 'internal', isRingleader: true },
   { id: "rome",           label: "Rome (Vatican)",                              angle: 218, ring: 3, destination: "https://www.vatican.va", destinationType: 'external' },
   { id: "ag-office",      label: "AG Office",                                   angle: 228, ring: 3, destination: "/ledger#lawyers", destinationType: 'internal' },
   { id: "nj-courts",      label: "NJ Courts",                                   angle: 285, ring: 3, destination: "/ruling/dirty-dozen", destinationType: 'internal' },
@@ -93,6 +95,8 @@ const CORE_NAMES: Record<string, string> = {
   "The Dirty Dozen": "/ledger#regents",
   "Cardinal Tobin": "/ledger#cardinal-joseph-w-tobin-c-ss-r",
   "Chris Christie": "/ledger#christopher-j-christie",
+  "Michael Critchley": "/ledger/critchley",
+  "Joe LaSala": "/ledger#joseph-p-lasala",
   "Elias Lorenzo Bishop": "/ledger/lorenzo",
   "Bishop Checchio": "/ledger/checchio"
 };
@@ -281,32 +285,33 @@ export default function ShieldDiagram({
         )}
 
         {/* NODES */}
-        {NODES.map((node) => {
-          const r = radii[5 - node.ring];
-          const pos = polarToXY(node.angle + (rotations[5 - node.ring] || 0), r, cx, cy);
-          const isClicked = clickedNode === node.id;
-          const isHovered = hoveredNode === node.id;
-          const othersClicked = clickedNode && !isClicked;
-
-          return (
-            <g 
-              key={node.id} 
-              onMouseEnter={() => !clickedNode && setHoveredNode(node.id)} 
-              onMouseLeave={() => setHoveredNode(null)}
-              onClick={() => handleNodeClick(node)}
-              className="cursor-pointer transition-all duration-300 pointer-events-auto"
-              opacity={othersClicked ? 0.1 : 1}
-              filter={(isClicked || isHovered) ? (isClicked ? "url(#gClick)" : "url(#gGold)") : undefined}
-            >
-              <circle 
-                cx={pos.x} cy={pos.y} 
-                r={isClicked ? 10 : 4} 
-                fill={isClicked || isHovered ? "#f0c060" : "#c9a84c"} 
-                className="transition-all duration-300"
-              />
-              <text 
-                x={pos.x + (isClicked ? 14 : 8)} y={pos.y + 4} 
-                fill="#e8d8c0" fontSize={isClicked ? (size < 600 ? "10" : "12") : (size < 600 ? "7" : "9")} 
+              const isRingleader = !!node.isRingleader;
+              return (
+                <g 
+                  key={node.id} 
+                  onMouseEnter={() => !clickedNode && setHoveredNode(node.id)} 
+                  onMouseLeave={() => setHoveredNode(null)}
+                  onClick={() => handleNodeClick(node)}
+                  className="cursor-pointer transition-all duration-300 pointer-events-auto"
+                  opacity={othersClicked ? 0.1 : 1}
+                  filter={(isClicked || isHovered) ? (isClicked ? "url(#gClick)" : "url(#gGold)") : undefined}
+                >
+                  <circle 
+                    cx={pos.x} cy={pos.y} 
+                    r={isClicked ? (isRingleader ? 12 : 10) : (isRingleader ? 6 : 4)} 
+                    fill={isClicked || isHovered ? (isRingleader ? "#d4af37" : "#f0c060") : (isRingleader ? "#d4af37" : "#c9a84c")} 
+                    className="transition-all duration-300"
+                  />
+                  {isRingleader && !isClicked && (
+                    <circle 
+                        cx={pos.x} cy={pos.y} r={10} 
+                        fill="none" stroke="#d4af37" strokeWidth="0.5" strokeDasharray="2 2"
+                        className="animate-[spin_4s_linear_infinite] opacity-50"
+                    />
+                  )}
+                  <text 
+                    x={pos.x + (isClicked ? 14 : 8)} y={pos.y + 4} 
+                    fill={isRingleader ? "#d4af37" : "#e8d8c0"} fontSize={isClicked ? (size < 600 ? "10" : "12") : (size < 600 ? "7" : "9")} 
                 fontFamily="Courier Prime"
                 className="pointer-events-none transition-all"
                 fontWeight={isClicked ? "bold" : "normal"}

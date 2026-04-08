@@ -16,7 +16,7 @@ export default function ShieldHub({
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   const getActorRoute = (id: string) => {
-    if (['mccarrick', 'checchio', 'reilly', 'martin', 'lorenzo'].includes(id)) {
+    if (['mccarrick', 'checchio', 'reilly', 'martin', 'lorenzo', 'critchley'].includes(id)) {
       return `/ledger/${id}`;
     }
     return `/ledger/mccarrick/network`;

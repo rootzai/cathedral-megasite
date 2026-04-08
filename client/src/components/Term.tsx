@@ -6,6 +6,10 @@ const TERM_DEFINITIONS: Record<string, { summary: string; context?: string }> = 
     summary: "A devastating 2019 internal investigation by the law firm Latham & Watkins.",
     context: "It named 12 abusive clergymen and detailed McCarrick's 'culture of fear.' Seton Hall locked it away and has fought its release for six years."
   },
+  "Michael Critchley": {
+    summary: "The preeminent 'legal gladiator' for the Church in NJ.",
+    context: "Architect of the 'Architecture of Protection' and lead crisis manager responsible for the 2013 Fugee de-escalation."
+  },
   "Latham Archive": {
     summary: "A 24,000-page vault of evidence supporting the Latham Report.",
     context: "Currently locked in a SCIF. A judge recently ordered it unsealed by May 18, 2026."

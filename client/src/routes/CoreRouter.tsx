@@ -29,6 +29,7 @@ const NotFound = React.lazy(() => import("@/pages/NotFound"));
 const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy"));
 const WhosWho = React.lazy(() => import("@/pages/WhosWho"));
 const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings"));
+const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley"));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -170,6 +171,9 @@ export function CoreRouter() {
         </Route>
         <Route path="/vault">
           <PageLayout component={LegalFindings} />
+        </Route>
+        <Route path="/ledger/critchley">
+          <PageLayout component={MichaelCritchley} theme="endgame" />
         </Route>
 
         {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}

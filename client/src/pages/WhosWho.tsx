@@ -7,14 +7,24 @@ import { SEO } from "@/components/SEO";
 export default function WhosWho() {
     const categories = [
         {
+            title: "THE RINGLEADERS",
+            description: "The primary architects of the 'Architecture of Protection' and the elite crisis managers who insulated the hierarchy from accountability.",
+            actors: PERPETRATORS.filter(a => a.tags.includes('ringleader'))
+        },
+        {
             title: "THE CORE ENABLERS",
-            description: "Individuals whose actions or silence allowed the 'Architecture of Protection' to function.",
+            description: "Individuals whose actions or silence allowed the defensive mechanisms to function.",
             actors: PERPETRATORS.filter(a => a.tags.includes('core'))
         },
         {
             title: "THE LEGAL WALL",
-            description: "The attorneys and firms responsible for the 'Sanction Plea' and the withholding of forensic evidence.",
-            actors: PERPETRATORS.filter(a => a.tags.includes('legal-wall'))
+            description: "The Seton Hall Law pipeline: Attorneys responsible for the 'Sanction Plea' and shielding forensic evidence from discovery.",
+            actors: PERPETRATORS.filter(a => a.tags.includes('legal-wall') && !a.tags.includes('ringleader'))
+        },
+        {
+            title: "THE POLITICAL NEXUS",
+            description: "The secular power structures and intermediaries that de-escalated criminal exposure for institutional leadership.",
+            actors: PERPETRATORS.filter(a => a.tags.includes('political-nexus'))
         },
         {
             title: "THE MACHINE",

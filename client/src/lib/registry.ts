@@ -24,11 +24,14 @@ export interface ShieldRing {
 
 export const PERPETRATORS: ForensicActor[] = [
     { id: "mccarrick", name: "Theodore McCarrick", role: "Primary Perpetrator", tags: ["core", "clergy"] },
+    { id: "critchley", name: "Michael Critchley", role: "The Fixer / Lead Crisis Manager", tags: ["ringleader", "legal-wall", "seton-hall"] },
     { id: "martin", name: "Fr. Kenneth Martin", role: "Unreachable by Design", tags: ["core", "clergy"] },
     { id: "dealmeida", name: "Teresina DeAlmeida", role: "Enabler", tags: ["core"] },
-    { id: "marino", name: "Kevin Marino", role: "Counsel / Former Board Chair", tags: ["legal-wall", "sanctioned"] },
-    { id: "porrino", name: "Chris Porrino", role: "Counsel / former NJ AG", tags: ["legal-wall"] },
-    { id: "scrivo", name: "Tom Scrivo", role: "Lead Counsel", tags: ["legal-wall", "sanctioned"] },
+    { id: "marino", name: "Kevin Marino", role: "Counsel / Former Board Chair", tags: ["legal-wall", "sanctioned", "seton-hall"] },
+    { id: "porrino", name: "Chris Porrino", role: "Counsel / former NJ AG", tags: ["legal-wall", "seton-hall"] },
+    { id: "scrivo", name: "Tom Scrivo", role: "Lead Counsel", tags: ["legal-wall", "sanctioned", "seton-hall"] },
+    { id: "lasala", name: "Joe LaSala", role: "Senior Legal Advisor", tags: ["legal-wall", "seton-hall"] },
+    { id: "christie", name: "Chris Christie", role: "Former Governor / US Attorney", tags: ["political-nexus"] },
     { id: "stio", name: "Angelo Stio", role: "Compliance Counsel", tags: ["legal-wall"] },
     { id: "linares", name: "Jose Linares", role: "Special Master", tags: ["legal-wall"] },
     { id: "papalia", name: "Patrick Papalia", role: "Discovery Counsel", tags: ["legal-wall"] },

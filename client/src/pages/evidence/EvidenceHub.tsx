@@ -123,7 +123,7 @@ export default function EvidenceHub() {
                             <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
                                 <span className="text-[10px] font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
                                 <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
-                                <p className="text-sm text-zinc-500 italic mb-6">"I want the records. Show me the filings."</p>
+                                <p className="text-sm text-zinc-500 italic mb-6">"I want the records. Show me the filings and the {<Term id="Michael Critchley">Critchley Shield</Term>}."</p>
                                 <div className="space-y-4">
                                     <Link href="/breach" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE BREACH</Link>
                                     <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE VAULT</Link>
