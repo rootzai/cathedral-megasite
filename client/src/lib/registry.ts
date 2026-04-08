@@ -24,7 +24,9 @@ export interface ShieldRing {
 
 export const PERPETRATORS: ForensicActor[] = [
     { id: "mccarrick", name: "Theodore McCarrick", role: "Primary Perpetrator", tags: ["core", "clergy"] },
-    { id: "critchley", name: "Michael Critchley", role: "The Fixer / Lead Crisis Manager", tags: ["ringleader", "legal-wall", "seton-hall"] },
+    { id: "critchley", name: "Michael Critchley", role: "Ringleader // Fixer", tags: ["LEGAL", "RINGLEADER", "ADVOCATI"] },
+    { id: "myers", name: "John J. Myers", role: "Ringleader // Former Archbishop", tags: ["CHURCH", "RINGLEADER", "ENABLER"] },
+    { id: "serratelli", name: "Arthur J. Serratelli", role: "Ringleader // Former Bishop", tags: ["CHURCH", "RINGLEADER", "ENABLER"] },
     { id: "martin", name: "Fr. Kenneth Martin", role: "Unreachable by Design", tags: ["core", "clergy"] },
     { id: "dealmeida", name: "Teresina DeAlmeida", role: "Enabler", tags: ["core"] },
     { id: "marino", name: "Kevin Marino", role: "Counsel / Former Board Chair", tags: ["legal-wall", "sanctioned", "seton-hall"] },

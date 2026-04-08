@@ -9,7 +9,14 @@ export default function WhosWho() {
         {
             title: "THE RINGLEADERS",
             description: "The primary architects of the 'Architecture of Protection' and the elite crisis managers who insulated the hierarchy from accountability.",
-            actors: PERPETRATORS.filter(a => a.tags.includes('ringleader'))
+            actors: [
+                { id: "critchley", name: "Michael Critchley", role: "The Fixer / Legal Architect", tags: ["ringleader"] },
+                { id: "myers", name: "John J. Myers", role: "Former Archbishop of Newark", tags: ["ringleader"] },
+                { id: "serratelli", name: "Arthur J. Serratelli", role: "Former Bishop of Paterson", tags: ["ringleader"] },
+                { id: "tobin", name: "Cardinal Joseph Tobin", role: "Archbishop of Newark", tags: ["ringleader"] },
+                { id: "mccarrick", name: "Theodore McCarrick", role: "The Source", tags: ["ringleader"] },
+                ...PERPETRATORS.filter(a => a.tags.includes('ringleader') && !["critchley", "myers", "serratelli", "tobin", "mccarrick"].includes(a.id))
+            ]
         },
         {
             title: "THE CORE ENABLERS",

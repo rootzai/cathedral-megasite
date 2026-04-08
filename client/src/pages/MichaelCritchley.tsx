@@ -90,6 +90,26 @@ export default function MichaelCritchley() {
                                 <div className="w-16 h-1 bg-red-900" />
                             </div>
                         </section>
+                        {/* Section 4: The Client-Patron Nexus */}
+                        <section className="space-y-6 pb-24">
+                            <h2 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest flex items-center gap-3">
+                                <Shield className="text-red-900" /> The Client-Patron Nexus
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-4">
+                                    <h4 className="text-white font-cinzel uppercase text-sm tracking-widest">[THE CLIENT: JOHN MYERS]</h4>
+                                    <p className="text-zinc-500 font-serif italic text-sm leading-relaxed">
+                                        As Archbishop, Myers hired Critchley to insulate the Chancery from the Father Fugee criminal probe. Critchley successfully "managed the temperature," preventing Myers from being deposed and framing institutional failure as a simple oversight.
+                                    </p>
+                                </div>
+                                <div className="space-y-4">
+                                    <h4 className="text-white font-cinzel uppercase text-sm tracking-widest">[THE PATRON: ARTHUR SERRATELLI]</h4>
+                                    <p className="text-zinc-500 font-serif italic text-sm leading-relaxed">
+                                        The former Bishop of Paterson—and Myers' former Vicar General—formally recognized Critchley with the 2017 Advocati Christi Award. This was more than an award; it was the public seal on the shield that kept both Newark and Paterson out of the courtroom.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
                     <div className="lg:col-span-1 space-y-12">
