@@ -189,8 +189,7 @@ export default function RedesignedHome() {
                         </Link>
                     </motion.div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             {/* THE POWER AXIS */}
             <section className="py-24 px-6 border-b border-white/5">
