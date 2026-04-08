@@ -12,53 +12,57 @@ export default function Downfall() {
     />
 
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      <div className="lg:col-span-8 space-y-8 font-serif text-lg leading-relaxed">
-        <section>
-          <h3 className="font-mono font-bold text-destructive uppercase tracking-widest mb-4 text-sm">4.1 First Public Accusations</h3>
+      <div className="lg:col-span-8 space-y-12 font-serif text-xl leading-relaxed text-zinc-300">
+        <section className="bg-zinc-900/50 p-8 border-l-4 border-red-900 shadow-xl">
+          <h3 className="font-mono font-black text-red-600 uppercase tracking-[0.3em] mb-6 text-base">SECTION 4.1: FIRST PUBLIC ACCUSATIONS</h3>
+          <h4 className="font-cinzel font-black text-3xl text-white mb-6 uppercase tracking-widest">The "Smoking Gun"</h4>
           <p>
             In 2017, the Archdiocese of New York received a credible allegation that McCarrick had abused a minor in the 1970s. This was the "smoking gun" that finally triggered a formal canonical process.
           </p>
-          <p>
+          <p className="mt-6 border-t border-red-900/30 pt-6">
             On June 20, 2018, the Vatican announced that the allegation had been found "credible and substantiated" and that McCarrick had been removed from public ministry. This announcement sent shockwaves through the global Church.
           </p>
         </section>
 
-        <section>
-          <h3 className="font-mono font-bold text-destructive uppercase tracking-widest mb-4 text-sm">4.2 Resignation from the College of Cardinals</h3>
+        <section className="bg-zinc-900/50 p-8 border-l-4 border-red-900 shadow-xl">
+          <h3 className="font-mono font-black text-red-600 uppercase tracking-[0.3em] mb-6 text-base">SECTION 4.2: THE RESIGNATION</h3>
+          <h4 className="font-cinzel font-black text-3xl text-white mb-6 uppercase tracking-widest">Resignation from the College of Cardinals</h4>
           <p>
             As more allegations surfaced—including from adults who had been seminarians—pressure mounted. In July 2018, Pope Francis accepted McCarrick's resignation from the College of Cardinals.
           </p>
-          <div className="pl-6 border-l-4 border-destructive italic text-muted-foreground">
+          <div className="mt-8 p-10 bg-red-900/10 border-2 border-red-900 italic text-white text-2xl font-cinzel text-center shadow-[inset_0_0_20px_rgba(139,26,26,0.3)]">
             "It was the first time in nearly a century that a cardinal had resigned his title, and the first time ever for reasons of sexual abuse."
           </div>
         </section>
 
-        <section>
-          <h3 className="font-mono font-bold text-destructive uppercase tracking-widest mb-4 text-sm">4.3 Laicization</h3>
+        <section className="bg-zinc-900/50 p-8 border-l-4 border-red-900 shadow-xl">
+          <h3 className="font-mono font-black text-red-600 uppercase tracking-[0.3em] mb-6 text-base">SECTION 4.3: THE FINAL VERDICT</h3>
+          <h4 className="font-cinzel font-black text-3xl text-white mb-6 uppercase tracking-widest">Formal Laicization</h4>
           <p>
             Following a canonical trial, the Vatican's Congregation for the Doctrine of the Faith found McCarrick guilty of "solicitation in the Sacrament of Confession and sins against the Sixth Commandment with minors and with adults, with the aggravating factor of the abuse of power."
           </p>
-          <p>
-            On February 16, 2019, Pope Francis confirmed the penalty of <span className="font-bold text-destructive">dismissal from the clerical state</span> (laicization). Theodore McCarrick was now simply "Mr. McCarrick."
+          <p className="mt-6 p-6 border-2 border-red-600 bg-red-900/40 text-white font-black uppercase text-center shadow-2xl">
+            On February 16, 2019, Pope Francis confirmed the penalty of dismissial from the clerical state (laicization). Theodore McCarrick was now simply "Mr. McCarrick."
           </p>
         </section>
       </div>
 
-      <div className="lg:col-span-4 space-y-6">
-        <div className="bg-muted p-6 border border-border">
-          <h4 className="font-mono font-bold uppercase text-sm mb-4 border-b border-border pb-2">The Fall Timeline</h4>
-          <div className="space-y-6 font-mono text-xs">
-            <div className="relative pl-4 border-l border-destructive">
-              <span className="block font-bold text-destructive mb-1">JUNE 20, 2018</span>
-              <span className="block text-muted-foreground">Removed from public ministry following credible allegation.</span>
+      <div className="lg:col-span-4 space-y-8">
+        <div className="bg-zinc-900 border-2 border-red-900 p-8 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 blur-3xl" />
+          <h4 className="font-cinzel font-black uppercase text-xl mb-8 border-b-2 border-red-900 pb-4 tracking-widest text-white">The Fall Timeline</h4>
+          <div className="space-y-8 font-mono text-sm tracking-tight text-white">
+            <div className="relative pl-6 border-l-4 border-red-600">
+              <span className="block font-black text-red-600 mb-2 text-lg uppercase">JUNE 20, 2018</span>
+              <span className="block leading-tight uppercase font-bold">Removed from public ministry following credible allegation.</span>
             </div>
-            <div className="relative pl-4 border-l border-destructive">
-              <span className="block font-bold text-destructive mb-1">JULY 28, 2018</span>
-              <span className="block text-muted-foreground">Resigns from College of Cardinals. Ordered to life of prayer and penance.</span>
+            <div className="relative pl-6 border-l-4 border-red-600">
+              <span className="block font-black text-red-600 mb-2 text-lg uppercase">JULY 28, 2018</span>
+              <span className="block leading-tight uppercase font-bold">Resigns from College of Cardinals. Ordered to life of prayer and penance.</span>
             </div>
-            <div className="relative pl-4 border-l border-destructive">
-              <span className="block font-bold text-destructive mb-1">FEB 16, 2019</span>
-              <span className="block text-muted-foreground">Laicized (defrocked) by Pope Francis.</span>
+            <div className="relative pl-6 border-l-4 border-red-600">
+              <span className="block font-black text-red-600 mb-2 text-lg uppercase">FEB 16, 2019</span>
+              <span className="block leading-tight uppercase font-bold">Laicized (defrocked) by Pope Francis in a definitive sentence.</span>
             </div>
           </div>
         </div>
