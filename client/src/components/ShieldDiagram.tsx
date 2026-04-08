@@ -285,8 +285,14 @@ export default function ShieldDiagram({
         )}
 
         {/* NODES */}
-              const isRingleader = !!node.isRingleader;
-              return (
+        {NODES.map((node) => {
+          const r = radii[5 - node.ring];
+          const pos = polarToXY(node.angle + (rotations[5 - node.ring] || 0), r, cx, cy);
+          const isClicked = clickedNode === node.id;
+          const isHovered = hoveredNode === node.id;
+          const othersClicked = clickedNode && !isClicked;
+          const isRingleader = !!node.isRingleader;
+          return (
                 <g 
                   key={node.id} 
                   onMouseEnter={() => !clickedNode && setHoveredNode(node.id)} 
