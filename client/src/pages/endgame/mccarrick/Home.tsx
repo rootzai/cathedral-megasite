@@ -24,10 +24,11 @@ export default function Home() {
           McCarrick’s fall from grace – from a globe-trotting power-broker to a defrocked cleric facing multiple allegations – has become a central case study in how abuse was enabled and concealed within the church hierarchy.
         </p>
 
-        <div className="bg-muted p-6 border border-border my-8">
-          <h3 className="font-mono font-bold uppercase text-sm mb-4 text-destructive tracking-widest">Dossier Objective</h3>
-          <p className="font-serif italic">
-            This dossier provides a multi-faceted examination of the McCarrick case and the broader ecclesiastical network that facilitated his rise and protected him, despite early warnings.
+        <div className="p-10 border-2 border-red-900 bg-zinc-900 shadow-2xl my-12 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 blur-3xl pointer-events-none" />
+          <h3 className="font-mono font-black uppercase text-base mb-6 text-red-600 tracking-[0.3em]">DOSSIER OBJECTIVE</h3>
+          <p className="font-serif italic text-2xl text-white leading-relaxed">
+            This report provides a multi-faceted forensic examination of the McCarrick case and the broader ecclesiastical network that facilitated his rise and protected him, despite decades of early warnings.
           </p>
         </div>
 
@@ -37,54 +38,55 @@ export default function Home() {
       </div>
 
       <div className="lg:col-span-4 space-y-6">
-        <div className="border border-border p-4 bg-card">
+        <div className="border-2 border-red-900 p-2 bg-zinc-900 group shadow-2xl transition-all">
           <ImageModal
             src="/assets/images/mccarrick_portrait.jpg"
             alt="Theodore McCarrick"
             title="Theodore McCarrick"
             caption="Former Cardinal and Archbishop of Washington, D.C., laicized in 2019."
           >
-            <div className="aspect-[3/4] bg-muted relative overflow-hidden mb-4 grayscale contrast-125 cursor-zoom-in group">
+            <div className="aspect-[3/4] bg-black relative overflow-hidden mb-6 border border-red-900 cursor-zoom-in">
               <img
                 src="/assets/images/mccarrick_portrait.jpg"
                 alt="Theodore McCarrick"
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                className="object-cover w-full h-full brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-destructive/10 mix-blend-multiply pointer-events-none" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20">
-                <span className="bg-white/70 text-zinc-900 text-xs font-mono px-2 py-1 uppercase tracking-widest">Click to Expand</span>
+              <div className="absolute inset-0 bg-red-900/10 mix-blend-multiply pointer-events-none group-hover:bg-transparent" />
+              <div className="absolute inset-x-0 bottom-0 py-6 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="block text-center text-white text-xs font-black uppercase tracking-[0.3em]">Click to Expand Forensic Record</span>
               </div>
             </div>
           </ImageModal>
-          <div className="font-mono text-xs space-y-2">
-            <div className="flex justify-between border-b border-border pb-1">
-              <span className="text-muted-foreground mr-6">SUBJECT</span>
-              <span className="font-bold text-[#8B1A1A]">MCCARRICK, THEODORE E.</span>
+          <div className="font-mono text-sm space-y-3 px-4 pb-4">
+            <div className="flex justify-between border-b border-red-900/30 pb-2">
+              <span className="text-red-600 font-black uppercase">SUBJECT</span>
+              <span className="font-black text-white">MCCARRICK, THEODORE E.</span>
             </div>
-            <div className="flex justify-between border-b border-border pb-1">
-              <span className="text-muted-foreground">DOB</span>
-              <span className="font-bold">JULY 7, 1930</span>
+            <div className="flex justify-between border-b border-red-900/30 pb-2">
+              <span className="text-red-600 font-black uppercase">DOB</span>
+              <span className="font-black text-white">JULY 7, 1930</span>
             </div>
-            <div className="flex justify-between border-b border-border pb-1">
-              <span className="text-muted-foreground">STATUS</span>
-              <span className="font-bold text-destructive">LAICIZED (2019)</span>
+            <div className="flex justify-between border-b border-red-900/30 pb-2">
+              <span className="text-red-600 font-black uppercase">STATUS</span>
+              <span className="font-black text-red-500 shadow-[0_0_10px_rgba(220,38,38,0.3)]">LAICIZED (2019)</span>
             </div>
           </div>
         </div>
 
-        <div className="border border-border p-4 bg-card">
-          <h4 className="font-mono font-bold uppercase text-xs mb-3">Key Documents</h4>
-          <ul className="space-y-2 text-sm font-mono">
-            <li className="flex items-center gap-2 text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
-              <span className="w-2 h-2 bg-destructive" />
+        <div className="border-2 border-red-900 p-8 bg-zinc-900 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-red-900/10 blur-2xl pointer-events-none" />
+          <h4 className="font-cinzel font-black uppercase text-base mb-6 border-b-2 border-red-900 pb-4 tracking-widest text-white">Evidence Archive</h4>
+          <ul className="space-y-4 text-sm font-mono font-black uppercase">
+            <li className="flex items-center gap-3 text-red-500 hover:text-white transition-colors cursor-pointer">
+              <span className="w-2 h-2 bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
               Vatican McCarrick Report (2020)
             </li>
-            <li className="flex items-center gap-2 text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
-              <span className="w-2 h-2 bg-destructive" />
+            <li className="flex items-center gap-3 text-red-500 hover:text-white transition-colors cursor-pointer">
+              <span className="w-2 h-2 bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
               PA Grand Jury Report (2018)
             </li>
-            <li className="flex items-center gap-2 text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
-              <span className="w-2 h-2 bg-destructive" />
+            <li className="flex items-center gap-3 text-red-500 hover:text-white transition-colors cursor-pointer">
+              <span className="w-2 h-2 bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]" />
               Dallas Charter (2002)
             </li>
           </ul>

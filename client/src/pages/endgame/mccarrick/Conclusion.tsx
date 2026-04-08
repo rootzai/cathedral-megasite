@@ -12,36 +12,42 @@ export default function Conclusion() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-8 space-y-8 font-serif text-lg leading-relaxed">
-            <p>
+          <div className="lg:col-span-8 space-y-12 font-serif text-xl leading-relaxed text-zinc-300">
+            <p className="bg-zinc-900/50 p-8 border-l-4 border-red-900 shadow-xl">
               The Theodore McCarrick scandal is a dark chapter in the history of the Catholic Church, but it also serves as a turning point. The exposure of his crimes and the subsequent investigations have forced the Church to confront its systemic failures and implement necessary reforms.
             </p>
             <p>
               While justice for many survivors remains elusive, the laicization of a cardinal and the publication of the McCarrick Report represent significant steps toward accountability. The path forward requires continued vigilance, a commitment to transparency, and an unwavering dedication to protecting the vulnerable.
             </p>
-            <p className="font-bold">
-              This dossier stands as a record of the facts, a testament to the survivors, and a reminder that no one is above the law—canon or civil.
-            </p>
+            <div className="p-8 border-4 border-red-900 bg-red-900 text-white font-cinzel font-black text-2xl uppercase tracking-tighter text-center shadow-2xl">
+              "This dossier stands as a record of the facts, a testament to the survivors, and a reminder that no one is above the law—canon or civil."
+            </div>
           </div>
 
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-card border border-border p-6">
-              <h4 className="font-mono font-bold uppercase text-sm mb-4 border-b border-border pb-2">Sources & Further Reading</h4>
-              <ul className="space-y-3 font-mono text-xs">
-                <li>
-                  <a href="#" className="hover:text-destructive transition-colors underline decoration-dotted">The Holy See’s McCarrick Report (2020)</a>
+          <div className="lg:col-span-4 space-y-8">
+            <div className="bg-zinc-900 border-2 border-red-900 p-8 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 blur-3xl" />
+              <h4 className="font-cinzel font-black uppercase text-xl mb-8 border-b-2 border-red-900 pb-4 tracking-widest text-white">Sources & Archive</h4>
+              <ul className="space-y-6 font-mono text-sm font-black uppercase">
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-600 mt-1.5 shrink-0" />
+                  <a href="#" className="text-red-500 hover:text-white transition-colors underline decoration-2 underline-offset-4">Holy See McCarrick Report (2020)</a>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-destructive transition-colors underline decoration-dotted">Vos estis lux mundi (2019)</a>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-600 mt-1.5 shrink-0" />
+                  <a href="#" className="text-red-500 hover:text-white transition-colors underline decoration-2 underline-offset-4">Vos Estis Lux Mundi (2019)</a>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-destructive transition-colors underline decoration-dotted">The Boston Globe "Spotlight" Archives</a>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-600 mt-1.5 shrink-0" />
+                  <a href="#" className="text-red-500 hover:text-white transition-colors underline decoration-2 underline-offset-4">Boston Globe "Spotlight" Archives</a>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-destructive transition-colors underline decoration-dotted">BishopAccountability.org</a>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-600 mt-1.5 shrink-0" />
+                  <a href="#" className="text-red-500 hover:text-white transition-colors underline decoration-2 underline-offset-4">BishopAccountability.org</a>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-destructive transition-colors underline decoration-dotted">The Washington Post Investigations</a>
+                <li className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-red-600 mt-1.5 shrink-0" />
+                  <a href="#" className="text-red-500 hover:text-white transition-colors underline decoration-2 underline-offset-4">Washington Post Investigations</a>
                 </li>
               </ul>
             </div>

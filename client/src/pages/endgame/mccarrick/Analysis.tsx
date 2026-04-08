@@ -17,50 +17,51 @@ export default function Analysis() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-          <div className="space-y-6">
-            <h3 className="font-display font-bold text-2xl uppercase border-b-4 border-destructive pb-2 inline-block">Patterns of Cover-up</h3>
-            <p className="font-serif text-lg leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16">
+          <div className="space-y-10">
+            <h3 className="font-cinzel font-black text-2xl uppercase border-b-4 border-red-900 pb-4 tracking-widest text-white text-shadow-blood inline-block">Patterns of Cover-up</h3>
+            <p className="font-serif text-xl leading-relaxed text-zinc-300">
               The "pass the trash" mentality that allowed abusive priests to move between parishes was replicated at the episcopal level. Bishops and cardinals prioritized the avoidance of scandal over the safety of the flock.
             </p>
-            <p className="font-serif text-lg leading-relaxed">
+            <p className="font-serif text-xl leading-relaxed text-zinc-300 p-6 bg-zinc-900/50 border-l-4 border-red-900 italic">
               This was facilitated by a culture of secrecy (the "pontifical secret") that shielded internal investigations from civil authorities and the public.
             </p>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="font-display font-bold text-2xl uppercase border-b-4 border-destructive pb-2 inline-block">Systemic Failures</h3>
-            <ul className="space-y-4 font-serif text-lg">
-              <li className="flex gap-4">
-                <span className="font-mono font-bold text-destructive">01</span>
-                <span><span className="font-bold">Clericalism:</span> The belief that the clergy are a separate, superior caste.</span>
+          <div className="space-y-10">
+            <h3 className="font-cinzel font-black text-2xl uppercase border-b-4 border-red-900 pb-4 tracking-widest text-white text-shadow-blood inline-block">Systemic Failures</h3>
+            <ul className="space-y-6 font-mono text-lg font-black uppercase">
+              <li className="flex gap-6 items-start group">
+                <span className="font-black text-red-600 bg-red-900/10 px-3 py-1 border border-red-900 group-hover:bg-red-900 group-hover:text-white transition-all">01</span>
+                <span className="text-white"><span className="text-red-500">Clericalism:</span> The belief that the clergy are a superior caste.</span>
               </li>
-              <li className="flex gap-4">
-                <span className="font-mono font-bold text-destructive">02</span>
-                <span><span className="font-bold">Lack of Checks and Balances:</span> Bishops had no effective oversight mechanism.</span>
+              <li className="flex gap-6 items-start group">
+                <span className="font-black text-red-600 bg-red-900/10 px-3 py-1 border border-red-900 group-hover:bg-red-900 group-hover:text-white transition-all">02</span>
+                <span className="text-white"><span className="text-red-500">Toxic Autonomy:</span> Absolute power without effective oversight.</span>
               </li>
-              <li className="flex gap-4">
-                <span className="font-mono font-bold text-destructive">03</span>
-                <span><span className="font-bold">Financial Influence:</span> McCarrick's fundraising ability bought him protection and access.</span>
+              <li className="flex gap-6 items-start group">
+                <span className="font-black text-red-600 bg-red-900/10 px-3 py-1 border border-red-900 group-hover:bg-red-900 group-hover:text-white transition-all">03</span>
+                <span className="text-white"><span className="text-red-500">Financial Leverage:</span> Using wealth to buy access and silence.</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="bg-muted p-8 border border-border mt-12">
-          <h3 className="font-mono font-bold uppercase text-sm mb-4 text-destructive tracking-widest">Lessons Learned</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-serif text-sm">
-            <div>
-              <h4 className="font-bold mb-2">Transparency is Non-Negotiable</h4>
-              <p>The Church can no longer operate in secrecy. Trust, once lost, can only be regained through radical openness.</p>
+        <div className="bg-red-900 p-12 border-4 border-white/20 shadow-[0_0_100px_rgba(139,26,26,0.5)] mt-20 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-3xl pointer-events-none" />
+          <h3 className="font-mono font-black uppercase text-xl mb-10 text-white tracking-[0.4em] border-b-2 border-white/30 pb-4 inline-block">Lessons Learned</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
+            <div className="space-y-4">
+              <h4 className="font-cinzel font-black text-xl uppercase tracking-tighter shadow-sm">RADICAL TRANSPARENCY</h4>
+              <p className="font-serif text-lg leading-snug">The Church can no longer operate in secrecy. Trust, once lost, can only be regained through radical, institutional openness.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-2">Lay Involvement is Crucial</h4>
-              <p>Independent lay oversight boards are necessary to hold the hierarchy accountable.</p>
+            <div className="space-y-4">
+              <h4 className="font-cinzel font-black text-xl uppercase tracking-tighter shadow-sm">INDEPENDENT OVERSIGHT</h4>
+              <p className="font-serif text-lg leading-snug">Independent lay oversight boards are necessary to hold the hierarchy accountable and break the cycle of self-regulation.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-2">Listen to Survivors</h4>
-              <p>Survivors must be believed, supported, and placed at the center of the healing process.</p>
+            <div className="space-y-4">
+              <h4 className="font-cinzel font-black text-xl uppercase tracking-tighter shadow-sm">PRIMACY OF SURVIVORS</h4>
+              <p className="font-serif text-lg leading-snug">Survivors must be heard, believed, and placed at the absolute center of every healing and justice process.</p>
             </div>
           </div>
         </div>
