@@ -159,7 +159,6 @@ export default function Ledger() {
           );
         })}
       </div>
-      </div>
       
       <div className="py-12" />
     </div>
