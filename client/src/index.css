@@ -35,44 +35,60 @@
   --color-easter-purple: #3A1A5C;
   --color-dark-foundation: #0A0A0C;
 
-  /* UPSCALED TYPOGRAPHY TO ENFORCE READABILITY GLOBALLY */
-  --text-xs: 12px;
-  --text-sm: 15px;
-  --text-base: 18px;
-  --text-lg: 20px;
-  --text-xl: 24px;
+  /* MAXIMUM READABILITY TYPOGRAPHY - NO SMALL TEXT ALLOWED */
+  --text-xs: 16px;
+  /* Was 12px - absolute minimum */
+  --text-sm: 18px;
+  /* Was 15px - small text floor */
+  --text-base: 22px;
+  /* Was 18px - body text enlarged */
+  --text-lg: 26px;
+  /* Was 20px - larger headings */
+  --text-xl: 32px;
+  /* Was 24px - hero text bigger */
 }
 
 :root {
   --background: #0A0A0C;
-  --foreground: #E0E0E0; /* Much brighter bone white for supreme contrast */
-  --primary: #9B1C1C; /* Slightly brighter crimson */
+  --foreground: #FFFFFF;
+  /* PURE WHITE - maximum contrast */
+  --primary: #DC2626;
+  /* Bright crimson for visibility */
   --primary-foreground: #ffffff;
   --card: #0D0D10;
-  --card-foreground: #E0E0E0;
+  --card-foreground: #FFFFFF;
+  /* Pure white */
   --popover: #0D0D10;
-  --popover-foreground: #E0E0E0;
-  --secondary: #16161D;
-  --secondary-foreground: #E0E0E0;
-  --muted: #111116;
-  --muted-foreground: #A1A1AA; /* Bumping muted contrast massively */
-  --accent: #9B1C1C;
+  --popover-foreground: #FFFFFF;
+  --secondary: #1A1A24;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1A1A24;
+  --muted-foreground: #D4D4D8;
+  /* Light gray - always readable */
+  --accent: #DC2626;
   --accent-foreground: #ffffff;
-  --border: #2A2A35; /* Brighter borders for visibility */
+  --border: #404050;
+  /* Much brighter borders */
   --input: #1A1A22;
-  --ring: #9B1C1C;
+  --ring: #DC2626;
 
-  /* Investigation Tokens */
-  --ink: #E0E0E0;
-  --ink-mid: #A1A1AA;
-  --blood: #9B1C1C;
-  --gold: #B89624;
-  --parchment: #F2E8D5;
+  /* Investigation Tokens - HIGH CONTRAST EDITION */
+  --ink: #FFFFFF;
+  /* Pure white text */
+  --ink-mid: #E4E4E7;
+  /* Light gray - always visible */
+  --blood: #EF4444;
+  /* Bright red for alerts */
+  --gold: #FCD34D;
+  /* Bright gold */
+  --parchment: #FEF3C7;
+  /* Bright parchment */
 }
 
 .dark {
   --background: #0A0A0C;
-  --foreground: #C8BDB0;
+  --foreground: #FFFFFF;
+  /* Pure white in dark mode too */
 }
 
 @layer base {
@@ -81,23 +97,28 @@
   }
 
   :root {
-    /* v5.0 Master Typography Shift: Scaling UP for Investigative Broadside Legibility */
-    font-size: 112.5%; /* Raised from 100% (16px) to 18px base */
-    --base-size: 1.125rem;
-    --prose-size: 1.25rem; /* ~20px for body prose */
-    --header-size: 3.5rem;
-    
+    /* v7.0 MAXIMUM LEGIBILITY: All text enlarged for accessibility */
+    font-size: 137.5%;
+    /* 22px base - was 18px */
+    --base-size: 1.375rem;
+    /* 22px minimum */
+    --prose-size: 1.5rem;
+    /* 24px body text */
+    --header-size: 4rem;
+    /* 64px headers */
+
     --font-sans: "Inter", system-ui, -apple-system, sans-serif;
     --font-serif: "Cormorant Garamond", Georgia, serif;
     --font-heading: "Cinzel", serif;
     --font-mono: "Fira Code", monospace;
-    
+
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
   @media (min-width: 1024px) {
     :root {
-      font-size: 125%; /* 20px base on desktop */
+      font-size: 150%;
+      /* 24px base on desktop - maximum readability */
     }
   }
 
@@ -106,12 +127,38 @@
     font-size: var(--base-size);
     color: var(--foreground);
     background-color: var(--background);
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Increased line height for readability */
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+    /* Ensure minimum weight */
+    letter-spacing: 0.01em;
+    /* Slight tracking for clarity */
+  }
+
+  /* FORCE MINIMUM FONT SIZE - No tiny text anywhere */
+  * {
+    font-size: max(inherit, 16px);
+  }
+
+  /* Section numbers and labels must be visible */
+  .section-number,
+  [class*="section-index"],
+  [class*="index-number"] {
+    color: #FFFFFF !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5) !important;
   }
 
   /* Typography Hierarchy v3.0 */
-  h1, h2, h3, h4, .font-cinzel {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-cinzel {
     font-family: 'Cinzel', serif;
     font-weight: 900;
   }
@@ -137,98 +184,108 @@
   }
 }
 
-  /* Section Themes */
-  .theme-opinion {
-    --background: 46 25% 98%;
-    /* Bone / Parchment (#fdfcf8) stays light for contrast */
-    --foreground: 0 0% 10%;
-    --primary: 0 72% 35%;
-    --secondary: 46 15% 90%;
-    --accent: 46 25% 95%;
-    --border: 0 0% 80%;
-  }
+/* Section Themes */
+.theme-opinion {
+  --background: 46 25% 98%;
+  /* Bone / Parchment (#fdfcf8) stays light for contrast */
+  --foreground: 0 0% 10%;
+  --primary: 0 72% 35%;
+  --secondary: 46 15% 90%;
+  --accent: 46 25% 95%;
+  --border: 0 0% 80%;
+}
 
-  .theme-opinion h1,
-  .theme-opinion h2,
-  .theme-opinion h3 {
-    font-family: 'Playfair Display', serif;
-  }
+.theme-opinion h1,
+.theme-opinion h2,
+.theme-opinion h3 {
+  font-family: 'Playfair Display', serif;
+}
 
-  .theme-opinion .prose-investigative {
-    color: #1a1a1a;
-    max-width: 42rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.theme-opinion .prose-investigative {
+  color: #1a1a1a;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  /* Investigation Tokens - Ecclesiastical Noir Mode */
-  .theme-cathedral,
-  .theme-theyknew,
-  .theme-ruling,
-  .theme-expose,
-  .theme-endgame,
-  .theme-epstein {
-    --background: #0a0a0c !important;
-    --foreground: #C8BDB0 !important;
-    --card: #0D0D10;
-    --card-foreground: #C8BDB0;
-    --popover: #0D0D10;
-    --popover-foreground: #C8BDB0;
-    --muted: #111116;
-    --muted-foreground: #666670;
-    --border: #2A2A35;
+/* Investigation Tokens - Ecclesiastical Noir Mode - MAXIMUM CONTRAST */
+.theme-cathedral,
+.theme-theyknew,
+.theme-ruling,
+.theme-expose,
+.theme-endgame,
+.theme-epstein {
+  --background: #0a0a0c !important;
+  --foreground: #FFFFFF !important;
+  /* PURE WHITE */
+  --card: #0D0D10;
+  --card-foreground: #FFFFFF;
+  --popover: #0D0D10;
+  --popover-foreground: #FFFFFF;
+  --muted: #1A1A24;
+  --muted-foreground: #D4D4D8;
+  /* Light gray always visible */
+  --border: #404050;
+  /* Brighter borders */
 
-    /* Hardcoded Legibility Tokens */
-    --ink: oklch(0.85 0.02 65);
-    --ink-mid: oklch(0.6 0.02 65);
-    --ink-light: oklch(0.45 0.02 65);
-    --blood: oklch(0.45 0.25 25);
-    --blood-bright: oklch(0.65 0.3 30);
-    --gold: oklch(0.6 0.12 85);
-    /* Slightly darker for legibility */
-    --gold-dim: oklch(0.6 0.12 85 / 50%);
-    --parchment: #faf6ee;
-  }
+  /* Hardcoded Legibility Tokens - HIGH CONTRAST */
+  --ink: #FFFFFF;
+  /* Pure white */
+  --ink-mid: #E4E4E7;
+  /* Light gray */
+  --ink-light: #A1A1AA;
+  /* Medium gray */
+  --blood: #EF4444;
+  /* Bright red */
+  --blood-bright: #F87171;
+  /* Lighter red */
+  --gold: #FCD34D;
+  /* Bright gold */
+  --gold-dim: #FCD34D80;
+  /* Dimmed but visible */
+  --parchment: #FEF3C7;
+  /* Bright parchment */
+}
 
-  .theme-cathedral {
-    --primary: oklch(0.4 0.15 20);
-    --accent: var(--color-cathedral-gold);
-  }
+.theme-cathedral {
+  --primary: oklch(0.4 0.15 20);
+  --accent: var(--color-cathedral-gold);
+}
 
-  .theme-theyknew {
-    --primary: oklch(0.6 0.15 290);
-    --accent: oklch(0.8 0.05 290);
-  }
+.theme-theyknew {
+  --primary: oklch(0.6 0.15 290);
+  --accent: oklch(0.8 0.05 290);
+}
 
-  .theme-ruling {
-    --primary: oklch(0.5 0.15 240);
-    --accent: oklch(0.75 0.15 85);
-  }
+.theme-ruling {
+  --primary: oklch(0.5 0.15 240);
+  --accent: oklch(0.75 0.15 85);
+}
 
-  .theme-expose {
-    --primary: oklch(0.4 0.15 20);
-    --accent: oklch(0.25 0.05 20);
-    @apply antialiased;
-  }
+.theme-expose {
+  --primary: oklch(0.4 0.15 20);
+  --accent: oklch(0.25 0.05 20);
+  @apply antialiased;
+}
 
-  .theme-endgame {
-    --primary: oklch(0.7 0.2 140);
-    --accent: oklch(0.5 0.15 140);
-  }
+.theme-endgame {
+  --primary: oklch(0.7 0.2 140);
+  --accent: oklch(0.5 0.15 140);
+}
 
 
 
-  .theme-epstein {
-    --card: oklch(0.15 0.02 20);
-    --card-foreground: oklch(0.85 0.02 20);
-    --popover: oklch(0.15 0.02 20);
-    --popover-foreground: oklch(0.85 0.02 20);
-    --muted: oklch(0.15 0.01 85);
-    --muted-foreground: oklch(0.65 0.02 20);
-    --primary: oklch(0.4 0.12 180);
-    --accent: oklch(0.6 0.15 180);
-    --border: oklch(0.9 0 0 / 15%);
-  }
+.theme-epstein {
+  --card: oklch(0.15 0.02 20);
+  --card-foreground: oklch(0.85 0.02 20);
+  --popover: oklch(0.15 0.02 20);
+  --popover-foreground: oklch(0.85 0.02 20);
+  --muted: oklch(0.15 0.01 85);
+  --muted-foreground: oklch(0.65 0.02 20);
+  --primary: oklch(0.4 0.12 180);
+  --accent: oklch(0.6 0.15 180);
+  --border: oklch(0.9 0 0 / 15%);
+}
 
 @layer components {
 
@@ -285,7 +342,8 @@
 
   .prose h2 {
     color: var(--color-foreground);
-    font-size: 3rem; /* 48px */
+    font-size: 3rem;
+    /* 48px */
     line-height: 1.1;
     font-weight: 800;
     margin-top: 4rem;
@@ -295,7 +353,8 @@
 
   .prose h3 {
     color: var(--color-foreground);
-    font-size: 2rem; /* 32px */
+    font-size: 2rem;
+    /* 32px */
     line-height: 1.2;
     font-weight: 700;
     margin-top: 3rem;
@@ -306,7 +365,8 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     line-height: 1.8;
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
+    /* 20px */
   }
 
   .prose strong {
@@ -513,38 +573,46 @@
 }
 
 /* Ensure anchor links have enough margin for sticky headers */
-section[id], [id] {
+section[id],
+[id] {
   scroll-margin-top: 80px;
 }
 
 /* Landing Highlight for Shield Destinations */
 @keyframes landingHighlight {
-  0% { background-color: rgba(240, 192, 96, 0.4); box-shadow: 0 0 40px rgba(240, 192, 96, 0.3); }
-  100% { background-color: transparent; box-shadow: 0 0 0 transparent; }
+  0% {
+    background-color: rgba(240, 192, 96, 0.4);
+    box-shadow: 0 0 40px rgba(240, 192, 96, 0.3);
+  }
+
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 transparent;
+  }
 }
 
 :target {
   animation: landingHighlight 1.5s ease-out forwards;
 }
 
-  .bg-zinc-950 .text-muted-foreground,
-  .bg-zinc-900 .text-muted-foreground,
-  .bg-zinc-800 .text-muted-foreground,
-  .bg-black .text-muted-foreground,
-  .bg-cathedral-dark .text-muted-foreground,
-  .bg-cathedral-light .text-muted-foreground,
-  .bg-cathedral-accent .text-muted-foreground,
-  .bg-ink .text-muted-foreground {
-    color: var(--muted-foreground) !important;
-  }
+.bg-zinc-950 .text-muted-foreground,
+.bg-zinc-900 .text-muted-foreground,
+.bg-zinc-800 .text-muted-foreground,
+.bg-black .text-muted-foreground,
+.bg-cathedral-dark .text-muted-foreground,
+.bg-cathedral-light .text-muted-foreground,
+.bg-cathedral-accent .text-muted-foreground,
+.bg-ink .text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
 
-  .bg-zinc-950 .text-foreground,
-  .bg-zinc-900 .text-foreground,
-  .bg-zinc-800 .text-foreground,
-  .bg-black .text-foreground,
-  .bg-cathedral-dark .text-foreground,
-  .bg-cathedral-light .text-foreground,
-  .bg-cathedral-accent .text-foreground,
-  .bg-ink .text-foreground {
-    color: var(--foreground) !important;
-  }
+.bg-zinc-950 .text-foreground,
+.bg-zinc-900 .text-foreground,
+.bg-zinc-800 .text-foreground,
+.bg-black .text-foreground,
+.bg-cathedral-dark .text-foreground,
+.bg-cathedral-light .text-foreground,
+.bg-cathedral-accent .text-foreground,
+.bg-ink .text-foreground {
+  color: var(--foreground) !important;
+}
