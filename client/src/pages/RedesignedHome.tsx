@@ -151,10 +151,6 @@ export default function RedesignedHome() {
             {/* CRAWFORD'S LIFELINE */}
             <section className="py-24 px-6 border-b border-[#8b1a1a]/20 bg-[#070709]">
                 <div className="max-w-4xl mx-auto space-y-12 text-center">
-                    <div className="flex flex-col items-center gap-6">
-                        <div className="flex items-center gap-3 text-zinc-500 hover:text-red-600 transition-colors cursor-pointer group">
-                            <Search className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                        </div>
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}

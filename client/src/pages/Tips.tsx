@@ -25,6 +25,9 @@ export default function TipsPage() {
                         <p className="max-w-2xl text-xl md:text-2xl font-serif italic text-zinc-500 leading-relaxed">
                             "Secure, anonymous transmission of forensic data regarding institutional immunity, the 'Big Lie' strategy, and the Perry Law sham."
                         </p>
+                        <p className="max-w-2xl text-lg text-white font-serif leading-relaxed mt-4">
+                            If you work at Seton Hall, the Archdiocese of Newark, or any connected institution and have witnessed misconduct — this is where you tell us.
+                        </p>
                     </div>
                 </div>
 

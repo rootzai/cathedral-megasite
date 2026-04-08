@@ -306,22 +306,26 @@ export default function ShieldDiagram({
                   opacity={othersClicked ? 0.1 : 1}
                   filter={(isClicked || isHovered) ? (isClicked ? "url(#gClick)" : "url(#gGold)") : undefined}
                 >
+                  {/* Invisible Hit Target for easier tapping on mobile */}
+                  <circle cx={pos.x} cy={pos.y} r={24} fill="transparent" />
+                  
                   <circle 
                     cx={pos.x} cy={pos.y} 
-                    r={isClicked ? (isRingleader ? 12 : 10) : (isRingleader ? 6 : 4)} 
+                    r={isClicked ? (isRingleader ? 16 : 14) : (isRingleader ? 8 : 6)} 
                     fill={isClicked || isHovered ? (isRingleader ? "#d4af37" : "#f0c060") : (isRingleader ? "#d4af37" : "#c9a84c")} 
-                    className="transition-all duration-300"
+                    className="transition-all duration-300 pointer-events-none"
                   />
                   {isRingleader && !isClicked && (
                     <circle 
-                        cx={pos.x} cy={pos.y} r={10} 
-                        fill="none" stroke="#d4af37" strokeWidth="0.5" strokeDasharray="2 2"
-                        className="animate-[spin_4s_linear_infinite] opacity-50"
+                        cx={pos.x} cy={pos.y} r={14} 
+                        fill="none" stroke="#d4af37" strokeWidth="1" strokeDasharray="2 2"
+                        className="animate-[spin_4s_linear_infinite] opacity-50 pointer-events-none"
                     />
                   )}
                   <text 
-                    x={pos.x + (isClicked ? 14 : 8)} y={pos.y + 4} 
-                    fill={isRingleader ? "#d4af37" : "#e8d8c0"} fontSize={isClicked ? (size < 600 ? "10" : "12") : (size < 600 ? "7" : "9")} 
+                    x={pos.x + (isClicked ? 18 : 10)} y={pos.y + 4} 
+                    fill={isRingleader ? "#d4af37" : "#e8d8c0"} 
+                    fontSize={isClicked ? (size < 600 ? "12" : "14") : (size < 600 ? "10" : "11")} 
                 fontFamily="Courier Prime"
                 className="pointer-events-none transition-all"
                 fontWeight={isClicked ? "bold" : "normal"}
@@ -365,11 +369,11 @@ export default function ShieldDiagram({
                  onMouseLeave={() => setHoveredNode(null)}
                  className="cursor-pointer group pointer-events-auto"
                 >
-                  <text 
+                    <text 
                     x={cx} y={yPos}
                     textAnchor="middle"
                     fill={isClicked || isHovered ? "#f0c060" : "#e0cdb0"}
-                    fontSize="8"
+                    fontSize={size < 600 ? "10" : "8"}
                     fontFamily="Cormorant Garamond"
                     className="transition-colors group-hover:font-bold"
                     filter={isClicked ? "url(#gClick)" : undefined}

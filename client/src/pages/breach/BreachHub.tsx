@@ -17,7 +17,7 @@ import { Term } from "@/components/Term";
 const LITIGATION_EVENTS = [
     { 
         date: "MAY 28, 2026", 
-        title: "Seton Hall v. Does", 
+        title: "Seton Hall v. Dei Journo", 
         desc: (
             <>
                 <a href="https://www.courtlistener.com/?q=30-2026-01555640-CU-PT-CJC" target="_blank" rel="noopener noreferrer" className="underline decoration-[#8b1a1a]/40 hover:text-[#8b1a1a] transition-colors">
@@ -81,7 +81,7 @@ export default function BreachHub() {
                             <span className="text-[10px] font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
                             <div className="flex items-end gap-2">
                                 <span className="text-5xl font-black text-white font-cinzel tracking-tighter">MAY 28</span>
-                                <span className="text-[#8b1a1a] font-black text-xs uppercase mb-1">Sanction Hearing</span>
+                                <span className="text-[#8b1a1a] font-black text-xs uppercase mb-1">Deposition Hearing, Dept. C23</span>
                             </div>
                         </div>
                     </div>

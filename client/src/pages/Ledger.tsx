@@ -51,6 +51,9 @@ export default function Ledger() {
             <p>
               This is the forensic index of the <strong className="text-zinc-300">Seton Hall Board of Regents</strong> and University Leadership.
             </p>
+            <p className="font-bold text-white">
+              The Board of Regents is the governing body that approved Joseph Reilly's installation as Seton Hall president — after reviewing the Latham Report's findings about him.
+            </p>
             <p>
               Every individual listed below sat in governance during the concealment of the Latham Report. We have tracked their tenure, their roles, and their direct actions during the 2024 Presidential Investigation.
             </p>
@@ -143,7 +146,7 @@ export default function Ledger() {
                         <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest leading-loose">{regent.role}</p>
                         <hr className="border-white/5 w-12" />
                         <p className="text-zinc-600 font-serif italic text-sm leading-relaxed line-clamp-4">
-                          {regent.note || "Forensic record sealed. No public registered dissent available for this individual."}
+                          {regent.note || "No public statement on record."}
                         </p>
                       </div>
 
