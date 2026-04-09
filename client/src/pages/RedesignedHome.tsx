@@ -189,25 +189,27 @@ export default function RedesignedHome() {
             </section>
 
             {/* SECTION 4: THE SHIELD HUB */}
-            <section id="network" className="relative h-screen w-full flex flex-col items-center justify-center bg-[#050508] overflow-hidden border-t border-white/5">
+            <section id="network" className="relative w-full flex flex-col items-center bg-[#050508] border-t border-white/5 pt-24 pb-20">
                 <div className="absolute inset-0 bg-gradient-radial from-red-950/10 to-transparent pointer-events-none" />
-                <div className="absolute top-12 text-center w-full z-20">
-                     <h2 className="font-mono text-xl text-zinc-500 tracking-[0.5em] uppercase drop-shadow-md">The Complicit Architecture</h2>
+                
+                <div className="text-center w-full z-20 mb-8">
+                    <h2 className="font-mono text-xl text-zinc-500 tracking-[0.5em] uppercase drop-shadow-md">The Complicit Architecture</h2>
                 </div>
 
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-200px" }}
+                    viewport={{ once: true, margin: "-150px" }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="relative w-full h-[80vh] flex justify-center items-center scale-90 md:scale-100"
+                    className="relative w-full flex justify-center items-center"
+                    style={{ minHeight: "700px" }}
                 >
                     <ShieldHub onRingClick={() => {}} />
                 </motion.div>
 
                 {/* FOOTER BADGE */}
-                <div className="absolute bottom-6 flex items-center gap-6 text-xl font-black font-courier text-zinc-300 uppercase tracking-[0.3em] opacity-80 hover:opacity-100 transition-opacity z-20">
-                    <span className="flex items-center gap-3"><Activity className="w-6 h-6 text-red-700" /> Authorized Record // SH-2026</span>
+                <div className="relative z-20 mt-16 flex items-center gap-6 text-sm font-black font-courier text-zinc-500 uppercase tracking-[0.3em] opacity-80 hover:opacity-100 transition-opacity">
+                    <span className="flex items-center gap-3"><Activity className="w-5 h-5 text-red-800" /> Authorized Record // SH-2026</span>
                     <div className="w-1.5 h-1.5 bg-red-900 rounded-full hidden sm:block" />
                     <span className="hidden sm:inline">Sodom Hall Forensic Archive</span>
                 </div>

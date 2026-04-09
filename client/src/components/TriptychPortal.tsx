@@ -3,19 +3,16 @@ import { cn } from "@/lib/utils";
 
 export default function TriptychPortal({ onComplete }: { onComplete?: () => void }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [isUnmounted, setIsUnmounted] = useState(false);
+    // Synchronously check sessionStorage so there's zero flash on return visits
+    const [isUnmounted, setIsUnmounted] = useState(() => {
+        try {
+            return sessionStorage.getItem('triptych_seen') === 'true';
+        } catch {
+            return false;
+        }
+    });
 
     useEffect(() => {
-        // Check if already seen (client-side only)
-        try {
-            if (sessionStorage.getItem('triptych_seen') === 'true') {
-                setIsUnmounted(true);
-                return;
-            }
-        } catch {
-            // Ignore storage errors
-        }
-
         if (isOpen) {
             try {
                 sessionStorage.setItem('triptych_seen', 'true');
