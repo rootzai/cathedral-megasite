@@ -2,60 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-    Shield, 
-    ArrowRight, 
-    AlertCircle, 
-    Search,
-    Lock,
-    Eye,
-    Activity,
-    Database,
-    Zap,
-    Fingerprint,
-    Send
+    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity 
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
-import PowerAxis from "@/components/PowerAxis";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Term } from "@/components/Term";
 
-const SECTION_CARDS = [
-    {
-        title: "THE EVIDENCE",
-        desc: "Six acts. Named players. Primary sources.",
-        href: "/evidence",
-        icon: Database,
-        color: "text-[#8b1a1a]"
-    },
-    {
-        title: "THE BREACH",
-        desc: "Active litigation. May 18. May 28.",
-        href: "/breach",
-        icon: AlertCircle,
-        color: "text-[#8b1a1a]",
-        pulse: true
-    },
-    {
-        title: "THE LEDGER",
-        desc: "The board that read the report and installed him anyway.",
-        href: "/ledger",
-        icon: Eye,
-        color: "text-[#8b6914]"
-    },
-    {
-        title: "THE METHOD",
-        desc: "How AI found the fabricated bulletins.",
-        href: "/method",
-        icon: Fingerprint,
-        color: "text-[#1a3a5c]"
-    },
-    {
-        title: "THE MADMAN ARCHIVE",
-        desc: "The secretarial infrastructure that sustained a predator.",
-        href: "/ledger/madman",
-        icon: Lock,
-        color: "text-[#8b1a1a]"
-    }
+const NAVIGATION_NODES = [
+    { title: "THE EVIDENCE", desc: "Six acts. Primary sources.", href: "/evidence", icon: Database, color: "text-[#8b1a1a]", border: "border-red-950", bg: "hover:bg-red-950/20" },
+    { title: "THE BREACH", desc: "Active litigation.", href: "/breach", icon: AlertCircle, color: "text-[#8b1a1a]", border: "border-red-900", bg: "hover:bg-red-900/20" },
+    { title: "THE LEDGER", desc: "The complicit board.", href: "/ledger", icon: Eye, color: "text-[#8b6914]", border: "border-[#8b6914]/30", bg: "hover:bg-[#8b6914]/10" },
+    { title: "THE METHOD", desc: "AI-driven discovery.", href: "/method", icon: Fingerprint, color: "text-[#1a3a5c]", border: "border-[#1a3a5c]/50", bg: "hover:bg-[#1a3a5c]/20" },
+    { title: "MADMAN ARCHIVE", desc: "Secretarial infrastructure.", href: "/ledger/madman", icon: Lock, color: "text-zinc-400", border: "border-zinc-800", bg: "hover:bg-zinc-900/50" }
 ];
 
 export default function RedesignedHome() {
@@ -63,7 +19,7 @@ export default function RedesignedHome() {
     const [isGlitching, setIsGlitching] = useState(false);
     const [konamiProgress, setKonamiProgress] = useState<string[]>([]);
     
-    // KONAMI CODE: UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT B A
+    // KONAMI CODE
     const KONAMI_CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 
     useEffect(() => {
@@ -71,10 +27,8 @@ export default function RedesignedHome() {
             const nextKey = e.key;
             const updated = [...konamiProgress, nextKey];
             
-            // Check if input matches so far
             if (KONAMI_CODE[updated.length - 1] === nextKey) {
                 if (updated.length === KONAMI_CODE.length) {
-                    // CODE SUCCESS
                     setIsGlitching(true);
                     setTimeout(() => {
                         setLocation("/easter");
@@ -93,7 +47,8 @@ export default function RedesignedHome() {
     }, [konamiProgress, setLocation]);
 
     return (
-        <div className={`min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant overflow-x-hidden ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
+        <div className={`h-screen w-full bg-[#09090b] text-[#c8bdb0] font-cormorant overflow-hidden relative ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
+            
             <AnimatePresence>
                 {isGlitching && (
                     <motion.div 
@@ -108,164 +63,107 @@ export default function RedesignedHome() {
                 )}
             </AnimatePresence>
 
-            {/* HERO SECTION: THE HOUSE THAT McCARRICK BUILT */}
-            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 px-6 text-center border-b border-white/5">
-                <div className="max-w-5xl mx-auto space-y-12">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="space-y-4"
-                    >
-                        <h1 className="text-5xl md:text-[5.5rem] font-black font-cinzel leading-none tracking-tighter text-white">
-                            THE HOUSE THAT <br />
-                            <span className="text-[#8b1a1a]"><Term id="McCarrick">McCARRICK</Term></span> BUILT
-                        </h1>
-                        <div className="max-w-3xl mx-auto space-y-6">
-                            <p className="text-xl md:text-2xl font-serif text-[#c8bdb0]/80 leading-relaxed">
-                                Mark Crawford was thirteen years old when a priest named Kenneth Martin 
-                                began abusing him in Bayonne, New Jersey. Martin was later promoted to 
-                                personal secretary to Archbishop Theodore <Term id="McCarrick">McCarrick</Term>. The Church falsified 
-                                Crawford's age on the settlement document — a lie they didn't need to tell, 
-                                because the statute of limitations had already run. They told it anyway.
-                            </p>
-                            <p className="text-[#c8bdb0]/60 font-serif italic text-lg leading-relaxed">
-                                That reflex — concealment applied even when concealment isn't required — is 
-                                the mechanism this investigation documents across fifty years and every ring 
-                                of the institutional shield.
-                            </p>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/20 via-[#09090b] to-[#09090b] pointer-events-none z-0 opacity-60" />
+            
+            <main className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8">
+                
+                {/* HERO BLOCK */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="text-center space-y-2 mb-12 relative w-full max-w-6xl mt-4"
+                >
+                    <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] pointer-events-none rounded-full" />
+                    
+                    <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-black font-cinzel leading-[0.85] tracking-tighter text-white drop-shadow-2xl">
+                        THE HOUSE THAT <br />
+                        <span className="text-[#8b1a1a] drop-shadow-[0_0_40px_rgba(139,26,26,0.5)] bg-clip-text text-transparent bg-gradient-to-b from-[#b32424] to-[#5a1111]">McCARRICK</span> BUILT
+                    </h1>
+                    <p className="text-lg md:text-xl font-serif text-[#c8bdb0]/70 tracking-wide max-w-2xl mx-auto pt-6 mt-6 border-t border-white/5 uppercase">
+                        The Architecture of Immunity
+                    </p>
+                </motion.div>
 
-                        </div>
-                    </motion.div>
-
-                    <div className="text-center space-y-2 mb-8">
-                        <span className="text-[10px] font-black font-courier text-zinc-600 uppercase tracking-[0.5em]">
-                            The Architecture of Immunity
-                        </span>
-                        <p className="text-zinc-500 font-serif italic text-sm max-w-xl mx-auto">
-                            Six rings. Each one a mechanism to place distance between a victim 
-                            and the individual who harmed them. Click any ring.
-                        </p>
+                {/* DASHBOARD CONTAINER - GLASSMORPHISM */}
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                    className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                >
+                    {/* LEFT COLUMN: NARRATIVE NODES */}
+                    <div className="hidden lg:flex lg:col-span-3 space-y-4 flex-col justify-center">
+                        <Link href="/prologue">
+                            <a className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-red-900/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
+                                <div className="absolute inset-0 bg-gradient-to-r from-red-950/0 to-red-950/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                                    <ChevronRight className="w-5 h-5 text-red-500" />
+                                </span>
+                                <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Prologue</h3>
+                                <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">Mark Crawford. Age 13.</p>
+                            </a>
+                        </Link>
+                        <Link href="/axis">
+                            <a className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-[#8b6914]/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#8b6914]/0 to-[#8b6914]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                                    <ChevronRight className="w-5 h-5 text-[#8b6914]" />
+                                </span>
+                                <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Power Axis</h3>
+                                <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">From Bayonne to the Vatican</p>
+                            </a>
+                        </Link>
                     </div>
-                    <div className="w-full flex justify-center mt-12 relative">
-                        <div className="absolute inset-0 bg-[#8b1a1a]/10 blur-[100px] rounded-full pointer-events-none" />
-                        <div className="relative z-10 w-full flex justify-center">
+
+                    {/* CENTER COLUMN: SHIELD HUB */}
+                    <div className="lg:col-span-6 flex justify-center py-4 sm:py-8 relative w-full overflow-visible">
+                        <div className="absolute inset-0 bg-gradient-radial from-red-900/5 to-transparent pointer-events-none" />
+                        <div className="scale-75 sm:scale-90 md:scale-100 hover:scale-[1.02] transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer drop-shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                             <ShieldHub onRingClick={() => {}} />
                         </div>
                     </div>
-                </div>
-            </section>
 
-            {/* CRAWFORD'S LIFELINE */}
-            <section className="py-24 px-6 border-b border-[#8b1a1a]/20 bg-[#070709]">
-                <div className="max-w-4xl mx-auto space-y-12 text-center">
-                    <motion.div 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        className="space-y-8"
-                    >
-                        <div className="space-y-2">
-                             <h2 className="text-[#d4af37] font-serif text-5xl tracking-tight leading-none uppercase">The Crawford Thread</h2>
-                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em] font-bold">The thread that pulls the whole architecture down</p>
-                        </div>
-                        <div className="w-24 h-px bg-red-900 mx-auto" />
-                        <p className="text-xl text-white font-serif leading-[1.6]">
-                            Mark Crawford. Age 13. Bayonne, New Jersey. 
-                        </p>
-                        <div className="text-xl text-zinc-400 leading-relaxed font-serif italic space-y-6">
-                            <p>
-                                When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Then Martin was promoted. Not removed — promoted. He became Archbishop Theodore McCarrick's personal secretary.
-
-                            </p>
-                            <p>
-                                When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood and said the statute of limitations had expired, refused to pay the $108,000 settlement their own mediator had awarded him. When Crawford asked for a written acknowledgment that the abuse happened and that Martin would never have access to children again, they refused to oblige him.
-                            </p>
-                            <p className="border-l-2 border-red-900 pl-6 py-2">
-                                Catholics call that acknowledgment a Conversion. <span className="text-[#8b1a1a]">Metuchen refused it.</span>
-                            </p>
-                            <p>
-                                Fifteen became sixteen on paper, one falsified digit, and a man who had been abused as a child was turned away without money, without acknowledgment, and without the Church's most basic gesture of accountability.
-                            </p>
-                            <p className="text-white not-italic font-bold">
-                                What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources.
-                            </p>
-                        </div>
-                        <Link href="/evidence/origin">
-                            <a className="inline-flex items-center gap-3 text-[#8b1a1a] font-courier font-black tracking-[0.3em] uppercase text-xs group hover:text-white transition-colors">
-                                Follow the lifeline <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                            </a>
-                        </Link>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* THE POWER AXIS */}
-            <section className="py-24 px-6 border-b border-white/5">
-                <div className="max-w-7xl mx-auto space-y-20">
-                    <div className="text-center space-y-4">
-                        <span className="text-[#8b6914] font-black text-[10px] uppercase tracking-[0.6em] font-courier">From Bayonne to the Vatican</span>
-                        <h2 className="text-4xl md:text-6xl font-black font-cinzel text-white leading-none uppercase">THE POWER AXIS</h2>
-                        <p className="text-zinc-500 font-serif italic text-lg max-w-2xl mx-auto mt-4">
-                            A parish priest has two rings of protection. A Cardinal has six — plus the networks that converge at maximum altitude. Crawford's thread runs through every level.
-                        </p>
-                    </div>
-                    <PowerAxis />
-                    <p className="text-center text-red-500 font-mono text-sm md:text-lg font-bold uppercase tracking-widest max-w-4xl mx-auto py-6 px-4 bg-red-950/20 border border-red-900/30 rounded">
-                        Updated 2026: Node 5 includes Ruemmler / Epstein / September email / Goldman resignation.
-                    </p>
-                </div>
-            </section>
-
-            {/* SECTION ENTRY CARDS */}
-            <section className="py-32 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {SECTION_CARDS.map((card) => (
-                        <Link key={card.href} href={card.href}>
-                            <a className="group block bg-[#0D0D10] border border-white/5 p-10 hover:border-white/20 transition-all duration-500 relative overflow-hidden h-full">
-                                <card.icon className={`w-8 h-8 ${card.color} mb-8 group-hover:scale-110 transition-transform duration-500`} />
-                                <h3 className="text-2xl font-black font-cinzel text-white mb-4 tracking-tighter">{card.title}</h3>
-                                <p className="text-zinc-500 font-serif leading-relaxed mb-12 italic">{card.desc}</p>
-                                
-                                <div className="absolute bottom-10 left-10 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <span className="text-[10px] font-black font-courier text-white uppercase tracking-widest">Enter Section</span>
-                                    <ArrowRight className="w-4 h-4 text-[#8b1a1a]" />
-                                </div>
-
-                                {card.pulse && (
-                                    <div className="absolute top-6 right-6">
-                                        <motion.div 
-                                            animate={{ opacity: [1, 0, 1] }}
-                                            transition={{ duration: 2, repeat: Infinity }}
-                                            className="w-2 h-2 bg-red-600 rounded-full"
-                                        />
+                    {/* RIGHT COLUMN: MAIN ENTRIES */}
+                    <div className="lg:col-span-3 flex flex-col gap-2 relative z-20">
+                        {NAVIGATION_NODES.map((node, i) => (
+                            <Link key={node.href} href={node.href}>
+                                <a className={`group flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-3 sm:p-4 transition-all duration-300 ${node.bg} hover:scale-[1.02] shadow-xl hover:shadow-2xl rounded-sm`}>
+                                    <div className={`p-2.5 bg-black/60 border border-white/5 rounded-full ${node.color} group-hover:bg-white/5 transition-colors`}>
+                                        <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </div>
-                                )}
-
-                                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/1 blur-[100px] rounded-full group-hover:bg-[#8b1a1a]/5 transition-all duration-700" />
+                                    <div className="flex-1">
+                                        <h4 className="font-cinzel font-black tracking-widest text-xs sm:text-sm text-white drop-shadow">{node.title}</h4>
+                                        <p className="font-mono text-[8px] sm:text-[9px] text-zinc-500 uppercase tracking-widest mt-1 group-hover:text-zinc-400 transition-colors">{node.desc}</p>
+                                    </div>
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
+                    
+                    {/* MOBILE LEFT COLUMN FALLBACK */}
+                    <div className="flex lg:hidden flex-col sm:flex-row w-full gap-3 mt-4 z-20">
+                        <Link href="/prologue">
+                            <a className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
+                               <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">The Prologue</h3>
                             </a>
                         </Link>
-                    ))}
-                </div>
-            </section>
+                         <Link href="/axis">
+                            <a className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
+                               <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">Power Axis</h3>
+                            </a>
+                        </Link>
+                    </div>
 
-            {/* FOOTER */}
-            <footer className="py-24 px-6 border-t border-white/5 text-center">
-                <div className="max-w-4xl mx-auto space-y-12">
-                    <div className="w-16 h-1 bg-[#8b1a1a] mx-auto" />
-                    <div className="space-y-6">
-                        <p className="text-[#8b1a1a] font-black font-cinzel text-2xl uppercase tracking-tighter italic">
-                            The Church has had two thousand years to build the shield.
-                        </p>
-                        <p className="text-white font-black font-cinzel text-3xl uppercase tracking-tighter">
-                            The counter-infrastructure starts now.
-                        </p>
-                    </div>
-                    <div className="pt-12 flex items-center justify-center gap-12 text-[10px] font-black font-courier text-zinc-700 uppercase tracking-[0.4em]">
-                        <span>Authorized Record // SH-2026</span>
-                        <div className="w-1 h-1 bg-zinc-800 rounded-full" />
-                        <span>Sodom Hall Forensic</span>
-                    </div>
+                </motion.div>
+                
+                {/* FOOTER BADGE */}
+                <div className="absolute bottom-6 flex items-center gap-4 text-[9px] font-black font-courier text-zinc-600 uppercase tracking-[0.4em] opacity-50 hover:opacity-100 transition-opacity">
+                    <span className="flex items-center gap-2"><Activity className="w-3 h-3 text-red-900" /> Authorized Record // SH-2026</span>
+                    <div className="w-1 h-1 bg-zinc-800 rounded-full hidden sm:block" />
+                    <span className="hidden sm:inline">Sodom Hall Forensic</span>
                 </div>
-            </footer>
+            </main>
         </div>
     );
 }

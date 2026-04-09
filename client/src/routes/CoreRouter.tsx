@@ -30,6 +30,8 @@ const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCase
 const WhosWho = React.lazy(() => import("@/pages/WhosWho"));
 const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings"));
 const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley"));
+const Prologue = React.lazy(() => import("@/pages/Prologue"));
+const Axis = React.lazy(() => import("@/pages/Axis"));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -85,6 +87,12 @@ export function CoreRouter() {
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
           <PageLayout component={RedesignedHome} />
+        </Route>
+        <Route path="/prologue">
+          <Prologue />
+        </Route>
+        <Route path="/axis">
+          <Axis />
         </Route>
 
         {/* Tier 2: THE EVIDENCE */}
