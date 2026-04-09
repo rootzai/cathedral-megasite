@@ -35,17 +35,7 @@
   --color-easter-purple: #3A1A5C;
   --color-dark-foundation: #0A0A0C;
 
-  /* MAXIMUM READABILITY TYPOGRAPHY - NO SMALL TEXT ALLOWED */
-  --text-xs: 16px;
-  /* Was 12px - absolute minimum */
-  --text-sm: 18px;
-  /* Was 15px - small text floor */
-  --text-base: 22px;
-  /* Was 18px - body text enlarged */
-  --text-lg: 26px;
-  /* Was 20px - larger headings */
-  --text-xl: 32px;
-  /* Was 24px - hero text bigger */
+
 }
 
 :root {
@@ -97,15 +87,7 @@
   }
 
   :root {
-    /* v7.0 MAXIMUM LEGIBILITY: All text enlarged for accessibility */
-    font-size: 137.5%;
-    /* 22px base - was 18px */
-    --base-size: 1.375rem;
-    /* 22px minimum */
-    --prose-size: 1.5rem;
-    /* 24px body text */
-    --header-size: 4rem;
-    /* 64px headers */
+
 
     --font-sans: "Inter", system-ui, -apple-system, sans-serif;
     --font-serif: "Cormorant Garamond", Georgia, serif;
@@ -115,16 +97,10 @@
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  @media (min-width: 1024px) {
-    :root {
-      font-size: 150%;
-      /* 24px base on desktop - maximum readability */
-    }
-  }
+
 
   body {
     font-family: var(--font-sans);
-    font-size: var(--base-size);
     color: var(--foreground);
     background-color: var(--background);
     line-height: 1.7;
@@ -138,10 +114,7 @@
     /* Slight tracking for clarity */
   }
 
-  /* FORCE MINIMUM FONT SIZE - No tiny text anywhere */
-  * {
-    font-size: max(inherit, 16px);
-  }
+
 
   /* Section numbers and labels must be visible */
   .section-number,
