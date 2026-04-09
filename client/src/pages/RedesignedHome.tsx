@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity 
+    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity, ChevronDown 
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
 
@@ -46,8 +46,15 @@ export default function RedesignedHome() {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [konamiProgress, setLocation]);
 
+    const scrollToNext = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
-        <div className={`h-screen w-full bg-[#09090b] text-[#c8bdb0] font-cormorant overflow-hidden relative ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
+        <div className={`min-h-screen w-full bg-[#09090b] text-[#c8bdb0] font-cormorant relative ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
             
             <AnimatePresence>
                 {isGlitching && (
@@ -63,44 +70,17 @@ export default function RedesignedHome() {
                 )}
             </AnimatePresence>
 
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/20 via-[#09090b] to-[#09090b] pointer-events-none z-0 opacity-60" />
-            
-            {/* TACTICAL COMMAND BAR */}
-            <nav className="fixed top-0 left-0 w-full z-[150] bg-black/60 backdrop-blur-2xl border-b border-white/5 py-4 px-8 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <Fingerprint className="text-red-600 w-6 h-6" />
-                    <span className="font-mono text-sm font-black tracking-[0.4em] text-white">COMMAND CENTER // V10</span>
-                </div>
-                <div className="flex gap-12">
-                    {[
-                        { name: "ACT I: ORIGIN", href: "/evidence/origin" },
-                        { name: "ACT II: COVER-UP", href: "/expose/epstein-nexus" },
-                        { name: "ACT III: BREACH", href: "/breach" },
-                        { name: "ACT IV: SUCCESSION", href: "/ledger/lorenzo" }
-                    ].map(act => (
-                        <Link key={act.name} href={act.href} className="group relative">
-                            <span className="font-cinzel text-xl font-bold tracking-widest text-zinc-400 group-hover:text-white transition-colors uppercase">{act.name}</span>
-                            <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-red-600 group-hover:w-full transition-all duration-500" />
-                        </Link>
-                    ))}
-                </div>
-                <div className="flex items-center gap-3">
-                    <Lock className="text-amber-500 w-4 h-4" />
-                    <span className="font-mono text-[10px] text-amber-500 tracking-widest uppercase">Encryption Active</span>
-                </div>
-            </nav>
-
-            <main className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8 mt-12">
+            {/* SECTION 1: THE TITLE & HERO */}
+            <section id="hero" className="relative h-screen w-full flex flex-col items-center justify-center px-4 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/20 via-[#09090b] to-[#09090b] pointer-events-none z-0 opacity-60" />
+                <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] pointer-events-none rounded-full" />
                 
-                {/* HERO BLOCK */}
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="text-center space-y-2 mb-12 relative w-full max-w-6xl mt-4"
+                    className="text-center space-y-2 relative w-full max-w-6xl z-10"
                 >
-                    <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] pointer-events-none rounded-full" />
-                    
                     <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-black font-cinzel leading-[0.85] tracking-tighter text-white drop-shadow-2xl">
                         THE HOUSE THAT <br />
                         <span className="text-[#8b1a1a] drop-shadow-[0_0_40px_rgba(139,26,26,0.5)] bg-clip-text text-transparent bg-gradient-to-b from-[#b32424] to-[#5a1111]">McCARRICK</span> BUILT
@@ -110,74 +90,128 @@ export default function RedesignedHome() {
                     </p>
                 </motion.div>
 
-                {/* DASHBOARD CONTAINER - GLASSMORPHISM */}
+                <motion.button 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    onClick={() => scrollToNext("prologue")}
+                    className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group z-20"
+                >
+                    <span className="font-mono text-xs tracking-widest uppercase mb-2">Initialize Narrative</span>
+                    <ChevronDown className="w-6 h-6 animate-bounce" />
+                </motion.button>
+            </section>
+
+            {/* SECTION 2: THE HUMAN ELEMENT & STARTING POINT */}
+            <section id="prologue" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c]">
+                <motion.div 
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1 }}
+                    className="max-w-4xl w-full mx-auto"
+                >
+                    <div className="text-center mb-16">
+                        <h2 className="font-cinzel text-5xl text-white mb-6 uppercase tracking-wider">Where It Begins</h2>
+                        <div className="w-24 h-1 bg-red-900 mx-auto" />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <Link href="/prologue" className="group block border border-white/5 bg-black/60 backdrop-blur-xl p-10 hover:border-red-900/50 hover:bg-zinc-900/80 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm hover:-translate-y-2">
+                            <div className="absolute inset-0 bg-gradient-to-br from-red-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <ChevronRight className="absolute top-8 right-8 w-6 h-6 text-red-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+                            <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase">The Prologue</h3>
+                            <p className="font-mono text-xl text-zinc-400 uppercase tracking-widest mb-6">Mark Crawford. Age 13.</p>
+                            <p className="text-lg text-zinc-300 font-serif leading-relaxed line-clamp-3">The devastating personal account that unmasks the institutional reality of the cathedral. The origin point of the investigation.</p>
+                        </Link>
+                        
+                        <Link href="/axis" className="group block border border-white/5 bg-black/60 backdrop-blur-xl p-10 hover:border-[#8b6914]/50 hover:bg-zinc-900/80 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm hover:-translate-y-2">
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#8b6914]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <ChevronRight className="absolute top-8 right-8 w-6 h-6 text-[#8b6914] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+                            <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase">The Power Axis</h3>
+                            <p className="font-mono text-xl text-zinc-400 uppercase tracking-widest mb-6">Bayonne to the Vatican</p>
+                            <p className="text-lg text-zinc-300 font-serif leading-relaxed line-clamp-3">How localized power structures networked to provide total immunity for the highest echelons of the church hierarchy.</p>
+                        </Link>
+                    </div>
+                </motion.div>
+                
+                <motion.button 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    onClick={() => scrollToNext("archive")}
+                    className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group"
+                >
+                    <ChevronDown className="w-6 h-6 animate-pulse" />
+                </motion.button>
+            </section>
+
+            {/* SECTION 3: THE FORENSIC ARCHIVES */}
+            <section id="archive" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c] border-t border-white/5">
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                    className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1 }}
+                    className="max-w-6xl w-full mx-auto"
                 >
-                    {/* LEFT COLUMN: NARRATIVE NODES */}
-                    <div className="hidden lg:flex lg:col-span-3 space-y-4 flex-col justify-center">
-                        <Link href="/prologue" className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-red-900/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
-                                <div className="absolute inset-0 bg-gradient-to-r from-red-950/0 to-red-950/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                                    <ChevronRight className="w-5 h-5 text-red-500" />
-                                </span>
-                                <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase drop-shadow">The Prologue</h3>
-                                <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest relative z-10">Mark Crawford. Age 13.</p>
-                        </Link>
-                        <Link href="/axis" className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-[#8b6914]/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
-                                <div className="absolute inset-0 bg-gradient-to-r from-[#8b6914]/0 to-[#8b6914]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                                    <ChevronRight className="w-5 h-5 text-[#8b6914]" />
-                                </span>
-                                <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase drop-shadow">The Power Axis</h3>
-                                <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest relative z-10">From Bayonne to the Vatican</p>
-                        </Link>
+                    <div className="text-center mb-16">
+                        <Activity className="w-12 h-12 text-red-900 mx-auto mb-6" />
+                        <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-6 uppercase tracking-wider">Forensic Operations</h2>
+                        <p className="text-xl text-zinc-400 font-serif max-w-2xl mx-auto">Access primary litigation exhibits, board complicity logs, and raw operational intelligence via the database modules below.</p>
                     </div>
 
-                    {/* CENTER COLUMN: SHIELD HUB */}
-                    <div className="lg:col-span-6 flex justify-center py-4 sm:py-8 relative w-full overflow-visible">
-                        <div className="absolute inset-0 bg-gradient-radial from-red-900/5 to-transparent pointer-events-none" />
-                        <div className="scale-75 sm:scale-90 md:scale-100 hover:scale-[1.02] transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer drop-shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                            <ShieldHub onRingClick={() => {}} />
-                        </div>
-                    </div>
-
-                    {/* RIGHT COLUMN: MAIN ENTRIES */}
-                    <div className="lg:col-span-3 flex flex-col gap-2 relative z-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {NAVIGATION_NODES.map((node, i) => (
-                            <Link key={node.href} href={node.href} className={`group flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-3 sm:p-4 transition-all duration-300 ${node.bg} hover:scale-[1.02] shadow-xl hover:shadow-2xl rounded-sm`}>
-                                    <div className={`p-2.5 bg-black/60 border border-white/5 rounded-full ${node.color} group-hover:bg-white/5 transition-colors`}>
-                                        <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h4 className="font-cinzel font-black tracking-widest text-3xl text-white drop-shadow">{node.title}</h4>
-                                        <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest mt-2 group-hover:text-white transition-colors">{node.desc}</p>
-                                    </div>
+                            <Link key={node.href} href={node.href} className={`group flex flex-col items-start bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-8 transition-all duration-300 ${node.bg} hover:-translate-y-2 rounded-sm shadow-xl hover:shadow-2xl`}>
+                                <div className={`p-4 bg-black/60 border border-white/5 rounded-full ${node.color} group-hover:bg-white/5 transition-colors mb-6`}>
+                                    <node.icon className="w-6 h-6" />
+                                </div>
+                                <h4 className="font-cinzel font-black tracking-widest text-2xl text-white drop-shadow mb-2">{node.title}</h4>
+                                <p className="font-mono text-sm text-zinc-400 uppercase tracking-widest group-hover:text-zinc-200 transition-colors">{node.desc}</p>
                             </Link>
                         ))}
                     </div>
-                    
-                    <div className="flex lg:hidden flex-col sm:flex-row w-full gap-3 mt-4 z-20">
-                        <Link href="/prologue" className="flex-1 border border-white/5 bg-black/40 p-6 rounded-sm text-center">
-                               <h3 className="font-cinzel text-2xl text-white font-bold tracking-wider uppercase">The Prologue</h3>
-                        </Link>
-                         <Link href="/axis" className="flex-1 border border-white/5 bg-black/40 p-6 rounded-sm text-center">
-                               <h3 className="font-cinzel text-2xl text-white font-bold tracking-wider uppercase">Power Axis</h3>
-                        </Link>
-                    </div>
-
                 </motion.div>
                 
+                <motion.button 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    onClick={() => scrollToNext("network")}
+                    className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group"
+                >
+                    <span className="font-mono text-[10px] tracking-widest uppercase mb-2 text-red-900/50">Access Network Shield</span>
+                    <ChevronDown className="w-6 h-6 animate-pulse" />
+                </motion.button>
+            </section>
+
+            {/* SECTION 4: THE SHIELD HUB */}
+            <section id="network" className="relative h-screen w-full flex flex-col items-center justify-center bg-[#050508] overflow-hidden border-t border-white/5">
+                <div className="absolute inset-0 bg-gradient-radial from-red-950/10 to-transparent pointer-events-none" />
+                <div className="absolute top-12 text-center w-full z-20">
+                     <h2 className="font-mono text-xl text-zinc-500 tracking-[0.5em] uppercase drop-shadow-md">The Complicit Architecture</h2>
+                </div>
+
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-200px" }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="relative w-full h-[80vh] flex justify-center items-center scale-90 md:scale-100"
+                >
+                    <ShieldHub onRingClick={() => {}} />
+                </motion.div>
+
                 {/* FOOTER BADGE */}
-                <div className="absolute bottom-6 flex items-center gap-6 text-xl font-black font-courier text-zinc-300 uppercase tracking-[0.3em] opacity-90 hover:opacity-100 transition-opacity">
+                <div className="absolute bottom-6 flex items-center gap-6 text-xl font-black font-courier text-zinc-300 uppercase tracking-[0.3em] opacity-80 hover:opacity-100 transition-opacity z-20">
                     <span className="flex items-center gap-3"><Activity className="w-6 h-6 text-red-700" /> Authorized Record // SH-2026</span>
                     <div className="w-1.5 h-1.5 bg-red-900 rounded-full hidden sm:block" />
                     <span className="hidden sm:inline">Sodom Hall Forensic Archive</span>
                 </div>
-            </main>
+            </section>
         </div>
     );
 }
