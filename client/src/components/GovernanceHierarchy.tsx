@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { 
-  boardOfTrustees, 
-  boardOfRegents, 
+import {
+  boardOfTrustees,
+  boardOfRegents,
   universityCabinet,
   Person,
   Badge
 } from "@/lib/data";
-import { 
-  ChevronDown, 
-  ShieldCheck, 
-  Users, 
-  UserCircle, 
-  Settings, 
-  Link2 
+import {
+  ChevronDown,
+  ShieldCheck,
+  Users,
+  UserCircle,
+  Settings,
+  Link2
 } from "lucide-react";
 import { useState } from "react";
 
@@ -26,11 +26,21 @@ interface HierarchyLevelProps {
   onToggle: () => void;
 }
 
+const DEFAULT_VISIBLE = 12;
+
 function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onToggle }: HierarchyLevelProps) {
+  const [showAll, setShowAll] = useState(false);
+  const visiblePeople = showAll ? people : people.slice(0, DEFAULT_VISIBLE);
+  const hiddenCount = people.length - DEFAULT_VISIBLE;
+
   return (
     <div className="relative mb-4 group">
-      <motion.div 
+      <motion.div
+        role="button"
+        tabIndex={0}
         onClick={onToggle}
+        onKeyDown={(e: React.KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
+        aria-expanded={isExpanded}
         className={`relative z-10 p-6 border border-gold/20 flex items-center justify-between cursor-pointer transition-all duration-500 bg-[oklch(0.08_0.02_240)] ${isExpanded ? 'border-gold/60 shadow-[0_0_20px_rgba(212,175,55,0.1)]' : 'hover:border-gold/40'}`}
       >
         <div className="flex items-center gap-6">
@@ -57,12 +67,12 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
         className="overflow-hidden bg-background/30 border-x border-gold/10"
       >
         <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {people.slice(0, 12).map((person, idx) => (
+          {visiblePeople.map((person, idx) => (
             <motion.div
               key={person.name}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05 }}
+              transition={{ delay: idx < DEFAULT_VISIBLE ? idx * 0.05 : 0 }}
               className="p-4 bg-muted/5 border border-white/5 hover:border-gold/20 transition-colors group/person"
             >
               <div className="flex justify-between items-start mb-2">
@@ -77,14 +87,19 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
               )}
             </motion.div>
           ))}
-          {people.length > 12 && (
-            <div className="col-span-full text-center py-2 opacity-30 text-xs font-mono italic">
-              + {people.length - 12} additional members identified in the archive
+          {hiddenCount > 0 && (
+            <div className="col-span-full text-center py-3">
+              <button
+                onClick={(e) => { e.stopPropagation(); setShowAll(!showAll); }}
+                className="text-xs font-mono uppercase tracking-widest text-gold/60 hover:text-gold transition-colors border border-gold/20 hover:border-gold/40 px-4 py-2 cursor-pointer"
+              >
+                {showAll ? 'COLLAPSE' : `SHOW ALL ${people.length} MEMBERS (+${hiddenCount} MORE)`}
+              </button>
             </div>
           )}
         </div>
       </motion.div>
-      
+
       {/* Connector Line */}
       {level < 5 && (
         <div className="absolute left-[5.25rem] bottom-[-1rem] w-px h-4 bg-gold/20" />

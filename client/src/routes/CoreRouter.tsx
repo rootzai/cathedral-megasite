@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect } from "react";
 import { Route, Switch, useLocation } from "wouter";
+import TriptychPortal from "@/components/TriptychPortal";
 
 // Lazy-loaded Pages
 const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
@@ -49,7 +50,7 @@ const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
   "/shield": "/",
   "/headline-news": "/breach-hub",
-  "/expose": "/evidence/legal",
+  // "/expose" removed — ExposeRouter has an explicit route that handles this
   "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
   "/briefing": "/breach",
@@ -89,6 +90,7 @@ export function CoreRouter() {
       <Switch>
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
+          <TriptychPortal />
           <PageLayout component={RedesignedHome} />
         </Route>
         <Route path="/prologue">
@@ -199,7 +201,7 @@ export function CoreRouter() {
 
         {/* Easter Egg / 404 Unmasking */}
         <Route path="/deijourno">
-            <DeiJournoEasterEgg />
+          <DeiJournoEasterEgg />
         </Route>
 
 

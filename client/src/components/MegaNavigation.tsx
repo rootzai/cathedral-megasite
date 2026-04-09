@@ -6,6 +6,7 @@ import { Link, useLocation } from 'wouter';
 export default function MegaNavigation() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [tickerPaused, setTickerPaused] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') return location === '/';
@@ -53,12 +54,12 @@ export default function MegaNavigation() {
         <div className="hidden md:flex items-center justify-between h-16">
           <div className="flex items-center justify-between w-full h-full">
             <Link href="/" className="px-2 lg:px-4 h-full flex items-center group transition-all shrink-0">
-                <img
-                  src="/assets/images/colored-pirate-logo.png"
-                  alt="Sodom Hall Home"
-                  className="w-12 h-auto object-contain group-hover:scale-110 transition-all"
-                />
-                <span className="ml-3 text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-sm hidden xl:block whitespace-nowrap">SODOM HALL</span>
+              <img
+                src="/assets/images/colored-pirate-logo.png"
+                alt="Sodom Hall Home"
+                className="w-12 h-auto object-contain group-hover:scale-110 transition-all"
+              />
+              <span className="ml-3 text-[#c8bdb0] font-cinzel font-black tracking-[0.2em] text-sm hidden xl:block whitespace-nowrap">SODOM HALL</span>
             </Link>
 
             <Link href="/" className={navLinkClass('/')}>THE SHIELD</Link>
@@ -69,7 +70,7 @@ export default function MegaNavigation() {
             <Link href="/opinion" className={navLinkClass('/opinion')}>OPINIONS</Link>
 
             <Link href="/tips" className="ml-2 border border-red-900/50 hover:bg-red-600 bg-red-900/20 text-white px-5 py-2.5 text-sm font-black uppercase tracking-[0.3em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] flex items-center justify-center whitespace-nowrap">
-                WHISTLEBLOWER TIP LINE
+              WHISTLEBLOWER TIP LINE
             </Link>
           </div>
         </div>
@@ -78,8 +79,8 @@ export default function MegaNavigation() {
         <div className="md:hidden">
           <div className="flex items-center justify-between py-3">
             <Link href="/" className="flex items-center gap-2">
-                <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="h-9 w-auto object-contain" />
-                <span className="text-[#c8bdb0] font-cinzel font-black tracking-widest text-sm">SODOM HALL</span>
+              <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="h-9 w-auto object-contain" />
+              <span className="text-[#c8bdb0] font-cinzel font-black tracking-widest text-sm">SODOM HALL</span>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -99,21 +100,33 @@ export default function MegaNavigation() {
 
           {mobileMenuOpen && (
             <div id="mobile-nav-menu" className="pb-6 space-y-1 animate-in fade-in duration-200 border-t border-white/10">
-               <Link href="/" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/') && location === '/' ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE SHIELD</Link>
-               <Link href="/method" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/method') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE METHOD</Link>
-               <Link href="/evidence" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/evidence') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE EVIDENCE</Link>
-               <Link href="/breach" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/breach') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE BREACH</Link>
-               <Link href="/ledger" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/ledger') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE LEDGER</Link>
-               <Link href="/opinion" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/opinion') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>OPINIONS</Link>
-               <Link href="/tips" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-base tracking-widest mt-2">WHISTLEBLOWER TIP LINE</Link>
+              <Link href="/" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/') && location === '/' ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE SHIELD</Link>
+              <Link href="/method" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/method') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE METHOD</Link>
+              <Link href="/evidence" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/evidence') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE EVIDENCE</Link>
+              <Link href="/breach" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/breach') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE BREACH</Link>
+              <Link href="/ledger" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/ledger') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>THE LEDGER</Link>
+              <Link href="/opinion" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-3 text-base font-bold border-b border-white/5 ${isActive('/opinion') ? 'text-white bg-red-900/30' : 'text-zinc-300 hover:text-white hover:bg-zinc-900'}`}>OPINIONS</Link>
+              <Link href="/tips" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 bg-red-900 text-white font-bold text-center text-base tracking-widest mt-2">WHISTLEBLOWER TIP LINE</Link>
             </div>
           )}
         </div>
       </div>
 
       {/* 3. News Ticker — desktop only, pauses on hover, WCAG 2.2.2 compliant */}
-      <div className="hidden md:block bg-[#080808] h-8 flex items-center overflow-hidden whitespace-nowrap border-t border-white/5 group" aria-label="News ticker — hover to pause" aria-live="off">
-        <div className="flex group-hover:[animation-play-state:paused] animate-ticker items-center py-1">
+      <div className="hidden md:flex bg-[#080808] h-8 items-center overflow-hidden whitespace-nowrap border-t border-white/5 group" aria-label="News ticker" role="region">
+        <button
+          onClick={() => setTickerPaused(!tickerPaused)}
+          aria-pressed={tickerPaused}
+          aria-label={tickerPaused ? 'Resume news ticker' : 'Pause news ticker'}
+          className="shrink-0 px-2 h-full flex items-center text-zinc-500 hover:text-white transition-colors border-r border-white/5 cursor-pointer"
+        >
+          {tickerPaused ? (
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+          ) : (
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
+          )}
+        </button>
+        <div className={`flex ${tickerPaused ? '' : 'animate-ticker'} group-hover:[animation-play-state:paused] items-center py-1`} style={tickerPaused ? { animationPlayState: 'paused' } : undefined}>
           {[...newsItems, ...newsItems].map((item, idx) => (
             <div key={idx} className="flex items-center px-12">
               <span className={`text-sm font-bold px-3 py-0.5 mr-3 rounded border ${item.type === 'BREAKING' ? 'bg-red-900 text-white border-red-600' : 'bg-zinc-900 text-zinc-100 border-white/10'}`}>

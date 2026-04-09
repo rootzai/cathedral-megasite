@@ -137,7 +137,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
               <li aria-hidden="true" className="text-zinc-700">/</li>
               <li><Link href="/ledger"><a className="hover:text-red-400 transition-colors">Ledger</a></Link></li>
               <li aria-hidden="true" className="text-zinc-700">/</li>
-              <li className="text-zinc-300 truncate max-w-[120px]">{title.replace('THE ', '').replace(' DOSSIER', '').replace(' ARCHIVE','')}</li>
+              <li className="text-zinc-300 truncate max-w-[120px]">{title.replace('THE ', '').replace(' DOSSIER', '').replace(' ARCHIVE', '')}</li>
             </ol>
           </nav>
 
@@ -175,7 +175,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
                     "font-mono text-xs uppercase tracking-wider p-3 border transition-all duration-300 cursor-pointer flex justify-between items-center group",
                     isActive
                       ? "border-destructive text-destructive bg-destructive/5 shadow-[0_0_10px_rgba(220,38,38,0.2)] font-black"
-                      : "border-border text-zinc-400 hover:border-foreground/50 hover:text-foreground"
+                      : "border-border text-zinc-300 hover:border-foreground/50 hover:text-foreground"
                   )}
                 >
                   <span className="truncate">{item.label}</span>

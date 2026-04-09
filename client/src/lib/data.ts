@@ -11,6 +11,7 @@
 export type Badge = "latham" | "reilly" | "tobin" | "christie" | "resigned" | "clergy" | "emeritus" | "nyre" | "epstein" | "sanctioned";
 
 export interface Person {
+  id?: string;
   name: string;
   role: string;
   tenure: string;
@@ -26,7 +27,7 @@ export interface BoardSection {
   leadership: Person[];
   exOfficio: Person[];
   members: Person[];
-  cabinet?: Person[]; 
+  cabinet?: Person[];
   clergy?: Person[];
 }
 
@@ -60,11 +61,11 @@ export const KEY_DATES = [
   { date: "Sept 29, 2018", event: "Kathryn Ruemmler (Latham) presents preliminary findings to Seton Hall board (confirmed via Epstein email)" },
   { date: "Aug 1, 2019", event: "Joe Nyre starts as president" },
   { date: "Aug 27, 2019", event: "Latham Report findings formally presented to Seton Hall Board of Regents & Board of Trustees — identifies 12 clergymen" },
-  { date: "Late 2019", event: "LaSala Task Force reviews Latham Report, recommends Msgr. Reilly's removal — recommendations are ignored by the Board. After Lasal tast force, Kevin Marino takes over as Chariman of Regents." },
+  { date: "Late 2019", event: "LaSala Task Force reviews Latham Report, recommends Msgr. Reilly's removal — recommendations are ignored by the Board. After LaSala Task Force, Kevin Marino takes over as Chairman of Regents." },
   { date: "May 2023", event: "Marino instructs the erasure of Title IX abuse logbook entries that accuse him of abusing 4 people citing multiple incidents." },
   { date: "2023", event: "Dr. Joseph Nyre departs as Seton Hall president" },
   { date: "Dec 2023", event: "Marino resigns from board as part of the settlement agreement with one of his alleged victims." },
-  { date: "Feb 2024", event: "Prior to R&G Gov. Phil Murphy calls for transparebncy and the release of the Latham Report. Then congresswoman Sherrill (SHU is in her district) also came out for release." },
+  { date: "Feb 2024", event: "Prior to R&G Gov. Phil Murphy calls for transparency and the release of the Latham Report. Then congresswoman Sherrill (SHU is in her district) also came out for release." },
   { date: "March 2024", event: "The logbook entries are restored." },
   { date: "March 2024", event: "Nyre lawsuit in NJ Court." },
   { date: "June 1, 2024", event: "Reilly's first day." },
@@ -73,7 +74,7 @@ export const KEY_DATES = [
   { date: "Sept 2024", event: "Resignation of Regent Kevin Flood." },
   { date: "Nov 3, 2024", event: "Investiture of Reilly." },
   { date: "Dec 21, 2024", event: "Politico reveals existence of suppressed Latham Report — the cover-up begins to unravel" },
-  { date: "Jan 2025", event: "Judge Avion Benjamin firts read about the Politico story and scolded Seton Hall and Scrivo." },
+  { date: "Jan 2025", event: "Judge Avion Benjamin first read about the Politico story and scolded Seton Hall and Scrivo." },
   { date: "Early 2025", event: "Judge Avion Benjamin ordered the delivery of the 24,000 to her in camera view." },
   { date: "Feb 10, 2025", event: "Cardinal Tobin hires Ropes & Gray for independent review of Seton Hall abuse findings" },
   { date: "Feb 20, 2025", event: "Seton Hall sues former President Nyre for 'leaking' the very report they were hiding" },
@@ -243,11 +244,6 @@ export const boardOfRegents: BoardSection = {
     },
   ],
   members: [
-    { name: "Hank E. D'Alessandro", role: "Chairman, Board of Regents", tenure: "Active", badges: ["reilly"], note: "Named in the authoritative governance hierarchy as Operational Board Chairman." },
-    { name: "Kevin H. Marino", role: "Chairman (2019-2023)", tenure: "Active", badges: ["reilly", "latham"], note: "Chairman of Marino, Tortorella & Boyle. Presided over the Board that received LaSala's recommendations." },
-    { name: "Joe LaSala", role: "Regent / Task Force", tenure: "Active", badges: ["reilly", "latham"], note: "Served on the LaSala Task Force which examined the McCarrick legacy." },
-    { name: "Mike Lucciola", role: "Regent", tenure: "Active", badges: ["reilly"], note: "Operational Board member identified in 2026 hierarchy." },
-    { name: "Bishop James F. Checchio", role: "Regent / Task Force", tenure: "Active", badges: ["clergy", "latham"], note: "Bishop of Metuchen. Served on institutional task force." },
     { name: "Mary Pat Christie", role: "Regent", tenure: "2022–2025", badges: ["reilly", "christie", "resigned"], note: "Wife of Gov. Chris Christie. Resigned July 2025 amid 'Latham Archive' unsealing." },
     { name: "Ryan K. Duffy", role: "Regent", tenure: "Appointed 2015", badges: ["latham", "reilly"] },
     { name: "Bonnie Evans", role: "Regent", tenure: "Appointed 2022", badges: ["reilly"] },

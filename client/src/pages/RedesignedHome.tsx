@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity, ChevronDown 
+import {
+    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity, ChevronDown
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
 
@@ -18,7 +18,7 @@ export default function RedesignedHome() {
     const [, setLocation] = useLocation();
     const [isGlitching, setIsGlitching] = useState(false);
     const [konamiProgress, setKonamiProgress] = useState<string[]>([]);
-    
+
     // KONAMI CODE
     const KONAMI_CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 
@@ -26,7 +26,7 @@ export default function RedesignedHome() {
         const handleKeyDown = (e: KeyboardEvent) => {
             const nextKey = e.key;
             const updated = [...konamiProgress, nextKey];
-            
+
             if (KONAMI_CODE[updated.length - 1] === nextKey) {
                 if (updated.length === KONAMI_CODE.length) {
                     setIsGlitching(true);
@@ -55,10 +55,10 @@ export default function RedesignedHome() {
 
     return (
         <div className={`min-h-screen w-full bg-[#09090b] text-[#c8bdb0] font-cormorant relative ${isGlitching ? 'animate-pulse grayscale contrast-200' : ''}`}>
-            
+
             <AnimatePresence>
                 {isGlitching && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -74,8 +74,8 @@ export default function RedesignedHome() {
             <section id="hero" className="relative h-screen w-full flex flex-col items-center justify-center px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/20 via-[#09090b] to-[#09090b] pointer-events-none z-0 opacity-60" />
                 <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] pointer-events-none rounded-full" />
-                
-                <motion.div 
+
+                <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
@@ -90,7 +90,7 @@ export default function RedesignedHome() {
                     </p>
                 </motion.div>
 
-                <motion.button 
+                <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
@@ -104,7 +104,7 @@ export default function RedesignedHome() {
 
             {/* SECTION 2: THE HUMAN ELEMENT & STARTING POINT */}
             <section id="prologue" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c]">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -124,7 +124,7 @@ export default function RedesignedHome() {
                             <p className="font-mono text-xl text-zinc-400 uppercase tracking-widest mb-6">Mark Crawford. Age 13.</p>
                             <p className="text-lg text-zinc-300 font-serif leading-relaxed line-clamp-3">The devastating personal account that unmasks the institutional reality of the cathedral. The origin point of the investigation.</p>
                         </Link>
-                        
+
                         <Link href="/axis" className="group block border border-white/5 bg-black/60 backdrop-blur-xl p-10 hover:border-[#8b6914]/50 hover:bg-zinc-900/80 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm hover:-translate-y-2">
                             <div className="absolute inset-0 bg-gradient-to-br from-[#8b6914]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             <ChevronRight className="absolute top-8 right-8 w-6 h-6 text-[#8b6914] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
@@ -134,8 +134,8 @@ export default function RedesignedHome() {
                         </Link>
                     </div>
                 </motion.div>
-                
-                <motion.button 
+
+                <motion.button
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -147,9 +147,61 @@ export default function RedesignedHome() {
                 </motion.button>
             </section>
 
+            {/* SECTION 2.5: START HERE — Guided Narrative Spine */}
+            <section className="relative w-full py-24 px-4 bg-[#0a0a0c] border-t border-white/5">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-4xl mx-auto"
+                >
+                    <div className="text-center mb-14">
+                        <span className="font-mono text-xs tracking-[0.5em] uppercase text-red-700 font-black">Recommended Reading Order</span>
+                        <h2 className="font-cinzel text-4xl md:text-5xl text-white mt-4 uppercase tracking-wider">Start Here</h2>
+                        <p className="text-lg text-zinc-500 font-serif mt-4 max-w-2xl mx-auto italic">
+                            Follow the investigation in four acts. Each builds on the last.
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        {/* Vertical connector line */}
+                        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-red-900/60 via-red-900/30 to-transparent" />
+
+                        {[
+                            { step: 1, label: "ORIGIN", title: "The Prologue", desc: "A survivor's account that launched the investigation.", href: "/prologue", color: "border-red-900" },
+                            { step: 2, label: "EVIDENCE", title: "The Evidence Hub", desc: "Primary sources, court filings, and the suppressed Latham Report.", href: "/evidence", color: "border-amber-700" },
+                            { step: 3, label: "BREACH", title: "The Breach", desc: "Active litigation, judicial rulings, and the unraveling cover-up.", href: "/breach", color: "border-blue-800" },
+                            { step: 4, label: "LEDGER", title: "The Definitive Record", desc: "Every board member, lawyer, and institutional actor — named and tracked.", href: "/ledger", color: "border-white/30" },
+                        ].map((item, i) => (
+                            <Link key={item.step} href={item.href}>
+                                <motion.div
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                                    className={`relative flex items-start gap-6 mb-6 pl-14 md:pl-16 pr-6 py-6 group cursor-pointer border-l-2 ${item.color} hover:bg-white/[0.02] transition-all rounded-r-sm`}
+                                >
+                                    {/* Step number */}
+                                    <div className="absolute left-2 md:left-4 top-6 w-8 h-8 rounded-full bg-[#0a0a0c] border-2 border-zinc-700 group-hover:border-red-700 flex items-center justify-center transition-colors">
+                                        <span className="font-mono text-xs font-black text-zinc-400 group-hover:text-white transition-colors">{item.step}</span>
+                                    </div>
+                                    <div className="flex-1">
+                                        <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-red-700/70 font-bold">Act {item.step} · {item.label}</span>
+                                        <h3 className="font-cinzel text-xl text-white mt-1 group-hover:text-red-400 transition-colors font-bold tracking-wide">{item.title}</h3>
+                                        <p className="text-sm text-zinc-500 mt-1 font-serif">{item.desc}</p>
+                                    </div>
+                                    <ChevronRight className="w-5 h-5 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all mt-2 shrink-0" />
+                                </motion.div>
+                            </Link>
+                        ))}
+                    </div>
+                </motion.div>
+            </section>
+
             {/* SECTION 3: THE FORENSIC ARCHIVES */}
             <section id="archive" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c] border-t border-white/5">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -174,8 +226,8 @@ export default function RedesignedHome() {
                         ))}
                     </div>
                 </motion.div>
-                
-                <motion.button 
+
+                <motion.button
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -191,12 +243,12 @@ export default function RedesignedHome() {
             {/* SECTION 4: THE SHIELD HUB */}
             <section id="network" className="relative w-full flex flex-col items-center bg-[#050508] border-t border-white/5 pt-24 pb-20">
                 <div className="absolute inset-0 bg-gradient-radial from-red-950/10 to-transparent pointer-events-none" />
-                
+
                 <div className="text-center w-full z-20 mb-8">
                     <h2 className="font-mono text-xl text-zinc-500 tracking-[0.5em] uppercase drop-shadow-md">The Complicit Architecture</h2>
                 </div>
 
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-150px" }}
@@ -204,7 +256,7 @@ export default function RedesignedHome() {
                     className="relative w-full flex justify-center items-center"
                     style={{ minHeight: "700px" }}
                 >
-                    <ShieldHub onRingClick={() => {}} />
+                    <ShieldHub onRingClick={() => { }} />
                 </motion.div>
 
                 {/* FOOTER BADGE */}

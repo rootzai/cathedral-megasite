@@ -25,7 +25,13 @@ export default function LiveStatusBar() {
           const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
           newTimeLeft[event.id] = `${days}d ${hours}h ${mins}m`;
         } else {
-          newTimeLeft[event.id] = "LIVE";
+          const daysPast = Math.floor(Math.abs(diff) / (1000 * 60 * 60 * 24));
+          if (daysPast < 1) {
+            newTimeLeft[event.id] = "UNDERWAY";
+          } else {
+            const eventDate = new Date(event.date);
+            newTimeLeft[event.id] = `COMPLETED ${eventDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase()}`;
+          }
         }
       });
 
@@ -40,19 +46,24 @@ export default function LiveStatusBar() {
       <div className="flex flex-col xl:flex-row items-center gap-6 xl:gap-10 xl:divide-x divide-[#8b1a1a]/30 w-full justify-center text-center">
         {EVENTS.map((event) => (
           <div key={event.id} className="flex flex-col items-center gap-2 xl:pl-6 first:pl-0">
-             <span className="text-sm md:text-base font-black tracking-widest text-[#e0e0e0] uppercase text-center max-w-[280px] xl:max-w-none leading-tight xl:leading-normal xl:whitespace-nowrap">
-               {event.label}
-             </span>
-             <div className="flex items-center justify-center gap-3 w-full">
-               <motion.div 
-                 animate={{ opacity: [1, 0.4, 1] }}
-                 transition={{ duration: 1.5, repeat: Infinity }}
-                 className="w-3 h-3 bg-[#dc2626] rounded-full shadow-[0_0_12px_#dc2626]"
-               />
-               <span className="text-lg sm:text-xl xl:text-2xl font-mono text-[#dc2626] font-bold">
-                 {timeLeft[event.id] || "--:--:--"}
-               </span>
-             </div>
+            <span className="text-sm md:text-base font-black tracking-widest text-[#e0e0e0] uppercase text-center max-w-[280px] xl:max-w-none leading-tight xl:leading-normal xl:whitespace-nowrap">
+              {event.label}
+            </span>
+            <div className="flex items-center justify-center gap-3 w-full">
+              {(timeLeft[event.id] || "").startsWith("COMPLETED") ? (
+                <div className="w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0_8px_#10b981]" />
+              ) : (
+                <motion.div
+                  animate={{ opacity: [1, 0.4, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="w-3 h-3 bg-[#dc2626] rounded-full shadow-[0_0_12px_#dc2626]"
+                />
+              )}
+              <span className={`text-lg sm:text-xl xl:text-2xl font-mono font-bold ${(timeLeft[event.id] || "").startsWith("COMPLETED") ? "text-emerald-500 text-base" : "text-[#dc2626]"
+                }`}>
+                {timeLeft[event.id] || "--:--:--"}
+              </span>
+            </div>
           </div>
         ))}
       </div>

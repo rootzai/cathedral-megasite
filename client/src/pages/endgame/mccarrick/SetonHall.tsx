@@ -2,21 +2,22 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
+import GovernanceHierarchy from "@/components/GovernanceHierarchy";
 
 export default function SetonHall() {
   return (
     <div className="space-y-12 animate-in fade-in duration-700">
-      <SectionHeader 
-        number="07" 
-        title="The Seton Hall Connection" 
+      <SectionHeader
+        number="07"
+        title="The Seton Hall Connection"
         subtitle="The 'Culture of Fear' and the Beach House"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
         <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-          <img 
-            src="/assets/Seminaryconfidential.png" 
-            alt="Seminary Confidential Movie Poster" 
+          <img
+            src="/assets/Seminaryconfidential.png"
+            alt="Satirical movie poster depicting the seminary environment described in clergy abuse testimony"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -27,9 +28,9 @@ export default function SetonHall() {
           <div className="absolute top-4 right-4 bg-red-900 text-white font-mono text-xs px-3 py-1 font-black uppercase tracking-widest border border-white">INVESTIGATIVE ART</div>
         </div>
         <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-          <img 
-            src="/assets/facultyclub.png" 
-            alt="Seton Hall Faculty Club Satire" 
+          <img
+            src="/assets/facultyclub.png"
+            alt="Satirical graphic depicting the institutional culture of complicity at Seton Hall"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -64,12 +65,12 @@ export default function SetonHall() {
         </p>
 
         <h3 className="text-destructive font-display uppercase tracking-widest mt-12 border-b border-border pb-2">The Sea Girt Beach House</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-16">
           <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-            <img 
-              src="/assets/Beachhouseonce.png" 
-              alt="Reilly Beach House Admission" 
+            <img
+              src="/assets/Beachhouseonce.png"
+              alt="Satirical graphic about Monsignor Reilly's testimony regarding visits to McCarrick's beach house"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -79,9 +80,9 @@ export default function SetonHall() {
             </div>
           </div>
           <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-            <img 
-              src="/assets/Reillybeachhousedark.png" 
-              alt="Reilly Beach House Dark Satire" 
+            <img
+              src="/assets/Reillybeachhousedark.png"
+              alt="Satirical graphic depicting the reported abuse at McCarrick's Sea Girt beach house"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -93,9 +94,9 @@ export default function SetonHall() {
         </div>
 
         <div className="relative h-[500px] w-full overflow-hidden border-8 border-red-900 my-16 group shadow-[0_0_100px_rgba(139,26,26,0.6)]">
-          <img 
-            src="/assets/thepredators.png" 
-            alt="Groom Island Satire" 
+          <img
+            src="/assets/thepredators.png"
+            alt="Satirical graphic depicting McCarrick's beach house as a site of systematic grooming of seminarians"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -123,6 +124,15 @@ export default function SetonHall() {
           </p>
         </div>
       </div>
+
+      {/* Governance Hierarchy — Board Members */}
+      <section className="mt-20 pt-16 border-t border-border">
+        <h3 className="text-destructive font-display uppercase tracking-widest mb-8 border-b border-border pb-2">The Boards: Who Knew</h3>
+        <p className="text-lg font-serif italic text-muted-foreground mb-8">
+          The governance hierarchy of Seton Hall University during the period of concealment. Every individual listed below sat in a position of authority while the Latham Report was suppressed.
+        </p>
+        <GovernanceHierarchy />
+      </section>
 
       <div className="flex justify-between mt-12 pt-8 border-t border-border">
         <Link href="/ledger/mccarrick/survivors" asChild>
