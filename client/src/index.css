@@ -81,15 +81,15 @@
   /* Pure white in dark mode too */
 }
 
+html {
+  font-size: 20px !important;
+  /* ROOT SIZE: 20px base means ALL rem-based Tailwind classes scale up 25% site-wide.
+     text-sm = 17.5px, text-base = 20px, text-lg = 22.5px, text-xl = 25px, text-2xl = 30px */
+}
+
 @layer base {
   * {
     @apply border-border;
-  }
-
-  html {
-    font-size: 20px;
-    /* ROOT SIZE: 20px base means ALL rem-based Tailwind classes scale up 25% site-wide.
-       text-sm = 17.5px, text-base = 20px, text-lg = 22.5px, text-xl = 25px, text-2xl = 30px */
   }
 
   :root {
