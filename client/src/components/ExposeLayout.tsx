@@ -44,12 +44,12 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
     return (
         <div className="expose-theme flex min-h-screen" style={{ background: "#faf6ee" }}>
             {mobileOpen && (
-                <div className="fixed inset-0 z-40 bg-white/60 lg:hidden" onClick={() => setMobileOpen(false)} />
+                <div className="fixed inset-0 z-40 bg-black/60 lg:hidden" onClick={() => setMobileOpen(false)} />
             )}
 
             <aside
-                className={`fixed top-0 left-0 h-full z-50 flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:z-auto ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
-                style={{ width: "272px", minWidth: "272px", background: "var(--sidebar-bg)", borderRight: "1px solid #2e2416", boxShadow: "4px 0 20px rgba(0,0,0,0.5)" }}
+                className={`w-64 sticky top-0 h-screen border-r flex flex-col z-40 overflow-y-auto ${mobileOpen ? "fixed left-0 translate-x-0" : "hidden lg:flex"}`}
+                style={{ background: "var(--sidebar-bg)", borderColor: "#2e2416", transition: "transform 300ms ease-in-out" }}
             >
                 <div className="flex-shrink-0 px-5 pt-5 pb-4" style={{ borderBottom: "1px solid #2e2416" }}>
                     <div className="flex items-start justify-between">
@@ -62,34 +62,34 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
                     </div>
                     <div className="mt-4 flex items-center gap-2">
                         <div className="flex-1 h-px" style={{ background: "var(--sidebar-dim)", opacity: 0.35 }} />
-                        <div className="text-xs" style={{ color: "var(--sidebar-dim)", opacity: 0.6 }}>✦</div>
-                        <div className="flex-1 h-px" style={{ background: "var(--sidebar-dim)", opacity: 0.35 }} />
                     </div>
                 </div>
 
-                <nav className="flex-1 overflow-y-auto py-2">
+                <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
                     {navItems.map((item) => {
                         const isActive = location === item.path || (item.path === '/expose' && location === '/expose/');
-                        const Icon = item.icon;
                         return (
                             <Link key={item.path} href={item.path} onClick={() => setMobileOpen(false)}>
                                 <div
-                                    className="flex items-start gap-3 px-4 py-2.5 mx-1.5 my-0.5 transition-all duration-150 cursor-pointer"
+                                    className="font-mono text-[10px] sm:text-xs uppercase tracking-wider p-3 transition-all duration-300 cursor-pointer flex justify-between items-center group"
                                     style={{
-                                        borderLeft: isActive ? "3px solid var(--sidebar-gold)" : "3px solid transparent",
-                                        background: isActive ? "var(--sidebar-active)" : "transparent",
-                                        borderRadius: "2px",
+                                        border: isActive ? "1px solid var(--sidebar-gold)" : "1px solid #2e2416",
+                                        background: isActive ? "rgba(202, 165, 85, 0.1)" : "transparent",
+                                        color: isActive ? "var(--sidebar-gold)" : "var(--sidebar-dim)"
                                     }}
-                                    onMouseEnter={(e) => { if (!isActive) (e.currentTarget as HTMLDivElement).style.background = "var(--sidebar-hover)"; }}
-                                    onMouseLeave={(e) => { if (!isActive) (e.currentTarget as HTMLDivElement).style.background = "transparent"; }}
+                                    onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.borderColor = "var(--sidebar-dim)"; e.currentTarget.style.color = "#fff"; } }}
+                                    onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.borderColor = "#2e2416"; e.currentTarget.style.color = "var(--sidebar-dim)"; } }}
                                 >
-                                    <span className="flex-shrink-0 text-xs font-bold mt-0.5" style={{ fontFamily: "'Playfair Display', serif", color: isActive ? "var(--sidebar-gold)" : "var(--sidebar-dim)", minWidth: "1.6rem", fontSize: "0.7rem" }}>{item.section}</span>
-                                    <Icon size={13} className="flex-shrink-0 mt-0.5" style={{ color: isActive ? "var(--sidebar-gold)" : "#5a4a2e", opacity: isActive ? 1 : 0.7 }} />
-                                    <div className="flex-1 min-w-0">
-                                        <div className="text-sm font-semibold leading-tight" style={{ fontFamily: "'Playfair Display', serif", color: isActive ? "var(--sidebar-gold)" : "var(--sidebar-text)", fontSize: "0.85rem" }}>{item.label}</div>
-                                        <div className="text-xs mt-0.5 truncate" style={{ fontFamily: "'Lora', serif", color: isActive ? "var(--sidebar-dim)" : "#4a3c28", fontSize: "0.68rem", fontStyle: "italic" }}>{item.subtitle}</div>
-                                    </div>
-                                    {isActive && <ChevronRight size={11} className="flex-shrink-0 mt-1" style={{ color: "var(--sidebar-gold)" }} />}
+                                    <span className="truncate">{item.label}</span>
+                                    <span 
+                                         className="w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2"
+                                         style={{
+                                             background: isActive ? "var(--sidebar-gold)" : "rgba(46, 36, 22, 0.5)",
+                                             color: isActive ? "#000" : "var(--sidebar-dim)"
+                                         }}
+                                    >
+                                        {item.section}
+                                    </span>
                                 </div>
                             </Link>
                         );
@@ -109,11 +109,11 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
                     <div style={{ width: 28 }} />
                 </header>
 
-                <main id="main-content" className="flex-1 overflow-y-auto" style={{ background: "#faf6ee" }}>
-                    <div className="w-full">
-                        {children}
-                    </div>
-                </main>
+            <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative" style={{ background: "#faf6ee" }}>
+                <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
+                    {children}
+                </div>
+            </main>
             </div>
         </div>
     );

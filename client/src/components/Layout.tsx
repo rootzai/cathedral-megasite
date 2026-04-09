@@ -57,7 +57,7 @@ export default function Layout({ children }: LayoutProps) {
           </p>
         </div>
 
-        <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+        <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
           {navItems.map((item) => {
             const isActive = location === item.href;
             return (
@@ -70,9 +70,9 @@ export default function Layout({ children }: LayoutProps) {
                       : "border-border text-muted-foreground hover:border-foreground/50 hover:text-foreground"
                   )}
                 >
-                  <span>{item.label}</span>
+                  <span className="truncate">{item.label}</span>
                   <span className={cn(
-                    "w-6 h-6 flex items-center justify-center text-[10px] font-bold transition-colors",
+                    "w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2",
                     isActive ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   )}>
                     {item.id}
@@ -107,8 +107,11 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Content */}
       <main className="flex-1 w-full overflow-hidden min-h-screen relative z-10 bg-background/50 backdrop-blur-[2px]">
-        <div className="container py-12 lg:py-16 max-w-4xl mx-auto mt-16 md:mt-24 lg:mt-0 relative z-20">
+        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0 relative z-20">
           {children}
+          <div className="mt-20">
+             {/* JourneyNav normally goes here if available */}
+          </div>
         </div>
       </main>
       <ScreamToggle />

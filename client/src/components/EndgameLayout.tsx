@@ -14,6 +14,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   const isMartin = location.includes('/martin');
   const isLorenzo = location.includes('/lorenzo');
   const isReilly = location.includes('/reilly');
+  const isMadman = location.includes('/madman');
 
   const mccarrickItems = [
     { href: "/ledger/mccarrick", label: "01. INTRODUCTION", id: "01" },
@@ -33,8 +34,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     { href: "/ledger/mccarrick/survivors", label: "15. SURVIVORS", id: "15" },
     { href: "/ledger/mccarrick/responses", label: "16. RESPONSES", id: "16" },
     { href: "/ledger/mccarrick/analysis", label: "17. ANALYSIS", id: "17" },
-    { href: "/ledger/mccarrick/conclusion", label: "18. CONCLUSION", id: "18" },
-    { href: "/ledger/mccarrick/madman", label: "19. MADMAN ARCHIVE", id: "19" },
+    { href: "/ledger/mccarrick/conclusion", label: "18. CONCLUSION", id: "18" }
   ];
 
   const checchioItems = [
@@ -65,6 +65,10 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     { href: "/ledger/reilly", label: "01. FACE OF IMPUNITY", id: "01" }
   ];
 
+  const madmanItems = [
+    { href: "/ledger/madman", label: "01. EXTERNAL ARCHIVE", id: "01" }
+  ];
+
   let navItems = mccarrickItems;
   let title = "THE MCCARRICK DOSSIER";
   let caseFile = "#2018-TEM";
@@ -85,6 +89,10 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     navItems = reillyItems;
     title = "THE REILLY DOSSIER";
     caseFile = "#2026-SHU";
+  } else if (isMadman) {
+    navItems = madmanItems;
+    title = "THE MADMAN ARCHIVE";
+    caseFile = "#1986-NWP";
   }
 
   return (
@@ -116,7 +124,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           <Link href="/ledger/mccarrick">
             <div className={cn(
               "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly
+              location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly && !isMadman
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
             )}>
@@ -161,6 +169,16 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
                 : "text-muted-foreground hover:bg-muted"
             )}>
               Lorenzo
+            </div>
+          </Link>
+          <Link href="/ledger/madman">
+            <div className={cn(
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              isMadman
+                ? "bg-destructive text-zinc-900"
+                : "text-muted-foreground hover:bg-muted"
+            )}>
+              Archive
             </div>
           </Link>
         </div>

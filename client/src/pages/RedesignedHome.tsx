@@ -52,7 +52,7 @@ const SECTION_CARDS = [
     {
         title: "THE MADMAN ARCHIVE",
         desc: "The secretarial infrastructure that sustained a predator.",
-        href: "/ledger/mccarrick/madman",
+        href: "/ledger/madman",
         icon: Lock,
         color: "text-[#8b1a1a]"
     }

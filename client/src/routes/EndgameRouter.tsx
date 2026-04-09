@@ -35,7 +35,9 @@ const McCarrickTheRise = React.lazy(() => import("../pages/endgame/mccarrick/The
 const McCarrickWarnings = React.lazy(() => import("../pages/endgame/mccarrick/Warnings"));
 const McCarrickThePopes = React.lazy(() => import("../pages/endgame/mccarrick/ThePopes"));
 const McCarrickSecretaries = React.lazy(() => import("../pages/endgame/mccarrick/Secretaries"));
-const McCarrickMadmanDossier = React.lazy(() => import("../pages/endgame/mccarrick/MadmanDossier"));
+
+// Madman Pages
+const MadmanHome = React.lazy(() => import("../pages/endgame/madman/Home"));
 
 // Checchio Pages
 const CheckchioAscent = React.lazy(() => import("../pages/endgame/checchio/Ascent"));
@@ -84,6 +86,8 @@ export const EndgameRoutes = [
 
     <Route key="reilly" path={"/ledger/reilly"}><EndgamePageLayout component={ReillyEndgame} /></Route>,
 
+    <Route key="madman" path={"/ledger/madman"}><EndgamePageLayout component={MadmanHome} /></Route>,
+
     <Route key="mccarrick" path={"/ledger/mccarrick"}><EndgamePageLayout component={McCarrickHome} /></Route>,
     <Route key="mccarrick-bg" path={"/ledger/mccarrick/background"}><EndgamePageLayout component={McCarrickBackground} /></Route>,
     <Route key="mccarrick-profile" path={"/ledger/mccarrick/profile"}><EndgamePageLayout component={McCarrickProfile} /></Route>,
@@ -102,7 +106,6 @@ export const EndgameRoutes = [
     <Route key="mccarrick-analysis" path={"/ledger/mccarrick/analysis"}><EndgamePageLayout component={McCarrickAnalysis} /></Route>,
     <Route key="mccarrick-conclusion" path={"/ledger/mccarrick/conclusion"}><EndgamePageLayout component={McCarrickConclusion} /></Route>,
     <Route key="mccarrick-secretaries" path={"/ledger/mccarrick/secretaries"}><EndgamePageLayout component={McCarrickSecretaries} /></Route>,
-    <Route key="mccarrick-madman" path={"/ledger/mccarrick/madman"}><EndgamePageLayout component={McCarrickMadmanDossier} /></Route>,
 
     <Route key="checchio" path={"/ledger/checchio"}><EndgamePageLayout component={CheckchioHome} /></Route>,
     <Route key="checchio-form" path={"/ledger/checchio/formation"}><EndgamePageLayout component={CheckchioFormation} /></Route>,
