@@ -86,9 +86,13 @@
     @apply border-border;
   }
 
+  html {
+    font-size: 20px;
+    /* ROOT SIZE: 20px base means ALL rem-based Tailwind classes scale up 25% site-wide.
+       text-sm = 17.5px, text-base = 20px, text-lg = 22.5px, text-xl = 25px, text-2xl = 30px */
+  }
+
   :root {
-
-
     --font-sans: "Inter", system-ui, -apple-system, sans-serif;
     --font-serif: "Cormorant Garamond", Georgia, serif;
     --font-heading: "Cinzel", serif;
@@ -97,12 +101,8 @@
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-
-
   body {
     font-family: var(--font-sans);
-    font-size: 18px;
-    /* Base 18px so all rem-based Tailwind text classes scale up proportionally */
     color: var(--foreground);
     background-color: var(--background);
     line-height: 1.75;
@@ -112,13 +112,6 @@
     font-weight: 400;
     letter-spacing: 0.01em;
   }
-
-  /* Enforce minimum readability on mono labels */
-  .font-mono,
-  [class*="font-mono"] {
-    font-size: max(1em, 14px);
-  }
-
 
   /* Section numbers and labels must be visible */
   .section-number,
