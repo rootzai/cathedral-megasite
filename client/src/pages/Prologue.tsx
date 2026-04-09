@@ -7,10 +7,8 @@ export default function Prologue() {
     return (
         <div className="min-h-screen bg-[#070709] text-[#c8bdb0] font-serif overflow-x-hidden selection:bg-red-900/30">
             <div className="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center bg-gradient-to-b from-[#070709] to-transparent">
-                <Link href="/">
-                    <a className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono uppercase tracking-widest text-xs">
+                <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono uppercase tracking-widest text-xs">
                         <ArrowLeft className="w-4 h-4" /> Return to Hub
-                    </a>
                 </Link>
             </div>
 
@@ -59,10 +57,8 @@ export default function Prologue() {
                     transition={{ duration: 1, delay: 0.6 }}
                     className="pt-16 flex justify-center"
                 >
-                    <Link href="/evidence/origin">
-                        <a className="inline-flex items-center gap-4 border border-red-900/50 bg-red-950/20 px-8 py-4 text-[#8b1a1a] font-mono font-black tracking-[0.3em] uppercase text-sm group hover:bg-red-900 hover:text-white transition-all shadow-[0_0_30px_rgba(139,26,26,0.15)]">
+                    <Link href="/evidence/origin" className="inline-flex items-center gap-4 border border-red-900/50 bg-red-950/20 px-8 py-4 text-[#8b1a1a] font-mono font-black tracking-[0.3em] uppercase text-sm group hover:bg-red-900 hover:text-white transition-all shadow-[0_0_30px_rgba(139,26,26,0.15)]">
                             Enter the Investigation <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                        </a>
                     </Link>
                 </motion.div>
             </main>

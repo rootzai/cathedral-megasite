@@ -7,10 +7,8 @@ export default function Axis() {
     return (
         <div className="min-h-screen bg-[#070709] text-[#c8bdb0] font-serif overflow-x-hidden selection:bg-red-900/30 py-12">
             <div className="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center bg-gradient-to-b from-[#070709] to-transparent">
-                <Link href="/">
-                    <a className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono uppercase tracking-widest text-xs">
+                <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono uppercase tracking-widest text-xs">
                         <ArrowLeft className="w-4 h-4" /> Return to Hub
-                    </a>
                 </Link>
             </div>
 

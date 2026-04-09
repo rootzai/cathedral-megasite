@@ -11,7 +11,15 @@ import { ScrollManager } from "./components/ScrollManager";
 import TriptychPortal from "./components/TriptychPortal";
 import { GlobalFooter } from "./components/GlobalFooter";
 
+import { useLocation } from "wouter";
+
 function App() {
+  const [location] = useLocation();
+  const isFullScreenLayout = 
+    location === "/" || 
+    location === "/prologue" || 
+    location === "/axis" || 
+    (location.startsWith("/ledger/") && location !== "/ledger");
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
@@ -20,12 +28,12 @@ function App() {
           <Toaster />
           <ScrollManager />
           <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
-            <PrimaryNavigation />
-            <LiveStatusBar />
+            {!isFullScreenLayout && <PrimaryNavigation />}
+            {!isFullScreenLayout && <LiveStatusBar />}
             <div className="flex-grow">
               <CoreRouter />
             </div>
-            <GlobalFooter />
+            {!isFullScreenLayout && <GlobalFooter />}
           </div>
         </TooltipProvider>
       </ThemeProvider>

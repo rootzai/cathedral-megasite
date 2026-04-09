@@ -94,25 +94,21 @@ export default function RedesignedHome() {
                 >
                     {/* LEFT COLUMN: NARRATIVE NODES */}
                     <div className="hidden lg:flex lg:col-span-3 space-y-4 flex-col justify-center">
-                        <Link href="/prologue">
-                            <a className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-red-900/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
+                        <Link href="/prologue" className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-red-900/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
                                 <div className="absolute inset-0 bg-gradient-to-r from-red-950/0 to-red-950/30 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
                                     <ChevronRight className="w-5 h-5 text-red-500" />
                                 </span>
                                 <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Prologue</h3>
                                 <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">Mark Crawford. Age 13.</p>
-                            </a>
                         </Link>
-                        <Link href="/axis">
-                            <a className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-[#8b6914]/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
+                        <Link href="/axis" className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-[#8b6914]/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#8b6914]/0 to-[#8b6914]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
                                     <ChevronRight className="w-5 h-5 text-[#8b6914]" />
                                 </span>
                                 <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Power Axis</h3>
                                 <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">From Bayonne to the Vatican</p>
-                            </a>
                         </Link>
                     </div>
 
@@ -127,8 +123,7 @@ export default function RedesignedHome() {
                     {/* RIGHT COLUMN: MAIN ENTRIES */}
                     <div className="lg:col-span-3 flex flex-col gap-2 relative z-20">
                         {NAVIGATION_NODES.map((node, i) => (
-                            <Link key={node.href} href={node.href}>
-                                <a className={`group flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-3 sm:p-4 transition-all duration-300 ${node.bg} hover:scale-[1.02] shadow-xl hover:shadow-2xl rounded-sm`}>
+                            <Link key={node.href} href={node.href} className={`group flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-3 sm:p-4 transition-all duration-300 ${node.bg} hover:scale-[1.02] shadow-xl hover:shadow-2xl rounded-sm`}>
                                     <div className={`p-2.5 bg-black/60 border border-white/5 rounded-full ${node.color} group-hover:bg-white/5 transition-colors`}>
                                         <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </div>
@@ -136,22 +131,16 @@ export default function RedesignedHome() {
                                         <h4 className="font-cinzel font-black tracking-widest text-xs sm:text-sm text-white drop-shadow">{node.title}</h4>
                                         <p className="font-mono text-[8px] sm:text-[9px] text-zinc-500 uppercase tracking-widest mt-1 group-hover:text-zinc-400 transition-colors">{node.desc}</p>
                                     </div>
-                                </a>
                             </Link>
                         ))}
                     </div>
                     
-                    {/* MOBILE LEFT COLUMN FALLBACK */}
                     <div className="flex lg:hidden flex-col sm:flex-row w-full gap-3 mt-4 z-20">
-                        <Link href="/prologue">
-                            <a className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
+                        <Link href="/prologue" className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
                                <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">The Prologue</h3>
-                            </a>
                         </Link>
-                         <Link href="/axis">
-                            <a className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
+                         <Link href="/axis" className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
                                <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">Power Axis</h3>
-                            </a>
                         </Link>
                     </div>
 
