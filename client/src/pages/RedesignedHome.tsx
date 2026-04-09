@@ -48,6 +48,13 @@ const SECTION_CARDS = [
         href: "/method",
         icon: Fingerprint,
         color: "text-[#1a3a5c]"
+    },
+    {
+        title: "THE MADMAN ARCHIVE",
+        desc: "The secretarial infrastructure that sustained a predator.",
+        href: "/ledger/mccarrick/madman",
+        icon: Lock,
+        color: "text-[#8b1a1a]"
     }
 ];
 
