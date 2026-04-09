@@ -54,7 +54,8 @@ const REDIRECT_MAP: Record<string, string> = {
   "/timeline": "/breach/courtroom",
   "/briefing": "/breach",
   "/ruling": "/breach",
-  "/method": "/methodology",
+  "/ledger/madman": "/madman",   // Fix: sidebar links here but route is at /madman
+  "/methodology": "/method",     // Fix: /method is the real route
   "/lorenzo": "/ledger/lorenzo"
 };
 
@@ -84,6 +85,7 @@ export function CoreRouter() {
         Unsealing Archives...
       </div>
     }>
+      <RedirectHandler />
       <Switch>
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
@@ -200,10 +202,7 @@ export function CoreRouter() {
             <DeiJournoEasterEgg />
         </Route>
 
-        {/* Catch-all and Redirects */}
-        <Route path="/governance">
-            <RedirectHandler /> {/* Will map to /shield via REDIRECT_MAP fallback if not handled */}
-        </Route>
+
         <Route>
           <PageLayout component={NotFound} />
         </Route>

@@ -101,19 +101,25 @@
 
   body {
     font-family: var(--font-sans);
+    font-size: 18px;
+    /* Base 18px so all rem-based Tailwind text classes scale up proportionally */
     color: var(--foreground);
     background-color: var(--background);
-    line-height: 1.7;
-    /* Increased line height for readability */
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-weight: 400;
-    /* Ensure minimum weight */
     letter-spacing: 0.01em;
-    /* Slight tracking for clarity */
   }
 
+  /* Enforce minimum readability on all label/mono patterns */
+  .font-mono,
+  [class*="font-mono"],
+  [class*="tracking-widest"],
+  [class*="tracking-["] {
+    font-size: max(0.8rem, 14px);
+  }
 
 
   /* Section numbers and labels must be visible */

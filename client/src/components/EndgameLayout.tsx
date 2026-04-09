@@ -2,7 +2,8 @@ import { SmartImage } from "@/components/SmartImage";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
 import { JourneyNav } from "./JourneyNav";
-
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 
 interface EndgameLayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,8 @@ interface EndgameLayoutProps {
 
 export default function EndgameLayout({ children }: EndgameLayoutProps) {
   const [location] = useLocation();
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   const isChecchio = location.includes('/checchio');
   const isMartin = location.includes('/martin');
   const isLorenzo = location.includes('/lorenzo');
@@ -66,11 +69,11 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   ];
 
   const madmanItems = [
-    { href: "/ledger/madman", label: "01. EXTERNAL ARCHIVE", id: "01" }
+    { href: "/madman", label: "01. EXTERNAL ARCHIVE", id: "01" }
   ];
 
   let navItems = mccarrickItems;
-  let title = "THE MCCARRICK DOSSIER";
+  let title = "THE McCARRICK DOSSIER";
   let caseFile = "#2018-TEM";
 
   if (isChecchio) {
@@ -95,23 +98,50 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     caseFile = "#1986-NWP";
   }
 
-  return (
-    <div className="min-h-screen flex bg-background text-foreground font-body selection:bg-primary/20 selection:text-primary-foreground relative">
-      <div className="texture-overlay"></div>
+  // Find current section label for mobile header
+  const currentSection = navItems.find(item => item.href === location);
+  const currentLabel = currentSection?.label ?? navItems[0]?.label ?? "SECTION";
+  const currentIdx = navItems.findIndex(item => item.href === location);
+  const sectionCount = navItems.length;
 
-      {/* Sidebar Navigation */}
-      <aside className="w-64 sticky top-0 h-screen border-r border-border bg-sidebar hidden lg:flex flex-col z-40 overflow-y-auto">
+  const dossierTabs = [
+    { href: "/ledger/mccarrick", label: "McCarrick", active: !isChecchio && !isMartin && !isLorenzo && !isReilly && !isMadman && location.includes('/mccarrick') },
+    { href: "/ledger/checchio", label: "Checchio", active: isChecchio },
+    { href: "/ledger/reilly", label: "Reilly", active: isReilly },
+    { href: "/ledger/martin", label: "Martin", active: isMartin },
+    { href: "/ledger/lorenzo", label: "Lorenzo", active: isLorenzo },
+    { href: "/madman", label: "Archive", active: isMadman },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col lg:flex-row bg-background text-foreground font-body selection:bg-primary/20 selection:text-primary-foreground relative">
+      <div className="texture-overlay" />
+
+      {/* =========== DESKTOP SIDEBAR =========== */}
+      <aside aria-label="Dossier Section Navigation" className="w-64 sticky top-0 h-screen border-r border-border bg-sidebar hidden lg:flex flex-col z-40 overflow-y-auto">
         <div className="p-4 border-b border-border flex flex-col items-center">
           <Link href="/">
             <a className="mb-4 block hover:opacity-80 transition-opacity">
               <img
                 src="/assets/images/colored-pirate-logo.png"
                 alt="Sodom Hall Home"
-                className="w-16 h-auto object-contain transition-transform group-hover:scale-105"
+                className="w-16 h-auto object-contain"
               />
             </a>
           </Link>
-          <h1 className="font-heading text-xl text-foreground leading-none mb-2 text-center w-full">
+
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="w-full mb-3">
+            <ol className="flex flex-wrap items-center gap-1 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+              <li><Link href="/"><a className="hover:text-red-400 transition-colors">Home</a></Link></li>
+              <li aria-hidden="true" className="text-zinc-700">/</li>
+              <li><Link href="/ledger"><a className="hover:text-red-400 transition-colors">Ledger</a></Link></li>
+              <li aria-hidden="true" className="text-zinc-700">/</li>
+              <li className="text-zinc-300 truncate max-w-[120px]">{title.replace('THE ', '').replace(' DOSSIER', '').replace(' ARCHIVE','')}</li>
+            </ol>
+          </nav>
+
+          <h1 className="font-heading text-base text-foreground leading-tight mb-1 text-center w-full font-black tracking-wider">
             {title}
           </h1>
           <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
@@ -119,68 +149,20 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </p>
         </div>
 
-        {/* Section Toggle */}
+        {/* Dossier Tabs */}
         <div className="flex border-b border-border w-full overflow-x-auto scrollbar-thin">
-          <Link href="/ledger/mccarrick">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly && !isMadman
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              McCarrick
-            </div>
-          </Link>
-          <Link href="/ledger/checchio">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              isChecchio
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              Checchio
-            </div>
-          </Link>
-          <Link href="/ledger/reilly">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              isReilly
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              Reilly
-            </div>
-          </Link>
-          <Link href="/ledger/martin">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              isMartin
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              Martin
-            </div>
-          </Link>
-          <Link href="/ledger/lorenzo">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              isLorenzo
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              Lorenzo
-            </div>
-          </Link>
-          <Link href="/ledger/madman">
-            <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
-              isMadman
-                ? "bg-destructive text-zinc-900"
-                : "text-muted-foreground hover:bg-muted"
-            )}>
-              Archive
-            </div>
-          </Link>
+          {dossierTabs.map(tab => (
+            <Link key={tab.href} href={tab.href}>
+              <div className={cn(
+                "flex-shrink-0 py-2.5 px-3 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap font-bold",
+                tab.active
+                  ? "bg-destructive text-white"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              )}>
+                {tab.label}
+              </div>
+            </Link>
+          ))}
         </div>
 
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
@@ -192,14 +174,14 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
                   className={cn(
                     "font-mono text-xs uppercase tracking-wider p-3 border transition-all duration-300 cursor-pointer flex justify-between items-center group",
                     isActive
-                      ? "border-destructive text-destructive bg-destructive/5 shadow-[0_0_10px_rgba(220,38,38,0.2)]"
-                      : "border-border text-muted-foreground hover:border-foreground/50 hover:text-foreground"
+                      ? "border-destructive text-destructive bg-destructive/5 shadow-[0_0_10px_rgba(220,38,38,0.2)] font-black"
+                      : "border-border text-zinc-400 hover:border-foreground/50 hover:text-foreground"
                   )}
                 >
                   <span className="truncate">{item.label}</span>
                   <span className={cn(
                     "w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2",
-                    isActive ? "bg-destructive text-zinc-900" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
+                    isActive ? "bg-destructive text-white" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   )}>
                     {item.id}
                   </span>
@@ -210,25 +192,106 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </nav>
 
         <div className="p-4 border-t border-border mt-auto">
-          <Link href="/evidence">
-            <div className="font-mono text-xs uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-3 py-3 rounded-sm text-center font-bold">
-              ← BACK TO EVIDENCE HUB
+          <Link href="/ledger">
+            <div className="font-mono text-sm uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-400 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-3 py-3 rounded-sm text-center font-bold">
+              ← RETURN TO LEDGER
             </div>
           </Link>
         </div>
       </aside>
 
-      {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 w-full z-50 bg-background border-b border-border p-4 flex justify-between items-center">
-        <div>
-          <h1 className="font-heading text-lg text-foreground">{title}</h1>
-          <p className="font-mono text-xs text-muted-foreground uppercase">CASE FILE: {caseFile}</p>
-        </div>
-      </header>
+      {/* =========== MOBILE HEADER + NAV DRAWER =========== */}
+      <div className="lg:hidden">
+        {/* Sticky mobile header */}
+        <header className="fixed top-0 w-full z-50 bg-background border-b border-border px-4 py-3 flex justify-between items-center shadow-xl">
+          <div className="min-w-0 flex-1 pr-4">
+            <p className="font-mono text-xs text-red-500 uppercase tracking-widest mb-0.5">CASE FILE: {caseFile}</p>
+            <h1 className="font-heading text-sm text-foreground font-black truncate">{title}</h1>
+            {currentSection && (
+              <p className="font-mono text-xs text-zinc-400 uppercase tracking-wider truncate mt-0.5">
+                {currentLabel} ({currentIdx + 1}/{sectionCount})
+              </p>
+            )}
+          </div>
+          <button
+            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-dossier-nav"
+            aria-label="Toggle dossier section navigation"
+            className="shrink-0 flex items-center gap-2 bg-zinc-900 border border-zinc-700 text-white px-3 py-2 rounded text-xs font-bold uppercase tracking-widest"
+          >
+            {mobileNavOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            <span className="hidden xs:inline">{mobileNavOpen ? 'Close' : 'Sections'}</span>
+          </button>
+        </header>
 
-      {/* Main Content */}
-      <main className="flex-1 w-full overflow-hidden min-h-screen relative">
-        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
+        {/* Mobile nav drawer — full section list */}
+        {mobileNavOpen && (
+          <div
+            id="mobile-dossier-nav"
+            className="fixed top-[72px] left-0 right-0 bottom-0 z-40 bg-black/95 backdrop-blur-md overflow-y-auto border-b border-border"
+          >
+            {/* Dossier switcher */}
+            <div className="flex overflow-x-auto border-b border-border">
+              {dossierTabs.map(tab => (
+                <Link key={tab.href} href={tab.href}>
+                  <div
+                    onClick={() => setMobileNavOpen(false)}
+                    className={cn(
+                      "shrink-0 px-4 py-3 font-mono text-sm uppercase tracking-wider font-bold border-r border-border cursor-pointer",
+                      tab.active ? "bg-destructive text-white" : "text-zinc-400 hover:text-white"
+                    )}
+                  >
+                    {tab.label}
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <nav className="py-3 px-3 space-y-1">
+              {navItems.map((item) => {
+                const isActive = location === item.href;
+                return (
+                  <Link key={item.id} href={item.href}>
+                    <div
+                      onClick={() => setMobileNavOpen(false)}
+                      className={cn(
+                        "font-mono text-sm uppercase tracking-wider p-4 border transition-all cursor-pointer flex justify-between items-center",
+                        isActive
+                          ? "border-destructive text-destructive bg-destructive/10 font-black"
+                          : "border-border text-zinc-300 hover:border-zinc-500 hover:text-white"
+                      )}
+                    >
+                      <span>{item.label}</span>
+                      <span className={cn(
+                        "w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 ml-2",
+                        isActive ? "bg-destructive text-white" : "bg-zinc-800 text-zinc-400"
+                      )}>
+                        {item.id}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="p-4 border-t border-border">
+              <Link href="/ledger">
+                <div
+                  onClick={() => setMobileNavOpen(false)}
+                  className="font-mono text-sm uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-400 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-4 py-3 text-center font-bold"
+                >
+                  ← RETURN TO LEDGER
+                </div>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* =========== MAIN CONTENT =========== */}
+      <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative">
+        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-[80px] lg:mt-0">
           {children}
 
           <div className="mt-20">

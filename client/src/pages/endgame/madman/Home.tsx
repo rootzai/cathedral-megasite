@@ -26,7 +26,7 @@ export default function MadmanDossier() {
         </div>
       </section>
 
-      {/* Iframe Container */}
+      {/* Iframe Container — with fallback if Manus goes down */}
       <section className="relative w-full">
         <div className="border border-border rounded-lg overflow-hidden bg-muted/10 shadow-2xl">
           <div className="bg-muted/30 border-b border-border px-4 py-2 flex items-center justify-between">
@@ -40,15 +40,45 @@ export default function MadmanDossier() {
             </span>
             <div className="w-16" />
           </div>
-          <iframe
-            src="https://madmansec-nuaqskqw.manus.space"
-            width="100%"
-            height="1200"
-            style={{ border: "none" }}
-            title="Madman McCarrick Dossier"
-            loading="lazy"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-          />
+          <div className="relative">
+            <iframe
+              src="https://madmansec-nuaqskqw.manus.space"
+              width="100%"
+              height="1200"
+              style={{ border: "none", display: "block" }}
+              title="Madman McCarrick Dossier — External Archive"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+              onError={(e) => {
+                const el = e.currentTarget;
+                const fallback = el.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'flex';
+                el.style.display = 'none';
+              }}
+            />
+            {/* Fallback — shown if iframe fails to load */}
+            <div
+              style={{ display: 'none' }}
+              className="w-full h-[600px] bg-zinc-950 border-2 border-red-900/40 flex-col items-center justify-center gap-6 text-center p-12"
+            >
+              <AlertTriangle className="w-12 h-12 text-red-500 mx-auto" />
+              <h3 className="font-mono text-xl font-black text-white uppercase tracking-widest">
+                Archive Temporarily Unavailable
+              </h3>
+              <p className="text-zinc-400 font-serif text-lg max-w-md">
+                The Madman McCarrick external archive could not be loaded. This may be a temporary service interruption.
+              </p>
+              <a
+                href="https://madmansec-nuaqskqw.manus.space"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-red-900 hover:bg-red-700 text-white px-8 py-3 font-mono text-sm font-black uppercase tracking-widest transition-all"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Open Archive Directly
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

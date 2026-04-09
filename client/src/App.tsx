@@ -1,9 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import React from "react";
-import { Info } from "lucide-react";
 import ErrorBoundary from "./components/ErrorBoundary";
-import PrimaryNavigation from "./components/PrimaryNavigation";
+import MegaNavigation from "./components/MegaNavigation";
 import LiveStatusBar from "./components/LiveStatusBar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CoreRouter } from "./routes/CoreRouter";
@@ -30,7 +29,7 @@ function App() {
           <Toaster />
           <ScrollManager />
           <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
-            {!isFullScreenLayout && <PrimaryNavigation />}
+            {!isFullScreenLayout && <MegaNavigation />}
             {!isFullScreenLayout && <LiveStatusBar />}
             <div className="flex-grow">
               <CoreRouter />

@@ -1,14 +1,35 @@
-import React from "react";
-import { Link } from "wouter";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import { RINGS } from "@/lib/data";
 import EvidenceSubNavigation from "@/components/EvidenceSubNavigation";
 import { JourneyNav } from "@/components/JourneyNav";
 import { ArrowRight } from "lucide-react";
 import { Term } from "@/components/Term";
-
 import { SEO } from "@/components/SEO";
 
+// Map sub-route segments to section IDs on the page
+const SECTION_MAP: Record<string, string> = {
+  origin: "ring-1",
+  machine: "ring-2",
+  board: "ring-3",
+  legal: "ring-4",
+  present: "ring-5",
+  victims: "ring-6",
+};
+
 export default function EvidenceHub() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const segment = location.split('/').pop() ?? '';
+    const sectionId = SECTION_MAP[segment];
+    if (sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+      }
+    }
+  }, [location]);
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif">
             <SEO 
@@ -38,7 +59,7 @@ export default function EvidenceHub() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {RINGS.map((ring) => (
-                            <Link key={ring.id} href={ring.route} className="group block bg-[#111116] border border-[#1a1a22] p-8 hover:border-[#8b1a1a] transition-all relative overflow-hidden">
+                            <Link key={ring.id} href={ring.route} className="group block bg-[#111116] border border-[#1a1a22] p-8 hover:border-[#8b1a1a] transition-all relative overflow-hidden scroll-mt-24" id={`ring-${ring.id}`}>
                                 {ring.breach && (
                                     <div className="absolute top-0 right-0 bg-[#8b1a1a] text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
                                         Breach Point
@@ -111,33 +132,33 @@ export default function EvidenceHub() {
                         <h2 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest text-center mb-12">Suggested Journeys</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
-                                <span className="text-xs font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 01 // THE NEWBIE</span>
-                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
-                                <p className="text-sm text-zinc-500 italic mb-6">"I'm new. Who is involved and what happened?"</p>
+                                <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4">PATH 01 // THE NEWBIE</span>
+                                <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
+                                <p className="text-base text-zinc-400 italic mb-6">"I'm new. Who is involved and what happened?"</p>
                                 <div className="space-y-4">
-                                    <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE MISSION</Link>
-                                    <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE PEOPLE</Link>
-                                    <Link href="/evidence" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE LAYERS</Link>
+                                    <Link href="/about" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">1. THE MISSION</Link>
+                                    <Link href="/whos-who" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">2. THE PEOPLE</Link>
+                                    <Link href="/evidence" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">3. THE LAYERS</Link>
                                 </div>
                             </div>
                             <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
-                                <span className="text-xs font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
-                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
-                                <p className="text-sm text-zinc-500 italic mb-6">"I want the records. Show me the filings and the {<Term id="Michael Critchley">Critchley Shield</Term>}."</p>
+                                <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
+                                <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
+                                <p className="text-base text-zinc-400 italic mb-6">"I want the records. Show me the filings and the {<Term id="Michael Critchley">Critchley Shield</Term>}."</p>
                                 <div className="space-y-4">
-                                    <Link href="/breach" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE BREACH</Link>
-                                    <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE VAULT</Link>
-                                    <Link href="/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE RECORD</Link>
+                                    <Link href="/breach" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">1. THE BREACH</Link>
+                                    <Link href="/vault" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">2. THE VAULT</Link>
+                                    <Link href="/ledger" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">3. THE RECORD</Link>
                                 </div>
                             </div>
                             <div className="p-8 border border-[#8b1a1a]/20 bg-[#8b1a1a]/5 hover:border-[#8b1a1a]/40 transition-all">
-                                <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4">PATH 03 // THE ADVOCATE</span>
-                                <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
-                                <p className="text-sm text-zinc-500 italic mb-6">"How does this affect real survivors?"</p>
+                                <span className="text-sm font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4">PATH 03 // THE ADVOCATE</span>
+                                <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
+                                <p className="text-base text-zinc-400 italic mb-6">"How does this affect real survivors?"</p>
                                 <div className="space-y-4">
-                                    <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">1. THE CASE STUDY</Link>
-                                    <Link href="/origin/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">2. THE ORIGIN</Link>
-                                    <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-widest uppercase">3. THE ACTION</Link>
+                                    <Link href="/evidence/mckeever" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">1. THE CASE STUDY</Link>
+                                    <Link href="/ledger/mccarrick" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">2. THE DOSSIER</Link>
+                                    <Link href="/tips" className="text-base text-[#8b1a1a] hover:text-white block tracking-widest uppercase font-bold">3. THE ACTION</Link>
                                 </div>
                             </div>
                         </div>
