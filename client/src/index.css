@@ -82,7 +82,7 @@
 }
 
 html {
-  font-size: 20px !important;
+  font-size: 18px !important;
   /* ROOT SIZE: 20px base means ALL rem-based Tailwind classes scale up 25% site-wide.
      text-sm = 17.5px, text-base = 20px, text-lg = 22.5px, text-xl = 25px, text-2xl = 30px */
 }
