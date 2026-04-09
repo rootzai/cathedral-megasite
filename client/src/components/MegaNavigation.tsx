@@ -113,12 +113,12 @@ export default function MegaNavigation() {
       </div>
 
       {/* 3. News Ticker — desktop only, pauses on hover, WCAG 2.2.2 compliant */}
-      <div className="hidden md:flex bg-[#080808] h-8 items-center overflow-hidden whitespace-nowrap border-t border-white/5 group" aria-label="News ticker" role="region">
+      <div className="hidden md:flex bg-[#080808] h-8 items-center border-t border-white/5 group" aria-label="News ticker" role="region">
         <button
           onClick={() => setTickerPaused(!tickerPaused)}
           aria-pressed={tickerPaused}
           aria-label={tickerPaused ? 'Resume news ticker' : 'Pause news ticker'}
-          className="shrink-0 px-2 h-full flex items-center text-zinc-500 hover:text-white transition-colors border-r border-white/5 cursor-pointer"
+          className="shrink-0 px-2 h-full flex items-center text-zinc-500 hover:text-white transition-colors border-r border-white/5 cursor-pointer z-10"
         >
           {tickerPaused ? (
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
@@ -126,15 +126,17 @@ export default function MegaNavigation() {
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
           )}
         </button>
-        <div className={`flex ${tickerPaused ? '' : 'animate-ticker'} group-hover:[animation-play-state:paused] items-center py-1`} style={tickerPaused ? { animationPlayState: 'paused' } : undefined}>
-          {[...newsItems, ...newsItems].map((item, idx) => (
-            <div key={idx} className="flex items-center px-12">
-              <span className={`text-sm font-bold px-3 py-0.5 mr-3 rounded border ${item.type === 'BREAKING' ? 'bg-red-900 text-white border-red-600' : 'bg-zinc-900 text-zinc-100 border-white/10'}`}>
-                {item.type}
-              </span>
-              <span className="text-sm font-mono text-zinc-100 uppercase tracking-wide font-medium">{item.text}</span>
-            </div>
-          ))}
+        <div className="overflow-hidden flex-1 h-full flex items-center">
+          <div className={`flex ${tickerPaused ? '' : 'animate-ticker'} group-hover:[animation-play-state:paused] items-center whitespace-nowrap`} style={{ minWidth: 'max-content', ...(tickerPaused ? { animationPlayState: 'paused' } : {}) }}>
+            {[...newsItems, ...newsItems].map((item, idx) => (
+              <div key={idx} className="flex items-center px-12 shrink-0">
+                <span className={`text-sm font-bold px-3 py-0.5 mr-3 rounded border shrink-0 ${item.type === 'BREAKING' ? 'bg-red-900 text-white border-red-600' : 'bg-zinc-900 text-zinc-100 border-white/10'}`}>
+                  {item.type}
+                </span>
+                <span className="text-sm font-mono text-zinc-100 uppercase tracking-wide font-medium">{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       {/* Mobile: static most-critical ticker item */}

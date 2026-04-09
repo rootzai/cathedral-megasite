@@ -94,7 +94,7 @@ export default function RedesignedHome() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    onClick={() => scrollToNext("prologue")}
+                    onClick={() => scrollToNext("start-here")}
                     className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group z-20"
                 >
                     <span className="font-mono text-xs tracking-widest uppercase mb-2">Initialize Narrative</span>
@@ -102,53 +102,8 @@ export default function RedesignedHome() {
                 </motion.button>
             </section>
 
-            {/* SECTION 2: THE HUMAN ELEMENT & STARTING POINT */}
-            <section id="prologue" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c]">
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 1 }}
-                    className="max-w-4xl w-full mx-auto"
-                >
-                    <div className="text-center mb-16">
-                        <h2 className="font-cinzel text-5xl text-white mb-6 uppercase tracking-wider">Where It Begins</h2>
-                        <div className="w-24 h-1 bg-red-900 mx-auto" />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <Link href="/prologue" className="group block border border-white/5 bg-black/60 backdrop-blur-xl p-10 hover:border-red-900/50 hover:bg-zinc-900/80 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-red-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <ChevronRight className="absolute top-8 right-8 w-6 h-6 text-red-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
-                            <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase">The Prologue</h3>
-                            <p className="font-mono text-xl text-zinc-400 uppercase tracking-widest mb-6">Mark Crawford. Age 13.</p>
-                            <p className="text-lg text-zinc-300 font-serif leading-relaxed line-clamp-3">The devastating personal account that unmasks the institutional reality of the cathedral. The origin point of the investigation.</p>
-                        </Link>
-
-                        <Link href="/axis" className="group block border border-white/5 bg-black/60 backdrop-blur-xl p-10 hover:border-[#8b6914]/50 hover:bg-zinc-900/80 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#8b6914]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <ChevronRight className="absolute top-8 right-8 w-6 h-6 text-[#8b6914] opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
-                            <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase">The Power Axis</h3>
-                            <p className="font-mono text-xl text-zinc-400 uppercase tracking-widest mb-6">Bayonne to the Vatican</p>
-                            <p className="text-lg text-zinc-300 font-serif leading-relaxed line-clamp-3">How localized power structures networked to provide total immunity for the highest echelons of the church hierarchy.</p>
-                        </Link>
-                    </div>
-                </motion.div>
-
-                <motion.button
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    onClick={() => scrollToNext("archive")}
-                    className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group"
-                >
-                    <ChevronDown className="w-6 h-6 animate-pulse" />
-                </motion.button>
-            </section>
-
-            {/* SECTION 2.5: START HERE — Guided Narrative Spine */}
-            <section className="relative w-full py-24 px-4 bg-[#0a0a0c] border-t border-white/5">
+            {/* SECTION 2: START HERE — Guided Narrative Spine */}
+            <section id="start-here" className="relative w-full py-24 px-4 bg-[#0a0a0c] border-t border-white/5">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -157,9 +112,9 @@ export default function RedesignedHome() {
                     className="max-w-4xl mx-auto"
                 >
                     <div className="text-center mb-14">
-                        <span className="font-mono text-xs tracking-[0.5em] uppercase text-red-700 font-black">Recommended Reading Order</span>
-                        <h2 className="font-cinzel text-4xl md:text-5xl text-white mt-4 uppercase tracking-wider">Start Here</h2>
-                        <p className="text-lg text-zinc-500 font-serif mt-4 max-w-2xl mx-auto italic">
+                        <span className="font-mono text-sm tracking-[0.5em] uppercase text-red-700 font-black">Recommended Reading Order</span>
+                        <h2 className="font-cinzel text-5xl md:text-6xl text-white mt-4 uppercase tracking-wider">Start Here</h2>
+                        <p className="text-xl text-zinc-400 font-serif mt-4 max-w-2xl mx-auto italic">
                             Follow the investigation in four acts. Each builds on the last.
                         </p>
                     </div>
@@ -184,14 +139,14 @@ export default function RedesignedHome() {
                                 >
                                     {/* Step number */}
                                     <div className="absolute left-2 md:left-4 top-6 w-8 h-8 rounded-full bg-[#0a0a0c] border-2 border-zinc-700 group-hover:border-red-700 flex items-center justify-center transition-colors">
-                                        <span className="font-mono text-xs font-black text-zinc-400 group-hover:text-white transition-colors">{item.step}</span>
+                                        <span className="font-mono text-sm font-black text-zinc-400 group-hover:text-white transition-colors">{item.step}</span>
                                     </div>
                                     <div className="flex-1">
-                                        <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-red-700/70 font-bold">Act {item.step} · {item.label}</span>
-                                        <h3 className="font-cinzel text-xl text-white mt-1 group-hover:text-red-400 transition-colors font-bold tracking-wide">{item.title}</h3>
-                                        <p className="text-sm text-zinc-500 mt-1 font-serif">{item.desc}</p>
+                                        <span className="font-mono text-sm tracking-[0.4em] uppercase text-red-700/70 font-bold">Act {item.step} · {item.label}</span>
+                                        <h3 className="font-cinzel text-2xl md:text-3xl text-white mt-1 group-hover:text-red-400 transition-colors font-bold tracking-wide">{item.title}</h3>
+                                        <p className="text-lg text-zinc-400 mt-2 font-serif">{item.desc}</p>
                                     </div>
-                                    <ChevronRight className="w-5 h-5 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all mt-2 shrink-0" />
+                                    <ChevronRight className="w-6 h-6 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all mt-3 shrink-0" />
                                 </motion.div>
                             </Link>
                         ))}
