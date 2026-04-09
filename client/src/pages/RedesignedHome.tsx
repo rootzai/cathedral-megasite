@@ -2,17 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, Activity, ChevronDown
+    Database, AlertCircle, Eye, Fingerprint, Lock, ChevronRight, ChevronDown
 } from "lucide-react";
 import ShieldHub from "@/components/ShieldHub";
 
-const NAVIGATION_NODES = [
-    { title: "THE EVIDENCE", desc: "SIX ACTS. PRIMARY SOURCES.", href: "/evidence", icon: Database, color: "text-red-500", border: "border-red-950", bg: "hover:bg-red-950/20" },
-    { title: "THE BREACH", desc: "ACTIVE LITIGATION.", href: "/breach", icon: AlertCircle, color: "text-red-600", border: "border-red-900", bg: "hover:bg-red-900/20" },
-    { title: "THE LEDGER", desc: "THE COMPLICIT BOARD.", href: "/ledger", icon: Eye, color: "text-amber-500", border: "border-amber-500/30", bg: "hover:bg-amber-500/10" },
-    { title: "THE METHOD", desc: "AI-DRIVEN DISCOVERY.", href: "/method", icon: Fingerprint, color: "text-blue-500", border: "border-blue-500/50", bg: "hover:bg-blue-500/20" },
-    { title: "MADMAN ARCHIVE", desc: "SECRETARIAL INFRASTRUCTURE.", href: "/madman", icon: Lock, color: "text-zinc-200", border: "border-zinc-800", bg: "hover:bg-zinc-900/50" }
-];
 
 export default function RedesignedHome() {
     const [, setLocation] = useLocation();
@@ -102,100 +95,43 @@ export default function RedesignedHome() {
                 </motion.button>
             </section>
 
-            {/* SECTION 2: START HERE — Guided Narrative Spine */}
+            {/* SECTION 2: THE SIX SECTIONS */}
             <section id="start-here" className="relative w-full py-24 px-4 bg-[#0a0a0c] border-t border-white/5">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-4xl mx-auto"
-                >
-                    <div className="text-center mb-14">
-                        <span className="font-mono text-sm tracking-[0.5em] uppercase text-red-700 font-black">Recommended Reading Order</span>
-                        <h2 className="font-cinzel text-5xl md:text-6xl text-white mt-4 uppercase tracking-wider">Start Here</h2>
-                        <p className="text-xl text-zinc-400 font-serif mt-4 max-w-2xl mx-auto italic">
-                            Follow the investigation in four acts. Each builds on the last.
-                        </p>
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="font-cinzel text-5xl md:text-6xl text-white uppercase tracking-wider">Start Here</h2>
                     </div>
 
-                    <div className="relative">
-                        {/* Vertical connector line */}
-                        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-red-900/60 via-red-900/30 to-transparent" />
-
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { step: 1, label: "ORIGIN", title: "The Prologue", desc: "A survivor's account that launched the investigation.", href: "/prologue", color: "border-red-900" },
-                            { step: 2, label: "EVIDENCE", title: "The Evidence Hub", desc: "Primary sources, court filings, and the suppressed Latham Report.", href: "/evidence", color: "border-amber-700" },
-                            { step: 3, label: "BREACH", title: "The Breach", desc: "Active litigation, judicial rulings, and the unraveling cover-up.", href: "/breach", color: "border-blue-800" },
-                            { step: 4, label: "LEDGER", title: "The Definitive Record", desc: "Every board member, lawyer, and institutional actor — named and tracked.", href: "/ledger", color: "border-white/30" },
+                            { title: "The Prologue", desc: "A survivor's account. The origin of the investigation.", href: "/prologue", icon: Database, color: "text-red-500" },
+                            { title: "The Evidence", desc: "Six acts. Primary sources. The suppressed Latham Report.", href: "/evidence", icon: Database, color: "text-red-500" },
+                            { title: "The Breach", desc: "Active litigation. Judicial rulings. The unraveling cover-up.", href: "/breach", icon: AlertCircle, color: "text-red-600" },
+                            { title: "The Ledger", desc: "Every board member, lawyer, and institutional actor — named.", href: "/ledger", icon: Eye, color: "text-amber-500" },
+                            { title: "The Method", desc: "AI-driven discovery and forensic analysis.", href: "/method", icon: Fingerprint, color: "text-blue-500" },
+                            { title: "Madman Archive", desc: "McCarrick's secretarial infrastructure.", href: "/madman", icon: Lock, color: "text-zinc-200" },
                         ].map((item, i) => (
-                            <Link key={item.step} href={item.href}>
+                            <Link key={item.href} href={item.href}>
                                 <motion.div
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                                    className={`relative flex items-start gap-6 mb-6 pl-14 md:pl-16 pr-6 py-6 group cursor-pointer border-l-2 ${item.color} hover:bg-white/[0.02] transition-all rounded-r-sm`}
+                                    transition={{ delay: i * 0.08, duration: 0.5 }}
+                                    className="group border border-white/5 bg-black/40 p-8 hover:border-red-900/50 hover:bg-white/[0.02] transition-all cursor-pointer rounded-sm"
                                 >
-                                    {/* Step number */}
-                                    <div className="absolute left-2 md:left-4 top-6 w-8 h-8 rounded-full bg-[#0a0a0c] border-2 border-zinc-700 group-hover:border-red-700 flex items-center justify-center transition-colors">
-                                        <span className="font-mono text-sm font-black text-zinc-400 group-hover:text-white transition-colors">{item.step}</span>
+                                    <div className={`p-3 bg-black/60 border border-white/5 rounded-full ${item.color} inline-flex mb-5`}>
+                                        <item.icon className="w-6 h-6" />
                                     </div>
-                                    <div className="flex-1">
-                                        <span className="font-mono text-sm tracking-[0.4em] uppercase text-red-700/70 font-bold">Act {item.step} · {item.label}</span>
-                                        <h3 className="font-cinzel text-2xl md:text-3xl text-white mt-1 group-hover:text-red-400 transition-colors font-bold tracking-wide">{item.title}</h3>
-                                        <p className="text-lg text-zinc-400 mt-2 font-serif">{item.desc}</p>
-                                    </div>
-                                    <ChevronRight className="w-6 h-6 text-zinc-700 group-hover:text-red-500 group-hover:translate-x-1 transition-all mt-3 shrink-0" />
+                                    <h3 className="font-cinzel text-2xl text-white font-bold tracking-wide mb-2 group-hover:text-red-400 transition-colors">{item.title}</h3>
+                                    <p className="text-base text-zinc-400 font-serif">{item.desc}</p>
                                 </motion.div>
                             </Link>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </section>
 
-            {/* SECTION 3: THE FORENSIC ARCHIVES */}
-            <section id="archive" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 bg-[#0a0a0c] border-t border-white/5">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 1 }}
-                    className="max-w-6xl w-full mx-auto"
-                >
-                    <div className="text-center mb-16">
-                        <Activity className="w-12 h-12 text-red-900 mx-auto mb-6" />
-                        <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-6 uppercase tracking-wider">Forensic Operations</h2>
-                        <p className="text-xl text-zinc-400 font-serif max-w-2xl mx-auto">Access primary litigation exhibits, board complicity logs, and raw operational intelligence via the database modules below.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {NAVIGATION_NODES.map((node, i) => (
-                            <Link key={node.href} href={node.href} className={`group flex flex-col items-start bg-black/40 backdrop-blur-md border border-white/5 hover:${node.border} p-8 transition-all duration-300 ${node.bg} hover:-translate-y-2 rounded-sm shadow-xl hover:shadow-2xl`}>
-                                <div className={`p-4 bg-black/60 border border-white/5 rounded-full ${node.color} group-hover:bg-white/5 transition-colors mb-6`}>
-                                    <node.icon className="w-6 h-6" />
-                                </div>
-                                <h4 className="font-cinzel font-black tracking-widest text-2xl text-white drop-shadow mb-2">{node.title}</h4>
-                                <p className="font-mono text-sm text-zinc-400 uppercase tracking-widest group-hover:text-zinc-200 transition-colors">{node.desc}</p>
-                            </Link>
-                        ))}
-                    </div>
-                </motion.div>
-
-                <motion.button
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    onClick={() => scrollToNext("network")}
-                    className="absolute bottom-12 flex flex-col items-center gap-2 text-zinc-500 hover:text-white transition-colors cursor-pointer group"
-                >
-                    <span className="font-mono text-[10px] tracking-widest uppercase mb-2 text-red-900/50">Access Network Shield</span>
-                    <ChevronDown className="w-6 h-6 animate-pulse" />
-                </motion.button>
-            </section>
-
-            {/* SECTION 4: THE SHIELD HUB */}
+            {/* SECTION 3: THE SHIELD HUB */}
             <section id="network" className="relative w-full flex flex-col items-center bg-[#050508] border-t border-white/5 pt-24 pb-20">
                 <div className="absolute inset-0 bg-gradient-radial from-red-950/10 to-transparent pointer-events-none" />
 
@@ -216,7 +152,7 @@ export default function RedesignedHome() {
 
                 {/* FOOTER BADGE */}
                 <div className="relative z-20 mt-16 flex items-center gap-6 text-sm font-black font-courier text-zinc-500 uppercase tracking-[0.3em] opacity-80 hover:opacity-100 transition-opacity">
-                    <span className="flex items-center gap-3"><Activity className="w-5 h-5 text-red-800" /> Authorized Record // SH-2026</span>
+                    <span className="flex items-center gap-3"><Database className="w-5 h-5 text-red-800" /> Authorized Record // SH-2026</span>
                     <div className="w-1.5 h-1.5 bg-red-900 rounded-full hidden sm:block" />
                     <span className="hidden sm:inline">Sodom Hall Forensic Archive</span>
                 </div>
