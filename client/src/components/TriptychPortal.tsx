@@ -25,7 +25,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
 
     return (
         <div className={cn(
-            "fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden",
+            "fixed inset-0 z-[9999] flex items-center justify-center bg-black overflow-hidden",
             isOpen ? "pointer-events-none" : ""
         )}>
             {/* Left Door */}
