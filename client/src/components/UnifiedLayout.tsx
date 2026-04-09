@@ -85,7 +85,7 @@ export default function UnifiedLayout({
                             return (
                                 <Link key={item.id} href={item.path}>
                                     <div className={cn(
-                                        "flex-shrink-0 py-2 sm:py-3 px-3 sm:px-5 text-center font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] cursor-pointer transition-all border border-border rounded-sm",
+                                        "flex-shrink-0 py-2 sm:py-3 px-3 sm:px-5 text-center font-mono text-xs sm:text-xs uppercase tracking-[0.1em] cursor-pointer transition-all border border-border rounded-sm",
                                         isActive
                                             ? "bg-foreground/10 border-foreground/40 text-foreground font-black shadow-sm"
                                             : "bg-transparent text-foreground/80 hover:bg-foreground/10 hover:text-foreground"

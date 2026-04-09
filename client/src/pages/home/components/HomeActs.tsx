@@ -27,7 +27,7 @@ import {
 const Term = ({ word, definition }: { word: string; definition: string }) => (
   <span className="group relative border-b border-dotted border-red-900/50 cursor-help inline-block">
     <span className="font-bold text-zinc-900 group-hover:text-red-900 transition-colors">{word}</span>
-    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-zinc-900 text-white text-[10px] p-3 rounded shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 font-sans normal-case tracking-normal leading-relaxed border border-white/10">
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-zinc-900 text-white text-xs p-3 rounded shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 font-sans normal-case tracking-normal leading-relaxed border border-white/10">
       {definition}
       <span className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-zinc-900" />
     </span>
@@ -70,7 +70,7 @@ export default function HomeActs() {
       <aside className="lg:w-72 bg-zinc-900 text-white p-8 sticky top-0 h-screen overflow-y-auto hidden lg:block border-r border-white/5">
         <div className="mb-12">
           <h1 className="text-2xl font-black tracking-tighter leading-none mb-2">SODOM<br />HALL</h1>
-          <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-[0.3em]">Forensic Audit v7.0</p>
+          <p className="text-xs text-zinc-500 font-mono uppercase tracking-[0.3em]">Forensic Audit v7.0</p>
         </div>
 
         <nav className="space-y-6">
@@ -87,16 +87,16 @@ export default function HomeActs() {
               href={`#${act.id}`} 
               className="group block border-l-2 border-white/10 hover:border-red-900 pl-6 transition-all"
             >
-              <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest mb-1">Act 0{i}</div>
+              <div className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-1">Act 0{i}</div>
               <div className="text-sm font-bold group-hover:text-red-900 transition-colors uppercase tracking-widest">{act.label}</div>
-              <div className="text-[9px] text-zinc-500 italic mt-1">{act.sub}</div>
+              <div className="text-xs text-zinc-500 italic mt-1">{act.sub}</div>
             </a>
           ))}
         </nav>
 
         <div className="mt-24 pt-12 border-t border-white/5">
             <Link href="/ledger">
-               <button className="w-full py-4 bg-white text-black font-black uppercase tracking-widest text-[9px] hover:bg-red-900 hover:text-white transition-all">Audit The Ledger</button>
+               <button className="w-full py-4 bg-white text-black font-black uppercase tracking-widest text-xs hover:bg-red-900 hover:text-white transition-all">Audit The Ledger</button>
             </Link>
         </div>
       </aside>
@@ -106,7 +106,7 @@ export default function HomeActs() {
         <section id="act-i" className="py-32 bg-[#0a0a0c] border-b border-white/5">
           <div className="container mx-auto max-w-5xl px-6">
             <div className="flex flex-col items-center text-center mb-20 space-y-4">
-              <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT I // THE ORIGIN</span>
+              <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT I // THE ORIGIN</span>
               <h2 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">THE STARTING POINT</h2>
               <p className="text-xl text-zinc-500 font-serif italic max-w-2xl">"Mark Crawford, Age 13. McCarrick, The Architect. Kenneth Martin, The Predator."</p>
             </div>
@@ -125,7 +125,7 @@ export default function HomeActs() {
               </div>
               <div className="relative group">
                 <img src="/assets/WhatsAppImage2025-10-11at11.40.16_e2ac3ebb.jpg" alt="Act I Evidence" className="w-full grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10" />
-                <div className="absolute top-4 left-4 bg-[#8b1a1a] text-white text-[9px] font-black px-3 py-1 uppercase tracking-widest font-courier">EXHIBIT A</div>
+                <div className="absolute top-4 left-4 bg-[#8b1a1a] text-white text-xs font-black px-3 py-1 uppercase tracking-widest font-courier">EXHIBIT A</div>
               </div>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function HomeActs() {
         <section id="act-ii" className="py-32 bg-[#0a0a0c] border-b border-white/5">
           <div className="container mx-auto max-w-5xl px-6">
             <div className="flex flex-col items-center text-center mb-20 space-y-4">
-              <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT II // THE MACHINE</span>
+              <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT II // THE MACHINE</span>
               <h2 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">THE RECONVERSION</h2>
               <p className="text-xl text-zinc-500 font-serif italic max-w-2xl">"Converting survivors into 'anomalies'. Converting predators into 'assets'."</p>
             </div>
@@ -170,7 +170,7 @@ export default function HomeActs() {
         <section id="act-iii" className="py-32 bg-[#0a0a0c] border-b border-white/5">
           <div className="container mx-auto max-w-5xl px-6">
             <div className="flex flex-col items-center text-center mb-20 space-y-4">
-              <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT III // THE SHAM</span>
+              <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT III // THE SHAM</span>
               <h2 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">PERRY LAW</h2>
               <p className="text-xl text-zinc-500 font-serif italic max-w-2xl">"The Lori Brown Note. The Agnifilo Omission. The Big Lie."</p>
             </div>
@@ -181,7 +181,7 @@ export default function HomeActs() {
                 <div className="relative bg-[#070709] border border-white/10 p-10 space-y-8">
                   <div className="flex items-center gap-4">
                     <FileText className="w-6 h-6 text-[#8b1a1a]" />
-                    <span className="text-[10px] font-black font-courier text-white uppercase tracking-[0.3em]">Forensic Audit</span>
+                    <span className="text-xs font-black font-courier text-white uppercase tracking-[0.3em]">Forensic Audit</span>
                   </div>
                   <h4 className="text-2xl font-black font-cinzel text-white uppercase tracking-tighter">THE LORI BROWN NOTE</h4>
                   <p className="text-lg text-zinc-400 font-serif italic leading-relaxed">
@@ -208,7 +208,7 @@ export default function HomeActs() {
         <section id="act-iv" className="py-32 bg-[#0a0a0c] border-b border-white/5">
           <div className="container mx-auto max-w-5xl px-6 text-center space-y-16">
             <div className="space-y-4">
-              <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT IV // THE LEGAL WALL</span>
+              <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT IV // THE LEGAL WALL</span>
               <h2 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">SCRIVO-O'TOOLE</h2>
             </div>
             
@@ -239,7 +239,7 @@ export default function HomeActs() {
         <section id="act-v" className="py-32 bg-[#0a0a0c] border-b border-white/5">
           <div className="container mx-auto max-w-5xl px-6">
             <div className="flex flex-col items-center text-center mb-20 space-y-4">
-              <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT V // THE PRESENT</span>
+              <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT V // THE PRESENT</span>
               <h2 className="text-5xl md:text-[8rem] font-black font-cinzel text-white uppercase tracking-tighter">THE BREACH</h2>
               <p className="text-xl text-zinc-500 font-serif italic max-w-2xl">"May 18. The Unsealing of the 24,000 Pages."</p>
             </div>
@@ -253,11 +253,11 @@ export default function HomeActs() {
                 </p>
                 <div className="flex justify-center gap-12 pt-8">
                   <div className="text-center">
-                    <span className="text-[#8b1a1a] font-black text-[10px] font-courier uppercase tracking-widest block">Status</span>
+                    <span className="text-[#8b1a1a] font-black text-xs font-courier uppercase tracking-widest block">Status</span>
                     <span className="text-white font-black text-xl uppercase">ACTIVE</span>
                   </div>
                   <div className="text-center">
-                    <span className="text-[#8b1a1a] font-black text-[10px] font-courier uppercase tracking-widest block">Hearing</span>
+                    <span className="text-[#8b1a1a] font-black text-xs font-courier uppercase tracking-widest block">Hearing</span>
                     <span className="text-white font-black text-xl uppercase">MAY 28</span>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function HomeActs() {
         {/* ACT VI: THE VICTIMS (THE 432) */}
         <section id="act-vi" className="py-32 bg-[#0a0a0c]">
           <div className="container mx-auto max-w-5xl px-6 text-center space-y-12">
-            <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACT VI // THE VICTIMS</span>
+            <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACT VI // THE VICTIMS</span>
             <h2 className="text-5xl md:text-[8rem] font-black font-cinzel text-white uppercase tracking-tighter opacity-10">THE 432</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               <p className="text-2xl text-zinc-400 font-serif italic leading-relaxed">
@@ -280,7 +280,7 @@ export default function HomeActs() {
               </p>
             </div>
             <div className="pt-24 border-t border-white/5 opacity-40">
-              <p className="text-[10px] font-black font-courier text-zinc-500 uppercase tracking-[0.5em]">Sodom Hall v3.0 // THE END OF IMMUNITY</p>
+              <p className="text-xs font-black font-courier text-zinc-500 uppercase tracking-[0.5em]">Sodom Hall v3.0 // THE END OF IMMUNITY</p>
             </div>
           </div>
         </section>

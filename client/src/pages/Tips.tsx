@@ -17,7 +17,7 @@ export default function TipsPage() {
                     <div className="relative z-10 space-y-6">
                         <div className="flex items-center gap-4 mb-4">
                             <Zap className="w-5 h-5 text-[#8b1a1a] fill-[#8b1a1a]" />
-                            <span className="font-courier text-[10px] text-[#8b1a1a] font-black uppercase tracking-[0.6em]">FORENSIC SIGNAL // SH-TIP-CORE</span>
+                            <span className="font-courier text-xs text-[#8b1a1a] font-black uppercase tracking-[0.6em]">FORENSIC SIGNAL // SH-TIP-CORE</span>
                         </div>
                         <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter leading-none">
                             SUBMIT <span className="text-[#8b1a1a]">INTELLIGENCE</span>
@@ -65,7 +65,7 @@ export default function TipsPage() {
 
                 {/* Footer Disclaimer */}
                 <div className="mt-32 pt-12 border-t border-white/5 text-center">
-                    <p className="text-[10px] font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
+                    <p className="text-xs font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
                          SH-2026 // AUTHORIZED RECONSTRUCTION // THE TRUTH HAS NO STATUTE
                     </p>
                 </div>

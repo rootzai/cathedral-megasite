@@ -56,7 +56,7 @@ export default function Analysis() {
             <p className="font-body text-base text-foreground/90 italic mb-4">
               "Everything in this litigation traces back to one fact: Seton Hall never voluntarily disclosed the Latham Report's existence. The [Plaintiffs] learned about it through Politico... Seton Hall's concealment would have continued."
             </p>
-            <p className="font-mono text-[10px] uppercase text-muted-foreground">— Summary of Hearing, Hon. Avion Benjamin, March 18, 2025</p>
+            <p className="font-mono text-xs uppercase text-muted-foreground">— Summary of Hearing, Hon. Avion Benjamin, March 18, 2025</p>
           </div>
 
           <h3 className="font-heading text-2xl text-foreground mb-4">The Legal Wall: Marino, Stio & The Triumvirate</h3>

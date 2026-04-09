@@ -160,7 +160,7 @@ export default function NarrativeFlow() {
                             >
                                 <div className="flex items-center gap-3">
                                     <span
-                                        className="px-3 py-1 rounded-sm text-[10px] font-mono text-zinc-900 uppercase tracking-widest"
+                                        className="px-3 py-1 rounded-sm text-xs font-mono text-zinc-900 uppercase tracking-widest"
                                         style={{ backgroundColor: activeMilestone.color }}
                                     >
                                         {activeMilestone.impact}
@@ -188,7 +188,7 @@ export default function NarrativeFlow() {
                                     </Link>
                                     <div className="hidden sm:flex items-center gap-2 text-muted-foreground">
                                         <Info size={14} />
-                                        <span className="text-[10px] font-mono uppercase tracking-widest leading-none">Verified Forensic Evidence</span>
+                                        <span className="text-xs font-mono uppercase tracking-widest leading-none">Verified Forensic Evidence</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -223,7 +223,7 @@ export default function NarrativeFlow() {
                     </div>
                 </div>
 
-                <div className="mt-8 flex justify-center gap-8 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+                <div className="mt-8 flex justify-center gap-8 text-xs font-mono text-muted-foreground uppercase tracking-widest">
                     <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ backgroundColor: milestones[0].color }} /> Concealment</span>
                     <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ backgroundColor: milestones[1].color }} /> Retaliation</span>
                     <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ backgroundColor: milestones[2].color }} /> Revelation</span>

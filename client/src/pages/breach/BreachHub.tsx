@@ -59,7 +59,7 @@ export default function BreachHub() {
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="flex items-center gap-4 mb-8">
                         <Zap className="w-4 h-4 text-[#8b1a1a] fill-[#8b1a1a]" />
-                        <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.6em] font-courier">ACTIVE LITIGATION // COLLISION FRAME</span>
+                        <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.6em] font-courier">ACTIVE LITIGATION // COLLISION FRAME</span>
                     </div>
                     <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-12">
                         THE <span className="text-[#8b1a1a]">BREACH</span> POINT
@@ -78,7 +78,7 @@ export default function BreachHub() {
                             </p>
                         </div>
                         <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-6">
-                            <span className="text-[10px] font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
+                            <span className="text-xs font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
                             <div className="flex items-end gap-2">
                                 <span className="text-5xl font-black text-white font-cinzel tracking-tighter">MAY 28</span>
                                 <span className="text-[#8b1a1a] font-black text-xs uppercase mb-1">Deposition Hearing, Dept. C23</span>
@@ -104,7 +104,7 @@ export default function BreachHub() {
                                 <div className="flex-1 space-y-2">
                                     <div className="flex items-center gap-3">
                                         <h4 className="text-lg font-black font-cinzel text-white uppercase tracking-widest">{event.title}</h4>
-                                        <span className={`text-[10px] font-black px-2 py-0.5 rounded-sm ${event.color} text-white`}>
+                                        <span className={`text-xs font-black px-2 py-0.5 rounded-sm ${event.color} text-white`}>
                                             {event.status}
                                         </span>
                                     </div>
@@ -124,7 +124,7 @@ export default function BreachHub() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-10">
                         <div className="space-y-4">
-                            <span className="text-[#8b1a1a] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Judicial Conflict</span>
+                            <span className="text-[#8b1a1a] font-black text-xs uppercase tracking-[0.5em] font-courier">Judicial Conflict</span>
                             <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE SLAPP SHIELD</h2>
                         </div>
                         <p className="text-xl text-zinc-400 font-serif italic leading-relaxed">
@@ -151,11 +151,11 @@ export default function BreachHub() {
                             <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-tighter">THE FORENSIC TRIGGERS</h3>
                             <div className="space-y-8">
                                 <div className="space-y-2 border-l-2 border-[#8b1a1a] pl-6">
-                                    <span className="text-[10px] font-black text-white uppercase tracking-widest font-courier">The September Email</span>
+                                    <span className="text-xs font-black text-white uppercase tracking-widest font-courier">The September Email</span>
                                     <p className="text-sm text-zinc-500 font-serif italic"> coordination between Goldman and the board to suppress the Latham report before Reilly's install.</p>
                                 </div>
                                 <div className="space-y-2 border-l-2 border-[#8b1a1a] pl-6">
-                                    <span className="text-[10px] font-black text-white uppercase tracking-widest font-courier">The Goldman Resignation</span>
+                                    <span className="text-xs font-black text-white uppercase tracking-widest font-courier">The Goldman Resignation</span>
                                     <p className="text-sm text-zinc-500 font-serif italic">Evidence of the internal revolt against the 'Big Lie' strategy.</p>
                                 </div>
                             </div>

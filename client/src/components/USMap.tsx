@@ -122,7 +122,7 @@ export default function USMap({ onStateSelect }: USMapProps) {
                   <Badge 
                     variant={isSelected ? "secondary" : "destructive"} 
                     className={`
-                      mt-1 h-4 px-1 text-[9px] min-w-[1.25rem] justify-center
+                      mt-1 h-4 px-1 text-xs min-w-[1.25rem] justify-center
                       ${isSelected ? 'bg-background text-foreground' : ''}
                     `}
                   >

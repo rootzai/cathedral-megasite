@@ -2,7 +2,7 @@ export const fletchFullReport = `The Document That Wasn't There
 
 How a Catholic university hid a 24,000-page abuse report for six years — and the extraordinary lengths its lawyers went to keep it buried.
 
-By Joe Reporter | TRENTON, N.J. — March 2026
+By Dei Journo | TRENTON, N.J. — March 2026
 
 On the morning of March 18, 2025, Essex County Superior Court Judge Avion Benjamin had a question for Seton Hall University's lawyers. It was a simple question. The kind of question you might ask a child who has been standing next to a broken lamp.
 
@@ -216,4 +216,4 @@ They never do. That's the point.
 
 Seton Hall University, the Archdiocese of Newark, and counsel for Thomas P. Scrivo and Christopher S. Porrino did not respond to requests for comment. Cardinal Tobin's office declined to comment. Attorneys McOmber and Baldante declined to comment on matters subject to pending litigation.
 
-Joe Reporter covers New Jersey accountability and institutional corruption.`;
+Dei Journo covers New Jersey accountability and institutional corruption.`;

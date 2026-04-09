@@ -12,7 +12,7 @@ export default function McKeeverCaseStudy() {
                 <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
                     <div className="flex items-center justify-center gap-3 mb-8">
                         <BookOpen className="w-5 h-5 text-[#8b1a1a]" />
-                        <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.5em] font-courier">
+                        <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.5em] font-courier">
                             Survivor Advocacy / Institutional Complicity
                         </span>
                     </div>

@@ -55,7 +55,7 @@ export function HomeHero() {
                         </button>
                     </div>
                     <div className="text-center max-w-4xl mx-auto">
-                        <p className="text-[10px] sm:text-sm uppercase tracking-[0.4em] text-zinc-600 mb-4 sm:mb-6 font-mono font-bold">Investigation & Documentation</p>
+                        <p className="text-xs sm:text-sm uppercase tracking-[0.4em] text-zinc-600 mb-4 sm:mb-6 font-mono font-bold">Investigation & Documentation</p>
                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-4 tracking-tighter" style={{ fontFamily: "'Playfair Display', serif" }}>SODOM<span className="text-zinc-600 font-light">HALL</span></h1>
                         <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 text-zinc-600 font-light tracking-widest uppercase">The Cathedral Documents</h2>
                         <div className="w-16 sm:w-24 h-px bg-zinc-200 mx-auto mb-6 sm:mb-8" />

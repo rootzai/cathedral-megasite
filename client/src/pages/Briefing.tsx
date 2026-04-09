@@ -5,7 +5,7 @@ export default function BriefingPage() {
     return (
         <div className="min-h-screen bg-white text-black p-12 lg:p-20 font-serif leading-relaxed">
             {/* Print Notice */}
-            <div className="mb-8 p-3 border-2 border-red-600 bg-red-50 text-red-900 font-mono text-[10px] uppercase tracking-widest text-center print:hidden">
+            <div className="mb-8 p-3 border-2 border-red-600 bg-red-50 text-red-900 font-mono text-xs uppercase tracking-widest text-center print:hidden">
                 FOR OFFICIAL USE ONLY // INVESTIGATIVE SUMMARY // PRINT-OPTIMIZED
             </div>
 
@@ -18,7 +18,7 @@ export default function BriefingPage() {
                     </div>
                     <div className="text-right">
                         <div className="font-bold text-sm uppercase">Date: April 2026</div>
-                        <div className="font-mono text-[10px] text-zinc-500 uppercase">Ref: SH-CB-01</div>
+                        <div className="font-mono text-xs text-zinc-500 uppercase">Ref: SH-CB-01</div>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@ export default function BriefingPage() {
                     </div>
                     <div className="flex items-center gap-2 opacity-30">
                          <Shield className="w-8 h-8" />
-                         <span className="font-mono text-[9px] uppercase tracking-tighter">Verified</span>
+                         <span className="font-mono text-xs uppercase tracking-tighter">Verified</span>
                     </div>
                 </div>
             </div>

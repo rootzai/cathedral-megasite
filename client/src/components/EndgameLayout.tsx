@@ -123,7 +123,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         <div className="flex border-b border-border w-full overflow-x-auto scrollbar-thin">
           <Link href="/ledger/mccarrick">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               location.includes('/mccarrick') && !isChecchio && !isMartin && !isLorenzo && !isReilly && !isMadman
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -133,7 +133,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/ledger/checchio">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isChecchio
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -143,7 +143,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/ledger/reilly">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isReilly
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -153,7 +153,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/ledger/martin">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isMartin
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -163,7 +163,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/ledger/lorenzo">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isLorenzo
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -173,7 +173,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
           </Link>
           <Link href="/ledger/madman">
             <div className={cn(
-              "flex-shrink-0 py-3 px-4 text-center font-mono text-[9px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
+              "flex-shrink-0 py-3 px-4 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap",
               isMadman
                 ? "bg-destructive text-zinc-900"
                 : "text-muted-foreground hover:bg-muted"
@@ -198,7 +198,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
                 >
                   <span className="truncate">{item.label}</span>
                   <span className={cn(
-                    "w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2",
+                    "w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2",
                     isActive ? "bg-destructive text-zinc-900" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   )}>
                     {item.id}
@@ -211,7 +211,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
         <div className="p-4 border-t border-border mt-auto">
           <Link href="/evidence">
-            <div className="font-mono text-[10px] uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-3 py-3 rounded-sm text-center font-bold">
+            <div className="font-mono text-xs uppercase tracking-widest bg-red-950/20 border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white cursor-pointer transition-all px-3 py-3 rounded-sm text-center font-bold">
               ← BACK TO EVIDENCE HUB
             </div>
           </Link>
@@ -222,7 +222,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
       <header className="lg:hidden fixed top-0 w-full z-50 bg-background border-b border-border p-4 flex justify-between items-center">
         <div>
           <h1 className="font-heading text-lg text-foreground">{title}</h1>
-          <p className="font-mono text-[10px] text-muted-foreground uppercase">CASE FILE: {caseFile}</p>
+          <p className="font-mono text-xs text-muted-foreground uppercase">CASE FILE: {caseFile}</p>
         </div>
       </header>
 

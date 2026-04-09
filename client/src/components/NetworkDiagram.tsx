@@ -145,7 +145,7 @@ export default function NetworkDiagram() {
         </div>
         <button
           onClick={() => setIsFullViewOpen(true)}
-          className="px-6 py-3 border border-red-900/40 text-[10px] font-bold uppercase tracking-[0.3em] text-[#8b1a1a] hover:bg-[#8b1a1a] hover:text-white transition-all rounded"
+          className="px-6 py-3 border border-red-900/40 text-xs font-bold uppercase tracking-[0.3em] text-[#8b1a1a] hover:bg-[#8b1a1a] hover:text-white transition-all rounded"
         >
           High-Fidelity Map View
         </button>
@@ -201,7 +201,7 @@ export default function NetworkDiagram() {
                         <div className="text-sm text-gray-200 mt-1 font-bold">{node.name}</div>
                         <div className="text-xs text-gray-400 mt-1">{node.role}</div>
                         {node.representedSHU === false && !node.representsVictims && (
-                          <div className="text-[10px] text-orange-400 mt-2 italic font-mono uppercase">Personal counsel</div>
+                          <div className="text-xs text-orange-400 mt-2 italic font-mono uppercase">Personal counsel</div>
                         )}
                       </>
                     ) : (
@@ -209,13 +209,13 @@ export default function NetworkDiagram() {
                         <div className="font-bold text-base text-white">{node.name}</div>
                         <div className="text-xs text-gray-400 mt-1 font-medium">{node.role}</div>
                         {node.dualRole && (
-                          <div className="text-[10px] text-purple-400 mt-2 italic border-t border-purple-900/30 pt-1">{node.dualRole}</div>
+                          <div className="text-xs text-purple-400 mt-2 italic border-t border-purple-900/30 pt-1">{node.dualRole}</div>
                         )}
                       </>
                     )}
 
                     {node.section && !node.christieConnection && (
-                      <div className="text-[10px] text-blue-400 mt-2 font-black uppercase tracking-widest">→ Profile Access</div>
+                      <div className="text-xs text-blue-400 mt-2 font-black uppercase tracking-widest">→ Profile Access</div>
                     )}
 
                     {/* Hover indicator pulse (Replacing the old tooltip) */}
@@ -244,7 +244,7 @@ export default function NetworkDiagram() {
         {selectedNode && (
           <div className="space-y-8">
             <div className="p-6 bg-black border border-[#8b1a1a]/20 rounded-lg">
-              <h4 className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-[0.4em] mb-4">Network Connections</h4>
+              <h4 className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] mb-4">Network Connections</h4>
               <div className="grid gap-4">
                 {connections.filter(c => c.from === selectedNode.id || c.to === selectedNode.id).map(conn => {
                   const otherId = conn.from === selectedNode.id ? conn.to : conn.from;
@@ -254,7 +254,7 @@ export default function NetworkDiagram() {
                       <div className={`w-3 h-3 rounded-full mt-1.5 ${groupColors[other?.group || 'board'].bg}`} />
                       <div>
                         <p className="text-white font-bold text-lg">{other?.name}</p>
-                        <p className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-widest mt-1">{conn.label}</p>
+                        <p className="text-[#8b1a1a] font-mono text-xs uppercase tracking-widest mt-1">{conn.label}</p>
                       </div>
                     </div>
                   );

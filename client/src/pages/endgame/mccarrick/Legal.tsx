@@ -93,7 +93,7 @@ export default function Legal() {
               <div className="p-6 bg-black/50">
                 <div className="flex justify-between items-start mb-2">
                   <span className="font-mono text-sm font-black text-red-600 uppercase tracking-[0.3em]">VIDEO EVIDENCE 02</span>
-                  <span className="bg-red-900 text-white px-2 py-0.5 font-mono text-[10px] font-black uppercase">PBS ARCHIVE</span>
+                  <span className="bg-red-900 text-white px-2 py-0.5 font-mono text-xs font-black uppercase">PBS ARCHIVE</span>
                 </div>
                 <h4 className="text-white font-cinzel text-xl uppercase tracking-tighter">Former Cardinal McCarrick charged with sexual assault</h4>
               </div>

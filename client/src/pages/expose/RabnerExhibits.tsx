@@ -11,11 +11,11 @@ export default function RabnerExhibits() {
     { num: "3", title: "Benjamin Sanctions Order — November 2025", desc: "Judge Avion Benjamin sanctioned Scrivo for failing to produce Latham Report documents over multiple years.", category: "Judicial" },
     { num: "4", title: "Venable Letter Opinion — Oct 7, 2024", desc: "Order transferring Nyre litigation to Hudson County. Part of Scrivo's multi-venue delay strategy.", category: "Judicial" },
     { num: "5", title: "Task Force Letters — Nov 2019 & Feb 2020", desc: "Two formal recommendations for Reilly's removal from all boards. Both ignored by the Board of Regents.", category: "Church" },
-    { num: "6", title: "Orange County (CA) Subpoena — Nov 20, 2025", desc: "Cross-jurisdictional subpoena for deposition of a California journalist. Filed exactly one year after initial Google subpoena.", category: "Retaliation" },
+    { num: "6", title: "Orange County (CA) Subpoena — Nov 20, 2025", desc: "Cross-jurisdictional subpoena for deposition of Dei Journo. Filed exactly one year after initial Google subpoena.", category: "Retaliation" },
     { num: "7", title: "Perry Law (Agnifilo) Report — July 2024", desc: "Third investigative firm; commissioned by Marino's board. Concluded no harassment despite internal contradictions. Regent Flood corroborated Mrs. Nyre's account.", category: "Obstruction" },
     { num: "8", title: "Archdiocese Bulletin — Oct 2024", desc: "Bulletin claiming 'solicitation' — manufactured to create a criminal predicate for the grand jury subpoena.", category: "Retaliation" },
     { num: "9", title: "Grand Jury Subpoena to Google — Nov 20, 2024", desc: "Bergen County grand jury subpoena issued 18 days after Reilly's installation. Sought identity of cardinaltobin@gmail.com account holder.", category: "Retaliation" },
-    { num: "10", title: "Complaint Log Manipulation — May 2023", desc: "Masharelli allegedly directed removal of Marino complaints from Confidential Log before Audit Committee meeting. Reinserted March 2024 — after lawsuit filed.", category: "Obstruction" },
+    { num: "10", title: "Complaint Log Manipulation — May 2023", desc: "Institutional counsel allegedly directed removal of harassment complaints from Confidential Log before Audit Committee meeting. Reinserted March 2024 — after lawsuit filed.", category: "Obstruction" },
     { num: "11", title: "Porrino Amicus Brief — July 10, 2024", desc: "Filed unredacted Perry Law Report as exhibit, exposing victims' names. NYT article published next day. Described as coordinated media hit.", category: "Retaliation" },
     { num: "12", title: "Christie Judicial Appointment Record", desc: "Documentation of 75+ judges appointed by Christie administration, including Scrivo's role as Chief Counsel in the appointment process.", category: "Judicial" },
     { num: "13", title: "The Setonian — Epstein-Ruemmler Report", desc: "February 9, 2026 student newspaper report documenting Ruemmler's 'Uncle Jeffrey' communications during the seminary investigation.", category: "Epstein" },
@@ -44,15 +44,15 @@ export default function RabnerExhibits() {
       >
         The Rabner Dossier
       </h1>
-      <p className="text-base mb-8" style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
+      <p className="text-2xl mb-12" style={{ color: "var(--gold)", fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
         19 Verified Exhibits Submitted to Chief Justice Stuart Rabner · New Jersey Supreme Court
       </p>
 
-      <div className="pull-quote">
+      <div className="pull-quote text-3xl italic font-serif leading-tight border-l-4 border-blood pl-8 mb-12 py-4">
         "Chief Justice Rabner received 19 exhibits documenting systemic corruption in the OAE, the Essex County judiciary, and the ecclesiastical governance of Seton Hall University."
       </div>
 
-      <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
+      <div className="space-y-6 text-2xl leading-relaxed mb-16" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
         <p>
           On February 13, 2026, a comprehensive forensic dossier was formally submitted to New Jersey Chief Justice Stuart Rabner.
           The escalation documented what is described as a "Closed Loop" of institutional protectionism, where the Office of Attorney Ethics (OAE)
@@ -68,15 +68,16 @@ export default function RabnerExhibits() {
       {/* Category legend */}
       <div className="flex flex-wrap gap-3 mb-6">
         {Object.entries(categoryColors).map(([cat, color]) => (
-          <span
+            <span
             key={cat}
-            className="text-xs font-semibold px-3 py-1"
+            className="text-sm font-bold px-4 py-1.5"
             style={{
               background: "var(--parchment-panel)",
-              border: `1px solid ${color}`,
+              border: `2px solid ${color}`,
               color: color,
               fontFamily: "'Playfair Display', serif",
-              letterSpacing: "0.05em",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase"
             }}
           >
             {cat}
@@ -110,40 +111,41 @@ export default function RabnerExhibits() {
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2 mb-1">
                 <div
-                  className="text-sm font-bold"
+                  className="text-xl font-black"
                   style={{ fontFamily: "'Playfair Display', serif", color: "var(--ink)" }}
                 >
                   {ex.title}
                 </div>
                 <span
-                  className="flex-shrink-0 text-xs font-semibold px-2 py-0.5"
+                  className="flex-shrink-0 text-xs font-black px-3 py-1"
                   style={{
                     background: "transparent",
-                    border: `1px solid ${categoryColors[ex.category]}`,
+                    border: `2px solid ${categoryColors[ex.category]}`,
                     color: categoryColors[ex.category],
                     fontFamily: "'Lora', serif",
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.05em",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase"
                   }}
                 >
                   {ex.category}
                 </span>
               </div>
-              <p
-                className="text-sm leading-relaxed"
+                <p
+                className="text-lg leading-relaxed mt-2"
                 style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}
               >
                 {ex.desc}
               </p>
               {ex.num === "00" && (
-                <div className="mt-3">
+                <div className="mt-4">
                   <a
                     href="/Rabner-Letter-Feb-13-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-gold/80 hover:underline transition-all"
+                    className="inline-flex items-center gap-3 text-sm font-mono text-gold font-bold hover:text-gold/80 hover:underline transition-all"
                   >
-                    <FileText size={14} /> Download Foundational Letter (PDF)
+                    <FileText size={18} /> DOWNLOAD REDACTED FORENSIC OVERVIEW (PDF)
                   </a>
                 </div>
               )}
@@ -152,9 +154,9 @@ export default function RabnerExhibits() {
         ))}
       </div>
 
-      <div className="evidence-box">
-        <div className="exhibit-label">The OAE's Circular Defense</div>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--ink-mid)", fontFamily: "'Lora', serif" }}>
+      <div className="evidence-box bg-blood/5 border-2 border-blood/20 p-12 mt-16 shadow-2xl">
+        <div className="exhibit-label text-blood font-black mb-4">The OAE's Circular Defense</div>
+        <p className="text-xl leading-relaxed font-serif italic" style={{ color: "var(--ink-mid)" }}>
           The Office of Attorney Ethics' January 20, 2026 declination letter cited "pending litigation"
           as the reason it could not investigate Scrivo and Porrino's conduct. The pending litigation
           was itself created by Scrivo. The OAE's refusal to investigate misconduct in litigation

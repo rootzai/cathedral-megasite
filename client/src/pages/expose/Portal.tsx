@@ -37,7 +37,7 @@ export default function ExposePortal() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
                             <div className="p-10 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act I · 1980 - 2018</span>
+                                <span className="block text-red-600 font-mono text-xs uppercase tracking-[0.3em] mb-3 font-bold">Act I · 1980 - 2018</span>
                                 <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Origin
                                 </h2>
@@ -60,7 +60,7 @@ export default function ExposePortal() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
                             <div className="p-10 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act II · 2018 - 2024</span>
+                                <span className="block text-red-600 font-mono text-xs uppercase tracking-[0.3em] mb-3 font-bold">Act II · 2018 - 2024</span>
                                 <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Cover-Up
                                 </h2>
@@ -83,7 +83,7 @@ export default function ExposePortal() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
                             <div className="p-10 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act III · 2024 - 2026</span>
+                                <span className="block text-red-600 font-mono text-xs uppercase tracking-[0.3em] mb-3 font-bold">Act III · 2024 - 2026</span>
                                 <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Benjamin Mandate
                                 </h2>
@@ -106,7 +106,7 @@ export default function ExposePortal() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
                             <div className="p-10 relative z-20 h-full flex flex-col justify-end">
-                                <span className="block text-red-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold">Act IV · 2026 - Beyond</span>
+                                <span className="block text-red-600 font-mono text-xs uppercase tracking-[0.3em] mb-3 font-bold">Act IV · 2026 - Beyond</span>
                                 <h2 className="text-4xl font-black uppercase text-white mb-3 group-hover:text-red-500 transition-colors tracking-tighter">
                                     The Succession
                                 </h2>

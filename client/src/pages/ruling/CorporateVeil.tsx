@@ -85,11 +85,11 @@ export default function CorporateVeil() {
                     <div className="w-12 h-12 mx-auto bg-zinc-200 rounded-full flex items-center justify-center mb-2">
                       <span className="font-heading text-xl">RCAN</span>
                     </div>
-                    <p className="font-mono text-[10px] uppercase text-muted-foreground">Archdiocese</p>
+                    <p className="font-mono text-xs uppercase text-muted-foreground">Archdiocese</p>
                   </div>
                   <div className="flex-1 px-4 text-center">
                     <div className="h-px bg-destructive/50 w-full relative">
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-card px-2 font-mono text-[10px] text-destructive uppercase">
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-card px-2 font-mono text-xs text-destructive uppercase">
                         Same People
                       </div>
                     </div>
@@ -98,7 +98,7 @@ export default function CorporateVeil() {
                     <div className="w-12 h-12 mx-auto bg-zinc-200 rounded-full flex items-center justify-center mb-2">
                       <span className="font-heading text-xl">SHU</span>
                     </div>
-                    <p className="font-mono text-[10px] uppercase text-muted-foreground">University</p>
+                    <p className="font-mono text-xs uppercase text-muted-foreground">University</p>
                   </div>
                 </div>
                 <p className="font-body text-sm text-muted-foreground italic text-center">

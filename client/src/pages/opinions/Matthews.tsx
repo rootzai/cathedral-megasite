@@ -92,7 +92,7 @@ export default function MatthewsEssay() {
 
                 <div className="pt-20 text-center">
                     <PenTool className="w-12 h-12 text-black/20 mx-auto mb-4" />
-                    <div className="font-mono text-[10px] uppercase tracking-widest opacity-50">Aristhide "Ari" Vance is a Professor of Institutional Ethics and a frequent consultant on governance reform.</div>
+                    <div className="font-mono text-xs uppercase tracking-widest opacity-50">Aristhide "Ari" Vance is a Professor of Institutional Ethics and a frequent consultant on governance reform.</div>
                 </div>
             </article>
 

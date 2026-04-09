@@ -49,7 +49,7 @@ export default function TheMethod() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-12">
                         <div className="space-y-4">
-                            <span className="text-[#3a8ef6] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Forensic Analyst // DARKO VUCETIC</span>
+                            <span className="text-[#3a8ef6] font-black text-xs uppercase tracking-[0.5em] font-courier">Forensic Analyst // DARKO VUCETIC</span>
                             <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE DATA COLLISION</h2>
                         </div>
                         <div className="space-y-8 text-lg text-zinc-400 font-serif leading-relaxed italic">
@@ -63,11 +63,11 @@ export default function TheMethod() {
                         <div className="grid grid-cols-2 gap-8 pt-8">
                             <div className="space-y-2">
                                 <span className="text-white font-black text-3xl">0.2%</span>
-                                <p className="text-[10px] text-zinc-600 font-courier uppercase tracking-widest">Similarity to Original Stock</p>
+                                <p className="text-xs text-zinc-600 font-courier uppercase tracking-widest">Similarity to Original Stock</p>
                             </div>
                             <div className="space-y-2">
                                 <span className="text-[#3a8ef6] font-black text-3xl">2005</span>
-                                <p className="text-[10px] text-zinc-600 font-courier uppercase tracking-widest">Date of Fabrication</p>
+                                <p className="text-xs text-zinc-600 font-courier uppercase tracking-widest">Date of Fabrication</p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function TheMethod() {
                                 </div>
                             </div>
                             <div className="p-6 bg-[#0a0a0c] border border-white/5">
-                                <span className="text-[9px] font-black font-courier text-[#3a8ef6] uppercase tracking-widest block mb-1">Audit Record SH-V1</span>
+                                <span className="text-xs font-black font-courier text-[#3a8ef6] uppercase tracking-widest block mb-1">Audit Record SH-V1</span>
                                 <p className="text-xs text-zinc-500 uppercase tracking-widest font-mono">RETROACTIVE DOCUMENTATION IDENTIFIED</p>
                             </div>
                          </div>
@@ -147,7 +147,7 @@ export default function TheMethod() {
             <section className="py-32 px-6 bg-[#070709] border-t border-white/5">
                 <div className="max-w-7xl mx-auto space-y-20">
                      <div className="flex flex-col items-center text-center space-y-4">
-                        <span className="text-[#3a8ef6] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Human Intelligence</span>
+                        <span className="text-[#3a8ef6] font-black text-xs uppercase tracking-[0.5em] font-courier">Human Intelligence</span>
                         <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE WHISTLEBLOWERS</h2>
                     </div>
                     
@@ -175,7 +175,7 @@ export default function TheMethod() {
             </section>
 
             {/* FOOTER */}
-            <footer className="py-24 px-6 border-t border-white/5 text-center text-[10px] font-black font-courier text-zinc-700 uppercase tracking-[0.4em]">
+            <footer className="py-24 px-6 border-t border-white/5 text-center text-xs font-black font-courier text-zinc-700 uppercase tracking-[0.4em]">
                 Authorized Method Record // SODOM HALL // 2026
             </footer>
 

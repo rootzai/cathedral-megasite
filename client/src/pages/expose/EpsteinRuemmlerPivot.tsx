@@ -13,7 +13,7 @@ export default function EpsteinRuemmlerPivot() {
                     <SmartImage src="/assets/mccarrick-netzwerk.jpg" alt="Background" className="w-full h-full object-cover" />
                 </div>
                 <div className="max-w-4xl mx-auto relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-900/30 border border-red-900 rounded-full text-red-500 text-[10px] font-bold uppercase tracking-widest mb-6 animate-pulse">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-900/30 border border-red-900 rounded-full text-red-500 text-xs font-bold uppercase tracking-widest mb-6 animate-pulse">
                         <AlertTriangle size={14} />
                         Exclusive Investigative Finding
                     </div>
@@ -44,14 +44,14 @@ export default function EpsteinRuemmlerPivot() {
                             </p>
                             <div className="space-y-4">
                                 <div className="p-4 bg-black border-l-4 border-red-700 rounded-r shadow-lg">
-                                    <p className="text-zinc-500 text-[10px] font-mono mb-1">Feb 27, 2019 10:28 AM</p>
+                                    <p className="text-zinc-500 text-xs font-mono mb-1">Feb 27, 2019 10:28 AM</p>
                                     <p className="text-zinc-200 italic">"Maybe. I am trying to figure out whether I have to interview Bishops in Newark."</p>
-                                    <p className="text-zinc-500 text-[10px] font-mono mt-2">— Kathryn Ruemmler to Jeffrey Epstein</p>
+                                    <p className="text-zinc-500 text-xs font-mono mt-2">— Kathryn Ruemmler to Jeffrey Epstein</p>
                                 </div>
                                 <div className="p-4 bg-black border-l-4 border-zinc-700 rounded-r shadow-lg">
-                                    <p className="text-zinc-500 text-[10px] font-mono mb-1">Feb 27, 2019 11:25 AM</p>
+                                    <p className="text-zinc-500 text-xs font-mono mb-1">Feb 27, 2019 11:25 AM</p>
                                     <p className="text-zinc-200 italic">"Meeting the Cardinal at 2 pm in Newark... Are you free @ 11 am if I came by then?"</p>
-                                    <p className="text-zinc-500 text-[10px] font-mono mt-2">— Kathryn Ruemmler to Jeffrey Epstein</p>
+                                    <p className="text-zinc-500 text-xs font-mono mt-2">— Kathryn Ruemmler to Jeffrey Epstein</p>
                                 </div>
                             </div>
                         </div>

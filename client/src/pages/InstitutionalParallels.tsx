@@ -134,7 +134,7 @@ export default function InstitutionalParallels() {
 
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-24">
-                    <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-zinc-700 mb-4 sm:mb-6">Special Forensic Analysis</p>
+                    <p className="font-mono text-xs sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.5em] text-zinc-700 mb-4 sm:mb-6">Special Forensic Analysis</p>
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tighter leading-[0.9]" style={{ fontFamily: "'Playfair Display', serif" }}>
                         The <span className="italic text-zinc-800">Precedent</span>
                     </h1>
@@ -148,7 +148,7 @@ export default function InstitutionalParallels() {
                             Download Forensic Briefing (PDF)
                         </button>
                         <Link href="/tips">
-                            <a className="text-zinc-500 hover:text-white text-[10px] font-bold uppercase tracking-widest border border-zinc-800 px-6 py-3 transition-colors">
+                            <a className="text-zinc-500 hover:text-white text-xs font-bold uppercase tracking-widest border border-zinc-800 px-6 py-3 transition-colors">
                                 Submit More Evidence
                             </a>
                         </Link>
@@ -204,15 +204,15 @@ export default function InstitutionalParallels() {
                                     </th>
                                     <th className="text-left p-4 bg-blue-950/30 font-mono text-xs uppercase tracking-widest text-blue-400 w-1/4">
                                         Penn State
-                                        <span className="block text-[10px] text-blue-400/60 mt-1">Sandusky · 2011</span>
+                                        <span className="block text-xs text-blue-400/60 mt-1">Sandusky · 2011</span>
                                     </th>
                                     <th className="text-left p-4 bg-green-950/30 font-mono text-xs uppercase tracking-widest text-green-400 w-1/4">
                                         Michigan State
-                                        <span className="block text-[10px] text-green-400/60 mt-1">Nassar · 2016</span>
+                                        <span className="block text-xs text-green-400/60 mt-1">Nassar · 2016</span>
                                     </th>
                                     <th className="text-left p-4 bg-zinc-100/30 font-mono text-xs uppercase tracking-widest text-red-400 w-1/4">
                                         Seton Hall
-                                        <span className="block text-[10px] text-red-400/60 mt-1">McCarrick · 2018</span>
+                                        <span className="block text-xs text-red-400/60 mt-1">McCarrick · 2018</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -331,10 +331,10 @@ export default function InstitutionalParallels() {
                         <table className="w-full text-sm">
                             <thead>
                                 <tr className="border-b border-yellow-600/50">
-                                    <th className="text-left p-3 bg-gray-900 font-mono text-[10px] uppercase tracking-widest text-gray-500">Date</th>
-                                    <th className="text-left p-3 bg-gray-900 font-mono text-[10px] uppercase tracking-widest text-gray-500">Entity</th>
-                                    <th className="text-left p-3 bg-gray-900 font-mono text-[10px] uppercase tracking-widest text-gray-500">Context</th>
-                                    <th className="text-left p-3 bg-gray-900 font-mono text-[10px] uppercase tracking-widest text-yellow-600">Response</th>
+                                    <th className="text-left p-3 bg-gray-900 font-mono text-xs uppercase tracking-widest text-gray-500">Date</th>
+                                    <th className="text-left p-3 bg-gray-900 font-mono text-xs uppercase tracking-widest text-gray-500">Entity</th>
+                                    <th className="text-left p-3 bg-gray-900 font-mono text-xs uppercase tracking-widest text-gray-500">Context</th>
+                                    <th className="text-left p-3 bg-gray-900 font-mono text-xs uppercase tracking-widest text-yellow-600">Response</th>
                                 </tr>
                             </thead>
                             <tbody>

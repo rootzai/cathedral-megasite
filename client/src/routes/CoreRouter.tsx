@@ -48,13 +48,14 @@ function PageLayout({ component: Component, theme = "dark" }: { component: React
 const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
   "/shield": "/",
-  "/headline-news": "/breach",
+  "/headline-news": "/breach-hub",
   "/expose": "/evidence/legal",
   "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
   "/briefing": "/breach",
   "/ruling": "/breach",
-  "/method": "/methodology"
+  "/method": "/methodology",
+  "/lorenzo": "/ledger/lorenzo"
 };
 
 function RedirectHandler() {
@@ -89,10 +90,16 @@ export function CoreRouter() {
           <PageLayout component={RedesignedHome} />
         </Route>
         <Route path="/prologue">
-          <Prologue />
+          <PageLayout component={Prologue} />
         </Route>
         <Route path="/axis">
-          <Axis />
+          <PageLayout component={Axis} />
+        </Route>
+        <Route path="/madman">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
+        </Route>
+        <Route path="/humpty">
+          <PageLayout component={HumptyCaseStudy} />
         </Route>
 
         {/* Tier 2: THE EVIDENCE */}
@@ -121,9 +128,12 @@ export function CoreRouter() {
           <PageLayout component={McKeeverCaseStudy} />
         </Route>
 
-        {/* Tier 3: THE BREACH */}
-        <Route path="/breach">
+        {/* Tier 3: THE BREACH (Act 3) */}
+        <Route path="/breach/hub">
           <PageLayout component={BreachHub} />
+        </Route>
+        <Route path="/breach">
+          <PageLayout component={React.lazy(() => import("../pages/expose/WhistleblowerUnmasking"))} />
         </Route>
 
         {/* Tier 6: THE METHOD & THE NURSERY */}
@@ -132,9 +142,6 @@ export function CoreRouter() {
         </Route>
         <Route path="/easter">
           <PageLayout component={TheNursery} />
-        </Route>
-        <Route path="/easter/case-study">
-          <PageLayout component={HumptyCaseStudy} />
         </Route>
 
         {/* ACADEMY & ABOUT */}

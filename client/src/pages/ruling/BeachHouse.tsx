@@ -136,7 +136,7 @@ export default function BeachHouse() {
               <Users className="w-6 h-6 text-destructive/40 mx-auto mb-3 group-hover:text-destructive transition-colors" />
               <div className="font-heading text-sm text-foreground">The Archbishop</div>
             </div>
-            <p className="font-mono text-[9px] text-muted-foreground leading-tight">Master Suite. Site of the most frequent 'Nephew' assignments.</p>
+            <p className="font-mono text-xs text-muted-foreground leading-tight">Master Suite. Site of the most frequent 'Nephew' assignments.</p>
           </div>
 
           <div className="p-6 border border-border bg-white/40 flex flex-col justify-between aspect-square group">
@@ -145,7 +145,7 @@ export default function BeachHouse() {
               <Users className="w-6 h-6 text-muted-foreground/20 mx-auto mb-3" />
               <div className="font-heading text-sm text-muted-foreground/60 tracking-widest">SECRETARY</div>
             </div>
-            <p className="font-mono text-[9px] text-muted-foreground leading-tight">Reserved for Reilly or other assistants. The room of the silent witness.</p>
+            <p className="font-mono text-xs text-muted-foreground leading-tight">Reserved for Reilly or other assistants. The room of the silent witness.</p>
           </div>
 
           <div className="col-span-2 p-8 border border-destructive/20 bg-destructive/[0.02] flex flex-col justify-between relative overflow-hidden shadow-inner">

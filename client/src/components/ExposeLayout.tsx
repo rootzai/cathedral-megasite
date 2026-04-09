@@ -71,7 +71,7 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
                         return (
                             <Link key={item.path} href={item.path} onClick={() => setMobileOpen(false)}>
                                 <div
-                                    className="font-mono text-[10px] sm:text-xs uppercase tracking-wider p-3 transition-all duration-300 cursor-pointer flex justify-between items-center group"
+                                    className="font-mono text-xs sm:text-xs uppercase tracking-wider p-3 transition-all duration-300 cursor-pointer flex justify-between items-center group"
                                     style={{
                                         border: isActive ? "1px solid var(--sidebar-gold)" : "1px solid #2e2416",
                                         background: isActive ? "rgba(202, 165, 85, 0.1)" : "transparent",
@@ -82,7 +82,7 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
                                 >
                                     <span className="truncate">{item.label}</span>
                                     <span 
-                                         className="w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2"
+                                         className="w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2"
                                          style={{
                                              background: isActive ? "var(--sidebar-gold)" : "rgba(46, 36, 22, 0.5)",
                                              color: isActive ? "#000" : "var(--sidebar-dim)"

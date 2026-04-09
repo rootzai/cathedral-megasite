@@ -100,7 +100,7 @@ export default function NoonanEssay() {
 
                 <div className="pt-20 text-center">
                     <PenTool className="w-12 h-12 text-black/20 mx-auto mb-4" />
-                    <div className="font-mono text-[10px] uppercase tracking-widest opacity-50">Maureen O'Shaughnessy has served as a contributing editor to the leading journals of American life for forty years.</div>
+                    <div className="font-mono text-xs uppercase tracking-widest opacity-50">Maureen O'Shaughnessy has served as a contributing editor to the leading journals of American life for forty years.</div>
                 </div>
             </article>
 

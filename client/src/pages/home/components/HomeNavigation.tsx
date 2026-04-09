@@ -5,7 +5,7 @@ export function HomeNavigation() {
         <section className="py-12 sm:py-16 md:py-24 bg-gray-900 border-y border-red-900/10 text-zinc-900">
             <div className="container mx-auto max-w-6xl px-3 sm:px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center tracking-tight uppercase">The Descent</h2>
-                <p className="text-gray-400 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-8 sm:mb-12 text-center underline decoration-red-600/50 underline-offset-8">Complete Forensic Investigation</p>
+                <p className="text-gray-400 font-mono text-xs sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-8 sm:mb-12 text-center underline decoration-red-600/50 underline-offset-8">Complete Forensic Investigation</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <a href="#act-vii" className="block p-6 bg-white border border-gray-800 hover:border-zinc-300 transition-all rounded-lg group shadow-lg text-zinc-900">

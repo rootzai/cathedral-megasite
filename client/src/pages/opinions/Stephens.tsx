@@ -91,7 +91,7 @@ export default function StephensEssay() {
 
                 <div className="pt-20 text-center">
                     <PenTool className="w-12 h-12 text-black/20 mx-auto mb-4" />
-                    <div className="font-mono text-[10px] uppercase tracking-widest opacity-50">Ephraim "Eph" Roth is a contributing editor and foreign correspondent who has covered institutional crises on three continents.</div>
+                    <div className="font-mono text-xs uppercase tracking-widest opacity-50">Ephraim "Eph" Roth is a contributing editor and foreign correspondent who has covered institutional crises on three continents.</div>
                 </div>
             </article>
 

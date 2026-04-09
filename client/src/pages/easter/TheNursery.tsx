@@ -78,7 +78,7 @@ export default function TheNursery() {
                             <Ghost className="w-24 h-24 text-[#3a1a5c] opacity-40 blur-sm group-hover:opacity-100 transition-opacity" />
                             <Ghost className="absolute inset-0 w-24 h-24 text-[#7c3aed] drop-shadow-[0_0_20px_rgba(124,58,237,0.5)]" />
                             {clicks > 0 && clicks < 7 && (
-                                <span className="absolute -top-4 -right-4 text-[10px] font-mono text-[#7c3aed]">{clicks}/7</span>
+                                <span className="absolute -top-4 -right-4 text-xs font-mono text-[#7c3aed]">{clicks}/7</span>
                             )}
                         </div>
                     </motion.div>
@@ -100,7 +100,7 @@ export default function TheNursery() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-12">
                         <div className="space-y-4">
-                            <span className="text-[#3a1a5c] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Forensic Entry // THE NURSERY</span>
+                            <span className="text-[#3a1a5c] font-black text-xs uppercase tracking-[0.5em] font-courier">Forensic Entry // THE NURSERY</span>
                             <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE ALL-KING'S MEN</h2>
                         </div>
                         <div className="space-y-8 text-lg text-zinc-400 font-serif leading-relaxed italic">
@@ -135,15 +135,15 @@ export default function TheNursery() {
                                         <div key={i} className="flex items-center justify-between py-4 border-b border-white/5">
                                             <div>
                                                 <p className="text-white font-black font-cinzel uppercase text-sm mb-1">{person.name}</p>
-                                                <p className="text-[10px] text-zinc-600 font-courier uppercase tracking-widest">{person.role}</p>
+                                                <p className="text-xs text-zinc-600 font-courier uppercase tracking-widest">{person.role}</p>
                                             </div>
-                                            <span className="text-[8px] font-black font-courier text-[#7c3aed] uppercase tracking-widest">{person.status}</span>
+                                            <span className="text-xs font-black font-courier text-[#7c3aed] uppercase tracking-widest">{person.status}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                             <div className="pt-8">
-                                <p className="text-[10px] text-zinc-700 font-courier uppercase tracking-[0.4em] text-center italic">
+                                <p className="text-xs text-zinc-700 font-courier uppercase tracking-[0.4em] text-center italic">
                                     "And all the King's horses, and all the King's men..."
                                 </p>
                             </div>
@@ -188,7 +188,7 @@ export default function TheNursery() {
             </section>
 
             {/* FOOTER */}
-            <footer className="py-24 px-6 border-t border-white/5 text-center text-[10px] font-black font-courier text-zinc-700 uppercase tracking-[0.4em]">
+            <footer className="py-24 px-6 border-t border-white/5 text-center text-xs font-black font-courier text-zinc-700 uppercase tracking-[0.4em]">
                 Authorized Nursery Record // SODOM HALL // 2026
             </footer>
         </div>

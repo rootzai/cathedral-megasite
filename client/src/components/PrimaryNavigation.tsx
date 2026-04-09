@@ -35,7 +35,7 @@ export default function PrimaryNavigation() {
           const isActive = location === item.href || (item.href !== "/" && location.startsWith(item.href));
           return (
             <Link key={item.href} href={item.href} className={cn(
-                "group relative flex items-center gap-2 py-2 text-[10px] xl:text-xs font-black tracking-[0.15em] transition-all duration-300 whitespace-nowrap",
+                "group relative flex items-center gap-2 py-2 text-xs xl:text-xs font-black tracking-[0.15em] transition-all duration-300 whitespace-nowrap",
                 isActive ? "text-[#8b1a1a]" : "text-[#c8bdb0]/60 hover:text-[#c8bdb0]"
               )}>
                 <item.icon className={cn("w-4 h-4 lg:w-5 lg:h-5 translate-y-[-1px]", isActive ? "text-[#8b1a1a]" : "text-zinc-600 group-hover:text-zinc-400")} />
@@ -55,7 +55,7 @@ export default function PrimaryNavigation() {
       {/* Submit Tip Button */}
       <Link href="/tips" className="hidden md:flex relative group overflow-hidden bg-[#8b1a1a] hover:bg-[#a11e1e] text-white px-4 py-2.5 xl:px-6 xl:py-3 rounded-sm items-center gap-2 xl:gap-3 transition-all duration-500 shadow-[0_0_20px_rgba(139,26,26,0.2)] whitespace-nowrap shrink-0">
             <Send className="w-4 h-4 xl:w-5 xl:h-5" />
-            <span className="text-[10px] xl:text-xs font-black tracking-[0.2em] uppercase">Whistleblower Tip Line</span>
+            <span className="text-xs xl:text-xs font-black tracking-[0.2em] uppercase">Whistleblower Tip Line</span>
             <motion.div 
               animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
               transition={{ duration: 2, repeat: Infinity }}

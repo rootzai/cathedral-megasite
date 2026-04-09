@@ -59,7 +59,7 @@ export default function TheConversion() {
           <div className="flex flex-col items-center text-center mb-16">
             <ShieldAlert className="w-8 h-8 text-red-700 mb-4" />
             <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-widest mb-6">Case Study: The $108,000 Trap</h2>
-            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">EXHIBIT // SETTLEMENT-MECHANISM-001</p>
+            <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em]">EXHIBIT // SETTLEMENT-MECHANISM-001</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -108,7 +108,7 @@ export default function TheConversion() {
             The Conversion only works if the archive remains sealed. When you find <strong>The Rewrite</strong>—the moment they lied to protect the money—the whole machine fails.
           </p>
           <Link href="/opinion">
-            <a className="inline-flex items-center gap-4 bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-[10px] transition-all shadow-[0_0_40px_rgba(139,26,26,0.5)]">
+            <a className="inline-flex items-center gap-4 bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-xs transition-all shadow-[0_0_40px_rgba(139,26,26,0.5)]">
                UNSEAL THE REWRITE <ArrowRight className="w-4 h-4" />
             </a>
           </Link>
@@ -117,7 +117,7 @@ export default function TheConversion() {
 
       {/* FOOTER */}
       <footer className="py-12 border-t border-white/5 text-center">
-        <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">The Cathedral Megasite // Forensic Methodology Archive</span>
+        <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">The Cathedral Megasite // Forensic Methodology Archive</span>
       </footer>
     </div>
   );

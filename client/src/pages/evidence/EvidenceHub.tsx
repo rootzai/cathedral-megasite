@@ -40,7 +40,7 @@ export default function EvidenceHub() {
                         {RINGS.map((ring) => (
                             <Link key={ring.id} href={ring.route} className="group block bg-[#111116] border border-[#1a1a22] p-8 hover:border-[#8b1a1a] transition-all relative overflow-hidden">
                                 {ring.breach && (
-                                    <div className="absolute top-0 right-0 bg-[#8b1a1a] text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                                    <div className="absolute top-0 right-0 bg-[#8b1a1a] text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
                                         Breach Point
                                     </div>
                                 )}
@@ -69,7 +69,7 @@ export default function EvidenceHub() {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-[#8b1a1a]/5 blur-[60px]" />
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center cursor-pointer">
                             <div className="md:col-span-2">
-                                <span className="text-[#8b1a1a] font-bold text-[10px] uppercase tracking-[0.4em] font-mono block mb-3">
+                                <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.4em] font-mono block mb-3">
                                     Featured Case Study
                                 </span>
                                 <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
@@ -111,7 +111,7 @@ export default function EvidenceHub() {
                         <h2 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest text-center mb-12">Suggested Journeys</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
-                                <span className="text-[10px] font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 01 // THE NEWBIE</span>
+                                <span className="text-xs font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 01 // THE NEWBIE</span>
                                 <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
                                 <p className="text-sm text-zinc-500 italic mb-6">"I'm new. Who is involved and what happened?"</p>
                                 <div className="space-y-4">
@@ -121,7 +121,7 @@ export default function EvidenceHub() {
                                 </div>
                             </div>
                             <div className="p-8 border border-white/5 bg-black/40 hover:border-zinc-700 transition-all">
-                                <span className="text-[10px] font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
+                                <span className="text-xs font-black font-mono text-zinc-600 uppercase tracking-widest block mb-4">PATH 02 // THE LEGALIST</span>
                                 <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
                                 <p className="text-sm text-zinc-500 italic mb-6">"I want the records. Show me the filings and the {<Term id="Michael Critchley">Critchley Shield</Term>}."</p>
                                 <div className="space-y-4">
@@ -131,7 +131,7 @@ export default function EvidenceHub() {
                                 </div>
                             </div>
                             <div className="p-8 border border-[#8b1a1a]/20 bg-[#8b1a1a]/5 hover:border-[#8b1a1a]/40 transition-all">
-                                <span className="text-[10px] font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4">PATH 03 // THE ADVOCATE</span>
+                                <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4">PATH 03 // THE ADVOCATE</span>
                                 <h4 className="text-xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
                                 <p className="text-sm text-zinc-500 italic mb-6">"How does this affect real survivors?"</p>
                                 <div className="space-y-4">

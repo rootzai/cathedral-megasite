@@ -184,7 +184,7 @@ export default function SanctionPlea() {
               </div>
 
               <div className="pt-4 border-t border-white/10">
-                <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest leading-loose">
+                <p className="font-mono text-xs text-zinc-600 uppercase tracking-widest leading-loose">
                   * All names derived from the 2025 Essex County discovery log ESX-L-8762-19.
                 </p>
               </div>

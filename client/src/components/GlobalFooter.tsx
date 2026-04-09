@@ -26,7 +26,7 @@ export function GlobalFooter() {
                         </div>
                         <div className="space-y-4">
                             <div className="p-4 border border-[#8b1a1a]/30 bg-black">
-                                <p className="text-[10px] font-black font-mono text-[#8b1a1a] uppercase tracking-widest mb-1">RAINN National Hotline</p>
+                                <p className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest mb-1">RAINN National Hotline</p>
                                 <a href="tel:800-656-HOPE" className="text-2xl font-black font-cinzel text-white hover:text-[#8b1a1a] transition-colors tracking-widest">
                                     800.656.HOPE
                                 </a>
@@ -40,7 +40,7 @@ export function GlobalFooter() {
                     {/* Navigation */}
                     <nav className="grid grid-cols-2 gap-8 text-left">
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black font-courier text-zinc-700 uppercase tracking-widest block">Archives</span>
+                            <span className="text-xs font-black font-courier text-zinc-700 uppercase tracking-widest block">Archives</span>
                             <div className="flex flex-col gap-2">
                                 <Link href="/evidence" className="text-xs text-zinc-500 hover:text-white transition-colors">The Evidence</Link>
                                 <Link href="/ledger" className="text-xs text-zinc-500 hover:text-white transition-colors">The Ledger</Link>
@@ -48,7 +48,7 @@ export function GlobalFooter() {
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <span className="text-[10px] font-black font-courier text-zinc-700 uppercase tracking-widest block">Institutional</span>
+                            <span className="text-xs font-black font-courier text-zinc-700 uppercase tracking-widest block">Institutional</span>
                             <div className="flex flex-col gap-2">
                                 <Link href="/about" className="text-xs text-zinc-500 hover:text-white transition-colors">About Us</Link>
                                 <Link href="/whos-who" className="text-xs text-zinc-500 hover:text-white transition-colors">Who's Who</Link>
@@ -59,12 +59,12 @@ export function GlobalFooter() {
                 </div>
 
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-30">
-                    <p className="text-[10px] font-courier text-zinc-500 uppercase tracking-[0.4em]">
+                    <p className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">
                         SH-2026 // CATHEDRAL MEGASITE // NO STATUTE
                     </p>
                     <div className="flex gap-8 items-center">
                         <AlertTriangle className="w-4 h-4 text-[#8b1a1a]" />
-                        <span className="text-[10px] font-courier text-zinc-500 uppercase tracking-[0.4em]">Active Investigation</span>
+                        <span className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">Active Investigation</span>
                     </div>
                 </div>
             </div>

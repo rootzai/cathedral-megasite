@@ -135,7 +135,7 @@ export default function Timeline() {
                   <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
                     }`}>
                     <Badge variant="outline" className="font-mono text-xs">{event.year}</Badge>
-                    <Badge variant="secondary" className="font-mono text-[10px] uppercase">{event.type}</Badge>
+                    <Badge variant="secondary" className="font-mono text-xs uppercase">{event.type}</Badge>
                   </div>
                   <CardTitle className="font-heading text-xl flex items-center gap-2">
                     {index % 2 !== 0 && <event.icon className="w-5 h-5 text-destructive md:hidden" />}

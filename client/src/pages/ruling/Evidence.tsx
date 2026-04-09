@@ -128,7 +128,7 @@ export default function Evidence() {
                   </TableCell>
                   <TableCell className="font-mono text-xs text-muted-foreground hidden md:table-cell">{doc.date}</TableCell>
                   <TableCell className="hidden md:table-cell">
-                    <Badge variant="secondary" className="font-mono text-[10px] uppercase">{doc.type}</Badge>
+                    <Badge variant="secondary" className="font-mono text-xs uppercase">{doc.type}</Badge>
                   </TableCell>
                   <TableCell className="text-right">
                     <Button size="sm" variant="ghost" className="hover:text-destructive hover:bg-destructive/10" asChild>

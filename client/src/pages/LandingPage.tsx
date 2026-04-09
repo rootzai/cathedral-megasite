@@ -136,15 +136,15 @@ export default function LandingPage() {
         <div className="z-20 max-w-lg mx-auto bg-red-950/40 border border-red-900/50 p-4 mb-8 backdrop-blur-md">
             <div className="flex items-center gap-3 mb-2">
                 <Zap className="w-4 h-4 text-red-600 animate-bounce" />
-                <span className="text-red-500 font-mono text-[10px] uppercase tracking-[0.4em]">Forensic Alert // FEB 17, 2025</span>
+                <span className="text-red-500 font-mono text-xs uppercase tracking-[0.4em]">Forensic Alert // FEB 17, 2025</span>
             </div>
             <p className="text-[#faf6ee] font-serif italic text-sm leading-relaxed">
                 "Politico reveals the failure of NJ Bishop transparency. The institutional shield is failing. The downfall is not a prediction; it is an inevitability."
             </p>
             <div className="mt-4 flex items-center justify-between border-t border-red-900/30 pt-2">
-                <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Source: Politico / BishopAccountability.org</span>
+                <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Source: Politico / BishopAccountability.org</span>
                 <Link href="/evidence/politico-report">
-                    <span className="text-[9px] font-mono text-red-500 uppercase tracking-widest cursor-pointer hover:underline flex items-center gap-1">Examine Report <ChevronRight className="w-3 h-3" /></span>
+                    <span className="text-xs font-mono text-red-500 uppercase tracking-widest cursor-pointer hover:underline flex items-center gap-1">Examine Report <ChevronRight className="w-3 h-3" /></span>
                 </Link>
             </div>
         </div>
@@ -168,7 +168,7 @@ export default function LandingPage() {
               {pillars.map((p) => (
                 <Link key={p.id} href={p.path}>
                   <a className="group relative bg-zinc-100 border border-zinc-300 hover:border-zinc-600 p-6 rounded-lg transition-all duration-300 flex flex-col items-center text-center">
-                    <span className="text-zinc-400 font-mono text-[10px] block mb-4 tracking-[0.3em]">SECTION {p.id}</span>
+                    <span className="text-zinc-400 font-mono text-xs block mb-4 tracking-[0.3em]">SECTION {p.id}</span>
                     <p.icon className="w-8 h-8 text-zinc-400 mb-4 group-hover:text-white transition-colors" />
                     <h3 className="text-sm font-bold text-zinc-900 mb-2 uppercase tracking-widest">{p.title}</h3>
                     <p className="text-xs text-zinc-300 font-serif italic leading-relaxed">
@@ -183,7 +183,7 @@ export default function LandingPage() {
               ))}
             </div>
 
-            <div className="mt-8 text-center text-[10px] text-zinc-400 uppercase tracking-[0.5em] font-mono">
+            <div className="mt-8 text-center text-xs text-zinc-400 uppercase tracking-[0.5em] font-mono">
               SodomHall.com — An Investigation into Institutional Betrayal
             </div>
           </div>

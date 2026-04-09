@@ -86,7 +86,7 @@ export const EndgameRoutes = [
 
     <Route key="reilly" path={"/ledger/reilly"}><EndgamePageLayout component={ReillyEndgame} /></Route>,
 
-    <Route key="madman" path={"/ledger/madman"}><EndgamePageLayout component={MadmanHome} /></Route>,
+
 
     <Route key="mccarrick" path={"/ledger/mccarrick"}><EndgamePageLayout component={McCarrickHome} /></Route>,
     <Route key="mccarrick-bg" path={"/ledger/mccarrick/background"}><EndgamePageLayout component={McCarrickBackground} /></Route>,

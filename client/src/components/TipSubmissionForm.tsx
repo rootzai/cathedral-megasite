@@ -59,7 +59,7 @@ export function TipSubmissionForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Identity / Alias (Optional)</label>
+                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Identity / Alias (Optional)</label>
                   <input 
                     name="name"
                     type="text" 
@@ -68,7 +68,7 @@ export function TipSubmissionForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Contact Method (Signal/Email)</label>
+                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Contact Method (Signal/Email)</label>
                   <input 
                     name="contact"
                     type="text" 
@@ -79,7 +79,7 @@ export function TipSubmissionForm() {
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Category of Intelligence</label>
+                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Category of Intelligence</label>
                 <select 
                   name="category"
                   className="w-full bg-black border border-white/10 p-3 text-white font-mono text-sm focus:border-red-600 outline-none transition-all"
@@ -93,7 +93,7 @@ export function TipSubmissionForm() {
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Dossier / Narrative Proof</label>
+                <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Dossier / Narrative Proof</label>
                 <textarea 
                   name="message"
                   required
@@ -103,7 +103,7 @@ export function TipSubmissionForm() {
                 />
               </div>
 
-              <div className="p-4 bg-red-950/20 border border-red-900/30 text-[10px] items-center flex gap-3 text-red-500 font-mono uppercase tracking-[0.2em]">
+              <div className="p-4 bg-red-950/20 border border-red-900/30 text-xs items-center flex gap-3 text-red-500 font-mono uppercase tracking-[0.2em]">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>Notice: This form is end-to-end encrypted via Formspree. For 100% air-gapped security, use Signal below.</span>
               </div>
@@ -115,7 +115,7 @@ export function TipSubmissionForm() {
               >
                 {status === 'submitting' ? 'TRANSMITTING SIGNAL...' : 'PENETRATE THE SHIELD'}
               </button>
-              {status === 'error' && <p className="text-red-500 text-[10px] font-mono uppercase text-center mt-2">Transmission Failed. Please retry or use Signal.</p>}
+              {status === 'error' && <p className="text-red-500 text-xs font-mono uppercase text-center mt-2">Transmission Failed. Please retry or use Signal.</p>}
             </form>
           )}
         </div>
@@ -163,7 +163,7 @@ export function TipSubmissionForm() {
               <Phone className="w-6 h-6 text-red-600" />
               <h3 className="text-xl font-bold text-white uppercase tracking-widest">Survivor Support (RAINN)</h3>
             </div>
-            <span className="bg-white text-zinc-900 font-black text-[10px] px-3 py-1 rounded tracking-[0.3em]">SAFE LINE</span>
+            <span className="bg-white text-zinc-900 font-black text-xs px-3 py-1 rounded tracking-[0.3em]">SAFE LINE</span>
           </div>
           <p className="text-sm text-zinc-400 mb-8 font-serif italic leading-relaxed">
             If you or someone you know has been affected by sexual assault, help is available 24/7. The Rape, Abuse & Incest National Network (RAINN) provides free, confidential support.

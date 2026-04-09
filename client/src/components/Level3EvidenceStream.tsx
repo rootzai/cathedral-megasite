@@ -20,7 +20,7 @@ export function Level3EvidenceStream() {
   }));
 
   return (
-    <div className="bg-[#050505] border border-gold/10 p-6 rounded-sm font-mono text-[10px] overflow-hidden relative">
+    <div className="bg-[#050505] border border-gold/10 p-6 rounded-sm font-mono text-xs overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-1 bg-gold/20 overflow-hidden">
         <motion.div 
           animate={{ x: ["-100%", "100%"] }}
@@ -43,7 +43,7 @@ export function Level3EvidenceStream() {
             </div>
             <div className="flex items-center gap-4">
               <span className="text-parchment font-bold text-center">{dp.value}</span>
-              <span className="px-2 py-0.5 bg-gold/5 border border-gold/20 text-gold text-[8px] rounded-full group-hover:bg-gold group-hover:text-black transition-all">
+              <span className="px-2 py-0.5 bg-gold/5 border border-gold/20 text-gold text-xs rounded-full group-hover:bg-gold group-hover:text-black transition-all">
                 {dp.status}
               </span>
             </div>

@@ -58,7 +58,7 @@ export default function TheRecord() {
                         <p className="text-zinc-300 uppercase tracking-widest text-xs font-bold">A Living Fact-Check Dashboard</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <button className="bg-zinc-900 text-white px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-red-700 transition-all border border-zinc-800 shadow-xl group">
+                        <button className="bg-zinc-900 text-white px-4 py-2 rounded-sm text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-red-700 transition-all border border-zinc-800 shadow-xl group">
                             <FileDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
                             Download Fact-Check (PDF)
                         </button>
@@ -105,10 +105,10 @@ export default function TheRecord() {
                 <table className="w-full text-left">
                     <thead className="bg-zinc-50 border-b border-zinc-200">
                         <tr>
-                            <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400">Claim / Finding</th>
-                            <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400 w-48 text-center">Evidentiary Weight</th>
-                            <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400 w-32 text-center">Disputed?</th>
-                            <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400 w-32 text-center">Reference</th>
+                            <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400">Claim / Finding</th>
+                            <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400 w-48 text-center">Evidentiary Weight</th>
+                            <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400 w-32 text-center">Disputed?</th>
+                            <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400 w-32 text-center">Reference</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-zinc-200">
@@ -116,7 +116,7 @@ export default function TheRecord() {
                             <tr key={idx} className="hover:bg-zinc-50/50 transition-colors">
                                 <td className="px-6 py-6 border-r border-zinc-100">
                                     <p className="text-zinc-900 font-medium leading-relaxed mb-2">{fact.claim}</p>
-                                    <div className="flex items-center gap-2 text-[10px] text-zinc-400 italic">
+                                    <div className="flex items-center gap-2 text-xs text-zinc-400 italic">
                                         <FileText size={12} />
                                         Source: {fact.evidence}
                                     </div>
@@ -136,7 +136,7 @@ export default function TheRecord() {
                                     </div>
                                 </td>
                                 <td className="px-6 py-6 text-center">
-                                    <button className="text-[10px] font-bold text-red-700 hover:text-red-900 uppercase tracking-widest transition-colors">
+                                    <button className="text-xs font-bold text-red-700 hover:text-red-900 uppercase tracking-widest transition-colors">
                                         View Exhibit
                                     </button>
                                 </td>

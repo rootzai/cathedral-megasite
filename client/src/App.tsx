@@ -19,6 +19,8 @@ function App() {
     location === "/" || 
     location === "/prologue" || 
     location === "/axis" || 
+    location === "/madman" || 
+    location === "/humpty" || 
     (location.startsWith("/ledger/") && location !== "/ledger");
   return (
     <ErrorBoundary>

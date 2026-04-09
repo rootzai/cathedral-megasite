@@ -72,7 +72,7 @@ export default function Layout({ children }: LayoutProps) {
                 >
                   <span className="truncate">{item.label}</span>
                   <span className={cn(
-                    "w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2",
+                    "w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2",
                     isActive ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground group-hover:bg-foreground group-hover:text-background"
                   )}>
                     {item.id}
@@ -85,11 +85,11 @@ export default function Layout({ children }: LayoutProps) {
 
         <div className="p-6 border-t border-border space-y-4">
           <div className="space-y-1">
-            <p className="font-mono text-[10px] text-muted-foreground uppercase">Confidential Report</p>
-            <p className="font-mono text-[10px] text-muted-foreground uppercase">Do Not Distribute</p>
+            <p className="font-mono text-xs text-muted-foreground uppercase">Confidential Report</p>
+            <p className="font-mono text-xs text-muted-foreground uppercase">Do Not Distribute</p>
           </div>
           <div className="pt-4 border-t border-border/50">
-            <p className="font-mono text-[10px] text-muted-foreground leading-relaxed italic opacity-70">
+            <p className="font-mono text-xs text-muted-foreground leading-relaxed italic opacity-70">
               "We are amateur sleuths who do our homework, but we have not seen any of the documents. We live in the age of AI, where everything is available to the sharpened brain."
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Layout({ children }: LayoutProps) {
       <header className="lg:hidden fixed top-0 w-full z-50 bg-background border-b border-border p-4 flex justify-between items-center">
         <div>
           <h1 className="font-heading text-lg text-foreground">THE BENJAMIN RULING</h1>
-          <p className="font-mono text-[10px] text-muted-foreground uppercase">CASE FILE: #2026-SHU</p>
+          <p className="font-mono text-xs text-muted-foreground uppercase">CASE FILE: #2026-SHU</p>
         </div>
         {/* Mobile menu trigger would go here */}
       </header>

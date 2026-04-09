@@ -123,7 +123,7 @@ export default function ForensicSiteMap() {
                                     {act.icon}
                                     <h2 className="font-mono text-xs text-zinc-400 uppercase tracking-[0.3em] font-bold">{act.act} // {act.title}</h2>
                                 </div>
-                                <span className="text-[10px] font-mono text-red-900 uppercase font-bold">{act.routes.length} Entries</span>
+                                <span className="text-xs font-mono text-red-900 uppercase font-bold">{act.routes.length} Entries</span>
                             </div>
 
                             <div className="space-y-6">
@@ -135,7 +135,7 @@ export default function ForensicSiteMap() {
                                                     {route.title}
                                                 </h3>
                                                 {route.tag && (
-                                                    <span className="text-[8px] font-mono bg-red-900/20 text-red-500 px-2 py-0.5 border border-red-900/30 uppercase font-bold tracking-widest">
+                                                    <span className="text-xs font-mono bg-red-900/20 text-red-500 px-2 py-0.5 border border-red-900/30 uppercase font-bold tracking-widest">
                                                         {route.tag}
                                                     </span>
                                                 )}
@@ -156,13 +156,13 @@ export default function ForensicSiteMap() {
                 <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-end gap-8">
                     <div className="max-w-md">
                         <h4 className="font-serif italic text-2xl text-zinc-300 mb-2">Architectural Notice</h4>
-                        <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest leading-loose">
+                        <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest leading-loose">
                             All dossiers referenced herein are derived from authenticated legal discovery, Vatican findings, and sworn testimonies. Unauthorized access to unsealed records is strictly monitored.
                         </p>
                     </div>
                     <div className="text-right">
                         <div className="text-white font-serif italic text-4xl mb-1">Sodom Hall</div>
-                        <div className="font-mono text-[8px] text-zinc-500 uppercase tracking-[0.6em]">Ecclesiastical Noir // v4.1</div>
+                        <div className="font-mono text-xs text-zinc-500 uppercase tracking-[0.6em]">Ecclesiastical Noir // v4.1</div>
                     </div>
                 </div>
             </div>

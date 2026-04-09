@@ -43,7 +43,7 @@ export default function HumptyCaseStudy() {
 
       <div className="egg-counter">
         <span className="egg-counter-label">Easter Eggs Found</span>
-        <div><span className="egg-count">{foundEggs.size}</span> <span style={{color: "rgba(245,237,216,0.3)", fontSize: "14px"}}>/ 13</span></div>
+        <div><span className="egg-count">{foundEggs.size}</span> <span style={{color: "rgba(245,237,216,0.5)", fontSize: "18px", fontWeight: "bold"}}> / 13</span></div>
       </div>
 
       <div className="book">
@@ -585,7 +585,7 @@ export default function HumptyCaseStudy() {
         {/* RETURN LINK */}
         <div className="mt-16 text-center">
             <Link href="/">
-                <a className="inline-flex items-center gap-3 text-[10px] font-courier text-zinc-500 uppercase tracking-[0.4em] hover:text-[#c0392b] transition-colors">
+                <a className="inline-flex items-center gap-3 text-xs font-courier text-zinc-500 uppercase tracking-[0.4em] hover:text-[#c0392b] transition-colors">
                     <ArrowLeft className="w-4 h-4" /> Exit Case Study
                 </a>
             </Link>

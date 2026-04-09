@@ -47,18 +47,18 @@ export const ConfidenceIndicator: React.FC<ConfidenceIndicatorProps> = ({ level,
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border transition-colors cursor-help ${config.bg} ${config.color} border-current ${className}`}>
+                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-colors cursor-help ${config.bg} ${config.color} border-current ${className}`}>
                         <Icon size={12} className="shrink-0" />
                         {config.label}
                     </span>
                 </TooltipTrigger>
                 <TooltipContent side="top" className="max-w-[200px] bg-zinc-900 text-white border-zinc-700 text-[11px] leading-relaxed p-3 shadow-xl">
-                    <p className="font-bold mb-1 uppercase tracking-widest text-[9px] opacity-70">{config.label}</p>
+                    <p className="font-bold mb-1 uppercase tracking-widest text-xs opacity-70">{config.label}</p>
                     <p className="mb-2">{config.description}</p>
                     {source && (
                         <div className="pt-2 border-t border-zinc-700">
                             <span className="opacity-60">Source: </span>
-                            <span className="font-mono text-[10px]">{source}</span>
+                            <span className="font-mono text-xs">{source}</span>
                         </div>
                     )}
                 </TooltipContent>

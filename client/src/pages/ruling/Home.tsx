@@ -46,7 +46,7 @@ export default function Home() {
 
         <div className="border-2 border-destructive/30 bg-destructive/5 p-8 my-12 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-destructive/10 -mr-12 -mt-12 rounded-full blur-2xl group-hover:bg-destructive/20 transition-all duration-700"></div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-destructive mb-4">February 2026 Escalation</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-destructive mb-4">February 2026 Escalation</p>
           <h2 className="font-heading text-3xl text-foreground mb-6">The Rabner Letter</h2>
           <div className="space-y-4 font-body text-lg leading-relaxed text-foreground/80">
             <p>
@@ -88,17 +88,17 @@ export default function Home() {
             </div>
             <div className="p-6 space-y-6">
               <div>
-                <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">Subject</p>
+                <p className="font-mono text-xs text-muted-foreground uppercase mb-1">Subject</p>
                 <p className="font-heading text-lg text-foreground">The Dirty Dozen</p>
               </div>
               <Separator className="opacity-20" />
               <div>
-                <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">Status</p>
+                <p className="font-mono text-xs text-muted-foreground uppercase mb-1">Status</p>
                 <p className="font-mono text-sm text-destructive font-bold uppercase">Active / Hidden</p>
               </div>
               <Separator className="opacity-20" />
               <div>
-                <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">Key Documents</p>
+                <p className="font-mono text-xs text-muted-foreground uppercase mb-1">Key Documents</p>
                 <ul className="space-y-2 mt-2">
                   <li className="font-body text-sm text-foreground/80 border-l border-primary pl-2">Latham Report (Aug 2019)</li>
                   <li className="font-body text-sm text-foreground/80 border-l border-primary pl-2">Gibbons Report (Aug 2019)</li>

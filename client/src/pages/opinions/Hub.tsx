@@ -76,7 +76,7 @@ export default function OpinionsHub() {
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
                                     <span className="w-8 h-px bg-white" />
-                                    <span className="font-mono text-[10px] uppercase tracking-widest">{col.title}</span>
+                                    <span className="font-mono text-xs uppercase tracking-widest">{col.title}</span>
                                 </div>
                                 <h2 className="text-4xl font-bold tracking-tight leading-none group-hover:text-red-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
                                     {col.essayTitle}
@@ -89,7 +89,7 @@ export default function OpinionsHub() {
                                         <div className="font-heading text-lg font-bold uppercase">{col.name}</div>
                                         <span className="text-muted-foreground font-serif">· {col.persona}</span>
                                     </div>
-                                    <div className="font-mono text-[10px] uppercase font-bold tracking-widest text-red-700">{col.topic}</div>
+                                    <div className="font-mono text-xs uppercase font-bold tracking-widest text-red-700">{col.topic}</div>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ export default function OpinionsHub() {
                 <p className="text-3xl font-serif italic text-center max-w-3xl leading-snug">
                     "The truth is not a list of facts; it is the shared experience of a people who refuse to look away."
                 </p>
-                <div className="mt-8 font-mono text-[10px] uppercase tracking-widest opacity-50">
+                <div className="mt-8 font-mono text-xs uppercase tracking-widest opacity-50">
                     End of Commentary · Cathedral Megasite
                 </div>
             </footer>

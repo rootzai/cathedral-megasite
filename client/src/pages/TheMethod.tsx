@@ -97,7 +97,7 @@ export default function TheMethod() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto space-y-20">
           <div className="text-center space-y-4">
-            <span className="text-[#3a8ef6] font-black text-[10px] uppercase tracking-[0.5em] font-courier">Forensic AI Analysis</span>
+            <span className="text-[#3a8ef6] font-black text-xs uppercase tracking-[0.5em] font-courier">Forensic AI Analysis</span>
             <h2 className="text-4xl font-black font-cinzel text-white uppercase tracking-widest">THE EIGHT FINGERPRINTS</h2>
             <div className="h-px w-24 bg-[#3a8ef6] mx-auto mt-6" />
           </div>
@@ -118,10 +118,10 @@ export default function TheMethod() {
                 </div>
                 
                 <div className="mb-6 space-y-2">
-                  <span className="block text-[10px] text-[#3a8ef6] font-courier uppercase tracking-widest leading-relaxed">
+                  <span className="block text-xs text-[#3a8ef6] font-courier uppercase tracking-widest leading-relaxed">
                     VUCETIC PARALLEL: <br/>{fp.parallel}
                   </span>
-                  <span className="block text-[10px] text-zinc-500 font-courier uppercase tracking-widest leading-relaxed">
+                  <span className="block text-xs text-zinc-500 font-courier uppercase tracking-widest leading-relaxed">
                     PRIMARY SOURCE: <br/>{fp.evidence}
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export default function TheMethod() {
                 {fp.id === "04" && (
                     <div className="mt-6 pt-6 border-t border-[#8b1a1a]/20">
                         <Link href="/easter">
-                            <a className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#8b1a1a] hover:text-white transition-colors cursor-pointer group/link">
+                            <a className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#8b1a1a] hover:text-white transition-colors cursor-pointer group/link">
                                 The Agnifilo Paradox as Easter egg <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
                             </a>
                         </Link>

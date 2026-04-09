@@ -7,11 +7,11 @@ import {
 import ShieldHub from "@/components/ShieldHub";
 
 const NAVIGATION_NODES = [
-    { title: "THE EVIDENCE", desc: "Six acts. Primary sources.", href: "/evidence", icon: Database, color: "text-[#8b1a1a]", border: "border-red-950", bg: "hover:bg-red-950/20" },
-    { title: "THE BREACH", desc: "Active litigation.", href: "/breach", icon: AlertCircle, color: "text-[#8b1a1a]", border: "border-red-900", bg: "hover:bg-red-900/20" },
-    { title: "THE LEDGER", desc: "The complicit board.", href: "/ledger", icon: Eye, color: "text-[#8b6914]", border: "border-[#8b6914]/30", bg: "hover:bg-[#8b6914]/10" },
-    { title: "THE METHOD", desc: "AI-driven discovery.", href: "/method", icon: Fingerprint, color: "text-[#1a3a5c]", border: "border-[#1a3a5c]/50", bg: "hover:bg-[#1a3a5c]/20" },
-    { title: "MADMAN ARCHIVE", desc: "Secretarial infrastructure.", href: "/ledger/madman", icon: Lock, color: "text-zinc-400", border: "border-zinc-800", bg: "hover:bg-zinc-900/50" }
+    { title: "THE EVIDENCE", desc: "SIX ACTS. PRIMARY SOURCES.", href: "/evidence", icon: Database, color: "text-red-500", border: "border-red-950", bg: "hover:bg-red-950/20" },
+    { title: "THE BREACH", desc: "ACTIVE LITIGATION.", href: "/breach", icon: AlertCircle, color: "text-red-600", border: "border-red-900", bg: "hover:bg-red-900/20" },
+    { title: "THE LEDGER", desc: "THE COMPLICIT BOARD.", href: "/ledger", icon: Eye, color: "text-amber-500", border: "border-amber-500/30", bg: "hover:bg-amber-500/10" },
+    { title: "THE METHOD", desc: "AI-DRIVEN DISCOVERY.", href: "/method", icon: Fingerprint, color: "text-blue-500", border: "border-blue-500/50", bg: "hover:bg-blue-500/20" },
+    { title: "MADMAN ARCHIVE", desc: "SECRETARIAL INFRASTRUCTURE.", href: "/madman", icon: Lock, color: "text-zinc-200", border: "border-zinc-800", bg: "hover:bg-zinc-900/50" }
 ];
 
 export default function RedesignedHome() {
@@ -65,7 +65,32 @@ export default function RedesignedHome() {
 
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/20 via-[#09090b] to-[#09090b] pointer-events-none z-0 opacity-60" />
             
-            <main className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8">
+            {/* TACTICAL COMMAND BAR */}
+            <nav className="fixed top-0 left-0 w-full z-[150] bg-black/60 backdrop-blur-2xl border-b border-white/5 py-4 px-8 flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                    <Fingerprint className="text-red-600 w-6 h-6" />
+                    <span className="font-mono text-sm font-black tracking-[0.4em] text-white">COMMAND CENTER // V10</span>
+                </div>
+                <div className="flex gap-12">
+                    {[
+                        { name: "ACT I: ORIGIN", href: "/evidence/origin" },
+                        { name: "ACT II: COVER-UP", href: "/expose/epstein-nexus" },
+                        { name: "ACT III: BREACH", href: "/breach" },
+                        { name: "ACT IV: SUCCESSION", href: "/ledger/lorenzo" }
+                    ].map(act => (
+                        <Link key={act.name} href={act.href} className="group relative">
+                            <span className="font-cinzel text-xl font-bold tracking-widest text-zinc-400 group-hover:text-white transition-colors uppercase">{act.name}</span>
+                            <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-red-600 group-hover:w-full transition-all duration-500" />
+                        </Link>
+                    ))}
+                </div>
+                <div className="flex items-center gap-3">
+                    <Lock className="text-amber-500 w-4 h-4" />
+                    <span className="font-mono text-[10px] text-amber-500 tracking-widest uppercase">Encryption Active</span>
+                </div>
+            </nav>
+
+            <main className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8 mt-12">
                 
                 {/* HERO BLOCK */}
                 <motion.div 
@@ -80,7 +105,7 @@ export default function RedesignedHome() {
                         THE HOUSE THAT <br />
                         <span className="text-[#8b1a1a] drop-shadow-[0_0_40px_rgba(139,26,26,0.5)] bg-clip-text text-transparent bg-gradient-to-b from-[#b32424] to-[#5a1111]">McCARRICK</span> BUILT
                     </h1>
-                    <p className="text-lg md:text-xl font-serif text-[#c8bdb0]/70 tracking-wide max-w-2xl mx-auto pt-6 mt-6 border-t border-white/5 uppercase">
+                    <p className="text-2xl md:text-3xl font-serif text-white tracking-wide max-w-2xl mx-auto pt-6 mt-6 border-t border-white/10 uppercase italic">
                         The Architecture of Immunity
                     </p>
                 </motion.div>
@@ -99,16 +124,16 @@ export default function RedesignedHome() {
                                 <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
                                     <ChevronRight className="w-5 h-5 text-red-500" />
                                 </span>
-                                <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Prologue</h3>
-                                <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">Mark Crawford. Age 13.</p>
+                                <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase drop-shadow">The Prologue</h3>
+                                <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest relative z-10">Mark Crawford. Age 13.</p>
                         </Link>
                         <Link href="/axis" className="group block border border-white/5 bg-black/40 backdrop-blur-xl p-6 hover:border-[#8b6914]/50 hover:bg-black/60 transition-all duration-500 shadow-2xl relative overflow-hidden rounded-sm">
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#8b6914]/0 to-[#8b6914]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 <span className="absolute top-0 right-0 p-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
                                     <ChevronRight className="w-5 h-5 text-[#8b6914]" />
                                 </span>
-                                <h3 className="font-cinzel text-xl text-white mb-2 font-bold tracking-wider uppercase drop-shadow">The Power Axis</h3>
-                                <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest relative z-10">From Bayonne to the Vatican</p>
+                                <h3 className="font-cinzel text-4xl text-white mb-4 font-bold tracking-wider uppercase drop-shadow">The Power Axis</h3>
+                                <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest relative z-10">From Bayonne to the Vatican</p>
                         </Link>
                     </div>
 
@@ -128,29 +153,29 @@ export default function RedesignedHome() {
                                         <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="font-cinzel font-black tracking-widest text-xs sm:text-sm text-white drop-shadow">{node.title}</h4>
-                                        <p className="font-mono text-[8px] sm:text-[9px] text-zinc-500 uppercase tracking-widest mt-1 group-hover:text-zinc-400 transition-colors">{node.desc}</p>
+                                        <h4 className="font-cinzel font-black tracking-widest text-3xl text-white drop-shadow">{node.title}</h4>
+                                        <p className="font-mono text-xl text-zinc-300 uppercase tracking-widest mt-2 group-hover:text-white transition-colors">{node.desc}</p>
                                     </div>
                             </Link>
                         ))}
                     </div>
                     
                     <div className="flex lg:hidden flex-col sm:flex-row w-full gap-3 mt-4 z-20">
-                        <Link href="/prologue" className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
-                               <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">The Prologue</h3>
+                        <Link href="/prologue" className="flex-1 border border-white/5 bg-black/40 p-6 rounded-sm text-center">
+                               <h3 className="font-cinzel text-2xl text-white font-bold tracking-wider uppercase">The Prologue</h3>
                         </Link>
-                         <Link href="/axis" className="flex-1 border border-white/5 bg-black/40 p-4 rounded-sm text-center">
-                               <h3 className="font-cinzel text-sm text-white font-bold tracking-wider uppercase">Power Axis</h3>
+                         <Link href="/axis" className="flex-1 border border-white/5 bg-black/40 p-6 rounded-sm text-center">
+                               <h3 className="font-cinzel text-2xl text-white font-bold tracking-wider uppercase">Power Axis</h3>
                         </Link>
                     </div>
 
                 </motion.div>
                 
                 {/* FOOTER BADGE */}
-                <div className="absolute bottom-6 flex items-center gap-4 text-[9px] font-black font-courier text-zinc-600 uppercase tracking-[0.4em] opacity-50 hover:opacity-100 transition-opacity">
-                    <span className="flex items-center gap-2"><Activity className="w-3 h-3 text-red-900" /> Authorized Record // SH-2026</span>
-                    <div className="w-1 h-1 bg-zinc-800 rounded-full hidden sm:block" />
-                    <span className="hidden sm:inline">Sodom Hall Forensic</span>
+                <div className="absolute bottom-6 flex items-center gap-6 text-xl font-black font-courier text-zinc-300 uppercase tracking-[0.3em] opacity-90 hover:opacity-100 transition-opacity">
+                    <span className="flex items-center gap-3"><Activity className="w-6 h-6 text-red-700" /> Authorized Record // SH-2026</span>
+                    <div className="w-1.5 h-1.5 bg-red-900 rounded-full hidden sm:block" />
+                    <span className="hidden sm:inline">Sodom Hall Forensic Archive</span>
                 </div>
             </main>
         </div>

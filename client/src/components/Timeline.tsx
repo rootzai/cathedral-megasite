@@ -79,7 +79,7 @@ export default function Timeline() {
                   <time className="font-mono text-xs text-primary font-bold uppercase tracking-widest">
                     {event.date}
                   </time>
-                  <span className={`font-mono text-[10px] uppercase px-2 py-1 border ${
+                  <span className={`font-mono text-xs uppercase px-2 py-1 border ${
                     event.type === "removal" ? "border-destructive text-destructive" : 
                     event.type === "promotion" ? "border-accent text-accent" : 
                     event.type === "legal" ? "border-primary text-primary" : "border-muted text-muted-foreground"

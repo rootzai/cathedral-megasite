@@ -83,7 +83,7 @@ export default function TriptychPortal({ onComplete }: { onComplete?: () => void
                         <img src="/assets/images/redemtoris_eye.png" className="w-full h-full object-cover scale-110 opacity-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700" />
                     </div>
 
-                    <span className="mt-8 text-[10px] sm:text-xs font-bold text-[#faf6ee] uppercase tracking-[0.5em] group-hover:text-white transition-colors duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] bg-black/40 px-4 py-1 backdrop-blur-sm">
+                    <span className="mt-8 text-xs sm:text-xs font-bold text-[#faf6ee] uppercase tracking-[0.5em] group-hover:text-white transition-colors duration-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] bg-black/40 px-4 py-1 backdrop-blur-sm">
                         Break the Seal
                     </span>
                 </button>

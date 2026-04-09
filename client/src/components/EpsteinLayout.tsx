@@ -58,7 +58,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
                     <h1 className="font-heading text-xl leading-none mb-2 text-center w-full" style={{ color: "#222" }}>
                         SPECIAL INVESTIGATION
                     </h1>
-                    <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "#666" }}>
+                    <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#666" }}>
                         Vol. III — Feb. 2026
                     </p>
                 </div>
@@ -80,7 +80,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
                                 >
                                     <span className="truncate">{item.label}</span>
                                     <span 
-                                         className="w-5 h-5 flex items-center justify-center text-[9px] font-bold transition-colors flex-shrink-0 ml-2"
+                                         className="w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2"
                                          style={{
                                              background: isActive ? "#8b1a1a" : "rgba(205, 200, 189, 0.5)",
                                              color: isActive ? "#fff" : "#666"
@@ -99,7 +99,7 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
             <header className="lg:hidden fixed top-0 w-full z-50 p-4 border-b flex justify-between items-center" style={{ background: "#ebe5d8", borderColor: "#cdc8bd" }}>
                 <div>
                     <h1 className="font-heading text-lg" style={{ color: "#222" }}>SPECIAL INVESTIGATION</h1>
-                    <p className="font-mono text-[10px] uppercase" style={{ color: "#666" }}>Vol. III — Feb. 2026</p>
+                    <p className="font-mono text-xs uppercase" style={{ color: "#666" }}>Vol. III — Feb. 2026</p>
                 </div>
             </header>
 

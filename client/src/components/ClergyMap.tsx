@@ -64,7 +64,7 @@ export default function ClergyMap() {
         </div>
         {selectedLocation && (
           <div className="p-4 bg-muted/5 border-t border-border">
-            <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-1">Selected Location</p>
+            <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-1">Selected Location</p>
             <p className="font-heading text-lg text-foreground">{selectedLocation.name}</p>
             <p className="font-body text-sm text-foreground/80">{selectedLocation.location}</p>
             <p className="font-mono text-xs text-destructive uppercase mt-1">{selectedLocation.status}</p>

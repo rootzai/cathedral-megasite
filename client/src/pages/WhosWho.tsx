@@ -83,7 +83,7 @@ export default function WhosWho() {
                                                 {actor.tags.includes('legal-wall') ? <Gavel className="text-zinc-600 group-hover:text-[#8b1a1a] transition-colors" /> : <User className="text-zinc-600 group-hover:text-[#8b1a1a] transition-colors" />}
                                             </div>
                                             {actor.tags.includes('sanctioned') && (
-                                                <span className="bg-[#8b1a1a]/20 text-[#8b1a1a] text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-sm border border-[#8b1a1a]/30">
+                                                <span className="bg-[#8b1a1a]/20 text-[#8b1a1a] text-xs font-black uppercase tracking-widest px-2 py-1 rounded-sm border border-[#8b1a1a]/30">
                                                     Sanctioned
                                                 </span>
                                             )}
@@ -91,12 +91,12 @@ export default function WhosWho() {
                                         <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-widest mb-2 group-hover:text-[#8b1a1a] transition-colors">
                                             {actor.name}
                                         </h3>
-                                        <p className="text-[#8b1a1a] font-mono text-[10px] uppercase tracking-[0.4em] mb-4">
+                                        <p className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] mb-4">
                                             {actor.role}
                                         </p>
                                         <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                                             {actor.tags.map(tag => (
-                                                <span key={tag} className="text-[9px] font-mono uppercase text-zinc-700 tracking-tighter">#{tag}</span>
+                                                <span key={tag} className="text-xs font-mono uppercase text-zinc-700 tracking-tighter">#{tag}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@ export default function WhosWho() {
                 </div>
 
                 <div className="mt-32 pt-16 border-t border-white/5 text-center">
-                    <p className="text-[10px] font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
+                    <p className="text-xs font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
                          ACT FILE // DRAMATIS PERSONAE // SH-2026
                     </p>
                 </div>

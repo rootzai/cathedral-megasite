@@ -107,9 +107,9 @@ export default function VisualTimeline() {
               >
                 <span className="font-mono text-sm font-bold text-primary">{event.year}</span>
                 <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{event.title}</h4>
-                {event.type === "surge" && <Badge variant="destructive" className="w-fit text-[10px] h-5">Surge</Badge>}
-                {event.type === "legislation" && <Badge variant="secondary" className="w-fit text-[10px] h-5">Legislation</Badge>}
-                {event.type === "settlement" && <Badge variant="outline" className="w-fit text-[10px] h-5 border-blue-500 text-blue-500">Settlement</Badge>}
+                {event.type === "surge" && <Badge variant="destructive" className="w-fit text-xs h-5">Surge</Badge>}
+                {event.type === "legislation" && <Badge variant="secondary" className="w-fit text-xs h-5">Legislation</Badge>}
+                {event.type === "settlement" && <Badge variant="outline" className="w-fit text-xs h-5 border-blue-500 text-blue-500">Settlement</Badge>}
               </div>
               
               <p className="text-sm text-muted-foreground max-w-2xl mb-2">

@@ -146,7 +146,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
                     {/* Boards this person sits on */}
                     <div className="flex flex-wrap gap-1.5 ml-5 mb-2">
                       {person.boards.map(b => (
-                        <span key={b} className="text-[10px] font-bold px-2 py-0.5 rounded-sm bg-zinc-700 text-zinc-100 border border-zinc-500/30 uppercase tracking-tighter">
+                        <span key={b} className="text-xs font-bold px-2 py-0.5 rounded-sm bg-zinc-700 text-zinc-100 border border-zinc-500/30 uppercase tracking-tighter">
                           {b}
                         </span>
                       ))}
@@ -164,7 +164,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
                                     badge === "nyre" ? "badge-nyre" :
                                       "bg-[oklch(0.3_0.05_60/20%)] text-[oklch(0.6_0.06_60)] border border-[oklch(0.4_0.05_60/40%)]";
                         return (
-                          <span key={badge} className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm text-[9px] font-label ${style}`}>
+                          <span key={badge} className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm text-xs font-label ${style}`}>
                             {badge === "latham" ? "Latham" : badge === "reilly" ? "Voted Reilly" : badge === "tobin" ? "Tobin" : badge === "christie" ? "Christie" : badge === "resigned" ? "Resigned" : badge === "clergy" ? "Clergy" : badge === "nyre" ? "Nyre Case" : "Emeritus"}
                           </span>
                         );

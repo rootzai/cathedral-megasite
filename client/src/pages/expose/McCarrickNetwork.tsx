@@ -144,7 +144,7 @@ export default function McCarrickNetwork() {
 
       {/* Where are they now */}
       <div className="finding-box bg-zinc-50 border border-zinc-300 p-12 rounded-sm mb-20 ring-1 ring-blood/20">
-        <div className="exhibit-label mb-6 bg-zinc-800 text-zinc-100 inline-block px-4 py-1 uppercase tracking-widest text-[10px] font-bold">
+        <div className="exhibit-label mb-6 bg-zinc-800 text-zinc-100 inline-block px-4 py-1 uppercase tracking-widest text-xs font-bold">
           The 12 Clergymen — "Where Are They Now?"
         </div>
         <div className="space-y-6 text-lg text-muted-foreground font-serif leading-relaxed">

@@ -64,7 +64,7 @@ export default function Ledger() {
       {/* QUICK NAV & SEARCH */}
       <div className="sticky top-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-center justify-between">
-            <nav className="flex gap-4 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto font-mono text-[10px] tracking-widest uppercase">
+            <nav className="flex gap-4 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto font-mono text-xs tracking-widest uppercase">
                 {categories.map(cat => (
                     <a key={cat.title} href={`#${cat.title.replace(/\s+/g, '-').toLowerCase()}`} className="text-zinc-600 hover:text-white transition-colors whitespace-nowrap">
                         {cat.title}
@@ -125,17 +125,17 @@ export default function Ledger() {
                       {/* Badge Area */}
                       <div className="flex gap-2 mb-6 flex-wrap">
                         {votedForReilly && (
-                          <div className="bg-[#8b1a1a]/10 border border-[#8b1a1a]/40 text-[#8b1a1a] text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                          <div className="bg-[#8b1a1a]/10 border border-[#8b1a1a]/40 text-[#8b1a1a] text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
                              [Voted Reilly]
                           </div>
                         )}
                         {heardLatham && (
-                          <div className="bg-blue-900/10 border border-blue-900/40 text-blue-500 text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                          <div className="bg-blue-900/10 border border-blue-900/40 text-blue-500 text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
                              [Heard Latham]
                           </div>
                         )}
                         {isResigned && (
-                          <div className="bg-zinc-800 border border-zinc-600 text-zinc-400 text-[8px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+                          <div className="bg-zinc-800 border border-zinc-600 text-zinc-400 text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
                              [Resigned]
                           </div>
                         )}
@@ -143,7 +143,7 @@ export default function Ledger() {
 
                       <div className="space-y-4">
                         <h3 className="text-2xl font-black font-cinzel text-white tracking-widest leading-none group-hover:text-[#8b1a1a] transition-colors">{regent.name}</h3>
-                        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest leading-loose">{regent.role}</p>
+                        <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest leading-loose">{regent.role}</p>
                         <hr className="border-white/5 w-12" />
                         <p className="text-zinc-600 font-serif italic text-sm leading-relaxed line-clamp-4">
                           {regent.note || "No public statement on record."}
@@ -151,7 +151,7 @@ export default function Ledger() {
                       </div>
 
                       <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span className="text-[10px] font-mono text-zinc-700 tracking-tighter uppercase">{regent.tenure}</span>
+                        <span className="text-xs font-mono text-zinc-700 tracking-tighter uppercase">{regent.tenure}</span>
                         <div className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
                       </div>
                     </motion.div>

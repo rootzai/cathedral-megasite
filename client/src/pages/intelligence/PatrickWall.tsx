@@ -59,7 +59,7 @@ export default function PatrickWall() {
           <div className="flex flex-col items-center text-center mb-16">
             <BookOpen className="w-8 h-8 text-red-700 mb-4" />
             <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-widest mb-6 italic">The Institutional Shield</h2>
-            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">Forensic Dossier // Asset-Intelligence-043</p>
+            <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em]">Forensic Dossier // Asset-Intelligence-043</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -100,7 +100,7 @@ export default function PatrickWall() {
                 Patrick Wall provides operational intelligence for plaintiff firms seeking to penetrate the institutional shield.
             </p>
             <Link href="/tips">
-                <a className="bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-[10px] shadow-[0_0_40px_rgba(139,26,26,0.5)]">
+                <a className="bg-red-900 hover:bg-red-700 text-white px-12 py-6 font-black uppercase tracking-[0.4em] text-xs shadow-[0_0_40px_rgba(139,26,26,0.5)]">
                     Contact The Intelligence Cell
                 </a>
             </Link>
@@ -108,7 +108,7 @@ export default function PatrickWall() {
       </section>
 
       <footer className="py-12 border-t border-white/5 text-center">
-        <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">The Cathedral Megasite // Insider Intelligence Hub</span>
+        <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">The Cathedral Megasite // Insider Intelligence Hub</span>
       </footer>
     </div>
   );

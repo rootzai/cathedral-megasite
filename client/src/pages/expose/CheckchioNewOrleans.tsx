@@ -72,7 +72,7 @@ export default function CheckchioNewOrleans() {
         <div className="relative h-48 flex items-center justify-center mb-12">
           <div className="flex flex-col items-center">
             <Landmark className="w-12 h-12 text-gold mb-2" />
-            <span className="font-mono text-[10px] uppercase text-gold">Seton Hall</span>
+            <span className="font-mono text-xs uppercase text-gold">Seton Hall</span>
             <span className="text-sm font-bold">Newark, NJ</span>
           </div>
           <div className="flex-1 h-px bg-dashed border-t border-dashed border-gold/30 mx-8 relative">
@@ -80,7 +80,7 @@ export default function CheckchioNewOrleans() {
           </div>
           <div className="flex flex-col items-center">
             <MapPin className="w-12 h-12 text-zinc-800 mb-2" />
-            <span className="font-mono text-[10px] uppercase text-zinc-800">The See</span>
+            <span className="font-mono text-xs uppercase text-zinc-800">The See</span>
             <span className="text-sm font-bold">New Orleans, LA</span>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function CheckchioNewOrleans() {
                 <span className="text-xs font-mono uppercase tracking-widest">Survivors</span>
                 <span className="text-xs font-bold">~600 Claims</span>
               </div>
-              <p className="text-[10px] italic font-serif text-muted-foreground pt-2">
+              <p className="text-xs italic font-serif text-muted-foreground pt-2">
                 Checchio stated he saw 'no reason' to investigate the prior administration's concealment.
               </p>
             </div>

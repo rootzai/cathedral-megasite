@@ -69,7 +69,7 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
                 <span className="font-heading text-sm text-parchment group-hover/person:text-gold transition-colors">{person.name}</span>
                 {person.badges.includes('clergy') && <ShieldCheck className="w-3 h-3 text-gold/40" />}
               </div>
-              <p className="text-[10px] font-mono uppercase text-muted-foreground mb-2">{person.role}</p>
+              <p className="text-xs font-mono uppercase text-muted-foreground mb-2">{person.role}</p>
               {person.note && (
                 <p className="text-[11px] font-body italic text-muted-foreground leading-tight border-t border-white/5 pt-2 mt-2">
                   {person.note}
@@ -78,7 +78,7 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
             </motion.div>
           ))}
           {people.length > 12 && (
-            <div className="col-span-full text-center py-2 opacity-30 text-[10px] font-mono italic">
+            <div className="col-span-full text-center py-2 opacity-30 text-xs font-mono italic">
               + {people.length - 12} additional members identified in the archive
             </div>
           )}

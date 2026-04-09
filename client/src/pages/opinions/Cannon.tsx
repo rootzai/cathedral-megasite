@@ -99,7 +99,7 @@ export default function CannonEssay() {
 
                 <div className="pt-20 text-center">
                     <BookOpen className="w-12 h-12 text-black/20 mx-auto mb-4" />
-                    <div className="font-mono text-[10px] uppercase tracking-widest opacity-50">Sterling "Skip" Fairchild is a two-time Pulitzer-winning biographer and historical consultant.</div>
+                    <div className="font-mono text-xs uppercase tracking-widest opacity-50">Sterling "Skip" Fairchild is a two-time Pulitzer-winning biographer and historical consultant.</div>
                 </div>
             </article>
 
