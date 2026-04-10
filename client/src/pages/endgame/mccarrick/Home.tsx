@@ -3,7 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ImageModal from "@/components/ImageModal";
-import { JourneyNav } from "@/components/JourneyNav";
+import SectionNav from "@/components/SectionNav";
 
 export default function Home() {
   return (<div className="space-y-8">
@@ -96,18 +96,6 @@ export default function Home() {
 
 
 
-    <div className="flex justify-between mt-12 pt-8 border-t border-border">
-      <Link href="/ledger" asChild>
-        <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
-          <span className="mr-2">←</span> Back to Ledger
-        </Button>
-      </Link>
-      <Link href="/ledger/mccarrick/background" asChild>
-        <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-          Proceed to Section 02 <span className="ml-2">→</span>
-        </Button>
-      </Link>
-    </div>
-    <JourneyNav />
+    <SectionNav currentHref="/ledger/mccarrick" />
   </div>);
 }

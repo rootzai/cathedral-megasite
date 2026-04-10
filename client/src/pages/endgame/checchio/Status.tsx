@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { CheckchioSectionNav } from "@/components/SectionNav";
 
 export default function Status() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -77,17 +78,6 @@ export default function Status() {
       </div>
     </div>
 
-    <div className="flex justify-between mt-12 pt-8 border-t border-border">
-      <Link href="/ledger/checchio/controversies" asChild>
-        <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
-          <span className="mr-2">←</span> Previous
-        </Button>
-      </Link>
-      <Link href="/ledger" asChild>
-        <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-          Return to Ledger <span className="ml-2">↺</span>
-        </Button>
-      </Link>
-    </div>
+    <CheckchioSectionNav currentHref="/ledger/checchio/status" />
   </div>);
 }

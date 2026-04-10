@@ -1,4 +1,4 @@
-import { JourneyNav } from "@/components/JourneyNav";
+import { LorenzoSectionNav } from "@/components/SectionNav";
 import { AlertTriangle, Gavel, Scale, ShieldAlert, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -161,15 +161,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="flex justify-end pt-12 border-t border-border">
-                <Link href="/ledger/lorenzo/expulsion" asChild>
-                    <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-                        Proceed to Section 02 <span className="ml-2">→</span>
-                    </Button>
-                </Link>
-            </div>
-
-            <JourneyNav />
+            <LorenzoSectionNav currentHref="/ledger/lorenzo" />
         </div>
     );
 }

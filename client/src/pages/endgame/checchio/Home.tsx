@@ -3,6 +3,7 @@ import ImageModal from "@/components/ImageModal";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { CheckchioSectionNav } from "@/components/SectionNav";
 
 export default function Home() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -76,12 +77,6 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="flex justify-end mt-12 pt-8 border-t border-border">
-      <Link href="/ledger/checchio/formation" asChild>
-        <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-          Proceed to Section 02 <span className="ml-2">→</span>
-        </Button>
-      </Link>
-    </div>
+    <CheckchioSectionNav currentHref="/ledger/checchio" />
   </div>);
 }

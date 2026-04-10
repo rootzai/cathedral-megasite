@@ -1,5 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
-import { JourneyNav } from "@/components/JourneyNav";
+import { LedgerNav } from "@/components/SectionNav";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangle, Eye, Scale } from "lucide-react";
@@ -138,6 +138,6 @@ export default function Reilly() {
                 </div>
             </div>
         </section>
-        <JourneyNav />
+        <LedgerNav />
     </div>);
 }

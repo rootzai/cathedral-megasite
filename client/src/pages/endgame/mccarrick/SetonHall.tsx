@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import SectionNav from "@/components/SectionNav";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
@@ -14,31 +15,15 @@ export default function SetonHall() {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-        <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-          <img
-            src="/assets/Seminaryconfidential.png"
-            alt="Satirical movie poster depicting the seminary environment described in clergy abuse testimony"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 p-8">
-            <h2 className="text-4xl font-cinzel font-black uppercase text-white text-shadow-blood mb-2 tracking-tighter">SEMINARY CONFIDENTIAL</h2>
-            <p className="text-lg text-red-500 font-black italic bg-black/60 px-2 py-1 inline-block">"WHERE EVERY CONFESSION IS OFF THE RECORD."</p>
-          </div>
+        <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)] bg-gradient-to-b from-zinc-900 to-black flex flex-col justify-end p-8">
           <div className="absolute top-4 right-4 bg-red-900 text-white font-mono text-xs px-3 py-1 font-black uppercase tracking-widest border border-white">INVESTIGATIVE ART</div>
+          <h2 className="text-4xl font-cinzel font-black uppercase text-white text-shadow-blood mb-2 tracking-tighter">SEMINARY CONFIDENTIAL</h2>
+          <p className="text-lg text-red-500 font-black italic">"WHERE EVERY CONFESSION IS OFF THE RECORD."</p>
         </div>
-        <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)]">
-          <img
-            src="/assets/facultyclub.png"
-            alt="Satirical graphic depicting the institutional culture of complicity at Seton Hall"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 p-8">
-            <h2 className="text-4xl font-cinzel font-black uppercase text-white text-shadow-blood mb-2 tracking-tighter">THE FACULTY CLUB</h2>
-            <p className="text-lg text-red-500 font-black italic bg-black/60 px-2 py-1 inline-block">"MEMBERSHIP HAS ITS PRIVILEGES."</p>
-          </div>
+        <div className="relative h-96 w-full overflow-hidden border-4 border-red-900 group shadow-[0_0_50px_rgba(139,26,26,0.4)] bg-gradient-to-b from-zinc-900 to-black flex flex-col justify-end p-8">
           <div className="absolute top-4 right-4 bg-red-900 text-white font-mono text-xs px-3 py-1 font-black uppercase tracking-widest border border-white">FORENSIC SATIRE</div>
+          <h2 className="text-4xl font-cinzel font-black uppercase text-white text-shadow-blood mb-2 tracking-tighter">THE FACULTY CLUB</h2>
+          <p className="text-lg text-red-500 font-black italic">"MEMBERSHIP HAS ITS PRIVILEGES."</p>
         </div>
       </div>
 
@@ -134,18 +119,7 @@ export default function SetonHall() {
         <GovernanceHierarchy />
       </section>
 
-      <div className="flex justify-between mt-12 pt-8 border-t border-border">
-        <Link href="/ledger/mccarrick/survivors" asChild>
-          <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
-            <span className="mr-2">←</span> Previous
-          </Button>
-        </Link>
-        <Link href="/ledger/mccarrick/mechanisms" asChild>
-          <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-            Proceed to Section 08 <span className="ml-2">→</span>
-          </Button>
-        </Link>
-      </div>
+      <SectionNav currentHref="/ledger/mccarrick/seton-hall" />
     </div>
   );
 }

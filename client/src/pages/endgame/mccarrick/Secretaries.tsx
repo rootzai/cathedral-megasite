@@ -1,5 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
-import { JourneyNav } from "@/components/JourneyNav";
+import SectionNav from "@/components/SectionNav";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Users, ShieldAlert, FileText, Globe, Building } from "lucide-react";
 
@@ -108,12 +108,12 @@ export default function Secretaries() {
           <Users className="w-8 h-8 text-destructive" />
           The Logistical Orchestration of the "Nephew" Network
         </h2>
-        
+
         <div className="prose prose-lg max-w-none text-foreground/80 space-y-6 font-body">
           <p>
             During his tenure as Archbishop of Newark from 1986 to 2000, McCarrick utilized his immense institutional power to groom young men, primarily seminarians and junior clergy, whom he affectionately dubbed his "nephews," insisting they call him "Uncle Ted". As an only child, McCarrick possessed no actual nephews, rendering the moniker a transparently manipulative construct utilized to groom victims and their families.
           </p>
-          
+
           <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-6 my-8">
             <blockquote className="italic text-xl text-foreground/90 border-l-4 border-destructive pl-4">
               "There was always one of the nephews at these dinners. And the dinners were always five times a month. If someone cancelled, you had to find a replacement."
@@ -267,7 +267,7 @@ export default function Secretaries() {
         </p>
       </section>
 
-      <JourneyNav />
+      <SectionNav currentHref="/ledger/mccarrick/secretaries" />
     </div>
   );
 }

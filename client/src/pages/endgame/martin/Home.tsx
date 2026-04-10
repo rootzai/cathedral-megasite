@@ -1,5 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
-import { JourneyNav } from "@/components/JourneyNav";
+import { MartinSectionNav } from "@/components/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangle, Eye, Siren } from "lucide-react";
@@ -191,13 +191,6 @@ export default function Home() {
             </div>
         </section>
 
-        <div className="flex justify-end mt-12 pt-8 border-t border-border">
-            <Link href="/ledger/martin/crimes" asChild>
-                <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-                    Proceed to Section 02 <span className="ml-2">→</span>
-                </Button>
-            </Link>
-        </div>
-        <JourneyNav />
+        <MartinSectionNav currentHref="/ledger/martin" />
     </div>);
 }

@@ -61,7 +61,13 @@ const MartinHome = React.lazy(() => import("../pages/endgame/martin/Home"));
 const MartinLaunder = React.lazy(() => import("../pages/endgame/martin/TheLaunder"));
 
 // Reilly Pages
-const ReillyEndgame = React.lazy(() => import("../pages/endgame/Reilly"));
+const ReillyHome = React.lazy(() => import("../pages/endgame/reilly/Home"));
+const ReillySecretary = React.lazy(() => import("../pages/endgame/reilly/Secretary"));
+const ReillyLatham = React.lazy(() => import("../pages/endgame/reilly/Latham"));
+const ReillyPresidency = React.lazy(() => import("../pages/endgame/reilly/Presidency"));
+const ReillyMemes = React.lazy(() => import("../pages/endgame/reilly/Memes"));
+const ReillyReckoning = React.lazy(() => import("../pages/endgame/reilly/Reckoning"));
+const ReillyStatus = React.lazy(() => import("../pages/endgame/reilly/Status"));
 
 function PageLayout({ component: Component, theme = "theme-cathedral" }: { component: React.ComponentType; theme?: string }) {
     return (
@@ -84,7 +90,13 @@ export const EndgameRoutes = [
     <Route key="lorenzo-rehab" path={"/ledger/lorenzo/rehabilitation"}><EndgamePageLayout component={LorenzoRehabilitation} /></Route>,
     <Route key="lorenzo-elevation" path={"/ledger/lorenzo/elevation"}><EndgamePageLayout component={LorenzoElevation} /></Route>,
 
-    <Route key="reilly" path={"/ledger/reilly"}><EndgamePageLayout component={ReillyEndgame} /></Route>,
+    <Route key="reilly" path={"/ledger/reilly"}><EndgamePageLayout component={ReillyHome} /></Route>,
+    <Route key="reilly-secretary" path={"/ledger/reilly/secretary"}><EndgamePageLayout component={ReillySecretary} /></Route>,
+    <Route key="reilly-latham" path={"/ledger/reilly/latham"}><EndgamePageLayout component={ReillyLatham} /></Route>,
+    <Route key="reilly-presidency" path={"/ledger/reilly/presidency"}><EndgamePageLayout component={ReillyPresidency} /></Route>,
+    <Route key="reilly-memes" path={"/ledger/reilly/memes"}><EndgamePageLayout component={ReillyMemes} /></Route>,
+    <Route key="reilly-reckoning" path={"/ledger/reilly/reckoning"}><EndgamePageLayout component={ReillyReckoning} /></Route>,
+    <Route key="reilly-status" path={"/ledger/reilly/status"}><EndgamePageLayout component={ReillyStatus} /></Route>,
 
 
 

@@ -1,5 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
-import { JourneyNav } from "@/components/JourneyNav";
+import { LedgerNav } from "@/components/SectionNav";
 import { ExternalLink, AlertTriangle } from "lucide-react";
 
 export default function MadmanDossier() {
@@ -95,7 +95,7 @@ export default function MadmanDossier() {
         </div>
       </section>
 
-      <JourneyNav />
+      <LedgerNav />
     </div>
   );
 }

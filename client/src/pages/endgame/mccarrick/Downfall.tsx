@@ -2,6 +2,7 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import SectionNav from "@/components/SectionNav";
 
 export default function Downfall() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -69,17 +70,6 @@ export default function Downfall() {
       </div>
     </div>
 
-    <div className="flex justify-between mt-12 pt-8 border-t border-border">
-      <Link href="/origin/network" asChild>
-        <Button variant="outline" className="font-mono uppercase tracking-widest rounded-none border-2">
-          <span className="mr-2">←</span> Previous: The Labyrinth
-        </Button>
-      </Link>
-      <Link href="/coverup" asChild>
-        <Button size="lg" className="font-mono uppercase tracking-widest rounded-none border-2 border-foreground hover:bg-foreground hover:text-background transition-all">
-          Proceed to Act II: The Cover-Up <span className="ml-2">→</span>
-        </Button>
-      </Link>
-    </div>
+    <SectionNav currentHref="/ledger/mccarrick/downfall" />
   </div>);
 }
