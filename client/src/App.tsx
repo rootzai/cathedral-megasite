@@ -27,7 +27,7 @@ function App() {
           <Toaster />
           <ScrollManager />
           <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
-            {!isFullScreenLayout && <MegaNavigation />}
+            <MegaNavigation />
             {!isFullScreenLayout && <LiveStatusBar />}
             <div className="flex-grow">
               <CoreRouter />

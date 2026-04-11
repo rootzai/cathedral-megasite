@@ -23,6 +23,7 @@ const ROUTES = [
   { path: "/breach/courtroom", label: "The Courtroom (Timeline)" },
   { path: "/breach/rabner", label: "The Rabner Dossier" },
   { path: "/breach/forensics", label: "Forensic Overview" },
+  { path: "/vault", label: "The Vault: Legal Findings" },
 
   // THE SUCCESSION
   { path: "/succession", label: "The Succession" },
