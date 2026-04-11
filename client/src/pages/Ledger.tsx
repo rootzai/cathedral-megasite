@@ -8,7 +8,7 @@ import { SEO } from "@/components/SEO";
 
 type BoardTab = "regents" | "trustees" | "visitors" | "legal";
 
-const BOARD_TABS: { id: BoardTab; label: string; icon: React.ElementType; count: number }[] = [
+const BOARD_TABS: { id: BoardTab; label: string; icon: any; count: number }[] = [
   { id: "regents", label: "Board of Regents", icon: Shield, count: 0 },
   { id: "trustees", label: "Board of Trustees", icon: Users, count: 0 },
   { id: "visitors", label: "Board of Visitors", icon: Scale, count: 0 },
