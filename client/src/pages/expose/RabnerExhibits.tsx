@@ -1,6 +1,6 @@
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — The Rabner Dossier
-   Bright parchment theme — investigative broadsheet
+   Dark theme — investigative broadsheet
    ============================================================ */
 import { FileText } from "lucide-react";
 export default function RabnerExhibits() {
@@ -72,7 +72,7 @@ export default function RabnerExhibits() {
             key={cat}
             className="text-sm font-bold px-4 py-1.5"
             style={{
-              background: "var(--parchment-panel)",
+              background: "var(--card)",
               border: `2px solid ${color}`,
               color: color,
               fontFamily: "'Playfair Display', serif",
@@ -92,7 +92,7 @@ export default function RabnerExhibits() {
             key={ex.num}
             className="flex gap-4 p-4"
             style={{
-              background: "var(--parchment-panel)",
+              background: "var(--card)",
               border: "1px solid var(--stone-border)",
               borderLeft: `4px solid ${categoryColors[ex.category]}`,
             }}

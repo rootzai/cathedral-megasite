@@ -9,25 +9,25 @@
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
 
-    /* Investigative Broadsheet Palette — BRIGHT & READABLE */
-    --ink: #0f0a04;
-    --ink-mid: #1e1508;
-    --ink-light: #3a2e18;
-    --gold: #7a5c0a;
-    --gold-bright: #9a7010;
-    --blood: #7a1212;
-    --blood-bright: #b91c1c;
-    --parchment: #faf6ee;
-    --parchment-panel: #f2ead6;
-    --parchment-mid: #ede3cc;
-    --parchment-dark: #dfd2b0;
-    --stone-border: #d4c89a;
-    --sidebar-bg: #1a1206;
-    --sidebar-text: #ecddb8;
-    --sidebar-gold: #c9a84c;
-    --sidebar-dim: #8a6f2e;
-    --sidebar-hover: #2a1e0c;
-    --sidebar-active: #3d3020;
+    /* Architecture of Coercion Palette — HIGH CONTRAST DARK MODE */
+    --ink: #ffffff;
+    --ink-mid: #a1a1aa;
+    --ink-light: #71717a;
+    --gold: #fde047;
+    --gold-bright: #fef08a;
+    --blood: #ef4444;
+    --blood-bright: #f87171;
+    --parchment: #09090b;
+    --parchment-panel: #18181b;
+    --parchment-mid: #27272a;
+    --parchment-dark: #3f3f46;
+    --stone-border: #27272a;
+    --sidebar-bg: #09090b;
+    --sidebar-text: #a1a1aa;
+    --sidebar-gold: #fde047;
+    --sidebar-dim: #ca8a04;
+    --sidebar-hover: #18181b;
+    --sidebar-active: #27272a;
 
     --radius: 0.2rem;
 
@@ -62,7 +62,7 @@
 
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
 }
 
 .expose-theme * {
@@ -84,7 +84,7 @@
 /* ── Evidence callout (gold left border) ── */
 .expose-theme .evidence-box {
     border-left: 4px solid var(--gold);
-    background: #f5efd8;
+    background: var(--parchment-panel);
     padding: 1rem 1.25rem;
     margin: 1.5rem 0;
     border: 1px solid var(--parchment-dark);
@@ -94,10 +94,10 @@
 /* ── Critical finding box (blood red left border) ── */
 .expose-theme .finding-box {
     border-left: 4px solid var(--blood-bright);
-    background: #fdf0f0;
+    background: rgba(239, 68, 68, 0.05); /* red-500 fading */
     padding: 1rem 1.25rem;
     margin: 1.5rem 0;
-    border: 1px solid #e8c0c0;
+    border: 1px solid rgba(239, 68, 68, 0.2);
     border-left: 4px solid var(--blood-bright);
 }
 
@@ -130,7 +130,7 @@
 }
 
 .expose-theme .forensic-table tr:nth-child(even) td {
-    background: #f5eed8;
+    background: var(--parchment-panel);
 }
 
 .expose-theme .forensic-table tr:last-child td {
@@ -138,7 +138,7 @@
 }
 
 .expose-theme .forensic-table tr:hover td {
-    background: #ede3c4;
+    background: var(--parchment-mid);
 }
 
 /* ── Page fade-in ── */
@@ -200,14 +200,14 @@
     font-style: italic;
     font-size: 1.1rem;
     color: var(--blood);
-    background: #fdf4f4;
-    border: 1px solid #e8c0c0;
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
     border-left: 4px solid var(--blood);
 }
 
 /* ── Person card ── */
 .expose-theme .person-card {
-    background: #f5eed8;
+    background: var(--parchment-panel);
     border: 1px solid var(--stone-border);
     border-top: 3px solid var(--gold);
     padding: 1rem 1.1rem;

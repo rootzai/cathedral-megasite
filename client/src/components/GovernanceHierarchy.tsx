@@ -50,7 +50,7 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
           </div>
           <div>
             <h3 className="font-heading text-lg md:text-xl text-gold uppercase tracking-[0.2em]">{title}</h3>
-            <p className="font-label text-xs text-parchment/40 uppercase tracking-[0.1em]">{subtitle}</p>
+            <p className="font-label text-xs text-muted-foreground/40 uppercase tracking-[0.1em]">{subtitle}</p>
           </div>
         </div>
         <motion.div
@@ -76,7 +76,7 @@ function HierarchyLevel({ level, title, subtitle, icon, people, isExpanded, onTo
               className="p-4 bg-muted/5 border border-white/5 hover:border-gold/20 transition-colors group/person"
             >
               <div className="flex justify-between items-start mb-2">
-                <span className="font-heading text-sm text-parchment group-hover/person:text-gold transition-colors">{person.name}</span>
+                <span className="font-heading text-sm text-foreground group-hover/person:text-gold transition-colors">{person.name}</span>
                 {person.badges.includes('clergy') && <ShieldCheck className="w-3 h-3 text-gold/40" />}
               </div>
               <p className="text-xs font-mono uppercase text-muted-foreground mb-2">{person.role}</p>
@@ -158,7 +158,7 @@ export default function GovernanceHierarchy() {
         <h2 className="font-heading text-3xl md:text-4xl text-gold uppercase tracking-[0.25em] mb-4">
           The Vertical Descent
         </h2>
-        <p className="font-body text-sm italic text-parchment/60">
+        <p className="font-body text-sm italic text-muted-foreground">
           Mapping the five levels of institutional power and collective silence.
         </p>
       </div>

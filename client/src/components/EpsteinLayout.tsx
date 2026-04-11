@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
-import "../pages/epstein/epstein.css";
 import { SmartImage } from "@/components/SmartImage";
-
 
 export default function EpsteinLayout({ children }: { children: React.ReactNode }) {
     const [activeSection, setActiveSection] = useState('front-page');
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = document.querySelectorAll('section[id], div[id="front-page"]');
-            let current = 'front-page';
-            sections.forEach((section) => {
-                const sectionTop = (section as HTMLElement).offsetTop - 160;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id') || 'front-page';
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
                 }
             });
-            setActiveSection(current);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        }, { rootMargin: '-20% 0px -80% 0px' });
+
+        const sections = document.querySelectorAll('section[id], div[id="front-page"]');
+        sections.forEach(s => observer.observe(s));
+        return () => observer.disconnect();
     }, []);
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -46,19 +42,16 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
     ];
 
     return (
-        <div className="epstein-theme flex min-h-screen" style={{ background: "var(--paper, #f4f0e8)" }}>
-            <aside
-                className="w-64 sticky top-0 h-screen border-r flex flex-col z-40 overflow-y-auto hidden lg:flex"
-                style={{ background: "#ebe5d8", borderColor: "#cdc8bd" }}
-            >
-                <div className="p-4 border-b flex flex-col items-center" style={{ borderColor: "#cdc8bd" }}>
+        <div className="flex min-h-screen bg-zinc-900 text-foreground">
+            <aside className="w-64 sticky top-0 h-screen border-r border-border bg-zinc-950 flex flex-col z-40 overflow-y-auto hidden lg:flex">
+                <div className="p-4 border-b border-border flex flex-col items-center">
                     <a href="/" className="mb-4 block hover:opacity-80 transition-opacity">
-                        <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/ohgmPACCpypWjdfQ.png" alt="SodomHall.com" className="w-16 h-auto object-contain" />
+                        <SmartImage src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030244666/ohgmPACCpypWjdfQ.png" alt="SodomHall.com" className="w-16 h-auto object-contain grayscale invert opacity-80" />
                     </a>
-                    <h1 className="font-heading text-xl leading-none mb-2 text-center w-full" style={{ color: "#222" }}>
+                    <h1 className="font-heading text-xl leading-none mb-2 text-center w-full text-foreground">
                         SPECIAL INVESTIGATION
                     </h1>
-                    <p className="font-mono text-xs uppercase tracking-widest" style={{ color: "#666" }}>
+                    <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                         Vol. III — Feb. 2026
                     </p>
                 </div>
@@ -67,25 +60,10 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
                     {navItems.map((item) => {
                         const isActive = activeSection === item.id;
                         return (
-                            <a key={item.id} href={`#${item.id}`} onClick={(e) => handleNavClick(e, `#${item.id}`)} className="block">
-                                <div
-                                    className="font-mono text-xs uppercase tracking-wider p-3 transition-all duration-300 cursor-pointer flex justify-between items-center group"
-                                    style={{
-                                        border: isActive ? "1px solid #8b1a1a" : "1px solid #cdc8bd",
-                                        background: isActive ? "rgba(139, 26, 26, 0.05)" : "transparent",
-                                        color: isActive ? "#8b1a1a" : "#444"
-                                    }}
-                                    onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.borderColor = "#999"; e.currentTarget.style.color = "#111"; } }}
-                                    onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.borderColor = "#cdc8bd"; e.currentTarget.style.color = "#444"; } }}
-                                >
+                            <a key={item.id} href={`#${item.id}`} onClick={(e) => handleNavClick(e, `#${item.id}`)} className="block group">
+                                <div className={`font-mono text-xs uppercase tracking-wider p-3 transition-all duration-300 cursor-pointer flex justify-between items-center border ${isActive ? 'border-destructive bg-destructive/10 text-destructive' : 'border-border text-muted-foreground group-hover:border-zinc-500 group-hover:text-zinc-300'}`}>
                                     <span className="truncate">{item.label}</span>
-                                    <span 
-                                         className="w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2"
-                                         style={{
-                                             background: isActive ? "#8b1a1a" : "rgba(205, 200, 189, 0.5)",
-                                             color: isActive ? "#fff" : "#666"
-                                         }}
-                                    >
+                                    <span className={`w-5 h-5 flex items-center justify-center text-xs font-bold transition-colors flex-shrink-0 ml-2 ${isActive ? 'bg-destructive text-zinc-50' : 'bg-zinc-800 text-zinc-500'}`}>
                                         {item.num}
                                     </span>
                                 </div>
@@ -96,14 +74,14 @@ export default function EpsteinLayout({ children }: { children: React.ReactNode 
             </aside>
 
             {/* Mobile Header */}
-            <header className="lg:hidden fixed top-0 w-full z-50 p-4 border-b flex justify-between items-center" style={{ background: "#ebe5d8", borderColor: "#cdc8bd" }}>
+            <header className="lg:hidden fixed top-0 w-full z-50 p-4 border-b border-border bg-zinc-950 flex justify-between items-center">
                 <div>
-                    <h1 className="font-heading text-lg" style={{ color: "#222" }}>SPECIAL INVESTIGATION</h1>
-                    <p className="font-mono text-xs uppercase" style={{ color: "#666" }}>Vol. III — Feb. 2026</p>
+                    <h1 className="font-heading text-lg text-foreground">SPECIAL INVESTIGATION</h1>
+                    <p className="font-mono text-xs uppercase text-muted-foreground">Vol. III — Feb. 2026</p>
                 </div>
             </header>
 
-            <main className="flex-1 w-full overflow-hidden min-h-screen relative" style={{ background: "transparent" }}>
+            <main className="flex-1 w-full overflow-hidden min-h-screen relative">
                 <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
                     {children}
                 </div>

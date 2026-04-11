@@ -1,7 +1,7 @@
 /* ============================================================
    THE PRECEDENT — Institutional Parallels
    Penn State / Michigan State / Seton Hall — Side by Side
-   Parchment theme — investigative broadsheet
+   Dark theme — investigative broadsheet
    ============================================================ */
 import { ArrowLeft, Scale, AlertTriangle, CheckCircle, X, Minus, FileDown } from "lucide-react";
 import { Link } from "wouter";

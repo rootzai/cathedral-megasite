@@ -225,7 +225,7 @@ export default function LegalTrumvirate() {
       </div>
 
       {/* Forensic Findings Box */}
-      <div className="evidence-box bg-ink text-parchment p-12 rounded-sm shadow-2xl mt-20 border-t-4 border-zinc-300">
+      <div className="evidence-box bg-zinc-950 text-foreground p-12 rounded-sm shadow-2xl mt-20 border-t-4 border-zinc-800">
         <h3 className="section-heading text-zinc-400 mb-8 uppercase tracking-widest text-sm">Conclusion of Audit · The Closed Loop</h3>
         <p className="text-xl leading-relaxed italic mb-8 font-serif">
           "The Result is not an error in the system; it is the system's intended output."

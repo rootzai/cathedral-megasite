@@ -71,8 +71,8 @@
   /* Bright red for alerts */
   --gold: #FCD34D;
   /* Bright gold */
-  --parchment: #FEF3C7;
-  /* Bright parchment */
+  --parchment: #09090b;
+  /* Reassigned to zinc-950 */
 }
 
 .dark {
@@ -213,8 +213,8 @@ html {
   /* Bright gold */
   --gold-dim: #FCD34D80;
   /* Dimmed but visible */
-  --parchment: #FEF3C7;
-  /* Bright parchment */
+  --parchment: #09090b;
+  /* Reassigned to zinc-950 */
 }
 
 .theme-cathedral {
@@ -478,7 +478,7 @@ html {
   }
 
   .text-parchment {
-    color: #faf6ee;
+    color: var(--foreground);
   }
 
   .text-crimson {

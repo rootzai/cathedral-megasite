@@ -3,7 +3,7 @@
  * Seton Hall University Clergy Abuse Scandal
  * Gothic Ecclesiastical Noir — SodomHall.com
  *
- * Design: Dark obsidian backgrounds, antique gold accents, parchment text.
+ * Design: Dark obsidian backgrounds, antique gold accents, high-contrast foreground text.
  * Structure: Vertical descent through institutional power.
  */
 
@@ -91,11 +91,11 @@ export default function TheyKnew() {
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold leading-tight mb-4">
             Seton Hall
           </h1>
-          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-wider text-parchment leading-tight mb-8">
+          <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-wider text-foreground leading-tight mb-8">
             The Boards & The Lawyers
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-8" />
-          <p className="text-xl md:text-2xl text-parchment leading-relaxed max-w-4xl mx-auto mb-10">
+          <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto mb-10">
             The "Big Lie" of Seton Hall is not a single event; it is a multi-generational architecture of institutional silence. 
             This dossier exposes the 303 individuals—from the Canonical Trustees to the Operational Regents—who 
             maintained the "Wall of Immunity" while the <Term id="Latham Archive">Latham Archive</Term> was buried in a <Term id="SCIF">SCIF</Term>.
@@ -103,14 +103,14 @@ export default function TheyKnew() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
             <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">
               <h3 className="font-heading text-gold text-lg mb-3">ACT I: THE CANONICAL SHIELD</h3>
-              <p className="text-sm text-parchment/70 leading-relaxed font-serif">
+              <p className="text-sm text-foreground/70 leading-relaxed font-serif">
                 How the Board of Trustees (Layer 1) created a legal black hole, housing 24,000 pages of the 
                 <Term id="Latham Report">Latham Report</Term> within an <Term id="Ecclesiastical">ecclesiastical</Term> vault that they claimed was beyond the reach of civil discovery.
               </p>
             </div>
             <div className="bg-red-950/20 border-l-4 border-gold p-6 backdrop-blur-sm">
               <h3 className="font-heading text-gold text-lg mb-3">ACT II: THE OPERATIONAL ATTRITION</h3>
-              <p className="text-sm text-parchment/70 leading-relaxed font-serif">
+              <p className="text-sm text-foreground/70 leading-relaxed font-serif">
                 The role of the Board of Regents (Layer 2) in weaponizing the university's $1.2B government spigot 
                 to fund the attrition of survivors and the unmasking of whistleblowers.
               </p>
@@ -353,7 +353,7 @@ export default function TheyKnew() {
             >
               <div className="flex items-center gap-3 mb-3">
                 <AlertTriangle className="w-6 h-6 text-destructive" />
-                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-parchment">
+                <h3 className="font-heading text-xl md:text-2xl tracking-wider text-foreground">
                   {njagConnection.title}
                 </h3>
               </div>
@@ -365,7 +365,7 @@ export default function TheyKnew() {
                   <div key={person.name} className="border-l-2 border-[oklch(0.45_0.18_25/30%)] pl-5">
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-zinc-400 shrink-0" />
-                      <span className="font-heading text-base tracking-wide text-parchment">{person.name}</span>
+                      <span className="font-heading text-base tracking-wide text-foreground">{person.name}</span>
                     </div>
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>
                     <p className="text-sm text-white/60 leading-relaxed italic ml-6 mt-1">
@@ -395,7 +395,7 @@ export default function TheyKnew() {
                   <div key={person.name} className="border-l-2 border-[oklch(0.75_0.12_85/25%)] pl-5">
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-gold shrink-0" />
-                      <span className="font-heading text-base tracking-wide text-parchment">{person.name}</span>
+                      <span className="font-heading text-base tracking-wide text-foreground">{person.name}</span>
                     </div>
                     {person.firm && <p className="text-sm font-label text-gold-dim ml-6">{person.firm}</p>}
                     <p className="text-sm font-label text-gold-dim ml-6">{person.role}</p>

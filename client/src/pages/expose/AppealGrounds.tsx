@@ -1,6 +1,6 @@
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — Grounds for Appeal
-   Bright parchment theme — investigative broadsheet
+   Dark theme — investigative broadsheet
    ============================================================ */
 export default function AppealGrounds() {
   const grounds = [
@@ -95,7 +95,7 @@ export default function AppealGrounds() {
             key={g.num}
             className="p-5"
             style={{
-              background: "var(--parchment-panel)",
+              background: "var(--card)",
               border: "1px solid var(--stone-border)",
               borderTop: `3px solid ${severityColor(g.severity)}`,
             }}

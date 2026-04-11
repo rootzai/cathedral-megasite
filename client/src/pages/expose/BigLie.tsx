@@ -6,7 +6,7 @@ import { Level3EvidenceStream } from "@/components/Level3EvidenceStream";
 
 export default function BigLie() {
   return (
-    <div className="page-enter bg-[#0a0a0c] text-parchment/90 font-serif min-h-screen">
+    <div className="page-enter bg-[#0a0a0c] text-foreground/90 font-serif min-h-screen">
       {/* Cinematic Hero Header */}
       <header className="relative py-32 px-6 border-b border-gold/10 overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -33,7 +33,7 @@ export default function BigLie() {
             <span className="text-gold">LIE</span>
           </motion.h1>
           <div className="h-1 w-24 bg-gold mx-auto mb-12 shadow-[0_0_15px_rgba(212,175,55,0.5)]" />
-          <p className="text-2xl md:text-3xl italic text-parchment/60 leading-relaxed max-w-3xl mx-auto font-body">
+          <p className="text-2xl md:text-3xl italic text-muted-foreground leading-relaxed max-w-3xl mx-auto font-body">
             "The most durable lies are not built of air; they are built of stone, statute, and structure."
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function BigLie() {
       {/* Act I: The Analysis */}
       <section className="py-24 px-6 border-b border-white/5">
         <div className="max-w-4xl mx-auto">
-          <div className="prose-investigative text-xl leading-relaxed text-parchment/80 space-y-12">
+          <div className="prose-investigative text-xl leading-relaxed text-foreground/80 space-y-12">
             <p className="first-letter:text-8xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-gold first-letter:leading-none">
               T
               o understand the institutional rot of Seton Hall, one must first confront the Governance Hierarchy. 
@@ -106,7 +106,7 @@ export default function BigLie() {
             The Act of <br />Institutional Hubris
           </h2>
           
-          <div className="space-y-16 text-lg leading-relaxed text-parchment/70">
+          <div className="space-y-16 text-lg leading-relaxed text-muted-foreground">
             <div>
               <h3 className="text-gold font-heading text-2xl mb-6">The Reilly Succession: The 18-Day Clock</h3>
               <p>
@@ -156,7 +156,7 @@ export default function BigLie() {
         <div className="max-w-3xl mx-auto">
           <BookOpen className="w-12 h-12 text-gold mx-auto mb-8 opacity-20" />
           <h2 className="text-3xl font-black text-white uppercase tracking-[0.3em] mb-8">The Audit is Final</h2>
-          <p className="text-xl italic text-parchment/50 mb-12">
+          <p className="text-xl italic text-muted-foreground mb-12">
             The Shield is failing. The unsealing has begun. The weight always finds the neck.
           </p>
           <div className="flex justify-center gap-6">

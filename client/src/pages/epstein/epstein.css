@@ -1,24 +1,24 @@
 .epstein-theme {
 
     & {
-      --paper: #f4f0e8;
-      --paper-dark: #e8e2d4;
-      --paper-mid: #ede8dc;
-      --ink: #1a1208;
-      --ink-mid: #2e2416;
-      --ink-light: #4a3f2f;
-      --rule: #8b7355;
-      --rule-light: #c4b89a;
-      --red: #8b1a1a;
-      --red-bright: #a52020;
-      --red-accent: #c0392b;
-      --gold: #7a5c1e;
-      --gold-bright: #9a7428;
-      --drop-shadow: rgba(26,18,8,0.18);
-      --font-masthead: 'UnifrakturMaguntia', serif;
+      --paper: #09090b; /* zinc-950 */
+      --paper-dark: #18181b; /* zinc-900 */
+      --paper-mid: #27272a; /* zinc-800 */
+      --ink: #fafafa; /* zinc-50 */
+      --ink-mid: #a1a1aa; /* zinc-400 */
+      --ink-light: #71717a; /* zinc-500 */
+      --rule: #3f3f46; /* zinc-700 */
+      --rule-light: #27272a; /* zinc-800 */
+      --red: #ef4444; /* red-500 */
+      --red-bright: #f87171; /* red-400 */
+      --red-accent: #dc2626; /* red-600 */
+      --gold: #eab308; /* yellow-500 */
+      --gold-bright: #fef08a; /* yellow-200 */
+      --drop-shadow: rgba(0,0,0,0.5);
+      --font-masthead: 'Playfair Display', serif;
       --font-headline: 'Playfair Display', 'Georgia', serif;
-      --font-body: 'Source Serif 4', 'Georgia', serif;
-      --font-deck: 'IM Fell English', 'Georgia', serif;
+      --font-body: 'Lora', 'Georgia', serif;
+      --font-deck: 'Lora', 'Georgia', serif;
       --font-mono: 'Courier New', Courier, monospace;
     }
 

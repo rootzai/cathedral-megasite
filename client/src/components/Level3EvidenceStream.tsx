@@ -42,7 +42,7 @@ export function Level3EvidenceStream() {
               <span className="text-zinc-400 uppercase">{dp.label}:</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-parchment font-bold text-center">{dp.value}</span>
+              <span className="text-foreground font-bold text-center">{dp.value}</span>
               <span className="px-2 py-0.5 bg-gold/5 border border-gold/20 text-gold text-xs rounded-full group-hover:bg-gold group-hover:text-black transition-all">
                 {dp.status}
               </span>

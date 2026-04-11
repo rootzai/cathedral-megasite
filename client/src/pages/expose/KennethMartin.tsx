@@ -2,7 +2,7 @@ import { JourneyNav } from "@/components/JourneyNav";
 
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — The Founding Template
-   Parchment theme — investigative broadsheet
+   Dark theme — investigative broadsheet
    ============================================================ */
 export default function KennethMartin() {
   return (
@@ -162,7 +162,7 @@ export default function KennethMartin() {
         </div>
       </section>
 
-      <div className="evidence-box bg-ink text-parchment p-12 rounded-sm shadow-2xl">
+      <div className="evidence-box bg-zinc-950 text-foreground p-12 rounded-sm shadow-2xl border border-zinc-800">
         <div className="exhibit-label text-gold mb-4 uppercase tracking-[0.2em] font-mono text-xs">Closing Argument · Exhibit 01</div>
         <p className="text-xl leading-relaxed italic mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
           "The machine does not fail; it functions as designed."

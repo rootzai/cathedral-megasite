@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Courier+Prime:wght@400;700&family=Cinzel:wght@400;700;900&display=swap');
 
 .humpty-container {
-  --crimson: #8b1a1a;
-  --crimson-light: #c0392b;
-  --gold: #8b6914;
-  --gold-light: #c9a227;
-  --parchment: #f5edd8;
-  --parchment-mid: #ede0c0;
-  --parchment-dark: #e0d0a8;
-  --ink: #1a1008;
-  --ink-mid: #3a2810;
-  --shadow: rgba(26,16,8,0.15);
+  --crimson: #ef4444;
+  --crimson-light: #f87171;
+  --gold: #fde047;
+  --gold-light: #fef08a;
+  --parchment: #09090b;
+  --parchment-mid: #18181b;
+  --parchment-dark: #27272a;
+  --ink: #ffffff;
+  --ink-mid: #a1a1aa;
+  --shadow: rgba(0,0,0,0.5);
 
   background: #0d0a05;
-  font-family: 'IM Fell English', Georgia, serif;
+  font-family: 'Cinzel', 'Lora', Georgia, serif;
   color: var(--ink);
   min-height: 100vh;
   margin: 0;
@@ -30,7 +30,7 @@
   max-width: 820px;
   margin: 0 auto;
   background:
-    linear-gradient(180deg, #f8f0dc 0%, #f3e8c8 30%, #ede0b8 70%, #e8d8b0 100%);
+    linear-gradient(180deg, #09090b 0%, #18181b 30%, #27272a 70%, #3f3f46 100%);
   min-height: 100vh;
   padding: 70px 90px 120px 96px;
   position: relative;
@@ -128,7 +128,7 @@
   margin: 0 auto 40px;
   border: 3px solid var(--parchment-dark);
   box-shadow: 0 8px 30px var(--shadow), 0 2px 8px var(--shadow);
-  filter: sepia(15%);
+  filter: sepia(10%) brightness(0.8) contrast(1.2);
 }
 
 /* ── NURSERY RHYME BLOCK ── */

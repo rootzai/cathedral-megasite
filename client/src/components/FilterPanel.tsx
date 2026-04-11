@@ -96,7 +96,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
           {activeFilter && (
             <button
               onClick={() => onFilterChange(null)}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-label text-sm tracking-wider bg-cathedral-light text-muted-foreground border border-[oklch(0.3_0.01_285/40%)] hover:text-parchment transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-label text-sm tracking-wider bg-cathedral-light text-muted-foreground border border-[oklch(0.3_0.01_285/40%)] hover:text-foreground transition-colors"
               aria-label="Clear active filter"
             >
               <X className="w-3.5 h-3.5" />
@@ -117,7 +117,7 @@ export function FilterPanel({ activeFilter, onFilterChange }: {
             >
               {/* Description */}
               <div className="text-center mb-8">
-                <p className="text-base text-parchment italic">{activeFilterInfo.description}</p>
+                <p className="text-base text-foreground italic">{activeFilterInfo.description}</p>
                 <p className="font-label text-sm text-gold mt-2">
                   {filteredMembers.length} member{filteredMembers.length !== 1 ? "s" : ""} across all boards
                 </p>

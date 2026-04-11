@@ -1,6 +1,6 @@
 /* ============================================================
    THE ARCHITECTURE OF SILENCE — The Nyre Dismissal
-   Bright parchment theme — investigative broadsheet
+   Dark theme — investigative broadsheet
    ============================================================ */
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
