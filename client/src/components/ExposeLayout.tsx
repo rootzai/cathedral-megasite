@@ -42,7 +42,7 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
     }, [location]);
 
     return (
-        <div className="expose-theme flex min-h-screen" style={{ background: "#faf6ee" }}>
+        <div className="expose-theme flex min-h-screen bg-background">
             {mobileOpen && (
                 <div className="fixed inset-0 z-40 bg-black/60 lg:hidden" onClick={() => setMobileOpen(false)} />
             )}
@@ -109,7 +109,7 @@ export default function ExposeLayout({ children }: { children: React.ReactNode }
                     <div style={{ width: 28 }} />
                 </header>
 
-            <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative" style={{ background: "#faf6ee" }}>
+            <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative bg-background">
                 <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-16 lg:mt-0">
                     {children}
                 </div>
