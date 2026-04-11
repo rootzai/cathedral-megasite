@@ -43,6 +43,15 @@ export const PERPETRATORS: ForensicActor[] = [
 
 export const FORENSIC_RINGS: ShieldRing[] = [
     { 
+        id: 1, 
+        name: "SECRET ARCHIVES", 
+        description: "The core investigative target: a subterranean repository of 24,000 buried documents, including the definitive Latham Report on clerical predation and the $628,000 'unreachable' slush fund used to incentivize silence.", 
+        radius: 12, 
+        route: "/vault",
+        color: "rgba(255, 0, 0, 0.2)",
+        breach: true
+    },
+    { 
         id: 2, 
         name: "LEGAL FORTRESS", 
         description: "The 'Labyrinth' of institutional silence: A decades-long structural defense involving the Newark Export and the 50-year triangular architecture of protection.", 

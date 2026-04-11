@@ -71,7 +71,7 @@ export default function EvidenceHub() {
                                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#c22121] transition-colors uppercase tracking-wider">
                                     {ring.name}
                                 </h3>
-                                <p className="text-base text-zinc-300 leading-relaxed italic mb-8 group-hover:text-zinc-100">
+                                <p className="text-lg md:text-xl text-zinc-300 leading-relaxed italic mb-8 group-hover:text-zinc-100">
                                     "{ring.description}"
                                 </p>
                                 <div className="mt-auto pt-6 border-t border-[#1a1a22] flex items-center justify-between">
@@ -116,7 +116,7 @@ export default function EvidenceHub() {
             <section className="py-20 border-t border-white/5 bg-black/50">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold text-white mb-8 uppercase tracking-widest">Ready to Begin?</h2>
-                    <p className="text-zinc-500 mb-12 max-w-2xl mx-auto italic">
+                    <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto italic leading-relaxed">
                         The investigation starts at the core. Enter Ring 1 to uncover the secrets of the Latham Archive.
                     </p>
                     <Link href="/origin/martin">
