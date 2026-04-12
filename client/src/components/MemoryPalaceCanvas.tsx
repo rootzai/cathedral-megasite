@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Html, Environment, Float, Sparkles, OrbitControls, Stars } from '@react-three/drei';
+import { Environment, Float, Sparkles, OrbitControls, Stars } from '@react-three/drei';
 import { useLocation } from 'wouter';
 import * as THREE from 'three';
 import { MEMORY_PALACE, ChamberKey, LocusNode, CHAMBER_ORDER } from '@/lib/memoryPalaceData';
 
 // Individual Locus 3D Node
-function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route: string) => void }) {
+function LocusObject({ node, onNavigate, setHoveredLocus }: { node: LocusNode, onNavigate: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
     const meshRef = useRef<THREE.Mesh>(null);
     const [hovered, setHover] = useState(false);
 
@@ -33,9 +33,9 @@ function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route
         <Float speed={2} rotationIntensity={0.5} floatIntensity={1} position={node.positionOffset}>
             <mesh
                 ref={meshRef}
-                onPointerOver={() => setHover(true)}
-                onPointerOut={() => setHover(false)}
-                onClick={() => onNavigate(node.route)}
+                onPointerOver={(e) => { e.stopPropagation(); setHover(true); setHoveredLocus(node); }}
+                onPointerOut={(e) => { e.stopPropagation(); setHover(false); setHoveredLocus(null); }}
+                onClick={(e) => { e.stopPropagation(); onNavigate(node.route); }}
                 castShadow
                 receiveShadow
             >
@@ -49,24 +49,12 @@ function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route
                     emissiveIntensity={hovered ? 1 : 0}
                 />
             </mesh>
-            
-            {/* HTML Overlay anchored to 3D object */}
-            <Html position={[0, -2.5, 0]} center zIndexRange={[100, 0]} className="pointer-events-none">
-                <div className={`transition-all duration-300 w-64 text-center ${hovered ? 'scale-110 opacity-100' : 'scale-75 opacity-40'}`}>
-                    <div className="font-mono text-xs uppercase tracking-[0.3em] font-bold" style={{ color: hovered ? '#ff4444' : '#666' }}>
-                        {node.mnemonicAnchor}
-                    </div>
-                    <div className={`font-cinzel text-lg tracking-widest mt-1 ${hovered ? 'text-white' : 'text-zinc-500'}`}>
-                        {node.title}
-                    </div>
-                </div>
-            </Html>
         </Float>
     );
 }
 
 // Full Chamber Scene
-function ChamberScene({ chamberKey, setLocation }: { chamberKey: ChamberKey, setLocation: (route: string) => void }) {
+function ChamberScene({ chamberKey, setLocation, setHoveredLocus }: { chamberKey: ChamberKey, setLocation: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
     const chamber = MEMORY_PALACE[chamberKey];
 
     return (
@@ -99,7 +87,7 @@ function ChamberScene({ chamberKey, setLocation }: { chamberKey: ChamberKey, set
 
             {/* Loci Nodes */}
             {chamber.loci.map(locus => (
-                <LocusObject key={locus.id} node={locus} onNavigate={setLocation} />
+                <LocusObject key={locus.id} node={locus} onNavigate={setLocation} setHoveredLocus={setHoveredLocus} />
             ))}
         </group>
     );
@@ -109,6 +97,7 @@ function ChamberScene({ chamberKey, setLocation }: { chamberKey: ChamberKey, set
 export default function MemoryPalaceCanvas() {
     const [_, setLocation] = useLocation();
     const [currentChamberIndex, setCurrentChamberIndex] = useState(0);
+    const [hoveredLocus, setHoveredLocus] = useState<LocusNode | null>(null);
 
     const activeChamberKey = CHAMBER_ORDER[currentChamberIndex];
     const chamberData = MEMORY_PALACE[activeChamberKey];
@@ -142,9 +131,27 @@ export default function MemoryPalaceCanvas() {
                 <p className="text-zinc-600 text-xs uppercase tracking-[0.4em] animate-pulse">Drag left/right to orbit. Scroll to zoom. Click to unseal.</p>
             </div>
 
+            {/* Standard 2D Tooltip HUD (Fixed Version) */}
+            <div className={`absolute bottom-20 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-all duration-300 ${hoveredLocus ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+                {hoveredLocus && (
+                    <div className="bg-black/80 backdrop-blur-md border border-[#8b1a1a]/30 p-6 w-80 text-center shadow-[0_0_40px_rgba(139,26,26,0.25)] relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#ff4444] to-transparent opacity-50" />
+                        <div className="text-[10px] font-mono text-[#ff4444] uppercase tracking-[0.4em] mb-3 border-b border-[#8b1a1a]/30 pb-2">
+                           [ DOSSIER: {hoveredLocus.mnemonicAnchor} ]
+                        </div>
+                        <h3 className="text-white font-cinzel font-black tracking-widest text-lg uppercase leading-tight">
+                           {hoveredLocus.title}
+                        </h3>
+                        <div className="mt-4 text-[#ff4444] text-[10px] tracking-widest animate-pulse font-bold">
+                            CLICK TO INITIATE →
+                        </div>
+                    </div>
+                )}
+            </div>
+
             {/* The 3D Render Engine */}
             <Canvas shadows camera={{ position: [0, 2, 12], fov: 60 }} className="absolute inset-0 z-0 bg-black">
-                <ChamberScene chamberKey={activeChamberKey} setLocation={setLocation} />
+                <ChamberScene chamberKey={activeChamberKey} setLocation={setLocation} setHoveredLocus={setHoveredLocus} />
                 <OrbitControls 
                     enablePan={false} 
                     minDistance={5} 
