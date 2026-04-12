@@ -98,7 +98,9 @@ export function CoreRouter() {
       <Switch>
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
-          <TriptychPortal />
+          <PageLayout component={EvidenceHub} />
+        </Route>
+        <Route path="/archive">
           <PageLayout component={RedesignedHome} />
         </Route>
         <Route path="/prologue">
