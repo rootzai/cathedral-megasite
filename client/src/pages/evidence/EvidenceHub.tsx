@@ -36,26 +36,23 @@ export default function EvidenceHub() {
 
             {/* Gamified Onboarding UI */}
             {isVisible && (
-                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4 md:p-8 overflow-y-auto">
+                <div className="absolute inset-0 z-50 flex items-center justify-center p-4 md:p-8 overflow-y-auto pointer-events-none">
                     
                     {/* STEP 1: Hero Welcome */}
                     {onboardingStep === 1 && (
-                        <div className="max-w-2xl w-full border border-white/10 bg-[#0a0a0c]/90 backdrop-blur-md p-10 md:p-14 relative shadow-2xl animate-in fade-in zoom-in-95 duration-1000 flex flex-col items-center text-center">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1a1a] to-transparent opacity-70"></div>
+                        <div className="max-w-3xl w-full flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
                             
-                            <Shield className="w-12 h-12 text-[#8b1a1a] mb-6 animate-pulse" />
-                            
-                            <h1 className="text-3xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6 leading-tight drop-shadow-md">
+                            <h1 className="text-4xl md:text-6xl font-cinzel font-black uppercase tracking-widest text-white mb-6 leading-tight drop-shadow-[0_4px_25px_rgba(0,0,0,1)]">
                                 Welcome to <br/><span className="text-[#8b1a1a]">The Cathedral</span>
                             </h1>
                             
-                            <p className="text-lg md:text-xl text-zinc-400 font-serif italic mb-10 leading-relaxed max-w-lg">
+                            <p className="text-lg md:text-xl text-zinc-300 font-serif italic mb-12 leading-relaxed max-w-2xl drop-shadow-[0_2px_15px_rgba(0,0,0,1)]">
                                 A forensic memory palace documenting the architecture of silence. The records have been hidden. Your objective is to find them.
                             </p>
 
                             <button 
                                 onClick={handleStart}
-                                className="group relative w-full overflow-hidden bg-white/5 hover:bg-white/10 border border-[#8b1a1a]/40 hover:border-[#8b1a1a] transition-all duration-500 py-5"
+                                className="pointer-events-auto group relative overflow-hidden bg-black/80 hover:bg-black border border-[#8b1a1a] transition-all duration-500 py-4 px-12 shadow-[0_0_30px_rgba(139,26,26,0.2)] hover:shadow-[0_0_50px_rgba(139,26,26,0.6)] backdrop-blur-md"
                             >
                                 <div className="absolute inset-0 bg-[#8b1a1a]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                                 <div className="relative z-10 flex items-center justify-center gap-4">
@@ -70,8 +67,8 @@ export default function EvidenceHub() {
 
                     {/* STEP 2: Choose Your Mystery */}
                     {onboardingStep === 2 && (
-                        <div className="max-w-6xl w-full animate-in fade-in slide-in-from-bottom-8 duration-700 mt-auto mb-auto md:mt-10 md:mb-10">
-                            <div className="text-center mb-10 md:mb-16">
+                        <div className="max-w-6xl w-full animate-in fade-in zoom-in-95 duration-700 mt-auto mb-auto md:mt-10 md:mb-10 pointer-events-auto">
+                            <div className="text-center mb-10 md:mb-16 bg-black/60 backdrop-blur-md border outline-none border-white/5 inline-block px-12 py-6 rounded-3xl shadow-2xl">
                                 <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] font-black block mb-3 animate-pulse">
                                     Target Selection Required
                                 </span>
@@ -148,12 +145,12 @@ export default function EvidenceHub() {
                             </div>
                             
                             {/* Skip / Direct Access */}
-                            <div className="text-center mt-12 mb-6">
+                            <div className="text-center mt-12 mb-6 pointer-events-auto inline-block bg-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-white/5">
                                 <button 
                                     onClick={handleDismiss}
-                                    className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-white transition-colors border-b border-transparent hover:border-zinc-500 pb-2"
+                                    className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-zinc-400 hover:text-white transition-colors"
                                 >
-                                    [ Or Enter the 3D Void Directly ]
+                                    [ Enter 3D Free-Roam ]
                                 </button>
                             </div>
                         </div>
