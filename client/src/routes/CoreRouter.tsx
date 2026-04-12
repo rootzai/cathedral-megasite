@@ -54,10 +54,18 @@ const REDIRECT_MAP: Record<string, string> = {
   "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
   "/briefing": "/breach",
-  "/ruling": "/breach",
+  "/ruling": "/breach/hub",
   "/ledger/madman": "/madman",   // Fix: sidebar links here but route is at /madman
   "/methodology": "/method",     // Fix: /method is the real route
-  "/lorenzo": "/ledger/lorenzo"
+  "/lorenzo": "/ledger/lorenzo",
+  
+  // Legacy / Triptych Fallbacks
+  "/endgame/mccarrick": "/ledger/mccarrick",
+  "/endgame": "/ledger/mccarrick",
+  "/origin/martin": "/ledger/martin",
+  "/ruling/breach": "/breach/hub",
+  "/ruling/vault": "/vault",
+  "/ruling/ledger": "/ledger"
 };
 
 function RedirectHandler() {

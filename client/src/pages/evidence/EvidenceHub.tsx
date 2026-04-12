@@ -93,7 +93,7 @@ export default function EvidenceHub() {
                                     <div className="space-y-4">
                                         <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
                                         <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
-                                        <Link href="/origin/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
+                                        <Link href="/ledger/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
                                     </div>
                                 </div>
                                 <div className="p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
@@ -101,9 +101,9 @@ export default function EvidenceHub() {
                                     <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
                                     <p className="text-sm text-zinc-400 italic mb-8 h-10">"I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>."</p>
                                     <div className="space-y-4">
-                                        <Link href="/ruling/breach" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
-                                        <Link href="/ruling/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
-                                        <Link href="/ruling/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
+                                        <Link href="/breach/hub" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
+                                        <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
+                                        <Link href="/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
                                     </div>
                                 </div>
                                 <div className="p-8 border border-[#8b1a1a]/30 bg-[#8b1a1a]/5 hover:border-[#8b1a1a] transition-all group shadow-[0_0_30px_rgba(139,26,26,0.05)]">
@@ -112,7 +112,7 @@ export default function EvidenceHub() {
                                     <p className="text-sm text-zinc-400 italic mb-8 h-10">"How does this affect real survivors?"</p>
                                     <div className="space-y-4">
                                         <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
-                                        <Link href="/endgame/mccarrick" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
+                                        <Link href="/ledger/mccarrick" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
                                         <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
                                     </div>
                                 </div>
