@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import TriptychPortal from "@/components/TriptychPortal";
 import { SEO } from "@/components/SEO";
@@ -6,6 +6,8 @@ import OnboardingOverlay from "@/components/evidence/OnboardingOverlay";
 import MemoryPalaceHUD from "@/components/evidence/MemoryPalaceHUD";
 
 export default function EvidenceHub() {
+    const [isOnboardingActive, setIsOnboardingActive] = useState(true);
+
     return (
         <div className="min-h-screen bg-black text-white overflow-hidden relative">
             <SEO 
@@ -17,8 +19,14 @@ export default function EvidenceHub() {
 
             {/* The Orchestrated Layers */}
             <MemoryPalaceCanvas />
-            <MemoryPalaceHUD />
-            <OnboardingOverlay onDismiss={() => {}} />
+            
+            {/* HUD is HIDDEN while the cinematic/onboarding welcome is running to cleanly focus attention */}
+            {!isOnboardingActive && <MemoryPalaceHUD />}
+            
+            <OnboardingOverlay 
+                onDismiss={() => setIsOnboardingActive(false)} 
+                onStart={() => setIsOnboardingActive(true)} 
+            />
             
         </div>
     );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 import { MoveRight, Shield, ShieldAlert, Search, Fingerprint, Eye, Code, BrainCircuit, Crosshair } from "lucide-react";
 
-export default function OnboardingOverlay({ onDismiss }: { onDismiss: () => void }) {
+export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: () => void, onStart?: () => void }) {
     const [onboardingStep, setOnboardingStep] = useState(1);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -18,23 +18,24 @@ export default function OnboardingOverlay({ onDismiss }: { onDismiss: () => void
     if (!isVisible) return null;
 
     return (
-        <div className="absolute inset-0 z-50 pointer-events-none">
+        <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-center">
             
-            {/* STEP 1: Hero Welcome */}
+            {/* STEP 1: Hero Welcome Box in the Center */}
             {onboardingStep === 1 && (
-                <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 max-w-sm md:max-w-md flex flex-col p-6 md:p-8 border border-white/10 bg-black/70 backdrop-blur-xl shadow-2xl items-end text-right animate-in fade-in slide-in-from-right-10 duration-1000 delay-500 fill-mode-both pointer-events-auto">
+                <div className="max-w-md flex flex-col items-center justify-center p-12 border border-white/5 bg-black/80 backdrop-blur-xl shadow-2xl animate-in fade-in zoom-in-95 duration-1000 delay-500 fill-mode-both pointer-events-auto text-center">
                     
-                    <h1 className="text-2xl md:text-3xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-2 leading-tight">
-                        Welcome to <br/><span className="text-white">The Cathedral</span>
+                    <h1 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-2 leading-tight">
+                        <span className="text-white text-base tracking-[0.4em] block mb-2 opacity-50">WELCOME TO</span>
+                        The Cathedral
                     </h1>
                     
-                    <p className="text-xs md:text-sm text-zinc-300 font-serif italic mb-8 leading-relaxed">
-                        A forensic memory palace documenting the architecture of silence. The records have been hidden. Your objective is to find them.
+                    <p className="text-xs text-zinc-400 font-mono tracking-widest uppercase mb-10 leading-relaxed border-b border-[#8b1a1a]/30 pb-4">
+                        A forensic memory palace.
                     </p>
 
                     <button 
                         onClick={handleStart}
-                        className="group relative overflow-hidden bg-white/5 hover:bg-black border border-[#8b1a1a]/60 hover:border-[#8b1a1a] transition-all duration-500 py-3 px-6 shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_40px_rgba(139,26,26,0.6)]"
+                        className="group relative overflow-hidden bg-white/5 hover:bg-black border border-[#8b1a1a]/40 hover:border-[#8b1a1a] transition-all duration-500 py-4 px-10 shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_40px_rgba(139,26,26,0.5)]"
                     >
                         <div className="absolute inset-0 bg-[#8b1a1a]/15 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                         <div className="relative z-10 flex items-center justify-center gap-3">
