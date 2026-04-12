@@ -7,9 +7,6 @@ export default function MegaNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [tickerPaused, setTickerPaused] = useState(false);
 
-  // If we are strictly inside the 3D map, we don't need this big header.
-  if (location === '/evidence') return null;
-
   const newsItems = [
     { type: "BREAKING", text: "October 2025 Jury Awards $5M in Delbarton Abuse Case" },
     { type: "DOCUMENTED", text: "LATHAM REPORT: 24,000 Pages of Evidence Unsealed by Court Order" },
