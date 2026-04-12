@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from "react";
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch, useLocation, Redirect } from "wouter";
 import TriptychPortal from "@/components/TriptychPortal";
 
 // Lazy-loaded Pages
