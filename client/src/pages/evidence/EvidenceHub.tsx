@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import { SEO } from "@/components/SEO";
 import { Term } from "@/components/Term";
+import { Wind, Zap, Flame } from "lucide-react";
 
 export default function EvidenceHub() {
     const [showOnboarding, setShowOnboarding] = useState(true);
@@ -31,13 +32,38 @@ export default function EvidenceHub() {
                             <h2 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6">
                                 The Shield of Memory
                             </h2>
-                            <div className="space-y-4 max-w-4xl mx-auto text-zinc-400 font-serif text-lg leading-relaxed italic text-left md:text-center">
-                                <p>
+                            <div className="space-y-6 max-w-4xl mx-auto text-zinc-400 font-serif text-lg leading-relaxed text-left">
+                                <p className="italic">
                                     The institution&apos;s primary defensive architecture is induced amnesia. The cover-up thrives on structural gaslighting and the fabrication of events designed expressly to make the public forget. Here, <strong className="text-white">your memory is your only shield against coercion.</strong>
                                 </p>
-                                <p>
-                                    To combat this, we have mapped the unsealed archives into a continuous <strong className="text-[#ff4444]">Method of Loci</strong>. As you walk chronologically through this spatial palace, you will encounter massive mnemonic anchors. We bind these staggering abuses to extreme visual imagery and architectural loci, bypassing rote fatigue and forcing the cover-up permanently into your spatial recall.
-                                </p>
+                                
+                                <div className="border border-[#8b1a1a]/30 bg-black/50 p-6 shadow-inner">
+                                    <h3 className="text-[#8b1a1a] font-mono text-sm uppercase tracking-widest mb-3 font-bold border-b border-[#8b1a1a]/30 pb-2">The Thessalian Paradigm</h3>
+                                    <p className="text-sm">
+                                        Before the written word, human survival depended on spatial recall. When the roof of the Thessalian banquet hall collapsed, mangling the bodies of the guests beyond recognition, the poet Simonides identified the dead solely by tracing the spatial architecture of the hall in his mind. 
+                                        You are now entering a <strong className="text-white">Memory Palace</strong>. This is not a metaphor; it is how our minds are biologically built to preserve truth against eradication.
+                                    </p>
+                                </div>
+
+                                <p className="text-sm uppercase tracking-widest font-mono text-center pt-4">You have been granted THREE specific cognitive protocols:</p>
+                                
+                                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm font-sans mt-4">
+                                    <li className="bg-[#050505] border border-white/10 p-4">
+                                        <Wind className="w-6 h-6 text-[#8b1a1a] mb-2" />
+                                        <strong className="text-white uppercase tracking-widest block mb-1 text-xs">I. Method of Loci</strong>
+                                        The map is spatial. You do not read; you traverse. Data is locked to physical coordinates.
+                                    </li>
+                                    <li className="bg-[#050505] border border-white/10 p-4">
+                                        <Zap className="w-6 h-6 text-[#8b1a1a] mb-2" />
+                                        <strong className="text-white uppercase tracking-widest block mb-1 text-xs">II. PAO System</strong>
+                                        Complex abstractions are violently compressed into Person-Action-Object triggers in your HUD.
+                                    </li>
+                                    <li className="bg-[#050505] border border-[#8b1a1a]/30 shadow-[0_0_15px_rgba(139,26,26,0.1)] p-4">
+                                        <Flame className="w-6 h-6 text-[#ff3333] mb-2" />
+                                        <strong className="text-[#ff3333] uppercase tracking-widest block mb-1 text-xs">III. Aquinas Effect</strong>
+                                        "Unwonted illustration." Bizarre, extreme visualizations force permanent retention.
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         
