@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
+import TriptychPortal from "@/components/TriptychPortal";
 import { SEO } from "@/components/SEO";
 import { Term } from "@/components/Term";
 import { Wind, Zap, Flame, Hash, Layers, Eye } from "lucide-react";
@@ -15,6 +16,8 @@ export default function EvidenceHub() {
                 description="A massive, interactive 3D WebGL data representation of the Cathedral Megasite evidence." 
             />
             
+            <TriptychPortal />
+
             {/* The 3D Engine */}
             <MemoryPalaceCanvas />
 

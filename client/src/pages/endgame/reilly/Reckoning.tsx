@@ -173,7 +173,7 @@ export default function Reckoning() {
         </Dialog>
       </div>
 
-      <ReillySectionNav currentHref="/ledger/reilly/reckoning" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

@@ -137,7 +137,7 @@ export default function Latham() {
         </Dialog>
       </div>
 
-      <ReillySectionNav currentHref="/ledger/reilly/latham" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

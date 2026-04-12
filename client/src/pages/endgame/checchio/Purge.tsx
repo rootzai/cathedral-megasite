@@ -199,6 +199,6 @@ export default function Purge() {
         <p className="text-right text-sm font-mono mt-4 text-gray-500">- Source close to the investigation</p>
       </div>
     </div>
-    <CheckchioSectionNav currentHref="/ledger/checchio/purge" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

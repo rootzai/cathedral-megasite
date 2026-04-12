@@ -111,6 +111,6 @@ export default function Rehabilitation() {
             </div>
         </div>
 
-        <LorenzoSectionNav currentHref="/ledger/lorenzo/rehabilitation" />
+        <MemoryGate registryId="person-mccarrick" />
     </div>);
 }

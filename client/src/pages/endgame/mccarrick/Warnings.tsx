@@ -3,7 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Warnings() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -69,6 +69,6 @@ export default function Warnings() {
       </div>
     </div>
 
-    <SectionNav currentHref="/ledger/mccarrick/warnings" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

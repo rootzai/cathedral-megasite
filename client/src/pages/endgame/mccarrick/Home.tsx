@@ -2,8 +2,7 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import ImageModal from "@/components/ImageModal";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Home() {
   return (<div className="space-y-8">
@@ -96,6 +95,6 @@ export default function Home() {
 
 
 
-    <SectionNav currentHref="/ledger/mccarrick" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

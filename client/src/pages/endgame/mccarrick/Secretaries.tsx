@@ -1,5 +1,4 @@
-import EndgameLayout from "@/components/EndgameLayout";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Users, ShieldAlert, FileText, Globe, Building } from "lucide-react";
 
@@ -267,7 +266,7 @@ export default function Secretaries() {
         </p>
       </section>
 
-      <SectionNav currentHref="/ledger/mccarrick/secretaries" />
+      <MemoryGate registryId="person-mccarrick" />
     </div>
   );
 }

@@ -77,6 +77,6 @@ export default function Home() {
       </div>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

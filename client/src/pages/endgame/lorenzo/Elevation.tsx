@@ -62,6 +62,6 @@ export default function Elevation() {
             </div>
         </div>
 
-        <LorenzoSectionNav currentHref="/ledger/lorenzo/elevation" />
+        <MemoryGate registryId="person-mccarrick" />
     </div>);
 }

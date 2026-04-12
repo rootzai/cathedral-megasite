@@ -30,28 +30,28 @@ export default function MegaNavigation() {
 
       {/* Primary Navigation Tier - Minimalist Memory Palace Map Trigger */}
       <div className="w-full px-4 lg:px-8">
-        <div className="hidden md:flex items-center justify-between h-32">
+        <div className="hidden md:flex items-center justify-between h-20">
           <Link href="/">
             <a className="h-full flex items-center group transition-all shrink-0">
-              <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="w-24 h-auto object-contain group-hover:scale-110 transition-all filter grayscale brightness-50 contrast-125" />
-              <span className="ml-6 text-zinc-500 group-hover:text-zinc-100 transition-colors duration-500 font-cinzel font-black tracking-[0.3em] text-4xl uppercase">Sodom Hall</span>
+              <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="w-16 h-auto object-contain group-hover:scale-110 transition-all filter grayscale brightness-50 contrast-125" />
+              <span className="ml-4 text-zinc-500 group-hover:text-zinc-100 transition-colors duration-500 font-cinzel font-black tracking-[0.2em] text-2xl uppercase">Sodom Hall</span>
             </a>
           </Link>
 
-          <div className="flex gap-6">
+          <div className="flex gap-4">
               <Link href="/evidence">
-                <a className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-10 py-5 text-2xl font-black uppercase tracking-[0.4em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-4">
-                  <svg className="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                <a className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3">
+                  <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
                   [ OPEN ARCHITECTURAL MAP ]
                 </a>
               </Link>
               <Link href="/index">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-8 py-5 text-xl font-black uppercase tracking-[0.3em] transition-all flex items-center justify-center">
+                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
                   The Master Index
                 </a>
               </Link>
               <Link href="/tips">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-8 py-5 text-xl font-black uppercase tracking-[0.3em] transition-all flex items-center justify-center">
+                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
                   Tip Line
                 </a>
               </Link>

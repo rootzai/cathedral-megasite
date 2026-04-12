@@ -31,6 +31,6 @@ export default function Expulsion() {
             </div>
         </div>
 
-        <LorenzoSectionNav currentHref="/ledger/lorenzo/expulsion" />
+        <MemoryGate registryId="person-mccarrick" />
     </div>);
 }

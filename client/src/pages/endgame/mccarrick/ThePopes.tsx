@@ -2,7 +2,7 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function ThePopes() {
   return (
@@ -69,7 +69,7 @@ export default function ThePopes() {
         </div>
       </div>
 
-      <SectionNav currentHref="/ledger/mccarrick/popes" />
+      <MemoryGate registryId="person-mccarrick" />
     </div>
   );
 }

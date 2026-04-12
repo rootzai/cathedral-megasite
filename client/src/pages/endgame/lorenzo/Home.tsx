@@ -161,7 +161,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <LorenzoSectionNav currentHref="/ledger/lorenzo" />
+            <MemoryGate registryId="person-mccarrick" />
         </div>
     );
 }

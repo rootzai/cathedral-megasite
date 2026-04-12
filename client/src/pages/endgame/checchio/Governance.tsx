@@ -65,6 +65,6 @@ export default function Governance() {
       </section>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio/governance" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

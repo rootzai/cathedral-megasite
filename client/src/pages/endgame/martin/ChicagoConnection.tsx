@@ -65,6 +65,6 @@ export default function ChicagoConnection() {
             </div>
         </div>
 
-        <MartinSectionNav currentHref="/ledger/martin/chicago" />
+        <MemoryGate registryId="person-martin" />
     </div>);
 }

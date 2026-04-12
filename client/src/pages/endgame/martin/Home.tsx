@@ -191,6 +191,6 @@ export default function Home() {
             </div>
         </section>
 
-        <MartinSectionNav currentHref="/ledger/martin" />
+        <MemoryGate registryId="person-martin" />
     </div>);
 }

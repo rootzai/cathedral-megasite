@@ -148,7 +148,7 @@ export default function ReillyHome() {
         </div>
       </section>
 
-      <ReillySectionNav currentHref="/ledger/reilly" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

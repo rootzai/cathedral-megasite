@@ -56,6 +56,6 @@ export default function Ascent() {
       </div>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio/ascent" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

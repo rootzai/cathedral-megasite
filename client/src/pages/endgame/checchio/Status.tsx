@@ -78,6 +78,6 @@ export default function Status() {
       </div>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio/status" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

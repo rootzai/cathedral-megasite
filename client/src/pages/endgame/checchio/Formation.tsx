@@ -48,6 +48,6 @@ export default function Formation() {
       </div>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio/formation" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

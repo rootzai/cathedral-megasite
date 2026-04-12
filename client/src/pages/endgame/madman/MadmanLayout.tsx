@@ -1,5 +1,4 @@
-import React from 'react';
-import MadmanNav from './MadmanNav';
+import MemoryGate from "@/components/MemoryGate";
 
 export default function MadmanLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -44,7 +43,7 @@ export default function MadmanLayout({ children }: { children: React.ReactNode }
         }
       `}} />
       
-      <MadmanNav />
+      <MemoryGate registryId="person-mccarrick" />
       {children}
     </div>
   );

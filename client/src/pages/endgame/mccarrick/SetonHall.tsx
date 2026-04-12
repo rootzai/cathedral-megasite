@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
@@ -119,7 +119,7 @@ export default function SetonHall() {
         <GovernanceHierarchy />
       </section>
 
-      <SectionNav currentHref="/ledger/mccarrick/seton-hall" />
+      <MemoryGate registryId="person-mccarrick" />
     </div>
   );
 }

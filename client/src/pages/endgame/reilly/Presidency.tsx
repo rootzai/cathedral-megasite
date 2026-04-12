@@ -123,7 +123,7 @@ export default function Presidency() {
         </a>
       </div>
 
-      <ReillySectionNav currentHref="/ledger/reilly/presidency" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

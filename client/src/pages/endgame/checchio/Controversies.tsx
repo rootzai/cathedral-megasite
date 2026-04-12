@@ -54,6 +54,6 @@ export default function Controversies() {
       </div>
     </div>
 
-    <CheckchioSectionNav currentHref="/ledger/checchio/controversies" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

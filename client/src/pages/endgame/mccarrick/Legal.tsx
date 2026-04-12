@@ -2,7 +2,7 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Legal() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
@@ -86,6 +86,6 @@ export default function Legal() {
       </div>
     </div>
 
-    <SectionNav currentHref="/ledger/mccarrick/legal" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

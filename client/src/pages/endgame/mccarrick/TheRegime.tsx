@@ -3,7 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import RedactedText from "@/components/RedactedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import SectionNav from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import ImageModal from "@/components/ImageModal";
 
 export default function TheRegime() {
@@ -154,6 +154,6 @@ export default function TheRegime() {
       </div>
     </div>
 
-    <SectionNav currentHref="/ledger/mccarrick/the-regime" />
+    <MemoryGate registryId="person-mccarrick" />
   </div>);
 }

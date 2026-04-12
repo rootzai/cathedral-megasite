@@ -139,7 +139,7 @@ export default function Memes() {
         ))}
       </div>
 
-      <ReillySectionNav currentHref="/ledger/reilly/memes" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

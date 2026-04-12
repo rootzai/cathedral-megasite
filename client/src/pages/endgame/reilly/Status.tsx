@@ -155,7 +155,7 @@ export default function Status() {
         <p className="text-right font-mono text-xs text-zinc-500">— Investigative Summary, 2025</p>
       </div>
 
-      <ReillySectionNav currentHref="/ledger/reilly/status" />
+      <MemoryGate registryId="person-reilly" />
     </div>
   );
 }

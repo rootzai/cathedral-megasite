@@ -38,6 +38,6 @@ export default function TheLaunder() {
             </div>
         </div>
 
-        <MartinSectionNav currentHref="/ledger/martin/launder" />
+        <MemoryGate registryId="person-martin" />
     </div>);
 }

@@ -31,6 +31,6 @@ export default function Crimes() {
             </div>
         </div>
 
-        <MartinSectionNav currentHref="/ledger/martin/crimes" />
+        <MemoryGate registryId="person-martin" />
     </div>);
 }
