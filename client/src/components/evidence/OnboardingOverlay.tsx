@@ -22,26 +22,26 @@ export default function OnboardingOverlay({ onDismiss }: { onDismiss: () => void
             
             {/* STEP 1: Hero Welcome */}
             {onboardingStep === 1 && (
-                <div className="absolute bottom-8 right-8 md:bottom-16 md:right-16 max-w-lg flex flex-col items-end text-right animate-in fade-in slide-in-from-right-10 duration-1000 delay-500 fill-mode-both">
+                <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 max-w-sm md:max-w-md flex flex-col p-6 md:p-8 border border-white/10 bg-black/70 backdrop-blur-xl shadow-2xl items-end text-right animate-in fade-in slide-in-from-right-10 duration-1000 delay-500 fill-mode-both pointer-events-auto">
                     
-                    <h1 className="text-3xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-4 leading-tight drop-shadow-[0_4px_15px_rgba(0,0,0,0.9)]">
+                    <h1 className="text-2xl md:text-3xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-2 leading-tight">
                         Welcome to <br/><span className="text-white">The Cathedral</span>
                     </h1>
                     
-                    <p className="text-sm md:text-base text-zinc-300 font-serif italic mb-8 leading-relaxed max-w-sm drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                    <p className="text-xs md:text-sm text-zinc-300 font-serif italic mb-8 leading-relaxed">
                         A forensic memory palace documenting the architecture of silence. The records have been hidden. Your objective is to find them.
                     </p>
 
                     <button 
                         onClick={handleStart}
-                        className="pointer-events-auto group relative overflow-hidden bg-black/90 hover:bg-black border border-[#8b1a1a]/60 hover:border-[#8b1a1a] transition-all duration-500 py-3 px-8 shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_40px_rgba(139,26,26,0.6)] backdrop-blur-xl"
+                        className="group relative overflow-hidden bg-white/5 hover:bg-black border border-[#8b1a1a]/60 hover:border-[#8b1a1a] transition-all duration-500 py-3 px-6 shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_40px_rgba(139,26,26,0.6)]"
                     >
                         <div className="absolute inset-0 bg-[#8b1a1a]/15 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                         <div className="relative z-10 flex items-center justify-center gap-3">
-                            <span className="font-mono font-bold text-xs md:text-sm uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
+                            <span className="font-mono font-bold text-xs uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
                                 Initialize Protocol
                             </span>
-                            <MoveRight className="w-4 h-4 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-2" />
+                            <MoveRight className="w-4 h-4 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-1" />
                         </div>
                     </button>
                 </div>
