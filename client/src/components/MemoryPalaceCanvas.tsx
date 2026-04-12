@@ -75,11 +75,14 @@ function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route
 
             {/* Subtext */}
             <Text 
-                 position={[0, -2.5, 0.35]} 
-                 fontSize={0.25} 
-                 maxWidth={3.0} 
+                 position={[0, -2.0, 0.35]} 
+                 fontSize={0.5} 
+                 maxWidth={3.6} 
                  textAlign="center"
-                 color={hovered ? "#ffcccc" : "#888888"}
+                 color={hovered ? "#ffffff" : "#c8bdb0"}
+                 material-toneMapped={false}
+                 outlineWidth={hovered ? 0.01 : 0}
+                 outlineColor="#000000"
             >
                  {node.title}
             </Text>
