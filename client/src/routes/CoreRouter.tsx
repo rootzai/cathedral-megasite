@@ -13,26 +13,27 @@ const Noonan = React.lazy(() => import("@/pages/opinions/Noonan"));
 const Cannon = React.lazy(() => import("@/pages/opinions/Cannon"));
 const Matthews = React.lazy(() => import("@/pages/opinions/Matthews"));
 const Stephens = React.lazy(() => import("@/pages/opinions/Stephens"));
-const About = React.lazy(() => import("@/pages/About"));
-const Corrections = React.lazy(() => import("@/pages/Corrections"));
-const Dedication = React.lazy(() => import("@/pages/Dedication"));
-const CathedralHome = React.lazy(() => import("@/pages/Home"));
-const TheRecord = React.lazy(() => import("@/pages/TheRecord"));
-const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion"));
-const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall"));
-const Tips = React.lazy(() => import("@/pages/Tips"));
+const About = React.lazy(() => import("@/pages/About").then(m => ({ default: m.default })));
+const Corrections = React.lazy(() => import("@/pages/Corrections").then(m => ({ default: m.default })));
+const Dedication = React.lazy(() => import("@/pages/Dedication").then(m => ({ default: m.default })));
+const CathedralHome = React.lazy(() => import("@/pages/Home").then(m => ({ default: m.default })));
+const TheRecord = React.lazy(() => import("@/pages/TheRecord").then(m => ({ default: m.default })));
+const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion").then(m => ({ default: m.default })));
+const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall").then(m => ({ default: m.default })));
+const Tips = React.lazy(() => import("@/pages/Tips").then(m => ({ default: m.default })));
 const TheMethod = React.lazy(() => import("@/pages/TheMethod"));
 const TheNursery = React.lazy(() => import("@/pages/TheNursery"));
 const HumptyCaseStudy = React.lazy(() => import("@/pages/easter/HumptyCaseStudy"));
 const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const DeiJournoEasterEgg = React.lazy(() => import("../pages/DeiJournoEasterEgg"));
-const NotFound = React.lazy(() => import("@/pages/NotFound"));
-const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy"));
-const WhosWho = React.lazy(() => import("@/pages/WhosWho"));
-const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings"));
-const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley"));
-const Prologue = React.lazy(() => import("@/pages/Prologue"));
-const Axis = React.lazy(() => import("@/pages/Axis"));
+const NotFound = React.lazy(() => import("@/pages/NotFound").then(m => ({ default: m.default })));
+const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy").then(m => ({ default: m.default })));
+const WhosWho = React.lazy(() => import("@/pages/WhosWho").then(m => ({ default: m.default })));
+const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings").then(m => ({ default: m.default })));
+const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley").then(m => ({ default: m.default })));
+const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ default: m.default })));
+const Axis = React.lazy(() => import("@/pages/Axis").then(m => ({ default: m.default })));
+const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -112,13 +113,43 @@ export function CoreRouter() {
         <Route path="/madman">
           <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
         </Route>
+        <Route path="/madman/the-machine">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/TheMachine"))} />
+        </Route>
+        <Route path="/madman/exhibit-a">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitA"))} />
+        </Route>
+        <Route path="/madman/exhibit-b">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitB"))} />
+        </Route>
+        <Route path="/madman/exhibit-c">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitC"))} />
+        </Route>
+        <Route path="/madman/exhibit-d">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitD"))} />
+        </Route>
+        <Route path="/madman/exhibit-e">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitE"))} />
+        </Route>
+        <Route path="/madman/exhibit-f">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitF"))} />
+        </Route>
+        <Route path="/madman/emails">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Emails"))} />
+        </Route>
+        <Route path="/madman/irishman">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Irishman"))} />
+        </Route>
+        <Route path="/madman/briefing">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Briefing"))} />
+        </Route>
         <Route path="/humpty">
           <PageLayout component={HumptyCaseStudy} />
         </Route>
 
         {/* Tier 2: THE EVIDENCE */}
         <Route path="/evidence">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={ArchitectureMap} />
         </Route>
         <Route path="/evidence/origin">
           <PageLayout component={EvidenceHub} />
@@ -144,10 +175,10 @@ export function CoreRouter() {
 
         {/* Tier 3: THE BREACH (Act 3) */}
         <Route path="/breach/hub">
-          <PageLayout component={BreachHub} />
+          <PageLayout component={React.lazy(() => import("@/pages/breach/BreachHub").then(m => ({ default: m.default })))} />
         </Route>
         <Route path="/breach">
-          <PageLayout component={React.lazy(() => import("../pages/expose/WhistleblowerUnmasking"))} />
+          <PageLayout component={React.lazy(() => import("@/pages/expose/WhistleblowerUnmasking").then(m => ({ default: m.default })))} />
         </Route>
 
         {/* Tier 6: THE METHOD & THE NURSERY */}
