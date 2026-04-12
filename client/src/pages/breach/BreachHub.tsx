@@ -77,11 +77,13 @@ export default function BreachHub() {
                                 This is the {<Term id="Michael Critchley">Michael Critchley</Term>} masterclass: managing the temperature to insulate the hierarchy.
                             </p>
                         </div>
-                        <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-6">
-                            <span className="text-xs font-black font-courier text-white uppercase tracking-widest">Forensic Countdown</span>
-                            <div className="flex items-end gap-2">
-                                <span className="text-5xl font-black text-white font-cinzel tracking-tighter">MAY 28</span>
-                                <span className="text-[#8b1a1a] font-black text-xs uppercase mb-1">Deposition Hearing, Dept. C23</span>
+                        <div className="bg-[#0D0D10] border border-[#8b1a1a]/20 p-8 space-y-4">
+                            <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-[0.3em]">Forensic Countdown</span>
+                            <div className="flex flex-col mt-2">
+                                <span className="text-6xl md:text-7xl font-black text-white font-cinzel tracking-tighter leading-none mb-4">MAY 28</span>
+                                <div className="border-t border-[#8b1a1a]/30 pt-4">
+                                    <span className="text-[#8b1a1a] font-black text-xs md:text-sm uppercase tracking-widest">Deposition Hearing, Dept. C23</span>
+                                </div>
                             </div>
                         </div>
                     </div>
