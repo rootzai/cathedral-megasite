@@ -28,7 +28,6 @@ export const MEMORY_PALACE: Record<ChamberKey, ChamberData> = {
         loci: [
             { id: 'foyer-home', title: 'The Homepage Portal', mnemonicAnchor: 'The Obsidian Doors', route: '/', shape: 'monolith', positionOffset: [0, 0, 0] },
             { id: 'foyer-prologue', title: 'Investigation Prologue', mnemonicAnchor: 'The Stone Plaque', route: '/prologue', shape: 'cube', positionOffset: [-3, 1, -2] },
-            { id: 'foyer-axis', title: 'The Power Axis', mnemonicAnchor: 'The Compass Rose', route: '/axis', shape: 'ring', positionOffset: [3, 0, -3] },
             { id: 'foyer-tips', title: 'Whistleblower Tip Line', mnemonicAnchor: 'The Brass Mailbox', route: '/tips', shape: 'shard', positionOffset: [-2, -1, 3] },
             { id: 'foyer-dedication', title: 'The Dedication', mnemonicAnchor: 'The Engraving', route: '/dedication', shape: 'pyramid', positionOffset: [2, 2, 2] },
             { id: 'foyer-about', title: 'About the Investigation', mnemonicAnchor: 'The Charter', route: '/about', shape: 'cube', positionOffset: [0, -2, -4] },

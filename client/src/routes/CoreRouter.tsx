@@ -32,7 +32,7 @@ const WhosWho = React.lazy(() => import("@/pages/WhosWho").then(m => ({ default:
 const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings").then(m => ({ default: m.default })));
 const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley").then(m => ({ default: m.default })));
 const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ default: m.default })));
-const Axis = React.lazy(() => import("@/pages/Axis").then(m => ({ default: m.default })));
+
 const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
 const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex").then(m => ({ default: m.default })));
 
@@ -108,9 +108,7 @@ export function CoreRouter() {
         <Route path="/prologue">
           <PageLayout component={Prologue} />
         </Route>
-        <Route path="/axis">
-          <PageLayout component={Axis} />
-        </Route>
+
         <Route path="/index">
           <PageLayout component={GlobalIndex} />
         </Route>
