@@ -23,7 +23,7 @@ export default function EvidenceHub() {
 
             {/* The Gateway (Triptych + Onboarding) */}
             {showOnboarding && (
-                <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8 overflow-y-auto">
+                <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-sm p-4 md:p-8 overflow-y-auto">
                     <div className="max-w-6xl w-full border border-[#8b1a1a]/30 bg-[#050505] p-8 md:p-12 relative shadow-[0_0_80px_rgba(139,26,26,0.1)] mt-auto mb-auto md:mt-20 md:mb-20">
                         
                         <div className="absolute top-0 left-0 w-1 h-full bg-[#8b1a1a]"></div>

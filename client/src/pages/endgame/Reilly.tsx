@@ -1,5 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
-import { LedgerNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangle, Eye, Scale } from "lucide-react";

@@ -3,7 +3,7 @@ import ImageModal from "@/components/ImageModal";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckchioSectionNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Home() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">

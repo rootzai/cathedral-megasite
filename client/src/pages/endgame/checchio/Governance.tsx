@@ -2,7 +2,7 @@ import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckchioSectionNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Governance() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">

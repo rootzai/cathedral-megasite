@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckchioSectionNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 
 export default function Purge() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">

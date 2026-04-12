@@ -1,4 +1,4 @@
-import { ReillySectionNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import SectionHeader from "@/components/SectionHeader";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Image as ImageIcon } from "lucide-react";

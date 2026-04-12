@@ -1,4 +1,4 @@
-import { ReillySectionNav } from "@/components/SectionNav";
+import MemoryGate from "@/components/MemoryGate";
 import SectionHeader from "@/components/SectionHeader";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, FileText, ShieldAlert } from "lucide-react";
