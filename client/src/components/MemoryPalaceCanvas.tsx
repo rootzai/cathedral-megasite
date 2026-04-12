@@ -1,93 +1,127 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Environment, Float, Sparkles, OrbitControls, Stars } from '@react-three/drei';
+import { Environment, Float, Sparkles, OrbitControls, Stars, Text } from '@react-three/drei';
 import { useLocation } from 'wouter';
 import * as THREE from 'three';
 import { MEMORY_PALACE, ChamberKey, LocusNode, CHAMBER_ORDER } from '@/lib/memoryPalaceData';
 
-// Individual Locus 3D Node
+// Individual Locus 3D Node (Massive Obsidian Stele + Typography)
 function LocusObject({ node, onNavigate, setHoveredLocus }: { node: LocusNode, onNavigate: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
-    const meshRef = useRef<THREE.Mesh>(null);
+    const groupRef = useRef<THREE.Group>(null);
     const [hovered, setHover] = useState(false);
 
     useFrame((state, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += delta * (hovered ? 1.5 : 0.2);
-            meshRef.current.rotation.x += delta * (hovered ? 0.5 : 0.1);
+        if (groupRef.current) {
+            // Elegant, solemn vertical floating
+            groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8 + node.positionOffset[0]) * 0.4;
         }
     });
 
-    const getGeometry = () => {
-        switch (node.shape) {
-            case 'monolith': return <boxGeometry args={[1, 4, 1]} />;
-            case 'shard': return <coneGeometry args={[1, 3, 3]} />;
-            case 'orb': return <sphereGeometry args={[1.5, 32, 32]} />;
-            case 'ring': return <torusGeometry args={[1.5, 0.2, 16, 100]} />;
-            case 'pyramid': return <coneGeometry args={[1.5, 2.5, 4]} />;
-            case 'cube': return <boxGeometry args={[2, 2, 2]} />;
-            default: return <sphereGeometry args={[1, 16, 16]} />;
-        }
-    };
+    // Expand the bounding positions massively so the steles don't overlap
+    const spreadOffset = [
+        node.positionOffset[0] * 5, 
+        node.positionOffset[1] + 1, 
+        node.positionOffset[2] * 4
+    ] as [number, number, number];
 
     return (
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={1} position={node.positionOffset}>
+        <group ref={groupRef} position={spreadOffset}>
             <mesh
-                ref={meshRef}
-                onPointerOver={(e) => { e.stopPropagation(); setHover(true); setHoveredLocus(node); }}
-                onPointerOut={(e) => { e.stopPropagation(); setHover(false); setHoveredLocus(null); }}
+                onPointerOver={(e) => { e.stopPropagation(); setHover(true); setHoveredLocus(node); document.body.style.cursor = 'pointer'; }}
+                onPointerOut={(e) => { e.stopPropagation(); setHover(false); setHoveredLocus(null); document.body.style.cursor = 'auto'; }}
                 onClick={(e) => { e.stopPropagation(); onNavigate(node.route); }}
                 castShadow
                 receiveShadow
             >
-                {getGeometry()}
+                {/* The Monumental Stele */}
+                <boxGeometry args={[4, 10, 0.5]} />
                 <meshStandardMaterial 
-                    color={hovered ? '#ff1a1a' : '#2a2a2a'} 
-                    roughness={0.2}
-                    metalness={0.8}
-                    wireframe={node.shape === 'shard' && hovered}
-                    emissive={hovered ? '#8b0000' : '#000000'}
-                    emissiveIntensity={hovered ? 1 : 0}
+                    color={hovered ? '#150000' : '#030303'} 
+                    roughness={0.15}
+                    metalness={0.9}
+                    emissive={hovered ? '#4a0000' : '#000000'}
+                    emissiveIntensity={hovered ? 0.6 : 0}
                 />
             </mesh>
-        </Float>
+            
+            {/* The HIGH CONTRAST Typography Anchor - Hovering on the front face */}
+            <Text 
+                position={[0, 2.5, 0.35]} 
+                fontSize={0.8} 
+                maxWidth={3.8} 
+                textAlign="center"
+                 font="https://fonts.gstatic.com/s/cinzel/v11/20d8_pQ2m11mb0_R-5iigP_y.woff2"
+                color={hovered ? "#ffffff" : "#ff3b3b"}
+                anchorX="center"
+                anchorY="middle"
+                outlineWidth={hovered ? 0.03 : 0}
+                outlineColor="#000000"
+                material-toneMapped={false}
+            >
+                {node.mnemonicAnchor}
+            </Text>
+
+            {/* Subtext */}
+            <Text 
+                 position={[0, -2.5, 0.35]} 
+                 fontSize={0.25} 
+                 maxWidth={3.0} 
+                 textAlign="center"
+                 font="https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUtiZTaR.woff2"
+                 color={hovered ? "#ffcccc" : "#888888"}
+            >
+                 {node.title}
+            </Text>
+        </group>
     );
 }
 
-// Full Chamber Scene
-function ChamberScene({ chamberKey, setLocation, setHoveredLocus }: { chamberKey: ChamberKey, setLocation: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
+// Interconnected Chamber Segment
+function ChamberGroup({ chamberKey, zOffset, setLocation, setHoveredLocus }: { chamberKey: ChamberKey, zOffset: number, setLocation: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
     const chamber = MEMORY_PALACE[chamberKey];
 
     return (
-        <group>
-            {/* Environment Fog */}
-            <fog attach="fog" args={[chamber.fogColor, 5, 25]} />
-            
-            {/* Lighting */}
-            <ambientLight intensity={0.2} />
-            <spotLight position={[0, 15, 0]} intensity={1.5} penumbra={1} color="#ff3333" castShadow />
-            <pointLight position={[10, -5, -10]} intensity={0.5} color="#4444ff" />
-
-            {/* Atmosphere */}
-            <Sparkles count={200} scale={15} size={2} speed={0.4} opacity={0.2} color="#ff9999" />
-            {(chamberKey === 'catacombs' || chamberKey === 'vestibule') && <Stars radius={50} depth={50} count={1000} factor={4} saturation={0} fade speed={1} />}
-
-            {/* Base Platform */}
-            {chamber.baseShape === 'platform' && (
-                <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]} receiveShadow>
-                    <cylinderGeometry args={[15, 15, 0.5, 32]} />
-                    <meshStandardMaterial color="#111" roughness={0.8} />
-                </mesh>
-            )}
-            {(chamber.baseShape === 'mirror' || chamber.baseShape === 'ruins') && (
-                <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]} receiveShadow>
-                    <planeGeometry args={[50, 50]} />
-                    <meshStandardMaterial color={chamber.baseShape === 'mirror' ? "#050505" : "#1a1a1a"} roughness={chamber.baseShape === 'mirror' ? 0.1 : 0.9} metalness={0.5} />
-                </mesh>
-            )}
+        <group position={[0, 0, zOffset]}>
+            {/* Ambient Base Plane for reflections */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]} receiveShadow>
+                <planeGeometry args={[120, 120]} />
+                <meshStandardMaterial color="#010101" roughness={0.08} metalness={0.9} />
+            </mesh>
 
             {/* Loci Nodes */}
             {chamber.loci.map(locus => (
                 <LocusObject key={locus.id} node={locus} onNavigate={setLocation} setHoveredLocus={setHoveredLocus} />
+            ))}
+            
+            {/* Local Chamber Fog/Lighting to differentiate spaces */}
+            <pointLight position={[0, 15, 0]} intensity={0.6} color={chamber.fogColor === '#0a0a0a' ? '#ffffff' : chamber.fogColor} distance={80} />
+            <spotLight position={[0, 25, 0]} intensity={3} angle={0.6} penumbra={1} color="#ff0000" castShadow />
+            <Sparkles count={150} scale={25} size={3} speed={0.3} opacity={0.6} color="#ffffff" />
+        </group>
+    );
+}
+
+// Unified World Map Slider (The Rail System)
+function WorldMap({ currentChamberIndex, setLocation, setHoveredLocus }: { currentChamberIndex: number, setLocation: (route: string) => void, setHoveredLocus: (node: LocusNode | null) => void }) {
+    const groupRef = useRef<THREE.Group>(null);
+    useFrame(() => {
+        if (groupRef.current) {
+            // The world physically slides backwards based on the active chamber index!
+            const targetZ = currentChamberIndex * 80;
+            groupRef.current.position.z += (targetZ - groupRef.current.position.z) * 0.04;
+        }
+    });
+
+    return (
+        <group ref={groupRef}>
+            {CHAMBER_ORDER.map((key, index) => (
+                <ChamberGroup 
+                    key={key} 
+                    chamberKey={key} 
+                    zOffset={-index * 80} 
+                    setLocation={setLocation} 
+                    setHoveredLocus={setHoveredLocus} 
+                />
             ))}
         </group>
     );
@@ -150,15 +184,22 @@ export default function MemoryPalaceCanvas() {
             </div>
 
             {/* The 3D Render Engine */}
-            <Canvas shadows camera={{ position: [0, 2, 12], fov: 60 }} className="absolute inset-0 z-0 bg-black">
-                <ChamberScene chamberKey={activeChamberKey} setLocation={setLocation} setHoveredLocus={setHoveredLocus} />
+            <Canvas shadows camera={{ position: [0, 5, 20], fov: 60 }} className="absolute inset-0 z-0 bg-black">
+                <color attach="background" args={['#020000']} />
+                <fog attach="fog" args={["#000000", 15, 70]} />
+                <ambientLight intensity={0.15} />
+                <Stars radius={150} depth={50} count={4000} factor={5} saturation={1} fade speed={1.5} />
+                
+                <WorldMap currentChamberIndex={currentChamberIndex} setLocation={setLocation} setHoveredLocus={setHoveredLocus} />
+                
                 <OrbitControls 
                     enablePan={false} 
+                    enableZoom={true} 
                     minDistance={5} 
-                    maxDistance={25} 
-                    maxPolarAngle={Math.PI / 2 - 0.1} // Prevent going below floor
+                    maxDistance={35} 
+                    maxPolarAngle={Math.PI / 2 - 0.05} // Prevent going below the massive mirror floor
                     autoRotate
-                    autoRotateSpeed={0.5}
+                    autoRotateSpeed={0.3}
                 />
             </Canvas>
         </div>
