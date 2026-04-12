@@ -20,29 +20,33 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
     return (
         <div className="absolute inset-0 z-50 pointer-events-none">
             
-            {/* STEP 1: Hero Welcome Box in the Top Center */}
+            {/* STEP 1: Hero Welcome Cinematic Bar */}
             {onboardingStep === 1 && (
-                <div className="absolute top-12 left-1/2 -translate-x-1/2 max-w-sm w-full flex flex-col items-center justify-center p-8 border-b-2 border-x border-[#8b1a1a]/20 border-t-0 bg-black/80 backdrop-blur-xl shadow-2xl animate-in fade-in slide-in-from-top-10 duration-1000 delay-500 fill-mode-both pointer-events-auto text-center rounded-b-3xl">
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl flex flex-col md:flex-row items-center justify-between p-6 md:p-8 border border-white/5 bg-black/80 backdrop-blur-xl shadow-2xl animate-in fade-in slide-in-from-top-10 duration-1000 delay-500 fill-mode-both pointer-events-auto rounded-3xl">
                     
-                    <h1 className="text-2xl md:text-3xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-2 leading-tight">
-                        <span className="text-zinc-300 text-xs tracking-[0.4em] block mb-1 opacity-70">WELCOME TO</span>
-                        The Cathedral
-                    </h1>
-                    
-                    <p className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase mb-6 leading-relaxed border-b border-[#8b1a1a]/20 pb-4 w-3/4">
-                        A forensic memory palace.
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-10 text-center md:text-left mb-6 md:mb-0">
+                        <div className="md:border-r border-[#8b1a1a]/30 md:pr-8">
+                            <span className="text-zinc-500 text-xs tracking-[0.4em] block mb-1 uppercase font-mono">Welcome to</span>
+                            <h1 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] leading-none text-shadow-sm">
+                                The Cathedral
+                            </h1>
+                        </div>
+                        
+                        <p className="text-xs md:text-sm lg:text-base text-zinc-300 font-mono tracking-widest uppercase">
+                            A forensic memory palace.
+                        </p>
+                    </div>
 
                     <button 
                         onClick={handleStart}
-                        className="group relative overflow-hidden bg-black hover:bg-[#050000] border border-[#8b1a1a]/40 hover:border-[#8b1a1a] transition-all duration-500 py-3 px-8 shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_40px_rgba(139,26,26,0.4)] rounded-full"
+                        className="group relative overflow-hidden bg-black hover:bg-[#0a0000] border border-[#8b1a1a]/50 hover:border-[#8b1a1a] transition-all duration-500 py-4 px-8 md:px-12 shadow-[0_0_20px_rgba(139,26,26,0.15)] hover:shadow-[0_0_40px_rgba(139,26,26,0.5)] rounded-full shrink-0"
                     >
-                        <div className="absolute inset-0 bg-[#8b1a1a]/15 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                        <div className="absolute inset-0 bg-[#8b1a1a]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                         <div className="relative z-10 flex items-center justify-center gap-3">
-                            <span className="font-mono font-bold text-[10px] uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
+                            <span className="font-mono font-bold text-xs md:text-sm uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
                                 Initialize Protocol
                             </span>
-                            <MoveRight className="w-3 h-3 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-1" />
+                            <MoveRight className="w-5 h-5 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-2" />
                         </div>
                     </button>
                 </div>
