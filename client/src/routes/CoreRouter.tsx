@@ -161,6 +161,11 @@ export function CoreRouter() {
         <Route path="/evidence/board">
           <PageLayout component={EvidenceHub} />
         </Route>
+        
+        {/* Legacy redirect */}
+        <Route path="/evidence/politico-report">
+          <Redirect to="/evidence" />
+        </Route>
         <Route path="/evidence/legal">
           <PageLayout component={EvidenceHub} />
         </Route>

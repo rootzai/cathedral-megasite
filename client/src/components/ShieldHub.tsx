@@ -53,8 +53,8 @@ export default function ShieldHub({
               />
             </div>
 
-            {/* Ambient Pulse beneath the perpetrators core */}
-            <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-red-600/10 rounded-full blur-[25px] animate-pulse pointer-events-none" />
+            {/* Ambient background glow instead of pulsing empty element */}
+            <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-red-600/10 rounded-full blur-[25px] pointer-events-none" />
           </div>
 
           {/* Forensic Informational Panel */}

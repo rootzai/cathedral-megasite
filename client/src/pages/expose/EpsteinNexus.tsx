@@ -140,7 +140,7 @@ export default function EpsteinNexus() {
       {/* The Timeline Conclusion */}
       <section className="max-w-5xl mx-auto text-center space-y-10 bg-zinc-950 p-16 border-2 border-red-900 shadow-[0_0_50px_rgba(139,26,26,0.2)] relative">
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0a0a0c] px-6">
-          <AlertTriangle className="w-10 h-10 text-red-600 animate-pulse" />
+          <AlertTriangle className="w-10 h-10 text-red-600" />
         </div>
         <h3 className="font-mono text-xl text-red-500 uppercase tracking-[0.4em] font-black">17 Days — The Critical Window</h3>
         <p className="text-3xl text-zinc-100 leading-relaxed italic font-serif">

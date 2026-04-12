@@ -10,7 +10,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative border-b border-border pb-16">
             <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-                <Siren className="w-96 h-96 text-destructive animate-pulse" />
+                <Siren className="w-96 h-96 text-destructive" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
