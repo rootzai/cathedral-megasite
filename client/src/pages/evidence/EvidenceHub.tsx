@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import { SEO } from "@/components/SEO";
 import { Term } from "@/components/Term";
-import { Wind, Zap, Flame } from "lucide-react";
+import { Wind, Zap, Flame, Hash, Layers, Eye } from "lucide-react";
 
 export default function EvidenceHub() {
     const [showOnboarding, setShowOnboarding] = useState(true);
@@ -44,10 +44,10 @@ export default function EvidenceHub() {
                                         You are now entering a <strong className="text-white">Memory Palace</strong>. This is not a metaphor; it is how our minds are biologically built to preserve truth against eradication.
                                     </p>
                                 </div>
-
-                                <p className="text-base uppercase tracking-widest font-mono text-center pt-6">You have been granted THREE specific cognitive protocols:</p>
+                                <p className="text-base uppercase tracking-widest font-mono text-center pt-6">You have been granted SIX specific cognitive protocols:</p>
                                 
                                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 text-base font-sans mt-6">
+                                    {/* Row 1 */}
                                     <li className="bg-[#050505] border border-white/10 p-6">
                                         <Wind className="w-8 h-8 text-[#8b1a1a] mb-4" />
                                         <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">I. Method of Loci</strong>
@@ -62,6 +62,22 @@ export default function EvidenceHub() {
                                         <Flame className="w-8 h-8 text-[#ff3333] mb-4" />
                                         <strong className="text-[#ff3333] uppercase tracking-widest block mb-2 text-sm font-black">III. Aquinas Effect</strong>
                                         "Unwonted illustration." Bizarre, extreme visualizations force permanent retention.
+                                    </li>
+                                    {/* Row 2 */}
+                                    <li className="bg-[#050505] border border-white/10 p-6">
+                                        <Layers className="w-8 h-8 text-[#8b1a1a] mb-4" />
+                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">IV. Extreme Chunking</strong>
+                                        Raw financial aggregates and dates are bound into singular, highly distinct compound events.
+                                    </li>
+                                    <li className="bg-[#050505] border border-white/10 p-6">
+                                        <Hash className="w-8 h-8 text-[#8b1a1a] mb-4" />
+                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">V. The Major System</strong>
+                                        Calculated phonetic translation. Sterile dates and subpoena figures convert into vivid imagery.
+                                    </li>
+                                    <li className="bg-[#050505] border border-white/10 p-6 shadow-[0_0_15px_rgba(139,26,26,0.05)]">
+                                        <Eye className="w-8 h-8 text-amber-500 mb-4" />
+                                        <strong className="text-amber-500 uppercase tracking-widest block mb-2 text-sm font-black">VI. Von Restorff Isolation</strong>
+                                        The mind refuses to forget anomalies. Deliberate focus is placed on the most absurd, contradicting testimony.
                                     </li>
                                 </ul>
                             </div>
