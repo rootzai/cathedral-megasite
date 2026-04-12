@@ -35,6 +35,7 @@ const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley").the
 const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ default: m.default })));
 const Axis = React.lazy(() => import("@/pages/Axis").then(m => ({ default: m.default })));
 const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
+const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex").then(m => ({ default: m.default })));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -111,6 +112,9 @@ export function CoreRouter() {
         <Route path="/axis">
           <PageLayout component={Axis} />
         </Route>
+        <Route path="/index">
+          <PageLayout component={GlobalIndex} />
+        </Route>
         <Route path="/madman">
           <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
         </Route>
@@ -135,14 +139,14 @@ export function CoreRouter() {
         <Route path="/madman/exhibit-f">
           <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitF"))} />
         </Route>
-        <Route path="/madman/emails">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Emails"))} />
+        <Route path="/vault/epstein-emails">
+          <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
         </Route>
-        <Route path="/madman/irishman">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Irishman"))} />
+        <Route path="/ledger/reilly/irishman">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/reilly/Irishman"))} />
         </Route>
-        <Route path="/madman/briefing">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Briefing"))} />
+        <Route path="/expose/press-briefing">
+          <PageLayout component={React.lazy(() => import("@/pages/expose/PressBriefing"))} />
         </Route>
         <Route path="/humpty">
           <PageLayout component={HumptyCaseStudy} />

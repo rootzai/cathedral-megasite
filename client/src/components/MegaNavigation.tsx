@@ -45,6 +45,11 @@ export default function MegaNavigation() {
                   [ OPEN ARCHITECTURAL MAP ]
                 </a>
               </Link>
+              <Link href="/index">
+                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-8 py-5 text-xl font-black uppercase tracking-[0.3em] transition-all flex items-center justify-center">
+                  The Master Index
+                </a>
+              </Link>
               <Link href="/tips">
                 <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-8 py-5 text-xl font-black uppercase tracking-[0.3em] transition-all flex items-center justify-center">
                   Tip Line

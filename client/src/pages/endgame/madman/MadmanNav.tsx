@@ -27,9 +27,8 @@ export default function MadmanNav() {
   ];
 
   const specialLinks = [
-    { label: 'EPSTEIN FILES', path: '/madman/emails', tagline: 'Ruemmler', color: '#CC2200' },
-    { label: 'IRISHMAN', path: '/madman/irishman', tagline: 'Essex County', color: '#1B7A8A' },
-    { label: 'PRESS BRIEFING', path: '/madman/briefing', tagline: 'Journalists', color: '#D4A017' }
+    // Extracts moved to UniversalRegistry native nodes:
+    // /ledger/reilly/irishman, /vault/epstein-emails, /expose/press-briefing
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -140,25 +139,7 @@ export default function MadmanNav() {
                 </div>
               ))}
 
-              <div className="h-px bg-[#F5EDD0]/20 my-2 mx-4" />
-
-              {specialLinks.map((link) => (
-                <div 
-                  key={link.path}
-                  onClick={() => handleNavigate(link.path)}
-                  className="flex flex-col px-6 py-4 border-b border-[#F5EDD0]/10 cursor-pointer hover:bg-white/5 transition-colors border-l-[3px]"
-                  style={{ borderLeftColor: link.color }}
-                >
-                  <span className="font-['Boogaloo'] text-3xl tracking-widest" style={{ color: link.color }}>
-                    {link.label}
-                  </span>
-                  <span className="font-['Special_Elite'] text-xl tracking-widest text-[#F5EDD0]/50 mt-2">
-                    {link.tagline}
-                  </span>
-                </div>
-              ))}
-              
-              <div className="h-8" />
+              <div className="h-4" />
             </div>
           </div>
         </div>

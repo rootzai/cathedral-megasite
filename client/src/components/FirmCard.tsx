@@ -5,6 +5,8 @@
 import type { LawyerFirm } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Building2, User } from "lucide-react";
+import MemoryGate from "@/components/MemoryGate";
+import { UNIVERSAL_REGISTRY } from "@/lib/UniversalRegistry";
 
 export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number }) {
   return (
@@ -46,6 +48,11 @@ export function FirmCard({ firm, index = 0 }: { firm: LawyerFirm; index?: number
       <p className="text-sm text-zinc-200 leading-relaxed mt-4 pt-3 border-t border-cathedral-gold/20">
         {firm.description}
       </p>
+
+      {/* Semiotic Graph Connective Tissue */}
+      <div className="mt-8">
+         <MemoryGate registryId={`firm-${index}`} />
+      </div>
     </motion.div>
   );
 }

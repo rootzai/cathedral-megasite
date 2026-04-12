@@ -143,7 +143,7 @@ export default function TheyKnew() {
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                { badge: "latham" as const, icon: <BookOpen className="w-3.5 h-3.5" />, label: "Heard Latham Report", style: "badge-latham" },
+                { badge: "latham" as const, icon: <BookOpen className="w-3.5 h-3.5" />, label: "2019 Board (Latham Era)", style: "badge-latham" },
                 { badge: "reilly" as const, icon: <Crown className="w-3.5 h-3.5" />, label: "Voted for Reilly (2024)", style: "badge-reilly" },
                 { badge: "tobin" as const, icon: <Church className="w-3.5 h-3.5" />, label: "Received Tobin Letters", style: "badge-tobin" },
                 { badge: "christie" as const, icon: <Shield className="w-3.5 h-3.5" />, label: "Christie Network", style: "badge-christie" },
