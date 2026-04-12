@@ -36,30 +36,30 @@ export default function EvidenceHub() {
 
             {/* Gamified Onboarding UI */}
             {isVisible && (
-                <div className="absolute inset-0 z-50 flex items-center justify-center p-4 md:p-8 overflow-y-auto pointer-events-none">
+                <div className="absolute inset-0 z-50 pointer-events-none">
                     
                     {/* STEP 1: Hero Welcome */}
                     {onboardingStep === 1 && (
-                        <div className="max-w-3xl w-full flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
+                        <div className="absolute bottom-8 right-8 md:bottom-16 md:right-16 max-w-lg flex flex-col items-end text-right animate-in fade-in slide-in-from-right-10 duration-1000 delay-500 fill-mode-both">
                             
-                            <h1 className="text-4xl md:text-6xl font-cinzel font-black uppercase tracking-widest text-white mb-6 leading-tight drop-shadow-[0_4px_25px_rgba(0,0,0,1)]">
-                                Welcome to <br/><span className="text-[#8b1a1a]">The Cathedral</span>
+                            <h1 className="text-3xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] mb-4 leading-tight drop-shadow-[0_4px_15px_rgba(0,0,0,0.9)]">
+                                Welcome to <br/><span className="text-white">The Cathedral</span>
                             </h1>
                             
-                            <p className="text-lg md:text-xl text-zinc-300 font-serif italic mb-12 leading-relaxed max-w-2xl drop-shadow-[0_2px_15px_rgba(0,0,0,1)]">
+                            <p className="text-sm md:text-base text-zinc-300 font-serif italic mb-8 leading-relaxed max-w-sm drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
                                 A forensic memory palace documenting the architecture of silence. The records have been hidden. Your objective is to find them.
                             </p>
 
                             <button 
                                 onClick={handleStart}
-                                className="pointer-events-auto group relative overflow-hidden bg-black/80 hover:bg-black border border-[#8b1a1a] transition-all duration-500 py-4 px-12 shadow-[0_0_30px_rgba(139,26,26,0.2)] hover:shadow-[0_0_50px_rgba(139,26,26,0.6)] backdrop-blur-md"
+                                className="pointer-events-auto group relative overflow-hidden bg-black/90 hover:bg-black border border-[#8b1a1a]/60 hover:border-[#8b1a1a] transition-all duration-500 py-3 px-8 shadow-[0_0_20px_rgba(139,26,26,0.3)] hover:shadow-[0_0_40px_rgba(139,26,26,0.6)] backdrop-blur-xl"
                             >
-                                <div className="absolute inset-0 bg-[#8b1a1a]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                                <div className="relative z-10 flex items-center justify-center gap-4">
-                                    <span className="font-mono font-bold text-sm md:text-base uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
+                                <div className="absolute inset-0 bg-[#8b1a1a]/15 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                                <div className="relative z-10 flex items-center justify-center gap-3">
+                                    <span className="font-mono font-bold text-xs md:text-sm uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
                                         Initialize Protocol
                                     </span>
-                                    <MoveRight className="w-5 h-5 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-2" />
+                                    <MoveRight className="w-4 h-4 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-2" />
                                 </div>
                             </button>
                         </div>
@@ -67,8 +67,9 @@ export default function EvidenceHub() {
 
                     {/* STEP 2: Choose Your Mystery */}
                     {onboardingStep === 2 && (
-                        <div className="max-w-6xl w-full animate-in fade-in zoom-in-95 duration-700 mt-auto mb-auto md:mt-10 md:mb-10 pointer-events-auto">
-                            <div className="text-center mb-10 md:mb-16 bg-black/60 backdrop-blur-md border outline-none border-white/5 inline-block px-12 py-6 rounded-3xl shadow-2xl">
+                        <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8 overflow-y-auto bg-black/60 backdrop-blur-md z-50 pointer-events-auto transition-all duration-700">
+                            <div className="max-w-6xl w-full animate-in fade-in zoom-in-95 duration-700 mt-auto mb-auto md:mt-10 md:mb-10">
+                                <div className="text-center mb-10 md:mb-16 inline-block md:block">
                                 <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] font-black block mb-3 animate-pulse">
                                     Target Selection Required
                                 </span>
@@ -145,13 +146,14 @@ export default function EvidenceHub() {
                             </div>
                             
                             {/* Skip / Direct Access */}
-                            <div className="text-center mt-12 mb-6 pointer-events-auto inline-block bg-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-white/5">
-                                <button 
-                                    onClick={handleDismiss}
-                                    className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-zinc-400 hover:text-white transition-colors"
-                                >
-                                    [ Enter 3D Free-Roam ]
-                                </button>
+                                <div className="text-center mt-12 mb-6 pointer-events-auto inline-block bg-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-white/5">
+                                    <button 
+                                        onClick={handleDismiss}
+                                        className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-zinc-400 hover:text-white transition-colors"
+                                    >
+                                        [ Enter 3D Free-Roam ]
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     )}
