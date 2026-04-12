@@ -3,11 +3,24 @@ import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import TriptychPortal from "@/components/TriptychPortal";
 import { SEO } from "@/components/SEO";
-import { Term } from "@/components/Term";
-import { Wind, Zap, Flame, Hash, Layers, Eye } from "lucide-react";
+import { MoveRight, Shield, ShieldAlert, Search, Fingerprint, Eye, Code, BrainCircuit } from "lucide-react";
 
 export default function EvidenceHub() {
-    const [showOnboarding, setShowOnboarding] = useState(true);
+    const [onboardingStep, setOnboardingStep] = useState(1);
+    const [isVisible, setIsVisible] = useState(true);
+
+    const handleStart = () => {
+        setOnboardingStep(2);
+    };
+
+    const handleDismiss = () => {
+        setIsVisible(false);
+    };
+
+    // Callback from TriptychPortal when it finishes its sequence
+    const handlePortalComplete = () => {
+        // We leave the onboarding visible. Triptych portal unmounting happens internally.
+    };
 
     return (
         <div className="min-h-screen bg-black text-white overflow-hidden relative">
@@ -16,134 +29,138 @@ export default function EvidenceHub() {
                 description="A massive, interactive 3D WebGL data representation of the Cathedral Megasite evidence." 
             />
             
-            <TriptychPortal />
+            <TriptychPortal onComplete={handlePortalComplete} />
 
             {/* The 3D Engine */}
             <MemoryPalaceCanvas />
 
-            {/* The Gateway (Triptych + Onboarding) */}
-            {showOnboarding && (
-                <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-sm p-4 md:p-8 overflow-y-auto">
-                    <div className="max-w-6xl w-full border border-[#8b1a1a]/30 bg-[#050505] p-8 md:p-12 relative shadow-[0_0_80px_rgba(139,26,26,0.1)] mt-auto mb-auto md:mt-20 md:mb-20">
-                        
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#8b1a1a]"></div>
+            {/* Gamified Onboarding UI */}
+            {isVisible && (
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4 md:p-8 overflow-y-auto">
+                    
+                    {/* STEP 1: Hero Welcome */}
+                    {onboardingStep === 1 && (
+                        <div className="max-w-2xl w-full border border-white/10 bg-[#0a0a0c]/90 backdrop-blur-md p-10 md:p-14 relative shadow-2xl animate-in fade-in zoom-in-95 duration-1000 flex flex-col items-center text-center">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1a1a] to-transparent opacity-70"></div>
+                            
+                            <Shield className="w-12 h-12 text-[#8b1a1a] mb-6 animate-pulse" />
+                            
+                            <h1 className="text-3xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6 leading-tight drop-shadow-md">
+                                Welcome to <br/><span className="text-[#8b1a1a]">The Cathedral</span>
+                            </h1>
+                            
+                            <p className="text-lg md:text-xl text-zinc-400 font-serif italic mb-10 leading-relaxed max-w-lg">
+                                A forensic memory palace documenting the architecture of silence. The records have been hidden. Your objective is to find them.
+                            </p>
 
-                        <div className="text-center mb-12">
-                            <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] font-black block mb-4 animate-pulse">
-                                Cognitive Protocol Initialization
-                            </span>
-                            <h2 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6">
-                                The Shield of Memory
-                            </h2>
-                            <div className="space-y-6 max-w-4xl mx-auto text-zinc-400 font-serif text-lg leading-relaxed text-left">
-                                <p className="italic">
-                                    The institution&apos;s primary defensive architecture is induced amnesia. The cover-up thrives on structural gaslighting and the fabrication of events designed expressly to make the public forget. Here, <strong className="text-white">your memory is your only shield against coercion.</strong>
-                                </p>
-                                
-                                <div className="border border-[#8b1a1a]/30 bg-black/50 p-6 md:p-8 shadow-inner">
-                                    <h3 className="text-[#8b1a1a] font-mono text-base uppercase tracking-widest mb-4 font-bold border-b border-[#8b1a1a]/30 pb-3">The Thessalian Paradigm</h3>
-                                    <p className="text-base md:text-lg">
-                                        Before the written word, human survival depended on spatial recall. When the roof of the Thessalian banquet hall collapsed, mangling the bodies of the guests beyond recognition, the poet Simonides identified the dead solely by tracing the spatial architecture of the hall in his mind. 
-                                        You are now entering a <strong className="text-white">Memory Palace</strong>. This is not a metaphor; it is how our minds are biologically built to preserve truth against eradication.
-                                    </p>
-                                </div>
-                                <p className="text-base uppercase tracking-widest font-mono text-center pt-6">You have been granted SIX specific cognitive protocols:</p>
-                                
-                                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 text-base font-sans mt-6">
-                                    {/* Row 1 */}
-                                    <li className="bg-[#050505] border border-white/10 p-6">
-                                        <Wind className="w-8 h-8 text-[#8b1a1a] mb-4" />
-                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">I. Method of Loci</strong>
-                                        The map is spatial. You do not read; you traverse. Data is locked to physical coordinates.
-                                    </li>
-                                    <li className="bg-[#050505] border border-white/10 p-6">
-                                        <Zap className="w-8 h-8 text-[#8b1a1a] mb-4" />
-                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">II. PAO System</strong>
-                                        Complex abstractions are violently compressed into Person-Action-Object triggers in your HUD.
-                                    </li>
-                                    <li className="bg-[#050505] border border-[#8b1a1a]/30 shadow-[0_0_15px_rgba(139,26,26,0.1)] p-6">
-                                        <Flame className="w-8 h-8 text-[#ff3333] mb-4" />
-                                        <strong className="text-[#ff3333] uppercase tracking-widest block mb-2 text-sm font-black">III. Aquinas Effect</strong>
-                                        "Unwonted illustration." Bizarre, extreme visualizations force permanent retention.
-                                    </li>
-                                    {/* Row 2 */}
-                                    <li className="bg-[#050505] border border-white/10 p-6">
-                                        <Layers className="w-8 h-8 text-[#8b1a1a] mb-4" />
-                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">IV. Extreme Chunking</strong>
-                                        Raw financial aggregates and dates are bound into singular, highly distinct compound events.
-                                    </li>
-                                    <li className="bg-[#050505] border border-white/10 p-6">
-                                        <Hash className="w-8 h-8 text-[#8b1a1a] mb-4" />
-                                        <strong className="text-white uppercase tracking-widest block mb-2 text-sm font-black">V. The Major System</strong>
-                                        Calculated phonetic translation. Sterile dates and subpoena figures convert into vivid imagery.
-                                    </li>
-                                    <li className="bg-[#050505] border border-white/10 p-6 shadow-[0_0_15px_rgba(139,26,26,0.05)]">
-                                        <Eye className="w-8 h-8 text-amber-500 mb-4" />
-                                        <strong className="text-amber-500 uppercase tracking-widest block mb-2 text-sm font-black">VI. Von Restorff Isolation</strong>
-                                        The mind refuses to forget anomalies. Deliberate focus is placed on the most absurd, contradicting testimony.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        {/* THE TRIPTYCH */}
-                        <div className="mb-16">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div className="p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 01 // THE NEWBIE</span>
-                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"I'm new. Who is involved and what happened?"</p>
-                                    <div className="space-y-4">
-                                        <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
-                                        <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
-                                        <Link href="/ledger/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
-                                    </div>
-                                </div>
-                                <div className="p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 02 // THE LEGALIST</span>
-                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>."</p>
-                                    <div className="space-y-4">
-                                        <Link href="/breach/hub" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
-                                        <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
-                                        <Link href="/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
-                                    </div>
-                                </div>
-                                <div className="p-8 border border-[#8b1a1a]/30 bg-[#8b1a1a]/5 hover:border-[#8b1a1a] transition-all group shadow-[0_0_30px_rgba(139,26,26,0.05)]">
-                                    <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4 group-hover:text-[#ff4444] transition-colors">PATH 03 // THE ADVOCATE</span>
-                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"How does this affect real survivors?"</p>
-                                    <div className="space-y-4">
-                                        <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
-                                        <Link href="/ledger/mccarrick" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
-                                        <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* ENTER THE VOID PROTOCOL */}
-                        <div className="border-t border-[#8b1a1a]/20 pt-10">
-                            <h3 className="text-xl font-cinzel font-black uppercase text-center text-white mb-4 tracking-widest">Or Formulate Your Own Map</h3>
                             <button 
-                                onClick={() => setShowOnboarding(false)}
-                                className="w-full relative group overflow-hidden bg-black border border-[#8b1a1a] text-white transition-all py-6 md:py-8 cursor-pointer"
+                                onClick={handleStart}
+                                className="group relative w-full overflow-hidden bg-white/5 hover:bg-white/10 border border-[#8b1a1a]/40 hover:border-[#8b1a1a] transition-all duration-500 py-5"
                             >
-                                <div className="absolute inset-0 bg-[#8b1a1a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                                <div className="relative z-10 flex flex-col items-center justify-center">
-                                    <span className="font-black font-cinzel uppercase tracking-[0.3em] text-lg md:text-xl md:mb-2 text-[#8b1a1a] group-hover:text-black">
-                                        [ ACCESS THE 3D MEMORY PALACE ]
+                                <div className="absolute inset-0 bg-[#8b1a1a]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                                <div className="relative z-10 flex items-center justify-center gap-4">
+                                    <span className="font-mono font-bold text-sm md:text-base uppercase tracking-[0.3em] text-[#8b1a1a] group-hover:text-white transition-colors">
+                                        Initialize Protocol
                                     </span>
-                                    <span className="font-mono text-xs text-zinc-500 tracking-[0.4em] uppercase group-hover:text-black/70">
-                                        Descend into the Garden of Good and Evil
-                                    </span>
+                                    <MoveRight className="w-5 h-5 text-[#8b1a1a] group-hover:text-white transition-all group-hover:translate-x-2" />
                                 </div>
                             </button>
                         </div>
+                    )}
 
-                    </div>
+                    {/* STEP 2: Choose Your Mystery */}
+                    {onboardingStep === 2 && (
+                        <div className="max-w-6xl w-full animate-in fade-in slide-in-from-bottom-8 duration-700 mt-auto mb-auto md:mt-10 md:mb-10">
+                            <div className="text-center mb-10 md:mb-16">
+                                <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] font-black block mb-3 animate-pulse">
+                                    Target Selection Required
+                                </span>
+                                <h2 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white drop-shadow-lg">
+                                    Choose Your Mystery
+                                </h2>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10">
+                                
+                                {/* Path 1: The Newbie */}
+                                <div className="border border-white/10 bg-[#0a0a0c]/80 backdrop-blur-md hover:border-[#8b1a1a]/50 p-8 md:p-10 flex flex-col group transition-all duration-500 shadow-xl hover:shadow-[#8b1a1a]/20">
+                                    <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:border-[#8b1a1a]/50 group-hover:bg-[#8b1a1a]/10 transition-colors">
+                                        <Search className="w-5 h-5 text-zinc-400 group-hover:text-[#8b1a1a]" />
+                                    </div>
+                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-2 group-hover:text-zinc-400 transition-colors">Class: Investigator</span>
+                                    <h4 className="text-3xl font-black font-cinzel text-white uppercase mb-4">The Newbie</h4>
+                                    <p className="text-base md:text-lg text-zinc-400 italic mb-8 flex-grow leading-relaxed">"I'm new. Who is involved and what exactly happened?"</p>
+                                    
+                                    <div className="space-y-4 mb-10">
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest leading-normal"><Fingerprint className="w-4 h-4 text-[#8b1a1a]"/> Discover the origins</div>
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest leading-normal"><Eye className="w-4 h-4 text-[#8b1a1a]"/> Identify key players</div>
+                                    </div>
+
+                                    <Link href="/about" className="w-full">
+                                        <button className="w-full py-5 bg-white/5 hover:bg-[#8b1a1a] text-[#8b1a1a] hover:text-white border border-[#8b1a1a]/30 transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
+                                            Start Here
+                                        </button>
+                                    </Link>
+                                </div>
+
+                                {/* Path 2: The Legalist */}
+                                <div className="border border-[#8b1a1a]/50 bg-[#0a0a0c]/90 backdrop-blur-md p-8 md:p-10 flex flex-col group transition-all duration-500 shadow-[0_0_40px_rgba(139,26,26,0.15)] relative scale-100 hover:-translate-y-2">
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-[#8b1a1a] shadow-[0_0_10px_rgba(139,26,26,0.5)]"></div>
+                                    <div className="w-12 h-12 rounded-full border border-[#8b1a1a]/50 bg-[#8b1a1a]/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(139,26,26,0.2)]">
+                                        <ShieldAlert className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-2">Class: Forensic Auditor</span>
+                                    <h4 className="text-3xl font-black font-cinzel text-white uppercase mb-4 text-shadow-sm">The Deep Dive</h4>
+                                    <p className="text-base md:text-lg text-zinc-300 italic mb-8 flex-grow leading-relaxed">"Show me the filings. Explain how the Critchley Shield functioned."</p>
+                                    
+                                    <div className="space-y-4 mb-10">
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest leading-normal"><Code className="w-4 h-4 text-[#8b1a1a]"/> Analyze the Breach</div>
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest leading-normal"><Shield className="w-4 h-4 text-[#8b1a1a]"/> Enter the Vault</div>
+                                    </div>
+
+                                    <Link href="/breach/hub" className="w-full">
+                                        <button className="w-full py-5 bg-[#8b1a1a] hover:bg-white text-white hover:text-black transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(139,26,26,0.3)]">
+                                            Access Records
+                                        </button>
+                                    </Link>
+                                </div>
+
+                                {/* Path 3: The Advocate */}
+                                <div className="border border-white/10 bg-[#0a0a0c]/80 backdrop-blur-md hover:border-[#8b1a1a]/50 p-8 md:p-10 flex flex-col group transition-all duration-500 shadow-xl hover:shadow-[#8b1a1a]/20">
+                                    <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:border-[#8b1a1a]/50 group-hover:bg-[#8b1a1a]/10 transition-colors">
+                                        <Crosshair className="w-5 h-5 text-zinc-400 group-hover:text-[#8b1a1a]" />
+                                    </div>
+                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-2 group-hover:text-zinc-400 transition-colors">Class: Truth Seeker</span>
+                                    <h4 className="text-3xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
+                                    <p className="text-base md:text-lg text-zinc-400 italic mb-8 flex-grow leading-relaxed">"I want to see the real testimonies. How does this affect victims?"</p>
+                                    
+                                    <div className="space-y-4 mb-10">
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest leading-normal"><Fingerprint className="w-4 h-4 text-[#8b1a1a]"/> Lara McKeever Case</div>
+                                        <div className="flex items-center gap-3 text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-widest leading-normal"><BrainCircuit className="w-4 h-4 text-[#8b1a1a]"/> The McCarrick Mechanism</div>
+                                    </div>
+
+                                    <Link href="/evidence/mckeever" className="w-full">
+                                        <button className="w-full py-5 bg-white/5 hover:bg-[#8b1a1a] text-[#8b1a1a] hover:text-white border border-[#8b1a1a]/30 transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
+                                            Examine Truth
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                            
+                            {/* Skip / Direct Access */}
+                            <div className="text-center mt-12 mb-6">
+                                <button 
+                                    onClick={handleDismiss}
+                                    className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-zinc-500 hover:text-white transition-colors border-b border-transparent hover:border-zinc-500 pb-2"
+                                >
+                                    [ Or Enter the 3D Void Directly ]
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
     );
 }
+
