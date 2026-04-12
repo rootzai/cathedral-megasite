@@ -29,11 +29,16 @@ export default function EvidenceHub() {
                                 Cognitive Protocol Initialization
                             </span>
                             <h2 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6">
-                                The Gateway
+                                The Shield of Memory
                             </h2>
-                            <p className="text-zinc-400 font-serif text-lg leading-relaxed max-w-3xl mx-auto italic">
-                                You stand before the Unsealed Archives. Choose a predetermined narrative path, or descend into the spatial Memory Palace to freely map the architecture of coercion.
-                            </p>
+                            <div className="space-y-4 max-w-4xl mx-auto text-zinc-400 font-serif text-lg leading-relaxed italic text-left md:text-center">
+                                <p>
+                                    The institution&apos;s primary defensive architecture is induced amnesia. The cover-up thrives on structural gaslighting and the fabrication of events designed expressly to make the public forget. Here, <strong className="text-white">your memory is your only shield against coercion.</strong>
+                                </p>
+                                <p>
+                                    To combat this, we have mapped the unsealed archives into a continuous <strong className="text-[#ff4444]">Method of Loci</strong>. As you walk chronologically through this spatial palace, you will encounter massive mnemonic anchors. We bind these staggering abuses to extreme visual imagery and architectural loci, bypassing rote fatigue and forcing the cover-up permanently into your spatial recall.
+                                </p>
+                            </div>
                         </div>
                         
                         {/* THE TRIPTYCH */}
