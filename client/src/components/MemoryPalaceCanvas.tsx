@@ -60,8 +60,8 @@ function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route
             {/* The HIGH CONTRAST Typography Anchor - Hovering on the front face */}
             <Text 
                 position={[0, 2.5, 0.35]} 
-                fontSize={0.8} 
-                maxWidth={3.8} 
+                fontSize={0.9} 
+                maxWidth={4.0} 
                 textAlign="center"
                 color={hovered ? "#ffffff" : "#ff3b3b"}
                 anchorX="center"
@@ -75,13 +75,13 @@ function LocusObject({ node, onNavigate }: { node: LocusNode, onNavigate: (route
 
             {/* Subtext */}
             <Text 
-                 position={[0, -2.5, 0.35]} 
-                 fontSize={0.45} 
-                 maxWidth={4.0} 
+                 position={[0, -2.8, 0.35]} 
+                 fontSize={0.75} 
+                 maxWidth={5.0} 
                  textAlign="center"
-                 color={hovered ? "#ffffff" : "#c8bdb0"}
+                 color={hovered ? "#ffffff" : "#e2dacf"}
                  material-toneMapped={false}
-                 outlineWidth={hovered ? 0.01 : 0}
+                 outlineWidth={0.02}
                  outlineColor="#000000"
             >
                  {node.title}
