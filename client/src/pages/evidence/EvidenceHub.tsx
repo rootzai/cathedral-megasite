@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import TriptychPortal from "@/components/TriptychPortal";
 import { SEO } from "@/components/SEO";
-import { MoveRight, Shield, ShieldAlert, Search, Fingerprint, Eye, Code, BrainCircuit } from "lucide-react";
+import { MoveRight, Shield, ShieldAlert, Search, Fingerprint, Eye, Code, BrainCircuit, Crosshair } from "lucide-react";
 
 export default function EvidenceHub() {
     const [onboardingStep, setOnboardingStep] = useState(1);
