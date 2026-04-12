@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from "wouter";
 import TriptychPortal from "@/components/TriptychPortal";
 
 // Lazy-loaded Pages
+const LandingPage = React.lazy(() => import("@/pages/LandingPage"));
 const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
 const EvidenceHub = React.lazy(() => import("@/pages/evidence/EvidenceHub"));
 const BreachHub = React.lazy(() => import("@/pages/breach/BreachHub"));
@@ -99,7 +100,7 @@ export function CoreRouter() {
       <Switch>
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={LandingPage} />
         </Route>
         <Route path="/archive">
           <PageLayout component={RedesignedHome} />
