@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "wouter";
 import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import { SEO } from "@/components/SEO";
+import { Term } from "@/components/Term";
 
 export default function EvidenceHub() {
     const [showOnboarding, setShowOnboarding] = useState(true);
@@ -15,39 +17,80 @@ export default function EvidenceHub() {
             {/* The 3D Engine */}
             <MemoryPalaceCanvas />
 
-            {/* Mnemonic Onboarding Modal */}
+            {/* The Gateway (Triptych + Onboarding) */}
             {showOnboarding && (
-                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-6">
-                    <div className="max-w-2xl w-full border border-red-900/50 bg-[#0a0a0a] p-10 relative shadow-[0_0_50px_rgba(139,26,26,0.15)]">
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8 overflow-y-auto">
+                    <div className="max-w-6xl w-full border border-[#8b1a1a]/30 bg-[#050505] p-8 md:p-12 relative shadow-[0_0_80px_rgba(139,26,26,0.1)]">
                         
-                        <div className="absolute top-0 left-0 w-2 h-full bg-red-900"></div>
+                        <div className="absolute top-0 left-0 w-1 h-full bg-[#8b1a1a]"></div>
 
-                        <span className="text-red-600 font-mono text-xs uppercase tracking-[0.4em] font-black block mb-4">
-                            Cognitive Protocol Initialization
-                        </span>
-                        
-                        <h2 className="text-3xl font-cinzel font-black uppercase tracking-[0.1em] text-white mb-6">
-                            The Architecture of Recall
-                        </h2>
-                        
-                        <div className="space-y-6 text-zinc-400 font-serif text-lg leading-relaxed mb-10">
-                            <p>
-                                The human capacity to remember is fundamentally a spatial phenomenon. To process this massive cache of unsealed evidence effectively, you are now navigating a cognitive framework known as the <strong className="text-white">Method of Loci</strong> (The Memory Palace).
-                            </p>
-                            <p>
-                                Do not attempt to memorize flat lists of files. Instead, hover and interact with the physical 3D artifacts floating within these chambers. By anchoring abstract data to tangible geometric stations along an architectural route, you will circumvent traditional rote fatigue and natively map the entire cover-up.
-                            </p>
-                            <p className="font-mono text-sm uppercase tracking-widest text-zinc-500 italic">
-                                Action: Drag to rotate the chambers. Click an artifact to unseal the targeted dossier.
+                        <div className="text-center mb-12">
+                            <span className="text-[#8b1a1a] font-mono text-xs uppercase tracking-[0.4em] font-black block mb-4 animate-pulse">
+                                Cognitive Protocol Initialization
+                            </span>
+                            <h2 className="text-4xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6">
+                                The Gateway
+                            </h2>
+                            <p className="text-zinc-400 font-serif text-lg leading-relaxed max-w-3xl mx-auto italic">
+                                You stand before the Unsealed Archives. Choose a predetermined narrative path, or descend into the spatial Memory Palace to freely map the architecture of coercion.
                             </p>
                         </div>
+                        
+                        {/* THE TRIPTYCH */}
+                        <div className="mb-16">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
+                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 01 // THE NEWBIE</span>
+                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
+                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"I'm new. Who is involved and what happened?"</p>
+                                    <div className="space-y-4">
+                                        <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
+                                        <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
+                                        <Link href="/origin/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
+                                    </div>
+                                </div>
+                                <div className="p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
+                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 02 // THE LEGALIST</span>
+                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
+                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>."</p>
+                                    <div className="space-y-4">
+                                        <Link href="/ruling/breach" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
+                                        <Link href="/ruling/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
+                                        <Link href="/ruling/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
+                                    </div>
+                                </div>
+                                <div className="p-8 border border-[#8b1a1a]/30 bg-[#8b1a1a]/5 hover:border-[#8b1a1a] transition-all group shadow-[0_0_30px_rgba(139,26,26,0.05)]">
+                                    <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4 group-hover:text-[#ff4444] transition-colors">PATH 03 // THE ADVOCATE</span>
+                                    <h4 className="text-2xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
+                                    <p className="text-sm text-zinc-400 italic mb-8 h-10">"How does this affect real survivors?"</p>
+                                    <div className="space-y-4">
+                                        <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
+                                        <Link href="/endgame/mccarrick" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
+                                        <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        <button 
-                            onClick={() => setShowOnboarding(false)}
-                            className="w-full bg-red-900 hover:bg-white hover:text-black transition-colors text-white font-black uppercase tracking-[0.3em] py-4 text-sm"
-                        >
-                            [ Acknowledge & Enter the Void ]
-                        </button>
+                        {/* ENTER THE VOID PROTOCOL */}
+                        <div className="border-t border-[#8b1a1a]/20 pt-10">
+                            <h3 className="text-xl font-cinzel font-black uppercase text-center text-white mb-4 tracking-widest">Or Formulate Your Own Map</h3>
+                            <button 
+                                onClick={() => setShowOnboarding(false)}
+                                className="w-full relative group overflow-hidden bg-black border border-[#8b1a1a] text-white transition-all py-6 md:py-8 cursor-pointer"
+                            >
+                                <div className="absolute inset-0 bg-[#8b1a1a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                                <div className="relative z-10 flex flex-col items-center justify-center">
+                                    <span className="font-black font-cinzel uppercase tracking-[0.3em] text-lg md:text-xl md:mb-2 text-[#8b1a1a] group-hover:text-black">
+                                        [ ACCESS THE 3D MEMORY PALACE ]
+                                    </span>
+                                    <span className="font-mono text-xs text-zinc-500 tracking-[0.4em] uppercase group-hover:text-black/70">
+                                        Descend into the Garden of Good and Evil
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             )}
