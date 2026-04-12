@@ -97,7 +97,7 @@ export default function TheyKnew() {
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-[oklch(0.75_0.12_85)] to-transparent mx-auto mb-8" />
           <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto mb-10">
             The "Big Lie" of Seton Hall is not a single event; it is a multi-generational architecture of institutional silence. 
-            This dossier exposes the 303 individuals—from the Canonical Trustees to the Operational Regents—who 
+            This dossier exposes the over 100 individuals—from the Canonical Trustees to the Operational Regents—who 
             maintained the "Wall of Immunity" while the <Term id="Latham Archive">Latham Archive</Term> was buried in a <Term id="SCIF">SCIF</Term>.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
