@@ -62,7 +62,6 @@ function LocusObject({ node, onNavigate, setHoveredLocus }: { node: LocusNode, o
                 fontSize={0.8} 
                 maxWidth={3.8} 
                 textAlign="center"
-                 font="https://fonts.gstatic.com/s/cinzel/v11/20d8_pQ2m11mb0_R-5iigP_y.woff2"
                 color={hovered ? "#ffffff" : "#ff3b3b"}
                 anchorX="center"
                 anchorY="middle"
@@ -79,7 +78,6 @@ function LocusObject({ node, onNavigate, setHoveredLocus }: { node: LocusNode, o
                  fontSize={0.25} 
                  maxWidth={3.0} 
                  textAlign="center"
-                 font="https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUtiZTaR.woff2"
                  color={hovered ? "#ffcccc" : "#888888"}
             >
                  {node.title}
