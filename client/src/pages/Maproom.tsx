@@ -12,29 +12,55 @@ export default function Maproom() {
                 description="The Master Schematic of the Cathedral Investigation." 
             />
 
-            {/* Cinematic Introduction / The Rosetta Stone */}
-            <div className="pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#c41e1e]/30 mb-20 relative bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#c41e1e]/5 via-transparent to-transparent">
-                <div className="absolute top-0 left-0 w-2 h-full bg-[#c41e1e]" />
+            {/* The SCIF Terminal / Rosetta Stone */}
+            <div className="pt-16 pb-12 px-6 md:px-12 max-w-7xl mx-auto mb-20 relative bg-[#040504] border border-[#1a1f1a] overflow-hidden shadow-2xl">
+                {/* CRT Scanline overlay */}
+                <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-10 opacity-20" />
                 
-                <span className="font-mono text-[#c41e1e] tracking-[0.5em] uppercase text-sm font-black mb-6 block drop-shadow-lg">
-                    [ PERIMETER BREACH COMPLETED ]
-                </span>
-                
-                <h1 className="text-6xl md:text-[5rem] lg:text-[6rem] font-cinzel font-black uppercase text-white tracking-tighter leading-[0.85] max-w-5xl mb-12 drop-shadow-2xl">
-                    THE ARCHITECTURE OF SILENCE
-                </h1>
-                
-                <div className="font-serif text-[#e2dacf] max-w-3xl text-xl md:text-[1.35rem] leading-relaxed space-y-8">
-                    <p className="font-bold text-white tracking-wide">
-                        You have breached the Cathedral. This is the definitive, independent reconstruction of an institutional cover-up.
+                {/* Terminal Header */}
+                <div className="flex items-center justify-between border-b border-[#c41e1e]/30 pb-4 mb-8">
+                    <span className="font-mono text-[#c41e1e] tracking-[0.2em] text-xs font-black uppercase flex items-center gap-3">
+                        <span className="w-2 h-2 bg-[#c41e1e] rounded-full animate-pulse shadow-[0_0_8px_rgba(196,30,30,1)]"></span>
+                        TERMINAL ACTIVE // SCIF BREACH
+                    </span>
+                    <span className="font-mono text-zinc-600 text-xs tracking-widest hidden sm:block">
+                        USER: UNAUTHORIZED
+                    </span>
+                </div>
+
+                {/* SCIF Definition */}
+                <div className="font-mono text-sm text-zinc-400 max-w-3xl mb-12 bg-black border border-white/5 p-6 rounded-sm">
+                    <div className="flex items-start gap-4">
+                        <span className="text-[#d4a843] shrink-0 font-bold">DEF. &gt;</span>
+                        <p className="leading-loose">
+                            <strong className="text-white text-base mr-2">S.C.I.F.</strong> 
+                            <span className="text-zinc-500 mr-2">(Sensitive Compartmented Information Facility):</span> 
+                            A highly secure room, proofed against electronic surveillance and physical breach. Typically used by federal intelligence agencies to review classified national security documents.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Terminal Printout */}
+                <div className="font-mono leading-relaxed space-y-6 max-w-4xl relative z-20">
+                    <p className="text-white font-bold text-lg md:text-xl leading-snug">
+                        <span className="text-zinc-500 mr-4">08-27-2019 //</span> 
+                        Seton Hall University completes a 24,000-page internal investigation into decades of clergy abuse.
                     </p>
-                    <p className="border-l-4 border-[#c41e1e] pl-6 text-[#d4a843] italic text-2xl font-medium">
-                        "They engineered a labyrinth of non-disclosure agreements, suppressed reports, and legal shields to protect the hierarchy over the innocent. We dragged it into the light."
+                    
+                    <p className="text-zinc-400 text-base md:text-lg pl-8 border-l-2 border-[#1a1f1a]">
+                        The massive <span className="text-white font-bold">Latham Report</span> definitively identified who knew, and who covered it up. To prevent discovery, the University locked the physical copies inside a secure vault—essentially a SCIF—where no copies could be made, no electronics were allowed, and no notes could be taken.
                     </p>
-                    <p className="text-sm font-mono uppercase tracking-[0.3em] text-[#c41e1e] pt-6 flex items-center gap-4">
-                        <span className="w-12 h-[1px] bg-[#c41e1e]"></span>
-                        This is your Rosetta Stone. Select a dossier below to begin.
+
+                    <p className="text-white font-bold text-base md:text-xl mt-8">
+                        They suppressed the truth to protect the hierarchy over the innocent. 
                     </p>
+
+                    <div className="mt-12 bg-[#c41e1e]/10 border border-[#c41e1e]/30 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <span className="text-[#c41e1e] tracking-[0.3em] font-black uppercase text-sm drop-shadow-[0_0_8px_rgba(196,30,30,0.5)]">
+                            [ DECRYPTING DIRECTORIES ]
+                        </span>
+                        <span className="w-2 h-5 bg-[#c41e1e] animate-ping block"></span>
+                    </div>
                 </div>
             </div>
 
