@@ -237,7 +237,7 @@ function generateDynamicNodes(): UniversalNode[] {
           // Boost global weight for the highly relevant 2019 coverup cohort
           globalWeight: isLatham ? 75 : 55 
         },
-        routeUrl: "/they-knew"
+        routeUrl: "/coverup"
       });
     });
   });
@@ -266,7 +266,7 @@ function generateDynamicNodes(): UniversalNode[] {
       description: firm.role,
       tags: ["legal-wall"],
       rankings: { categoryRank: 2, globalWeight: 65 },
-      routeUrl: "/they-knew"
+      routeUrl: "/coverup"
     });
     
     // Also add their key attorneys
@@ -280,7 +280,7 @@ function generateDynamicNodes(): UniversalNode[] {
         description: `Attorney at ${firm.firm}. ${p.title || ""} ${p.note || ""}`,
         tags: ["legal-wall"],
         rankings: { categoryRank: 2, globalWeight: 70 },
-        routeUrl: "/they-knew"
+        routeUrl: "/coverup"
       });
     });
   });
