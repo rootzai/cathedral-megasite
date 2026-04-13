@@ -31,38 +31,38 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: Math.min(index * 0.03, 0.3) }}
-      className={`p-8 border border-white/5 bg-zinc-950/30 group hover:border-[#8b1a1a]/30 transition-all relative overflow-hidden flex flex-col justify-between min-h-[280px] ${isResigned ? 'opacity-50 grayscale' : ''}`}
+      className={`p-8 border-2 border-white/20 bg-black group hover:border-[#c41e1e] hover:shadow-[0_0_20px_rgba(196,30,30,0.5)] transition-all relative overflow-hidden flex flex-col justify-between min-h-[280px] ${isResigned ? 'opacity-80' : ''}`}
     >
       <div className="flex gap-2 mb-6 flex-wrap">
         {votedForReilly && (
-          <div className="bg-[#8b1a1a]/10 border border-[#8b1a1a]/40 text-[#8b1a1a] text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+          <div className="bg-[#c41e1e] border-2 border-[#fff] text-white text-xs font-mono px-3 py-1 rounded-sm uppercase tracking-widest font-black shadow-lg">
             [Voted Reilly]
           </div>
         )}
         {heardLatham && (
-          <div className="bg-blue-900/10 border border-blue-900/40 text-blue-500 text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+          <div className="bg-[#1e40af] border-2 border-[#fff] text-white text-xs font-mono px-3 py-1 rounded-sm uppercase tracking-widest font-black shadow-lg">
             [Heard Latham]
           </div>
         )}
         {isResigned && (
-          <div className="bg-zinc-800 border border-zinc-600 text-zinc-400 text-xs font-mono px-2 py-0.5 rounded-sm uppercase tracking-widest font-black">
+          <div className="bg-zinc-800 border-2 border-[#fff] text-white text-xs font-mono px-3 py-1 rounded-sm uppercase tracking-widest font-black shadow-lg">
             [Resigned]
           </div>
         )}
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-2xl font-black font-cinzel text-white tracking-widest leading-none group-hover:text-[#8b1a1a] transition-colors">{person.name}</h3>
-        <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest leading-loose">{person.role}</p>
-        <hr className="border-white/5 w-12" />
-        <p className="text-zinc-600 font-serif italic text-sm leading-relaxed line-clamp-4">
+        <h3 className="text-3xl font-black font-cinzel text-white tracking-widest leading-none group-hover:text-[#d4a843] transition-colors">{person.name}</h3>
+        <p className="font-mono text-sm text-[#d4a843] font-bold uppercase tracking-widest leading-loose">{person.role}</p>
+        <hr className="border-white/30 w-full" />
+        <p className="text-white font-serif italic text-base sm:text-lg leading-relaxed line-clamp-4">
           {person.note || "No public statement on record."}
         </p>
       </div>
 
-      <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-        <span className="text-xs font-mono text-zinc-700 tracking-tighter uppercase">{person.tenure}</span>
-        <div className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+      <div className="mt-8 pt-6 border-t border-white/30 flex items-center justify-between">
+        <span className="text-sm font-mono text-white font-bold tracking-tighter uppercase">{person.tenure}</span>
+        <div className="w-2 h-2 rounded-full bg-[#d4a843]" />
       </div>
     </motion.div>
   );
