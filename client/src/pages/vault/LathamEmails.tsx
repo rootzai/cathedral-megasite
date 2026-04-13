@@ -1,5 +1,5 @@
 import React from "react";
-import PageHero from "@/components/PageHero";
+import { PageHero } from "@/components/PageHero";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Term as GlossaryTerm } from "@/components/Term";
 import DocumentViewer from "@/components/DocumentViewer";
@@ -42,25 +42,17 @@ export default function LathamEmails() {
 
         <div className="mb-16">
           <DocumentViewer 
-            documentUrl="https://s3.documentcloud.org/documents/23793910/jeffrey-epstein-calendar.pdf" 
             title="Jeffrey Epstein's Private Calendar"
-            date="2018-2019"
-            author="Wall Street Journal Leaks"
-            pageCount={48}
-            context="Shows Ruemmler's extensive scheduled meetings with Epstein during the exact timeframe she was leading the Seton Hall McCarrick coverup."
-            highlights={[
-              "The lead attorney hired to investigate one of the worst serial predators in U.S. history was simultaneously taking dozens of meetings with Jeffrey Epstein.",
-              "Seton Hall has never publicly addressed this conflict.",
-            ]}
-          />
+            documentId="DOC-000"
+          >
+            <button className="bg-[#D4A017] text-[#1A1208] px-8 py-3 font-bold tracking-widest uppercase hover:bg-white transition-colors">
+              View Calendar Entries
+            </button>
+          </DocumentViewer>
         </div>
 
         <div className="flex justify-center mb-12">
-            <TriptychPortal 
-                targetId="act-iii"
-                label="ENTER THE VAULT"
-                color="#CC2200"
-            />
+            <TriptychPortal />
         </div>
 
         <MemoryGate registryId="route-epstein-emails" />

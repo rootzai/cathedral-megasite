@@ -3,6 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import MemoryGate from "@/components/MemoryGate";
+import ImageModal from "@/components/ImageModal";
 
 export default function Home() {
   return (<div className="space-y-8">

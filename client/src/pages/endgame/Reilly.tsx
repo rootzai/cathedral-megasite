@@ -138,6 +138,6 @@ export default function Reilly() {
                 </div>
             </div>
         </section>
-        <LedgerNav />
+        <MemoryGate registryId="route-reilly" />
     </div>);
 }

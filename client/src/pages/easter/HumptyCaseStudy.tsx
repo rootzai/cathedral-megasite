@@ -309,6 +309,8 @@ export default function HumptyCaseStudy() {
       <DossierDrawer 
         isOpen={!!activeEgg} 
         onClose={handleCloseEgg}
+        eggNumber={activeEgg?.id || 0}
+        baumParallel={activeEgg?.baum || ""}
         {...activeEgg!}
       />
 

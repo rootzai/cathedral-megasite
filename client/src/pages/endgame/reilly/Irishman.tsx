@@ -1,5 +1,5 @@
 import React from "react";
-import PageHero from "@/components/PageHero";
+import { PageHero } from "@/components/PageHero";
 import TriptychPortal from "@/components/TriptychPortal";
 import { Term as GlossaryTerm } from "@/components/Term";
 import MemoryGate from "@/components/MemoryGate";
@@ -90,10 +90,7 @@ export default function ReillyIrishman() {
         </div>
 
         <div className="text-center">
-           <TriptychPortal 
-              targetId="act-iii"
-              label="WAIT. IS THIS REAL?"
-           />
+           <TriptychPortal />
         </div>
 
         <MemoryGate registryId="route-reilly-irishman" />

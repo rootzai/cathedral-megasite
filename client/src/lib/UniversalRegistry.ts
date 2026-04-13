@@ -270,7 +270,7 @@ function generateDynamicNodes(): UniversalNode[] {
     });
     
     // Also add their key attorneys
-    firm.people.forEach((p: any) => {
+    (firm as any).people?.forEach((p: any) => {
       if (UNIVERSAL_REGISTRY.some(n => n.name.toLowerCase() === p.name.toLowerCase())) return;
       
       dynamic.push({

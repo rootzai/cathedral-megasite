@@ -1,5 +1,5 @@
 import React from "react";
-import PageHero from "@/components/PageHero";
+import { PageHero } from "@/components/PageHero";
 import TriptychPortal from "@/components/TriptychPortal";
 import MemoryGate from "@/components/MemoryGate";
 
@@ -62,11 +62,7 @@ export default function PressBriefing() {
         </div>
 
         <div className="flex justify-center mt-16 mb-12">
-            <TriptychPortal 
-                targetId="act-iii"
-                label="VIEW FULL DOSSIER"
-                color="#1A1208"
-            />
+            <TriptychPortal />
         </div>
 
         <MemoryGate registryId="route-press-briefing" />
