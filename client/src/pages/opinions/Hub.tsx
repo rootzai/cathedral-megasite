@@ -46,15 +46,15 @@ const columnists = [
 
 export default function OpinionsHub() {
     return (
-        <div className="page-enter max-w-6xl mx-auto px-6 py-20 bg-[#fdfcf8] min-h-screen text-[#1a1a1a]">
+        <div className="page-enter max-w-6xl mx-auto px-6 py-20 bg-[#0a0a0c] min-h-screen text-[#F5EDD0] font-['Share_Tech_Mono']">
 
             {/* Newspaper Masthead Style */}
-            <header className="border-b-4 border-black pb-12 mb-20 text-center">
-                <div className="font-mono text-xs uppercase tracking-[0.5em] mb-4">Perspectives & Commentary</div>
-                <h1 className="text-8xl font-black tracking-tighter uppercase mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    The <span className="italic">Voices</span>
+            <header className="border-b-2 border-[#cc0000] pb-12 mb-20 text-center">
+                <div className="font-mono text-xs uppercase tracking-[0.5em] mb-4 text-[#D4A017]">[ Perspectives & Commentary ]</div>
+                <h1 className="text-8xl font-black tracking-widest uppercase mb-2 text-white font-sans">
+                    The <span className="italic text-[#cc0000]">Voices</span>
                 </h1>
-                <p className="text-sm font-serif italic text-muted-foreground uppercase tracking-widest">
+                <p className="text-sm font-sans italic text-zinc-500 uppercase tracking-widest">
                     Audit · Analysis · Conscience · Newark, New Jersey
                 </p>
             </header>
@@ -64,32 +64,32 @@ export default function OpinionsHub() {
                 {columnists.map((col, idx) => (
                     <Link key={idx} href={col.path}>
                         <div className="group cursor-pointer space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: `${idx * 150}ms` }}>
-                            <div className="relative aspect-square overflow-hidden bg-white border border-black/10 grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl group-hover:shadow-2xl">
+                            <div className="relative aspect-square overflow-hidden bg-black border border-[#D4A017]/30 grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl group-hover:shadow-[0_0_30px_rgba(204,0,0,0.15)]">
                                 <img
                                     src={col.image}
                                     alt={col.name}
-                                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                                 />
-                                <div className="absolute inset-0 border-[20px] border-[#fdfcf8] pointer-events-none" />
+                                <div className="absolute inset-0 border-[20px] border-[#0a0a0c] pointer-events-none" />
                             </div>
 
-                            <div className="space-y-4">
+                            <div className="space-y-4 pt-4">
                                 <div className="flex items-center gap-3">
-                                    <span className="w-8 h-px bg-white" />
-                                    <span className="font-mono text-xs uppercase tracking-widest">{col.title}</span>
+                                    <span className="w-8 h-px bg-[#cc0000]" />
+                                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">{col.title}</span>
                                 </div>
-                                <h2 className="text-4xl font-bold tracking-tight leading-none group-hover:text-red-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
+                                <h2 className="text-4xl font-bold tracking-widest leading-none group-hover:text-[#cc0000] text-white transition-colors font-sans uppercase">
                                     {col.essayTitle}
                                 </h2>
-                                <div className="font-serif text-2xl italic leading-relaxed text-muted-foreground/80">
+                                <div className="font-sans text-lg italic leading-relaxed text-[#F5EDD0]/70">
                                     "{col.teaser}"
                                 </div>
-                                <div className="pt-4 flex flex-col gap-1">
-                                    <div className="flex items-center gap-2">
-                                        <div className="font-heading text-lg font-bold uppercase">{col.name}</div>
-                                        <span className="text-muted-foreground font-serif">· {col.persona}</span>
+                                <div className="pt-4 flex flex-col gap-1 border-t border-[#F5EDD0]/10 mt-4">
+                                    <div className="flex items-center gap-2 mt-4">
+                                        <div className="font-sans text-sm font-bold uppercase text-[#D4A017]">{col.name}</div>
+                                        <span className="text-zinc-600 font-sans text-xs">· {col.persona}</span>
                                     </div>
-                                    <div className="font-mono text-xs uppercase font-bold tracking-widest text-red-700">{col.topic}</div>
+                                    <div className="font-mono text-[10px] uppercase font-bold tracking-widest text-[#cc0000]/70">{col.topic}</div>
                                 </div>
                             </div>
                         </div>
@@ -98,12 +98,12 @@ export default function OpinionsHub() {
             </div>
 
             {/* Footer Quote */}
-            <footer className="mt-32 pt-20 border-t border-black/10 flex flex-col items-center">
-                <Quote className="w-12 h-12 text-black/20 mb-8" />
-                <p className="text-3xl font-serif italic text-center max-w-3xl leading-snug">
+            <footer className="mt-32 pt-20 border-t border-[#F5EDD0]/10 flex flex-col items-center">
+                <Quote className="w-12 h-12 text-[#cc0000]/40 mb-8" />
+                <p className="text-xl font-sans italic text-center max-w-3xl leading-snug text-zinc-400">
                     "The truth is not a list of facts; it is the shared experience of a people who refuse to look away."
                 </p>
-                <div className="mt-8 font-mono text-xs uppercase tracking-widest opacity-50">
+                <div className="mt-12 font-mono text-xs uppercase tracking-widest text-zinc-600">
                     End of Commentary · Cathedral Megasite
                 </div>
             </footer>

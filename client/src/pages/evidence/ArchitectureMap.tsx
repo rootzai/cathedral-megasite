@@ -15,7 +15,7 @@ export default function ArchitectureMap() {
   return (
     <div className="min-h-screen bg-[#09090b] text-[#c8bdb0] font-cormorant relative">
       <SEO 
-        title="Map Room: The Architecture of Protection" 
+        title="Evidence Network: Forensic Map" 
         description="The interactive architectural map exploring the structural defense mechanisms concealing clerical abuse." 
       />
       <AmbientParticles count={25} />
@@ -31,10 +31,10 @@ export default function ArchitectureMap() {
             </Link>
             
             <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">
-              THE <span className="text-[#8b1a1a]">MAP</span> ROOM
+              THE <span className="text-[#8b1a1a]">EVIDENCE</span> NETWORK
             </h1>
             <p className="text-xl text-zinc-500 font-serif italic max-w-3xl">
-              "Here is the architecture of protection. Pick a ring. Pick a path." Select an institutional layer below to trace the mechanisms of immunity.
+              "The institutional network is exposed. Select a vector to trace the mechanics of immunity."
             </p>
           </div>
 

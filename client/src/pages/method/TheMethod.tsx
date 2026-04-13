@@ -15,12 +15,12 @@ import {
 
 export default function TheMethod() {
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant selection:bg-[#1a3a5c] selection:text-white">
+        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant selection:bg-[#8b1a1a] selection:text-white">
             {/* HERO SECTION */}
-            <section className="relative h-[80vh] flex flex-col items-center justify-center pt-20 px-6 border-b border-[#1a3a5c]/20 overflow-hidden">
-                <div className="absolute inset-0 bg-[#1a3a5c]/5 blur-[120px] opacity-20" />
+            <section className="relative h-[80vh] flex flex-col items-center justify-center pt-20 px-6 border-b border-[#8b1a1a]/20 overflow-hidden">
+                <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-[120px] opacity-20" />
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                    <div className="h-full w-full bg-[radial-gradient(#1a3a5c_1px,transparent_1px)] [background-size:32px_32px]" />
+                    <div className="h-full w-full bg-[radial-gradient(#8b1a1a_1px,transparent_1px)] [background-size:32px_32px]" />
                 </div>
                 
                 <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
@@ -30,13 +30,13 @@ export default function TheMethod() {
                         className="flex justify-center mb-12"
                     >
                         <div className="relative">
-                            <Fingerprint className="w-24 h-24 text-[#1a3a5c] opacity-40 blur-sm" />
-                            <Fingerprint className="absolute inset-0 w-24 h-24 text-[#3a8ef6] drop-shadow-[0_0_20px_rgba(58,142,246,0.5)]" />
+                            <Fingerprint className="w-24 h-24 text-[#8b1a1a] opacity-40 blur-sm" />
+                            <Fingerprint className="absolute inset-0 w-24 h-24 text-[#cc0000] drop-shadow-[0_0_20px_rgba(204,0,0,0.5)]" />
                         </div>
                     </motion.div>
                     
                     <h1 className="text-6xl md:text-[8rem] font-black font-cinzel text-white leading-none uppercase tracking-tighter">
-                        THE <span className="text-[#3a8ef6]">METHOD</span>
+                        THE <span className="text-[#cc0000]">METHOD</span>
                     </h1>
                     <p className="max-w-2xl mx-auto text-xl md:text-2xl font-serif italic text-zinc-500 leading-relaxed">
                         "How AI unmasked the fabricated bulletins of the Newark Archdiocese through forensic typesetting analysis."
@@ -49,11 +49,11 @@ export default function TheMethod() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-12">
                         <div className="space-y-4">
-                            <span className="text-[#3a8ef6] font-black text-xs uppercase tracking-[0.5em] font-courier">Forensic Analyst // DARKO VUCETIC</span>
+                            <span className="text-[#cc0000] font-black text-xs uppercase tracking-[0.5em] font-courier">Forensic Analyst // DARKO VUCETIC</span>
                             <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE DATA COLLISION</h2>
                         </div>
                         <div className="space-y-8 text-lg text-zinc-400 font-serif leading-relaxed italic">
-                            <p className="border-l-2 border-[#3a8ef6] pl-8">
+                            <p className="border-l-2 border-[#cc0000] pl-8">
                                 "The institution claimed the bulletins proved the abuser was elsewhere. The AI proved the bulletins didn't exist until 2005."
                             </p>
                             <p>
@@ -66,22 +66,22 @@ export default function TheMethod() {
                                 <p className="text-xs text-zinc-600 font-courier uppercase tracking-widest">Similarity to Original Stock</p>
                             </div>
                             <div className="space-y-2">
-                                <span className="text-[#3a8ef6] font-black text-3xl">2005</span>
+                                <span className="text-[#cc0000] font-black text-3xl">2005</span>
                                 <p className="text-xs text-zinc-600 font-courier uppercase tracking-widest">Date of Fabrication</p>
                             </div>
                         </div>
                     </div>
-                    <div className="relative group p-4 border border-[#1a3a5c]/30 bg-black/40">
-                         <div className="absolute inset-0 bg-[#3a8ef6]/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative group p-4 border border-[#8b1a1a]/30 bg-black/40">
+                         <div className="absolute inset-0 bg-[#cc0000]/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                          <div className="relative space-y-6">
                             <div className="aspect-square bg-zinc-900 overflow-hidden relative">
                                 <img src="/assets/data-fingerprint.png" alt="AI Fingerprint" className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-full h-1 bg-[#3a8ef6]/50 animate-scan" style={{ animation: 'scan 4s linear infinite' }} />
+                                    <div className="w-full h-1 bg-[#cc0000]/50 animate-scan" style={{ animation: 'scan 4s linear infinite' }} />
                                 </div>
                             </div>
                             <div className="p-6 bg-[#0a0a0c] border border-white/5">
-                                <span className="text-xs font-black font-courier text-[#3a8ef6] uppercase tracking-widest block mb-1">Audit Record SH-V1</span>
+                                <span className="text-xs font-black font-courier text-[#cc0000] uppercase tracking-widest block mb-1">Audit Record SH-V1</span>
                                 <p className="text-xs text-zinc-500 uppercase tracking-widest font-mono">RETROACTIVE DOCUMENTATION IDENTIFIED</p>
                             </div>
                          </div>
@@ -94,7 +94,7 @@ export default function TheMethod() {
                 <div className="max-w-5xl mx-auto space-y-24">
                     <div className="text-center space-y-4">
                         <h2 className="text-4xl font-black font-cinzel text-white uppercase tracking-widest">THE FABRICATION PIPELINE</h2>
-                        <div className="h-px w-24 bg-[#3a8ef6] mx-auto" />
+                        <div className="h-px w-24 bg-[#cc0000] mx-auto" />
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -115,15 +115,15 @@ export default function TheMethod() {
                                 desc: "Discovery of digital artifacts in '1987' typefaces."
                             }
                         ].map((item, i) => (
-                            <div key={i} className="text-center space-y-6 p-8 bg-[#0D0D10] border border-white/5 hover:border-[#3a8ef6]/40 transition-all duration-500">
-                                <item.icon className="w-10 h-10 text-[#3a8ef6] mx-auto" />
+                            <div key={i} className="text-center space-y-6 p-8 bg-[#0D0D10] border border-white/5 hover:border-[#cc0000]/40 transition-all duration-500">
+                                <item.icon className="w-10 h-10 text-[#cc0000] mx-auto" />
                                 <h4 className="text-xl font-black font-cinzel text-white uppercase">{item.title}</h4>
                                 <p className="text-sm text-zinc-500 font-serif italic leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div className="p-12 bg-[#1a3a5c]/5 border border-[#1a3a5c]/20 relative group">
+                    <div className="p-12 bg-[#8b1a1a]/5 border border-[#8b1a1a]/20 relative group">
                         <div className="flex flex-col md:flex-row items-center gap-12 relative z-10">
                             <div className="flex-1 space-y-6">
                                 <h3 className="text-3xl font-black font-cinzel text-white uppercase">THE ECLESIASTICAL CLEANUP</h3>
@@ -133,7 +133,7 @@ export default function TheMethod() {
                             </div>
                             <div className="w-full md:w-auto">
                                 <Link href="/evidence">
-                                    <a className="inline-flex items-center gap-3 bg-[#3a8ef6] text-white px-10 py-5 font-black uppercase text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-all">
+                                    <a className="inline-flex items-center gap-3 bg-black border border-[#cc0000] text-[#F5EDD0] px-10 py-5 font-black uppercase text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-all shadow-[0_0_15px_rgba(204,0,0,0.3)] hover:shadow-none">
                                         View Data Stream <Activity className="w-4 h-4" />
                                     </a>
                                 </Link>
@@ -147,21 +147,21 @@ export default function TheMethod() {
             <section className="py-32 px-6 bg-[#070709] border-t border-white/5">
                 <div className="max-w-7xl mx-auto space-y-20">
                      <div className="flex flex-col items-center text-center space-y-4">
-                        <span className="text-[#3a8ef6] font-black text-xs uppercase tracking-[0.5em] font-courier">Human Intelligence</span>
+                        <span className="text-[#cc0000] font-black text-xs uppercase tracking-[0.5em] font-courier">Human Intelligence</span>
                         <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-tighter">THE WHISTLEBLOWERS</h2>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="group bg-[#0D0D10] border border-white/5 p-10 hover:border-[#3a8ef6]/40 transition-all duration-500">
+                        <div className="group bg-[#0D0D10] border border-white/5 p-10 hover:border-[#cc0000]/40 transition-all duration-500">
                              <div className="flex items-center justify-between mb-8">
                                 <h4 className="text-2xl font-black font-cinzel text-white uppercase">PATRICK WALL</h4>
-                                <Eye className="w-6 h-6 text-[#3a8ef6]" />
+                                <Eye className="w-6 h-6 text-[#cc0000]" />
                              </div>
                              <p className="text-zinc-500 font-serif italic italic leading-relaxed">
                                 Former Benedictine monk. Identified the 'feeder system' at Delbarton that fueled the McCarrick machine.
                              </p>
                         </div>
-                        <div className="group bg-[#0D0D10] border border-white/5 p-10 hover:border-[#3a8ef6]/40 transition-all duration-500">
+                        <div className="group bg-[#0D0D10] border border-white/5 p-10 hover:border-[#cc0000]/40 transition-all duration-500">
                              <div className="flex items-center justify-between mb-8">
                                 <h4 className="text-2xl font-black font-cinzel text-white uppercase">LORI BROWN</h4>
                                 <div className="p-1.5 bg-[#8b1a1a] rounded-full" />
