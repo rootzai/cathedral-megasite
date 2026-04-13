@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Shield, Users, BookOpen, AlertCircle, FileText, Send, Database } from "lucide-react";
@@ -80,7 +81,12 @@ export default function SiteLegendModal({ isOpen, onClose }: SiteLegendModalProp
     };
   }, [isOpen]);
 
-  return (
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const content = (
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -162,4 +168,7 @@ export default function SiteLegendModal({ isOpen, onClose }: SiteLegendModalProp
       )}
     </AnimatePresence>
   );
+
+  if (!mounted || typeof document === 'undefined') return null;
+  return createPortal(content, document.body);
 }
