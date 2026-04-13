@@ -12,18 +12,30 @@ export default function Maproom() {
                 description="The Master Schematic of the Cathedral Investigation." 
             />
 
-            {/* Title / Vanguard Extension */}
-            <div className="pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto border-b-2 border-white/10 mb-16 relative">
-                <div className="absolute top-0 right-12 w-[1px] h-full bg-[#c41e1e]/20" />
-                <span className="font-mono text-[#c41e1e] tracking-[0.4em] uppercase text-xs font-black animate-pulse mb-4 block">
-                    Level 2: The Maproom
+            {/* Cinematic Introduction / The Rosetta Stone */}
+            <div className="pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#c41e1e]/30 mb-20 relative bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#c41e1e]/5 via-transparent to-transparent">
+                <div className="absolute top-0 left-0 w-2 h-full bg-[#c41e1e]" />
+                
+                <span className="font-mono text-[#c41e1e] tracking-[0.5em] uppercase text-sm font-black mb-6 block drop-shadow-lg">
+                    [ PERIMETER BREACH COMPLETED ]
                 </span>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-cinzel font-black uppercase text-zinc-200 tracking-widest text-shadow-sm leading-tight max-w-4xl">
-                    Master Index & Primary Pointers
+                
+                <h1 className="text-6xl md:text-[5rem] lg:text-[6rem] font-cinzel font-black uppercase text-white tracking-tighter leading-[0.85] max-w-5xl mb-12 drop-shadow-2xl">
+                    THE ARCHITECTURE OF SILENCE
                 </h1>
-                <p className="font-mono text-zinc-500 mt-6 tracking-[0.2em] max-w-2xl text-sm border-l-2 border-[#c41e1e] pl-4 uppercase">
-                    Select a conceptual shell below to open the dedicated evidence ledger, or enter the jump hub for unfiltered dimensional analysis.
-                </p>
+                
+                <div className="font-serif text-[#e2dacf] max-w-3xl text-xl md:text-[1.35rem] leading-relaxed space-y-8">
+                    <p className="font-bold text-white tracking-wide">
+                        You have breached the Cathedral. This is the definitive, independent reconstruction of an institutional cover-up.
+                    </p>
+                    <p className="border-l-4 border-[#c41e1e] pl-6 text-[#d4a843] italic text-2xl font-medium">
+                        "They engineered a labyrinth of non-disclosure agreements, suppressed reports, and legal shields to protect the hierarchy over the innocent. We dragged it into the light."
+                    </p>
+                    <p className="text-sm font-mono uppercase tracking-[0.3em] text-[#c41e1e] pt-6 flex items-center gap-4">
+                        <span className="w-12 h-[1px] bg-[#c41e1e]"></span>
+                        This is your Rosetta Stone. Select a dossier below to begin.
+                    </p>
+                </div>
             </div>
 
             {/* The Blueprint Grid */}
