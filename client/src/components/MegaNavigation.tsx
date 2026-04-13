@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'wouter';
 import { useState } from 'react';
+import SiteLegendModal from './SiteLegendModal';
 
 // Unified Minimalist Header - "The Vault Map" Paradigm
 export default function MegaNavigation() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [tickerPaused, setTickerPaused] = useState(false);
+  const [legendOpen, setLegendOpen] = useState(false);
 
   const newsItems = [
     { type: "BREAKING", text: "October 2025 Jury Awards $5M in Delbarton Abuse Case" },
@@ -39,22 +41,13 @@ export default function MegaNavigation() {
           </Link>
 
           <div className="flex gap-4">
-              <Link href="/evidence">
-                <a className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3">
-                  <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                  [ OPEN ARCHITECTURAL MAP ]
-                </a>
-              </Link>
-              <Link href="/index">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
-                  The Master Index
-                </a>
-              </Link>
-              <Link href="/tips">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
-                  Tip Line
-                </a>
-              </Link>
+              <button 
+                onClick={() => setLegendOpen(true)}
+                className="border border-[#c41e1e] bg-[#c41e1e]/10 hover:bg-[#c41e1e]/30 text-[#c41e1e] hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(196,30,30,0.1)] hover:shadow-[0_0_30px_rgba(196,30,30,0.3)] flex items-center justify-center gap-3"
+              >
+                  <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+                  [ ACCESS SITE LEGEND ]
+              </button>
           </div>
         </div>
 
@@ -66,12 +59,13 @@ export default function MegaNavigation() {
                 <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="h-16 w-auto object-contain filter grayscale" />
               </a>
             </Link>
-            <Link href="/evidence">
-              <a className="bg-red-900/20 border border-red-900/50 text-red-500 px-6 py-3 text-lg font-bold uppercase tracking-widest flex items-center gap-3">
-                  <svg className="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                  MAP
-              </a>
-            </Link>
+            <button 
+              onClick={() => setLegendOpen(true)}
+              className="bg-[#c41e1e]/20 border border-[#c41e1e]/50 text-[#c41e1e] px-6 py-3 text-lg font-bold uppercase tracking-widest flex items-center gap-3"
+            >
+                <svg className="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+                LEGEND
+            </button>
           </div>
         </div>
       </div>
@@ -92,6 +86,8 @@ export default function MegaNavigation() {
           </div>
         </div>
       </div>
+      
+      <SiteLegendModal isOpen={legendOpen} onClose={() => setLegendOpen(false)} />
     </nav>
   );
 }
