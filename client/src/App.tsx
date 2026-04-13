@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { CoreRouter } from "./routes/CoreRouter";
 import { ScrollManager } from "./components/ScrollManager";
 import { GlobalFooter } from "./components/GlobalFooter";
+import { GotusProvider } from "./contexts/GotusContext";
 
 import { useLocation } from "wouter";
 
@@ -22,20 +23,22 @@ function App() {
     (location.startsWith("/ledger/") && location !== "/ledger");
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-          <ScrollManager />
-          <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
-            {location !== "/" && <MegaNavigation />}
-            {!isFullScreenLayout && <LiveStatusBar />}
-            <div className="flex-grow">
-              <CoreRouter />
+      <GotusProvider>
+        <ThemeProvider defaultTheme="dark">
+          <TooltipProvider>
+            <Toaster />
+            <ScrollManager />
+            <div className="flex flex-col min-h-screen bg-[#0a0a0c]">
+              {location !== "/" && <MegaNavigation />}
+              {!isFullScreenLayout && <LiveStatusBar />}
+              <div className="flex-grow">
+                <CoreRouter />
+              </div>
+              {!isFullScreenLayout && <GlobalFooter />}
             </div>
-            {!isFullScreenLayout && <GlobalFooter />}
-          </div>
-        </TooltipProvider>
-      </ThemeProvider>
+          </TooltipProvider>
+        </ThemeProvider>
+      </GotusProvider>
     </ErrorBoundary>
   );
 }
