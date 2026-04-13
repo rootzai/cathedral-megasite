@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { APP_TITLE } from "@/const";
-import { Shield, Lock, Mail, AlertCircle, ArrowRight, BookOpen, Search } from "lucide-react";
+import { Shield, Lock, Mail, AlertCircle, ArrowRight, Search, FileText } from "lucide-react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
 import { SEO } from "@/components/SEO";
 
@@ -17,166 +16,143 @@ export default function About() {
       }
     }
   }, [location]);
+
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] selection:bg-[#8b1a1a]/30">
+    <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32">
       <SEO 
         title="About The Mission" 
-        description="Learn about the independent reconstruction of institutional failure and the search for truth." 
+        description="The independent reconstruction of institutional failure and the search for truth." 
       />
-      {/* Header */}
-      <header className="relative z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/">
-            <a className="text-2xl font-bold text-zinc-600 hover:text-zinc-600 transition-colors flex items-center gap-3">
-              <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all opacity-80" />
-              <span className="font-cinzel font-black tracking-widest text-[#c8bdb0] group-hover:text-white transition-colors">SODOM HALL</span>
+      
+      {/* Editorial Header */}
+      <header className="border-b-4 border-[#c41e1e] bg-[#050505] py-6 px-8 flex justify-between items-center sticky top-0 z-50">
+        <Link href="/">
+          <a className="text-3xl font-black font-cinzel text-[#e2dacf] uppercase tracking-[0.2em] hover:text-[#d4a843] transition-colors flex items-center gap-4">
+            <span className="w-4 h-4 bg-[#c41e1e]"></span>
+            SODOM HALL
+          </a>
+        </Link>
+        <nav className="flex gap-8">
+          <Link href="/evidence">
+            <a className="text-[#888] hover:text-[#d4a843] font-mono text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
+              <Search className="w-4 h-4" /> Open Architectural Map
             </a>
           </Link>
-          <nav className="flex gap-6">
-            <Link href="/">
-              <a className="text-zinc-500 hover:text-[#8b1a1a] transition-colors font-mono text-xs tracking-widest uppercase">Home</a>
-            </Link>
-            <Link href="/evidence">
-              <a className="text-zinc-500 hover:text-[#8b1a1a] transition-colors font-mono text-xs tracking-widest uppercase">Evidence</a>
-            </Link>
-            <Link href="/about">
-              <a className="text-white font-bold font-mono text-xs tracking-widest uppercase border-b-2 border-[#8b1a1a]">About</a>
-            </Link>
-          </nav>
-        </div>
+        </nav>
       </header>
 
-      {/* Content */}
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-12">
-          ABOUT THE <span className="text-[#8b1a1a]">RECONSTRUCTION</span>
-        </h1>
-
-        <div className="prose prose-invert prose-lg max-w-none space-y-8">
-          <section>
-            <h2 className="text-3xl font-bold mb-4">Purpose</h2>
-            <p>
-              Sodomhall.com is an independent investigative journalism project documenting institutional failures in addressing clergy sexual abuse at Seton Hall University and the Roman Catholic Archdiocese of Newark. This site examines the networks of power, protection, and complicity that enabled abuse to continue and be concealed from the public.
-            </p>
-            <p>
-              Our focus is on matters of significant public concern: the protection of children, institutional accountability, and the use of legal mechanisms to conceal abuse rather than address it. The 450 plaintiffs in ongoing litigation deserve a full accounting of how their abuse was enabled and concealed.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-bold mb-4">Sourcing Methodology</h2>
-            <p>
-              All factual claims on this site are derived from publicly available documents and credible news reporting. Our primary sources include:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Vatican Report on Theodore McCarrick</strong> (November 2020) - Official Vatican investigation documenting decades of abuse and institutional knowledge</li>
-              <li><strong>Perry Law Report</strong> (July 2024) - Independent investigation commissioned by Seton Hall University</li>
-              <li><strong>Court filings and sealed documents</strong> - Materials from ongoing litigation, including the Gibbons Report and Latham Report references</li>
-              <li><strong>News reporting</strong> - Investigations by The New York Times, Politico, and The Setonian student newspaper</li>
-              <li><strong>Public records</strong> - Board minutes, task force letters, resignation letters, and official correspondence</li>
-            </ul>
-            <p>
-              Where documents remain sealed by court order, we cite to publicly available references and reporting about their contents. We do not fabricate sources or make claims without documentary foundation.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-bold mb-4">Legal Basis</h2>
-            <p>
-              This investigation is protected by the First Amendment to the United States Constitution. The matters documented here are of profound public concern: institutional protection of child sexual abuse, misuse of legal processes to conceal wrongdoing, and the accountability of public figures who hold positions of trust.
-            </p>
-            <p>
-              Many individuals named on this site are public figures—university presidents, cardinals, board chairs, attorneys general—who have voluntarily entered the public sphere and whose conduct in their official capacities is subject to public scrutiny and criticism. Public figure status requires proof of "actual malice" (knowledge of falsity or reckless disregard for truth) for defamation claims, a standard we do not meet because our reporting is grounded in documentary evidence.
-            </p>
-            <p>
-              We distinguish between statements of fact (sourced to documents) and statements of opinion, analysis, and rhetorical criticism. Calling a pattern of institutional protection a "coverup" or describing legal strategies as "manipulation" constitutes protected opinion based on disclosed facts, not actionable defamation.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-bold mb-4">Editorial Standards</h2>
-            <p>
-              We strive for accuracy and fairness while maintaining an adversarial stance toward institutional power that has demonstrably failed to protect children. Our tone is deliberately provocative because the subject matter demands moral clarity, not false neutrality.
-            </p>
-            <p>
-              When we make factual claims, they are supported by documentary evidence cited throughout the site. When we draw inferences or offer analysis, we make clear the basis for our conclusions. We welcome corrections to factual errors and will update the site accordingly.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-bold mb-4">Disclaimer</h2>
-            <p className="text-gray-400">
-              This website is an independent project and is not affiliated with Seton Hall University, the Roman Catholic Archdiocese of Newark, or any plaintiff or defendant in ongoing litigation. The views expressed are those of the site's operators and do not represent any institutional position.
-            </p>
-            <p className="text-gray-400">
-              Information presented here is for informational and educational purposes. Nothing on this site constitutes legal advice, and readers should consult qualified attorneys for legal guidance related to these matters.
-            </p>
-          </section>
-
-          <section className="p-6 bg-zinc-100/20 border-2 border-zinc-300/50 rounded-lg">
-            <h2 className="text-3xl font-bold mb-4 text-red-400">We Welcome Legal Process</h2>
-            <p className="mb-4">
-              This investigation welcomes any legal challenge. We will litigate in the open. All demand
-              letters, cease-and-desist notices, and legal filings directed at this site will be
-              published in full on our{" "}
-              <Link href="/corrections">
-                <a className="text-red-400 hover:text-red-300 underline font-bold">Corrections page</a>
-              </Link>.
-            </p>
-            <p className="mb-4">
-              We do not settle. We do not retract documented facts. If any institution believes a
-              claim on this site is false, we invite them to identify it — on or off the record.
-            </p>
-            <p className="text-sm text-gray-400 italic">
-              To date, no legal demand has been received. This fact is documented on the{" "}
-              <Link href="/corrections">
-                <a className="text-red-400 hover:text-red-300 underline">Corrections page</a>
-              </Link>.
-            </p>
-          </section>
-
-          <section className="p-6 bg-yellow-950/10 border border-yellow-600/30 rounded-lg">
-            <h2 className="text-3xl font-bold mb-4 text-yellow-400">The Silence Doctrine</h2>
-            <p className="mb-4">
-              In the course of this investigation, representatives of Seton Hall University, the
-              Archdiocese of Newark, and the individuals named herein have been contacted for comment.
-              In every instance, the response has been: <strong className="text-yellow-300">"No comment."</strong>
-            </p>
-            <p className="mb-4">
-              We accept this as their answer and publish accordingly. This institutional silence is
-              itself a data point.
-            </p>
-            <p className="mb-4">
-              When Penn State faced similar allegations, its officials were compelled to testify
-              under oath. When Michigan State faced similar allegations, its president resigned
-              within hours of sentencing. Seton Hall's response to 40 years of documented abuse
-              has been: silence, promotion, and the sanctioning of the lawyer who withheld the evidence.
-            </p>
-            <p className="text-sm text-gray-400">
-              For a full comparison of institutional responses, see{" "}
-              <Link href="/parallels">
-                <a className="text-yellow-400 hover:text-yellow-300 underline font-bold">The Precedent: Institutional Parallels</a>
-              </Link>.
-            </p>
-          </section>
-
-          <section id="tips">
-            <h2 className="text-3xl font-bold mb-4">Submit a Tip</h2>
-            <p className="mb-6">
-              We protect source confidentiality and welcome tips from victims, witnesses, and individuals with knowledge of institutional misconduct.
-            </p>
-
-            <TipSubmissionForm />
-          </section>
+      <main className="max-w-6xl mx-auto px-6 py-20">
+        
+        {/* Massive 1905 Broadsheet Headline */}
+        <div className="text-center mb-24 border-b border-[#c41e1e]/30 pb-16">
+          <span className="text-[#d4a843] font-mono font-black tracking-[0.5em] uppercase text-sm mb-6 block">
+            Declaration of Purpose // 2026
+          </span>
+          <h1 className="text-7xl md:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter mb-8 drop-shadow-2xl">
+            ABOUT THE <span className="text-[#c41e1e]">RECONSTRUCTION</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-[#e2dacf]/80 max-w-4xl mx-auto italic font-serif leading-snug">
+            Documenting the architecture of silence. How institutions prioritize self-preservation over the protection of the innocent.
+          </p>
         </div>
 
-        <div className="mt-16 text-center">
-          <Link href="/">
-            <a className="inline-block bg-zinc-200 hover:bg-zinc-700 text-zinc-900 px-8 py-3 rounded font-bold transition-colors">
-              Return to Investigation
-            </a>
-          </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+          {/* Half Word Count Content */}
+          <div className="space-y-12">
+            <section>
+              <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-wider mb-6 flex items-center gap-4">
+                <span className="w-8 h-1 bg-[#d4a843]"></span>
+                The Mandate
+              </h2>
+              <p className="text-xl leading-relaxed text-[#e2dacf] mb-4">
+                Sodomhall is an independent forensic project. We document the institutional failures of Seton Hall University and the Archdiocese of Newark in addressing clergy abuse.
+              </p>
+              <p className="text-xl leading-relaxed text-[#e2dacf]">
+                450 plaintiffs demand a full accounting. We track the power, protection, and legal engineering used to conceal abuse rather than cure it.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-5xl font-black font-cinzel text-white uppercase tracking-wider mb-6 flex items-center gap-4">
+                <span className="w-8 h-1 bg-[#d4a843]"></span>
+                Our Sources
+              </h2>
+              <p className="text-xl leading-relaxed text-[#e2dacf] mb-6">
+                No fabrication. No speculation. Every claim stems from public records.
+              </p>
+              <ul className="space-y-4 font-mono text-sm tracking-widest uppercase">
+                <li className="flex items-center gap-4 border border-[#c41e1e]/20 p-4 bg-black">
+                  <FileText className="w-6 h-6 text-[#c41e1e]" /> Vatican Report on McCarrick (2020)
+                </li>
+                <li className="flex items-center gap-4 border border-[#c41e1e]/20 p-4 bg-black">
+                  <FileText className="w-6 h-6 text-[#c41e1e]" /> The Perry Law Report (2024)
+                </li>
+                <li className="flex items-center gap-4 border border-[#c41e1e]/20 p-4 bg-black">
+                  <FileText className="w-6 h-6 text-[#c41e1e]" /> Court Filings & Sealed Archive References
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          {/* Bold Visual Block */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-[#c41e1e]/20 blur-3xl -z-10 group-hover:bg-[#d4a843]/20 transition-colors duration-700"></div>
+            <img 
+              src="/assets/images/cathedral-blueprint.jpg" 
+              alt="Bosch Inspired Redaction Map" 
+              className="w-full h-auto border-4 border-[#1a1a1a] shadow-2xl grayscale contrast-150 brightness-75 group-hover:grayscale-0 transition-all duration-700 object-cover"
+            />
+            <div className="absolute bottom-6 right-6 bg-black/90 border border-[#c41e1e] p-4 max-w-sm backdrop-blur-sm">
+              <span className="text-[#d4a843] font-mono text-xs uppercase tracking-[0.3em] font-bold block mb-2">Fig 1. The Labyrinth</span>
+              <p className="font-serif italic text-[#e2dacf]">"We were told the shield was for our protection. In reality, it was a distribution manifest for institutional inertia."</p>
+            </div>
+          </div>
         </div>
+
+        {/* Editorial Challenge Box */}
+        <div className="bg-[#111] border-2 border-[#c41e1e] p-12 relative overflow-hidden mb-24">
+          <div className="absolute -right-20 -top-20 opacity-5">
+             <AlertCircle className="w-96 h-96 text-white" />
+          </div>
+          <div className="relative z-10 max-w-3xl">
+            <h2 className="text-6xl font-black font-cinzel text-white uppercase tracking-tighter mb-6">
+              We Welcome <span className="text-[#c41e1e]">Legal Process</span>
+            </h2>
+            <p className="text-2xl text-[#e2dacf] leading-relaxed mb-8 italic">
+              This investigation welcomes any legal challenge. We litigate in the open. We do not settle. We do not retract documented facts.
+            </p>
+            <p className="font-mono text-sm tracking-widest text-[#d4a843] uppercase mb-8">
+              Status: Zero demands received to date.
+            </p>
+            <Link href="/corrections">
+              <button className="bg-[#c41e1e] hover:bg-white hover:text-[#c41e1e] text-white font-black uppercase tracking-[0.3em] py-4 px-8 transition-colors border-2 border-transparent hover:border-[#c41e1e]">
+                View Corrections Log
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* The Silence Doctrine */}
+        <section className="text-center max-w-4xl mx-auto space-y-8 mb-24">
+          <h2 className="text-5xl font-black font-cinzel text-[#d4a843] uppercase tracking-wider">The Silence Doctrine</h2>
+          <p className="text-2xl leading-relaxed text-white">
+            When confronted with 40 years of documented abuse, the institutional response has been singular: 
+            <span className="text-[#c41e1e] font-black ml-2 px-2 py-1 bg-[#1a0000]">"No comment."</span>
+          </p>
+          <p className="text-xl text-[#888] font-serif italic">
+            Penn State officials testified. Michigan State's president resigned. Seton Hall's response has been silence, promotion, and the sanctioning of those who withheld evidence.
+          </p>
+        </section>
+
+        {/* Tip Line */}
+        <section id="tips" className="max-w-2xl mx-auto bg-black border border-white/10 p-10 shadow-2xl">
+          <h2 className="text-3xl font-black font-cinzel text-white uppercase text-center tracking-widest mb-4">Secure Drop</h2>
+          <p className="text-center text-[#888] font-mono text-xs uppercase tracking-widest mb-8">
+            Source identity strictly protected.
+          </p>
+          <TipSubmissionForm />
+        </section>
+
       </main>
     </div>
   );
