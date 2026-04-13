@@ -7,6 +7,11 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
     const [isVisible, setIsVisible] = useState(true);
 
     const handleStart = () => {
+        try {
+            const audio = new Audio('/assets/audio/drawer_slam.mp3');
+            audio.volume = 0.6;
+            audio.play().catch(() => {});
+        } catch (e) {}
         setOnboardingStep(2);
     };
 
@@ -25,16 +30,23 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[96%] max-w-6xl flex flex-col md:flex-row items-center justify-between px-6 py-4 md:px-10 md:py-4 border border-white/5 bg-black/85 backdrop-blur-xl shadow-2xl animate-in fade-in slide-in-from-top-4 duration-1000 delay-500 fill-mode-both pointer-events-auto rounded-2xl">
                     
                     <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-8 text-center md:text-left mb-4 md:mb-0">
-                        <div className="md:border-r border-[#8b1a1a]/30 md:pr-6">
-                            <span className="text-zinc-500 text-[10px] tracking-[0.4em] block mb-1 uppercase font-mono">Welcome to</span>
-                            <h1 className="text-3xl md:text-4xl font-cinzel font-black uppercase tracking-widest text-[#8b1a1a] leading-none text-shadow-sm">
+                        <div className="md:border-r border-[#c41e1e]/50 md:pr-6 relative z-10 overflow-hidden">
+                            {/* CRT Fuzz / Glitch pseudo-element */}
+                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay pointer-events-none"></div>
+                            <span className="text-[#c41e1e] text-[10px] tracking-[0.4em] block mb-1 uppercase font-mono animate-pulse">Classified Archive Access</span>
+                            <h1 className="text-3xl md:text-4xl font-cinzel font-black uppercase tracking-widest text-white leading-none drop-shadow-[0_0_10px_rgba(196,30,30,0.8)]">
                                 The Cathedral
                             </h1>
                         </div>
                         
-                        <p className="text-xs md:text-sm text-zinc-300 font-mono tracking-widest uppercase">
-                            A forensic memory palace.
-                        </p>
+                        <div className="flex flex-col gap-1 z-10">
+                            <p className="text-xs md:text-sm text-zinc-300 font-mono tracking-[0.2em] uppercase border-l-2 border-[#c41e1e] pl-3">
+                                14,000 pages of sealed evidence.
+                            </p>
+                            <p className="text-xs md:text-sm text-zinc-500 font-mono tracking-[0.2em] uppercase border-l-2 border-[#c41e1e]/30 pl-3">
+                                3 decades of institutional silence.
+                            </p>
+                        </div>
                     </div>
 
                     <button 
@@ -83,7 +95,7 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
 
                                 <Link href="/about" className="w-full">
                                     <button className="w-full py-5 bg-white/5 hover:bg-[#8b1a1a] text-[#8b1a1a] hover:text-white border border-[#8b1a1a]/30 transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
-                                        Start Here
+                                        [ Begin The Briefing ]
                                     </button>
                                 </Link>
                             </div>
@@ -105,7 +117,7 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
 
                                 <Link href="/breach/hub" className="w-full">
                                     <button className="w-full py-5 bg-[#8b1a1a] hover:bg-white text-white hover:text-black transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(139,26,26,0.3)]">
-                                        Access Records
+                                        [ Examine Court Filings ]
                                     </button>
                                 </Link>
                             </div>
@@ -126,7 +138,7 @@ export default function OnboardingOverlay({ onDismiss, onStart }: { onDismiss: (
 
                                 <Link href="/evidence/mckeever" className="w-full">
                                     <button className="w-full py-5 bg-white/5 hover:bg-[#8b1a1a] text-[#8b1a1a] hover:text-white border border-[#8b1a1a]/30 transition-all font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
-                                        Examine Truth
+                                        [ Read The Testimony ]
                                     </button>
                                 </Link>
                             </div>
