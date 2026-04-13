@@ -150,13 +150,13 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </div>
 
         {/* Dossier Tabs */}
-        <div className="flex border-b border-border w-full overflow-x-auto scrollbar-thin">
+        <div className="grid grid-cols-2 w-full border-b border-border">
           {dossierTabs.map(tab => (
             <Link key={tab.href} href={tab.href}>
               <div className={cn(
-                "flex-shrink-0 py-2.5 px-3 text-center font-mono text-xs uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap font-bold",
+                "py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-b border-border flex items-center justify-center whitespace-nowrap font-bold",
                 tab.active
-                  ? "bg-destructive text-white"
+                  ? "bg-destructive text-white border-b-transparent"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}>
                 {tab.label}

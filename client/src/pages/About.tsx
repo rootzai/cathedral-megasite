@@ -18,7 +18,7 @@ export default function About() {
   }, [location]);
 
   return (
-    <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32">
+    <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32 overflow-x-hidden">
       <SEO 
         title="About The Mission" 
         description="The independent reconstruction of institutional failure and the search for truth." 

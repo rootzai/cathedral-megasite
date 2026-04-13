@@ -191,9 +191,6 @@ export function CoreRouter() {
         <Route path="/breach/hub">
           <PageLayout component={BreachHub} />
         </Route>
-        <Route path="/breach">
-          <PageLayout component={React.lazy(() => import("@/pages/expose/WhistleblowerUnmasking"))} />
-        </Route>
 
         {/* Tier 6: THE METHOD & THE NURSERY */}
         <Route path="/method">

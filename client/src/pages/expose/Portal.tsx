@@ -49,7 +49,7 @@ export default function ExposePortal() {
                     </Link>
 
                     {/* Act 2: The Cover-Up */}
-                    <Link href="/coverup/financial">
+                    <Link href="/coverup">
                         <div className="group cursor-pointer relative h-[450px] border border-zinc-800 hover:border-red-600/50 transition-all duration-700 overflow-hidden bg-zinc-900 shadow-2xl">
                             <div className="absolute inset-0 z-0">
                                 <SmartImage

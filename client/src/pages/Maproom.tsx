@@ -28,14 +28,14 @@ export default function Maproom() {
                     
                     {/* Node 1: SCIF */}
                     <div className="group relative cursor-crosshair w-full flex justify-center">
-                        <div className="text-center group-hover:opacity-0 transition-opacity duration-300">
+                        <div className="text-center transition-opacity duration-300 relative z-10">
                             <span className="font-mono text-zinc-600 tracking-[0.4em] text-xs block mb-4 uppercase">Location</span>
                             <h1 className="text-7xl md:text-9xl font-sans font-black text-white tracking-widest uppercase">
                                 S.C.I.F.
                             </h1>
                         </div>
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                            <div className="bg-black border border-[#F5EDD0]/20 p-8 w-full max-w-lg shadow-2xl">
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 bg-black/95 backdrop-blur-sm">
+                            <div className="bg-transparent border border-[#F5EDD0]/20 p-8 w-full max-w-lg shadow-2xl">
                                 <p className="font-mono text-zinc-300 text-sm md:text-base leading-relaxed text-center">
                                     <span className="text-white font-bold block mb-4 border-b border-white/20 pb-4 tracking-widest uppercase">Sensitive Compartmented Info. Facility</span>
                                     A physical vault utilized by the administration to lock away internal abuse investigations. No electronics. No copies.
