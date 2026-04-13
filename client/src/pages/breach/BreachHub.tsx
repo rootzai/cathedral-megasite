@@ -31,22 +31,7 @@ const LITIGATION_EVENTS = [
 export default function BreachHub() {
     return (
         <div className="bg-[#0a0a0c] text-[#e2dacf] font-serif pb-32">
-            {/* Editorial Header */}
-            <header className="border-b-4 border-[#c41e1e] bg-[#050505] py-6 px-8 flex justify-between items-center sticky top-0 z-50">
-                <Link href="/">
-                    <a className="text-3xl font-black font-cinzel text-[#e2dacf] uppercase tracking-[0.2em] hover:text-[#d4a843] transition-colors flex items-center gap-4">
-                        <span className="w-4 h-4 bg-[#c41e1e]"></span>
-                        SODOM HALL
-                    </a>
-                </Link>
-                <nav className="flex gap-8">
-                    <Link href="/evidence">
-                        <a className="text-[#888] hover:text-[#d4a843] font-mono text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
-                             Open Architecture
-                        </a>
-                    </Link>
-                </nav>
-            </header>
+
 
             {/* HERO: THE BREACH POINT */}
             <section className="py-20 px-6 border-b border-[#c41e1e]/20 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#c41e1e]/10 via-[#0a0a0c] to-[#0a0a0c]">

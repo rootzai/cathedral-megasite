@@ -17,7 +17,7 @@ export default function MegaNavigation() {
   ];
 
   return (
-    <nav aria-label="Primary Navigation" className="bg-black border-b border-white/5 relative z-50">
+    <nav aria-label="Primary Navigation" className="bg-black border-b border-white/5 sticky top-0 z-[100]">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-red-900 focus:text-white focus:px-4 focus:py-2 focus:font-bold focus:text-sm focus:rounded">
         Skip to content
       </a>

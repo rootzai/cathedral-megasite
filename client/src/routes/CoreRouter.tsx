@@ -4,7 +4,9 @@ import TriptychPortal from "@/components/TriptychPortal";
 
 // Lazy-loaded Pages
 const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
-const EvidenceHub = React.lazy(() => import("@/pages/evidence/EvidenceHub"));
+const Airlock = React.lazy(() => import("@/pages/Airlock"));
+const Maproom = React.lazy(() => import("@/pages/Maproom"));
+const JumpHub = React.lazy(() => import("@/pages/JumpHub"));
 const BreachHub = React.lazy(() => import("@/pages/breach/BreachHub"));
 const TheyKnew = React.lazy(() => import("@/pages/TheyKnew"));
 const Ledger = React.lazy(() => import("@/pages/Ledger"));
@@ -99,7 +101,13 @@ export function CoreRouter() {
       <Switch>
         {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={Airlock} />
+        </Route>
+        <Route path="/maproom">
+          <PageLayout component={Maproom} />
+        </Route>
+        <Route path="/palace">
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/archive">
           <PageLayout component={RedesignedHome} />
@@ -153,13 +161,13 @@ export function CoreRouter() {
           <PageLayout component={ArchitectureMap} />
         </Route>
         <Route path="/evidence/origin">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/evidence/machine">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/evidence/board">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         
         {/* Legacy redirect */}
@@ -167,13 +175,13 @@ export function CoreRouter() {
           <Redirect to="/evidence" />
         </Route>
         <Route path="/evidence/legal">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/evidence/present">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/evidence/victims">
-          <PageLayout component={EvidenceHub} />
+          <PageLayout component={JumpHub} />
         </Route>
         <Route path="/evidence/mckeever">
           <PageLayout component={McKeeverCaseStudy} />

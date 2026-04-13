@@ -25,25 +25,9 @@ export default function GlobalIndex() {
 
   return (
     <div className="min-h-screen bg-[oklch(0.06_0.005_285)] text-foreground">
-      {/* Header */}
-      <header className="border-b border-white/10 bg-background/50 backdrop-blur-md sticky top-0 z-50">
-        <div className="container py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div>
-            <Link href="/">
-              <div className="inline-flex items-center gap-2 group cursor-pointer mb-2">
-                <ArrowLeft className="w-4 h-4 text-gold-dim group-hover:text-gold transition-colors" />
-                <span className="font-label text-xs tracking-[0.2em] text-gold-dim group-hover:text-gold uppercase transition-colors">
-                  Return to Origin
-                </span>
-              </div>
-            </Link>
-            <h1 className="font-heading text-2xl md:text-3xl tracking-widest text-gold flex items-center gap-3">
-              <Database className="w-6 h-6" /> The Master Index
-            </h1>
-          </div>
-          
-          <div className="flex items-center gap-3 w-full md:w-auto">
-            <div className="relative flex-1 md:w-64">
+
+        <div className="container py-4 flex flex-col md:flex-row items-start md:items-center justify-end gap-4 border-b border-white/5">
+            <div className="relative flex-1 md:w-64 max-w-sm ml-auto">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
               <input 
                 type="text" 
@@ -53,7 +37,6 @@ export default function GlobalIndex() {
                 className="w-full bg-black/40 border border-white/10 rounded-sm py-2 pl-9 pr-4 text-sm font-label tracking-wide text-white focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all outline-none"
               />
             </div>
-          </div>
         </div>
         
         {/* Toolbar / Filters */}
@@ -75,7 +58,6 @@ export default function GlobalIndex() {
             ))}
           </div>
         </div>
-      </header>
 
       {/* The Spreadsheet Matrix */}
       <main className="container py-8 overflow-x-auto">
