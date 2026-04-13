@@ -82,54 +82,59 @@ export default function Maproom() {
                 description="The Master Schematic of the Cathedral Investigation." 
             />
 
-            {/* The SCIF Terminal / Rosetta Stone */}
-            <div className="pt-16 pb-12 px-6 md:px-12 max-w-7xl mx-auto mb-20 relative bg-[#040504] border border-[#1a1f1a] overflow-hidden shadow-2xl">
+            {/* The SCIF Terminal / Rollover Story */}
+            <div className="pt-24 pb-20 px-6 max-w-5xl mx-auto mb-24 relative bg-[#040504] border border-[#1a1f1a] shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col items-center justify-center md:min-h-[450px]">
                 {/* CRT Scanline overlay */}
                 <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-10 opacity-20" />
                 
-                {/* Terminal Header */}
-                <div className="flex items-center justify-between border-b border-[#c41e1e]/30 pb-4 mb-8">
-                    <span className="font-mono text-[#c41e1e] tracking-[0.2em] text-xs font-black uppercase flex items-center gap-3">
-                        <span className="w-2 h-2 bg-[#c41e1e] rounded-full animate-pulse shadow-[0_0_8px_rgba(196,30,30,1)]"></span>
-                        TERMINAL ACTIVE // SCIF BREACH
-                    </span>
-                    <span className="font-mono text-zinc-600 text-xs tracking-widest hidden sm:block">
-                        USER: UNAUTHORIZED
-                    </span>
-                </div>
-
-                {/* SCIF Definition */}
-                <div className="font-mono text-sm text-zinc-400 max-w-3xl mb-12 bg-black border border-white/5 p-6 rounded-sm">
-                    <div className="flex items-start gap-4">
-                        <span className="text-[#d4a843] shrink-0 font-bold">DEF. &gt;</span>
-                        <p className="leading-loose">
-                            <strong className="text-white text-base mr-2">S.C.I.F.</strong> 
-                            <span className="text-zinc-500 mr-2">(Sensitive Compartmented Information Facility):</span> 
-                            A highly secure room, proofed against electronic surveillance and physical breach. Typically used by federal intelligence agencies to review classified national security documents.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Terminal Printout */}
-                <div className="font-mono leading-relaxed space-y-6 max-w-4xl relative z-20">
-                    <p className="text-white font-bold text-lg md:text-xl leading-snug">
-                        <span className="text-zinc-500 mr-4">08-27-2019 //</span> 
-                        Seton Hall University completes a 24,000-page internal investigation into decades of clergy abuse.
-                    </p>
+                <div className="relative z-20 flex flex-col items-center space-y-20 w-full">
                     
-                    <p className="text-zinc-400 text-base md:text-lg pl-8 border-l-2 border-[#1a1f1a]">
-                        The massive <span className="text-white font-bold">Latham Report</span> definitively identified who knew, and who covered it up. To prevent discovery, the University locked the physical copies inside a secure vault—essentially a SCIF—where no copies could be made, no electronics were allowed, and no notes could be taken.
-                    </p>
+                    {/* Node 1: SCIF */}
+                    <div className="group relative cursor-crosshair w-full flex justify-center">
+                        <div className="text-center group-hover:opacity-0 transition-opacity duration-300">
+                            <span className="font-mono text-zinc-600 tracking-[0.4em] text-xs block mb-4 uppercase">Location</span>
+                            <h1 className="text-7xl md:text-9xl font-sans font-black text-white tracking-widest uppercase">
+                                S.C.I.F.
+                            </h1>
+                        </div>
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <div className="bg-black border border-white/20 p-8 w-full max-w-lg shadow-2xl">
+                                <p className="font-mono text-zinc-300 text-sm md:text-base leading-relaxed text-center">
+                                    <span className="text-white font-bold block mb-4 border-b border-white/20 pb-4 tracking-widest uppercase">Sensitive Compartmented Info. Facility</span>
+                                    A physical vault utilized by Seton Hall to lock away internal abuse investigations. No electronics. No copies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <p className="text-white font-bold text-base md:text-xl mt-8">
-                        They suppressed the truth to protect the hierarchy over the innocent. 
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 w-full justify-center">
+                        {/* Node 2: The Document */}
+                        <div className="group relative cursor-crosshair flex-1 w-full max-w-[320px]">
+                            <div className="border border-white/10 p-10 text-center group-hover:opacity-0 transition-opacity duration-300 bg-white/5">
+                                <span className="font-mono text-zinc-600 tracking-[0.5em] text-[10px] block mb-6 uppercase">Payload</span>
+                                <h2 className="font-mono text-zinc-300 tracking-[0.2em] text-2xl font-bold">LATHAM.DAT</h2>
+                            </div>
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/10 border border-white/30 p-8 shadow-2xl pointer-events-none">
+                                <p className="font-mono text-white text-xs md:text-sm leading-relaxed text-center">
+                                    <span className="text-[#d4a843] block mb-2 font-bold tracking-widest">24,000 PAGES</span>
+                                    The definitive internal report identifying the complicit hierarchy. Legally suppressed to shield the powerful.
+                                </p>
+                            </div>
+                        </div>
 
-                    <div className="mt-12 bg-[#c41e1e]/10 border border-[#c41e1e]/30 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-                        <span className="text-[#c41e1e] tracking-[0.3em] font-black uppercase text-sm drop-shadow-[0_0_8px_rgba(196,30,30,0.5)]">
-                            [ DECRYPTING DIRECTORIES ]
-                        </span>
-                        <span className="w-2 h-5 bg-[#c41e1e] animate-ping block"></span>
+                        {/* Node 3: The Action */}
+                        <div className="group relative cursor-crosshair flex-1 w-full max-w-[320px]">
+                            <div className="border border-[#c41e1e]/20 p-10 text-center group-hover:opacity-0 transition-opacity duration-300 bg-[#c41e1e]/5">
+                                <span className="font-mono text-[#c41e1e]/50 tracking-[0.5em] text-[10px] block mb-6 uppercase">Status</span>
+                                <h2 className="font-mono text-[#c41e1e] font-black tracking-[0.2em] text-2xl animate-pulse">SEALED</h2>
+                            </div>
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#c41e1e] border border-[#ff3333] p-8 shadow-[0_0_40px_rgba(196,30,30,0.3)] pointer-events-none">
+                                <p className="font-mono text-white font-black text-sm tracking-widest text-center uppercase leading-loose">
+                                    [ Perimeter Breached ]<br/>
+                                    Decrypting Directories...
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
