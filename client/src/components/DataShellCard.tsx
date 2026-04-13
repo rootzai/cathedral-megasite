@@ -30,7 +30,7 @@ export const DataShellCard: React.FC<DataShellCardProps> = ({ shell }) => {
   return (
     <div 
       onClick={handleNavigate}
-      className={`group relative flex flex-col bg-black border-2 ${getBorderColor()} p-6 cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:bg-[#111] hover:shadow-[0_0_30px_rgba(204,0,0,0.15)] h-full min-h-[400px] font-['Share_Tech_Mono']`}
+      className={`group relative flex flex-col bg-black border-2 ${getBorderColor()} p-4 cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:bg-[#111] hover:shadow-[0_0_30px_rgba(204,0,0,0.15)] h-full min-h-[280px] font-['Share_Tech_Mono']`}
     >
       {/* Background Glitch Filter on Hover */}
       <div className="absolute inset-0 bg-[#cc0000]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none mix-blend-screen" />

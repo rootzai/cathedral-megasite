@@ -38,7 +38,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["Doctrinal Analysis", "Origin Schematics"]
     },
     people: { primary: ["The Institution", "The Archbishops"], secondary: ["Historical Precedents", "Unnamed Clergy"] },
-    link: "/ledger/foundation",
+    link: "/about", // Was /ledger/foundation (Did not exist)
   },
   {
     id: "02",
@@ -212,7 +212,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Check Imagery", "Audit Logs"]
     },
     people: { primary: ["The Fund Managers", "Paul Martin"], secondary: ["The Archbishops", "Settlement Recipients"] },
-    link: "/vault/slush-fund",
+    link: "/ledger", // Was /vault/slush-fund
   },
   {
     id: "12",
@@ -229,7 +229,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Sept 29 Intercept", "Ruemmler Directives"]
     },
     people: { primary: ["Kathryn Ruemmler", "Jeffrey Epstein"], secondary: ["Latham Attorneys", "Garry Reilly"] },
-    link: "/vault/epstein",
+    link: "/vault/epstein-emails",
   },
   {
     id: "13",
@@ -246,7 +246,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Secret Settlement", "Medical Records"]
     },
     people: { primary: ["Robert McKeever", "Rev. Fugee"], secondary: ["Michael Critchley, Sr.", "Archbishop Myers"] },
-    link: "/vault/mckeever",
+    link: "/evidence/mckeever",
   },
   {
     id: "14",
@@ -263,7 +263,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["Court Filings", "Affidavits"]
     },
     people: { primary: ["General Counsel", "Thomas McCormick"], secondary: ["The Plaintiffs", "Defense Teams"] },
-    link: "/vault/legal-shield",
+    link: "/vault", // Was /vault/legal-shield
   },
 
   // GROUP IV: The Collapse Timeline (Madman)
@@ -282,7 +282,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["Status Quo Metrics", "Gala Invitations"]
     },
     people: { primary: ["The Board of Trustees", "Unknowing Public"], secondary: ["The 19 Priest Secretaries"] },
-    link: "/madman/world-before",
+    link: "/madman/exhibit-a",
   },
   {
     id: "16",
@@ -299,7 +299,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The 2018 Exposé", "Internal Panic Emails"]
     },
     people: { primary: ["The New York Times", "Breaking News Desks"], secondary: ["The Complicit Hierarchy"] },
-    link: "/madman/crisis-point",
+    link: "/madman/exhibit-b",
   },
   {
     id: "17",
@@ -316,7 +316,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Resignation Letter", "Initial Press Statements"]
     },
     people: { primary: ["Crisis Management Firms", "Spokesmen"], secondary: ["Disgraced Clerics"] },
-    link: "/madman/pivot",
+    link: "/madman/exhibit-c",
   },
   {
     id: "18",
@@ -333,7 +333,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["Edelman Contracts", "Latham Billings", "Fixer Deployment"]
     },
     people: { primary: ["Latham & Watkins", "Edelman PR"], secondary: ["Funding Streams", "Foundation Grants"] },
-    link: "/madman/deployment",
+    link: "/madman/exhibit-d",
   },
   {
     id: "19",
@@ -350,7 +350,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Vatican Report", "Grand Jury Summaries"]
     },
     people: { primary: ["Investigation Units", "The Independent Press"], secondary: ["The Victims", "Ousted Leadership"] },
-    link: "/madman/collapse",
+    link: "/madman/exhibit-e",
   },
   {
     id: "20",
@@ -367,7 +367,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Final Proof", "The Inevitable Conclusion"]
     },
     people: { primary: ["The Entire System"], secondary: ["Society at Large"] },
-    link: "/madman/terminal",
+    link: "/madman/exhibit-f",
   },
 
   // GROUP V: Meta & Narrative Scope
@@ -386,7 +386,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Politico Misfire", "Source Unmasking"]
     },
     people: { primary: ["Compliant Journalists"], secondary: ["Unmasked Whistleblowers", "Press Liaisons"] },
-    link: "/press-briefing",
+    link: "/expose/press-briefing",
   },
   {
     id: "22",
@@ -403,7 +403,7 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["Noonan's WSJ Pieces", "Cannon Op-Eds"]
     },
     people: { primary: ["Peggy Noonan", "Carl Cannon", "Chris Matthews"], secondary: ["Readers", "The Defended Hierarchy"] },
-    link: "/editorial",
+    link: "/opinion",
   },
   {
     id: "23",
@@ -437,6 +437,6 @@ export const atomizedShells: AtomizedShell[] = [
       vectors: ["The Entire Archive", "3D Spatial Navigation"]
     },
     people: { primary: ["The User"], secondary: ["The Ghost of the Unknown Survivor (GOTUS)"] },
-    link: "/axis",
+    link: "/palace",
   }
 ];
