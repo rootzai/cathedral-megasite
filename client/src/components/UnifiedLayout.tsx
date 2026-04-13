@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import React, { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { SmartImage } from "./SmartImage";
-import { JourneyNav } from "./JourneyNav";
 
 interface NavItem {
     path: string;
@@ -135,7 +134,6 @@ export default function UnifiedLayout({
                 {/* Main Content Area */}
                 <main className="flex-1 min-w-0 animate-in fade-in duration-700">
                     {children}
-                    <JourneyNav />
                 </main>
             </div>
         </div>
