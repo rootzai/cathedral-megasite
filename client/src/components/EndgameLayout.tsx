@@ -116,7 +116,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
     { href: "/ledger/reilly", label: "Reilly", active: isReilly },
     { href: "/ledger/martin", label: "Martin", active: isMartin },
     { href: "/ledger/lorenzo", label: "Lorenzo", active: isLorenzo },
-    { href: "/madman", label: "Archive", active: isMadman },
+    { href: "/madman/exhibit-a", label: "The Families \u203A", active: isMadman },
   ];
 
   return (
@@ -156,20 +156,25 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         </div>
 
         {/* Dossier Tabs */}
-        <div className="grid grid-cols-2 w-full border-b border-border">
-          {dossierTabs.map(tab => (
-            <Link key={tab.href} href={tab.href}>
-              <div className={cn(
-                "py-2 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-b border-border flex items-center justify-center whitespace-nowrap font-bold",
-                tab.active
-                  ? "bg-destructive text-white border-b-transparent"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}>
-                {tab.label}
-              </div>
-            </Link>
-          ))}
+        <div className="grid grid-cols-2 w-full">
+          {dossierTabs.map((tab, i) => {
+            const isLastRow = i >= dossierTabs.length - (dossierTabs.length % 2 === 0 ? 2 : 1);
+            return (
+              <Link key={tab.href} href={tab.href}>
+                <div className={cn(
+                  "py-2.5 px-1 text-center font-mono text-[10px] uppercase tracking-wider cursor-pointer transition-all border-r border-border flex items-center justify-center whitespace-nowrap font-bold",
+                  !isLastRow && "border-b border-border",
+                  tab.active
+                    ? "bg-destructive text-white"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}>
+                  {tab.label}
+                </div>
+              </Link>
+            );
+          })}
         </div>
+        <div className="border-b border-border" />
 
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
           {navItems.map((item) => {
