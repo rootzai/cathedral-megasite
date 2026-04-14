@@ -6,13 +6,16 @@ import { SEO } from "@/components/SEO";
 export default function TipsPage() {
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pt-32 pb-24 px-6 font-cormorant border-b border-white/5">
-            <SEO 
-                title="Submit Intelligence" 
-                description="Securely share information regarding institutional misconduct. Protect your identity." 
+            <SEO
+                title="Submit Intelligence"
+                description="Securely share information regarding institutional misconduct. Protect your identity."
             />
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="mb-16 border-b border-[#8b1a1a]/30 pb-12 relative overflow-hidden">
+                    <img src="/assets/symbols/scales_justice_dark.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06] select-none pointer-events-none" />
+                    {/* ⚖ — Submit Intelligence. The scales weigh every word */}
+                    <div className="absolute bottom-3 right-3 text-white/[0.03] hover:text-white/20 text-6xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">⚖</div>
                     <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-3xl" />
                     <div className="relative z-10 space-y-6">
                         <div className="flex items-center gap-4 mb-4">
@@ -66,7 +69,7 @@ export default function TipsPage() {
                 {/* Footer Disclaimer */}
                 <div className="mt-32 pt-12 border-t border-white/5 text-center">
                     <p className="text-xs font-courier text-zinc-800 font-black uppercase tracking-[0.5em]">
-                         SH-2026 // AUTHORIZED RECONSTRUCTION // THE TRUTH HAS NO STATUTE
+                        SH-2026 // AUTHORIZED RECONSTRUCTION // THE TRUTH HAS NO STATUTE
                     </p>
                 </div>
             </div>

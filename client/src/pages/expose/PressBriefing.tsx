@@ -15,6 +15,13 @@ export default function PressBriefing() {
         </button>
       </div>
 
+      {/* Hero band — press room atmosphere */}
+      <div className="relative overflow-hidden h-28 md:h-40">
+        <img src="/assets/courtroom/courtroom_generic.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06] select-none pointer-events-none grayscale" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#F5EDD0]" />
+        {/* ¶ — The Brief. Every paragraph matters */}
+        <div className="absolute top-3 right-3 text-[#1A1208]/[0.04] hover:text-[#1A1208]/20 text-6xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">¶</div>
+      </div>
       <div className="max-w-4xl mx-auto py-16 px-8">
         <h1 className="font-abril text-5xl md:text-6xl font-black leading-tight mb-8 border-b-8 border-[#CC2200] pb-6">
           Press Briefing: The Architecture of Protection

@@ -6,6 +6,12 @@ import { Link } from "wouter";
 
 export default function Controversies() {
   return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+    <div className="relative overflow-hidden rounded-sm -mx-4 mb-4">
+      <img src="/assets/campus/seton_hall_campus.jpg" alt="" className="w-full h-48 md:h-64 object-cover opacity-[0.10] select-none pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      {/* ≠ — Not Lily White. The stain beneath the surface */}
+      <div className="absolute top-3 right-3 text-white/[0.04] hover:text-white/20 text-5xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">≠</div>
+    </div>
     <SectionHeader
       number="06"
       title="Not 'Lily White'"

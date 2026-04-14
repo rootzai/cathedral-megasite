@@ -6,58 +6,64 @@ import { getSortedRegistry, UniversalNode, EntityCategory } from "@/lib/Universa
 
 export default function GlobalIndex() {
   const allNodes = useMemo(() => getSortedRegistry(), []);
-  
+
   const [search, setSearch] = useState("");
   const [filterCategory, setFilterCategory] = useState<EntityCategory | "ALL">("ALL");
 
   const filteredNodes = useMemo(() => {
     return allNodes.filter(node => {
-      const matchSearch = 
-        node.name.toLowerCase().includes(search.toLowerCase()) || 
+      const matchSearch =
+        node.name.toLowerCase().includes(search.toLowerCase()) ||
         node.description.toLowerCase().includes(search.toLowerCase()) ||
         node.tags.some(t => t.toLowerCase().includes(search.toLowerCase()));
-      
+
       const matchCategory = filterCategory === "ALL" || node.category === filterCategory;
-      
+
       return matchSearch && matchCategory;
     });
   }, [allNodes, search, filterCategory]);
 
   return (
     <div className="min-h-screen bg-[oklch(0.06_0.005_285)] text-foreground">
+      {/* Hero — the index of all knowledge */}
+      <div className="relative overflow-hidden h-40 md:h-52 border-b border-white/5">
+        <img src="/assets/vatican/vatican_archives_shelves.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[oklch(0.06_0.005_285)]" />
+        {/* ⊞ — The Global Index. Every entity, every connection */}
+        <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">⊞</div>
+      </div>
 
-        <div className="container py-4 flex flex-col md:flex-row items-start md:items-center justify-end gap-4 border-b border-white/5">
-            <div className="relative flex-1 md:w-64 max-w-sm ml-auto">
-              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
-              <input 
-                type="text" 
-                placeholder="Search entities, routes, tags..." 
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-black/40 border border-white/10 rounded-sm py-2 pl-9 pr-4 text-sm font-label tracking-wide text-white focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all outline-none"
-              />
-            </div>
+      <div className="container py-4 flex flex-col md:flex-row items-start md:items-center justify-end gap-4 border-b border-white/5">
+        <div className="relative flex-1 md:w-64 max-w-sm ml-auto">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
+          <input
+            type="text"
+            placeholder="Search entities, routes, tags..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full bg-black/40 border border-white/10 rounded-sm py-2 pl-9 pr-4 text-sm font-label tracking-wide text-white focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all outline-none"
+          />
         </div>
-        
-        {/* Toolbar / Filters */}
-        <div className="container py-3 flex items-center gap-4 overflow-x-auto border-t border-white/5">
-          <SlidersHorizontal className="w-4 h-4 text-white/40 shrink-0" />
-          <div className="flex gap-2">
-            {["ALL", "NARRATIVE_ROUTE", "PERSON", "DOCUMENT", "EVENT", "BOARD_OR_FIRM"].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilterCategory(cat as any)}
-                className={`px-3 py-1 text-xs font-label uppercase tracking-widest rounded-sm whitespace-nowrap transition-colors ${
-                  filterCategory === cat 
-                    ? "bg-gold/20 text-gold border border-gold/40" 
-                    : "bg-white/5 text-white/60 border border-transparent hover:bg-white/10"
+      </div>
+
+      {/* Toolbar / Filters */}
+      <div className="container py-3 flex items-center gap-4 overflow-x-auto border-t border-white/5">
+        <SlidersHorizontal className="w-4 h-4 text-white/40 shrink-0" />
+        <div className="flex gap-2">
+          {["ALL", "NARRATIVE_ROUTE", "PERSON", "DOCUMENT", "EVENT", "BOARD_OR_FIRM"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilterCategory(cat as any)}
+              className={`px-3 py-1 text-xs font-label uppercase tracking-widest rounded-sm whitespace-nowrap transition-colors ${filterCategory === cat
+                  ? "bg-gold/20 text-gold border border-gold/40"
+                  : "bg-white/5 text-white/60 border border-transparent hover:bg-white/10"
                 }`}
-              >
-                {cat === "ALL" ? "All Entries" : cat.replace("_", " ")}
-              </button>
-            ))}
-          </div>
+            >
+              {cat === "ALL" ? "All Entries" : cat.replace("_", " ")}
+            </button>
+          ))}
         </div>
+      </div>
 
       {/* The Spreadsheet Matrix */}
       <main className="container py-8 overflow-x-auto">
@@ -73,7 +79,7 @@ export default function GlobalIndex() {
           <div className="flex flex-col gap-2">
             {filteredNodes.length > 0 ? (
               filteredNodes.map((node, i) => (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.02 }}
@@ -83,7 +89,7 @@ export default function GlobalIndex() {
                   <div className="text-[10px] font-label uppercase text-white/50 tracking-widest bg-black/40 px-2 py-1 align-middle inline-block rounded-sm w-fit">
                     {node.category.replace("_", " ")}
                   </div>
-                  
+
                   <div>
                     <h3 className="font-heading text-lg tracking-wide text-white group-hover:text-gold transition-colors">
                       {node.name}
@@ -128,7 +134,7 @@ export default function GlobalIndex() {
           </div>
         </div>
       </main>
-      
+
       {/* Footer Stats */}
       <footer className="border-t border-white/10 py-6 text-center">
         <p className="font-label text-xs tracking-widest text-white/40 uppercase">

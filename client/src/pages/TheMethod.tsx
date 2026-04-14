@@ -67,6 +67,10 @@ export default function TheMethod() {
     <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-cormorant selection:bg-[#1a3a5c] selection:text-white pb-32">
       {/* VUCETIC HERO */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center pt-32 px-6 border-b border-[#1a3a5c]/20 overflow-hidden text-center">
+        <img src="/assets/cathedral/cathedral_rose_window.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06] select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0a0a0c]" />
+        {/* Φ — Memory Palace marker: The Forensic Chapel. 8 fingerprints, 1 method */}
+        <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Φ</div>
         <div className="absolute inset-0 bg-[#1a3a5c]/5 blur-[120px] opacity-30 pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-12 relative z-10">
           <div className="flex justify-center">
@@ -77,7 +81,7 @@ export default function TheMethod() {
           </h1>
           <div className="space-y-6 text-xl text-zinc-400 font-serif leading-relaxed italic text-left p-8 bg-[#0D0D10] border border-white/5">
             <p>
-              <strong className="text-white not-italic font-cinzel tracking-widest text-sm">Ivan Vucetic, Database Pioneer</strong><br/>
+              <strong className="text-white not-italic font-cinzel tracking-widest text-sm">Ivan Vucetic, Database Pioneer</strong><br />
               Born Hvar, Croatia, 1858. Emigrated to Argentina. 1892: The Francisca Rojas case — two children murdered. First criminal conviction by fingerprint evidence.
             </p>
             <p>
@@ -104,7 +108,7 @@ export default function TheMethod() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {FINGERPRINTS.map((fp, i) => (
-              <motion.div 
+              <motion.div
                 key={fp.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -116,13 +120,13 @@ export default function TheMethod() {
                   <h3 className="text-2xl font-black font-cinzel text-white uppercase">{fp.id}. {fp.title}</h3>
                   <Fingerprint className="w-6 h-6 text-[#1a3a5c] group-hover:text-[#3a8ef6] transition-colors" />
                 </div>
-                
+
                 <div className="mb-6 space-y-2">
                   <span className="block text-xs text-[#3a8ef6] font-courier uppercase tracking-widest leading-relaxed">
-                    VUCETIC PARALLEL: <br/>{fp.parallel}
+                    VUCETIC PARALLEL: <br />{fp.parallel}
                   </span>
                   <span className="block text-xs text-zinc-500 font-courier uppercase tracking-widest leading-relaxed">
-                    PRIMARY SOURCE: <br/>{fp.evidence}
+                    PRIMARY SOURCE: <br />{fp.evidence}
                   </span>
                 </div>
 
@@ -131,13 +135,13 @@ export default function TheMethod() {
                 </p>
 
                 {fp.id === "04" && (
-                    <div className="mt-6 pt-6 border-t border-[#8b1a1a]/20">
-                        <Link href="/easter">
-                            <a className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#8b1a1a] hover:text-white transition-colors cursor-pointer group/link">
-                                The Agnifilo Paradox as Easter egg <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
-                            </a>
-                        </Link>
-                    </div>
+                  <div className="mt-6 pt-6 border-t border-[#8b1a1a]/20">
+                    <Link href="/easter">
+                      <a className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#8b1a1a] hover:text-white transition-colors cursor-pointer group/link">
+                        The Agnifilo Paradox as Easter egg <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                      </a>
+                    </Link>
+                  </div>
                 )}
               </motion.div>
             ))}
@@ -148,17 +152,17 @@ export default function TheMethod() {
       {/* THE METHOD CONCLUSION */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-8 bg-[#0D0D10] border border-white/5 p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1a3a5c]/10 blur-[80px]" />
-            <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest">THE NEW METHOD</h3>
-            <p className="text-xl text-zinc-400 font-serif leading-relaxed italic max-w-3xl mx-auto">
-                What Vucetic understood: a fingerprint at a crime scene is evidence of contact, not presence.
-            </p>
-            <p className="text-lg text-zinc-500 font-serif leading-relaxed max-w-3xl mx-auto">
-                What AI does: organizes the search space across distributed archives that no single human investigator would search simultaneously. The parish bulletin archives. The court filing timestamps. The document review lists. The footnotes of a 16-page report. The hold letter dates. None of these required unusual access. All of them were findable. None of them were practically findable by conventional methods.
-            </p>
-            <p className="text-lg font-bold text-white font-serif leading-relaxed max-w-3xl mx-auto">
-                This is not the first crime solved with AI. It is the first time AI was used to locate fabricated ecclesiastical documents distributed across parish networks to manufacture a criminal predicate against a journalist. That specificity is itself a fingerprint.
-            </p>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#1a3a5c]/10 blur-[80px]" />
+          <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest">THE NEW METHOD</h3>
+          <p className="text-xl text-zinc-400 font-serif leading-relaxed italic max-w-3xl mx-auto">
+            What Vucetic understood: a fingerprint at a crime scene is evidence of contact, not presence.
+          </p>
+          <p className="text-lg text-zinc-500 font-serif leading-relaxed max-w-3xl mx-auto">
+            What AI does: organizes the search space across distributed archives that no single human investigator would search simultaneously. The parish bulletin archives. The court filing timestamps. The document review lists. The footnotes of a 16-page report. The hold letter dates. None of these required unusual access. All of them were findable. None of them were practically findable by conventional methods.
+          </p>
+          <p className="text-lg font-bold text-white font-serif leading-relaxed max-w-3xl mx-auto">
+            This is not the first crime solved with AI. It is the first time AI was used to locate fabricated ecclesiastical documents distributed across parish networks to manufacture a criminal predicate against a journalist. That specificity is itself a fingerprint.
+          </p>
         </div>
       </section>
     </div>

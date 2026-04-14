@@ -59,6 +59,9 @@ export default function Secretaries() {
     <div className="space-y-16 animate-in fade-in duration-1000">
       {/* Hero Section */}
       <section className="relative border-b border-border pb-16">
+        <img src="/assets/vatican/vatican_archives_document.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06] select-none pointer-events-none" />
+        {/* Π — The Secretariat Vault. 6 secretaries, 1 apparatus */}
+        <div className="absolute bottom-3 right-3 text-white/[0.04] hover:text-white/20 text-5xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Π</div>
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
           <ShieldAlert className="w-96 h-96 text-destructive animate-pulse" />
         </div>

@@ -4,24 +4,24 @@ import { Zap, AlertCircle, ArrowRight, ShieldCheck, Scale } from "lucide-react";
 import { Term } from "@/components/Term";
 
 const LITIGATION_EVENTS = [
-    { 
-        date: "MAY 28, 2026", 
-        title: "Seton Hall v. Dei Journo", 
+    {
+        date: "MAY 28, 2026",
+        title: "Seton Hall v. Dei Journo",
         desc: "SHU attempts to depose the journalist. Managed by the Critchley triumvirate.",
         status: "HEARING",
         color: "bg-[#c41e1e]"
     },
-    { 
-        date: "MAY 18, 2026", 
-        title: "McCloskey v. RCAN", 
+    {
+        date: "MAY 18, 2026",
+        title: "McCloskey v. RCAN",
         desc: "Production of the 24,000-page Latham Archive ordered.",
         status: "PRODUCTION",
         color: "bg-[#d4a843]",
         textClass: "text-black"
     },
-    { 
-        date: "MAR 12, 2026", 
-        title: "Stay Denial", 
+    {
+        date: "MAR 12, 2026",
+        title: "Stay Denial",
         desc: "RCAN's emergency stay to block Latham unsealing denied.",
         status: "DENIED",
         color: "bg-[#111]"
@@ -35,6 +35,9 @@ export default function BreachHub() {
 
             {/* HERO: THE BREACH POINT */}
             <section className="py-20 px-6 border-b border-[#c41e1e]/20 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#c41e1e]/10 via-[#0a0a0c] to-[#0a0a0c]">
+                <img src="/assets/images/sh_breach_glass.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.07] select-none pointer-events-none mix-blend-lighten" />
+                {/* Δ — Memory Palace marker: The Fracture Point. 24,000 pages, 1 journalist, 0 accountability */}
+                <div className="absolute bottom-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Δ</div>
                 <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center text-center">
                     <div className="flex items-center gap-4 mb-8">
                         <Zap className="w-6 h-6 text-[#d4a843] animate-pulse" />
@@ -42,7 +45,7 @@ export default function BreachHub() {
                             Active Litigation
                         </span>
                     </div>
-                    
+
                     <h1 className="text-7xl md:text-[9rem] font-black font-cinzel text-white uppercase tracking-tighter mb-12 leading-[0.85] drop-shadow-2xl">
                         THE <span className="text-[#c41e1e]">BREACH</span>
                     </h1>
@@ -57,7 +60,7 @@ export default function BreachHub() {
                                 The institution that sealed 24,000 pages of abuse evidence is now attempting to silence the reporter who warned them.
                             </p>
                         </div>
-                        
+
                         <div className="bg-[#050505] border-4 border-[#c41e1e] p-8 shadow-[-15px_15px_0_0_rgba(196,30,30,0.5)]">
                             <span className="text-sm font-black font-mono text-[#d4a843] uppercase tracking-[0.3em] flex items-center gap-2">
                                 <AlertCircle className="w-4 h-4" /> Collision Countdown
@@ -111,7 +114,7 @@ export default function BreachHub() {
                         <span className="text-[#c41e1e] font-black text-sm uppercase tracking-[0.5em] font-mono">Judicial Conflict</span>
                         <h2 className="text-6xl font-black font-cinzel text-white uppercase tracking-tighter">THE SLAPP SHIELD</h2>
                         <p className="text-2xl text-white font-serif italic leading-relaxed">
-                            Using New Jersey Privilege to ignore California Shield Laws. 
+                            Using New Jersey Privilege to ignore California Shield Laws.
                         </p>
                         <div className="bg-[#111] border-2 border-white/5 p-8 relative">
                             <Scale className="w-8 h-8 text-[#d4a843] mb-4" />

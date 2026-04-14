@@ -6,6 +6,13 @@ import MemoryGate from "@/components/MemoryGate";
 
 export default function Profile() {
   return (<div className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-4">
+    {/* Hero visual — McCarrick portrait */}
+    <div className="relative overflow-hidden rounded-sm -mx-4 mb-4">
+      <img src="/assets/images/mccarrick_portrait.jpg" alt="" className="w-full h-48 md:h-64 object-cover opacity-[0.12] select-none pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      {/* Ξ — The Ascendant. 1958→2018: 60 years, 5 dioceses, 0 accountability */}
+      <div className="absolute top-3 right-3 text-white/[0.04] hover:text-white/20 text-5xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Ξ</div>
+    </div>
     <SectionHeader
       number="03"
       title="Profile: McCarrick"

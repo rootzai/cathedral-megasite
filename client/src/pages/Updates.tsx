@@ -38,22 +38,33 @@ const UPDATES = [
 
 export default function Updates() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pt-32 pb-24 px-6">
+    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pb-24">
       <SEO
         title="Site Updates"
         description="Changelog and recent updates to the Sodom Hall investigation."
       />
-      <div className="max-w-3xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return Home
-        </Link>
 
-        <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
-          SITE <span className="text-[#8b1a1a]">UPDATES</span>
-        </h1>
-        <p className="text-zinc-500 font-serif italic mb-16 text-lg">
-          A running log of additions, corrections, and new evidence.
-        </p>
+      {/* Hero with timeline feel */}
+      <div className="relative overflow-hidden border-b border-white/5">
+        <img src="/assets/images/timeline-clock.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#0a0a0c]" />
+        {/* ⟳ — The Changelog. History is written in updates */}
+        <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">⟳</div>
+        <div className="relative z-10 pt-32 pb-16 px-6 max-w-3xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return Home
+          </Link>
+
+          <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
+            SITE <span className="text-[#8b1a1a]">UPDATES</span>
+          </h1>
+          <p className="text-zinc-400 font-serif italic text-lg">
+            A running log of additions, corrections, and new evidence.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 pt-12">
 
         <div className="space-y-16">
           {UPDATES.map((update, i) => (

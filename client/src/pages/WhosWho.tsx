@@ -41,29 +41,40 @@ export default function WhosWho() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif pt-32 pb-24 px-6">
+        <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] font-serif pb-24">
             <SEO
                 title="Who's Who"
                 description="A directory of the key actors and institutional enablers in the Cathedral investigation."
             />
-            <div className="max-w-5xl mx-auto">
-                <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return to Architecture
-                </Link>
 
-                <div className="mb-20">
-                    <div className="flex items-center gap-4 mb-6">
-                        <User className="w-6 h-6 text-[#8b1a1a]" />
-                        <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.6em] font-mono">Dramatis Personae</span>
+            {/* Hero with cathedral interior */}
+            <div className="relative overflow-hidden border-b border-white/5">
+                <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] select-none pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0a0a0c]" />
+                {/* Ω — Memory Palace marker: The Nave of Names. 5 categories, 1 network */}
+                <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Ω</div>
+                <div className="relative z-10 pt-32 pb-16 px-6 max-w-5xl mx-auto">
+                    <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
+                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return to Architecture
+                    </Link>
+
+                    <div className="mb-4">
+                        <div className="flex items-center gap-4 mb-6">
+                            <User className="w-6 h-6 text-[#8b1a1a]" />
+                            <span className="text-[#8b1a1a] font-bold text-xs uppercase tracking-[0.6em] font-mono">Dramatis Personae</span>
+                        </div>
+                        <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-8 leading-none">
+                            WHO'S <span className="text-[#8b1a1a]">WHO</span>
+                        </h1>
+                        <p className="text-2xl text-zinc-400 italic leading-relaxed max-w-3xl">
+                            A simplified directory of the key actors in the Cathedral investigation.
+                            Understand the roles, the connections, and the history of those in power.
+                        </p>
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-8 leading-none">
-                        WHO'S <span className="text-[#8b1a1a]">WHO</span>
-                    </h1>
-                    <p className="text-2xl text-zinc-500 italic leading-relaxed max-w-3xl">
-                        A simplified directory of the key actors in the Cathedral investigation.
-                        Understand the roles, the connections, and the history of those in power.
-                    </p>
                 </div>
+            </div>
+
+            <div className="max-w-5xl mx-auto px-6 pt-12">
 
                 <div className="space-y-32">
                     {categories.map((cat, i) => (

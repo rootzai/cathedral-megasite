@@ -13,6 +13,13 @@ export default function LathamEmails() {
         </span>
       </div>
 
+      {/* Hero band — vault atmosphere */}
+      <div className="relative overflow-hidden h-32 md:h-44">
+        <img src="/assets/images/reilly-beach-house-dark.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1A1208]" />
+        {/* ⊗ — The Epstein Calendar. Where law firms and predators share a schedule */}
+        <div className="absolute top-3 right-3 text-[#D4A017]/[0.06] hover:text-[#D4A017]/30 text-6xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">⊗</div>
+      </div>
       <div className="max-w-4xl mx-auto py-16 px-8">
         <div className="mb-12">
           <div className="text-sm tracking-[0.2em] text-[#CC2200] font-bold mb-4 uppercase">

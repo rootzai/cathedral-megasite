@@ -35,22 +35,33 @@ const PRIMARY_SOURCES = [
 
 export default function Press() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pt-32 pb-24 px-6">
+    <div className="min-h-screen bg-[#0a0a0c] text-[#c8bdb0] pb-24">
       <SEO
         title="Press Resources"
         description="Key dates, case numbers, primary sources, and contact information for journalists covering the Seton Hall investigation."
       />
-      <div className="max-w-4xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return Home
-        </Link>
 
-        <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
-          PRESS <span className="text-[#8b1a1a]">RESOURCES</span>
-        </h1>
-        <p className="text-zinc-500 font-serif italic mb-16 text-lg max-w-2xl">
-          This page consolidates key dates, case numbers, and primary sources for journalists covering the Seton Hall University clergy abuse investigation.
-        </p>
+      {/* Hero with vintage files */}
+      <div className="relative overflow-hidden border-b border-white/5">
+        <img src="/assets/documents/vintage_files.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#0a0a0c]" />
+        {/* § — The Press Room. Facts first, always */}
+        <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">§</div>
+        <div className="relative z-10 pt-32 pb-16 px-6 max-w-4xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-2 mb-12 text-[#8b1a1a] hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return Home
+          </Link>
+
+          <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter mb-4">
+            PRESS <span className="text-[#8b1a1a]">RESOURCES</span>
+          </h1>
+          <p className="text-zinc-400 font-serif italic text-lg max-w-2xl">
+            This page consolidates key dates, case numbers, and primary sources for journalists covering the Seton Hall University clergy abuse investigation.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 pt-12">
 
         {/* KEY DATES */}
         <section className="mb-20" id="dates">

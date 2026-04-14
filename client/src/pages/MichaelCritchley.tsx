@@ -6,32 +6,39 @@ import { Term } from "@/components/Term";
 
 export default function MichaelCritchley() {
     return (
-        <div className="min-h-screen bg-[#050505] text-[#c8bdb0] font-serif pt-32 pb-24 px-6 md:px-12">
-            <SEO 
-                title="Michael Critchley: The Fixer" 
-                description="Forensic mapping of Michael Critchley's role as the preeminent legal gladiator and architect of protection for the Archdiocese of Newark." 
+        <div className="min-h-screen bg-[#050505] text-[#c8bdb0] font-serif pb-24">
+            <SEO
+                title="Michael Critchley: The Fixer"
+                description="Forensic mapping of Michael Critchley's role as the preeminent legal gladiator and architect of protection for the Archdiocese of Newark."
             />
-            
-            <div className="max-w-5xl mx-auto">
-                <Link href="/whos-who">
-                    <a className="inline-flex items-center gap-2 mb-12 text-red-700 hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
+
+            {/* Hero with courthouse bg */}
+            <div className="relative overflow-hidden border-b border-white/5">
+                <img src="/assets/courtroom/essex_courthouse.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] select-none pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#050505]" />
+                {/* Σ — Memory Palace marker: The Architect's Chamber. Sum of all suppressed evidence */}
+                <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">Σ</div>
+                <div className="relative z-10 pt-32 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+                    <Link href="/whos-who" className="inline-flex items-center gap-2 mb-12 text-red-700 hover:text-white uppercase tracking-widest text-xs font-mono transition-colors group">
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return to Registry
-                    </a>
-                </Link>
+                    </Link>
 
-                <header className="mb-20 border-l-4 border-red-900 pl-8 py-4">
-                    <div className="flex items-center gap-3 mb-4">
-                        <Shield className="w-5 h-5 text-red-600" />
-                        <span className="font-mono text-sm text-red-500 uppercase tracking-[0.6em] font-black">Forensic Dossier // Ringleader</span>
-                    </div>
-                    <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-4 leading-none">
-                        MICHAEL <span className="text-red-900">CRITCHLEY</span>
-                    </h1>
-                    <p className="text-3xl text-zinc-400 italic font-serif max-w-2xl leading-relaxed">
-                        "The Architect of Protection. A master of the temperature, the network, and the institutional shield."
-                    </p>
-                </header>
+                    <header className="border-l-4 border-red-900 pl-8 py-4">
+                        <div className="flex items-center gap-3 mb-4">
+                            <Shield className="w-5 h-5 text-red-600" />
+                            <span className="font-mono text-sm text-red-500 uppercase tracking-[0.6em] font-black">Forensic Dossier // Ringleader</span>
+                        </div>
+                        <h1 className="text-6xl md:text-8xl font-black font-cinzel text-white uppercase tracking-tighter mb-4 leading-none">
+                            MICHAEL <span className="text-red-900">CRITCHLEY</span>
+                        </h1>
+                        <p className="text-3xl text-zinc-400 italic font-serif max-w-2xl leading-relaxed">
+                            "The Architect of Protection. A master of the temperature, the network, and the institutional shield."
+                        </p>
+                    </header>
+                </div>
+            </div>
 
+            <div className="max-w-5xl mx-auto px-6 md:px-12 pt-12">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div className="lg:col-span-2 space-y-20">
                         {/* Section 1: The Fixer */}
@@ -150,4 +157,3 @@ export default function MichaelCritchley() {
         </div>
     );
 }
-

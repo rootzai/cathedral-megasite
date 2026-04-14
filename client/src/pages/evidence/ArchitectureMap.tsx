@@ -18,6 +18,13 @@ export default function ArchitectureMap() {
         title="Map Room: The Architecture of Protection"
         description="The interactive architectural map exploring the structural defense mechanisms concealing clerical abuse."
       />
+      {/* Atmospheric bg layer — cathedral architecture */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+        <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="w-full h-[50vh] object-cover opacity-[0.04]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/80 to-[#09090b]" />
+      </div>
+      {/* ⬡ — The Map Room. Architecture reveals intent */}
+      <div className="absolute top-20 right-6 text-white/[0.02] hover:text-white/15 text-8xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default z-20" aria-hidden="true">⬡</div>
       <AmbientParticles count={25} />
 
       <main className="relative z-10 py-32 px-6">

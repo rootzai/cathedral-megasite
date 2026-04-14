@@ -136,6 +136,10 @@ export default function Ledger() {
 
       {/* HEADER */}
       <div className="border-b border-white/5 relative overflow-hidden bg-black py-20 px-6">
+        <img src="/assets/vatican/vatican_archives_shelves.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10 select-none pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#0a0a0c]" />
+        {/* ψ — Memory Palace marker: The Archive Room. 3 boards × 5 firms = 15 pillars of silence */}
+        <div className="absolute top-4 right-4 text-white/[0.03] hover:text-white/20 text-7xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default" aria-hidden="true">ψ</div>
         <div className="absolute inset-0 bg-[#8b1a1a]/5 blur-[120px] pointer-events-none" />
         <div className="max-w-6xl mx-auto relative z-10">
           <Link href="/">
@@ -185,8 +189,8 @@ export default function Ledger() {
                     aria-selected={isActive}
                     onClick={() => setActiveTab(tab.id)}
                     className={`flex items-center gap-2 px-4 py-2.5 font-mono text-xs uppercase tracking-widest whitespace-nowrap transition-all border-b-2 cursor-pointer ${isActive
-                        ? 'border-[#8b1a1a] text-white bg-[#8b1a1a]/10 font-black'
-                        : 'border-transparent text-zinc-600 hover:text-zinc-300 hover:border-zinc-700'
+                      ? 'border-[#8b1a1a] text-white bg-[#8b1a1a]/10 font-black'
+                      : 'border-transparent text-zinc-600 hover:text-zinc-300 hover:border-zinc-700'
                       }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
