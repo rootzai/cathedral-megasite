@@ -1,5 +1,5 @@
-import EndgameLayout from "@/components/EndgameLayout";
 import MemoryGate from "@/components/MemoryGate";
+import EndgameLayout from "@/components/EndgameLayout";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangle, Eye, Siren } from "lucide-react";

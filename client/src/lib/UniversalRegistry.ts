@@ -6,21 +6,21 @@
  * Persons, Board Groups, Narrative Routes, Evidence Documents, and Timeline Events.
  */
 
-import { 
-  boardOfTrustees, 
-  boardOfRegents, 
-  boardOfVisitors, 
+import {
+  boardOfTrustees,
+  boardOfRegents,
+  boardOfVisitors,
   KEY_DATES,
   investigativeFirms,
   shuLawyers,
-  rcanLawyers 
+  rcanLawyers
 } from "./data";
 
-export type EntityCategory = 
-  | "PERSON" 
-  | "BOARD_OR_FIRM" 
-  | "DOCUMENT" 
-  | "EVENT" 
+export type EntityCategory =
+  | "PERSON"
+  | "BOARD_OR_FIRM"
+  | "DOCUMENT"
+  | "EVENT"
   | "NARRATIVE_ROUTE"; // Handles UI pages/orphaned routes
 
 export interface GlobalSortKeys {
@@ -29,13 +29,13 @@ export interface GlobalSortKeys {
    * e.g., A primary architect (McCarrick) = 1, Peripheral enabler = 5
    */
   categoryRank: number;
-  
+
   /** 
    * Global weighting factor across all categories. Allows the system or UI 
    * to multiply or dynamically elevate a specific object over another across domains.
    * Higher = more gravity/importance systemically.
    */
-  globalWeight: number; 
+  globalWeight: number;
 }
 
 export interface UniversalNode {
@@ -45,10 +45,10 @@ export interface UniversalNode {
   description: string;
   dateStr?: string;        // Specific event/doc timestamp if applicable
   tags: string[];          // Matrix filter vectors (e.g. ['cover-up', 'clergy'])
-  
+
   // The dual-layer ranking logic
   rankings: GlobalSortKeys;
-  
+
   // Connective tissue
   routeUrl: string;        // Resolves the orphan page dilemma
   relatedUiNodes?: string[]; // Edge mapping to other node IDs
@@ -132,7 +132,7 @@ export const UNIVERSAL_REGISTRY: UniversalNode[] = [
     description: "Lead outside counsel executing the legal suppression strategy.",
     tags: ["legal", "fixer", "seton-hall"],
     rankings: { categoryRank: 1, globalWeight: 95 },
-    routeUrl: "/ledger" 
+    routeUrl: "/ledger"
   },
   {
     id: "person-reilly",
@@ -141,7 +141,7 @@ export const UNIVERSAL_REGISTRY: UniversalNode[] = [
     description: "Current University President acting as successor proxy.",
     tags: ["clergy", "successor", "seton-hall"],
     rankings: { categoryRank: 2, globalWeight: 85 },
-    routeUrl: "/succession/regime" 
+    routeUrl: "/succession/regime"
   },
 
   // --- DOCUMENTS / EVIDENCE ---
@@ -197,7 +197,7 @@ export const UNIVERSAL_REGISTRY: UniversalNode[] = [
 // Helper to reliably cast any array to our mapping structure without fighting type rigidity
 function generateDynamicNodes(): UniversalNode[] {
   const dynamic: UniversalNode[] = [];
-  
+
   // 1. Boards Mapping
   const boards = [boardOfTrustees, boardOfRegents, boardOfVisitors];
   boards.forEach(board => {
@@ -225,19 +225,19 @@ function generateDynamicNodes(): UniversalNode[] {
 
       const isLatham = (m.badges || []).includes("latham");
       const isChair = m.role.toLowerCase().includes("chair");
-      
+
       dynamic.push({
         id: `person-${m.name.replace(/[^a-zA-Z]/g, '').toLowerCase()}-${board.id}`,
         category: "PERSON",
         name: m.name,
         description: `${m.role} (${m.tenure}). ${m.note || ""}`,
         tags: [...(m.badges || []), board.id],
-        rankings: { 
-          categoryRank: isChair ? 2 : 3, 
+        rankings: {
+          categoryRank: isChair ? 2 : 3,
           // Boost global weight for the highly relevant 2019 coverup cohort
-          globalWeight: isLatham ? 75 : 55 
+          globalWeight: isLatham ? 75 : 55
         },
-        routeUrl: "/coverup"
+        routeUrl: "/they-knew"
       });
     });
   });
@@ -266,13 +266,13 @@ function generateDynamicNodes(): UniversalNode[] {
       description: firm.role,
       tags: ["legal-wall"],
       rankings: { categoryRank: 2, globalWeight: 65 },
-      routeUrl: "/coverup"
+      routeUrl: "/they-knew"
     });
-    
+
     // Also add their key attorneys
-    (firm as any).people?.forEach((p: any) => {
+    firm.attorneys.forEach((p: any) => {
       if (UNIVERSAL_REGISTRY.some(n => n.name.toLowerCase() === p.name.toLowerCase())) return;
-      
+
       dynamic.push({
         id: `lawyer-${p.name.replace(/[^a-zA-Z]/g, '').toLowerCase()}`,
         category: "PERSON",
@@ -280,7 +280,7 @@ function generateDynamicNodes(): UniversalNode[] {
         description: `Attorney at ${firm.firm}. ${p.title || ""} ${p.note || ""}`,
         tags: ["legal-wall"],
         rankings: { categoryRank: 2, globalWeight: 70 },
-        routeUrl: "/coverup"
+        routeUrl: "/they-knew"
       });
     });
   });
@@ -294,7 +294,7 @@ function generateDynamicNodes(): UniversalNode[] {
  */
 export const getSortedRegistry = (): UniversalNode[] => {
   const completeRegistry = [...UNIVERSAL_REGISTRY, ...generateDynamicNodes()];
-  
+
   return completeRegistry.sort((a, b) => {
     // 1. Prioritize cross-category Global Weight (Descending)
     if (b.rankings.globalWeight !== a.rankings.globalWeight) {

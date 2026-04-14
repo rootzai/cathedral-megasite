@@ -65,7 +65,13 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
   ];
 
   const reillyItems = [
-    { href: "/ledger/reilly", label: "01. FACE OF IMPUNITY", id: "01" }
+    { href: "/ledger/reilly", label: "01. INTRODUCTION", id: "01" },
+    { href: "/ledger/reilly/secretary", label: "02. THE SECRETARY", id: "02" },
+    { href: "/ledger/reilly/latham", label: "03. THE LATHAM REPORT", id: "03" },
+    { href: "/ledger/reilly/presidency", label: "04. THE PRESIDENCY", id: "04" },
+    { href: "/ledger/reilly/memes", label: "05. COURT OF OPINION", id: "05" },
+    { href: "/ledger/reilly/reckoning", label: "06. THE RECKONING", id: "06" },
+    { href: "/ledger/reilly/status", label: "07. CURRENT STATUS", id: "07" },
   ];
 
   const madmanItems = [
@@ -291,7 +297,7 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
       {/* =========== MAIN CONTENT =========== */}
       <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative">
-        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-[80px] lg:mt-0">
+        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-[80px] lg:mt-0 text-base md:text-lg leading-relaxed">
           {children}
 
           <div className="mt-20">

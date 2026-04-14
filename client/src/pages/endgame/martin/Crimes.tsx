@@ -1,9 +1,9 @@
+import MemoryGate from "@/components/MemoryGate";
 import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import MemoryGate from "@/components/MemoryGate";
 
 export default function Crimes() {
     return (<div className="space-y-12 animate-in fade-in duration-1000 slide-in-from-bottom-4">

@@ -4,9 +4,7 @@ import TriptychPortal from "@/components/TriptychPortal";
 
 // Lazy-loaded Pages
 const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
-const Airlock = React.lazy(() => import("@/pages/Airlock"));
-const Maproom = React.lazy(() => import("@/pages/Maproom"));
-const JumpHub = React.lazy(() => import("@/pages/JumpHub"));
+const EvidenceHub = React.lazy(() => import("@/pages/evidence/EvidenceHub"));
 const BreachHub = React.lazy(() => import("@/pages/breach/BreachHub"));
 const TheyKnew = React.lazy(() => import("@/pages/TheyKnew"));
 const Ledger = React.lazy(() => import("@/pages/Ledger"));
@@ -15,30 +13,29 @@ const Noonan = React.lazy(() => import("@/pages/opinions/Noonan"));
 const Cannon = React.lazy(() => import("@/pages/opinions/Cannon"));
 const Matthews = React.lazy(() => import("@/pages/opinions/Matthews"));
 const Stephens = React.lazy(() => import("@/pages/opinions/Stephens"));
-const About = React.lazy(() => import("@/pages/About"));
-const Corrections = React.lazy(() => import("@/pages/Corrections"));
-const Dedication = React.lazy(() => import("@/pages/Dedication"));
-const CathedralHome = React.lazy(() => import("@/pages/Home"));
-const TheRecord = React.lazy(() => import("@/pages/TheRecord"));
-const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion"));
-const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall"));
-const Tips = React.lazy(() => import("@/pages/Tips"));
+const About = React.lazy(() => import("@/pages/About").then(m => ({ default: m.default })));
+const Corrections = React.lazy(() => import("@/pages/Corrections").then(m => ({ default: m.default })));
+const Dedication = React.lazy(() => import("@/pages/Dedication").then(m => ({ default: m.default })));
+const CathedralHome = React.lazy(() => import("@/pages/Home").then(m => ({ default: m.default })));
+const TheRecord = React.lazy(() => import("@/pages/TheRecord").then(m => ({ default: m.default })));
+const TheConversion = React.lazy(() => import("@/pages/methodology/TheConversion").then(m => ({ default: m.default })));
+const PatrickWall = React.lazy(() => import("@/pages/intelligence/PatrickWall").then(m => ({ default: m.default })));
+const Tips = React.lazy(() => import("@/pages/Tips").then(m => ({ default: m.default })));
 const TheMethod = React.lazy(() => import("@/pages/TheMethod"));
 const TheNursery = React.lazy(() => import("@/pages/TheNursery"));
 const HumptyCaseStudy = React.lazy(() => import("@/pages/easter/HumptyCaseStudy"));
 const ExposePortal = React.lazy(() => import("../pages/expose/Portal"));
 const DeiJournoEasterEgg = React.lazy(() => import("../pages/DeiJournoEasterEgg"));
-const NotFound = React.lazy(() => import("@/pages/NotFound"));
-const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy"));
-const WhosWho = React.lazy(() => import("@/pages/WhosWho"));
-const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings"));
-const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley"));
-const Prologue = React.lazy(() => import("@/pages/Prologue"));
-
-const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap"));
-const LathamPrototype = React.lazy(() => import("@/pages/evidence/LathamPrototype"));
-const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex"));
-const DesignAvatar = React.lazy(() => import("@/pages/vault/DesignAvatar"));
+const NotFound = React.lazy(() => import("@/pages/NotFound").then(m => ({ default: m.default })));
+const McKeeverCaseStudy = React.lazy(() => import("@/pages/evidence/McKeeverCaseStudy").then(m => ({ default: m.default })));
+const WhosWho = React.lazy(() => import("@/pages/WhosWho").then(m => ({ default: m.default })));
+const LegalFindings = React.lazy(() => import("@/pages/vault/LegalFindings").then(m => ({ default: m.default })));
+const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley").then(m => ({ default: m.default })));
+const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ default: m.default })));
+const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
+const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex").then(m => ({ default: m.default })));
+const Updates = React.lazy(() => import("@/pages/Updates").then(m => ({ default: m.default })));
+const Press = React.lazy(() => import("@/pages/Press").then(m => ({ default: m.default })));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -55,7 +52,7 @@ function PageLayout({ component: Component, theme = "dark" }: { component: React
 const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
   "/shield": "/",
-  "/headline-news": "/breach/hub",
+  "/headline-news": "/breach-hub",
   // "/expose" removed — ExposeRouter has an explicit route that handles this
   "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
@@ -64,10 +61,11 @@ const REDIRECT_MAP: Record<string, string> = {
   "/ledger/madman": "/madman",   // Fix: sidebar links here but route is at /madman
   "/methodology": "/method",     // Fix: /method is the real route
   "/lorenzo": "/ledger/lorenzo",
-  
+
   // Legacy / Triptych Fallbacks
   "/endgame/mccarrick": "/ledger/mccarrick",
   "/endgame": "/ledger/mccarrick",
+  "/origin/martin": "/ledger/martin",
   "/ruling/breach": "/breach/hub",
   "/ruling/vault": "/vault",
   "/ruling/ledger": "/ledger"
@@ -101,18 +99,9 @@ export function CoreRouter() {
     }>
       <RedirectHandler />
       <Switch>
-        {/* Tier 1: THE HUB (Homepage / Onboarding) */}
+        {/* Tier 1: THE HUB (Homepage) */}
         <Route path="/">
-          <Airlock />
-        </Route>
-        <Route path="/prologue">
-          <Prologue />
-        </Route>
-        <Route path="/maproom">
-          <PageLayout component={Maproom} />
-        </Route>
-        <Route path="/palace">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/archive">
           <PageLayout component={RedesignedHome} />
@@ -120,7 +109,6 @@ export function CoreRouter() {
         <Route path="/prologue">
           <PageLayout component={Prologue} />
         </Route>
-
         <Route path="/index">
           <PageLayout component={GlobalIndex} />
         </Route>
@@ -151,9 +139,7 @@ export function CoreRouter() {
         <Route path="/vault/epstein-emails">
           <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
         </Route>
-        <Route path="/ledger/reilly/irishman">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/reilly/Irishman"))} />
-        </Route>
+        {/* /ledger/reilly/irishman handled by EndgameRouter with EndgamePageLayout */}
         <Route path="/expose/press-briefing">
           <PageLayout component={React.lazy(() => import("@/pages/expose/PressBriefing"))} />
         </Route>
@@ -166,27 +152,27 @@ export function CoreRouter() {
           <PageLayout component={ArchitectureMap} />
         </Route>
         <Route path="/evidence/origin">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/evidence/machine">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/evidence/board">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
-        
+
         {/* Legacy redirect */}
         <Route path="/evidence/politico-report">
           <Redirect to="/evidence" />
         </Route>
         <Route path="/evidence/legal">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/evidence/present">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/evidence/victims">
-          <PageLayout component={JumpHub} />
+          <PageLayout component={EvidenceHub} />
         </Route>
         <Route path="/evidence/mckeever">
           <PageLayout component={McKeeverCaseStudy} />
@@ -194,8 +180,9 @@ export function CoreRouter() {
 
         {/* Tier 3: THE BREACH (Act 3) */}
         <Route path="/breach/hub">
-          <PageLayout component={BreachHub} />
+          <PageLayout component={React.lazy(() => import("@/pages/breach/BreachHub").then(m => ({ default: m.default })))} />
         </Route>
+        {/* /breach handled by ExposeRouter with BreachLayout wrapper */}
 
         {/* Tier 6: THE METHOD & THE NURSERY */}
         <Route path="/method">
@@ -220,6 +207,12 @@ export function CoreRouter() {
         </Route>
         <Route path="/tips">
           <PageLayout component={Tips} />
+        </Route>
+        <Route path="/updates">
+          <PageLayout component={Updates} />
+        </Route>
+        <Route path="/press">
+          <PageLayout component={Press} />
         </Route>
 
         {/* THE REWRITE (OPINIONS) */}
@@ -247,12 +240,6 @@ export function CoreRouter() {
         </Route>
         <Route path="/vault">
           <PageLayout component={LegalFindings} />
-        </Route>
-        <Route path="/director-override">
-          <PageLayout component={DesignAvatar} theme="dark" />
-        </Route>
-        <Route path="/combat-prototype">
-          <LathamPrototype />
         </Route>
         <Route path="/ledger/critchley">
           <PageLayout component={MichaelCritchley} theme="endgame" />

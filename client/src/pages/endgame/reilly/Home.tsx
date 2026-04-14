@@ -1,4 +1,5 @@
 import MemoryGate from "@/components/MemoryGate";
+import { ReillySectionNav } from "@/components/SectionNav";
 import SectionHeader from "@/components/SectionHeader";
 import ImageModal from "@/components/ImageModal";
 import { Badge } from "@/components/ui/badge";
