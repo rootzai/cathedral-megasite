@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import { Route, Switch, useLocation, Redirect } from "wouter";
 import TriptychPortal from "@/components/TriptychPortal";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 // Lazy-loaded Pages
 const RedesignedHome = React.lazy(() => import("@/pages/RedesignedHome"));
@@ -92,173 +93,175 @@ function RedirectHandler() {
 
 export function CoreRouter() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.2em] font-bold text-xs">
-        Unsealing Archives...
-      </div>
-    }>
-      <RedirectHandler />
-      <Switch>
-        {/* Tier 1: THE HUB (Homepage) */}
-        <Route path="/">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/archive">
-          <PageLayout component={RedesignedHome} />
-        </Route>
-        <Route path="/prologue">
-          <PageLayout component={Prologue} />
-        </Route>
-        <Route path="/index">
-          <PageLayout component={GlobalIndex} />
-        </Route>
-        <Route path="/madman/the-machine">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/TheMachine"))} />
-        </Route>
-        <Route path="/madman/exhibit-a">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitA"))} />
-        </Route>
-        <Route path="/madman/exhibit-b">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitB"))} />
-        </Route>
-        <Route path="/madman/exhibit-c">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitC"))} />
-        </Route>
-        <Route path="/madman/exhibit-d">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitD"))} />
-        </Route>
-        <Route path="/madman/exhibit-e">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitE"))} />
-        </Route>
-        <Route path="/madman/exhibit-f">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitF"))} />
-        </Route>
-        <Route path="/madman">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
-        </Route>
-        <Route path="/vault/epstein-emails">
-          <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
-        </Route>
-        {/* /ledger/reilly/irishman handled by EndgameRouter with EndgamePageLayout */}
-        <Route path="/expose/press-briefing">
-          <PageLayout component={React.lazy(() => import("@/pages/expose/PressBriefing"))} />
-        </Route>
-        <Route path="/humpty">
-          <PageLayout component={HumptyCaseStudy} />
-        </Route>
+    <ErrorBoundary>
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0c] text-[#8b1a1a] animate-pulse uppercase tracking-[0.2em] font-bold text-xs">
+          Unsealing Archives...
+        </div>
+      }>
+        <RedirectHandler />
+        <Switch>
+          {/* Tier 1: THE HUB (Homepage) */}
+          <Route path="/">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/archive">
+            <PageLayout component={RedesignedHome} />
+          </Route>
+          <Route path="/prologue">
+            <PageLayout component={Prologue} />
+          </Route>
+          <Route path="/index">
+            <PageLayout component={GlobalIndex} />
+          </Route>
+          <Route path="/madman/the-machine">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/TheMachine"))} />
+          </Route>
+          <Route path="/madman/exhibit-a">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitA"))} />
+          </Route>
+          <Route path="/madman/exhibit-b">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitB"))} />
+          </Route>
+          <Route path="/madman/exhibit-c">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitC"))} />
+          </Route>
+          <Route path="/madman/exhibit-d">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitD"))} />
+          </Route>
+          <Route path="/madman/exhibit-e">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitE"))} />
+          </Route>
+          <Route path="/madman/exhibit-f">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitF"))} />
+          </Route>
+          <Route path="/madman">
+            <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
+          </Route>
+          <Route path="/vault/epstein-emails">
+            <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
+          </Route>
+          {/* /ledger/reilly/irishman handled by EndgameRouter with EndgamePageLayout */}
+          <Route path="/expose/press-briefing">
+            <PageLayout component={React.lazy(() => import("@/pages/expose/PressBriefing"))} />
+          </Route>
+          <Route path="/humpty">
+            <PageLayout component={HumptyCaseStudy} />
+          </Route>
 
-        {/* Tier 2: THE EVIDENCE */}
-        <Route path="/evidence">
-          <PageLayout component={ArchitectureMap} />
-        </Route>
-        <Route path="/evidence/origin">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/evidence/machine">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/evidence/board">
-          <PageLayout component={EvidenceHub} />
-        </Route>
+          {/* Tier 2: THE EVIDENCE */}
+          <Route path="/evidence">
+            <PageLayout component={ArchitectureMap} />
+          </Route>
+          <Route path="/evidence/origin">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/evidence/machine">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/evidence/board">
+            <PageLayout component={EvidenceHub} />
+          </Route>
 
-        {/* Legacy redirect */}
-        <Route path="/evidence/politico-report">
-          <Redirect to="/evidence" />
-        </Route>
-        <Route path="/evidence/legal">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/evidence/present">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/evidence/victims">
-          <PageLayout component={EvidenceHub} />
-        </Route>
-        <Route path="/evidence/mckeever">
-          <PageLayout component={McKeeverCaseStudy} />
-        </Route>
+          {/* Legacy redirect */}
+          <Route path="/evidence/politico-report">
+            <Redirect to="/evidence" />
+          </Route>
+          <Route path="/evidence/legal">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/evidence/present">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/evidence/victims">
+            <PageLayout component={EvidenceHub} />
+          </Route>
+          <Route path="/evidence/mckeever">
+            <PageLayout component={McKeeverCaseStudy} />
+          </Route>
 
-        {/* Tier 3: THE BREACH (Act 3) */}
-        <Route path="/breach/hub">
-          <PageLayout component={React.lazy(() => import("@/pages/breach/BreachHub").then(m => ({ default: m.default })))} />
-        </Route>
-        {/* /breach handled by ExposeRouter with BreachLayout wrapper */}
+          {/* Tier 3: THE BREACH (Act 3) */}
+          <Route path="/breach/hub">
+            <PageLayout component={React.lazy(() => import("@/pages/breach/BreachHub").then(m => ({ default: m.default })))} />
+          </Route>
+          {/* /breach handled by ExposeRouter with BreachLayout wrapper */}
 
-        {/* Tier 6: THE METHOD & THE NURSERY */}
-        <Route path="/method">
-          <PageLayout component={TheMethod} />
-        </Route>
-        <Route path="/easter">
-          <PageLayout component={TheNursery} />
-        </Route>
+          {/* Tier 6: THE METHOD & THE NURSERY */}
+          <Route path="/method">
+            <PageLayout component={TheMethod} />
+          </Route>
+          <Route path="/easter">
+            <PageLayout component={TheNursery} />
+          </Route>
 
-        {/* ACADEMY & ABOUT */}
-        <Route path="/about">
-          <PageLayout component={About} />
-        </Route>
-        <Route path="/dedication">
-          <PageLayout component={Dedication} />
-        </Route>
-        <Route path="/the-record">
-          <PageLayout component={TheRecord} />
-        </Route>
-        <Route path="/corrections">
-          <PageLayout component={Corrections} />
-        </Route>
-        <Route path="/tips">
-          <PageLayout component={Tips} />
-        </Route>
-        <Route path="/updates">
-          <PageLayout component={Updates} />
-        </Route>
-        <Route path="/press">
-          <PageLayout component={Press} />
-        </Route>
+          {/* ACADEMY & ABOUT */}
+          <Route path="/about">
+            <PageLayout component={About} />
+          </Route>
+          <Route path="/dedication">
+            <PageLayout component={Dedication} />
+          </Route>
+          <Route path="/the-record">
+            <PageLayout component={TheRecord} />
+          </Route>
+          <Route path="/corrections">
+            <PageLayout component={Corrections} />
+          </Route>
+          <Route path="/tips">
+            <PageLayout component={Tips} />
+          </Route>
+          <Route path="/updates">
+            <PageLayout component={Updates} />
+          </Route>
+          <Route path="/press">
+            <PageLayout component={Press} />
+          </Route>
 
-        {/* THE REWRITE (OPINIONS) */}
-        <Route path="/opinion">
-          <PageLayout component={OpinionsHub} />
-        </Route>
-        <Route path="/opinion/noonan">
-          <PageLayout component={Noonan} />
-        </Route>
-        <Route path="/opinion/cannon">
-          <PageLayout component={Cannon} />
-        </Route>
-        <Route path="/opinion/matthews">
-          <PageLayout component={Matthews} />
-        </Route>
-        <Route path="/opinion/stephens">
-          <PageLayout component={Stephens} />
-        </Route>
+          {/* THE REWRITE (OPINIONS) */}
+          <Route path="/opinion">
+            <PageLayout component={OpinionsHub} />
+          </Route>
+          <Route path="/opinion/noonan">
+            <PageLayout component={Noonan} />
+          </Route>
+          <Route path="/opinion/cannon">
+            <PageLayout component={Cannon} />
+          </Route>
+          <Route path="/opinion/matthews">
+            <PageLayout component={Matthews} />
+          </Route>
+          <Route path="/opinion/stephens">
+            <PageLayout component={Stephens} />
+          </Route>
 
-        <Route path="/ledger">
-          <PageLayout component={Ledger} />
-        </Route>
-        <Route path="/whos-who">
-          <PageLayout component={WhosWho} />
-        </Route>
-        <Route path="/vault">
-          <PageLayout component={LegalFindings} />
-        </Route>
-        <Route path="/ledger/critchley">
-          <PageLayout component={MichaelCritchley} theme="endgame" />
-        </Route>
+          <Route path="/ledger">
+            <PageLayout component={Ledger} />
+          </Route>
+          <Route path="/whos-who">
+            <PageLayout component={WhosWho} />
+          </Route>
+          <Route path="/vault">
+            <PageLayout component={LegalFindings} />
+          </Route>
+          <Route path="/ledger/critchley">
+            <PageLayout component={MichaelCritchley} theme="endgame" />
+          </Route>
 
-        {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}
-        {ExposeRoutes.map(route => route)}
-        {EndgameRoutes.map(route => route)}
+          {/* Integrated Modular Routes (Explicit Spread for Switch Stability) */}
+          {ExposeRoutes.map(route => route)}
+          {EndgameRoutes.map(route => route)}
 
-        {/* Easter Egg / 404 Unmasking */}
-        <Route path="/deijourno">
-          <DeiJournoEasterEgg />
-        </Route>
+          {/* Easter Egg / 404 Unmasking */}
+          <Route path="/deijourno">
+            <DeiJournoEasterEgg />
+          </Route>
 
 
-        <Route>
-          <PageLayout component={NotFound} />
-        </Route>
-      </Switch>
-    </Suspense>
+          <Route>
+            <PageLayout component={NotFound} />
+          </Route>
+        </Switch>
+      </Suspense>
+    </ErrorBoundary>
   );
 }

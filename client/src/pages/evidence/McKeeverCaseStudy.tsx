@@ -28,13 +28,16 @@ export default function McKeeverCaseStudy() {
 
             {/* CONTENT */}
             <div className="max-w-3xl mx-auto px-6 py-20 space-y-16">
-                
+
                 {/* Introduction */}
                 <section className="space-y-6">
                     <p className="text-lg leading-relaxed text-zinc-300">
-                        The crisis of child sexual abuse within the Roman Catholic Church is defined not only by the individual acts of predatory clerics but also by the highly sophisticated institutional mechanisms utilized to conceal those acts from civil authorities and the public. The trajectory of Lara Fortney-McKeever—from a child victim of a serial predator to the Chairperson of the Official Committee of Tort Claimants in a landmark diocesan bankruptcy—serves as a comprehensive, multi-decade case study in institutional failure, aggressive legal maneuvering, and relentless survivor advocacy.
+                        The crisis of child sexual abuse within the Roman Catholic Church is defined not only by the individual acts of predatory clerics but by the institutional mechanisms used to conceal those acts from civil authorities and the public.
                     </p>
-                     <p className="text-lg leading-relaxed text-zinc-300">
+                    <p className="text-lg leading-relaxed text-zinc-300">
+                        Lara Fortney-McKeever's trajectory — from a child victim of a serial predator to Chairperson of the Official Committee of Tort Claimants in a landmark diocesan bankruptcy — is a multi-decade case study in institutional failure, aggressive legal maneuvering, and relentless survivor advocacy.
+                    </p>
+                    <p className="text-lg leading-relaxed text-zinc-300">
                         McKeever’s experiences with the Reverend Augustine Giella, a priest whose decades-long history of abuse spanned the {<Term id="Archdiocese">Archdiocese</Term>} of Newark and the Diocese of Harrisburg, illuminate the devastating human cost of {<Term id="Ecclesiastical">ecclesiastical</Term>} cover-ups.
                     </p>
                     <p className="text-lg leading-relaxed text-zinc-300">
@@ -61,7 +64,7 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         During this extended period in New Jersey, Giella left a protracted trail of victims. Civil lawsuits filed decades later revealed that Giella abused multiple children between 1960 and 1964 at Holy Trinity, and others between 1976 and 1981 at St. Catherine’s. Despite complaints of sexual abuse logged against him over these decades, the Archdiocese of Newark failed to permanently remove him from ministry, conduct independent investigations, or notify civil law enforcement authorities.
                     </p>
-                    
+
                     <h4 className="text-xl font-bold text-white mt-10 mb-4 font-cinzel">The Illusion of "Good Standing" and Incardination</h4>
                     <p className="text-lg leading-relaxed text-zinc-300">
                         In November 1979, after nearly three decades of problematic ministry in New Jersey, Giella abruptly sought an assignment outside his home archdiocese. He formally contacted Bishop Joseph Daley of the Diocese of Harrisburg, Pennsylvania, to request a pastoral assignment.
@@ -69,7 +72,7 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         The facilitation of a transfer to an external diocese required explicit endorsement from Giella's direct superiors in Newark. On December 7, 1979, Archbishop Peter Gerety of the Archdiocese of Newark drafted a formal letter of recommendation to the Diocese of Harrisburg. In this correspondence, Archbishop Gerety confirmed that Giella was a "priest in good standing" and provided an unequivocal recommendation.
                     </p>
-                    
+
                     {/* Data Table */}
                     <div className="my-12 border border-white/10 bg-black/50 overflow-hidden">
                         <div className="bg-white/5 px-6 py-4 border-b border-white/10">
@@ -129,7 +132,7 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         Following his initial Pennsylvania assignment in Hanover, Giella was transferred to St. John the Evangelist Church in Enhaut, located in Swatara Township, in October 1982. It was within this parish community that Giella identified and embedded himself into the lives of the Fortney family.
                     </p>
-                    
+
                     <h4 className="text-xl font-bold text-white mt-10 mb-4 font-cinzel">The Mechanics of Predatory Grooming</h4>
                     <p className="text-lg leading-relaxed text-zinc-300">
                         Lara Fortney-McKeever was 10 years old and in the fifth grade when she first encountered Giella. Eager to serve her church and please the new pastor, she raised her hand to volunteer—an action she later publicly described as a decision she has regretted for over three decades.
@@ -137,12 +140,12 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         Giella utilized classic, highly aggressive grooming techniques to ensnare not just the individual children, but the entire Fortney family system. He quickly became a fixture in the Fortney home, adopting a benevolent, grandfatherly persona. The psychological manipulation of the adults was so profound that the parents developed a severe form of inattentional blindness regarding Giella's highly inappropriate and escalating behavior.
                     </p>
-                    
+
                     <h4 className="text-xl font-bold text-white mt-10 mb-4 font-cinzel">The Psychological Toll</h4>
                     <p className="text-lg leading-relaxed text-zinc-300">
                         The abuse was sustained and systemic, ultimately claiming at least five of the eight Fortney daughters as direct victims. Patty Fortney-Julius described the internal rationalization required to psychologically survive the ongoing trauma, repeatedly telling herself, <em>"He's my priest. He's the mediator between God and man. This is okay."</em>
                     </p>
-                    
+
                     <div className="bg-black/40 border border-[#8b1a1a]/20 p-6 rounded-md my-8">
                         <div className="flex items-center gap-3 mb-4">
                             <Search className="w-4 h-4 text-[#8b1a1a]" />
@@ -168,7 +171,7 @@ export default function McKeeverCaseStudy() {
                 </section>
 
                 {/* Section IV */}
-                 <section className="space-y-6">
+                <section className="space-y-6">
                     <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-8 flex items-center gap-4">
                         <span className="text-[#8b1a1a]">IV.</span> The 2018 Pennsylvania Statewide Investigating {<Term id="Grand Jury">Grand Jury</Term>}
                     </h3>
@@ -181,7 +184,7 @@ export default function McKeeverCaseStudy() {
                 </section>
 
                 {/* Section V */}
-                 <section className="space-y-6">
+                <section className="space-y-6">
                     <h3 className="text-2xl font-black font-cinzel text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-8 flex items-center gap-4">
                         <span className="text-[#8b1a1a]">V.</span> Legislative Revival and Civil Litigation
                     </h3>
@@ -257,7 +260,7 @@ export default function McKeeverCaseStudy() {
                     <p className="text-lg leading-relaxed text-zinc-300">
                         The extensive saga of Lara McKeever and the Fortney sisters represents a devastating indictment of systemic administrative culture prioritizing self-preservation over child protection.
                     </p>
-                    
+
                     {/* The crucial concluding thought heavily emphasized per user instructions */}
                     <div className="bg-[#8b1a1a]/10 border-l-4 border-[#8b1a1a] p-8 mt-12 shadow-[0_0_30px_rgba(139,26,26,0.1)]">
                         <p className="text-xl md:text-2xl text-white font-cinzel leading-relaxed uppercase tracking-widest mb-4">

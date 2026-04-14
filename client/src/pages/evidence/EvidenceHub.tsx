@@ -39,7 +39,7 @@ export default function EvidenceHub() {
                                     This is an <strong className="text-white">independent investigation</strong> into how Seton Hall University and the Archdiocese of Newark concealed decades of clergy sexual abuse. It is sourced from court filings, the Vatican McCarrick Report, the sealed Latham Report, and investigative journalism.
                                 </p>
                                 <p className="text-zinc-300 text-base md:text-lg font-bold">
-                                    450+ survivors. 24,000 pages of sealed evidence. Six years of suppression. This site is their public record.
+                                    <a href="https://www.nj.gov/oag/newsreleases16/Clergy-Abuse-Grand-Jury-Report.pdf" target="_blank" rel="noopener" className="underline decoration-zinc-500 hover:decoration-white transition-colors">450+ survivors</a>. 24,000 pages of sealed evidence. Six years of suppression. This site is their public record.
                                 </p>
                             </div>
 

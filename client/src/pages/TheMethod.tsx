@@ -20,10 +20,10 @@ const FINGERPRINTS = [
   },
   {
     id: "03",
-    title: "The Scrivo Perjury Proof",
+    title: "The Scrivo Declaration Conflict",
     parallel: "TRI-DOCUMENT CONFLICT ANALYSIS",
     evidence: "Scrivo Declaration (March 11, 2026) vs. Scrivo hold letter (December 17, 2024)",
-    desc: "Three documents held simultaneously: the Scrivo declaration, Scrivo's own December 17 letter, SHU's Verified Complaint. The proof of false statement to a tribunal is hiding in the defendant's own filing."
+    desc: "Three documents held simultaneously: the Scrivo declaration, Scrivo's own December 17 letter, SHU's Verified Complaint. Evidence of inconsistent sworn statements is documented in the defendant's own filing."
   },
   {
     id: "04",

@@ -2,8 +2,8 @@ import { SmartImage } from "@/components/SmartImage";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
 import { JourneyNav } from "./JourneyNav";
-import { useState } from "react";
-import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp, Menu, X, Heart, XCircle } from "lucide-react";
 
 interface EndgameLayoutProps {
   children: React.ReactNode;
@@ -12,6 +12,9 @@ interface EndgameLayoutProps {
 export default function EndgameLayout({ children }: EndgameLayoutProps) {
   const [location] = useLocation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [rainnDismissed, setRainnDismissed] = useState(() => {
+    try { return sessionStorage.getItem('rainn-dismissed') === '1'; } catch { return false; }
+  });
 
   const isChecchio = location.includes('/checchio');
   const isMartin = location.includes('/martin');
@@ -302,8 +305,37 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
       {/* =========== MAIN CONTENT =========== */}
       <main id="main-content" className="flex-1 w-full overflow-hidden min-h-screen relative">
-        <div className="container py-12 lg:py-16 max-w-5xl mx-auto mt-[80px] lg:mt-0 text-base md:text-lg leading-relaxed">
+        {/* RAINN Persistent Banner */}
+        {!rainnDismissed && (
+          <div className="bg-[#8b1a1a]/20 border-b border-[#8b1a1a]/40 px-4 py-3 mt-[80px] lg:mt-0">
+            <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 min-w-0">
+                <Heart className="w-4 h-4 text-[#8b1a1a] shrink-0" />
+                <p className="text-xs md:text-sm text-zinc-300 font-mono">
+                  If you or someone you know needs help: <a href="tel:800-656-4673" className="text-white font-bold hover:text-[#8b1a1a] transition-colors">RAINN 1-800-656-HOPE</a> — Free, confidential, 24/7
+                </p>
+              </div>
+              <button
+                onClick={() => { setRainnDismissed(true); try { sessionStorage.setItem('rainn-dismissed', '1'); } catch { } }}
+                className="shrink-0 text-zinc-500 hover:text-white transition-colors"
+                aria-label="Dismiss support banner"
+              >
+                <XCircle className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div className={cn("container py-12 lg:py-16 max-w-5xl mx-auto text-base md:text-lg leading-relaxed", rainnDismissed && "mt-[80px] lg:mt-0")}>
           {children}
+
+          {/* Right of Reply */}
+          <div className="mt-16 p-6 border border-zinc-800 bg-zinc-900/50 rounded-sm">
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Right of Reply</p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              All individuals and institutions named in this dossier have been invited to provide a response, clarification, or correction. No response has been received as of April 14, 2026. Responses will be published in full on the <Link href="/corrections"><a className="text-red-400 hover:text-red-300 underline">Corrections</a></Link> page.
+            </p>
+          </div>
 
           <div className="mt-20">
             <JourneyNav />

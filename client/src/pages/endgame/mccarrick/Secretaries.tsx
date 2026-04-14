@@ -42,7 +42,7 @@ const secretaries: Secretary[] = [
     role: "Priest Secretary to McCarrick",
     career: "Seminary Rector; Named President of Seton Hall University in 2024",
     implication: "A 2019 secret report exposed his failure to report abuse, leading to massive 2025 scandal, court orders, and a new investigation surrounding his presidency",
-    status: "Under Investigation 2025",
+    status: "Subject of Pending Litigation 2025",
   },
   {
     name: "Msgr. Thomas P. Nydegger",

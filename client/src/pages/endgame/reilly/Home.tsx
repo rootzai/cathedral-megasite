@@ -45,7 +45,7 @@ export default function ReillyHome() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="font-mono text-xs text-destructive mb-2">STATUS: UNDER INVESTIGATION</div>
+                      <div className="font-mono text-xs text-destructive mb-2">STATUS: SUBJECT OF PENDING LITIGATION</div>
                       <h2 className="font-heading text-3xl text-white">Msgr. Joseph Reilly</h2>
                       <p className="font-mono text-sm text-gray-400 mt-2">President, Seton Hall University</p>
                       <div className="mt-4 flex items-center text-xs font-mono text-destructive opacity-0 group-hover:opacity-100 transition-opacity">
