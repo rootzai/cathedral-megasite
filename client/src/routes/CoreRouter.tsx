@@ -103,6 +103,9 @@ export function CoreRouter() {
       <Switch>
         {/* Tier 1: THE HUB (Homepage / Onboarding) */}
         <Route path="/">
+          <Airlock />
+        </Route>
+        <Route path="/prologue">
           <Prologue />
         </Route>
         <Route path="/maproom">

@@ -4,10 +4,7 @@ import { Link, useLocation } from "wouter";
 import { ArrowLeft, Unlock, ScanFace } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
-// Hardcoded images for the prototype to ensure we can preload them
-const HERO_IMG = "https://images.unsplash.com/photo-1548625361-ecbf54238db3?q=80&w=2000&auto=format&fit=crop";
-const INSET_IMG = "https://images.unsplash.com/photo-1541888069507-658b196ebda8?q=80&w=1000&auto=format&fit=crop";
-
+// We are replacing broken Unsplash links with CSS native placeholders
 export default function TierOneOnboarding() {
     const [_, setLocation] = useLocation();
     const { scrollY } = useScroll();
@@ -17,12 +14,6 @@ export default function TierOneOnboarding() {
     const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.2]);
 
     const [keyAcquired, setKeyAcquired] = useState(false);
-
-    // Preload images for performance optimization
-    useEffect(() => {
-        const img1 = new Image(); img1.src = HERO_IMG;
-        const img2 = new Image(); img2.src = INSET_IMG;
-    }, []);
 
     const handleKeyDiscovery = () => {
         setKeyAcquired(true);
@@ -35,10 +26,6 @@ export default function TierOneOnboarding() {
     return (
         <div className="min-h-screen bg-[#070709] text-[#c8bdb0] font-serif overflow-x-hidden selection:bg-[#8b1a1a]/30">
             <SEO title="The Patriarch | Investigative Report" />
-            
-            {/* Preload directives */}
-            <link rel="preload" as="image" href={HERO_IMG} />
-            <link rel="preload" as="image" href={INSET_IMG} />
 
             {/* Global Header - Innocent looking */}
             <header className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex justify-between items-center transition-all bg-gradient-to-b from-[#070709] to-transparent pointer-events-none">
@@ -80,12 +67,12 @@ export default function TierOneOnboarding() {
             </AnimatePresence>
 
             {/* Parallax Hero */}
-            <div className="relative w-full h-[80vh] md:h-screen overflow-hidden">
+            <div className="relative w-full h-[80vh] md:h-screen overflow-hidden bg-[#070709]">
                 <motion.div 
-                    className="absolute inset-0 w-full h-[120%] -top-[10%]"
+                    className="absolute inset-0 w-full h-[120%] -top-[10%] bg-gradient-to-tr from-zinc-900 to-black"
                     style={{ y: heroY, opacity: heroOpacity, willChange: "transform, opacity" }}
                 >
-                    <img src={HERO_IMG} alt="Cathedral Arch" className="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" />
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent" />
                 
@@ -109,7 +96,10 @@ export default function TierOneOnboarding() {
                     </p>
                     
                     <figure className="my-16 md:my-24 w-full md:w-[130%] md:-ml-[15%]">
-                        <img loading="lazy" src={INSET_IMG} alt="Archive Files" className="w-full h-[400px] object-cover grayscale border border-zinc-800" />
+                        <div className="w-full h-[400px] bg-zinc-900 border border-zinc-800 flex items-center justify-center relative overflow-hidden">
+                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+                            <span className="text-zinc-700 font-mono text-sm uppercase tracking-widest border border-zinc-700 px-4 py-2 opacity-50">IMAGE_REDACTED_BY_AUTHORITY</span>
+                        </div>
                         <figcaption className="mt-4 font-mono text-xs text-zinc-500 tracking-widest uppercase">Exhibit A: Documented routing procedures in the Archdiocese.</figcaption>
                     </figure>
 
