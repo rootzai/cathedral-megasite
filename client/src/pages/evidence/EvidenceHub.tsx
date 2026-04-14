@@ -31,22 +31,22 @@ export default function EvidenceHub() {
 
                         {/* WHAT IS THIS — Plain language summary (Tier 1a) */}
                         <div className="mb-8 md:mb-12">
-                            <h2 className="text-3xl md:text-5xl font-cinzel font-black uppercase tracking-widest text-white mb-6 text-center">
+                            <h2 className="text-4xl md:text-6xl lg:text-7xl font-cinzel font-black uppercase tracking-widest text-white mb-8 text-center">
                                 Sodom Hall
                             </h2>
-                            <div className="max-w-3xl mx-auto space-y-4 text-zinc-300 font-serif text-base md:text-lg leading-relaxed text-center">
+                            <div className="max-w-3xl mx-auto space-y-5 text-zinc-200 font-serif text-lg md:text-xl leading-relaxed text-center">
                                 <p>
                                     This is an <strong className="text-white">independent investigation</strong> into how Seton Hall University and the Archdiocese of Newark concealed decades of clergy sexual abuse. It is sourced from court filings, the Vatican McCarrick Report, the sealed Latham Report, and investigative journalism.
                                 </p>
-                                <p className="text-zinc-500 text-sm md:text-base">
+                                <p className="text-zinc-300 text-base md:text-lg font-bold">
                                     450+ survivors. 24,000 pages of sealed evidence. Six years of suppression. This site is their public record.
                                 </p>
                             </div>
 
                             {/* Skip link (Tier 1b) */}
-                            <div className="flex justify-center mt-6">
-                                <Link href="/evidence" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-sm font-mono uppercase tracking-widest transition-colors">
-                                    Just show me the site <ArrowRight className="w-4 h-4" />
+                            <div className="flex justify-center mt-8">
+                                <Link href="/evidence" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-base font-mono uppercase tracking-widest transition-colors">
+                                    Just show me the site <ArrowRight className="w-5 h-5" />
                                 </Link>
                             </div>
                         </div>
@@ -56,9 +56,9 @@ export default function EvidenceHub() {
                             <div className="flex items-start gap-4">
                                 <AlertTriangle className="w-5 h-5 text-[#8b1a1a] shrink-0 mt-0.5" />
                                 <div>
-                                    <span className="text-[#8b1a1a] font-mono text-xs font-black uppercase tracking-widest block mb-1">CURRENT</span>
-                                    <p className="text-white text-sm md:text-base font-serif leading-relaxed">
-                                        The sitting president of Seton Hall University was recommended for removal by the Latham Report. He was McCarrick&apos;s personal secretary. <span className="text-[#8b1a1a] group-hover:text-white font-bold transition-colors">Read the Reilly dossier &rarr;</span>
+                                    <span className="text-[#ff4444] font-mono text-sm font-black uppercase tracking-widest block mb-2">CURRENT</span>
+                                    <p className="text-zinc-100 text-base md:text-lg font-serif leading-relaxed">
+                                        The sitting president of Seton Hall University was recommended for removal by the Latham Report. He was McCarrick&apos;s personal secretary. <span className="text-[#ff4444] group-hover:text-white font-bold transition-colors">Read the Reilly dossier &rarr;</span>
                                     </p>
                                 </div>
                             </div>
@@ -68,33 +68,33 @@ export default function EvidenceHub() {
                         <div className="mb-8 md:mb-16">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                                 <div className="p-6 md:p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 01 // THE NEWBIE</span>
-                                    <h4 className="text-xl md:text-2xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-6 md:mb-8 md:h-10">&quot;I&apos;m new. Who is involved and what happened?&quot;</p>
+                                    <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 01 // THE NEWBIE</span>
+                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
+                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;I&apos;m new. Who is involved and what happened?&quot;</p>
                                     <div className="space-y-4">
-                                        <Link href="/about" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
-                                        <Link href="/whos-who" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
-                                        <Link href="/ledger/martin" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
+                                        <Link href="/about" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
+                                        <Link href="/whos-who" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
+                                        <Link href="/ledger/martin" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
                                     </div>
                                 </div>
                                 <div className="p-6 md:p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-xs font-black font-mono text-zinc-500 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 02 // THE LEGALIST</span>
-                                    <h4 className="text-xl md:text-2xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-6 md:mb-8 md:h-10">&quot;I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>.&quot;</p>
+                                    <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 02 // THE LEGALIST</span>
+                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
+                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>.&quot;</p>
                                     <div className="space-y-4">
-                                        <Link href="/breach/hub" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
-                                        <Link href="/vault" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
-                                        <Link href="/ledger" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
+                                        <Link href="/breach/hub" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
+                                        <Link href="/vault" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
+                                        <Link href="/ledger" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
                                     </div>
                                 </div>
                                 <div className="p-6 md:p-8 border border-[#8b1a1a]/30 bg-[#8b1a1a]/5 hover:border-[#8b1a1a] transition-all group shadow-[0_0_30px_rgba(139,26,26,0.05)]">
-                                    <span className="text-xs font-black font-mono text-[#8b1a1a] uppercase tracking-widest block mb-4 group-hover:text-[#ff4444] transition-colors">PATH 03 // THE ADVOCATE</span>
-                                    <h4 className="text-xl md:text-2xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
-                                    <p className="text-sm text-zinc-400 italic mb-6 md:mb-8 md:h-10">&quot;How does this affect real survivors?&quot;</p>
+                                    <span className="text-sm font-black font-mono text-[#ff4444] uppercase tracking-widest block mb-4 group-hover:text-[#ff6666] transition-colors">PATH 03 // THE ADVOCATE</span>
+                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
+                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;How does this affect real survivors?&quot;</p>
                                     <div className="space-y-4">
-                                        <Link href="/evidence/mckeever" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
-                                        <Link href="/ledger/mccarrick" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
-                                        <Link href="/tips" className="text-xs text-[#8b1a1a] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
+                                        <Link href="/evidence/mckeever" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
+                                        <Link href="/ledger/mccarrick" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
+                                        <Link href="/tips" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
                                     </div>
                                 </div>
                             </div>
