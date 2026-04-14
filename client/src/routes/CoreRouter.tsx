@@ -36,7 +36,9 @@ const MichaelCritchley = React.lazy(() => import("@/pages/MichaelCritchley"));
 const Prologue = React.lazy(() => import("@/pages/Prologue"));
 
 const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap"));
+const LathamPrototype = React.lazy(() => import("@/pages/evidence/LathamPrototype"));
 const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex"));
+const DesignAvatar = React.lazy(() => import("@/pages/vault/DesignAvatar"));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -99,9 +101,9 @@ export function CoreRouter() {
     }>
       <RedirectHandler />
       <Switch>
-        {/* Tier 1: THE HUB (Homepage) */}
+        {/* Tier 1: THE HUB (Homepage / Onboarding) */}
         <Route path="/">
-          <PageLayout component={Airlock} />
+          <Prologue />
         </Route>
         <Route path="/maproom">
           <PageLayout component={Maproom} />
@@ -242,6 +244,12 @@ export function CoreRouter() {
         </Route>
         <Route path="/vault">
           <PageLayout component={LegalFindings} />
+        </Route>
+        <Route path="/director-override">
+          <PageLayout component={DesignAvatar} theme="dark" />
+        </Route>
+        <Route path="/combat-prototype">
+          <LathamPrototype />
         </Route>
         <Route path="/ledger/critchley">
           <PageLayout component={MichaelCritchley} theme="endgame" />

@@ -1,66 +1,137 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "wouter";
+import { ArrowLeft, Unlock, ScanFace } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
-export default function Prologue() {
+// Hardcoded images for the prototype to ensure we can preload them
+const HERO_IMG = "https://images.unsplash.com/photo-1548625361-ecbf54238db3?q=80&w=2000&auto=format&fit=crop";
+const INSET_IMG = "https://images.unsplash.com/photo-1541888069507-658b196ebda8?q=80&w=1000&auto=format&fit=crop";
+
+export default function TierOneOnboarding() {
+    const [_, setLocation] = useLocation();
+    const { scrollY } = useScroll();
+    
+    // Hardware accelerated parallax using useTransform
+    const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
+    const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.2]);
+
+    const [keyAcquired, setKeyAcquired] = useState(false);
+
+    // Preload images for performance optimization
+    useEffect(() => {
+        const img1 = new Image(); img1.src = HERO_IMG;
+        const img2 = new Image(); img2.src = INSET_IMG;
+    }, []);
+
+    const handleKeyDiscovery = () => {
+        setKeyAcquired(true);
+        // Play sound effect, wait, then transport to Maproom/Combat
+        setTimeout(() => {
+            setLocation("/director-override"); // Sends them to the newly unlocked Sector Map
+        }, 3500);
+    };
+
     return (
-        <div className="min-h-screen bg-[#070709] text-[#c8bdb0] font-serif overflow-x-hidden selection:bg-red-900/30">
-            <div className="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center bg-gradient-to-b from-[#070709] to-transparent">
-                <Link href="/" className="inline-flex items-center gap-3 text-zinc-400 hover:text-white transition-colors font-mono uppercase tracking-[0.3em] text-sm font-bold">
-                        <ArrowLeft className="w-5 h-5" /> Return to Hub
-                </Link>
+        <div className="min-h-screen bg-[#070709] text-[#c8bdb0] font-serif overflow-x-hidden selection:bg-[#8b1a1a]/30">
+            <SEO title="The Patriarch | Investigative Report" />
+            
+            {/* Preload directives */}
+            <link rel="preload" as="image" href={HERO_IMG} />
+            <link rel="preload" as="image" href={INSET_IMG} />
+
+            {/* Global Header - Innocent looking */}
+            <header className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex justify-between items-center transition-all bg-gradient-to-b from-[#070709] to-transparent pointer-events-none">
+                <div className="font-mono uppercase tracking-[0.3em] text-xs md:text-sm font-bold text-white/50">
+                    Sodom Hall // Investigative Feature
+                </div>
+            </header>
+
+            {/* The Tourist Hook (Tier 2 Transition Overlay) */}
+            <AnimatePresence>
+                {keyAcquired && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-6"
+                    >
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                        <motion.div 
+                            initial={{ scale: 0.8, filter: "blur(10px)" }}
+                            animate={{ scale: 1, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5 }}
+                            className="flex flex-col items-center text-center space-y-6"
+                        >
+                            <ScanFace className="w-16 h-16 md:w-24 md:h-24 text-[#8b1a1a] animate-pulse" />
+                            <h2 className="text-4xl md:text-6xl font-black font-sans uppercase tracking-widest text-white">Anomalous Data Detected</h2>
+                            <p className="text-xl md:text-2xl font-mono text-[#8b1a1a]">CLEARANCE KEY [LATHAM_RPT] ACQUIRED.</p>
+                            <div className="w-full h-1 bg-zinc-900 mt-8 overflow-hidden">
+                                <motion.div 
+                                    initial={{ width: "0%" }}
+                                    animate={{ width: "100%" }}
+                                    transition={{ duration: 2.5, ease: "linear" }}
+                                    className="h-full bg-[#8b1a1a]"
+                                />
+                            </div>
+                            <span className="font-mono text-xs text-zinc-500 tracking-[0.3em] mt-4 uppercase">Rerouting down security vector...</span>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Parallax Hero */}
+            <div className="relative w-full h-[80vh] md:h-screen overflow-hidden">
+                <motion.div 
+                    className="absolute inset-0 w-full h-[120%] -top-[10%]"
+                    style={{ y: heroY, opacity: heroOpacity, willChange: "transform, opacity" }}
+                >
+                    <img src={HERO_IMG} alt="Cathedral Arch" className="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" />
+                </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent" />
+                
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 mt-32 md:mt-0">
+                    <span className="text-[#8b1a1a] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-black mb-8 block">The Fall Of Newark</span>
+                    <h1 className="text-5xl md:text-8xl lg:text-9xl text-white font-serif tracking-tighter leading-none uppercase font-black drop-shadow-2xl max-w-6xl mx-auto">
+                        The Architect of Cover-Up
+                    </h1>
+                </div>
             </div>
 
-            <main className="max-w-3xl mx-auto px-6 py-32 space-y-16">
-                <motion.header 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                    className="space-y-6 text-center border-b border-red-900/20 pb-12"
-                >
-                    <span className="text-red-600 font-mono text-sm uppercase tracking-[0.5em] font-black">The Lifeline</span>
-                    <h1 className="text-6xl md:text-8xl text-amber-500 font-cinzel tracking-tighter leading-none uppercase font-black drop-shadow-2xl">The Crawford Thread</h1>
-                    <p className="text-3xl text-white font-serif leading-relaxed italic">
-                        Mark Crawford. Age 13. Bayonne, New Jersey. 
-                    </p>
-                </motion.header>
-
-                <motion.article 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                    className="text-2xl text-zinc-200 leading-relaxed space-y-12 font-serif"
-                >
-                    <p className="first-letter:text-[10rem] first-letter:font-cinzel first-letter:text-red-700 first-letter:float-left first-letter:mr-6 first-letter:mt-[-20px] first-letter:leading-none">
+            {/* Traditional Article Layout (The Gameplay Canvas) */}
+            <main className="max-w-3xl mx-auto px-6 py-16 md:py-32 space-y-12 md:space-y-16 relative z-10 bg-[#070709]">
+                
+                <article className="text-xl md:text-2xl text-zinc-300 leading-relaxed md:leading-loose space-y-8 md:space-y-12 font-serif">
+                    <p className="first-letter:text-[6rem] md:first-letter:text-[8rem] first-letter:font-sans first-letter:text-white first-letter:float-left first-letter:mr-6 first-letter:mt-[-10px] md:first-letter:mt-[-20px] first-letter:leading-none">
                         When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Then Martin was promoted. Not removed — promoted. He became Archbishop Theodore McCarrick's personal secretary.
                     </p>
                     <p>
-                        When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood and said the statute of limitations had expired, refused to pay the $108,000 settlement their own mediator had awarded him. When Crawford asked for a written acknowledgment that the abuse happened and that Martin would never have access to children again, they refused to oblige him.
+                        When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood, argued the statute of limitations had expired, and refused to pay the $108,000 settlement their own mediator had awarded him.
                     </p>
-                    <div className="border-l-[6px] border-red-700 pl-12 py-8 my-16 bg-red-950/20 shadow-2xl">
-                        <p className="text-4xl text-white italic leading-tight">
-                            Catholics call that acknowledgment a Conversion. <br/><span className="text-red-600 font-black uppercase tracking-widest mt-4 block">Metuchen refused it.</span>
-                        </p>
-                    </div>
+                    
+                    <figure className="my-16 md:my-24 w-full md:w-[130%] md:-ml-[15%]">
+                        <img loading="lazy" src={INSET_IMG} alt="Archive Files" className="w-full h-[400px] object-cover grayscale border border-zinc-800" />
+                        <figcaption className="mt-4 font-mono text-xs text-zinc-500 tracking-widest uppercase">Exhibit A: Documented routing procedures in the Archdiocese.</figcaption>
+                    </figure>
+
                     <p>
                         Fifteen became sixteen on paper, one falsified digit, and a man who had been abused as a child was turned away without money, without acknowledgment, and without the Church's most basic gesture of accountability.
                     </p>
-                    <p className="text-white font-black text-3xl pt-12 border-t-2 border-red-900/50 leading-relaxed uppercase tracking-tighter">
-                        What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources.
-                    </p>
-                </motion.article>
 
-                <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.6 }}
-                    className="pt-16 flex justify-center"
-                >
-                    <Link href="/evidence/origin" className="inline-flex items-center gap-6 border-2 border-red-600 bg-red-950/40 px-12 py-6 text-white font-mono font-black tracking-[0.5em] uppercase text-xl group hover:bg-red-600 transition-all shadow-[0_0_50px_rgba(220,38,38,0.3)]">
-                            Enter the Investigation <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform" />
-                    </Link>
-                </motion.div>
+                    <p className="pt-12 text-[#c8bdb0]">
+                        But this wasn't an isolated accident. It was the blueprint. What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources, culminating in the 
+                        {/* THE CLEARANCE KEY */}
+                        <button 
+                            onClick={handleKeyDiscovery}
+                            className="mx-2 inline-flex items-center gap-1 font-bold text-white relative group outline-none"
+                        >
+                            <span className="border-b-2 border-[#8b1a1a]/40 group-hover:border-[#8b1a1a] transition-colors bg-[#8b1a1a]/10 px-1 py-0.5 relative z-10 pointer-events-none group-hover:bg-[#8b1a1a]/30">LATHAM REPORT</span>
+                            <Unlock className="w-4 h-4 text-[#8b1a1a] absolute -right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+                        </button>.
+                        This document would become the cornerstone of their survival, and the weapon used against the victims.
+                    </p>
+
+                </article>
+
             </main>
         </div>
     );
