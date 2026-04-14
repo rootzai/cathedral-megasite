@@ -3,18 +3,18 @@ import { CheckCircle, Mail, Clock } from "lucide-react";
 
 export default function Corrections() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-900">
-            <header className="relative z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-300">
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-200">
+            <header className="relative z-50 bg-black/90 backdrop-blur-sm border-b border-zinc-800">
                 <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">
-                        <a className="text-2xl font-bold text-zinc-800 hover:text-zinc-700 transition-colors flex items-center gap-3">
+                        <a className="text-2xl font-bold text-white hover:text-zinc-300 transition-colors flex items-center gap-3">
                             <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all" />
                             SODOM HALL
                         </a>
                     </Link>
                     <nav className="flex gap-3 sm:gap-6">
-                        <Link href="/"><a className="text-gray-300 hover:text-zinc-900 transition-colors">Home</a></Link>
-                        <Link href="/about"><a className="text-gray-300 hover:text-zinc-900 transition-colors">About</a></Link>
+                        <Link href="/"><a className="text-zinc-400 hover:text-white transition-colors">Home</a></Link>
+                        <Link href="/about"><a className="text-zinc-400 hover:text-white transition-colors">About</a></Link>
                     </nav>
                 </div>
             </header>
@@ -54,7 +54,7 @@ export default function Corrections() {
                     <h2 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] text-zinc-700 mb-4 sm:mb-6">Institutional Response Log</h2>
                     <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 sm:p-8 md:p-10">
                         <p className="text-gray-300 leading-relaxed mb-6">
-                            To date, <strong className="text-zinc-900">no counsel</strong> for Seton Hall University, the Archdiocese
+                            To date, <strong className="text-white">no counsel</strong> for Seton Hall University, the Archdiocese
                             of Newark, or any individual named on this site has contacted the operators of this
                             publication to dispute any factual claim.
                         </p>

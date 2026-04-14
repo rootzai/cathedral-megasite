@@ -66,8 +66,8 @@ export default function Home() {
                         <p>
                             For the next thirty years, Lorenzo was the "Public Face" of the Delbarton
                             School, an elite laboratory of influence where the children of the East
-                            Coast’s power brokers—including the sons of the **Christies**, the **Marinos**,
-                            and the **Nyres**—were educated beneath the shadow of a silent Abbey.
+                            Coast’s power brokers—including the sons of the <strong>Christies</strong>, the <strong>Marinos</strong>,
+                            and the <strong>Nyres</strong>—were educated beneath the shadow of a silent Abbey.
                             As Prior—the second-in-command—he oversaw the living arrangements of monks
                             who would later be named as some of the state's most prolific predators.
                         </p>
@@ -76,8 +76,8 @@ export default function Home() {
                             <h4 className="font-heading text-2xl mb-6 text-amber-500 uppercase tracking-[0.3em] font-black">Heritage of Influence</h4>
                             <p className="text-xl text-zinc-100 leading-relaxed font-bold">
                                 Delbarton’s athletic and social prestige was managed under Lorenzo’s tenure.
-                                The school produced legends like **Anthony Volpe**, while NFL great **Nick Mangold** walked the sidelines as a coach.
-                                Olympic stars like **Jack Alexy** further cemented the school's "untouchable" status.
+                                The school produced legends like <strong>Anthony Volpe</strong>, while NFL great <strong>Nick Mangold</strong> walked the sidelines as a coach.
+                                Olympic stars like <strong>Jack Alexy</strong> further cemented the school's "untouchable" status.
                                 This concentration of celebrity and political power provided the ultimate horizontal shield for the Abbey's vertical silence.
                             </p>
                         </div>

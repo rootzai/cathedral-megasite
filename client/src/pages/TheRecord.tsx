@@ -70,23 +70,23 @@ export default function TheRecord() {
                                 <FileDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
                                 Download Fact-Check (PDF)
                             </button>
-                            <div className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-sm border border-emerald-100 flex items-center gap-2">
+                            <div className="bg-emerald-950/50 text-emerald-400 px-4 py-2 rounded-sm border border-emerald-800/50 flex items-center gap-2">
                                 <CheckCircle2 size={16} />
                                 <span className="text-xs font-bold uppercase tracking-widest">0 Factual Disputes</span>
                             </div>
-                            <div className="bg-zinc-100 text-zinc-600 px-4 py-2 rounded-sm border border-zinc-200 flex items-center gap-2">
-                                <span className="text-xs font-bold uppercase tracking-widest tabular-nums italic">Last Verified: Oct 21, 2025</span>
+                            <div className="bg-zinc-800/50 text-zinc-300 px-4 py-2 rounded-sm border border-zinc-700 flex items-center gap-2">
+                                <span className="text-xs font-bold uppercase tracking-widest tabular-nums italic">Last Verified: Apr 14, 2026</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="p-6 bg-amber-50 border border-amber-200 text-amber-900 rounded-sm mb-12">
+                    <div className="p-6 bg-amber-950/30 border border-amber-700/40 text-amber-200 rounded-sm mb-12">
                         <div className="flex gap-4">
-                            <AlertCircle className="shrink-0" size={24} />
+                            <AlertCircle className="shrink-0 text-amber-500" size={24} />
                             <p className="text-sm leading-relaxed">
-                                **Note to Institutions**: This dashboard weaponizes the "Corrections" concept. If any fact listed below is disputed,
+                                <strong>Note to Institutions</strong>: This dashboard weaponizes the "Corrections" concept. If any fact listed below is disputed,
                                 submit a formal correction request via the Corrections page. We will publish your dispute alongside our 35 exhibits.
-                                **To date, no party has challenged a single fact on this site.**
+                                <strong>To date, no party has challenged a single fact on this site.</strong>
                             </p>
                         </div>
                     </div>
@@ -99,19 +99,19 @@ export default function TheRecord() {
                         <input
                             type="text"
                             placeholder="Search the docket..."
-                            className="w-full pl-10 pr-4 py-3 bg-white border border-zinc-200 rounded-sm focus:outline-none focus:border-red-600 transition-colors text-sm"
+                            className="w-full pl-10 pr-4 py-3 bg-zinc-900 border border-zinc-700 rounded-sm focus:outline-none focus:border-red-600 transition-colors text-sm text-zinc-100 placeholder:text-zinc-500"
                         />
                     </div>
-                    <button className="px-6 py-3 bg-zinc-100 border border-zinc-200 text-zinc-600 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-zinc-200 transition-colors">
+                    <button className="px-6 py-3 bg-zinc-800 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-zinc-700 transition-colors">
                         <Filter size={16} />
                         Filter by Type
                     </button>
                 </div>
 
                 {/* Facts Table */}
-                <div className="border border-zinc-200 rounded-sm overflow-hidden bg-white shadow-sm">
+                <div className="border border-zinc-800 rounded-sm overflow-hidden bg-zinc-900/50 shadow-sm">
                     <table className="w-full text-left">
-                        <thead className="bg-zinc-50 border-b border-zinc-200">
+                        <thead className="bg-zinc-800/50 border-b border-zinc-700">
                             <tr>
                                 <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400">Claim / Finding</th>
                                 <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400 w-48 text-center">Evidentiary Weight</th>
@@ -119,32 +119,32 @@ export default function TheRecord() {
                                 <th className="px-6 py-4 text-xs font-bold uppercase tracking-widest text-zinc-400 w-32 text-center">Reference</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-zinc-200">
+                        <tbody className="divide-y divide-zinc-800">
                             {facts.map((fact, idx) => (
-                                <tr key={idx} className="hover:bg-zinc-50/50 transition-colors">
-                                    <td className="px-6 py-6 border-r border-zinc-100">
-                                        <p className="text-zinc-900 font-medium leading-relaxed mb-2">{fact.claim}</p>
-                                        <div className="flex items-center gap-2 text-xs text-zinc-400 italic">
+                                <tr key={idx} className="hover:bg-zinc-800/50 transition-colors">
+                                    <td className="px-6 py-6 border-r border-zinc-800">
+                                        <p className="text-zinc-100 font-medium leading-relaxed mb-2">{fact.claim}</p>
+                                        <div className="flex items-center gap-2 text-xs text-zinc-500 italic">
                                             <FileText size={12} />
                                             Source: {fact.evidence}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-6 border-r border-zinc-100">
+                                    <td className="px-6 py-6 border-r border-zinc-800">
                                         <div className="flex justify-center">
                                             <ConfidenceIndicator level={fact.level} />
                                         </div>
                                     </td>
-                                    <td className="px-6 py-6 border-r border-zinc-100">
+                                    <td className="px-6 py-6 border-r border-zinc-800">
                                         <div className="flex justify-center">
                                             {fact.disputed ? (
-                                                <span className="text-red-700"><XCircle size={18} /></span>
+                                                <span className="text-red-500"><XCircle size={18} /></span>
                                             ) : (
-                                                <span className="text-emerald-500"><CheckCircle2 size={18} /></span>
+                                                <span className="text-emerald-400"><CheckCircle2 size={18} /></span>
                                             )}
                                         </div>
                                     </td>
                                     <td className="px-6 py-6 text-center">
-                                        <button className="text-xs font-bold text-red-700 hover:text-red-900 uppercase tracking-widest transition-colors">
+                                        <button className="text-xs font-bold text-red-500 hover:text-red-300 uppercase tracking-widest transition-colors">
                                             View Exhibit
                                         </button>
                                     </td>
@@ -156,10 +156,10 @@ export default function TheRecord() {
 
                 <footer className="mt-12 flex items-center justify-between text-zinc-400 text-xs italic">
                     <p>Total evidentiary markers: 78</p>
-                    <p>Last verified: October 21, 2025</p>
+                    <p>Last verified: April 14, 2026</p>
                 </footer>
 
-                <div className="mt-20 border-t border-zinc-100 pt-10">
+                <div className="mt-20 border-t border-zinc-800 pt-10">
                     <JourneyNav />
                 </div>
             </div>

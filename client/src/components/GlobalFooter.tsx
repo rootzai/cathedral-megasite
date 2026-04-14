@@ -58,7 +58,14 @@ export function GlobalFooter() {
                     </nav>
                 </div>
 
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-30">
+                {/* Legal Disclaimer */}
+                <div className="pt-10 pb-8 border-t border-white/5 mb-8">
+                    <p className="text-xs text-zinc-600 font-serif leading-relaxed max-w-4xl mx-auto text-center">
+                        This site presents independent journalism, public records analysis, and editorial opinion. All claims are sourced from court filings, the Vatican McCarrick Report (2020), the Perry Law Report (2024), investigative journalism, and public records. No party named on this site has requested a factual correction. If you or someone you know has been affected by clergy abuse, contact <a href="https://www.rainn.org" target="_blank" rel="noopener" className="text-[#8b1a1a] hover:text-white transition-colors underline">RAINN.org</a> or call <a href="tel:800-656-4673" className="text-[#8b1a1a] hover:text-white transition-colors underline">1-800-656-HOPE</a>.
+                    </p>
+                </div>
+
+                <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-30">
                     <p className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">
                         SH-2026 // CATHEDRAL MEGASITE // NO STATUTE
                     </p>

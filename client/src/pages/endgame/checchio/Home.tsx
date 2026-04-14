@@ -19,13 +19,13 @@ export default function Home() {
           "The Catholic Church isn’t cleaning up its sex-abuse scandal. They are franchising it."
         </p>
         <p>
-          In an explosive 2024 article titled **"Exporting the Cover-Up: How the Church is spreading New Jersey’s rot to New Orleans,"** Senator Joseph Vitale and Dei Journo identified Bishop James Checchio as a primary agent of institutional preservation.
+          In an explosive 2024 article titled <strong>"Exporting the Cover-Up: How the Church is spreading New Jersey's rot to New Orleans,"</strong> Senator Joseph Vitale and Dei Journo identified Bishop James Checchio as a primary agent of institutional preservation.
         </p>
         <p>
           Known as a "steady hand," Checchio's move to New Orleans is not a reformist mission—it is a strategic export. As the article states, "Checchio knows exactly how they bury the truth in New Jersey because he was trained on how to hold the shovel."
         </p>
         <p>
-          His role as an **Institutional Fixer** was cemented during his tenure on the Seton Hall task force, where he voted to elevate Joseph Reilly despite explicit findings of misconduct. He embodies the "Calculated Game of Musical Chairs" where those who protect the secrets are rewarded with the highest seats of power.
+          His role as an <strong>Institutional Fixer</strong> was cemented during his tenure on the Seton Hall task force, where he voted to elevate Joseph Reilly despite explicit findings of misconduct. He embodies the "Calculated Game of Musical Chairs" where those who protect the secrets are rewarded with the highest seats of power.
         </p>
       </div>
 
