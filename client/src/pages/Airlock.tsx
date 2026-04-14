@@ -13,7 +13,7 @@ export default function Airlock() {
                 description="Initialize the protocol to enter the maproom." 
             />
             
-            <TriptychPortal onComplete={() => setLocation('/maproom')} />
+            <TriptychPortal onComplete={() => setLocation('/prologue')} />
         </div>
     );
 }
