@@ -106,12 +106,12 @@ export default function Home() {
             </section>
 
             {/* Forensic Asset: The Succession Path */}
-            <section className="bg-zinc-50 p-12 rounded-sm border border-border shadow-2xl relative overflow-hidden">
+            <section className="bg-zinc-900 p-12 rounded-sm border border-zinc-800 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-destructive to-transparent" />
 
                 <header className="mb-12 text-center">
-                    <h3 className="font-heading text-3xl mb-2">The Path to the Throne</h3>
-                    <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Chronicle of Institutional Elevation</p>
+                    <h3 className="font-heading text-3xl mb-2 text-white">The Path to the Throne</h3>
+                    <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">Chronicle of Institutional Elevation</p>
                 </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
