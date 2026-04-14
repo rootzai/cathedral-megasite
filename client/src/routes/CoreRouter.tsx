@@ -112,9 +112,6 @@ export function CoreRouter() {
         <Route path="/index">
           <PageLayout component={GlobalIndex} />
         </Route>
-        <Route path="/madman">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
-        </Route>
         <Route path="/madman/the-machine">
           <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/TheMachine"))} />
         </Route>
@@ -135,6 +132,9 @@ export function CoreRouter() {
         </Route>
         <Route path="/madman/exhibit-f">
           <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/ExhibitF"))} />
+        </Route>
+        <Route path="/madman">
+          <PageLayout component={React.lazy(() => import("@/pages/endgame/madman/Home"))} />
         </Route>
         <Route path="/vault/epstein-emails">
           <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
