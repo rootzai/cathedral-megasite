@@ -37,10 +37,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2018-TM</span>
-                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Architect
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   The rise and fall of Theodore McCarrick, the predator who built the pipeline.
                 </p>
               </div>
@@ -58,10 +58,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-JC</span>
-                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Protégé
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   James Checchio: The Newark export sent to bury the past in New Orleans.
                 </p>
               </div>
@@ -79,10 +79,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #2026-SHU</span>
-                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Presidency of Joseph Reilly
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Joseph Reilly: Protected and promoted to President of Seton Hall University.
                 </p>
               </div>
@@ -100,10 +100,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1989-KM</span>
-                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Case of Kenneth Martin
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Ken Martin: Serial abuser laundered through the system to serve McCarrick.
                 </p>
               </div>
@@ -121,10 +121,10 @@ export default function Portal() {
               />
               <div className="absolute inset-x-0 bottom-0 p-6 z-20 pt-16 bg-gradient-to-t from-black via-black/80 to-transparent text-left transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="block text-destructive font-mono text-xs uppercase tracking-widest mb-2">Case File #1980-EL</span>
-                <h2 className="text-2xl font-heading uppercase text-zinc-900 mb-2 group-hover:text-shadow-blood transition-all leading-tight">
+                <h2 className="text-2xl font-heading uppercase text-white mb-2 group-hover:text-shadow-blood transition-all leading-tight">
                   The Case of Elias Lorenzo
                 </h2>
-                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-zinc-900 transition-colors">
+                <p className="text-sm text-gray-300 line-clamp-2 group-hover:text-white transition-colors">
                   Elias Lorenzo: Kicked out for deviant conduct, rebranded, and elevated to Bishop.
                 </p>
               </div>

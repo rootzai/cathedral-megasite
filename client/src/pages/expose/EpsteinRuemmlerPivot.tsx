@@ -38,8 +38,8 @@ export default function EpsteinRuemmlerPivot() {
                                 The Email Chain
                             </h2>
                             <p className="text-zinc-400 mb-6 leading-relaxed">
-                                Recovered from DOJ document releases, these communications between **Kathryn Ruemmler** (Latham & Watkins)
-                                and "J" (**Jeffrey Epstein**) reveal intimate coordination in 2018-2019. At this exact moment,
+                                Recovered from DOJ document releases, these communications between <strong>Kathryn Ruemmler</strong> (Latham & Watkins)
+                                and "J" (<strong>Jeffrey Epstein</strong>) reveal intimate coordination in 2018-2019. At this exact moment,
                                 Ruemmler was leading the "independent" probe into McCarrick’s network at Seton Hall.
                             </p>
                             <div className="space-y-4">
@@ -78,7 +78,7 @@ export default function EpsteinRuemmlerPivot() {
                         <div>
                             <h2 className="text-4xl font-serif mb-6">The October 2019 Paul Weiss Pivot</h2>
                             <p className="text-zinc-400 text-lg leading-relaxed mb-8 font-light">
-                                In October 2019, **Brad Karp and Paul Weiss** removed themselves from the McCarrick investigation.
+                                In October 2019, <strong>Brad Karp and Paul Weiss</strong> removed themselves from the McCarrick investigation.
                                 This strategic withdrawal created the vacuum for Kathryn Ruemmler and Latham & Watkins to assume
                                 control of the probe. While positioned as a conflict-free successor, the DOJ documents now prove
                                 that Ruemmler brought her own undisclosed — and far more radioactive — connections to the table.
@@ -133,8 +133,8 @@ export default function EpsteinRuemmlerPivot() {
                     </p>
                     <Link href="/tips">
                         <a className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-red-700 transition-all group">
-                                Submit More Evidence
-                                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                            Submit More Evidence
+                            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </Link>
                 </div>

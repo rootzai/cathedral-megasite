@@ -27,7 +27,7 @@ export default function Network() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Leadership Trio</h2>
+            <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Leadership Trio</h2>
             <p className="text-sm text-gray-300 italic">"By the stang of the regents!"</p>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function Network() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Cardinalverse</h2>
+            <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Cardinalverse</h2>
             <p className="text-sm text-gray-300 italic">Infinite Scandals. One Stang to Rule Them All.</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Network() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 p-6">
-          <h2 className="text-4xl font-display uppercase text-zinc-900 text-shadow-blood mb-2">The Stang of Regents</h2>
+          <h2 className="text-4xl font-display uppercase text-white text-shadow-blood mb-2">The Stang of Regents</h2>
           <p className="text-xl text-gray-300 italic">"The Board knew. The Board enabled. The Board is complicit."</p>
         </div>
       </div>

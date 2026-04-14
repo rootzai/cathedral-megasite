@@ -61,7 +61,7 @@ export default function Analysis() {
 
           <h3 className="font-heading text-2xl text-foreground mb-4">The Legal Wall: Marino, Stio & The Triumvirate</h3>
           <p className="font-body text-lg text-foreground/80 leading-relaxed mb-6">
-            The mechanism of concealment was not merely administrative; it was legal. A multi-firm "Shield" was constructed to manage the flow of document discovery. **Kevin Marino** (Marino, Tortorella & Boyle), **Thomas Scrivo**, and the teams led by **Stio**, **Linares**, and **Papalia** formed an impenetrable perimeter around the Chancery.
+            The mechanism of concealment was not merely administrative; it was legal. A multi-firm "Shield" was constructed to manage the flow of document discovery. <strong>Kevin Marino</strong> (Marino, Tortorella & Boyle), <strong>Thomas Scrivo</strong>, and the teams led by <strong>Stio</strong>, <strong>Linares</strong>, and <strong>Papalia</strong> formed an impenetrable perimeter around the Chancery.
           </p>
           <p className="font-body text-lg text-foreground/80 leading-relaxed mb-6">
             Their strategy was consistent: classify forensic audits—including the Latham and Rabner reports—as "privileged work product," even when the documents were expressly created to provide transparency to the Board. This "Legal Wall" ensured that while the public saw a "cooperative" institution, the actual data remained in the vault.

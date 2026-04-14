@@ -32,7 +32,7 @@ export default function Status() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 p-6">
-          <h2 className="text-3xl font-display uppercase text-zinc-900 text-shadow-blood mb-1">The Fixer</h2>
+          <h2 className="text-3xl font-display uppercase text-white text-shadow-blood mb-1">The Fixer</h2>
           <p className="text-sm text-gray-300 italic">"Can a Newark product clean up New Orleans?"</p>
         </div>
       </div>

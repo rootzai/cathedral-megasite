@@ -42,7 +42,7 @@ export default function Home() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
                                     <div className="absolute bottom-0 left-0 right-0 p-8">
                                         <div className="font-mono text-xs text-destructive mb-2">STATUS: BARRED (2008)</div>
-                                        <h2 className="font-heading text-3xl text-zinc-900">Father Kenneth Martin</h2>
+                                        <h2 className="font-heading text-3xl text-white">Father Kenneth Martin</h2>
                                         <p className="font-mono text-sm text-gray-400 mt-2">Personal Secretary to McCarrick</p>
                                         <div className="mt-4 flex items-center text-xs font-mono text-destructive opacity-0 group-hover:opacity-100 transition-opacity">
                                             <Eye className="w-4 h-4 mr-2" />
