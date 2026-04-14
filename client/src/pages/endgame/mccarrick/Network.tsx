@@ -80,7 +80,7 @@ export default function Network() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-4 right-4 text-right">
               <span className="block text-destructive font-mono text-sm uppercase tracking-widest">The Method</span>
-              <span className="block text-zinc-900 font-display text-xl">Power & Predation</span>
+              <span className="block text-white font-display text-xl">Power & Predation</span>
             </div>
           </div>
 

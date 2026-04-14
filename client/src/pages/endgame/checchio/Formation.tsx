@@ -42,7 +42,7 @@ export default function Formation() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute bottom-4 right-4 text-right">
             <span className="block text-destructive font-mono text-sm uppercase tracking-widest">Seton Hall ICS</span>
-            <span className="block text-zinc-900 font-display text-xl">Learning the Code of Silence</span>
+            <span className="block text-white font-display text-xl">Learning the Code of Silence</span>
           </div>
         </div>
       </div>
