@@ -1,6 +1,6 @@
 import React from "react";
-import PageHero from "@/components/PageHero";
-import TriptychPortal from "@/components/TriptychPortal";
+import { PageHero } from "@/components/PageHero";
+import { Link } from "wouter";
 import { Term as GlossaryTerm } from "@/components/Term";
 import MemoryGate from "@/components/MemoryGate";
 
@@ -17,7 +17,7 @@ export default function ReillyIrishman() {
             Essex County Executive — Official Proclamation
           </div>
           <h1 className="font-abril text-5xl md:text-6xl font-black leading-tight mb-2">
-            The 2026 Essex County<br/>
+            The 2026 Essex County<br />
             <span className="text-[#C8A84B]">Irishman of the Year</span>
           </h1>
           <div className="text-sm text-[#C8A84B] tracking-[0.15em] mt-4 uppercase">
@@ -29,44 +29,44 @@ export default function ReillyIrishman() {
           <div className="absolute -top-3 left-8 bg-[#C8A84B] text-[#1A1A1A] text-xs font-bold tracking-[0.2em] px-3 py-1 uppercase">
             Official Citation — Surely This Is Satire
           </div>
-          
+
           <div className="font-abril text-xl md:text-2xl leading-relaxed text-center space-y-6">
             <p>
-              Oh, the places he's been!<br/>
-              Oh, the things he has done!<br/>
-              He managed the calendar,<br/>
-              He answered the phone,<br/>
-              He visited the beach house —<br/>
+              Oh, the places he's been!<br />
+              Oh, the things he has done!<br />
+              He managed the calendar,<br />
+              He answered the phone,<br />
+              He visited the beach house —<br />
               <em>just once</em>, he has shown.
             </p>
             <p>
-              He knew of the report,<br/>
-              the one sealed in a drawer,<br/>
-              the one naming twelve clergymen,<br/>
-              the one they ignored.<br/>
-              But the Regents said: <em>"Reilly!<br/>
-              You're just what we need!"</em><br/>
-              And they gave him the keys<br/>
+              He knew of the report,<br />
+              the one sealed in a drawer,<br />
+              the one naming twelve clergymen,<br />
+              the one they ignored.<br />
+              But the Regents said: <em>"Reilly!<br />
+                You're just what we need!"</em><br />
+              And they gave him the keys<br />
               and the title and the creed.
             </p>
             <p>
-              So raise up a glass<br/>
-              to the Irishman of the Year!<br/>
-              The man who saw nothing,<br/>
-              who heard nothing, my dear.<br/>
-              Who presides over ten thousand<br/>
-              with a fresh, robust vision —<br/>
-              while four hundred and fifty<br/>
+              So raise up a glass<br />
+              to the Irishman of the Year!<br />
+              The man who saw nothing,<br />
+              who heard nothing, my dear.<br />
+              Who presides over ten thousand<br />
+              with a fresh, robust vision —<br />
+              while four hundred and fifty<br />
               await a court's decision.
             </p>
             <p>
-              Essex County says: <em>"Bravo!"</em><br/>
-              DiVincenzo says: <em>"Hear, hear!"</em><br/>
-              And <GlossaryTerm id="OToole">Kevin O'Toole</GlossaryTerm><br/>
-              — his lawyer, his peer —<br/>
-              stood right there beside him<br/>
-              and led the applause<br/>
-              for the man that his firm<br/>
+              Essex County says: <em>"Bravo!"</em><br />
+              DiVincenzo says: <em>"Hear, hear!"</em><br />
+              And <GlossaryTerm id="OToole">Kevin O'Toole</GlossaryTerm><br />
+              — his lawyer, his peer —<br />
+              stood right there beside him<br />
+              and led the applause<br />
+              for the man that his firm<br />
               has been shielding from laws.
             </p>
             <p className="italic text-[#888888] text-base font-courier mt-10">
@@ -77,8 +77,8 @@ export default function ReillyIrishman() {
 
         <div className="flex justify-center mb-12">
           <figure className="max-w-[280px] text-center">
-            <img 
-              src="/assets/madman/irishman-trophy-TyCaDLDrTaJ27YvHKVv5tr.webp" 
+            <img
+              src="/assets/madman/irishman-trophy-TyCaDLDrTaJ27YvHKVv5tr.webp"
               alt="Essex County 2026 — Msgr Reilly holding an Irishman trophy"
               className="w-full border-4 border-[#C8A84B] shadow-[6px_6px_0_#8B0000] block"
               loading="lazy"
@@ -90,10 +90,9 @@ export default function ReillyIrishman() {
         </div>
 
         <div className="text-center">
-           <TriptychPortal 
-              targetId="act-iii"
-              label="WAIT. IS THIS REAL?"
-           />
+          <Link href="/ledger/reilly" className="inline-block bg-[#8B0000] hover:bg-white hover:text-black text-white px-8 py-4 font-mono font-bold tracking-[0.3em] uppercase transition-all duration-300 border border-[#8B0000]">
+            WAIT. IS THIS REAL?
+          </Link>
         </div>
 
         <MemoryGate registryId="route-reilly-irishman" />

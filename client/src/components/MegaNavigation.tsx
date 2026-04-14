@@ -31,52 +31,40 @@ export default function MegaNavigation() {
       {/* Primary Navigation Tier - Minimalist Memory Palace Map Trigger */}
       <div className="w-full px-4 lg:px-8">
         <div className="hidden md:flex items-center justify-between h-20">
-          <Link href="/">
-            <a className="h-full flex items-center group transition-all shrink-0">
-              <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="w-16 h-auto object-contain group-hover:scale-110 transition-all filter grayscale brightness-50 contrast-125" />
-              <span className="ml-4 text-zinc-500 group-hover:text-zinc-100 transition-colors duration-500 font-cinzel font-black tracking-[0.2em] text-2xl uppercase">Sodom Hall</span>
-            </a>
+          <Link href="/" className="h-full flex items-center group transition-all shrink-0">
+            <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="w-16 h-auto object-contain group-hover:scale-110 transition-all filter grayscale brightness-50 contrast-125" />
+            <span className="ml-4 text-zinc-500 group-hover:text-zinc-100 transition-colors duration-500 font-cinzel font-black tracking-[0.2em] text-2xl uppercase">Sodom Hall</span>
           </Link>
 
           <div className="flex gap-4">
-              <Link href="/evidence">
-                <a className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3">
-                  <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                  [ OPEN ARCHITECTURAL MAP ]
-                </a>
-              </Link>
-              <Link href="/index">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
-                  The Master Index
-                </a>
-              </Link>
-              <Link href="/tips">
-                <a className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
-                  Tip Line
-                </a>
-              </Link>
+            <Link href="/evidence" className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3">
+              <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+              [ OPEN ARCHITECTURAL MAP ]
+            </Link>
+            <Link href="/index" className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
+              The Master Index
+            </Link>
+            <Link href="/tips" className="border border-white/10 hover:border-white/30 text-zinc-400 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center">
+              Tip Line
+            </Link>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="flex items-center justify-between py-6">
-            <Link href="/">
-              <a className="flex items-center gap-4">
-                <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="h-16 w-auto object-contain filter grayscale" />
-              </a>
+            <Link href="/" className="flex items-center gap-4">
+              <img src="/assets/images/colored-pirate-logo.png" alt="Sodom Hall Home" className="h-16 w-auto object-contain filter grayscale" />
             </Link>
-            <Link href="/evidence">
-              <a className="bg-red-900/20 border border-red-900/50 text-red-500 px-6 py-3 text-lg font-bold uppercase tracking-widest flex items-center gap-3">
-                  <svg className="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                  MAP
-              </a>
+            <Link href="/evidence" className="bg-red-900/20 border border-red-900/50 text-red-500 px-6 py-3 text-lg font-bold uppercase tracking-widest flex items-center gap-3">
+              <svg className="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+              MAP
             </Link>
           </div>
         </div>
       </div>
 
-      {/* 3. News Ticker */}
+      {/* 3. News Ticker — Desktop (full) */}
       <div className="hidden md:flex bg-[#080808] h-12 items-center border-t border-white/5 group" aria-label="News ticker" role="region">
         <button onClick={() => setTickerPaused(!tickerPaused)} className="shrink-0 px-4 h-full flex items-center text-zinc-600 hover:text-white transition-colors border-r border-white/5 cursor-pointer z-10">
           {tickerPaused ? <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg> : <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>}
@@ -90,6 +78,18 @@ export default function MegaNavigation() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* 3b. News Ticker — Mobile (simplified single-line) */}
+      <div className="md:hidden bg-[#080808] border-t border-white/5 overflow-hidden" aria-label="News ticker" role="region">
+        <div className="flex animate-ticker items-center whitespace-nowrap h-10" style={{ minWidth: 'max-content' }}>
+          {[...newsItems, ...newsItems].map((item, idx) => (
+            <div key={idx} className="flex items-center px-8 shrink-0">
+              <span className={`text-[10px] font-bold px-2 py-0.5 mr-2 rounded border shrink-0 ${item.type === 'BREAKING' ? 'bg-zinc-900 text-red-500 border-red-900/50' : 'bg-black text-zinc-500 border-white/5'}`}>{item.type}</span>
+              <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider">{item.text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </nav>

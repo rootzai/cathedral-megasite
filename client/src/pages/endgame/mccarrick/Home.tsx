@@ -1,4 +1,5 @@
 import EndgameLayout from "@/components/EndgameLayout";
+import ImageModal from "@/components/ImageModal";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";

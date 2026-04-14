@@ -1,3 +1,4 @@
+import MemoryGate from "@/components/MemoryGate";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";

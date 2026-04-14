@@ -1,3 +1,4 @@
+import MemoryGate from "@/components/MemoryGate";
 import EndgameLayout from "@/components/EndgameLayout";
 import SectionHeader from "@/components/SectionHeader";
 import { Badge } from "@/components/ui/badge";

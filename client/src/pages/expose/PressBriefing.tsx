@@ -1,6 +1,6 @@
 import React from "react";
-import PageHero from "@/components/PageHero";
-import TriptychPortal from "@/components/TriptychPortal";
+import { PageHero } from "@/components/PageHero";
+import { Link } from "wouter";
 import MemoryGate from "@/components/MemoryGate";
 
 export default function PressBriefing() {
@@ -19,7 +19,7 @@ export default function PressBriefing() {
         <h1 className="font-abril text-5xl md:text-6xl font-black leading-tight mb-8 border-b-8 border-[#CC2200] pb-6">
           Press Briefing: The Architecture of Protection
         </h1>
-        
+
         <div className="space-y-8 text-lg leading-relaxed">
           <p>
             <strong>DATE:</strong> April 2026<br />
@@ -62,11 +62,9 @@ export default function PressBriefing() {
         </div>
 
         <div className="flex justify-center mt-16 mb-12">
-            <TriptychPortal 
-                targetId="act-iii"
-                label="VIEW FULL DOSSIER"
-                color="#1A1208"
-            />
+          <Link href="/ledger/mccarrick" className="inline-block bg-[#1A1208] hover:bg-[#D4A017] hover:text-[#1A1208] text-[#F5EDD0] px-8 py-4 font-mono font-bold tracking-[0.3em] uppercase transition-all duration-300 border-2 border-[#D4A017]">
+            VIEW FULL DOSSIER
+          </Link>
         </div>
 
         <MemoryGate registryId="route-press-briefing" />

@@ -1,3 +1,4 @@
+import MemoryGate from "@/components/MemoryGate";
 import { LorenzoSectionNav } from "@/components/SectionNav";
 import { AlertTriangle, Gavel, Scale, ShieldAlert, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -35,6 +35,8 @@ const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ defaul
 const Axis = React.lazy(() => import("@/pages/Axis").then(m => ({ default: m.default })));
 const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
 const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex").then(m => ({ default: m.default })));
+const Updates = React.lazy(() => import("@/pages/Updates").then(m => ({ default: m.default })));
+const Press = React.lazy(() => import("@/pages/Press").then(m => ({ default: m.default })));
 
 // Modular Routers
 import { EndgameRoutes } from "./EndgameRouter";
@@ -60,7 +62,7 @@ const REDIRECT_MAP: Record<string, string> = {
   "/ledger/madman": "/madman",   // Fix: sidebar links here but route is at /madman
   "/methodology": "/method",     // Fix: /method is the real route
   "/lorenzo": "/ledger/lorenzo",
-  
+
   // Legacy / Triptych Fallbacks
   "/endgame/mccarrick": "/ledger/mccarrick",
   "/endgame": "/ledger/mccarrick",
@@ -141,9 +143,7 @@ export function CoreRouter() {
         <Route path="/vault/epstein-emails">
           <PageLayout component={React.lazy(() => import("@/pages/vault/LathamEmails"))} />
         </Route>
-        <Route path="/ledger/reilly/irishman">
-          <PageLayout component={React.lazy(() => import("@/pages/endgame/reilly/Irishman"))} />
-        </Route>
+        {/* /ledger/reilly/irishman handled by EndgameRouter with EndgamePageLayout */}
         <Route path="/expose/press-briefing">
           <PageLayout component={React.lazy(() => import("@/pages/expose/PressBriefing"))} />
         </Route>
@@ -164,7 +164,7 @@ export function CoreRouter() {
         <Route path="/evidence/board">
           <PageLayout component={EvidenceHub} />
         </Route>
-        
+
         {/* Legacy redirect */}
         <Route path="/evidence/politico-report">
           <Redirect to="/evidence" />
@@ -186,9 +186,7 @@ export function CoreRouter() {
         <Route path="/breach/hub">
           <PageLayout component={React.lazy(() => import("@/pages/breach/BreachHub").then(m => ({ default: m.default })))} />
         </Route>
-        <Route path="/breach">
-          <PageLayout component={React.lazy(() => import("@/pages/expose/WhistleblowerUnmasking").then(m => ({ default: m.default })))} />
-        </Route>
+        {/* /breach handled by ExposeRouter with BreachLayout wrapper */}
 
         {/* Tier 6: THE METHOD & THE NURSERY */}
         <Route path="/method">
@@ -213,6 +211,12 @@ export function CoreRouter() {
         </Route>
         <Route path="/tips">
           <PageLayout component={Tips} />
+        </Route>
+        <Route path="/updates">
+          <PageLayout component={Updates} />
+        </Route>
+        <Route path="/press">
+          <PageLayout component={Press} />
         </Route>
 
         {/* THE REWRITE (OPINIONS) */}

@@ -68,6 +68,7 @@ const ReillyPresidency = React.lazy(() => import("../pages/endgame/reilly/Presid
 const ReillyMemes = React.lazy(() => import("../pages/endgame/reilly/Memes"));
 const ReillyReckoning = React.lazy(() => import("../pages/endgame/reilly/Reckoning"));
 const ReillyStatus = React.lazy(() => import("../pages/endgame/reilly/Status"));
+const ReillyIrishman = React.lazy(() => import("../pages/endgame/reilly/Irishman"));
 
 function PageLayout({ component: Component, theme = "theme-cathedral" }: { component: React.ComponentType; theme?: string }) {
     return (
@@ -97,7 +98,7 @@ export const EndgameRoutes = [
     <Route key="reilly-memes" path={"/ledger/reilly/memes"}><EndgamePageLayout component={ReillyMemes} /></Route>,
     <Route key="reilly-reckoning" path={"/ledger/reilly/reckoning"}><EndgamePageLayout component={ReillyReckoning} /></Route>,
     <Route key="reilly-status" path={"/ledger/reilly/status"}><EndgamePageLayout component={ReillyStatus} /></Route>,
-
+    <Route key="reilly-irishman" path={"/ledger/reilly/irishman"}><EndgamePageLayout component={ReillyIrishman} /></Route>,
 
 
     <Route key="mccarrick" path={"/ledger/mccarrick"}><EndgamePageLayout component={McCarrickHome} /></Route>,

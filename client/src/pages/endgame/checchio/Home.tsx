@@ -1,3 +1,4 @@
+import MemoryGate from "@/components/MemoryGate";
 import EndgameLayout from "@/components/EndgameLayout";
 import ImageModal from "@/components/ImageModal";
 import SectionHeader from "@/components/SectionHeader";

@@ -1,3 +1,4 @@
+import MemoryGate from "@/components/MemoryGate";
 import EndgameLayout from "@/components/EndgameLayout";
 import { MartinSectionNav } from "@/components/SectionNav";
 import { Button } from "@/components/ui/button";
