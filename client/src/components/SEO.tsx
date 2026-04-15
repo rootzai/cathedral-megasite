@@ -12,7 +12,7 @@ interface SEOProps {
 export function SEO({
     title,
     description = "An investigation into institutional betrayal and the architecture of complicity.",
-    image = "/assets/hero_vatican_finance_banner.png",
+    image = "/assets/og-cover.svg",
     url = "https://cathedral.investigation",
     type = "website"
 }: SEOProps) {

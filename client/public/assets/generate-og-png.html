@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OG Cover Generator — Right-click → Save as PNG</title>
+  <style>
+    body { margin: 0; background: #222; display: flex; flex-direction: column; align-items: center; padding: 40px; font-family: monospace; color: #888; }
+    h1 { color: #8b1a1a; margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+    canvas { border: 1px solid #444; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>OG Cover Generator</h1>
+  <p>Right-click the image below → "Save image as..." → save as <code>og-cover.png</code></p>
+  <canvas id="canvas" width="1200" height="630"></canvas>
+  <script>
+    // Wait for fonts
+    document.fonts.ready.then(() => {
+      const c = document.getElementById('canvas');
+      const ctx = c.getContext('2d');
+      
+      // Background gradient
+      const bg = ctx.createLinearGradient(0, 0, 0, 630);
+      bg.addColorStop(0, '#0a0a0c');
+      bg.addColorStop(1, '#1a0a0a');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, 1200, 630);
+      
+      // Red glow at top
+      const glow = ctx.createLinearGradient(0, 0, 0, 200);
+      glow.addColorStop(0, 'rgba(139,26,26,0.3)');
+      glow.addColorStop(1, 'rgba(139,26,26,0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, 1200, 200);
+      
+      // Double border frame
+      ctx.strokeStyle = 'rgba(139,26,26,0.6)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(16, 16, 1168, 598);
+      ctx.strokeStyle = 'rgba(139,26,26,0.3)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(24, 24, 1152, 582);
+      
+      // Corner marks
+      ctx.fillStyle = 'rgba(139,26,26,0.5)';
+      [[40,40],[1140,40],[40,588],[1140,588]].forEach(([x,y]) => {
+        ctx.fillRect(x, y, 20, 2);
+        ctx.fillRect(x, y - (y > 300 ? 18 : 0), 2, 20);
+        if (x > 600) { ctx.fillRect(x+18, y - (y > 300 ? 18 : 0), 2, 20); }
+      });
+      
+      // Top label
+      ctx.fillStyle = '#8b1a1a';
+      ctx.font = 'bold 14px monospace';
+      ctx.textAlign = 'center';
+      ctx.letterSpacing = '12px';
+      ctx.fillText('INDEPENDENT INVESTIGATION  //  2026', 600, 130);
+      
+      // Main title
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 108px Cinzel, "Times New Roman", serif';
+      ctx.shadowColor = 'rgba(204,0,0,0.4)';
+      ctx.shadowBlur = 15;
+      ctx.fillText('SODOM HALL', 600, 260);
+      ctx.shadowBlur = 0;
+      
+      // Red underline
+      ctx.fillStyle = '#cc0000';
+      ctx.fillRect(350, 280, 500, 4);
+      
+      // Subtitle
+      ctx.fillStyle = '#c8bdb0';
+      ctx.font = 'italic 28px "Cormorant Garamond", Georgia, serif';
+      ctx.fillText('The Cathedral of Documents', 600, 330);
+      
+      // Divider
+      ctx.strokeStyle = 'rgba(139,26,26,0.5)';
+      ctx.beginPath();
+      ctx.moveTo(450, 360);
+      ctx.lineTo(750, 360);
+      ctx.stroke();
+      
+      // Headline
+      ctx.fillStyle = '#e8e0d6';
+      ctx.font = 'bold 24px Georgia, serif';
+      ctx.fillText('Judge Orders Release of Hidden Reports —', 600, 410);
+      ctx.fillText('20,000+ Pages Expose Decades of Cover-Up', 600, 445);
+      
+      // URL
+      ctx.fillStyle = '#666';
+      ctx.font = '13px monospace';
+      ctx.fillText('SODOMHALL.COM', 600, 520);
+      
+      // Byline
+      ctx.fillStyle = '#555';
+      ctx.font = '11px monospace';
+      ctx.fillText('BY DEI JOURNO', 600, 550);
+    });
+  </script>
+</body>
+</html>
