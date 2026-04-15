@@ -64,6 +64,13 @@ export default function HeadlineNews() {
                 <p className="text-xl font-serif italic text-zinc-700 max-w-3xl">
                     The Benjamin Ruling: Unsealing the Latham Report and the collapse of institutional immunity.
                 </p>
+                <div className="mt-4 flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                    <span>By Dei Journo</span>
+                    <span className="text-zinc-300">·</span>
+                    <span>Published March 2026</span>
+                    <span className="text-zinc-300">·</span>
+                    <span>Updated April 2026</span>
+                </div>
             </header>
 
             {/* View Selector - Sequential Progression */}
@@ -168,7 +175,7 @@ export default function HeadlineNews() {
 
                                     // Subheadline
                                     if (idx === 1) {
-                                        return <p key={idx} className="text-xl md:text-2xl font-serif italic text-zinc-200 mb-6">{paragraph}</p>;
+                                        return <p key={idx} className="text-xl md:text-2xl font-serif italic text-zinc-600 mb-6">{paragraph}</p>;
                                     }
 
                                     // Byline

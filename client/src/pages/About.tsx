@@ -52,7 +52,7 @@ export default function About() {
                 Sodomhall is an independent forensic project. We document the institutional failures of Seton Hall University and the Archdiocese of Newark in addressing clergy abuse.
               </p>
               <p className="text-xl leading-relaxed text-[#e2dacf]">
-                450 plaintiffs demand a full accounting. We track the power, protection, and legal engineering used to conceal abuse rather than cure it.
+                <a href="https://www.nj.gov/oag/newsreleases16/Clergy-Abuse-Grand-Jury-Report.pdf" target="_blank" rel="noopener" className="underline decoration-[#c41e1e]/40 hover:decoration-[#c41e1e] transition-colors">450+ plaintiffs</a> demand a full accounting. We track the power, protection, and legal engineering used to conceal abuse rather than cure it.
               </p>
             </section>
 

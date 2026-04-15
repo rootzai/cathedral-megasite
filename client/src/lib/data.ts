@@ -45,7 +45,7 @@ export interface LawyerFirm {
 
 export const BADGE_LABELS: Record<Badge, string> = {
   latham: "2019 Board (Latham Era)",
-  reilly: "Voted for Reilly (2024)",
+  reilly: "Reilly Adjacent (2024)",
   tobin: "Received Cardinal Tobin Letters",
   christie: "Christie Network",
   resigned: "Resigned",

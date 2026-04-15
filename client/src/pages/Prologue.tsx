@@ -8,7 +8,7 @@ import { SEO } from "@/components/SEO";
 export default function TierOneOnboarding() {
     const [_, setLocation] = useLocation();
     const { scrollY } = useScroll();
-    
+
     // Hardware accelerated parallax using useTransform
     const heroY = useTransform(scrollY, [0, 1000], [0, 300]);
     const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.2]);
@@ -37,13 +37,13 @@ export default function TierOneOnboarding() {
             {/* The Tourist Hook (Tier 2 Transition Overlay) */}
             <AnimatePresence>
                 {keyAcquired && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-6"
                     >
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-                        <motion.div 
+                        <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                        <motion.div
                             initial={{ scale: 0.8, filter: "blur(10px)" }}
                             animate={{ scale: 1, filter: "blur(0px)" }}
                             transition={{ duration: 0.5 }}
@@ -53,7 +53,7 @@ export default function TierOneOnboarding() {
                             <h2 className="text-4xl md:text-6xl font-black font-sans uppercase tracking-widest text-white">Anomalous Data Detected</h2>
                             <p className="text-xl md:text-2xl font-mono text-[#8b1a1a]">CLEARANCE KEY [LATHAM_RPT] ACQUIRED.</p>
                             <div className="w-full h-1 bg-zinc-900 mt-8 overflow-hidden">
-                                <motion.div 
+                                <motion.div
                                     initial={{ width: "0%" }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 2.5, ease: "linear" }}
@@ -68,14 +68,14 @@ export default function TierOneOnboarding() {
 
             {/* Parallax Hero */}
             <div className="relative w-full h-[80vh] md:h-screen overflow-hidden bg-[#070709]">
-                <motion.div 
+                <motion.div
                     className="absolute inset-0 w-full h-[120%] -top-[10%] bg-gradient-to-tr from-zinc-900 to-black"
                     style={{ y: heroY, opacity: heroOpacity, willChange: "transform, opacity" }}
                 >
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-20 mix-blend-overlay"></div>
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent" />
-                
+
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 mt-32 md:mt-0">
                     <span className="text-[#8b1a1a] font-mono text-xs md:text-sm uppercase tracking-[0.5em] font-black mb-8 block">The Fall Of Newark</span>
                     <h1 className="text-5xl md:text-8xl lg:text-9xl text-white font-serif tracking-tighter leading-none uppercase font-black drop-shadow-2xl max-w-6xl mx-auto">
@@ -86,7 +86,7 @@ export default function TierOneOnboarding() {
 
             {/* Traditional Article Layout (The Gameplay Canvas) */}
             <main className="max-w-3xl mx-auto px-6 py-16 md:py-32 space-y-12 md:space-y-16 relative z-10 bg-[#070709]">
-                
+
                 <article className="text-xl md:text-2xl text-zinc-300 leading-relaxed md:leading-loose space-y-8 md:space-y-12 font-serif">
                     <p className="first-letter:text-[6rem] md:first-letter:text-[8rem] first-letter:font-sans first-letter:text-white first-letter:float-left first-letter:mr-6 first-letter:mt-[-10px] md:first-letter:mt-[-20px] first-letter:leading-none">
                         When Mark Crawford was thirteen years old, a priest named Kenneth Martin began abusing him and his brothers in Bayonne, New Jersey. Then Martin was promoted. Not removed — promoted. He became Archbishop Theodore McCarrick's personal secretary.
@@ -94,10 +94,10 @@ export default function TierOneOnboarding() {
                     <p>
                         When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood, argued the statute of limitations had expired, and refused to pay the $108,000 settlement their own mediator had awarded him.
                     </p>
-                    
+
                     <figure className="my-16 md:my-24 w-full md:w-[130%] md:-ml-[15%]">
                         <div className="w-full h-[400px] bg-zinc-900 border border-zinc-800 flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+                            <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-30 mix-blend-overlay"></div>
                             <span className="text-zinc-700 font-mono text-sm uppercase tracking-widest border border-zinc-700 px-4 py-2 opacity-50">IMAGE_REDACTED_BY_AUTHORITY</span>
                         </div>
                         <figcaption className="mt-4 font-mono text-xs text-zinc-500 tracking-widest uppercase">Exhibit A: Documented routing procedures in the Archdiocese.</figcaption>
@@ -108,9 +108,9 @@ export default function TierOneOnboarding() {
                     </p>
 
                     <p className="pt-12 text-[#c8bdb0]">
-                        But this wasn't an isolated accident. It was the blueprint. What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources, culminating in the 
+                        But this wasn't an isolated accident. It was the blueprint. What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources, culminating in the
                         {/* THE CLEARANCE KEY */}
-                        <button 
+                        <button
                             onClick={handleKeyDiscovery}
                             className="mx-2 inline-flex items-center gap-1 font-bold text-white relative group outline-none"
                         >

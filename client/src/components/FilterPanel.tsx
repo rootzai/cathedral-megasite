@@ -2,7 +2,7 @@
  * FilterPanel — Gothic Ecclesiastical Noir
  * Allows filtering board members by key events:
  *   - Who was on the board in 2019 (heard the Latham Report)
- *   - Who voted for Reilly in 2024
+ *   - Who is Reilly Adjacent (2024)
  *   - Who received Cardinal Tobin's letters
  *   - Christie Network members
  */
@@ -15,7 +15,7 @@ type FilterType = "latham" | "reilly" | "tobin" | "christie" | "nyre" | null;
 
 const FILTERS: { key: FilterType; label: string; icon: React.ReactNode; description: string }[] = [
   { key: "latham", label: "On Board in 2019", icon: <BookOpen className="w-4 h-4" />, description: "Members who were on the board when the Latham Report was presented on August 27, 2019" },
-  { key: "reilly", label: "Voted for Reilly", icon: <Crown className="w-4 h-4" />, description: "Members who voted to elect Msgr. Reilly as Seton Hall president in 2024" },
+  { key: "reilly", label: "Reilly Adjacent", icon: <Crown className="w-4 h-4" />, description: "Members connected to Msgr. Reilly's election as Seton Hall president in 2024" },
   { key: "tobin", label: "Tobin Letters", icon: <Church className="w-4 h-4" />, description: "Members who received Cardinal Tobin's letters regarding the scandal" },
   { key: "christie", label: "Christie Network", icon: <Shield className="w-4 h-4" />, description: "Members connected to the Christie political network" },
   { key: "nyre", label: "Named in Nyre Case", icon: <Gavel className="w-4 h-4" />, description: "Individuals named as defendants in Nyre v. Seton Hall University (Lucciola, D'Alessandro, et al.) — filed February 2024" },

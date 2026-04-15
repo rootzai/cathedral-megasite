@@ -40,6 +40,13 @@ export default function LegalTrumvirate() {
         <p className="text-2xl leading-relaxed italic text-muted-foreground font-serif">
           Six attorneys. Four firms. One institution. How a closed-loop legal apparatus was deployed to dismantle the truth.
         </p>
+        <div className="mt-4 flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+          <span>By Dei Journo</span>
+          <span className="text-zinc-300">·</span>
+          <span>Published March 2026</span>
+          <span className="text-zinc-300">·</span>
+          <span>Updated April 2026</span>
+        </div>
       </header>
 
       {/* Narrative Prose */}
@@ -163,15 +170,15 @@ export default function LegalTrumvirate() {
             <div className="h-px bg-zinc-200 mb-16" />
           </div>
           <div className="lg:col-span-5">
-             <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
-                <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: ESX-L-8762-19</h4>
-                <div className="text-3xl font-black mb-1">Kevin Marino</div>
-                <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">Architect of Privilege</div>
-                <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
-                  <div>Firm: MARINO, TORTORELLA & BOYLE</div>
-                  <div>Role: General Counsel / Board Liaison</div>
-                </div>
-             </div>
+            <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
+              <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: ESX-L-8762-19</h4>
+              <div className="text-3xl font-black mb-1">Kevin Marino</div>
+              <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">Architect of Privilege</div>
+              <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
+                <div>Firm: MARINO, TORTORELLA & BOYLE</div>
+                <div>Role: General Counsel / Board Liaison</div>
+              </div>
+            </div>
           </div>
           <div className="lg:col-span-7">
             <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-600 mb-2 font-mono">Profile 04: The Lead Counsel</h3>
@@ -196,15 +203,15 @@ export default function LegalTrumvirate() {
             <div className="h-px bg-zinc-200 mb-16" />
           </div>
           <div className="lg:col-span-5">
-             <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
-                <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: Newark Chancery Archive</h4>
-                <div className="text-3xl font-black mb-1">Stio · Linares · Papalia</div>
-                <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">The Operational Perimeter</div>
-                <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
-                  <div>Network: The Newark Shield</div>
-                  <div>Capacity: Operational Enforcers</div>
-                </div>
-             </div>
+            <div className="bg-zinc-100 p-8 border border-zinc-200 rounded-sm">
+              <h4 className="font-mono text-xs uppercase tracking-tighter mb-2">Docket: Newark Chancery Archive</h4>
+              <div className="text-3xl font-black mb-1">Stio · Linares · Papalia</div>
+              <div className="text-sm font-bold text-zinc-600 mb-4 uppercase">The Operational Perimeter</div>
+              <div className="space-y-1 text-xs font-mono uppercase tracking-widest text-zinc-500">
+                <div>Network: The Newark Shield</div>
+                <div>Capacity: Operational Enforcers</div>
+              </div>
+            </div>
           </div>
           <div className="lg:col-span-7">
             <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-600 mb-2 font-mono">Profile 05: The Enforcers</h3>

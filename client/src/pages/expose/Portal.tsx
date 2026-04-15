@@ -21,6 +21,13 @@ export default function ExposePortal() {
                     <p className="text-lg md:text-xl text-zinc-700 italic font-serif max-w-2xl mx-auto leading-relaxed">
                         "A forensic audit of institutional complicity, legal manipulation, and the network that protected Theodore McCarrick for forty years."
                     </p>
+                    <div className="mt-4 flex items-center justify-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                        <span>By Dei Journo</span>
+                        <span className="text-zinc-400">·</span>
+                        <span>Published March 2026</span>
+                        <span className="text-zinc-400">·</span>
+                        <span>Updated April 2026</span>
+                    </div>
                 </div>
 
                 {/* Acts Grid */}

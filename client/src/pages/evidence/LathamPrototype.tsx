@@ -36,7 +36,7 @@ export default function LathamPrototype() {
     };
 
     return (
-        <div 
+        <div
             ref={containerRef}
             className="min-h-screen bg-[#050505] overflow-hidden relative cursor-crosshair perspective-1000"
             style={{ perspective: "1000px" }}
@@ -44,7 +44,7 @@ export default function LathamPrototype() {
             <SEO title="Legal Combat Prototype | The Latham Negotiation" />
 
             {/* SCANLINE OVERLAY */}
-            <div className="absolute inset-0 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-50 mix-blend-overlay"></div>
+            <div className="absolute inset-0 pointer-events-none bg-[url('/assets/noise.svg')] opacity-20 z-50 mix-blend-overlay"></div>
 
             {/* HEADER DIAGNOSTICS */}
             <div className="absolute top-6 left-6 z-40 font-mono text-xs text-[#8b1a1a] uppercase space-y-1">
@@ -65,21 +65,21 @@ export default function LathamPrototype() {
                         animate={
                             isShattered
                                 ? {
-                                      opacity: 0,
-                                      y: Math.random() * 800 + 400,
-                                      x: (Math.random() - 0.5) * 1000,
-                                      rotateX: Math.random() * 360,
-                                      rotateY: Math.random() * 360,
-                                      rotateZ: Math.random() * 180,
-                                      filter: "blur(4px)",
-                                      transition: { duration: 1.5, ease: "circIn" }
-                                  }
+                                    opacity: 0,
+                                    y: Math.random() * 800 + 400,
+                                    x: (Math.random() - 0.5) * 1000,
+                                    rotateX: Math.random() * 360,
+                                    rotateY: Math.random() * 360,
+                                    rotateZ: Math.random() * 180,
+                                    filter: "blur(4px)",
+                                    transition: { duration: 1.5, ease: "circIn" }
+                                }
                                 : {
-                                      opacity: 1,
-                                      scale: 1,
-                                      filter: "blur(0px)",
-                                      transition: { duration: 0.5, delay: i * 0.05 }
-                                  }
+                                    opacity: 1,
+                                    scale: 1,
+                                    filter: "blur(0px)",
+                                    transition: { duration: 0.5, delay: i * 0.05 }
+                                }
                         }
                         className={`text-5xl md:text-7xl lg:text-8xl font-black uppercase text-white font-serif tracking-tighter mx-2 my-1 leading-none ${isShattered ? '' : 'hover:text-[#8b1a1a] transition-colors duration-100'}`}
                         style={{
@@ -93,7 +93,7 @@ export default function LathamPrototype() {
             </div>
 
             {/* TRUTH REVEALED UNDERNEATH */}
-            <motion.div 
+            <motion.div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-full max-w-4xl px-8"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: isShattered ? 1 : 0, scale: isShattered ? 1 : 0.9 }}
@@ -134,7 +134,7 @@ export default function LathamPrototype() {
                         <p className="text-zinc-400 text-sm font-mono leading-relaxed pointer-events-none">
                             Bank receipts and routing slips detailing the specific tranches of capital moved into the account 30 days prior to the resignation.
                         </p>
-                        
+
                         <div className="mt-6 text-center">
                             <span className="inline-block bg-[#8b1a1a] text-black font-black text-[10px] uppercase tracking-widest px-4 py-2 animate-bounce">
                                 DRAG TO STRIKE LIE
@@ -143,7 +143,7 @@ export default function LathamPrototype() {
                     </motion.div>
                 </div>
             )}
-            
+
             {/* UI INSTRUCTIONS */}
             <div className={`absolute bottom-6 left-6 font-mono text-[10px] text-zinc-600 transition-opacity ${isDragging ? 'opacity-0' : 'opacity-100'}`}>
                 CLICK AND DRAG EVIDENCE PAYLOAD INTO ENEMY TEXT BLOCK TO SHATTER ACTIVE DEFENSES.

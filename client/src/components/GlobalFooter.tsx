@@ -71,7 +71,7 @@ export function GlobalFooter() {
                     </p>
                     <div className="flex gap-8 items-center">
                         <AlertTriangle className="w-4 h-4 text-[#8b1a1a]" />
-                        <span className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">Active Investigation</span>
+                        <span className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">Ongoing Reporting</span>
                     </div>
                 </div>
             </div>

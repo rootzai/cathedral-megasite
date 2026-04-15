@@ -79,6 +79,13 @@ export default function TheMethod() {
           <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">
             THE <span className="text-[#3a8ef6]">METHOD</span>
           </h1>
+          <div className="flex items-center justify-center gap-3 text-xs font-mono text-zinc-600 uppercase tracking-widest mt-4">
+            <span>By Dei Journo</span>
+            <span className="text-zinc-700">·</span>
+            <span>Published March 2026</span>
+            <span className="text-zinc-700">·</span>
+            <span>Updated April 2026</span>
+          </div>
           <div className="space-y-6 text-xl text-zinc-400 font-serif leading-relaxed italic text-left p-8 bg-[#0D0D10] border border-white/5">
             <p>
               <strong className="text-white not-italic font-cinzel tracking-widest text-sm">Ivan Vucetic, Database Pioneer</strong><br />

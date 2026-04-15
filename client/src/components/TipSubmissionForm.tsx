@@ -7,7 +7,7 @@ export function TipSubmissionForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     // LIVE PRODUCTION ENDPOINT
     const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqakvzvj";
 
@@ -38,7 +38,7 @@ export function TipSubmissionForm() {
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <ShieldCheck className="w-24 h-24 text-red-600" />
         </div>
-        
+
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 bg-red-900/20 rounded border border-red-900/40">
@@ -60,18 +60,18 @@ export function TipSubmissionForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Identity / Alias (Optional)</label>
-                  <input 
+                  <input
                     name="name"
-                    type="text" 
+                    type="text"
                     placeholder="ANONYMOUS"
                     className="w-full bg-black border border-white/10 p-3 text-white font-mono text-sm focus:border-red-600 outline-none transition-all"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Contact Method (Signal/Email)</label>
-                  <input 
+                  <input
                     name="contact"
-                    type="text" 
+                    type="text"
                     placeholder="+1 or @proton.me"
                     className="w-full bg-black border border-white/10 p-3 text-white font-mono text-sm focus:border-red-600 outline-none transition-all"
                   />
@@ -80,7 +80,7 @@ export function TipSubmissionForm() {
 
               <div>
                 <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Category of Intelligence</label>
-                <select 
+                <select
                   name="category"
                   className="w-full bg-black border border-white/10 p-3 text-white font-mono text-sm focus:border-red-600 outline-none transition-all"
                 >
@@ -94,7 +94,7 @@ export function TipSubmissionForm() {
 
               <div>
                 <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Dossier / Narrative Proof</label>
-                <textarea 
+                <textarea
                   name="message"
                   required
                   rows={6}
@@ -105,10 +105,10 @@ export function TipSubmissionForm() {
 
               <div className="p-4 bg-red-950/20 border border-red-900/30 text-xs items-center flex gap-3 text-red-500 font-mono uppercase tracking-[0.2em]">
                 <AlertCircle className="w-4 h-4 shrink-0" />
-                <span>Notice: This form is end-to-end encrypted via Formspree. For 100% air-gapped security, use Signal below.</span>
+                <span>Notice: Submissions are encrypted in transit via TLS and stored by Formspree (a third-party service subject to legal process). For air-gapped security, use Signal or ProtonMail below.</span>
               </div>
 
-              <button 
+              <button
                 type="submit"
                 disabled={status === 'submitting'}
                 className="w-full py-5 bg-red-900 hover:bg-red-700 text-white font-bold uppercase tracking-[0.5em] transition-all disabled:opacity-50"
@@ -133,7 +133,7 @@ export function TipSubmissionForm() {
             For maximum security and anonymity, contact us via Signal. Messages can be set to auto-delete.
           </p>
           <div className="bg-[#050505] p-3 rounded text-center font-mono text-lg text-green-400 border border-white/5">
-            +1 (201) 555-0199
+            Contact via ProtonMail for Signal number
           </div>
         </div>
 

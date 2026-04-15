@@ -331,6 +331,13 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
         )}
 
         <div className={cn("container py-12 lg:py-16 max-w-5xl mx-auto text-base md:text-lg leading-relaxed", rainnDismissed && "mt-[80px] lg:mt-0")}>
+          <div className="mb-8 flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+            <span>By Dei Journo</span>
+            <span className="text-zinc-700">·</span>
+            <span>Published March 2026</span>
+            <span className="text-zinc-700">·</span>
+            <span>Updated April 2026</span>
+          </div>
           {children}
 
           {/* Right of Reply */}
