@@ -19,18 +19,18 @@ export default function About() {
 
   return (
     <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32 overflow-x-hidden">
-      <SEO 
-        title="About The Mission" 
-        description="The independent reconstruction of institutional failure and the search for truth." 
+      <SEO
+        title="About The Mission"
+        description="The independent reconstruction of institutional failure and the search for truth."
       />
-      
+
 
       <main className="max-w-6xl mx-auto px-6 py-20">
-        
+
         {/* Massive 1905 Broadsheet Headline */}
         <div className="text-center mb-24 border-b border-[#c41e1e]/30 pb-16">
           <span className="text-[#d4a843] font-mono font-black tracking-[0.5em] uppercase text-sm mb-6 block">
-            Declaration of Purpose // 2026
+            Declaration of Purpose // 2026 // By Dei Journo
           </span>
           <h1 className="text-7xl md:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter mb-8 drop-shadow-2xl">
             ABOUT THE <span className="text-[#c41e1e]">RECONSTRUCTION</span>
@@ -81,9 +81,9 @@ export default function About() {
           {/* Bold Visual Block */}
           <div className="relative group">
             <div className="absolute inset-0 bg-[#c41e1e]/20 blur-3xl -z-10 group-hover:bg-[#d4a843]/20 transition-colors duration-700"></div>
-            <img 
-              src="/assets/images/cathedral-blueprint.jpg" 
-              alt="Bosch Inspired Redaction Map" 
+            <img
+              src="/assets/images/cathedral-blueprint.jpg"
+              alt="Bosch Inspired Redaction Map"
               className="w-full h-auto border-4 border-[#1a1a1a] shadow-2xl grayscale contrast-150 brightness-75 group-hover:grayscale-0 transition-all duration-700 object-cover"
             />
             <div className="absolute bottom-6 right-6 bg-black/90 border border-[#c41e1e] p-4 max-w-sm backdrop-blur-sm">
@@ -96,7 +96,7 @@ export default function About() {
         {/* Editorial Challenge Box */}
         <div className="bg-[#111] border-2 border-[#c41e1e] p-12 relative overflow-hidden mb-24">
           <div className="absolute -right-20 -top-20 opacity-5">
-             <AlertCircle className="w-96 h-96 text-white" />
+            <AlertCircle className="w-96 h-96 text-white" />
           </div>
           <div className="relative z-10 max-w-3xl">
             <h2 className="text-6xl font-black font-cinzel text-white uppercase tracking-tighter mb-6">
@@ -120,7 +120,7 @@ export default function About() {
         <section className="text-center max-w-4xl mx-auto space-y-8 mb-24">
           <h2 className="text-5xl font-black font-cinzel text-[#d4a843] uppercase tracking-wider">The Silence Doctrine</h2>
           <p className="text-2xl leading-relaxed text-white">
-            When confronted with 40 years of documented abuse, the institutional response has been singular: 
+            When confronted with 40 years of documented abuse, the institutional response has been singular:
             <span className="text-[#c41e1e] font-black ml-2 px-2 py-1 bg-[#1a0000]">"No comment."</span>
           </p>
           <p className="text-xl text-[#888] font-serif italic">

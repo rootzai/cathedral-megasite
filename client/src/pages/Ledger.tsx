@@ -36,7 +36,7 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
       <div className="flex gap-2 mb-6 flex-wrap">
         {votedForReilly && (
           <div className="bg-[#c41e1e] border-2 border-[#fff] text-white text-xs font-mono px-3 py-1 rounded-sm uppercase tracking-widest font-black shadow-lg">
-            [Voted Reilly]
+            [Reilly Adjacent]
           </div>
         )}
         {heardLatham && (

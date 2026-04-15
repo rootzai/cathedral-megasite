@@ -67,7 +67,7 @@ export function GlobalFooter() {
 
                 <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-30">
                     <p className="text-xs font-courier text-zinc-500 uppercase tracking-[0.4em]">
-                        SH-2026 // CATHEDRAL MEGASITE // NO STATUTE
+                        SH-2026 // CATHEDRAL MEGASITE // NO STATUTE // By Dei Journo
                     </p>
                     <div className="flex gap-8 items-center">
                         <AlertTriangle className="w-4 h-4 text-[#8b1a1a]" />

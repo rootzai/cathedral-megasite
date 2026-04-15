@@ -63,8 +63,8 @@ export default function Warnings() {
         <p className="font-serif text-lg mb-4">
           The 2020 Vatican Report revealed that high-ranking Church officials, including Cardinals in the Vatican, were aware of the allegations.
         </p>
-        <div className="bg-white text-zinc-900 p-6 font-mono text-sm leading-loose">
-          <p className="mb-4 uppercase text-destructive font-bold border-b border-white/20 pb-2">CONFIDENTIAL MEMO: O'CONNOR TO NUNCIO</p>
+        <div className="bg-[#f5f0e8] text-zinc-900 p-6 font-mono text-sm leading-loose rounded-sm shadow-lg">
+          <p className="mb-4 uppercase text-destructive font-bold border-b border-zinc-300 pb-2">CONFIDENTIAL MEMO: O'CONNOR TO NUNCIO</p>
           <p>
             In 1999, Cardinal John O'Connor of New York wrote a letter warning against McCarrick's promotion to Washington, citing <RedactedText>credible allegations of sexual misconduct</RedactedText> with young men.
           </p>

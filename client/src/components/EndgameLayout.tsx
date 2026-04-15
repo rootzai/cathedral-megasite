@@ -124,6 +124,10 @@ export default function EndgameLayout({ children }: EndgameLayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-background text-foreground font-body selection:bg-primary/20 selection:text-primary-foreground relative">
+      {/* Skip-to-content for keyboard/screen reader users */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-destructive focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:font-mono focus:uppercase focus:tracking-widest">
+        Skip to content
+      </a>
       <div className="texture-overlay" />
 
       {/* =========== DESKTOP SIDEBAR =========== */}

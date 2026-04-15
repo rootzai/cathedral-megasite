@@ -89,7 +89,7 @@ export function PersonCard({ person, index = 0, onBadgeClick }: {
                 >
                   {badgeIcons[badge]}
                   {badge === "latham" ? "Latham" :
-                    badge === "reilly" ? "Voted Reilly" :
+                    badge === "reilly" ? "Reilly Adjacent" :
                       badge === "tobin" ? "Tobin Letters" :
                         badge === "christie" ? "Christie" :
                           badge === "resigned" ? "Resigned" :

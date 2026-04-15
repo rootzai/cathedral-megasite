@@ -28,7 +28,7 @@ export default function SetonHall() {
       </div>
 
       <div className="prose prose-invert max-w-none">
-        <p className="lead text-2xl font-serif border-l-8 border-red-900 pl-10 italic text-white bg-zinc-900/50 py-10 shadow-2xl">
+        <p className="lead text-xl font-serif border-l-8 border-red-900 pl-10 italic text-white bg-zinc-900/50 py-10 shadow-2xl">
           "The seminary was known as a 'brothel' in the 80s and 90s... McCarrick created a culture of fear and intimidation."
           <span className="block mt-4 text-red-600 font-mono text-sm uppercase font-black">— INTERNAL INVESTIGATIVE RECORD</span>
         </p>

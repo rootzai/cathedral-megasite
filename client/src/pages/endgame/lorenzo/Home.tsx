@@ -22,7 +22,7 @@ export default function Home() {
                             <span className="text-destructive italic underline decoration-destructive/30 underline-offset-8">Waiting</span>
                         </h1>
 
-                        <div className="prose-investigative text-3xl leading-relaxed text-zinc-200 font-serif italic border-l-4 border-red-700 pl-10 py-6 bg-red-950/20 shadow-2xl">
+                        <div className="prose-investigative text-xl leading-relaxed text-zinc-200 font-serif italic border-l-4 border-red-700 pl-10 py-6 bg-red-950/20 shadow-2xl">
                             "To understand Elias Lorenzo is to understand the Church's final defensive posture:
                             the 'institutional rehabilitation' of a man who managed the silence for thirty years,
                             only to be positioned as the ultimate successor."
@@ -83,7 +83,7 @@ export default function Home() {
                         </div>
 
                         <blockquote className="border-l-[6px] border-red-600 pl-12 py-10 my-16 bg-red-950/20 shadow-2xl">
-                            <p className="text-4xl font-black leading-tight mb-8 text-white">
+                            <p className="text-xl font-black leading-tight mb-8 text-white">
                                 "He didn't just witness the silence; he administered it. He was the
                                 gatekeeper of a culture that traded the safety of children for the
                                 reputation of an Abbey."
