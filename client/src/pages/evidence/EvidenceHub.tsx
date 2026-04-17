@@ -24,8 +24,13 @@ export default function EvidenceHub() {
 
             {/* The Gateway (Triptych + Onboarding) */}
             {showOnboarding && (
-                <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8 overflow-y-auto">
-                    
+                <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/90 backdrop-blur-xl p-4 md:p-8 overflow-y-auto">
+                    {/* Cathedral Nave atmospheric layers */}
+                    <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.15] select-none pointer-events-none" />
+                    <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_center,_rgba(180,140,60,0.08)_0%,_transparent_50%)] pointer-events-none" />
+                    <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(139,26,26,0.12)_100%)] pointer-events-none" />
+                    <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
+
                     {/* Pinned Action Text */}
                     <div className="fixed top-6 right-6 md:top-8 md:right-12 z-[60]">
                         <Link href="/evidence" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-xs md:text-sm font-mono uppercase tracking-widest transition-colors bg-black/50 backdrop-blur-md px-4 py-2 border border-white/10 rounded-full cursor-pointer">
