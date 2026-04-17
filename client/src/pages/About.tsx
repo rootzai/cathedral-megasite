@@ -18,21 +18,24 @@ export default function About() {
   }, [location]);
 
   return (
-    <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32 overflow-x-hidden">
+    <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32 overflow-x-hidden relative">
+      <img src="/assets/cathedral/cathedral_rose_window_2.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.04] select-none pointer-events-none" />
+      <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c] pointer-events-none" />
+      <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
       <SEO
         title="About The Mission"
         description="The independent reconstruction of institutional failure and the search for truth."
       />
 
 
-      <main className="max-w-6xl mx-auto px-6 py-20">
+      <main className="max-w-6xl mx-auto px-6 py-20 relative z-10">
 
         {/* Massive 1905 Broadsheet Headline */}
         <div className="text-center mb-24 border-b border-[#c41e1e]/30 pb-16">
           <span className="text-[#d4a843] font-mono font-black tracking-[0.5em] uppercase text-sm mb-6 block">
             Declaration of Purpose // 2026 // By Dei Journo
           </span>
-          <h1 className="text-7xl md:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter mb-8 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-7xl lg:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter mb-8 drop-shadow-2xl">
             ABOUT THE <span className="text-[#c41e1e]">RECONSTRUCTION</span>
           </h1>
           <p className="text-2xl md:text-3xl text-[#e2dacf]/80 max-w-4xl mx-auto italic font-serif leading-snug">

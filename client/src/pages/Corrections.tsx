@@ -3,7 +3,10 @@ import { CheckCircle, Mail, Clock } from "lucide-react";
 
 export default function Corrections() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-200">
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-200 relative">
+            <img src="/assets/cathedral/cathedral_rose_window_2.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.03] select-none pointer-events-none" />
+            <div className="fixed inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
             <header className="relative z-50 bg-black/90 backdrop-blur-sm border-b border-zinc-800">
                 <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
                     <Link href="/">

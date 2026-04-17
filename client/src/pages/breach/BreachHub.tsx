@@ -46,7 +46,7 @@ export default function BreachHub() {
                         </span>
                     </div>
 
-                    <h1 className="text-7xl md:text-[9rem] font-black font-cinzel text-white uppercase tracking-tighter mb-12 leading-[0.85] drop-shadow-2xl">
+                    <h1 className="text-5xl md:text-7xl lg:text-[9rem] font-black font-cinzel text-white uppercase tracking-tighter mb-12 leading-[0.85] drop-shadow-2xl">
                         THE <span className="text-[#c41e1e]">BREACH</span>
                     </h1>
 

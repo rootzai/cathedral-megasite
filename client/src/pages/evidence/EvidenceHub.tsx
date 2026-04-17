@@ -25,6 +25,14 @@ export default function EvidenceHub() {
             {/* The Gateway (Triptych + Onboarding) */}
             {showOnboarding && (
                 <div className="absolute inset-0 z-50 flex items-start justify-center bg-black/95 backdrop-blur-xl p-4 md:p-8 overflow-y-auto">
+                    
+                    {/* Pinned Action Text */}
+                    <div className="fixed top-6 right-6 md:top-8 md:right-12 z-[60]">
+                        <Link href="/evidence" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-xs md:text-sm font-mono uppercase tracking-widest transition-colors bg-black/50 backdrop-blur-md px-4 py-2 border border-white/10 rounded-full cursor-pointer">
+                            Skip / Enter Site <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
+
                     <div className="max-w-6xl w-full border border-[#8b1a1a]/30 bg-[#050505] p-6 md:p-12 relative shadow-[0_0_80px_rgba(139,26,26,0.1)] mt-auto mb-auto md:mt-20 md:mb-20">
 
                         <div className="absolute top-0 left-0 w-1 h-full bg-[#8b1a1a]"></div>
@@ -43,12 +51,7 @@ export default function EvidenceHub() {
                                 </p>
                             </div>
 
-                            {/* Skip link (Tier 1b) */}
-                            <div className="flex justify-center mt-8">
-                                <Link href="/evidence" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-base font-mono uppercase tracking-widest transition-colors">
-                                    Just show me the site <ArrowRight className="w-5 h-5" />
-                                </Link>
-                            </div>
+                            {/* Skip link (Tier 1b) - Original removed as it's now pinned to the top right */}
                         </div>
 
                         {/* REILLY BANNER (Tier 1c) */}

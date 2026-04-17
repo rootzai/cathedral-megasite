@@ -17,7 +17,7 @@ export default function Home() {
                             Special Report // Act IV: The Succession
                         </div>
 
-                        <h1 className="font-heading text-7xl md:text-8xl text-foreground leading-[0.9] tracking-tighter">
+                        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-foreground leading-[0.9] tracking-tighter">
                             The King in <br />
                             <span className="text-destructive italic underline decoration-destructive/30 underline-offset-8">Waiting</span>
                         </h1>

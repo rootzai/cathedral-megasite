@@ -13,19 +13,20 @@ export default function Maproom() {
     }
 
     return (
-        <div className="min-h-screen bg-black text-[#F5EDD0] font-sans overflow-y-auto pb-32">
-            <SEO 
-                title="Maproom Grid | Sodom Hall" 
-                description="The Forensic Architectural Shell View." 
+        <div className="min-h-screen bg-black text-[#F5EDD0] font-sans overflow-y-auto pb-32 relative">
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+            <SEO
+                title="Maproom Grid | Sodom Hall"
+                description="The Forensic Architectural Shell View."
             />
 
             {/* The SCIF Terminal / Rollover Story (Restored without changes) */}
             <div className="pt-24 pb-20 px-6 max-w-5xl mx-auto mb-24 relative bg-[#040504] border border-[#1a1f1a] shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col items-center justify-center md:min-h-[450px]">
                 {/* CRT Scanline overlay */}
                 <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-10 opacity-20" />
-                
+
                 <div className="relative z-20 flex flex-col items-center space-y-20 w-full">
-                    
+
                     {/* Node 1: SCIF */}
                     <div className="group relative cursor-crosshair w-full flex justify-center">
                         <div className="text-center transition-opacity duration-300 relative z-10">
@@ -67,7 +68,7 @@ export default function Maproom() {
                             </div>
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#cc0000] border border-[#ff3333] p-8 shadow-[0_0_40px_rgba(204,0,0,0.3)] pointer-events-none">
                                 <p className="font-mono text-white font-black text-sm tracking-widest text-center uppercase leading-loose">
-                                    [ Perimeter Breached ]<br/>
+                                    [ Perimeter Breached ]<br />
                                     Decrypting Directories...
                                 </p>
                             </div>

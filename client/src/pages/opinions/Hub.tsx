@@ -46,12 +46,15 @@ const columnists = [
 
 export default function OpinionsHub() {
     return (
-        <div className="page-enter max-w-6xl mx-auto px-6 py-20 bg-[#0a0a0c] min-h-screen text-[#F5EDD0] font-['Share_Tech_Mono']">
+        <div className="page-enter max-w-6xl mx-auto px-6 py-20 bg-[#0a0a0c] min-h-screen text-[#F5EDD0] font-['Share_Tech_Mono'] relative">
+            <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.03] select-none pointer-events-none" />
+            <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c] pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
 
             {/* Newspaper Masthead Style */}
             <header className="border-b-2 border-[#cc0000] pb-12 mb-20 text-center">
                 <div className="font-mono text-xs uppercase tracking-[0.5em] mb-4 text-[#D4A017]">[ Perspectives & Commentary ]</div>
-                <h1 className="text-8xl font-black tracking-widest uppercase mb-2 text-white font-sans">
+                <h1 className="text-5xl md:text-8xl font-black tracking-widest uppercase mb-2 text-white font-sans">
                     The <span className="italic text-[#cc0000]">Voices</span>
                 </h1>
                 <p className="text-sm font-sans italic text-zinc-500 uppercase tracking-widest">

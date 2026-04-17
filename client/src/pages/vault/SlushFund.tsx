@@ -6,10 +6,11 @@ import { Link } from "wouter";
 
 export default function SlushFund() {
     return (
-        <div className="min-h-screen bg-[#0a0a0c] text-[#F5EDD0] font-sans pb-20">
-            <SEO 
-                title="Slush Fund Ledger | Sodom Hall" 
-                description="Forensic tracking of institutional wealth and settlement mechanics." 
+        <div className="min-h-screen bg-[#0a0a0c] text-[#F5EDD0] font-sans pb-20 relative">
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+            <SEO
+                title="Slush Fund Ledger | Sodom Hall"
+                description="Forensic tracking of institutional wealth and settlement mechanics."
             />
 
             {/* Header */}
@@ -31,7 +32,7 @@ export default function SlushFund() {
             </div>
 
             <main className="max-w-6xl mx-auto px-8 py-16 space-y-24">
-                
+
                 {/* Wealth Map Component Integration */}
                 <section className="space-y-8">
                     <div className="flex items-center gap-4 border-l-4 border-[#8b1a1a] pl-6">

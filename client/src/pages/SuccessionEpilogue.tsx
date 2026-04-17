@@ -4,7 +4,9 @@ import { Link } from "wouter";
 
 export default function SuccessionEpilogue() {
     return (
-        <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20">
+        <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20 relative">
+            <img src="/assets/cathedral/cathedral_rose_window.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.03] select-none pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
 
             {/* Cinematic Header */}
             <header className="text-center space-y-8 py-20">
@@ -12,7 +14,7 @@ export default function SuccessionEpilogue() {
                     <Anchor className="w-16 h-16 text-zinc-800 animate-bounce" />
                 </div>
                 <div className="exhibit-label mx-auto text-zinc-800 mb-4 uppercase tracking-[0.4em] font-mono text-xs">The Final Word · Epilogue</div>
-                <h1 className="text-8xl font-black mb-6 leading-[0.8] tracking-tighter uppercase text-zinc-800" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.8] tracking-tighter uppercase text-zinc-800" style={{ fontFamily: "'Playfair Display', serif" }}>
                     The Millstone <br />Rises
                 </h1>
                 <p className="text-2xl font-serif italic text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -62,8 +64,8 @@ export default function SuccessionEpilogue() {
                     Witness the <span className="text-zinc-800">Whole</span>
                 </h2>
                 <p className="text-lg text-muted-foreground font-serif max-w-2xl mx-auto italic">
-                     The narrative concludes here, but the data is eternal. Proceed to the
-                     Appendices to audit the specific names and documented records.
+                    The narrative concludes here, but the data is eternal. Proceed to the
+                    Appendices to audit the specific names and documented records.
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-6 justify-center pt-8">
