@@ -4,6 +4,7 @@ import ShieldHub from "@/components/ShieldHub";
 import AmbientParticles from "@/components/AmbientParticles";
 import { SEO } from "@/components/SEO";
 import { ArrowLeft, BookOpen, Fingerprint, Search } from "lucide-react";
+import LivingSymbol from "@/components/LivingSymbol";
 
 export default function ArchitectureMap() {
   const [, setLocation] = useLocation();
@@ -63,30 +64,51 @@ export default function ArchitectureMap() {
 
           {/* INVESTIGATION TOOLS (ADDITIONAL ARCHIVES) */}
           <div>
-            <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest mb-12">
+            <h3 className="text-3xl font-black font-cinzel text-white uppercase tracking-widest mb-16 text-center drop-shadow-lg">
               Investigation Tools
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Link href="/evidence/mckeever" className="group block bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/40 transition-colors">
-                <Fingerprint className="w-8 h-8 text-[#8b1a1a] mb-4 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white font-cinzel text-xl font-bold uppercase mb-2">Featured Case Study</h4>
-                <p className="text-sm font-mono text-zinc-500 uppercase">McKeever Foundation</p>
-              </Link>
-              <Link href="/method" className="group block bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/40 transition-colors">
-                <Search className="w-8 h-8 text-[#8b1a1a] mb-4 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white font-cinzel text-xl font-bold uppercase mb-2">The Method</h4>
-                <p className="text-sm font-mono text-zinc-500 uppercase">Forensic Methodology</p>
-              </Link>
-              <Link href="/opinion" className="group block bg-[#0D0D10] border border-white/5 p-8 hover:border-[#8b1a1a]/40 transition-colors">
-                <BookOpen className="w-8 h-8 text-[#8b1a1a] mb-4 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white font-cinzel text-xl font-bold uppercase mb-2">The Rewrite</h4>
-                <p className="text-sm font-mono text-zinc-500 uppercase">Journalistic Opinions</p>
-              </Link>
-              <Link href="/madman" className="group block bg-[#0D0D10] border border-white/5 p-8 hover:border-[#d4af37]/40 transition-colors">
-                <Fingerprint className="w-8 h-8 text-[#d4af37] mb-4 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white font-cinzel text-xl font-bold uppercase mb-2">Madman McCarrick</h4>
-                <p className="text-sm font-mono text-[#d4af37]/60 uppercase">The Secretarial Archive</p>
-              </Link>
+            <div className="flex flex-col gap-24 items-center pl-4 md:pl-0">
+              
+              <div className="self-start md:ml-[10%]">
+                <LivingSymbol 
+                  href="/evidence/mckeever" 
+                  imageSrc="/assets/symbols/apple_evidence.png" 
+                  title="McKeever Foundation" 
+                  description="Featured Historical Case Study" 
+                  glowColor="#8b1a1a" 
+                />
+              </div>
+
+              <div className="self-end md:mr-[10%]">
+                <LivingSymbol 
+                  href="/method" 
+                  imageSrc="/assets/symbols/method_keyhole.png" 
+                  title="The Method" 
+                  description="Systemic Forensic Methodology" 
+                  glowColor="#ef4444" 
+                />
+              </div>
+
+              <div className="self-start md:ml-[15%]">
+                <LivingSymbol 
+                  href="/opinion" 
+                  imageSrc="/assets/symbols/ledger_cloud.png" 
+                  title="The Rewrite" 
+                  description="Journalistic & Institutional Opinions" 
+                  glowColor="#0ea5e9" 
+                />
+              </div>
+
+              <div className="self-end md:mr-[15%]">
+                <LivingSymbol 
+                  href="/madman" 
+                  imageSrc="/assets/symbols/arch_madman.png" 
+                  title="Madman McCarrick" 
+                  description="The Secretarial Archive" 
+                  glowColor="#d4af37" 
+                />
+              </div>
+
             </div>
           </div>
 
