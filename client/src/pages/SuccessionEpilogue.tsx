@@ -5,8 +5,8 @@ import { Link } from "wouter";
 export default function SuccessionEpilogue() {
     return (
         <div className="page-enter max-w-5xl mx-auto px-6 py-12 space-y-20 relative">
-            <img src="/assets/cathedral/cathedral_rose_window.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.03] select-none pointer-events-none" />
-            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
+            <img src="/assets/cathedral/cathedral_rose_window.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.10] select-none pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
 
             {/* Cinematic Header */}
             <header className="text-center space-y-8 py-20">

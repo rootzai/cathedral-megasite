@@ -14,7 +14,7 @@ export default function Maproom() {
 
     return (
         <div className="min-h-screen bg-black text-[#F5EDD0] font-sans overflow-y-auto pb-32 relative">
-            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
             <SEO
                 title="Maproom Grid | Sodom Hall"
                 description="The Forensic Architectural Shell View."

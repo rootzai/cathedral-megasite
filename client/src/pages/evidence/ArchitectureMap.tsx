@@ -20,7 +20,7 @@ export default function ArchitectureMap() {
       />
       {/* Atmospheric bg layer — cathedral architecture */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="w-full h-[50vh] object-cover opacity-[0.04]" />
+        <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="w-full h-[50vh] object-cover opacity-[0.12]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/80 to-[#09090b]" />
       </div>
       {/* ⬡ — The Map Room. Architecture reveals intent */}

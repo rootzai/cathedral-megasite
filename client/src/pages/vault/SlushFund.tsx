@@ -7,7 +7,7 @@ import { Link } from "wouter";
 export default function SlushFund() {
     return (
         <div className="min-h-screen bg-[#0a0a0c] text-[#F5EDD0] font-sans pb-20 relative">
-            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
             <SEO
                 title="Slush Fund Ledger | Sodom Hall"
                 description="Forensic tracking of institutional wealth and settlement mechanics."

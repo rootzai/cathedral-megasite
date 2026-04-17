@@ -47,9 +47,9 @@ const columnists = [
 export default function OpinionsHub() {
     return (
         <div className="page-enter max-w-6xl mx-auto px-6 py-20 bg-[#0a0a0c] min-h-screen text-[#F5EDD0] font-['Share_Tech_Mono'] relative">
-            <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.03] select-none pointer-events-none" />
+            <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.10] select-none pointer-events-none" />
             <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c] pointer-events-none" />
-            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
+            <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
 
             {/* Newspaper Masthead Style */}
             <header className="border-b-2 border-[#cc0000] pb-12 mb-20 text-center">
