@@ -18,14 +18,11 @@ export default function ArchitectureMap() {
         title="Map Room: The Architecture of Protection"
         description="The interactive architectural map exploring the structural defense mechanisms concealing clerical abuse."
       />
-      {/* Atmospheric bg layer — cathedral architecture */}
+      {/* Cathedral — the actual background */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="w-full h-[70vh] object-cover opacity-[0.18]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/70 to-[#09090b]" />
+        <img src="/assets/cathedral/cathedral_interior_wide.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#09090b]" />
       </div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,_rgba(180,140,60,0.06)_0%,_transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(139,26,26,0.08)_100%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.04] mix-blend-overlay pointer-events-none" />
       {/* ⬡ — The Map Room. Architecture reveals intent */}
       <div className="absolute top-20 right-6 text-white/[0.02] hover:text-white/15 text-8xl font-cinzel font-black select-all transition-colors duration-1000 cursor-default z-20" aria-hidden="true">⬡</div>
       <AmbientParticles count={25} />

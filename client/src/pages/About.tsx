@@ -19,9 +19,8 @@ export default function About() {
 
   return (
     <div className="bg-[#0a0a0c] text-[#e2dacf] selection:bg-[#c41e1e]/30 font-serif pb-32 overflow-x-hidden relative">
-      <img src="/assets/cathedral/cathedral_rose_window_2.jpg" alt="" className="fixed inset-0 w-full h-full object-cover opacity-[0.12] select-none pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0c] via-transparent to-[#0a0a0c] pointer-events-none" />
-      <div className="fixed inset-0 bg-[url('/assets/noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none" />
+      <img src="/assets/cathedral/cathedral_rose_window_2.jpg" alt="" className="fixed inset-0 w-full h-full object-cover select-none pointer-events-none" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
       <SEO
         title="About The Mission"
         description="The independent reconstruction of institutional failure and the search for truth."
