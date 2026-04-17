@@ -31,5 +31,7 @@ pnpm-debug.log*
 .vite/
 .vercel
 
-# Screenshot verification output
-.screenshots/
+# Screenshot verification output (commit via: git add -f if needed)
+# NOTE: Not in gitignore so the agent can read them for verification.
+# Use a pre-commit check or rm -rf .screenshots before commit.
+# .screenshots/

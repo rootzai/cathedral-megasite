@@ -72,7 +72,7 @@ export default function HumptyCaseStudy() {
             <WallCrack />
 
             {/* Counter */}
-            <div className="fixed top-8 left-8 z-50 flex items-center gap-4 bg-black/50 p-4 rounded-full border border-[#8b1a1a]/30 backdrop-blur-md">
+            <div className="fixed top-8 right-8 z-50 flex items-center gap-4 bg-black/50 p-4 rounded-full border border-[#8b1a1a]/30 backdrop-blur-md">
                 <div className="font-mono text-[10px] uppercase text-[#8b1a1a] tracking-[0.2em]">Easter Eggs</div>
                 <div className="font-heading text-2xl text-[#f4ecd8]">
                     <span className={foundEggs.size > 0 ? "text-yellow-500 animate-pulse" : ""}>{foundEggs.size}</span>
@@ -85,7 +85,7 @@ export default function HumptyCaseStudy() {
                 {/* MASTHEAD Section */}
                 <section className="h-screen flex flex-col justify-center items-center text-center p-8">
                     <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#8b1a1a] mb-6 block">Sodom Hall // Forensic Literature Division // Easter 2026</span>
-                    <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#f4ecd8] to-zinc-600 drop-shadow-2xl mb-4" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
+                    <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-[#f4ecd8] to-zinc-400 drop-shadow-2xl mb-4 leading-tight" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}>
                         A Case Study Masquerading as a Nursery Rhyme
                     </h1>
                     <h3 className="font-mono text-sm md:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed pt-8 border-t border-zinc-800">

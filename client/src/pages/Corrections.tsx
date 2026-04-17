@@ -6,22 +6,7 @@ export default function Corrections() {
         <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-zinc-200 relative">
             <img src="/assets/cathedral/cathedral_rose_window_2.jpg" alt="" className="fixed inset-0 w-full h-full object-cover select-none pointer-events-none" />
             <div className="fixed inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
-            <header className="relative z-50 bg-black/90 backdrop-blur-sm border-b border-zinc-800">
-                <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
-                    <Link href="/">
-                        <a className="text-2xl font-bold text-white hover:text-zinc-300 transition-colors flex items-center gap-3">
-                            <img src="/assets/sodom-hall-logo.png" alt="Sodom Hall Home" className="h-8 w-auto grayscale brightness-200 hover:brightness-100 hover:grayscale-0 transition-all" />
-                            SODOM HALL
-                        </a>
-                    </Link>
-                    <nav className="flex gap-3 sm:gap-6">
-                        <Link href="/"><a className="text-zinc-400 hover:text-white transition-colors">Home</a></Link>
-                        <Link href="/about"><a className="text-zinc-400 hover:text-white transition-colors">About</a></Link>
-                    </nav>
-                </div>
-            </header>
-
-            <main className="container mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-24 max-w-3xl">
+            <main className="container mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-24 max-w-3xl relative z-10">
 
                 {/* Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20">

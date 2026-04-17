@@ -5,7 +5,7 @@
 ## Rule 0: NEVER CLAIM VERIFICATION WITHOUT PROOF
 
 - **Do not say "this works" or "this looks right" without producing screenshots.**
-- **Before any push that touches visuals**, run the screenshot tool and capture at LEAST 5 pages including the specific pages you changed. View every screenshot with the Read tool. Report what you actually see, not what you assume.
+- **Before any push that touches visuals**, run the screenshot tool and capture at LEAST **25 pages** (tool enforces this and exits 1 if fewer succeed) including the specific pages you changed. View every screenshot with the Read tool. Report what you actually see, not what you assume.
 - **If the dev server is not running**, start it (`npx vite --port 5174` from project root) before taking screenshots. Use the port Vite reports — it auto-increments if the port is busy.
 - **If a screenshot reveals a problem** (404, broken image, wrong layout, unreadable text), fix it BEFORE pushing. Never push over a known visual defect.
 - **Claiming "I cannot see pixels" is a lie** — the screenshot tool exists. If you say you can't verify visually, you are refusing to use the tools available.

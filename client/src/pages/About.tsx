@@ -34,7 +34,7 @@ export default function About() {
           <span className="text-[#d4a843] font-mono font-black tracking-[0.5em] uppercase text-sm mb-6 block">
             Declaration of Purpose // 2026 // By Dei Journo
           </span>
-          <h1 className="text-4xl md:text-7xl lg:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter mb-8 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[8rem] font-black font-cinzel text-white leading-[0.85] uppercase tracking-tighter break-words mb-8 drop-shadow-2xl">
             ABOUT THE <span className="text-[#c41e1e]">RECONSTRUCTION</span>
           </h1>
           <p className="text-2xl md:text-3xl text-[#e2dacf]/80 max-w-4xl mx-auto italic font-serif leading-snug">

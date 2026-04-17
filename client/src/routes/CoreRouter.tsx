@@ -36,6 +36,8 @@ const Prologue = React.lazy(() => import("@/pages/Prologue").then(m => ({ defaul
 const ArchitectureMap = React.lazy(() => import("@/pages/evidence/ArchitectureMap").then(m => ({ default: m.default })));
 const GlobalIndex = React.lazy(() => import("@/pages/GlobalIndex").then(m => ({ default: m.default })));
 const Updates = React.lazy(() => import("@/pages/Updates").then(m => ({ default: m.default })));
+const Maproom = React.lazy(() => import("@/pages/Maproom").then(m => ({ default: m.default })));
+const SlushFund = React.lazy(() => import("@/pages/vault/SlushFund").then(m => ({ default: m.default })));
 const Press = React.lazy(() => import("@/pages/Press").then(m => ({ default: m.default })));
 
 // Modular Routers
@@ -53,7 +55,7 @@ function PageLayout({ component: Component, theme = "dark" }: { component: React
 const REDIRECT_MAP: Record<string, string> = {
   "/cathedral": "/evidence",
   "/shield": "/",
-  "/headline-news": "/breach-hub",
+  "/headline-news": "/breach/hub",
   // "/expose" removed — ExposeRouter has an explicit route that handles this
   "/documents": "/evidence/legal",
   "/timeline": "/breach/courtroom",
@@ -65,7 +67,6 @@ const REDIRECT_MAP: Record<string, string> = {
 
   // Legacy / Triptych Fallbacks
   "/endgame/mccarrick": "/ledger/mccarrick",
-  "/endgame": "/ledger/mccarrick",
   "/origin/martin": "/ledger/martin",
   "/ruling/breach": "/breach/hub",
   "/ruling/vault": "/vault",
@@ -242,6 +243,12 @@ export function CoreRouter() {
           </Route>
           <Route path="/vault">
             <PageLayout component={LegalFindings} />
+          </Route>
+          <Route path="/vault/slush-fund">
+            <PageLayout component={SlushFund} />
+          </Route>
+          <Route path="/maproom">
+            <PageLayout component={Maproom} />
           </Route>
           <Route path="/ledger/critchley">
             <PageLayout component={MichaelCritchley} theme="endgame" />

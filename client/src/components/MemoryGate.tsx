@@ -59,7 +59,7 @@ function GatePanel({ path, index }: { path: SemioticPath; index: number }) {
             </motion.div>
             
             <h4 
-              className="font-abril tracking-widest text-[#F5EDD0] uppercase text-sm md:text-base leading-tight drop-shadow-lg"
+              className="font-abril tracking-widest text-[#F5EDD0] uppercase text-sm md:text-base leading-tight drop-shadow-lg break-words sm:text-balance w-full px-2"
               style={{ textShadow: `0px 0px 8px ${path.themeColor}80` }}
             >
               {path.gateLabel}

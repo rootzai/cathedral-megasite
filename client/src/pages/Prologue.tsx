@@ -28,7 +28,7 @@ export default function TierOneOnboarding() {
             <SEO title="The Patriarch | Investigative Report" />
 
             {/* Global Header - Innocent looking */}
-            <header className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex justify-between items-center transition-all bg-gradient-to-b from-[#070709] to-transparent pointer-events-none">
+            <header className="fixed top-8 md:top-12 left-0 w-full p-4 md:p-6 z-50 flex justify-between items-center transition-all bg-gradient-to-b from-[#070709] to-transparent pointer-events-none">
                 <div className="font-mono uppercase tracking-[0.3em] text-xs md:text-sm font-bold text-white/50">
                     Sodom Hall // Investigative Feature
                 </div>
