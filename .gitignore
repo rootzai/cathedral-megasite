@@ -30,3 +30,6 @@ pnpm-debug.log*
 .parcel-cache/
 .vite/
 .vercel
+
+# Screenshot verification output
+.screenshots/
