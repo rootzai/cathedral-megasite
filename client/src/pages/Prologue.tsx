@@ -95,12 +95,14 @@ export default function TierOneOnboarding() {
                         When Crawford came forward years later, the Diocese of Metuchen did not deny what had happened. Instead, they falsified his birth records to claim his adulthood, argued the statute of limitations had expired, and refused to pay the $108,000 settlement their own mediator had awarded him.
                     </p>
 
-                    <figure className="my-16 md:my-24 w-full md:w-[130%] md:-ml-[15%]">
-                        <div className="w-full h-[400px] bg-zinc-900 border border-zinc-800 flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-30 mix-blend-overlay"></div>
-                            <span className="text-zinc-700 font-mono text-sm uppercase tracking-widest border border-zinc-700 px-4 py-2 opacity-50">IMAGE_REDACTED_BY_AUTHORITY</span>
+                    <figure className="my-16 md:my-32 w-full relative">
+                        <div className="w-full text-center">
+                            <h3 className="text-3xl md:text-5xl text-[#c8bdb0] font-serif italic text-center p-8 bg-clip-text text-transparent bg-gradient-to-b from-[#e2dacf] to-[#8b1a1a] opacity-80 transition-opacity duration-1000">
+                                "IMAGE_REDACTED_BY_AUTHORITY"
+                            </h3>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200px] bg-red-900/10 blur-[80px] pointer-events-none rounded-full" />
                         </div>
-                        <figcaption className="mt-4 font-mono text-xs text-zinc-500 tracking-widest uppercase">Exhibit A: Documented routing procedures in the Archdiocese.</figcaption>
+                        <figcaption className="mt-8 text-center font-mono text-xs text-[#8b1a1a] tracking-[0.3em] uppercase">Exhibit A: Documented routing procedures in the Archdiocese.</figcaption>
                     </figure>
 
                     <p>
@@ -108,15 +110,28 @@ export default function TierOneOnboarding() {
                     </p>
 
                     <p className="pt-12 text-[#c8bdb0]">
-                        But this wasn't an isolated accident. It was the blueprint. What you are about to read is that same mechanism, applied at institutional scale across fifty years, with better lawyers and massive resources, culminating in the
+                        the culmination of the Latham investigation. 
+                        
                         {/* THE CLEARANCE KEY */}
-                        <button
-                            onClick={handleKeyDiscovery}
-                            className="mx-2 inline-flex items-center gap-1 font-bold text-white relative group outline-none"
-                        >
-                            <span className="border-b-2 border-[#8b1a1a]/40 group-hover:border-[#8b1a1a] transition-colors bg-[#8b1a1a]/10 px-1 py-0.5 relative z-10 pointer-events-none group-hover:bg-[#8b1a1a]/30">LATHAM REPORT</span>
-                            <Unlock className="w-4 h-4 text-[#8b1a1a] absolute -right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
-                        </button>.
+                        <div className="mt-32 mb-16 flex flex-col items-center justify-center relative w-full">
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div className="w-48 h-48 bg-red-900/20 rounded-full blur-[40px] animate-pulse" />
+                            </div>
+                            <button
+                                onClick={handleKeyDiscovery}
+                                className="group relative z-10 flex flex-col items-center justify-center outline-none cursor-pointer"
+                            >
+                                <div className="w-24 h-24 sm:w-32 sm:h-32 border border-[#8b1a1a]/50 bg-[#070709] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(139,26,26,0.4)] group-hover:scale-110 group-hover:border-[#8b1a1a] transition-all duration-[800ms] ease-out">
+                                    <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-20 mix-blend-overlay rounded-full"></div>
+                                    <div className="absolute inset-2 border border-dashed border-[#8b1a1a]/30 rounded-full animate-[spin_8s_linear_infinite]" />
+                                    <Unlock className="w-8 h-8 sm:w-10 sm:h-10 text-[#8b1a1a] group-hover:text-white transform transition-colors duration-500" />
+                                </div>
+                                <span className="mt-8 font-mono text-xs text-[#8b1a1a] tracking-[0.4em] uppercase group-hover:text-white transition-colors duration-500 drop-shadow-md">
+                                    Acquire: Latham Report
+                                </span>
+                            </button>
+                        </div>
+                        
                         This document would become the cornerstone of their survival, and the weapon used against the victims.
                     </p>
 

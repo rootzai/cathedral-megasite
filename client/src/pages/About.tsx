@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Shield, Lock, Mail, AlertCircle, ArrowRight, Search, FileText } from "lucide-react";
 import { TipSubmissionForm } from "@/components/TipSubmissionForm";
+import ShieldDiagram from "@/components/ShieldDiagram";
 import { SEO } from "@/components/SEO";
 
 export default function About() {
@@ -95,26 +96,41 @@ export default function About() {
           </div>
         </div>
 
-        {/* Editorial Challenge Box */}
-        <div className="bg-[#111] border-2 border-[#c41e1e] p-12 relative overflow-hidden mb-24">
-          <div className="absolute -right-20 -top-20 opacity-5">
-            <AlertCircle className="w-96 h-96 text-white" />
-          </div>
-          <div className="relative z-10 max-w-3xl">
-            <h2 className="text-6xl font-black font-cinzel text-white uppercase tracking-tighter mb-6">
-              We Welcome <span className="text-[#c41e1e]">Legal Process</span>
-            </h2>
-            <p className="text-2xl text-[#e2dacf] leading-relaxed mb-8 italic">
-              This investigation welcomes any legal challenge. We litigate in the open. We do not settle. We do not retract documented facts.
-            </p>
-            <p className="font-mono text-sm tracking-widest text-[#d4a843] uppercase mb-8">
-              Status: Zero demands received to date.
-            </p>
-            <Link href="/corrections">
-              <button className="bg-[#c41e1e] hover:bg-white hover:text-[#c41e1e] text-white font-black uppercase tracking-[0.3em] py-4 px-8 transition-colors border-2 border-transparent hover:border-[#c41e1e]">
-                View Corrections Log
-              </button>
-            </Link>
+        {/* Editorial Challenge 3D Shield */}
+        <div className="relative w-full bg-black py-32 mb-24 overflow-hidden flex flex-col items-center">
+          <div className="absolute inset-0 bg-[#c41e1e]/5 blur-[120px] pointer-events-none" />
+          <div className="max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* 3D Shield Wireframe */}
+            <div className="w-full max-w-md mx-auto aspect-square relative opacity-80 hover:opacity-100 transition-opacity duration-700 group">
+                <div className="absolute inset-0 bg-[#c41e1e]/10 blur-[80px] group-hover:bg-[#c41e1e]/20 transition-colors duration-1000 rounded-full" />
+                <div className="absolute inset-0 pointer-events-none scale-110">
+                    <ShieldDiagram />
+                </div>
+            </div>
+
+            {/* Typography */}
+            <div className="relative z-10 text-center lg:text-left">
+              <h2 className="text-5xl lg:text-6xl font-black font-cinzel text-white uppercase tracking-tighter mb-8 drop-shadow-[0_0_20px_rgba(196,30,30,0.4)]">
+                We Welcome <br/><span className="text-[#c41e1e]">Legal Process</span>
+              </h2>
+              <p className="text-2xl text-[#e2dacf] leading-relaxed mb-8 italic font-serif">
+                This investigation descends openly. We litigate in the light. We do not settle. We do not retract documented institutional truths.
+              </p>
+              <div className="inline-flex items-center gap-4 bg-[#111] border border-white/10 px-6 py-4 mb-12 shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+                  <Shield className="w-6 h-6 text-[#d4a843]" />
+                  <span className="font-mono text-sm tracking-widest text-[#d4a843] uppercase">
+                    Status: Zero demands received
+                  </span>
+              </div>
+              <br/>
+              <Link href="/corrections">
+                <button className="bg-black hover:bg-[#c41e1e] text-[#c41e1e] border-2 border-[#c41e1e] hover:text-white font-black uppercase tracking-[0.3em] py-5 px-10 transition-all duration-300 shadow-[0_0_30px_rgba(196,30,30,0.2)]">
+                  View Corrections Log
+                </button>
+              </Link>
+            </div>
+
           </div>
         </div>
 
