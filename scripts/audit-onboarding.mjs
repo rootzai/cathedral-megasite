@@ -11,11 +11,15 @@ const OUT_DIR = join(__dirname, '..', '.screenshots', 'audit-onboarding');
 const BASE_URL = 'http://localhost:5174';
 
 const ROUTES = [
-  ['/',            'root'],           // Triptych gate / entry
-  ['/archive',     'archive'],        // RedesignedHome (alt hero)
-  ['/prologue',    'prologue'],       // Investigative feature opener
-  ['/evidence',    'evidence-map'],   // Map Room (first real click)
-  ['/about',       'about'],          // About
+  ['/', 'root'],           // Triptych gate / entry
+  ['/archive', 'archive'],        // RedesignedHome (alt hero)
+  ['/prologue', 'prologue'],       // Investigative feature opener
+  ['/evidence', 'evidence-map'],   // Map Room (first real click)
+  ['/about', 'about'],          // About
+  // --- next three pages a visitor commonly reaches ---
+  ['/index', 'index'],          // Master Index (top-nav)
+  ['/tips', 'tips'],           // Tip Line (top-nav)
+  ['/ledger', 'ledger'],         // The Ledger (primary content hub)
 ];
 
 async function main() {
@@ -31,10 +35,10 @@ async function main() {
     const url = `${BASE_URL}${route}`;
     console.log(`-> ${url}`);
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-    await page.waitForLoadState('load', { timeout: 15000 }).catch(() => {});
+    await page.waitForLoadState('load', { timeout: 15000 }).catch(() => { });
     await page.waitForTimeout(3000);
-    const foldPath   = join(OUT_DIR, `${name}_fold.png`);
-    const fullPath   = join(OUT_DIR, `${name}_full.png`);
+    const foldPath = join(OUT_DIR, `${name}_fold.png`);
+    const fullPath = join(OUT_DIR, `${name}_full.png`);
     await page.screenshot({ path: foldPath, fullPage: false });
     await page.screenshot({ path: fullPath, fullPage: true });
     console.log(`   ${foldPath}`);
