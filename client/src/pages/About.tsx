@@ -84,7 +84,7 @@ export default function About() {
           <div className="relative group">
             <div className="absolute inset-0 bg-[#c41e1e]/20 blur-3xl -z-10 group-hover:bg-[#d4a843]/20 transition-colors duration-700"></div>
             <img
-              src="/assets/images/cathedral-blueprint.jpg"
+              src="/assets/images/cathedral-blueprint.png"
               alt="Bosch Inspired Redaction Map"
               className="w-full h-auto border-4 border-[#1a1a1a] shadow-2xl grayscale contrast-150 brightness-75 group-hover:grayscale-0 transition-all duration-700 object-cover"
             />
