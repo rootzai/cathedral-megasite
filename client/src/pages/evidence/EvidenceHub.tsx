@@ -4,6 +4,7 @@ import MemoryPalaceCanvas from "@/components/MemoryPalaceCanvas";
 import TriptychPortal from "@/components/TriptychPortal";
 import { SEO } from "@/components/SEO";
 import { Term } from "@/components/Term";
+import LivingSymbol from "@/components/LivingSymbol";
 import { Wind, Zap, Flame, Hash, Layers, Eye, ArrowRight, AlertTriangle } from "lucide-react";
 
 export default function EvidenceHub() {
@@ -70,40 +71,21 @@ export default function EvidenceHub() {
                             </div>
                         </Link>
 
-                        {/* THE TRIPTYCH — Three paths */}
-                        <div className="mb-8 md:mb-16">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                                <div className="p-6 md:p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 01 // THE NEWBIE</span>
-                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">Start Here</h4>
-                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;I&apos;m new. Who is involved and what happened?&quot;</p>
-                                    <div className="space-y-4">
-                                        <Link href="/about" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE MISSION</Link>
-                                        <Link href="/whos-who" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE PEOPLE</Link>
-                                        <Link href="/ledger/martin" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE LATHAM ORIGIN</Link>
-                                    </div>
-                                </div>
-                                <div className="p-6 md:p-8 border border-white/10 bg-black/60 hover:border-zinc-500 transition-all group">
-                                    <span className="text-sm font-black font-mono text-zinc-400 uppercase tracking-widest block mb-4 group-hover:text-white transition-colors">PATH 02 // THE LEGALIST</span>
-                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">The Deep Dive</h4>
-                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;I want the records. Show me the filings and the <Term id="Michael Critchley">Critchley Shield</Term>.&quot;</p>
-                                    <div className="space-y-4">
-                                        <Link href="/breach/hub" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE BREACH</Link>
-                                        <Link href="/vault" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE VAULT</Link>
-                                        <Link href="/ledger" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. THE RECORD</Link>
-                                    </div>
-                                </div>
-                                <div className="p-6 md:p-8 border border-[#8b1a1a]/30 bg-[#8b1a1a]/5 hover:border-[#8b1a1a] transition-all group shadow-[0_0_30px_rgba(139,26,26,0.05)]">
-                                    <span className="text-sm font-black font-mono text-[#ff4444] uppercase tracking-widest block mb-4 group-hover:text-[#ff6666] transition-colors">PATH 03 // THE ADVOCATE</span>
-                                    <h4 className="text-2xl md:text-3xl font-black font-cinzel text-white uppercase mb-4">The Human Cost</h4>
-                                    <p className="text-base text-zinc-300 italic mb-6 md:mb-8 md:h-12">&quot;How does this affect real survivors?&quot;</p>
-                                    <div className="space-y-4">
-                                        <Link href="/evidence/mckeever" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">1. THE LARA MCKEEVER CASE</Link>
-                                        <Link href="/ledger/mccarrick" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors border-b border-white/5 pb-2">2. THE MCCARRICK MECHANISM</Link>
-                                        <Link href="/tips" className="text-sm text-[#ff4444] hover:text-white block tracking-[0.2em] uppercase font-bold transition-colors">3. TAKE ACTION</Link>
-                                    </div>
-                                </div>
+                        {/* THE LIVING SYMBOLS */}
+                        <div className="mb-16 md:mb-24 flex flex-col items-center gap-16 md:gap-24 relative overflow-hidden pt-8">
+                            
+                            <div className="self-start md:ml-[10%]">
+                                <LivingSymbol href="/whos-who" imageSrc="/assets/symbols/hook.png" title="The Newbie" description="Who is involved and what happened?" glowColor="#ef4444" />
                             </div>
+                            
+                            <div className="self-end md:mr-[10%]">
+                                <LivingSymbol href="/vault" imageSrc="/assets/symbols/method_keyhole.png" title="The Deep Dive" description="Show me the filings and the shield." glowColor="#fbbf24" />
+                            </div>
+
+                            <div className="self-start md:ml-[15%]">
+                                <LivingSymbol href="/evidence/mckeever" imageSrc="/assets/symbols/breach_eye.png" title="The Advocate" description="How does this affect real survivors?" glowColor="#8b1a1a" />
+                            </div>
+                            
                         </div>
 
                         {/* COGNITIVE PROTOCOLS — hidden on mobile, expandable (Tier 2a) */}
