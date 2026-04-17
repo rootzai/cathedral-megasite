@@ -35,7 +35,7 @@ export default function ArchitectureMap() {
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Return to Memory Palace
             </Link>
 
-            <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-tighter">
+            <h1 className="text-5xl md:text-7xl font-black font-cinzel text-white uppercase tracking-normal">
               THE <span className="text-[#8b1a1a]">MAP</span> ROOM
             </h1>
             <p className="text-xl text-zinc-500 font-serif italic max-w-3xl">

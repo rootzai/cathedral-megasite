@@ -37,7 +37,7 @@ export default function MegaNavigation() {
           </Link>
 
           <div className="flex gap-4">
-            <Link href="/evidence" className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3">
+            <Link href="/evidence" className="border border-red-900 bg-red-900/10 hover:bg-red-900/30 text-red-500 hover:text-red-400 px-6 py-3 text-base font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(139,26,26,0.1)] hover:shadow-[0_0_30px_rgba(139,26,26,0.3)] flex items-center justify-center gap-3 whitespace-nowrap">
               <svg className="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
               [ OPEN ARCHITECTURAL MAP ]
             </Link>
